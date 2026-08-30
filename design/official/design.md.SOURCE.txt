@@ -1,0 +1,4 @@
+source: https://flop.finance/design.md
+retrieved: 2026-08-30
+version: FLOP Network Design System V3.0
+note: unmodified archive copy, do not edit
