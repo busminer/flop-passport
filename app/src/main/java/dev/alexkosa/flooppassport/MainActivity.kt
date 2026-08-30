@@ -214,7 +214,12 @@ private fun PassportScreen() {
                 }
 
                 status = "Signing first check-in..."
-                val room = "lobby"
+                // Not the lobby. It moves thousands of messages in minutes and trims the
+                // old ones, so a check-in posted there is unreadable within the hour -
+                // measured, not assumed: our first live check-in at seq 12504975 was gone
+                // from retained history fifteen minutes later. Retention is per room, so a
+                // quiet room keeps a history that can actually be shown to anyone.
+                val room = "floop-passport"
                 val nonce = technocore.nextNonce(room, identity)
                 val result = technocore.saySigned(
                     did = identity,

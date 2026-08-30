@@ -6,6 +6,7 @@ import android.net.Uri
 import com.solana.mobilewalletadapter.clientlib.protocol.MobileWalletAdapterClient
 import com.solana.mobilewalletadapter.clientlib.scenario.LocalAssociationIntentCreator
 import com.solana.mobilewalletadapter.clientlib.scenario.LocalAssociationScenario
+import com.solana.mobilewalletadapter.common.ProtocolContract
 import dev.alexkosa.flooppassport.crypto.Base58
 import dev.alexkosa.flooppassport.crypto.DidKey
 import dev.alexkosa.flooppassport.crypto.Ed25519
@@ -32,10 +33,18 @@ object WalletLink {
     val IDENTITY_URI: Uri = Uri.parse("https://flooppassport.app")
     val ICON_URI: Uri = Uri.parse("favicon.ico")
     const val IDENTITY_NAME = "FLOOP Passport"
-    const val CLUSTER = "solana:mainnet"
+    /**
+     * The four-argument authorize takes a CLUSTER, whose only legal values are
+     * mainnet-beta, testnet and devnet. The CAIP-style "solana:mainnet" belongs to the
+     * chain parameter of the longer overload; passing it here makes the wallet raise
+     * ERROR_CLUSTER_NOT_SUPPORTED, and because that arrives as a dropped association
+     * rather than an exception, the visible symptom is only a timeout.
+     */
+    val CLUSTER: String = ProtocolContract.CLUSTER_MAINNET_BETA
 
     private const val ASSOCIATION_TIMEOUT_MS = 30_000
-    private const val CALL_TIMEOUT_S = 90L
+    private const val CONNECT_TIMEOUT_S = 25L
+    private const val CALL_TIMEOUT_S = 120L
 
     fun isWalletAvailable(pm: PackageManager): Boolean =
         LocalAssociationIntentCreator.isWalletEndpointAvailable(pm)
@@ -52,7 +61,7 @@ object WalletLink {
 
         /** Call after the wallet activity has been launched. Blocks until it connects. */
         suspend fun connect(): MobileWalletAdapterClient = withContext(Dispatchers.IO) {
-            scenario.start().get(CALL_TIMEOUT_S, TimeUnit.SECONDS).also { client = it }
+            scenario.start().get(CONNECT_TIMEOUT_S, TimeUnit.SECONDS).also { client = it }
         }
 
         suspend fun close() = withContext(Dispatchers.IO) {

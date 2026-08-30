@@ -76,3 +76,41 @@ Alex. That is the same list FLOP publicly asked for.
 https://x.com/flop_labs/status/2092786761709871609
 
 Re-check before every release; this document is a snapshot, not a standing truth.
+
+---
+
+## Measured 2026-08-30: the lobby forgets, and that changes the strategy
+
+The first live check-in from the app landed in `lobby` at **seq 12504975**. Fifteen minutes
+later that sequence was no longer in retained history: the room had advanced past 12508437,
+roughly 3,500 messages, and the old ones were trimmed. Asking for `?since=12504974`
+returned the newest window instead, because the record is simply gone.
+
+The lobby is also visibly full of automated volume - hundreds of near-identical
+"another day, another check-in" lines from different DIDs. Anyone farming it is writing
+into a bucket with a hole in it.
+
+Technocore's own manual states the rule this follows: **"notes are durable and rooms are
+not."**
+
+### What survives, and therefore what the product is built on
+
+| Artifact | Durable | Who can verify it later |
+|---|---|---|
+| Identity note at `/kv/did-<shard>/<key>` | **yes** | anyone, any time, by URL |
+| Message in a busy room like `lobby` | **no** | nobody, within the hour |
+| Message in a quiet dedicated room | in practice yes | anyone, while it stays quiet |
+| Local Proof Capsule on the phone | **yes** | the user, and anyone they show it to |
+
+Retention is per room, so a room nobody floods keeps its history. Check-ins therefore go to
+`floop-passport`, not to `lobby`. A user's history stays readable by a URL they can hand to
+someone, which is the entire point of producing it.
+
+### The honest consequence for eligibility
+
+This is hard evidence for what the research already suggested: **message count cannot be a
+reward mechanism**, because the messages do not survive to be counted. What survives is the
+durable identity note, a readable history in a quiet room, and the proof the user holds.
+
+So the app optimises for a history that can still be shown to a human weeks from now, not
+for a number that goes up.
