@@ -1,0 +1,33 @@
+# --- Android / Gradle ---
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# --- Secrets: never commit ---
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+*.pem
+*.p12
+local.env
+.env
+secrets/
+
+# Mission manifest SIGNING key (public verification key IS committed)
+tools/mission-admin/keys/
+*-signing-key*
+*.private.json
+
+# Test identities and any exported passport material
+*.floop-passport
+builds/**/*.aab
+test-identity*.json
+recovery-*.txt

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Base #0A1128 everywhere, including the window background, so the cold-start frame
+      the system draws before Compose exists is already FLOOP rather than a white flash.
+    -->
+    <style name="Theme.FloopPassport" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/flop_base</item>
+        <item name="android:statusBarColor">@color/flop_base</item>
+        <item name="android:navigationBarColor">@color/flop_base</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

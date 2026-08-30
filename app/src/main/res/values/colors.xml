@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Canonical swatches from the FLOP Network Design System V3.0 (flop.finance/design.md). -->
+<resources>
+    <color name="flop_base">#0A1128</color>
+    <color name="flop_surface">#151D32</color>
+    <color name="flop_surface_light">#232A3E</color>
+    <color name="flop_grey">#5C6670</color>
+    <color name="flop_blue">#0466C8</color>
+    <color name="flop_cyan">#00B4D8</color>
+    <color name="flop_cyan_hover">#3DC5E0</color>
+    <color name="flop_green">#32D74B</color>
+    <color name="flop_ice_white">#F5F7FA</color>
+    <color name="flop_text_secondary">#A1A7AE</color>
+    <color name="flop_error_red">#FF453A</color>
+</resources>

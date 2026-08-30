@@ -1,0 +1,107 @@
+{
+  "identities": [
+    {
+      "seed_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "public_key_hex": "03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8",
+      "did": "did:key:z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "fingerprint": "ef9b53055830b478",
+      "note_path": "/kv/did-ef/9b53055830b478",
+      "abbreviated": "z6Mk…gvVd"
+    },
+    {
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "public_key_hex": "3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",
+      "did": "did:key:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+      "fingerprint": "ad90ec18fd5e0735",
+      "note_path": "/kv/did-ad/90ec18fd5e0735",
+      "abbreviated": "z6Mk…ooWp"
+    },
+    {
+      "seed_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "public_key_hex": "76a1592044a6e4f511265bca73a604d90b0529d1df602be30a19a9257660d1f5",
+      "did": "did:key:z6MknSLrJoTcukLrE435hVNQT4JUhbvWLX4kUzqkEStBU8Vi",
+      "fingerprint": "6ccf934814001c02",
+      "note_path": "/kv/did-6c/cf934814001c02",
+      "abbreviated": "z6Mk…U8Vi"
+    },
+    {
+      "seed_hex": "c4424d736cff379d2af3b6fd098797763efb5a668eec5822761be3f627396a6a",
+      "public_key_hex": "7f19ee24cf18657c1217a4e1454e9696bab23c64bc23ec9cd7de93356827ef45",
+      "did": "did:key:z6Mko1QkoERNT5aJhM968R7nHxL91RszAasyENtZEisAWcrg",
+      "fingerprint": "e078b195ade4a0db",
+      "note_path": "/kv/did-e0/78b195ade4a0db",
+      "abbreviated": "z6Mk…Wcrg"
+    }
+  ],
+  "sweep": [
+    {
+      "input": "FLOOP Passport for Seeker. First signed check-in.",
+      "swept": "FLOOP Passport for Seeker. First signed check-in."
+    },
+    {
+      "input": "  leading and trailing spaces  ",
+      "swept": "leading and trailing spaces"
+    },
+    {
+      "input": "line\nbreak\tand\ttabs",
+      "swept": "line break and tabs"
+    },
+    {
+      "input": "zero​width and ‮bidi override",
+      "swept": "zero width and  bidi override"
+    },
+    {
+      "input": "emoji survive: 🐰 🤖",
+      "swept": "emoji survive: 🐰 🤖"
+    },
+    {
+      "input": "family flattens: 👨‍👩‍👧",
+      "swept": "family flattens: 👨 👩 👧"
+    },
+    {
+      "input": "nbsp edges and line sep",
+      "swept": "nbsp edges and line sep"
+    },
+    {
+      "input": "  leading nbsp stripped by python  ",
+      "swept": "leading nbsp stripped by python"
+    }
+  ],
+  "messages": [
+    {
+      "did": "did:key:z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "room": "lobby",
+      "nonce": "1",
+      "raw_text": "FLOOP Passport for Seeker. First signed check-in.",
+      "canonical_payload": "lobby|1|FLOOP Passport for Seeker. First signed check-in.",
+      "signature": "1FqJSIlNGkdZtSUkWHI0pL1v8bhMvV3u6qiNcV3wz7MEGPxHkjCgJC39S-wZ0h9RwQiIpq-npXkGxqcpyFc3DQ"
+    },
+    {
+      "did": "did:key:z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "room": "lobby",
+      "nonce": "1756500000000",
+      "raw_text": "  swept  text  with\ttabs  ",
+      "canonical_payload": "lobby|1756500000000|swept  text  with tabs",
+      "signature": "4I5EA6EU7QyW5dLvG7_MveoPLIyofkUyZxIB0s8PC480lDbNP2IJRgpNm3ml3FGUckzj2O1WzSuH6SEKF186AQ"
+    },
+    {
+      "did": "did:key:z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "room": "floop",
+      "nonce": "42",
+      "raw_text": "emoji 🐰 survive the sweep",
+      "canonical_payload": "floop|42|emoji 🐰 survive the sweep",
+      "signature": "PLo1EtFM01aCfdpj9bXRdMjcZ4HCrOEOtkIV_KTyB4UmhbjuQWVrgg08rXPdzH0dqyMSooIR3KIoN4EiSrktDA"
+    }
+  ],
+  "notes": [
+    {
+      "did": "did:key:z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "ns": "did-ef",
+      "key": "9b53055830b478",
+      "nonce": "1",
+      "raw_value": "FLOOP Passport for Seeker",
+      "canonical_payload": "did-ef|9b53055830b478|1|FLOOP Passport for Seeker",
+      "signature": "PCjzs3jed_VyS_MoB9Qnw08J221v9BzyPg5eHhOcEuBUZtfYO-nrJy71lmcXiwVAhoe1eLuVICOLbJm62r9rBg"
+    }
+  ]
+}

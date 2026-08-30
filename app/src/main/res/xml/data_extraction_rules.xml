@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nothing leaves the device through backup or transfer.
+
+  The Passport ciphertext is wrapped by an Android Keystore key that does not survive a
+  device migration, so a restored copy would be undecryptable noise that looks like data
+  loss. Recovery is the wallet derivation and the exported file, not Android backup.
+-->
+<data-extraction-rules>
+    <cloud-backup><exclude domain="root" /></cloud-backup>
+    <device-transfer><exclude domain="root" /></device-transfer>
+</data-extraction-rules>
