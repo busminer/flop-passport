@@ -5,6 +5,20 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
+
+    <!--
+      Android 11+ hides other packages unless they are declared here. Without this block
+      LocalAssociationIntentCreator.isWalletEndpointAvailable always answers false and the
+      app reports "no wallet installed" on a phone that has three.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="solana-wallet" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
