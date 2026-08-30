@@ -119,19 +119,30 @@ object PostComposer {
     }
 
     /**
-     * The value written into the durable identity note once the user has posted.
+     * The value written into the durable identity note.
      *
-     * This is the part the community route leaves out. Everyone ends by posting a signed
-     * record into a room, and every room is trimmed, so within a day the link between the
-     * DID and the X account is gone. Writing it into the note instead puts it at a
-     * permanent address derived from the key, where anyone - including a card site that
-     * already reads profile notes - can find it later.
+     * Two things decide the shape. Technocore's own convention for a DID note is
+     * `key: value` fields - its mailbox convention is literally "a line like
+     * `mailbox: <room>`" - so a machine reading someone's note, such as a credential-card
+     * site, already knows how to pick fields out of it. And the note passes through the
+     * same single-line sweep as a message, which turns every newline into a space, so the
+     * fields live on one line whether we want them to or not. Writing this with line
+     * breaks and assuming they survive is the kind of mistake that only shows up when
+     * another tool fails to parse your note.
+     *
+     * This is also the part the community route leaves out. Both public FLOP tools end by
+     * signing a record into a room, and every room is compacted, so within a day the link
+     * between the DID and the X account is gone. Here it lives at a permanent address
+     * derived from the key.
      */
-    fun identityNoteValue(xPostUrl: String?): String = buildString {
-        append("FLOOP Passport for Seeker")
-        if (!xPostUrl.isNullOrBlank()) {
-            append(" | x: ")
-            append(xPostUrl.trim())
-        }
+    fun identityNoteValue(
+        xPostUrl: String? = null,
+        room: String? = null,
+        contributionUrl: String? = null,
+    ): String = buildString {
+        append("agent: FLOOP Passport for Seeker")
+        if (!xPostUrl.isNullOrBlank()) append(" x: ").append(xPostUrl.trim())
+        if (!room.isNullOrBlank()) append(" room: ").append(room.trim())
+        if (!contributionUrl.isNullOrBlank()) append(" contribution: ").append(contributionUrl.trim())
     }
 }

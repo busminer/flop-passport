@@ -1,6 +1,7 @@
 package dev.alexkosa.flooppassport
 
 import dev.alexkosa.flooppassport.proof.PostComposer
+import dev.alexkosa.flooppassport.technocore.Canonical
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -84,13 +85,28 @@ class PostComposerTest {
     @Test
     fun `the identity note carries the X post so the link outlives the rooms`() {
         val url = "https://x.com/AlexKosa1/status/123"
-        val value = PostComposer.identityNoteValue(url)
+        val value = PostComposer.identityNoteValue(url, "floop-passport")
         assertTrue(value.contains(url))
-        assertTrue(value.contains("FLOOP Passport for Seeker"))
+        assertTrue(value.startsWith("agent: FLOOP Passport for Seeker"))
+        assertTrue("fields follow the server's own key: value convention", value.contains("x: "))
+        assertTrue(value.contains("room: floop-passport"))
         // Notes are capped at 8192 characters by the server; ours must stay far below.
-        assertTrue(value.length < 200)
-        assertEquals("FLOOP Passport for Seeker", PostComposer.identityNoteValue(null))
-        assertEquals("FLOOP Passport for Seeker", PostComposer.identityNoteValue("   "))
+        assertTrue(value.length < 400)
+        assertEquals("agent: FLOOP Passport for Seeker", PostComposer.identityNoteValue(null))
+        assertEquals("agent: FLOOP Passport for Seeker", PostComposer.identityNoteValue("   "))
+    }
+
+    @Test
+    fun `the note survives the single-line sweep unchanged`() {
+        // Note values pass through the same sweep as messages, which turns every newline
+        // into a space. A note written with line breaks comes back mangled, so it must
+        // contain none to begin with.
+        val value = PostComposer.identityNoteValue(
+            "https://x.com/AlexKosa1/status/123", "floop-passport",
+            "https://github.com/busminer/floop-passport",
+        )
+        assertEquals(value, Canonical.sweep(value))
+        assertFalse(value.contains('\n'))
     }
 
     @Test

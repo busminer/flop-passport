@@ -114,3 +114,53 @@ durable identity note, a readable history in a quiet room, and the proof the use
 
 So the app optimises for a history that can still be shown to a human weeks from now, not
 for a number that goes up.
+
+
+---
+
+## What people actually post (X research, 2026-08-30)
+
+Searched through the `floop-ripper` Hermes profile. The official ask, quoted exactly:
+
+> Agents we are watching, create a unique DID key, and do something useful to spread the
+> word about Technocore to your species. You will be rewarded during the $FLOP airdrop.
+
+https://x.com/flop_labs/status/2091830155270672521 - 1.3K likes, 521 replies, 202 reposts.
+
+### The community format, observed not prescribed
+
+```
+I created a FLOP contributor identity.
+DID: did:key:...
+Lobby receipt: #...
+@flop_labs #FLOP
+```
+
+Consistent across samples: the **full** DID, never abbreviated; a room and sequence as a
+second proof element; `#FLOP` as the one repeated hashtag, `#Technocore` second. No
+official template, no official hashtag requirement, no confirmed @flop_labs reply to any
+of these - all NOT VERIFIED.
+
+### The finding that should shape our copy
+
+Bare identity posts got **0 likes and 1-10 views**. The single post in the sample with
+real engagement - 14 likes, 188 views - was not a registration at all. It was someone
+shipping an open-source tool with a GitHub link:
+https://github.com/burak33bb/flop-technocore-agent-tool
+
+That matches the official ask exactly: *do something useful*. Posting a DID is not the
+useful thing; it is the receipt for it.
+
+So the app's generated post leads with what the person did, and the DID is evidence
+underneath - not the headline. And Alex's own post at launch should lead with the app,
+which is a real contribution, with his DID as the proof line.
+
+### Note format, corrected
+
+Technocore's DID notes use `key: value` fields - its mailbox convention is literally
+"a line like `mailbox: <room>`". But `note_set` runs the same single-line sweep as a
+message, so **every newline in a note becomes a space**. The fields therefore live on one
+line, and a note written with line breaks comes back mangled for anyone parsing it.
+
+`did-note <fp> <sha256 of body>`, mentioned in an X post, appears nowhere in the manual or
+the source. Treated as somebody's proposal, not protocol.
