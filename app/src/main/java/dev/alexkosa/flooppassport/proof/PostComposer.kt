@@ -61,18 +61,32 @@ object PostComposer {
      * Longest variant that fits, in descending order of what it says. Callers can also
      * offer the list so the user picks.
      */
-    fun compose(did: String, includeLink: Boolean = true): Draft =
-        drafts(did, includeLink).firstOrNull { it.fits }
-            ?: drafts(did, includeLink).last()
+    fun compose(did: String, contribution: String? = null, includeLink: Boolean = true): Draft =
+        drafts(did, contribution, includeLink).firstOrNull { it.fits }
+            ?: drafts(did, contribution, includeLink).last()
 
-    fun drafts(did: String, includeLink: Boolean = true): List<Draft> {
+    /**
+     * [contribution] is the user's own sentence about what they actually did.
+     *
+     * It matters more than everything else in the post. FLOP asked agents to "do
+     * something useful"; measured on X, bare identity posts drew zero engagement while
+     * the one post that landed was somebody shipping a tool. So when the user writes a
+     * line, it goes first and the DID becomes the receipt underneath it. Left blank, the
+     * post still works, it just says less.
+     */
+    fun drafts(
+        did: String,
+        contribution: String? = null,
+        includeLink: Boolean = true,
+    ): List<Draft> {
         val link = if (includeLink) noteUrl(did) else null
+        val mine = contribution?.trim()?.takeIf { it.isNotEmpty() }
 
         fun build(vararg lines: String?) =
             lines.filterNotNull().joinToString("\n\n").trimEnd()
 
         val full = build(
-            "Created my FLOP Passport on a Solana Seeker.",
+            mine ?: "Created my FLOP Passport on a Solana Seeker.",
             "The identity is born inside Seed Vault and sealed by StrongBox on the phone.",
             did,
             "Identity note published, first check in signed and verified on Technocore.",
@@ -81,7 +95,7 @@ object PostComposer {
         )
 
         val medium = build(
-            "Created my FLOP Passport on a Solana Seeker.",
+            mine ?: "Created my FLOP Passport on a Solana Seeker.",
             "Key born in Seed Vault, sealed by StrongBox on device.",
             did,
             "Identity note published, first check in verified.",
@@ -90,7 +104,7 @@ object PostComposer {
         )
 
         val short = build(
-            "My FLOP Passport, created on a Solana Seeker.",
+            mine ?: "My FLOP Passport, created on a Solana Seeker.",
             did,
             "Identity note published, first check in verified on Technocore.",
             link,
@@ -98,7 +112,7 @@ object PostComposer {
         )
 
         val minimal = build(
-            "My FLOP Passport, created on a Solana Seeker.",
+            mine ?: "My FLOP Passport, created on a Solana Seeker.",
             did,
             link,
             CREDIT,
@@ -107,7 +121,7 @@ object PostComposer {
         // Last resort: the DID and the credit are the two things that cannot be dropped,
         // because without the key the post proves nothing and without the credit it does
         // not point anyone at the app.
-        val bare = build(did, CREDIT)
+        val bare = build(mine, did, CREDIT)
 
         return listOf(
             Draft(full, "full", weightedLength(full)),
@@ -117,6 +131,29 @@ object PostComposer {
             Draft(bare, "bare", weightedLength(bare)),
         )
     }
+
+    /**
+     * How many characters the user's own line may still use.
+     *
+     * The UI needs this to show a live counter and to say "trim 14 characters" instead of
+     * letting someone write three sentences and then discover the post is unpostable. The
+     * budget is measured against the smallest variant, which carries only their line, the
+     * DID, the link and the credit - the four things that cannot be dropped.
+     */
+    fun contributionBudget(did: String, includeLink: Boolean = true): Int {
+        // Measured rather than calculated: compose the smallest variant around a
+        // one-character line and subtract that character. A hand-derived figure would
+        // drift silently the first time any variant's wording changes.
+        // The last variant, not compose(): compose returns the *largest* draft that fits,
+        // so probing it would measure whichever variant happened to win and report a
+        // budget far smaller than the one the fallback actually allows.
+        val floor = drafts(did, contribution = "x", includeLink = includeLink).last()
+        return LIMIT - (floor.weightedLength - 1)
+    }
+
+    /** True when this line still leaves a postable draft. */
+    fun contributionFits(did: String, contribution: String?, includeLink: Boolean = true): Boolean =
+        compose(did, contribution, includeLink).fits
 
     /**
      * The value written into the durable identity note.

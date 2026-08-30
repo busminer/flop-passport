@@ -114,4 +114,43 @@ class PostComposerTest {
         val lengths = PostComposer.drafts(liveDid).map { it.weightedLength }
         assertEquals(lengths.sortedDescending(), lengths)
     }
+
+    @Test
+    fun `the user's own sentence leads the post`() {
+        val mine = "I built an open source FLOOP Passport client for Solana Seeker."
+        val draft = PostComposer.compose(liveDid, mine)
+        assertTrue(draft.fits)
+        assertTrue(draft.text.startsWith(mine))
+        assertTrue("the DID is still the receipt underneath", draft.text.contains(liveDid))
+        assertFalse("the canned line steps aside", draft.text.contains("Created my FLOP Passport"))
+    }
+
+    @Test
+    fun `an over-long contribution is reported, not silently truncated`() {
+        val long = "I shipped an open source native Android client that creates a Technocore " +
+            "identity from a Solana Seeker wallet, publishes the identity note and verifies " +
+            "every write by reading it back from the server before it shows anything green."
+        assertFalse(PostComposer.contributionFits(liveDid, long))
+
+        val budget = PostComposer.contributionBudget(liveDid)
+        assertTrue("the budget must leave room for a real sentence", budget in 60..200)
+        assertTrue(
+            "a line inside the budget must fit",
+            PostComposer.contributionFits(liveDid, "x".repeat(budget)),
+        )
+        assertFalse(
+            "one character over the budget must not",
+            PostComposer.contributionFits(liveDid, "x".repeat(budget + 1)),
+        )
+    }
+
+    @Test
+    fun `blank and whitespace contributions fall back to the default line`() {
+        val whitespaceOnly = listOf('\n', '\t', ' ').joinToString("")
+        for (blank in listOf(null, "", "   ", whitespaceOnly)) {
+            val draft = PostComposer.compose(liveDid, blank)
+            assertTrue(draft.fits)
+            assertTrue(draft.text.contains(liveDid))
+        }
+    }
 }
