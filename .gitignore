@@ -31,3 +31,7 @@ tools/mission-admin/keys/
 builds/**/*.aab
 test-identity*.json
 recovery-*.txt
+
+# Throwaway data from the local Technocore test server
+tests/_localdata/
+tests/_server.log
