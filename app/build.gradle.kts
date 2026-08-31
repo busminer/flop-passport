@@ -24,7 +24,11 @@ android {
         }
     }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        // Settings shows the version; that is the only thing BuildConfig is for here.
+        buildConfig = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

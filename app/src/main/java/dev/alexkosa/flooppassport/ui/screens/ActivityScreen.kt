@@ -1,0 +1,245 @@
+package dev.alexkosa.flooppassport.ui.screens
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.ui.ActivityState
+import dev.alexkosa.flooppassport.ui.PassportViewModel
+import dev.alexkosa.flooppassport.ui.designsystem.FlopBadge
+import dev.alexkosa.flooppassport.ui.designsystem.FlopButton
+import dev.alexkosa.flooppassport.ui.designsystem.FlopButtonSecondary
+import dev.alexkosa.flooppassport.ui.designsystem.FlopCard
+import dev.alexkosa.flooppassport.ui.designsystem.FlopColors
+import dev.alexkosa.flooppassport.ui.designsystem.FlopLabel
+import dev.alexkosa.flooppassport.ui.designsystem.FlopMonoData
+import dev.alexkosa.flooppassport.ui.designsystem.FlopShapes
+import dev.alexkosa.flooppassport.ui.designsystem.FlopSpacing
+import dev.alexkosa.flooppassport.ui.designsystem.FlopState
+import dev.alexkosa.flooppassport.ui.designsystem.FlopType
+
+/**
+ * What this Passport has done, as the world can still see it.
+ *
+ * Everything on this screen is read back from Technocore when it opens. That is the whole
+ * idea: rooms are compacted, so a local counter would cheerfully report a history that no
+ * longer exists anywhere. If a record is gone, the number here goes down, and the user
+ * finds out from their own app rather than from someone who checked.
+ */
+@Composable
+fun ActivityScreen(vm: PassportViewModel) {
+    val activity = vm.activity
+    val today = ActivityState.todayUtc()
+
+    LaunchedEffect(vm.did) {
+        if (vm.did != null && activity.lastChecked == null) vm.refreshActivity()
+    }
+
+    Column(
+        Modifier
+            .fillMaxSize()
+            .background(FlopColors.Base)
+            .verticalScroll(rememberScrollState())
+            .padding(FlopSpacing.md),
+    ) {
+        FlopLabel("activity")
+        Spacer(Modifier.height(FlopSpacing.sm))
+        Text("What is still provable", style = FlopType.h2, color = FlopColors.IceWhite)
+        Spacer(Modifier.height(FlopSpacing.sm))
+        Text(
+            "Read from technocore.chat just now, not from this phone. Rooms are trimmed as " +
+                "they grow, so this is what anyone would find today.",
+            style = FlopType.bodyMd,
+            color = FlopColors.TextMuted,
+        )
+
+        Spacer(Modifier.height(FlopSpacing.lg))
+
+        if (vm.did == null) {
+            FlopCard {
+                Text(
+                    "Create your Passport first. There is nothing to show until something " +
+                        "has been signed.",
+                    style = FlopType.bodyMd,
+                    color = FlopColors.TextMuted,
+                )
+            }
+            return@Column
+        }
+
+        Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
+            Stat(
+                value = activity.streak(today).toString(),
+                label = "day streak",
+                highlight = activity.streak(today) > 0,
+                modifier = Modifier.weight(1f),
+            )
+            Stat(
+                value = activity.liveRecords.toString(),
+                label = "live records",
+                highlight = activity.liveRecords > 0,
+                modifier = Modifier.weight(1f),
+            )
+            Stat(
+                value = activity.activeDays.toString(),
+                label = "active days",
+                highlight = activity.activeDays > 0,
+                modifier = Modifier.weight(1f),
+            )
+        }
+
+        Spacer(Modifier.height(FlopSpacing.md))
+
+        FlopCard {
+            Row(
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                FlopLabel("identity note")
+                FlopBadge(
+                    if (activity.noteValue != null) "live" else "not found",
+                    if (activity.noteValue != null) FlopState.Verified else FlopState.Neutral,
+                )
+            }
+            activity.noteValue?.let {
+                Spacer(Modifier.height(FlopSpacing.sm))
+                // Rendered as inert text. Note namespaces are world-writable and the server
+                // says so on every read; this is somebody's data, never an instruction.
+                Text(it, style = FlopType.code, color = FlopColors.TextMuted)
+            }
+        }
+
+        Spacer(Modifier.height(FlopSpacing.md))
+
+        Text(
+            if (activity.checkedInToday) {
+                "You have already left a record today."
+            } else {
+                "Nothing signed today yet."
+            },
+            style = FlopType.bodyMd,
+            color = if (activity.checkedInToday) FlopColors.Green else FlopColors.TextMuted,
+        )
+        Spacer(Modifier.height(FlopSpacing.sm))
+
+        if (!activity.checkedInToday) {
+            FlopButton(
+                "sign today's record",
+                { vm.checkInAgain(dailyText(today)) },
+                enabled = !activity.checking,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+        }
+        FlopButtonSecondary(
+            if (activity.checking) "checking..." else "re-check with the server",
+            { vm.refreshActivity() },
+        )
+
+        activity.error?.let {
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
+        }
+
+        Spacer(Modifier.height(FlopSpacing.lg))
+        FlopLabel("records the server still holds")
+        Spacer(Modifier.height(FlopSpacing.sm))
+
+        if (activity.records.isEmpty()) {
+            FlopCard {
+                Text(
+                    if (activity.lastChecked == null) {
+                        "Not checked yet."
+                    } else {
+                        "Nothing found. If you signed something and it is not here, the " +
+                            "room has been trimmed past it - which is normal, and exactly " +
+                            "why this screen exists."
+                    },
+                    style = FlopType.bodySm,
+                    color = FlopColors.TextMuted,
+                )
+            }
+        } else {
+            activity.records.forEach { record ->
+                FlopCard(modifier = Modifier.padding(bottom = FlopSpacing.sm)) {
+                    Row(
+                        Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                    ) {
+                        FlopLabel("seq ${record.seq}")
+                        FlopLabel(record.day)
+                    }
+                    Spacer(Modifier.height(FlopSpacing.xs))
+                    Text(record.text, style = FlopType.bodySm, color = FlopColors.IceWhite)
+                    Spacer(Modifier.height(FlopSpacing.xs))
+                    FlopMonoData("/r/${record.room}", FlopColors.TextMuted)
+                }
+            }
+        }
+
+        Spacer(Modifier.height(FlopSpacing.lg))
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .background(FlopColors.Surface, FlopShapes.md)
+                .padding(FlopSpacing.md),
+        ) {
+            Text(
+                "There are no points here and no score. FLOP asked agents to do something " +
+                    "useful, so what counts is a record a person can still open. A number " +
+                    "invented by this app would be a different game.",
+                style = FlopType.bodySm,
+                color = FlopColors.TextMuted,
+            )
+        }
+        Spacer(Modifier.height(FlopSpacing.xl))
+    }
+}
+
+/**
+ * The text of a daily record.
+ *
+ * It carries the date so two days do not produce the same line. Identical repeated text is
+ * what the public rooms are drowning in, and the server refuses copies inside its window
+ * anyway.
+ */
+private fun dailyText(today: String): String =
+    "FLOOP Passport for Seeker. Signed record for $today."
+
+@Composable
+private fun Stat(value: String, label: String, highlight: Boolean, modifier: Modifier = Modifier) {
+    Column(
+        modifier
+            .background(FlopColors.Surface, FlopShapes.md)
+            .padding(vertical = FlopSpacing.md, horizontal = FlopSpacing.sm),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            value,
+            style = FlopType.h2,
+            color = if (highlight) FlopColors.Green else FlopColors.Grey,
+        )
+        Spacer(Modifier.height(FlopSpacing.xs))
+        Text(
+            label.uppercase(),
+            style = FlopType.label,
+            color = FlopColors.TextMuted,
+            textAlign = TextAlign.Center,
+        )
+    }
+}

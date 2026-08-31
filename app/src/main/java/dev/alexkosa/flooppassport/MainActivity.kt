@@ -39,7 +39,7 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopDot
 import dev.alexkosa.flooppassport.ui.designsystem.FlopLabel
 import dev.alexkosa.flooppassport.ui.designsystem.FlopSpacing
 import dev.alexkosa.flooppassport.ui.designsystem.FlopState
-import dev.alexkosa.flooppassport.ui.screens.PassportScreen
+import dev.alexkosa.flooppassport.ui.screens.AppShell
 import kotlinx.coroutines.delay
 
 /**
@@ -73,7 +73,7 @@ private fun PassportApp(vm: PassportViewModel = viewModel()) {
     }
 
     Box(Modifier.fillMaxSize().background(FlopColors.Base)) {
-        if (vm.launchScenePlayed) PassportScreen(vm) else LaunchScene()
+        if (vm.launchScenePlayed) AppShell(vm) else LaunchScene()
     }
 }
 

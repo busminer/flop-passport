@@ -62,6 +62,79 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     val securityLevel: PassportVault.SecurityLevel get() = vault.securityLevel
 
+    /** What the server still holds for this identity. Never inferred from local state. */
+    var activity by mutableStateOf(ActivityState())
+        private set
+
+    /** Shown once, after the last step lands. Alex's ask: invite support at the finish. */
+    var showSupportInvite by mutableStateOf(false)
+        private set
+
+    fun dismissSupportInvite() {
+        showSupportInvite = false
+    }
+
+    /**
+     * Re-read everything public about this Passport and show only what came back.
+     *
+     * This is the honest answer to "is my history still there": rooms are compacted, so a
+     * record that existed last week may simply be gone. The screen shows what a stranger
+     * would find today, not what this phone remembers doing.
+     */
+    fun refreshActivity() {
+        val identity = did ?: return
+        if (activity.checking) return
+        activity = activity.copy(checking = true, error = null)
+        viewModelScope.launch {
+            runCatching {
+                val note = technocore.readIdentityNote(identity)
+                val records = technocore.findAllMessages(CHECK_IN_ROOM, identity).map {
+                    ActivityState.Record(
+                        seq = it.seq,
+                        nonce = it.nonce,
+                        text = it.signedText,
+                        timestamp = it.timestamp,
+                        room = it.room,
+                    )
+                }.sortedByDescending { it.seq }
+                activity = ActivityState(
+                    checking = false,
+                    lastChecked = System.currentTimeMillis(),
+                    noteValue = note,
+                    records = records,
+                )
+            }.onFailure {
+                activity = activity.copy(
+                    checking = false,
+                    error = "Could not reach technocore.chat. This says nothing about your " +
+                        "records, only about the connection.",
+                )
+            }
+        }
+    }
+
+    /** A further signed record on a later day, which is what keeps a streak alive. */
+    fun checkInAgain(text: String) {
+        val identity = did ?: return
+        if (flow.busy || activity.checking) return
+        activity = activity.copy(checking = true, error = null)
+        viewModelScope.launch {
+            runCatching {
+                val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
+                technocore.saySigned(
+                    did = identity,
+                    room = CHECK_IN_ROOM,
+                    text = text,
+                    nonce = nonce,
+                    sign = { vault.sign(it) },
+                )
+            }.onFailure {
+                activity = activity.copy(checking = false, error = it.message)
+            }
+            refreshActivity()
+        }
+    }
+
     init {
         // Re-establish what is actually true rather than trusting the phone. A reinstall,
         // a cleared app or a second device all leave a Passport whose public records
@@ -363,6 +436,10 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                                 ),
                             ),
                         )
+                        // The finish is the one moment the app has earned the right to ask
+                        // for anything, and only after telling the user they are done.
+                        showSupportInvite = true
+                        refreshActivity()
                     }
 
                     is Technocore.Result.Refused -> settle(

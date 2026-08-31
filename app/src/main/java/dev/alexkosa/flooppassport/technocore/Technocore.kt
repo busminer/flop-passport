@@ -223,6 +223,37 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     }
 
     /**
+     * Every message from this identity the server still holds, oldest first.
+     *
+     * "Still holds" is the operative part: a room is compacted at 10 MiB down to half, so
+     * this is the record as anyone else would find it today, not a history of everything
+     * ever written. The activity screen is built on this precisely so it cannot claim a
+     * past the service has already forgotten.
+     */
+    suspend fun findAllMessages(room: String, did: String): List<Proof> {
+        val r = get("/r/${enc(room)}?since=0&limit=200&format=json")
+        if (!r.ok) return emptyList()
+        return runCatching {
+            val messages = JSONObject(r.body).getJSONArray("messages")
+            (0 until messages.length())
+                .map { messages.getJSONObject(it) }
+                .filter { it.optString("from") == did }
+                .map {
+                    Proof(
+                        did = did,
+                        room = room,
+                        nonce = it.optString("nonce"),
+                        signedText = it.optString("text"),
+                        signature = it.optString("sig"),
+                        seq = it.optInt("seq"),
+                        timestamp = it.optString("ts"),
+                    )
+                }
+                .sortedBy { it.seq }
+        }.getOrDefault(emptyList())
+    }
+
+    /**
      * The next nonce for a room, taken from what the server already holds rather than from
      * local state. A phone whose clock jumped backwards, or a reinstall that lost its
      * counter, would otherwise produce a nonce the server refuses with a message the user

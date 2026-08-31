@@ -42,7 +42,6 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopSpacing
 import dev.alexkosa.flooppassport.ui.designsystem.FlopState
 import dev.alexkosa.flooppassport.ui.designsystem.FlopBackupSheet
 import dev.alexkosa.flooppassport.ui.designsystem.FlopProblemDialog
-import dev.alexkosa.flooppassport.ui.designsystem.FlopSupportCard
 import dev.alexkosa.flooppassport.ui.designsystem.FlopStepDialog
 import dev.alexkosa.flooppassport.ui.designsystem.FlopStepLadder
 import dev.alexkosa.flooppassport.ui.designsystem.FlopType
@@ -142,7 +141,6 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         Modifier
             .fillMaxSize()
             .background(FlopColors.Base)
-            .safeDrawingPadding()
             .verticalScroll(rememberScrollState())
             .padding(FlopSpacing.md),
     ) {
@@ -249,41 +247,11 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
             }
 
-            Spacer(Modifier.height(FlopSpacing.lg))
-            FlopSupportCard(
-                recipient = SUPPORT_WALLET,
-                displayName = SUPPORT_NAME,
-                splToken = SKR_MINT,
-                tokenName = SKR_NAME,
-            )
 
-            Spacer(Modifier.height(FlopSpacing.lg))
-            FlopButtonSecondary("delete passport from this phone", { vm.deletePassport() })
         }
         Spacer(Modifier.height(FlopSpacing.xl))
     }
 }
-
-/**
- * Where a tip goes.
- *
- * The name is what the button shows, because `kosa.skr` reads as a person and a base58
- * address reads as noise. The address is baked rather than resolved at runtime: `.skr`
- * names live in AllDomains, resolving one costs a public RPC round trip, and a donation
- * button that can fail to load its own recipient is worse than one that cannot follow a
- * moved name. This pairing was verified on 2026-08-24 and again today; re-check it if the
- * name is ever pointed somewhere else.
- */
-private const val SUPPORT_NAME = "kosa.skr"
-private const val SUPPORT_WALLET = "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax"
-
-/**
- * SKR, the Solana Mobile token, preselected in the wallet's send screen. Verified on
- * mainnet: an SPL mint owned by the token program, six decimals. A wrong mint here would
- * point somebody's money at nothing, so it is checked rather than copied out of a chat.
- */
-private const val SKR_MINT = "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3"
-private const val SKR_NAME = "SKR"
 
 /** Short, filename-safe form of a DID, for the saved backup's name. */
 private fun didKeyShort(did: String): String =
