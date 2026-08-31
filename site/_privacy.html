@@ -1,0 +1,160 @@
+<header>
+  <div class="wrap">
+    <a class="mark" href="/">
+      <!--LOCKUP_SMALL-->
+      <span class="label">Passport</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#verify">Verify</a>
+      <a href="/#get">Get it</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="grid-bg"></div>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label cyan">Privacy policy</span>
+        <h2>FLOOP Passport for Seeker</h2>
+        <p>Last updated 31 August 2026. This policy covers the Android application
+          <code>dev.alexkosa.flooppassport</code> and this website.</p>
+      </div>
+
+      <div class="notice">
+        <p style="margin:0">
+          <strong>The short version.</strong> There is no account, no analytics, no
+          advertising and no server operated by us. The app does not collect, transmit or
+          store your personal data anywhere we can reach. Your key stays on your phone.
+        </p>
+      </div>
+
+      <h3 style="margin-top:48px">Who is responsible</h3>
+      <p>
+        FLOOP Passport for Seeker is an independent open-source project by Alex Kosa, an
+        individual developer. It is not made, endorsed or reviewed by FLOP Labs or Solana
+        Mobile. Contact: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> on X,
+        or by opening an issue in the public repository.
+      </p>
+
+      <h3 style="margin-top:32px">What the app stores on your device</h3>
+      <ul class="plain">
+        <li>
+          <strong>Your Passport key</strong>, encrypted. It is stored only as ciphertext,
+          wrapped by a key held in your phone's hardware-backed key store, which cannot be
+          read out of it.
+        </li>
+        <li>
+          <strong>Your public identity</strong> — the <code>did:key</code> and its
+          fingerprint — and the Solana wallet address it was derived from.
+        </li>
+        <li>
+          <strong>Your language preference</strong> and whether the launch sound is enabled.
+        </li>
+      </ul>
+      <p>
+        All of it lives in the app's private storage on your device. Android's automatic
+        backup and device-transfer are switched off for this app deliberately, so none of it
+        is copied to a cloud backup.
+      </p>
+
+      <h3 style="margin-top:32px">What leaves your device, and only when you press a button</h3>
+      <ul class="plain">
+        <li>
+          <strong>To technocore.chat</strong>, when you publish your identity or sign a
+          record: your public <code>did:key</code>, the text you are signing, a counter and
+          the signature. This information is public by design — it is the point of a public
+          identity — and anyone can read it afterwards.
+        </li>
+        <li>
+          <strong>To your wallet app</strong>, when you create the Passport: a statement to
+          sign. The wallet handles this on your device; nothing is sent over the network by
+          us.
+        </li>
+        <li>
+          <strong>To a file you choose</strong>, when you export your key. You pick the
+          destination through the system file picker. Nothing is uploaded.
+        </li>
+      </ul>
+      <p>
+        <strong>Nothing is ever sent to the developer.</strong> There is no backend to send
+        it to. The app talks to technocore.chat, operated by FLOP Labs, and to your own
+        wallet app — and that is the complete list.
+      </p>
+
+      <h3 style="margin-top:32px">What the app never asks for and never touches</h3>
+      <ul class="plain">
+        <li>Your Solana wallet's recovery phrase or private key. The app has never seen it and cannot.</li>
+        <li>Your name, email address, phone number or any account credentials.</li>
+        <li>Your contacts, photos, files, location, camera or microphone.</li>
+        <li>Advertising identifiers. There are no ads and no ad SDKs.</li>
+      </ul>
+
+      <h3 style="margin-top:32px">Analytics and tracking</h3>
+      <p>
+        None. The app contains no analytics SDK, no crash-reporting service and no
+        third-party tracking of any kind. This website sets no cookies, runs no analytics
+        and has no server-side code; the only outbound request it makes is for the two web
+        fonts and, when you use the verifier, a direct read from technocore.chat that goes
+        from your browser and never through us.
+      </p>
+
+      <h3 style="margin-top:32px">Permissions</h3>
+      <ul class="plain">
+        <li><strong>Internet</strong> — to reach technocore.chat when you publish or sign something.</li>
+        <li><strong>Vibrate</strong> — a short confirmation tick when a step is verified.</li>
+        <li><strong>Biometric</strong> — to gate the screen that shows your private key.</li>
+      </ul>
+      <p>No storage permission is requested; saving a file uses the system picker instead.</p>
+
+      <h3 style="margin-top:32px">Deleting your data</h3>
+      <div class="notice warn">
+        <p style="margin:0 0 12px">
+          <strong>On your device.</strong> Settings → Danger zone → delete the Passport, or
+          uninstall the app. Both remove the encrypted key, your identity and your
+          preferences from the phone completely. There is no copy anywhere else, and nothing
+          for us to delete on your behalf.
+        </p>
+        <p style="margin:0">
+          <strong>What was published.</strong> Anything you chose to publish on Technocore is
+          public and outside our control — we do not host it and cannot remove it. Records in
+          public rooms are dropped by that service as rooms are compacted; notes persist.
+          Requests about content on technocore.chat go to FLOP Labs, who operate it.
+        </p>
+      </div>
+
+      <h3 style="margin-top:32px">Children</h3>
+      <p>
+        The app is not directed at children and collects no data from anyone, including
+        children.
+      </p>
+
+      <h3 style="margin-top:32px">Changes</h3>
+      <p>
+        If this policy changes, the date at the top changes with it and the previous version
+        remains in the public repository's history, where anyone can compare them.
+      </p>
+
+      <h3 style="margin-top:32px">Your rights</h3>
+      <p>
+        Rights of access, correction, portability and erasure exist to give you control over
+        data somebody else holds about you. We hold none: there is nothing to access, export
+        or erase, because nothing about you ever reaches us. Your key is exportable from the
+        app at any time, and deleting the app removes everything it kept.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>FLOOP Passport for Seeker — an independent community project</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="https://technocore.chat" rel="noopener">Technocore</a>
+      <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+    </div>
+  </div>
+</footer>
