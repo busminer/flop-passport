@@ -126,6 +126,59 @@
     list.appendChild(dd);
   }
 
+
+  /**
+   * SHA-256 of a string, lowercase hex. The same bytes the app hashes, so a `did-note`
+   * line written by the app and this page's check either agree or genuinely disagree.
+   */
+  async function sha256(text) {
+    var digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(digest))
+      .map(function (b) { return b.toString(16).padStart(2, "0"); })
+      .join("");
+  }
+
+  var DID_NOTE = /^did-note\s+([0-9a-f]{16})\s+([0-9a-f]{64})$/;
+
+  /**
+   * Follow FLOP's own instruction for checking a profile note.
+   *
+   * A DID note sits in a world-writable namespace, so finding one proves only that
+   * somebody wrote it. FLOP's fix: the key signs a separate line carrying the note's hash.
+   * This finds the newest such line in the room the note itself names, and reports whether
+   * the note in front of us is the one the key vouched for.
+   *
+   * https://x.com/flop_labs/status/2090661329837371428
+   */
+  async function checkVouch(did, fp, noteBody) {
+    var room = (noteBody.match(/\broom:\s*([A-Za-z0-9-]+)/) || [])[1];
+    if (!room) return { state: "missing", reason: "the note names no room to look in" };
+
+    var response = await fetch(
+      "https://technocore.chat/r/" + encodeURIComponent(room) + "?since=0&limit=200&format=json"
+    );
+    if (!response.ok) return { state: "unknown", room: room };
+
+    var messages = (await response.json()).messages || [];
+    var mine = messages
+      .filter(function (m) { return m.from === did && DID_NOTE.test((m.text || "").trim()); })
+      .sort(function (a, b) { return b.seq - a.seq; });
+
+    if (!mine.length) return { state: "missing", room: room };
+
+    var claimed = mine[0].text.trim().match(DID_NOTE);
+    if (claimed[1] !== fp) return { state: "missing", room: room };
+
+    var actual = await sha256(noteBody);
+    return {
+      state: claimed[2] === actual ? "matches" : "changed",
+      room: room,
+      seq: mine[0].seq,
+      claimed: claimed[2],
+      actual: actual,
+    };
+  }
+
   var out = document.getElementById("verifyOut");
   var input = document.getElementById("didInput");
   var button = document.getElementById("verifyBtn");
@@ -181,8 +234,18 @@
       head.style.flexWrap = "wrap";
       head.appendChild(el("span", "badge cyan", "key is real"));
       head.appendChild(
-        el("span", text ? "badge green" : "badge grey", text ? "note published" : "no note found")
+        el("span", text ? "badge cyan" : "badge grey", text ? "note published" : "no note found")
       );
+
+      // The badge that actually means something. A published note is a claim; a note the
+      // key vouched for is evidence; and a note that no longer matches its own signed hash
+      // is a warning worth shouting about.
+      var vouch = text ? await checkVouch(did, fp, text) : { state: "missing" };
+      if (vouch.state === "matches") {
+        head.appendChild(el("span", "badge green", "vouched for by the key"));
+      } else if (vouch.state === "changed") {
+        head.appendChild(el("span", "badge red", "note changed since signing"));
+      }
       nodes.push(head);
 
       var list = el("dl", "kv");
@@ -195,13 +258,27 @@
       if (text) row(list, "note content", text);
       nodes.push(list);
 
+      if (vouch.state === "matches") {
+        row(list, "vouched by", "did-note in /r/" + vouch.room + ", seq " + vouch.seq);
+      } else if (vouch.state === "changed") {
+        row(list, "signed hash", vouch.claimed);
+        row(list, "actual hash", vouch.actual);
+      }
+
       var note = el("p", null,
-        text
-          ? "The note above was written by whoever holds this key — but note addresses are " +
-            "world-writable, so treat its content as a claim, not as proof. The proof is a " +
-            "signature on a message."
-          : "This key is well formed, but nothing is published at its note address yet. " +
+        !text
+          ? "This key is well formed, but nothing is published at its note address yet. " +
             "That is what step 03 in the app does."
+          : vouch.state === "matches"
+          ? "The holder of this key signed a line carrying this note's exact hash, and the " +
+            "hashes agree. That is as strong as a note gets: note addresses are " +
+            "world-writable, so without that line a note only proves somebody wrote it."
+          : vouch.state === "changed"
+          ? "Warning: this key signed a line for a different version of this note, so " +
+            "somebody has changed it since. FLOP's own advice is to ignore a note whose " +
+            "hash no longer matches."
+          : "This note is a claim, not a proof: note addresses are world-writable, and no " +
+            "signed did-note line was found vouching for this text."
       );
       note.style.fontSize = "14px";
       note.style.marginTop = "16px";

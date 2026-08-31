@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import dev.alexkosa.flooppassport.crypto.DidKey
 import dev.alexkosa.flooppassport.crypto.Ed25519
 import dev.alexkosa.flooppassport.proof.PostComposer
+import dev.alexkosa.flooppassport.technocore.DidNote
 import dev.alexkosa.flooppassport.technocore.Technocore
 import dev.alexkosa.flooppassport.vault.PassportVault
 import dev.alexkosa.flooppassport.wallet.WalletLink
@@ -319,17 +320,46 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
                 when (val r = technocore.publishIdentityNote(identity, value)) {
-                    is Technocore.Result.Verified -> settle(
-                        Step.Publish,
-                        StepState.Verified(
-                            "Published and read back from the server",
-                            Evidence(
-                                "address" to PostComposer.noteUrl(identity),
-                                "content" to value,
-                                "checked" to "fetched again and matched exactly",
+                    is Technocore.Result.Verified -> {
+                        // FLOP's own instruction, and the reason this step is worth more
+                        // than "a note exists": the note lives in a world-writable
+                        // namespace, so the key has to vouch for it separately. Publish,
+                        // then sign a line carrying the note's hash. A reader who finds
+                        // both and sees them agree knows this exact text came from the
+                        // holder of the key. https://x.com/flop_labs/status/2090661329837371428
+                        val vouched = runCatching {
+                            val body = technocore.readIdentityNote(identity) ?: value
+                            val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
+                            technocore.saySigned(
+                                did = identity,
+                                room = CHECK_IN_ROOM,
+                                text = DidNote.line(identity, body),
+                                nonce = nonce,
+                                sign = { vault.sign(it) },
+                            ) is Technocore.Result.Verified
+                        }.getOrDefault(false)
+
+                        settle(
+                            Step.Publish,
+                            StepState.Verified(
+                                if (vouched) {
+                                    "Published, read back, and vouched for by your key"
+                                } else {
+                                    "Published and read back from the server"
+                                },
+                                Evidence(
+                                    "address" to PostComposer.noteUrl(identity),
+                                    "content" to value,
+                                    "checked" to "fetched again and matched exactly",
+                                    "vouched for" to if (vouched) {
+                                        "yes, a signed did-note line carries its hash"
+                                    } else {
+                                        "not yet - the note alone is a claim, not a proof"
+                                    },
+                                ),
                             ),
-                        ),
-                    )
+                        )
+                    }
 
                     is Technocore.Result.Refused -> settle(
                         Step.Publish,
