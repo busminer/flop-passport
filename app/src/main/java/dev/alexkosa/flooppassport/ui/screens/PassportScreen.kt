@@ -131,7 +131,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 did = identity,
                 seedHex = seedHex,
                 onSaveFile = {
-                    saveLauncher.launch("floop-passport-${'$'}{DidKeyShort(identity)}.txt")
+                    saveLauncher.launch("floop-passport-${didKeyShort(identity)}.txt")
                 },
                 onDismiss = { vm.hideSeed() },
             )
@@ -286,7 +286,7 @@ private const val SKR_MINT = "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3"
 private const val SKR_NAME = "SKR"
 
 /** Short, filename-safe form of a DID, for the saved backup's name. */
-private fun DidKeyShort(did: String): String =
+private fun didKeyShort(did: String): String =
     did.removePrefix("did:key:").take(10)
 
 /** What the dialog tells the user is coming, so "continue" is never a leap in the dark. */
