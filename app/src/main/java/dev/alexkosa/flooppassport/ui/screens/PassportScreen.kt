@@ -250,7 +250,12 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             }
 
             Spacer(Modifier.height(FlopSpacing.lg))
-            FlopSupportCard(recipient = SUPPORT_WALLET)
+            FlopSupportCard(
+                recipient = SUPPORT_WALLET,
+                displayName = SUPPORT_NAME,
+                splToken = SKR_MINT,
+                tokenName = SKR_NAME,
+            )
 
             Spacer(Modifier.height(FlopSpacing.lg))
             FlopButtonSecondary("delete passport from this phone", { vm.deletePassport() })
@@ -262,11 +267,23 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
 /**
  * Where a tip goes.
  *
- * TODO before release: Alex must confirm this is the address he wants receiving money.
- * It is the wallet his own Passport was derived from, which is a reasonable default and
- * a bad one to assume.
+ * The name is what the button shows, because `kosa.skr` reads as a person and a base58
+ * address reads as noise. The address is baked rather than resolved at runtime: `.skr`
+ * names live in AllDomains, resolving one costs a public RPC round trip, and a donation
+ * button that can fail to load its own recipient is worse than one that cannot follow a
+ * moved name. This pairing was verified on 2026-08-24 and again today; re-check it if the
+ * name is ever pointed somewhere else.
  */
+private const val SUPPORT_NAME = "kosa.skr"
 private const val SUPPORT_WALLET = "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax"
+
+/**
+ * SKR, the Solana Mobile token, preselected in the wallet's send screen. Verified on
+ * mainnet: an SPL mint owned by the token program, six decimals. A wrong mint here would
+ * point somebody's money at nothing, so it is checked rather than copied out of a chat.
+ */
+private const val SKR_MINT = "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3"
+private const val SKR_NAME = "SKR"
 
 /** Short, filename-safe form of a DID, for the saved backup's name. */
 private fun DidKeyShort(did: String): String =

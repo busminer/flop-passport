@@ -94,6 +94,22 @@ fun FlopBackupSheet(
             Box(
                 Modifier
                     .fillMaxWidth()
+                    .background(FlopColors.Cyan.copy(alpha = 0.07f), FlopShapes.md)
+                    .padding(FlopSpacing.sm),
+            ) {
+                Text(
+                    "This is NOT your Solana wallet key. Your wallet's own key never " +
+                        "leaves Seed Vault and this app has never seen it. What you are " +
+                        "looking at is a separate key that signs only on Technocore.",
+                    style = FlopType.bodySm,
+                    color = FlopColors.Cyan,
+                )
+            }
+
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Box(
+                Modifier
+                    .fillMaxWidth()
                     .background(FlopColors.Green.copy(alpha = 0.07f), FlopShapes.md)
                     .padding(FlopSpacing.sm),
             ) {

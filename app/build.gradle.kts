@@ -44,14 +44,16 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.navigation:navigation-compose:2.9.3")
     implementation("androidx.biometric:biometric:1.1.0")
+    // Pinned above what biometric:1.1.0 drags in. That old fragment still runs
+    // FragmentActivity.checkForValidRequestCode, which rejects the request codes the
+    // modern ActivityResultRegistry generates - so the first file picker launched from a
+    // FragmentActivity crashed with "Can only use lower 16 bits for requestCode".
+    implementation("androidx.fragment:fragment-ktx:1.8.9")
     implementation("androidx.datastore:datastore-preferences:1.1.7")
 
     // Ed25519, Argon2id, base58/base64 primitives
     implementation("org.bouncycastle:bcprov-jdk18on:1.81")
 
-    // QR only. The core artifact is pure Java with no Android dependency and no
-    // camera, scanning or UI code, which keeps the permission surface at zero.
-    implementation("com.google.zxing:core:3.5.3")
 
     // Solana Mobile Wallet Adapter (dApp side)
     // The -ktx artifact declares the same namespace as the base clientlib it depends on,
