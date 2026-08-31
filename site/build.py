@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import re
 import hashlib
+
+import quotes
 from pathlib import Path
 
 SITE = Path(__file__).parent
@@ -82,6 +84,7 @@ def build_index() -> None:
     body = body.replace("<!--LOCKUP_SMALL-->", small)
     body = body.replace("<!--LOCKUP-->", lockup)
     body = body.replace("<!--SEEKER-->", seeker)
+    body = body.replace("<!--TWEETS-->", quotes.render())
 
     out = page(
         "FLOOP Passport for Seeker",
