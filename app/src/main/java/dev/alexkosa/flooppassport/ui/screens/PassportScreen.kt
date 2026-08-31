@@ -40,6 +40,8 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopMonoData
 import dev.alexkosa.flooppassport.ui.designsystem.FlopShapes
 import dev.alexkosa.flooppassport.ui.designsystem.FlopSpacing
 import dev.alexkosa.flooppassport.ui.designsystem.FlopState
+import dev.alexkosa.flooppassport.ui.designsystem.FlopProblemDialog
+import dev.alexkosa.flooppassport.ui.designsystem.FlopStepDialog
 import dev.alexkosa.flooppassport.ui.designsystem.FlopStepLadder
 import dev.alexkosa.flooppassport.ui.designsystem.FlopType
 import dev.alexkosa.flooppassport.util.confirmHaptic
@@ -64,6 +66,40 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
     val verifiedCount = remember(flow) { Step.all.count { flow[it] is StepState.Verified } }
     LaunchedEffect(verifiedCount) {
         if (verifiedCount > 0) confirmHaptic(context)
+    }
+
+    // The outcome of whatever the user just pressed, shown once and dismissed by them.
+    vm.announce?.let { step ->
+        when (val state = flow[step]) {
+            is StepState.Verified -> FlopStepDialog(
+                step = step,
+                headline = state.summary,
+                body = nextHint(flow.next),
+                evidence = state.evidence,
+                nextLabel = if (flow.complete) "done" else "continue",
+                onDismiss = { vm.dismissAnnouncement() },
+            )
+
+            is StepState.Failed -> FlopProblemDialog(
+                step = step,
+                headline = state.summary,
+                whatToDo = state.whatToDo,
+                publishedSomething = state.publishedSomething,
+                detail = state.detail,
+                onDismiss = { vm.dismissAnnouncement() },
+            )
+
+            is StepState.Unconfirmed -> FlopProblemDialog(
+                step = step,
+                headline = state.summary,
+                whatToDo = state.whatToDo,
+                publishedSomething = true,
+                detail = state.detail,
+                onDismiss = { vm.dismissAnnouncement() },
+            )
+
+            else -> Unit
+        }
     }
 
     Column(
@@ -162,6 +198,15 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         }
         Spacer(Modifier.height(FlopSpacing.xl))
     }
+}
+
+/** What the dialog tells the user is coming, so "continue" is never a leap in the dark. */
+private fun nextHint(next: Step?): String = when (next) {
+    Step.Create -> "Next: create your Passport from your wallet."
+    Step.Protect -> "Next: seal the key in this phone's secure storage."
+    Step.Publish -> "Next: publish your identity so anyone can verify you."
+    Step.CheckIn -> "Next: make your first signed check-in."
+    Step.Ready, null -> "That was the last step. Your Passport is live."
 }
 
 @Composable

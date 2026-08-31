@@ -44,6 +44,9 @@ import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Hand the system splash over to our own theme before the first frame, so the
+        // Chip the system was showing gives way to the launch scene without a flash.
+        setTheme(R.style.Theme_FloopPassport)
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent { PassportApp() }

@@ -42,11 +42,85 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     var walletAddress by mutableStateOf(vault.walletAddress)
         private set
 
+    /**
+     * The step whose outcome the user has not seen yet.
+     *
+     * Set only by actions the user took, never by the background refresh on opening: being
+     * greeted by a congratulations dialog for something you did yesterday is noise, and it
+     * would teach people to dismiss these without reading them.
+     */
+    var announce by mutableStateOf<Step?>(null)
+        private set
+
+    fun dismissAnnouncement() {
+        announce = null
+    }
+
     /** True once the launch scene has played, so a rotation does not replay it. */
     var launchScenePlayed by mutableStateOf(false)
         private set
 
     val securityLevel: PassportVault.SecurityLevel get() = vault.securityLevel
+
+    init {
+        // Re-establish what is actually true rather than trusting the phone. A reinstall,
+        // a cleared app or a second device all leave a Passport whose public records
+        // already exist; showing those steps as pending would invite the user to publish
+        // them again, and a room is append-only.
+        if (did != null) refreshFromServer()
+    }
+
+    /** Ask the server what it already holds for this identity, and reflect only that. */
+    fun refreshFromServer() {
+        val identity = did ?: return
+        viewModelScope.launch {
+            runCatching {
+                val note = technocore.readIdentityNote(identity)
+                if (!note.isNullOrBlank()) {
+                    set(
+                        Step.Publish,
+                        StepState.Verified(
+                            "Already published, read back just now",
+                            Evidence(
+                                "address" to PostComposer.noteUrl(identity),
+                                "content" to note,
+                                "checked" to "fetched from the server on opening",
+                            ),
+                        ),
+                    )
+                }
+                technocore.findLatestMessage(CHECK_IN_ROOM, identity)?.let { p ->
+                    set(
+                        Step.CheckIn,
+                        StepState.Verified(
+                            "Already checked in, found in the room",
+                            Evidence(
+                                "room" to p.room,
+                                "sequence" to p.seq.toString(),
+                                "nonce" to p.nonce,
+                                "text" to p.signedText,
+                                "when" to p.timestamp,
+                            ),
+                        ),
+                    )
+                    if (flow[Step.Publish] is StepState.Verified &&
+                        flow[Step.Protect] is StepState.Verified
+                    ) {
+                        set(
+                            Step.Ready,
+                            StepState.Verified(
+                                "Your Passport is live",
+                                Evidence(
+                                    "identity" to identity,
+                                    "verify it yourself" to PostComposer.noteUrl(identity),
+                                ),
+                            ),
+                        )
+                    }
+                }
+            }
+        }
+    }
 
     fun markLaunchScenePlayed() {
         launchScenePlayed = true
@@ -54,6 +128,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun set(step: Step, state: StepState) {
         flow = flow.with(step, state)
+    }
+
+    /** Set a step and tell the user about it, for outcomes they asked for by pressing something. */
+    private fun settle(step: Step, state: StepState) {
+        flow = flow.with(step, state)
+        announce = step
     }
 
     // ---------------------------------------------------------------- 01 create
@@ -69,7 +149,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 derived.passportSeed.fill(0)
                 did = derived.did
                 walletAddress = derived.walletAddress
-                set(
+                settle(
                     Step.Create,
                     StepState.Verified(
                         "Identity derived from your wallet signature",
@@ -86,7 +166,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     ),
                 )
             } catch (t: Throwable) {
-                set(
+                settle(
                     Step.Create,
                     StepState.Failed(
                         summary = "The wallet did not complete the signature",
@@ -116,7 +196,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 val probe = "floop-passport vault self-test".toByteArray(Charsets.UTF_8)
                 val ok = Ed25519.verify(DidKey.publicKey(identity), probe, vault.sign(probe))
                 if (!ok) {
-                    set(
+                    settle(
                         Step.Protect,
                         StepState.Failed(
                             "The stored key does not match your identity",
@@ -126,7 +206,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                     return@launch
                 }
-                set(
+                settle(
                     Step.Protect,
                     StepState.Verified(
                         when (vault.securityLevel) {
@@ -144,7 +224,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     ),
                 )
             } catch (t: Throwable) {
-                set(
+                settle(
                     Step.Protect,
                     StepState.Failed(
                         "Could not read the key back from secure storage",
@@ -166,7 +246,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
                 when (val r = technocore.publishIdentityNote(identity, value)) {
-                    is Technocore.Result.Verified -> set(
+                    is Technocore.Result.Verified -> settle(
                         Step.Publish,
                         StepState.Verified(
                             "Published and read back from the server",
@@ -178,7 +258,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         ),
                     )
 
-                    is Technocore.Result.Refused -> set(
+                    is Technocore.Result.Refused -> settle(
                         Step.Publish,
                         StepState.Failed(
                             "technocore.chat refused the note",
@@ -188,7 +268,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         ),
                     )
 
-                    is Technocore.Result.Unconfirmed -> set(
+                    is Technocore.Result.Unconfirmed -> settle(
                         Step.Publish,
                         StepState.Unconfirmed(
                             "Accepted, but we could not read it back yet",
@@ -199,7 +279,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 }
             } catch (t: Throwable) {
-                set(
+                settle(
                     Step.Publish,
                     StepState.Failed(
                         "Could not reach technocore.chat",
@@ -219,6 +299,36 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         set(Step.CheckIn, StepState.Running("Signing your first check-in and sending it"))
         viewModelScope.launch {
             try {
+                // A room is append-only and public. If this identity already has a message
+                // there, show that one rather than adding a second identical line - the
+                // duplicate cannot be taken back, and it is exactly what the lobby is full
+                // of.
+                technocore.findLatestMessage(CHECK_IN_ROOM, identity)?.let { existing ->
+                    settle(
+                        Step.CheckIn,
+                        StepState.Verified(
+                            "You have already checked in",
+                            Evidence(
+                                "room" to existing.room,
+                                "sequence" to existing.seq.toString(),
+                                "nonce" to existing.nonce,
+                                "text" to existing.signedText,
+                                "when" to existing.timestamp,
+                            ),
+                        ),
+                    )
+                    settle(
+                        Step.Ready,
+                        StepState.Verified(
+                            "Your Passport is live",
+                            Evidence(
+                                "identity" to identity,
+                                "verify it yourself" to PostComposer.noteUrl(identity),
+                            ),
+                        ),
+                    )
+                    return@launch
+                }
                 val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
                 when (
                     val r = technocore.saySigned(
@@ -230,7 +340,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 ) {
                     is Technocore.Result.Verified -> {
-                        set(
+                        settle(
                             Step.CheckIn,
                             StepState.Verified(
                                 "Signed, accepted and found again in the room",
@@ -243,7 +353,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                                 ),
                             ),
                         )
-                        set(
+                        settle(
                             Step.Ready,
                             StepState.Verified(
                                 "Your Passport is live",
@@ -255,7 +365,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         )
                     }
 
-                    is Technocore.Result.Refused -> set(
+                    is Technocore.Result.Refused -> settle(
                         Step.CheckIn,
                         StepState.Failed(
                             "technocore.chat refused the signed write",
@@ -265,7 +375,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         ),
                     )
 
-                    is Technocore.Result.Unconfirmed -> set(
+                    is Technocore.Result.Unconfirmed -> settle(
                         Step.CheckIn,
                         StepState.Unconfirmed(
                             "Sent, but not confirmed in the room yet",
@@ -276,7 +386,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 }
             } catch (t: Throwable) {
-                set(
+                settle(
                     Step.CheckIn,
                     StepState.Failed(
                         "Could not reach technocore.chat",

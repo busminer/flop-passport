@@ -192,6 +192,37 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     }
 
     /**
+     * Our most recent verified message in a room, if the server still has one.
+     *
+     * Used on open so the app can re-establish what is true rather than trusting local
+     * state, and used before posting so a user who already checked in is shown their
+     * existing record instead of being invited to post a second identical one. Rooms are
+     * public and append-only; a duplicate cannot be taken back.
+     */
+    suspend fun findLatestMessage(room: String, did: String): Proof? {
+        val r = get("/r/${enc(room)}?since=0&limit=200&format=json")
+        if (!r.ok) return null
+        return runCatching {
+            val messages = JSONObject(r.body).getJSONArray("messages")
+            (0 until messages.length())
+                .map { messages.getJSONObject(it) }
+                .filter { it.optString("from") == did }
+                .maxByOrNull { it.optInt("seq") }
+                ?.let {
+                    Proof(
+                        did = did,
+                        room = room,
+                        nonce = it.optString("nonce"),
+                        signedText = it.optString("text"),
+                        signature = "",
+                        seq = it.optInt("seq"),
+                        timestamp = it.optString("ts"),
+                    )
+                }
+        }.getOrNull()
+    }
+
+    /**
      * The next nonce for a room, taken from what the server already holds rather than from
      * local state. A phone whose clock jumped backwards, or a reinstall that lost its
      * counter, would otherwise produce a nonce the server refuses with a message the user

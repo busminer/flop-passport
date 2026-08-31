@@ -44,10 +44,9 @@ def main() -> int:
         print("refusing: no usable viewBox", file=sys.stderr)
         return 1
     min_x, min_y, vw, vh = (float(v) for v in vb)
-    if min_x or min_y:
-        print("refusing: cropped viewBox needs a translate this tool does not emit",
-              file=sys.stderr)
-        return 1
+    # A cropped viewBox is expressed as a group translate, which is the exact equivalent:
+    # VectorDrawable has no viewBox origin, so the artwork is shifted instead of the frame.
+    # Geometry is untouched either way.
 
     fills = parse_class_fills(root)
 
@@ -85,10 +84,16 @@ def main() -> int:
         f'    android:viewportWidth="{vw:g}"',
         f'    android:viewportHeight="{vh:g}">',
     ]
+    shifted = min_x or min_y
+    if shifted:
+        out.append(f'    <group android:translateX="{-min_x:g}" android:translateY="{-min_y:g}">')
+    indent = "        " if shifted else "    "
     for colour, d in paths:
-        out.append("    <path")
-        out.append(f'        android:fillColor="{colour}"')
-        out.append(f'        android:pathData="{d}" />')
+        out.append(f"{indent}<path")
+        out.append(f'{indent}    android:fillColor="{colour}"')
+        out.append(f'{indent}    android:pathData="{d}" />')
+    if shifted:
+        out.append("    </group>")
     out.append("</vector>")
 
     dst.parent.mkdir(parents=True, exist_ok=True)
