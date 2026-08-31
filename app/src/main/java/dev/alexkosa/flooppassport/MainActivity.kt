@@ -4,9 +4,9 @@ import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.fragment.app.FragmentActivity
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -42,7 +42,11 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopState
 import dev.alexkosa.flooppassport.ui.screens.PassportScreen
 import kotlinx.coroutines.delay
 
-class MainActivity : ComponentActivity() {
+/**
+ * A FragmentActivity rather than a ComponentActivity: BiometricPrompt attaches to a
+ * fragment host, and the key-export screen needs it.
+ */
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Hand the system splash over to our own theme before the first frame, so the
         // Chip the system was showing gives way to the launch scene without a flash.

@@ -49,6 +49,10 @@ dependencies {
     // Ed25519, Argon2id, base58/base64 primitives
     implementation("org.bouncycastle:bcprov-jdk18on:1.81")
 
+    // QR only. The core artifact is pure Java with no Android dependency and no
+    // camera, scanning or UI code, which keeps the permission surface at zero.
+    implementation("com.google.zxing:core:3.5.3")
+
     // Solana Mobile Wallet Adapter (dApp side)
     // The -ktx artifact declares the same namespace as the base clientlib it depends on,
     // which AGP rejects outright. The base library is the whole API anyway; the coroutine

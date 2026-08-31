@@ -40,10 +40,17 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopMonoData
 import dev.alexkosa.flooppassport.ui.designsystem.FlopShapes
 import dev.alexkosa.flooppassport.ui.designsystem.FlopSpacing
 import dev.alexkosa.flooppassport.ui.designsystem.FlopState
+import dev.alexkosa.flooppassport.ui.designsystem.FlopBackupSheet
 import dev.alexkosa.flooppassport.ui.designsystem.FlopProblemDialog
+import dev.alexkosa.flooppassport.ui.designsystem.FlopSupportCard
 import dev.alexkosa.flooppassport.ui.designsystem.FlopStepDialog
 import dev.alexkosa.flooppassport.ui.designsystem.FlopStepLadder
 import dev.alexkosa.flooppassport.ui.designsystem.FlopType
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.fragment.app.FragmentActivity
+import dev.alexkosa.flooppassport.util.Biometrics
 import dev.alexkosa.flooppassport.util.confirmHaptic
 
 /**
@@ -61,6 +68,22 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
     val walletLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
     ) { }
+
+    var gateMessage by remember { mutableStateOf<String?>(null) }
+
+    // The Storage Access Framework, so the user picks where the file goes and the app never
+    // asks for storage permission or touches anywhere it was not sent.
+    val saveLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("text/plain"),
+    ) { uri ->
+        if (uri != null) {
+            runCatching {
+                context.contentResolver.openOutputStream(uri)?.use { out ->
+                    out.write(vm.backupDocument().toByteArray(Charsets.UTF_8))
+                }
+            }
+        }
+    }
 
     // One tick each time a step actually settles, not on every recomposition.
     val verifiedCount = remember(flow) { Step.all.count { flow[it] is StepState.Verified } }
@@ -99,6 +122,19 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             )
 
             else -> Unit
+        }
+    }
+
+    vm.revealedSeedHex?.let { seedHex ->
+        vm.did?.let { identity ->
+            FlopBackupSheet(
+                did = identity,
+                seedHex = seedHex,
+                onSaveFile = {
+                    saveLauncher.launch("floop-passport-${'$'}{DidKeyShort(identity)}.txt")
+                },
+                onDismiss = { vm.hideSeed() },
+            )
         }
     }
 
@@ -193,12 +229,48 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         }
 
         if (vm.did != null) {
-            Spacer(Modifier.height(FlopSpacing.sm))
+            Spacer(Modifier.height(FlopSpacing.lg))
+            FlopButtonSecondary("save my key", {
+                val activity = context as? FragmentActivity
+                if (activity == null) {
+                    gateMessage = "Could not open the security prompt on this screen."
+                } else {
+                    Biometrics.authenticate(
+                        activity = activity,
+                        title = "Show your private key",
+                        subtitle = "Anyone holding it can sign as you",
+                        onSuccess = { vm.revealSeed() },
+                        onFailure = { gateMessage = it },
+                    )
+                }
+            })
+            gateMessage?.let {
+                Spacer(Modifier.height(FlopSpacing.sm))
+                Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
+            }
+
+            Spacer(Modifier.height(FlopSpacing.lg))
+            FlopSupportCard(recipient = SUPPORT_WALLET)
+
+            Spacer(Modifier.height(FlopSpacing.lg))
             FlopButtonSecondary("delete passport from this phone", { vm.deletePassport() })
         }
         Spacer(Modifier.height(FlopSpacing.xl))
     }
 }
+
+/**
+ * Where a tip goes.
+ *
+ * TODO before release: Alex must confirm this is the address he wants receiving money.
+ * It is the wallet his own Passport was derived from, which is a reasonable default and
+ * a bad one to assume.
+ */
+private const val SUPPORT_WALLET = "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax"
+
+/** Short, filename-safe form of a DID, for the saved backup's name. */
+private fun DidKeyShort(did: String): String =
+    did.removePrefix("did:key:").take(10)
 
 /** What the dialog tells the user is coming, so "continue" is never a leap in the dark. */
 private fun nextHint(next: Step?): String = when (next) {

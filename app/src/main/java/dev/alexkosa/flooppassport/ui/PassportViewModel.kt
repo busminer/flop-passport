@@ -399,6 +399,49 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    /**
+     * The private key in the clear, for the export screen only.
+     *
+     * Held in state just long enough to be shown, then dropped by [hideSeed] when the
+     * sheet closes. It never goes near a log, a crash report or the network - the vault
+     * exposes signing for everything else precisely so this is the only path that sees it.
+     */
+    var revealedSeedHex by mutableStateOf<String?>(null)
+        private set
+
+    fun revealSeed() {
+        runCatching {
+            val seed = vault.exportSeed()
+            revealedSeedHex = seed.joinToString("") { "%02x".format(it) }
+            seed.fill(0)
+        }
+    }
+
+    fun hideSeed() {
+        revealedSeedHex = null
+    }
+
+    /** The file the user saves. Plain, self-describing, and honest about what it holds. */
+    fun backupDocument(): String {
+        val identity = did ?: return ""
+        val seedHex = revealedSeedHex ?: return ""
+        return buildString {
+            appendLine("FLOOP Passport for Seeker - private backup")
+            appendLine()
+            appendLine("did: $identity")
+            appendLine("fingerprint: " + DidKey.fingerprint(identity))
+            appendLine("wallet: " + (walletAddress ?: "-"))
+            appendLine("algorithm: Ed25519, did:key, 32-byte seed")
+            appendLine("seed_hex: $seedHex")
+            appendLine()
+            appendLine("Anyone holding seed_hex can sign as this identity on Technocore.")
+            appendLine("Keep this file offline. Never send it to anyone, including the app author.")
+            appendLine()
+            appendLine("You do not need this file to recover. The same Solana wallet that")
+            appendLine("created this Passport rebuilds it on any device.")
+        }
+    }
+
     fun deletePassport() {
         vault.delete()
         did = null
@@ -415,7 +458,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      */
     private fun restoreFlow(): FlowState {
         val existing = vault.did ?: return FlowState()
-        return FlowState().with(
+        var state = FlowState().with(
             Step.Create,
             StepState.Verified(
                 "Identity derived from your wallet signature",
@@ -426,5 +469,33 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 ),
             ),
         )
+
+        // Protect is provable here and now without asking anyone: sign a throwaway string
+        // with the stored key and check it against the DID. Leaving it pending after a
+        // reinstall would show the user a grey step for something that is demonstrably
+        // already true, and invite them to redo it.
+        runCatching {
+            val probe = "floop-passport vault self-test".toByteArray(Charsets.UTF_8)
+            if (Ed25519.verify(DidKey.publicKey(existing), probe, vault.sign(probe))) {
+                state = state.with(
+                    Step.Protect,
+                    StepState.Verified(
+                        when (vault.securityLevel) {
+                            PassportVault.SecurityLevel.STRONGBOX ->
+                                "Sealed by StrongBox, this phone's separate security chip"
+                            PassportVault.SecurityLevel.TEE ->
+                                "Sealed by this phone's trusted execution environment"
+                            else -> "Sealed by Android Keystore"
+                        },
+                        Evidence(
+                            "storage" to vault.securityLevel.name,
+                            "self test" to "re-checked when the app opened",
+                            "recovery" to "the same wallet rebuilds this identity anywhere",
+                        ),
+                    ),
+                )
+            }
+        }
+        return state
     }
 }
