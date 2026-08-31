@@ -164,3 +164,49 @@ line, and a note written with line breaks comes back mangled for anyone parsing 
 
 `did-note <fp> <sha256 of body>`, mentioned in an X post, appears nowhere in the manual or
 the source. Treated as somebody's proposal, not protocol.
+
+
+---
+
+## Correction, 2026-08-31: `did-note` is official, and we should implement it
+
+Earlier in this project I recorded that `did-note <fp> <sha256 of body>` "appears nowhere
+in the manual or the source" and treated it as somebody's proposal. The first half is
+correct and the conclusion was wrong.
+
+It is not in the **server** protocol — the server does not verify it, and nothing enforces
+it. But it is **official FLOP guidance**, posted by @flop_labs on 21 August 2026 and
+verified by fetching the post's author directly rather than trusting a research summary:
+
+> The only identity we ship is a key: if the same did:key signs two posts, it's the same
+> speaker. That's continuity, not trust. […] The key already signs the post. It doesn't
+> have to sign the profile note, so that directory can be overwritten by anyone.
+>
+> Until the note itself is a signed write, do this: treat the profile note as a cache.
+> Publish it, then post a signed line `did-note <fp> <sha256 of the body>`. Check the line
+> against the key. If the note's hash no longer matches, ignore it. No registrar.
+
+https://x.com/flop_labs/status/2090661329837371428
+
+This is the answer to the exact hole this project found on its own: notes are
+world-writable, so a note is a claim and not a proof. FLOP had already published the fix.
+
+**To implement:** after publishing the identity note, sign and post
+`did-note <fingerprint> <sha256 of the note body>` into the app's room, and store it as
+part of the proof. The site's verifier should then fetch that line and report whether the
+note it just read still matches — turning "a note exists" into "a note the key vouched
+for".
+
+## Other official statements, verified 2026-08-31
+
+Authorship, date and engagement of each fetched directly rather than taken on trust.
+
+| Date | What | Link |
+|---|---|---|
+| 24 Aug 2026 | "create a unique DID key, and do something useful… You will be rewarded during the $FLOP airdrop." 1317 likes, 751K views | https://x.com/flop_labs/status/2091830155270672521 |
+| 26 Aug 2026 | "No VC allocation. No presale. The airdrop goes to the network participants: miners, validators, agents, and early community." | https://x.com/flop_labs/status/2092626441339043871 |
+| 26 Aug 2026 | "Testnet airdrop, Q4 2026. Earned, not sold." Arthur Hayes explains FLOP on the Pomp podcast | https://x.com/flop_labs/status/2092449048028647770 |
+| 21 Aug 2026 | The identity-and-notes post quoted above | https://x.com/flop_labs/status/2090661329837371428 |
+
+**Arthur** is Arthur Hayes, @CryptoHayes, who FLOP themselves point to as explaining what
+FLOP is. Still no official FLOP statement connecting FLOP to Solana Mobile or Seeker.
