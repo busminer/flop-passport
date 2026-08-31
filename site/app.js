@@ -37,7 +37,7 @@
   // The marks fade in as whole objects. FLOP's logo standards forbid animating the lockup
   // as anything other than a whole, so the page never takes it apart.
   if (!reduce) {
-    ["heroLockup", "heroFor"].forEach(function (id) {
+    ["heroLockup", "heroJoin", "heroFor"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.classList.add("play");
     });

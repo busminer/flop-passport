@@ -77,7 +77,7 @@ def page(title: str, description: str, body: str) -> str:
 def build_index() -> None:
     body = (SITE / "_body.html").read_text(encoding="utf-8")
     lockup = svg("flop-lockup-reverse.svg", class_prefix="fl")
-    seeker = svg("seeker_isolated_white.svg", class_prefix="sk")
+    seeker = svg("seeker_solana_mobile_lockup_white.svg", class_prefix="sk")
 
     small = lockup.replace("<svg ", '<svg style="height:20px;width:auto" ', 1)
 
@@ -85,6 +85,12 @@ def build_index() -> None:
     body = body.replace("<!--LOCKUP-->", lockup)
     body = body.replace("<!--SEEKER-->", seeker)
     body = body.replace("<!--TWEETS-->", quotes.render())
+    # A second copy for the platform plate: an SVG cannot be in two places at
+    # once, and its classes are scoped again so the two do not share a rule.
+    body = body.replace(
+        "<!--SEEKER_PLATE-->",
+        svg("seeker_solana_mobile_lockup_white.svg", class_prefix="sp"),
+    )
 
     out = page(
         "FLOOP Passport for Seeker",
