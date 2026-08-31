@@ -87,10 +87,15 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 100%);
 }
 
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--lg); }
+/*
+  Positioned above the grid on purpose. `.grid-bg` is absolutely positioned, so without a
+  stacking context of its own the content underneath it paints below - which showed up as
+  faint grid lines running straight across a solid cyan button.
+*/
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 var(--lg); }
 
 h1, h2, h3 { font-family: var(--mono); font-weight: 700; margin: 0; letter-spacing: -0.01em; }
-h1 { font-size: clamp(34px, 6vw, 62px); line-height: 1.06; }
+h1 { font-size: clamp(28px, 6vw, 62px); line-height: 1.08; }
 h2 { font-size: clamp(24px, 3.4vw, 36px); line-height: 1.2; }
 h3 { font-size: 18px; line-height: 1.3; }
 
@@ -126,10 +131,27 @@ header .mark svg { height: 20px; width: auto; }
 header nav { display: flex; gap: var(--lg); }
 header nav a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
 header nav a:hover { color: var(--ice); }
-@media (max-width: 720px) { header nav { display: none; } }
+/*
+  On a phone the nav becomes a scrollable strip rather than disappearing. Hiding it left a
+  visitor on the smallest screen with no way to reach any section except by scrolling the
+  whole page - on a site about a phone app, of all things.
+*/
+@media (max-width: 760px) {
+  header .wrap { height: auto; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  header nav {
+    order: 3;
+    width: 100%;
+    gap: var(--md);
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  header nav::-webkit-scrollbar { display: none; }
+  header nav a { white-space: nowrap; }
+}
 
 /* ---------------------------------------------------------------- hero */
-.hero { position: relative; padding: clamp(56px, 12vh, 120px) 0 var(--xxl); overflow: hidden; }
+.hero { position: relative; padding: clamp(28px, 7vh, 110px) 0 var(--xl); overflow: hidden; }
 .hero-stage {
   display: flex;
   flex-direction: column;
@@ -137,17 +159,17 @@ header nav a:hover { color: var(--ice); }
   gap: var(--md);
   margin-bottom: var(--xl);
 }
-.hero-lockup { width: min(420px, 76vw); opacity: 0; }
+.hero-lockup { width: min(420px, 62vw); opacity: 0; }
 .hero-lockup svg { width: 100%; height: auto; display: block; }
 .hero-for { display: flex; align-items: center; gap: var(--md); opacity: 0; }
-.hero-seeker { width: min(210px, 40vw); }
+.hero-seeker { width: min(210px, 33vw); }
 .hero-seeker svg { width: 100%; height: auto; display: block; }
 .hero h1 { text-align: center; margin-top: var(--lg); }
 .hero .sub {
   text-align: center;
   max-width: 640px;
   margin: var(--md) auto 0;
-  font-size: 18px;
+  font-size: clamp(15px, 1.6vw, 18px);
 }
 
 .play { animation-play-state: running; }
@@ -165,7 +187,7 @@ header nav a:hover { color: var(--ice); }
   50% { filter: drop-shadow(0 0 17px rgba(50, 215, 75, 0.85)) drop-shadow(0 0 40px rgba(50, 215, 75, 0.4)); }
 }
 
-.cta-row { display: flex; gap: var(--sm); justify-content: center; flex-wrap: wrap; margin-top: var(--xl); }
+.cta-row { display: flex; gap: var(--sm); justify-content: center; flex-wrap: wrap; margin-top: var(--lg); }
 
 .btn {
   display: inline-block;
@@ -280,6 +302,66 @@ ul.plain li::marker { color: var(--cyan); }
   .hero-lockup, .hero-for { opacity: 1; }
 }
 
+
+/* ---------------------------------------------------------------- phones */
+/*
+  This is a product for phones, so the small screen is the real one. Everything below
+  tightens vertical rhythm so the first action is reachable without a scroll, and drops
+  the hard line break in the headline - a <br> that reads well at 1200px puts one word on
+  a line of its own at 375px.
+*/
+@media (max-width: 760px) {
+  section { padding: var(--xl) 0; }
+  .wrap { padding: 0 var(--md); }
+  .hero-stage { gap: var(--sm); margin-bottom: var(--md); }
+  .hero h1 { margin-top: var(--md); }
+  .hero h1 br { display: none; }
+  .card { padding: var(--md); }
+  .section-head { margin-bottom: var(--lg); }
+  .cta-row .btn { flex: 1 1 100%; text-align: center; }
+  .verify-row input { flex-basis: 100%; }
+  .verify-row .btn { width: 100%; }
+  footer .wrap { flex-direction: column; align-items: flex-start; gap: var(--md); }
+  .step { grid-template-columns: 32px 1fr; gap: var(--sm); }
+}
+
+/* Touch targets: anything tappable clears 44px, which is the floor below which people
+   start missing and blaming themselves. */
+@media (hover: none) {
+  header nav a { padding: 10px 0; }
+  footer a { padding: 6px 0; }
+}
+
+/* ---------------------------------------------------------------- quotes */
+.quote {
+  background: var(--surface);
+  border: 1px solid var(--surface-light);
+  border-left: 2px solid var(--cyan);
+  border-radius: var(--r-md);
+  padding: var(--lg);
+}
+.quote blockquote {
+  margin: 0 0 var(--md);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ice);
+}
+.quote .who { display: flex; align-items: center; gap: var(--sm); flex-wrap: wrap; }
+.quote .who a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; }
+.quote .meta { font-family: var(--mono); font-size: 11px; color: var(--grey); letter-spacing: 0.06em; }
+
+/* ---------------------------------------------------------------- tip */
+.tip-box {
+  background: linear-gradient(180deg, rgba(0, 180, 216, 0.07), rgba(10, 17, 40, 0)) , var(--surface);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  border-radius: var(--r-lg);
+  padding: var(--xl);
+  text-align: center;
+}
+.tip-box .name { font-family: var(--mono); font-size: 22px; color: var(--ice); margin: var(--sm) 0 var(--xs); }
+.tip-box .handle { font-family: var(--mono); font-size: 14px; color: var(--cyan); }
+
 </style>
 </head>
 <body>
@@ -355,6 +437,7 @@ ul.plain li::marker { color: var(--cyan); }
       <a href="#steps">How it works</a>
       <a href="#verify">Verify</a>
       <a href="#get">Get it</a>
+      <a href="#support">Support</a>
     </nav>
   </div>
 </header>
@@ -474,7 +557,7 @@ ul.plain li::marker { color: var(--cyan); }
         </div>
       </div>
 
-      <h1>Your identity on Technocore,<br />born inside your Seeker.</h1>
+      <h1>Your identity on Technocore, <br />born inside your Seeker.</h1>
       <p class="sub">
         FLOOP Passport creates a permanent <code>did:key</code> identity from your Solana
         wallet, publishes it where anyone can verify it, and keeps the receipts. No account,
@@ -742,6 +825,37 @@ ul.plain li::marker { color: var(--cyan); }
       </div>
     </div>
   </section>
+  <section id="support">
+    <div class="grid-bg"></div>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="label cyan">Support</span>
+        <h2>Built by a community builder</h2>
+        <p>
+          Nobody commissioned this and nobody paid for it. If it saved you an afternoon,
+          there is a tip jar — in the app, and here.
+        </p>
+      </div>
+
+      <div class="tip-box reveal">
+        <span class="label">send to</span>
+        <div class="name">Alex Kosa</div>
+        <div class="handle" id="tipName">kosa.skr</div>
+
+        <div class="cta-row" style="margin-top:24px">
+          <a class="btn btn-primary" id="tipBtn" href="#">Send a tip in SKR</a>
+          <button class="btn btn-secondary" id="copyAddr" type="button">Copy address</button>
+        </div>
+
+        <p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+        <p style="margin:16px 0 0;font-size:14px">
+          On a phone this opens your wallet with SKR selected — you pick the amount and
+          confirm there. A tip changes nothing about your Passport and nothing about any
+          airdrop.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -862,12 +976,14 @@ ul.plain li::marker { color: var(--cyan); }
    * inert text and never as markup.
    */
   function stripBanner(body) {
-    var lines = body.split("\n");
+    var lines = body.split("
+");
     if (lines.length && lines[0].indexOf(UNTRUSTED) === 0) {
       lines.shift();
       while (lines.length && !lines[0].trim()) lines.shift();
     }
-    return lines.join("\n").trim();
+    return lines.join("
+").trim();
   }
 
   function el(tag, cls, text) {
@@ -997,6 +1113,44 @@ ul.plain li::marker { color: var(--cyan); }
       e.preventDefault();
       input.value = "did:key:z6Mkw1JAVEwLgronRpuuzvHTyiiUgdoQGqkHG8VXH847dqcJ";
       verify();
+    });
+  }
+
+  // ---------------------------------------------------------------- tip
+  /*
+    The same Solana Pay link the app builds, so the site and the app behave identically.
+    On a phone this hands off to whichever wallet registered the solana: scheme; on a
+    desktop nothing will claim it, which is why the address is printed underneath.
+  */
+  var TIP_NAME = "kosa.skr";
+  var TIP_WALLET = "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax";
+  var SKR_MINT = "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3";
+
+  var tipUri =
+    "solana:" + TIP_WALLET +
+    "?spl-token=" + encodeURIComponent(SKR_MINT) +
+    "&label=" + encodeURIComponent("FLOOP Passport for Seeker") +
+    "&message=" + encodeURIComponent("Thanks for building this");
+
+  var tipBtn = document.getElementById("tipBtn");
+  var tipAddr = document.getElementById("tipAddr");
+  var copyAddr = document.getElementById("copyAddr");
+
+  if (tipBtn) tipBtn.href = tipUri;
+  if (tipAddr) tipAddr.textContent = TIP_WALLET;
+  if (copyAddr) {
+    copyAddr.addEventListener("click", function () {
+      navigator.clipboard.writeText(TIP_WALLET).then(
+        function () {
+          copyAddr.textContent = "Copied";
+          setTimeout(function () { copyAddr.textContent = "Copy address"; }, 1800);
+        },
+        function () {
+          // Clipboard access can be refused; saying so beats a button that silently
+          // does nothing and leaves someone tapping it.
+          copyAddr.textContent = "Copy blocked - select it below";
+        }
+      );
     });
   }
 })();

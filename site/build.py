@@ -10,6 +10,7 @@ size and scope them.
 from __future__ import annotations
 
 import re
+import hashlib
 from pathlib import Path
 
 SITE = Path(__file__).parent
@@ -28,6 +29,16 @@ def svg(name: str, *, class_prefix: str | None = None) -> str:
         text = re.sub(r"\.st(\d)", rf".{class_prefix}\1", text)
         text = re.sub(r'class="st(\d)"', rf'class="{class_prefix}\1"', text)
     return text.strip()
+
+
+def cachebust(name: str) -> str:
+    """Append a content hash so a redeploy cannot serve a stale stylesheet.
+
+    Learned the boring way: an edited stylesheet kept rendering the old layout in a
+    browser that had cached it, which reads exactly like a CSS rule that did not work.
+    """
+    digest = hashlib.sha256((SITE / name).read_bytes()).hexdigest()[:8]
+    return f"/{name}?v={digest}"
 
 
 def page(title: str, description: str, body: str) -> str:
@@ -51,11 +62,11 @@ def page(title: str, description: str, body: str) -> str:
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="{cachebust("styles.css")}" />
 </head>
 <body>
 {body}
-<script src="/app.js" defer></script>
+<script src="{cachebust("app.js")}" defer></script>
 </body>
 </html>
 """

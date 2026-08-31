@@ -241,4 +241,42 @@
       verify();
     });
   }
+
+  // ---------------------------------------------------------------- tip
+  /*
+    The same Solana Pay link the app builds, so the site and the app behave identically.
+    On a phone this hands off to whichever wallet registered the solana: scheme; on a
+    desktop nothing will claim it, which is why the address is printed underneath.
+  */
+  var TIP_NAME = "kosa.skr";
+  var TIP_WALLET = "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax";
+  var SKR_MINT = "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3";
+
+  var tipUri =
+    "solana:" + TIP_WALLET +
+    "?spl-token=" + encodeURIComponent(SKR_MINT) +
+    "&label=" + encodeURIComponent("FLOOP Passport for Seeker") +
+    "&message=" + encodeURIComponent("Thanks for building this");
+
+  var tipBtn = document.getElementById("tipBtn");
+  var tipAddr = document.getElementById("tipAddr");
+  var copyAddr = document.getElementById("copyAddr");
+
+  if (tipBtn) tipBtn.href = tipUri;
+  if (tipAddr) tipAddr.textContent = TIP_WALLET;
+  if (copyAddr) {
+    copyAddr.addEventListener("click", function () {
+      navigator.clipboard.writeText(TIP_WALLET).then(
+        function () {
+          copyAddr.textContent = "Copied";
+          setTimeout(function () { copyAddr.textContent = "Copy address"; }, 1800);
+        },
+        function () {
+          // Clipboard access can be refused; saying so beats a button that silently
+          // does nothing and leaves someone tapping it.
+          copyAddr.textContent = "Copy blocked - select it below";
+        }
+      );
+    });
+  }
 })();
