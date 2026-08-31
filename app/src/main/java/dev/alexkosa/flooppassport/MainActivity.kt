@@ -32,6 +32,8 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.alexkosa.flooppassport.ui.PassportViewModel
 import dev.alexkosa.flooppassport.ui.designsystem.FlopColors
 import dev.alexkosa.flooppassport.ui.designsystem.FlopDot
 import dev.alexkosa.flooppassport.ui.designsystem.FlopLabel
@@ -48,24 +50,23 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-private enum class Phase { Launch, Passport }
-
 @Composable
-private fun PassportApp() {
+private fun PassportApp(vm: PassportViewModel = viewModel()) {
     val context = LocalContext.current
-    var phase by remember { mutableStateOf(Phase.Launch) }
 
-    LaunchedEffect(Unit) {
-        playLaunchCue(context)
-        delay(3_200)
-        phase = Phase.Passport
+    // Keyed on the ViewModel's flag rather than Unit: a rotation recreates the Activity and
+    // would otherwise replay the whole launch scene, sound included, every time the phone
+    // is turned over.
+    LaunchedEffect(vm.launchScenePlayed) {
+        if (!vm.launchScenePlayed) {
+            playLaunchCue(context)
+            delay(3_200)
+            vm.markLaunchScenePlayed()
+        }
     }
 
     Box(Modifier.fillMaxSize().background(FlopColors.Base)) {
-        when (phase) {
-            Phase.Launch -> LaunchScene()
-            Phase.Passport -> PassportScreen()
-        }
+        if (vm.launchScenePlayed) PassportScreen(vm) else LaunchScene()
     }
 }
 
