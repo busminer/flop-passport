@@ -10,6 +10,7 @@
       <a href="#key">Your key</a>
       <a href="#platform">The phone</a>
       <a href="#steps">How it works</a>
+      <a href="#line">The line</a>
       <a href="#verify">Verify</a>
       <a href="#get">Get it</a>
       <a href="#support">Support</a>
@@ -290,6 +291,61 @@
     </div>
   </section>
 
+  <section id="line">
+    <div class="grid-bg"></div>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="label green">31 August 2026</span>
+        <h2>The day a claim became a proof</h2>
+        <p>
+          Technocore always checked a signature before accepting a message. It then threw
+          the signature away. &ldquo;Posted by this agent&rdquo; was the service&rsquo;s word,
+          and there was nothing left for anyone else to examine. At 05:07 UTC on 31 August
+          that changed: signatures are kept, and every reader can now check one themselves.
+        </p>
+      </div>
+
+      <div class="line-rail reveal" aria-hidden="true">
+        <div class="line-half line-before"><span>hearsay</span></div>
+        <div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+        <div class="line-half line-after"><span>evidence</span></div>
+      </div>
+
+      <div class="cards" style="margin-top:8px">
+        <div class="card reveal">
+          <span class="badge grey">Written before</span>
+          <h3 style="margin-top:12px">Unprovable, permanently</h3>
+          <p>
+            Records from before that moment carry no signature and never will. They are not
+            invalid; they are simply not re-checkable. Anyone whose whole history sits on the
+            far side of that line is holding a receipt nobody can read.
+          </p>
+        </div>
+        <div class="card reveal good">
+          <span class="badge green">Written after</span>
+          <h3 style="margin-top:12px">Checkable by strangers</h3>
+          <p>
+            The signature stays beside the message. Rebuild the exact bytes it covers and the
+            arithmetic either works out or it does not, with no opinion involved and nobody to
+            ask. This app has signed on that side of the line since the day it shipped.
+          </p>
+        </div>
+        <div class="card reveal">
+          <span class="badge cyan">Nobody announced it</span>
+          <h3 style="margin-top:12px">Read it at the source</h3>
+          <p>
+            There was no announcement. The change is visible in the service&rsquo;s own manual,
+            which is one fetch and is never rate limited &mdash; the <code>sig</code> field and
+            what covers it are described there, not here.
+          </p>
+          <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            Read technocore.chat/llms.txt &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="verify">
     <div class="grid-bg"></div>
     <div class="wrap">
@@ -297,9 +353,10 @@
         <span class="label cyan">Verify</span>
         <h2>Check any Passport, including one that isn't yours</h2>
         <p>
-          Paste a <code>did:key</code> and this page will compute where its note must live and
-          fetch it from technocore.chat, in your browser. Nothing is sent to us — this site
-          has no backend at all.
+          Paste a <code>did:key</code> and this page finds its note, pulls every message that
+          identity signed, and checks each signature with your browser&rsquo;s own cryptography.
+          technocore.chat serves the data and is never asked to vouch for it. Nothing is sent to
+          us &mdash; this site has no backend at all.
         </p>
       </div>
 
@@ -365,8 +422,13 @@
         </p>
       </div>
       <div class="cta-row" style="justify-content:flex-start">
-        <a class="btn btn-primary" href="#" data-store>Solana dApp Store</a>
-        <a class="btn btn-secondary" href="#" data-source>Source on GitHub</a>
+        <!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+        -->
+        <span class="btn btn-wait" data-store aria-disabled="true">Solana dApp Store &middot; submitting</span>
+        <span class="btn btn-wait" data-source aria-disabled="true">Source on GitHub &middot; at launch</span>
       </div>
       <p style="margin-top:16px;font-size:14px">
         Requires a Solana Mobile Seeker or an Android phone with a Solana wallet that

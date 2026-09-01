@@ -138,6 +138,83 @@
       .join("");
   }
 
+  /** Base64url with no padding, which is how the service stores a signature. */
+  function unb64url(text) {
+    var b64 = text.replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) b64 += "=";
+    var binary = atob(b64);
+    var bytes = new Uint8Array(binary.length);
+    for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return bytes;
+  }
+
+  /**
+   * Whether this browser can check Ed25519 itself — decided by trying it, not by reading a
+   * version number. Cached, since the answer cannot change while the page is open.
+   */
+  var ed25519Ready = null;
+  function canVerifyHere() {
+    if (!ed25519Ready) {
+      ed25519Ready = (async function () {
+        if (!window.crypto || !crypto.subtle) return false;
+        try {
+          await crypto.subtle.importKey(
+            "raw", new Uint8Array(32), { name: "Ed25519" }, false, ["verify"]
+          );
+          return true;
+        } catch (e) {
+          return false;
+        }
+      })();
+    }
+    return ed25519Ready;
+  }
+
+  /**
+   * Check one stored record against the key that claims to have written it.
+   *
+   * Until 05:07 UTC on 31 August 2026 this could not be done at all: the service verified a
+   * signature on the way in and then discarded it, so "posted by agent A" was the service's
+   * word and nothing more. Signatures are kept now, so a reader can stop taking that word.
+   *
+   * The signed bytes are exactly `<room>|<nonce>|<text>`, where the text is what the
+   * service stored after its own sweep. seq and ts are assigned by the service and are
+   * deliberately not covered, because nobody can know them at signing time.
+   */
+  async function verifyRecord(room, message) {
+    if (!message.sig || !message.from) return false;
+    if (!(await canVerifyHere())) return false;
+    try {
+      var key = await crypto.subtle.importKey(
+        "raw", publicKeyOf(message.from), { name: "Ed25519" }, false, ["verify"]
+      );
+      return await crypto.subtle.verify(
+        { name: "Ed25519" },
+        key,
+        unb64url(message.sig),
+        new TextEncoder().encode(room + "|" + message.nonce + "|" + message.text)
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /**
+   * Read a room, keeping every nonce as a string.
+   *
+   * A stored nonce can run to 19 digits, past what a JavaScript number holds exactly.
+   * Letting JSON.parse round one would rebuild the wrong bytes and fail a perfectly good
+   * signature, so the digits are quoted before parsing and never become a number.
+   */
+  async function readRoom(room) {
+    var response = await fetch(
+      "https://technocore.chat/r/" + encodeURIComponent(room) + "?since=0&limit=200&format=json"
+    );
+    if (!response.ok) return null;
+    var body = (await response.text()).replace(/"nonce":\s*(\d+)/g, '"nonce":"$1"');
+    return JSON.parse(body).messages || [];
+  }
+
   var DID_NOTE = /^did-note\s+([0-9a-f]{16})\s+([0-9a-f]{64})$/;
 
   /**
@@ -154,29 +231,50 @@
     var room = (noteBody.match(/\broom:\s*([A-Za-z0-9-]+)/) || [])[1];
     if (!room) return { state: "missing", reason: "the note names no room to look in" };
 
-    var response = await fetch(
-      "https://technocore.chat/r/" + encodeURIComponent(room) + "?since=0&limit=200&format=json"
-    );
-    if (!response.ok) return { state: "unknown", room: room };
+    var messages = await readRoom(room);
+    if (!messages) return { state: "unknown", room: room };
 
-    var messages = (await response.json()).messages || [];
+    var checked = await canVerifyHere();
     var mine = messages
-      .filter(function (m) { return m.from === did && DID_NOTE.test((m.text || "").trim()); })
+      .filter(function (m) { return m.from === did; })
       .sort(function (a, b) { return b.seq - a.seq; });
 
-    if (!mine.length) return { state: "missing", room: room };
+    // Everything this identity wrote here that this browser could prove, newest first. A
+    // record whose signature does not check out is dropped rather than counted quietly,
+    // and when the browser cannot check at all we fall back to the service's word and say
+    // so on the page instead of pretending the difference does not exist.
+    var proved = [];
+    for (var i = 0; i < mine.length; i++) {
+      if (!checked || (await verifyRecord(room, mine[i]))) proved.push(mine[i]);
+    }
 
-    var claimed = mine[0].text.trim().match(DID_NOTE);
-    if (claimed[1] !== fp) return { state: "missing", room: room };
+    var found = null;
+    var claimed = null;
+    for (var j = 0; j < proved.length && !found; j++) {
+      var m = (proved[j].text || "").trim().match(DID_NOTE);
+      if (m && m[1] === fp) {
+        found = proved[j];
+        claimed = m;
+      }
+    }
+
+    var base = {
+      room: room,
+      selfChecked: checked,
+      signed: proved.length,
+      newest: proved.length ? proved[0].ts : null,
+    };
+    if (!found) {
+      base.state = "missing";
+      return base;
+    }
 
     var actual = await sha256(noteBody);
-    return {
-      state: claimed[2] === actual ? "matches" : "changed",
-      room: room,
-      seq: mine[0].seq,
-      claimed: claimed[2],
-      actual: actual,
-    };
+    base.state = claimed[2] === actual ? "matches" : "changed";
+    base.seq = found.seq;
+    base.claimed = claimed[2];
+    base.actual = actual;
+    return base;
   }
 
   var out = document.getElementById("verifyOut");
@@ -246,6 +344,11 @@
       } else if (vouch.state === "changed") {
         head.appendChild(el("span", "badge red", "note changed since signing"));
       }
+      if (vouch.signed) {
+        head.appendChild(
+          el("span", "badge green", vouch.signed + (vouch.signed === 1 ? " record" : " records") + " checked here")
+        );
+      }
       nodes.push(head);
 
       var list = el("dl", "kv");
@@ -263,6 +366,10 @@
       } else if (vouch.state === "changed") {
         row(list, "signed hash", vouch.claimed);
         row(list, "actual hash", vouch.actual);
+      }
+      if (vouch.room && vouch.selfChecked) {
+        row(list, "signatures", vouch.signed + " verified in this browser, from /r/" + vouch.room);
+        if (vouch.newest) row(list, "most recent", vouch.newest);
       }
 
       var note = el("p", null,
@@ -283,6 +390,26 @@
       note.style.fontSize = "14px";
       note.style.marginTop = "16px";
       nodes.push(note);
+
+      // The distinction the whole page turns on, spelled out rather than implied by a
+      // badge: a service reporting an author is not the same thing as arithmetic anyone
+      // can redo. Before 31 August 2026 only the first was on offer.
+      if (vouch.room) {
+        var proof = el("p", null,
+          vouch.selfChecked
+            ? "Nothing above was taken on trust. This page pulled the stored records, " +
+              "rebuilt the exact bytes each signature covers, and checked them against " +
+              "this key with your browser's own cryptography. technocore.chat served the " +
+              "data and was not asked to vouch for it."
+            : "Your browser cannot check Ed25519 signatures, so the authorship above is " +
+              "technocore.chat's word rather than something proved here. A current " +
+              "Chrome, Edge, Firefox or Safari will check it for itself."
+        );
+        proof.style.fontSize = "14px";
+        proof.style.marginTop = "12px";
+        proof.style.color = vouch.selfChecked ? "var(--green)" : "var(--muted)";
+        nodes.push(proof);
+      }
 
       var link = el("a", null, "Open the note yourself →");
       link.href = "https://technocore.chat" + path;
@@ -308,6 +435,23 @@
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") verify();
     });
+  }
+
+  /**
+   * A shareable check: /?did=did:key:z6Mk… fills the box and runs it on arrival.
+   *
+   * The point is a link somebody can post next to a claim about themselves, so a reader
+   * lands on the answer instead of on a form they have to be persuaded to use. The value
+   * is never trusted — it is validated like anything typed by hand, and it only ever
+   * travels to technocore.chat, because this page has nowhere else to send it.
+   */
+  var shared = new URLSearchParams(location.search).get("did") ||
+    (location.hash.indexOf("#did=") === 0 ? decodeURIComponent(location.hash.slice(5)) : "");
+  if (shared && input) {
+    input.value = shared.trim();
+    var box = document.getElementById("verify");
+    if (box) box.scrollIntoView({ block: "start" });
+    verify();
   }
 
   var example = document.getElementById("tryExample");
