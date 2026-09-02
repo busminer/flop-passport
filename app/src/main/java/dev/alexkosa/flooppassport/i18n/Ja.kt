@@ -18,8 +18,11 @@ package dev.alexkosa.flooppassport.i18n
 internal val JA_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passportで署名したメッセージを静かなルームに投稿し、読み戻して到着を確認します。",
+    "A once-a-day reminder to leave today's signed record." to "今日の署名済み記録を残すための、1日1回のリマインダー。",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "鍵から導出したアドレスに残る恒久的なノートです。後から誰でも見つけて検証できます。",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "署名済み記録は手動で残す必要があり、記録しなかった日を後から埋めることはできません。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "チップはPassportにも、いかなるエアドロップにも影響しません。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -29,6 +32,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Activity" to "アクティビティ",
     "Already checked in, found in the room" to "記録済みで、ルーム内に見つかりました",
     "Already published, read back just now" to "公開済みで、たった今読み戻しました",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Androidがこのアプリの通知をブロックしています。システム設定で通知をオンにしてください。",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "ステップ03のアドレスで誰でも確認できます。このアプリは、いかなる割り当ても約束せず、今後も約束しません。",
     "Anyone holding it can sign as you" to "これを持つ人は本人として署名できます",
@@ -50,6 +55,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Create your Passport first. There is nothing to show until something has been signed." to
         "先にPassportを作成してください。署名が行われるまで、表示するものはありません。",
     "Created my FLOP Passport on a Solana Seeker." to "Solana SeekerでFLOP Passportを作成しました。",
+    "Daily activity" to "毎日のアクティビティ",
+    "Daily reminder" to "毎日のリマインダー",
     "Delete it?" to "削除しますか？",
     "Delete the Passport and create it again from your wallet." to
         "Passportを削除し、ウォレットから再作成します。",
@@ -62,6 +69,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker用FLOP Passport - 非公開バックアップ",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1によるSeeker用FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker用FLOP Passport。最初の署名済み記録。",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOPはエージェントに有用なことをするよう求めました。署名済み記録は実行したことの証明となり、記録のない日は後から誰も確認できません。",
     "Identity derived from your wallet signature" to "ウォレット署名から導出されたID",
     "Identity note published, first check in signed and verified on Technocore." to
         "IDノートを公開し、最初の記録を署名してTechnocore上で検証しました。",
@@ -72,9 +81,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "It promises nothing about any airdrop, and never will." to "いかなるエアドロップも約束せず、今後も約束しません。",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "このファイルはオフラインで保管してください。アプリ作者を含め、誰にも送らないでください。",
+    "Keep your record going" to "記録を継続する",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Seed Vault内で生成され、端末のStrongBoxで封印された鍵。",
     "Language" to "言語",
+    "Leave today's signed record on Technocore." to "今日の署名済み記録をTechnocoreに残します。",
     "Make your first signed check-in" to "最初の署名済み記録を残す",
     "My FLOP Passport, created on a Solana Seeker." to "Solana Seekerで作成したFLOP Passport。",
     "Next: create your Passport from your wallet." to "次へ：ウォレットからPassportを作成します。",
@@ -107,6 +118,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "ノートを読み込み中",
     "Reading your records" to "記録を読み込み中",
     "Ready" to "準備完了",
+    "Remind me once a day" to "1日1回通知する",
     "Sealed by Android Keystore" to "Android Keystoreで封印済み",
     "Sealed by StrongBox, this phone's separate security chip" to
         "この端末の独立したセキュリティチップ、StrongBoxで封印済み",
@@ -200,6 +212,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "nonce" to "ノンス",
     "not found" to "見つかりません",
     "not yet - the note alone is a claim, not a proof" to "まだです - ノートだけでは主張であり、証明ではありません",
+    "off" to "オフ",
+    "on" to "オン",
     "our exact bytes, no wallet prefix" to "ウォレット接頭辞なしの正確なバイト列",
     "passport for seeker" to "seeker用passport",
     "private key, 32 bytes, hex" to "秘密鍵、32バイト、16進数",

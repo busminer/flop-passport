@@ -33,6 +33,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.alexkosa.flooppassport.notify.ReminderPrefs
+import dev.alexkosa.flooppassport.notify.DailyReminder
 import dev.alexkosa.flooppassport.ui.PassportViewModel
 import dev.alexkosa.flooppassport.ui.designsystem.FlopColors
 import dev.alexkosa.flooppassport.ui.designsystem.FlopDot
@@ -53,7 +55,47 @@ class MainActivity : FragmentActivity() {
         setTheme(R.style.Theme_FloopPassport)
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        askForNotificationsOnce()
         setContent { PassportApp() }
+    }
+
+    /**
+     * Ask for notification permission on the first launch, and never again.
+     *
+     * Asking once, at the start, is the honest moment: the person is deciding what this app
+     * is allowed to do while they are deciding what it is. Asking later - at the end of a
+     * flow, when they are pleased - is a trick, and asking repeatedly is how an app teaches
+     * people to refuse it. If they say no, the switch in Settings is still there, and
+     * Android will show its own prompt when they use it.
+     */
+    private fun askForNotificationsOnce() {
+        if (android.os.Build.VERSION.SDK_INT < 33) {
+            ReminderPrefs(this).let { prefs ->
+                if (!prefs.asked) {
+                    prefs.asked = true
+                    prefs.enabled = true
+                    DailyReminder.schedule(this)
+                }
+            }
+            return
+        }
+        val prefs = ReminderPrefs(this)
+        if (prefs.asked) return
+
+        val launcher = registerForActivityResult(
+            androidx.activity.result.contract.ActivityResultContracts.RequestPermission(),
+        ) { granted ->
+            prefs.asked = true
+            prefs.enabled = granted
+            if (granted) DailyReminder.schedule(this) else DailyReminder.cancel(this)
+        }
+        if (DailyReminder.canPost(this)) {
+            prefs.asked = true
+            prefs.enabled = true
+            DailyReminder.schedule(this)
+        } else {
+            launcher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+        }
     }
 }
 

@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val TR_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
+    "A once-a-day reminder to leave today's signed record." to
+        "Bugünün imzalı kaydını bırakmak için günde bir kez hatırlatma.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Anahtarınızdan türetilen bir adreste kalıcı bir not; böylece daha sonra herkes sizi bulup doğrulayabilir.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "İmzalı kayıt elle bırakılmalıdır ve kaçırılan bir gün daha sonra tamamlanamaz.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Bahşiş, Passport'ınız veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -30,6 +34,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Activity" to "Etkinlik",
     "Already checked in, found in the room" to "Kayıt zaten bırakılmış, odada bulundu",
     "Already published, read back just now" to "Zaten yayımlanmış, az önce geri okundu",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android bu uygulamanın bildirimlerini engelliyor. Bildirimleri sistem ayarlarından açın.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "Herkes bunu 03. adımdaki adresten kontrol edebilir. Bu uygulama herhangi bir tahsis hakkında hiçbir söz vermez ve vermeyecektir.",
     "Anyone holding it can sign as you" to
@@ -55,6 +61,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Önce Passport'ınızı oluşturun. Bir şey imzalanana kadar gösterilecek bir şey yok.",
     "Created my FLOP Passport on a Solana Seeker." to
         "FLOP Passport'ımı bir Solana Seeker üzerinde oluşturdum.",
+    "Daily activity" to "Günlük etkinlik",
+    "Daily reminder" to "Günlük hatırlatma",
     "Delete it?" to "Silinsin mi?",
     "Delete the Passport and create it again from your wallet." to
         "Passport'ı silin ve cüzdanınızdan yeniden oluşturun.",
@@ -70,6 +78,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to
         "Seeker için FLOP Passport. İlk imzalı kayıt.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP, ajanlardan yararlı bir şey yapmalarını istedi. Bunu yaptığınızı imzalı bir kayıt kanıtlar; kayıtsız geçen bir günü daha sonra kimse doğrulayamaz.",
     "Identity derived from your wallet signature" to "Cüzdan imzanızdan türetilen kimlik",
     "Identity note published, first check in signed and verified on Technocore." to
         "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde imzalandı ve doğrulandı.",
@@ -83,9 +93,12 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Herhangi bir airdrop hakkında hiçbir söz vermez ve vermeyecektir.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Bu dosyayı çevrimdışı tutun. Uygulamanın yazarı dahil hiç kimseye göndermeyin.",
+    "Keep your record going" to "Kaydınızı sürdürün",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Anahtar Seed Vault içinde oluşturuldu, cihazdaki StrongBox ile mühürlendi.",
     "Language" to "Dil",
+    "Leave today's signed record on Technocore." to
+        "Bugünün imzalı kaydını Technocore üzerinde bırakın.",
     "Make your first signed check-in" to "İlk imzalı kaydınızı bırakın",
     "My FLOP Passport, created on a Solana Seeker." to
         "Bir Solana Seeker üzerinde oluşturduğum FLOP Passport.",
@@ -127,6 +140,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "Notunuz okunuyor",
     "Reading your records" to "Kayıtlarınız okunuyor",
     "Ready" to "Hazır",
+    "Remind me once a day" to "Bana günde bir kez hatırlat",
     "Sealed by Android Keystore" to "Android Keystore ile mühürlendi",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Bu telefonun ayrı güvenlik çipi StrongBox ile mühürlendi",
@@ -226,6 +240,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "not found" to "bulunamadı",
     "not yet - the note alone is a claim, not a proof" to
         "henüz değil; not tek başına bir iddiadır, kanıt değildir",
+    "off" to "kapalı",
+    "on" to "açık",
     "our exact bytes, no wallet prefix" to "tam baytlarımız, cüzdan öneki yok",
     "passport for seeker" to "seeker için passport",
     "private key, 32 bytes, hex" to "özel anahtar, 32 bayt, hex",

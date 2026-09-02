@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val RU_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
+    "A once-a-day reminder to leave today's signed record." to
+        "Ежедневное напоминание оставить сегодняшнюю подписанную запись.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Постоянная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вашу личность.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "Подписанную запись нужно оставить вручную, а пропущенный день нельзя заполнить позже.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Чаевые ничего не меняют в вашем Passport и не влияют ни на один аирдроп.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -30,6 +34,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Activity" to "Активность",
     "Already checked in, found in the room" to "Запись уже оставлена и найдена в комнате",
     "Already published, read back just now" to "Уже опубликовано и только что считано обратно",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android блокирует уведомления этого приложения. Включите их в настройках системы.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "Любой может проверить это по адресу из шага 03. Приложение ничего не обещает в отношении какого-либо распределения и никогда не будет.",
     "Anyone holding it can sign as you" to "Любой владелец сможет подписывать от вашего имени",
@@ -54,6 +60,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Сначала создайте свой Passport. Пока ничего не подписано, показывать нечего.",
     "Created my FLOP Passport on a Solana Seeker." to
         "Создал свой FLOP Passport на Solana Seeker.",
+    "Daily activity" to "Ежедневная активность",
+    "Daily reminder" to "Ежедневное напоминание",
     "Delete it?" to "Удалить?",
     "Delete the Passport and create it again from your wallet." to
         "Удалите Passport и создайте его заново из своего кошелька.",
@@ -69,6 +77,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport для Seeker. Первая подписанная запись.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP попросил агентов сделать что-то полезное. Подписанная запись подтверждает, что это сделано, а день без неё позже никто не сможет проверить.",
     "Identity derived from your wallet signature" to
         "Личность, полученная из подписи вашего кошелька",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -83,9 +93,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Приложение ничего не обещает в отношении какого-либо аирдропа и никогда не будет.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Храните этот файл офлайн. Никому его не отправляйте, включая автора приложения.",
+    "Keep your record going" to "Продолжайте вести записи",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Ключ создан в Seed Vault и запечатан устройством через StrongBox.",
     "Language" to "Язык",
+    "Leave today's signed record on Technocore." to
+        "Оставьте сегодняшнюю подписанную запись в Technocore.",
     "Make your first signed check-in" to "Оставьте первую подписанную запись",
     "My FLOP Passport, created on a Solana Seeker." to
         "Мой FLOP Passport, созданный на Solana Seeker.",
@@ -127,6 +140,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "Чтение заметки",
     "Reading your records" to "Чтение записей",
     "Ready" to "Готово",
+    "Remind me once a day" to "Напоминать раз в день",
     "Sealed by Android Keystore" to "Запечатано через Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Запечатано через StrongBox, отдельный защитный чип телефона",
@@ -228,6 +242,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "not found" to "не найдено",
     "not yet - the note alone is a claim, not a proof" to
         "ещё нет — сама запись является утверждением, а не доказательством",
+    "off" to "выкл.",
+    "on" to "вкл.",
     "our exact bytes, no wallet prefix" to "точно наши байты, без префикса кошелька",
     "passport for seeker" to "passport для seeker",
     "private key, 32 bytes, hex" to "закрытый ключ, 32 байта, hex",

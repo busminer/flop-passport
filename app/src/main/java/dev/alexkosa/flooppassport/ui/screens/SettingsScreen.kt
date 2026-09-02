@@ -1,5 +1,6 @@
 package dev.alexkosa.flooppassport.ui.screens
 
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -24,6 +25,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.notify.ReminderPrefs
+import dev.alexkosa.flooppassport.notify.DailyReminder
 import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.i18n.Lang
 import dev.alexkosa.flooppassport.ui.PassportViewModel
@@ -62,6 +65,9 @@ fun SettingsScreen(
 ) {
     var confirmingDelete by remember { mutableStateOf(false) }
     var pickingLanguage by remember { mutableStateOf(false) }
+    val context = LocalContext.current
+    val prefs = remember { ReminderPrefs(context) }
+    var reminderOn by remember { mutableStateOf(prefs.enabled) }
 
     Column(
         Modifier
@@ -91,6 +97,56 @@ fun SettingsScreen(
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
         )
+
+        // --- daily reminder ----------------------------------------------------------
+        Spacer(Modifier.height(FlopSpacing.xl))
+        FlopLabel("Daily reminder")
+        Spacer(Modifier.height(FlopSpacing.sm))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .background(FlopColors.Surface, FlopShapes.md)
+                .border(1.dp, FlopColors.Border, FlopShapes.md)
+                .clickable {
+                    val next = !reminderOn
+                    // The switch actually cancels the alarm rather than only hiding a row:
+                    // a setting that leaves the thing running is how an app earns a
+                    // uninstall instead of a shrug.
+                    reminderOn = next
+                    prefs.enabled = next
+                    if (next) DailyReminder.schedule(context) else DailyReminder.cancel(context)
+                }
+                .padding(FlopSpacing.md),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(
+                    t("Remind me once a day"),
+                    style = FlopType.bodyMd,
+                    color = FlopColors.IceWhite,
+                )
+                Spacer(Modifier.height(FlopSpacing.xs))
+                Text(
+                    t("A signed record has to be left by hand, and a missed day cannot be filled in later."),
+                    style = FlopType.bodySm,
+                    color = FlopColors.TextMuted,
+                )
+            }
+            Spacer(Modifier.width(FlopSpacing.md))
+            FlopBadge(
+                if (reminderOn) "on" else "off",
+                if (reminderOn) FlopState.Verified else FlopState.Neutral,
+            )
+        }
+        if (reminderOn && !DailyReminder.canPost(context)) {
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t("Android is blocking notifications for this app. Turn them on in the system settings."),
+                style = FlopType.bodySm,
+                color = FlopColors.TextSecondary,
+            )
+        }
 
         // --- about ------------------------------------------------------------------
         Spacer(Modifier.height(FlopSpacing.xl))

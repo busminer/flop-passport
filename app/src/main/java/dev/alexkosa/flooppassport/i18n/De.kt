@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val DE_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
+    "A once-a-day reminder to leave today's signed record." to
+        "Eine tägliche Erinnerung, den heutigen signierten Eintrag zu hinterlassen.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Eine dauerhafte Notiz unter einer von Ihrem Schlüssel abgeleiteten Adresse, damit Sie später jeder finden und verifizieren kann.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "Ein signierter Eintrag muss manuell hinterlassen werden, und ein versäumter Tag kann später nicht nachgetragen werden.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Ein Trinkgeld ändert nichts an Ihrem Passport und nichts an einem Airdrop.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -31,6 +35,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Already checked in, found in the room" to "Eintrag bereits erstellt und im Raum gefunden",
     "Already published, read back just now" to
         "Bereits veröffentlicht und gerade zurückgelesen",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android blockiert Benachrichtigungen für diese App. Aktivieren Sie sie in den Systemeinstellungen.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "Jeder kann dies unter der Adresse aus Schritt 03 prüfen. Diese App verspricht keine Zuteilung und wird dies niemals tun.",
     "Anyone holding it can sign as you" to "Jeder, der ihn besitzt, kann als Sie signieren",
@@ -56,6 +62,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Erstellen Sie zuerst Ihren Passport. Solange nichts signiert wurde, gibt es nichts anzuzeigen.",
     "Created my FLOP Passport on a Solana Seeker." to
         "Meinen FLOP Passport auf einem Solana Seeker erstellt.",
+    "Daily activity" to "Tägliche Aktivität",
+    "Daily reminder" to "Tägliche Erinnerung",
     "Delete it?" to "Löschen?",
     "Delete the Passport and create it again from your wallet." to
         "Löschen Sie den Passport und erstellen Sie ihn erneut aus Ihrer Wallet.",
@@ -71,6 +79,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport für Seeker von @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport für Seeker. Erster signierter Eintrag.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP hat Agenten gebeten, etwas Nützliches zu tun. Ein signierter Eintrag belegt, dass Sie es getan haben, und ein Tag ohne Eintrag kann später von niemandem überprüft werden.",
     "Identity derived from your wallet signature" to
         "Aus Ihrer Wallet-Signatur abgeleitete Identität",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -85,9 +95,12 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Sie verspricht nichts in Bezug auf einen Airdrop und wird dies niemals tun.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Bewahren Sie diese Datei offline auf. Senden Sie sie niemals an jemanden, auch nicht an den App-Autor.",
+    "Keep your record going" to "Setzen Sie Ihre Aufzeichnung fort",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Schlüssel in Seed Vault erzeugt und auf dem Gerät durch StrongBox versiegelt.",
     "Language" to "Sprache",
+    "Leave today's signed record on Technocore." to
+        "Hinterlassen Sie den heutigen signierten Eintrag auf Technocore.",
     "Make your first signed check-in" to "Erstellen Sie Ihren ersten signierten Eintrag",
     "My FLOP Passport, created on a Solana Seeker." to
         "Mein FLOP Passport, erstellt auf einem Solana Seeker.",
@@ -130,6 +143,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "Ihre Notiz wird gelesen",
     "Reading your records" to "Ihre Datensätze werden gelesen",
     "Ready" to "Bereit",
+    "Remind me once a day" to "Einmal täglich erinnern",
     "Sealed by Android Keystore" to "Durch Android Keystore versiegelt",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Durch StrongBox versiegelt, den separaten Sicherheitschip dieses Telefons",
@@ -233,6 +247,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "not found" to "nicht gefunden",
     "not yet - the note alone is a claim, not a proof" to
         "noch nicht - die Notiz allein ist eine Behauptung, kein Nachweis",
+    "off" to "aus",
+    "on" to "an",
     "our exact bytes, no wallet prefix" to "unsere exakten Bytes, ohne Wallet-Präfix",
     "passport for seeker" to "Passport für Seeker",
     "private key, 32 bytes, hex" to "privater Schlüssel, 32 Bytes, Hex",

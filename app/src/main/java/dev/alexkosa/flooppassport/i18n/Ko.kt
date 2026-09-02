@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val KO_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
+    "A once-a-day reminder to leave today's signed record." to
+        "오늘의 서명된 기록을 남기도록 하루에 한 번 알려 줍니다.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "키에서 파생된 주소에 남기는 영구 메모로, 나중에 누구나 신원을 찾아 검증할 수 있습니다.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "서명된 기록은 수동으로 남겨야 하며, 놓친 날은 나중에 채울 수 없습니다.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "후원금은 Passport나 에어드롭에 아무 영향도 주지 않습니다.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -29,6 +33,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Activity" to "활동",
     "Already checked in, found in the room" to "이미 서명 기록을 남겼으며 방에서 확인했습니다",
     "Already published, read back just now" to "이미 게시됐으며 방금 다시 읽었습니다",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android가 이 앱의 알림을 차단하고 있습니다. 시스템 설정에서 알림을 켜세요.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "누구나 03단계의 주소에서 확인할 수 있습니다. 이 앱은 어떠한 할당도 약속하지 않으며 앞으로도 약속하지 않습니다.",
     "Anyone holding it can sign as you" to "이를 가진 사람은 누구나 사용자의 신원으로 서명할 수 있습니다",
@@ -50,6 +56,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Create your Passport first. There is nothing to show until something has been signed." to
         "먼저 Passport를 생성하세요. 서명된 항목이 생기기 전에는 표시할 내용이 없습니다.",
     "Created my FLOP Passport on a Solana Seeker." to "Solana Seeker에서 FLOP Passport를 생성했습니다.",
+    "Daily activity" to "일일 활동",
+    "Daily reminder" to "일일 알림",
     "Delete it?" to "삭제하시겠습니까?",
     "Delete the Passport and create it again from your wallet." to
         "Passport를 삭제하고 지갑에서 다시 생성하세요.",
@@ -62,6 +70,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker용 FLOP Passport - 비공개 백업",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1이 만든 Seeker용 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker용 FLOP Passport. 첫 번째 서명 기록.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP은 에이전트에게 유용한 일을 하도록 요청했습니다. 서명된 기록은 이를 수행했다는 증거이며, 기록이 없는 날은 나중에 누구도 확인할 수 없습니다.",
     "Identity derived from your wallet signature" to "지갑 서명에서 파생된 신원",
     "Identity note published, first check in signed and verified on Technocore." to
         "신원 메모가 게시됐으며 첫 기록이 서명되고 Technocore에서 검증됐습니다.",
@@ -73,9 +83,11 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "어떠한 에어드롭도 약속하지 않으며 앞으로도 약속하지 않습니다.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "이 파일은 오프라인으로 보관하세요. 앱 제작자를 포함해 누구에게도 보내지 마세요.",
+    "Keep your record going" to "기록을 이어 가세요",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Seed Vault에서 생성되고 기기의 StrongBox로 봉인된 키입니다.",
     "Language" to "언어",
+    "Leave today's signed record on Technocore." to "Technocore에 오늘의 서명된 기록을 남기세요.",
     "Make your first signed check-in" to "첫 번째 서명 기록 남기기",
     "My FLOP Passport, created on a Solana Seeker." to "Solana Seeker에서 생성한 FLOP Passport입니다.",
     "Next: create your Passport from your wallet." to "다음: 지갑에서 Passport를 생성하세요.",
@@ -108,6 +120,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "노트를 읽는 중",
     "Reading your records" to "기록을 읽는 중",
     "Ready" to "준비됨",
+    "Remind me once a day" to "하루에 한 번 알림",
     "Sealed by Android Keystore" to "Android Keystore로 봉인됨",
     "Sealed by StrongBox, this phone's separate security chip" to
         "이 휴대전화의 별도 보안 칩인 StrongBox로 봉인됨",
@@ -200,6 +213,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "no, nothing was made public" to "아니요, 공개된 내용 없음",
     "not found" to "찾을 수 없음",
     "not yet - the note alone is a claim, not a proof" to "아직 아님 - 메모만으로는 주장일 뿐 증명이 아님",
+    "off" to "끔",
+    "on" to "켬",
     "our exact bytes, no wallet prefix" to "지갑 접두사 없이 정확한 원본 바이트",
     "passport for seeker" to "Seeker용 Passport",
     "private key, 32 bytes, hex" to "개인 키, 32바이트, 16진수",

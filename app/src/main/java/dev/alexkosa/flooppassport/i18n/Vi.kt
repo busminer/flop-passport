@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val VI_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Một tin nhắn được Passport của bạn ký, gửi vào một phòng yên tĩnh rồi đọc lại để chứng minh đã được ghi nhận.",
+    "A once-a-day reminder to leave today's signed record." to
+        "Lời nhắc mỗi ngày một lần để để lại bản ghi đã ký hôm nay.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Một ghi chú lâu dài tại địa chỉ được tạo từ khóa của bạn, để sau này bất kỳ ai cũng có thể tìm và xác minh bạn.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "Bản ghi đã ký phải được để lại thủ công, và không thể bổ sung sau cho ngày đã bỏ lỡ.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Tiền ủng hộ không thay đổi gì về Passport của bạn hay bất kỳ airdrop nào.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -30,6 +34,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Activity" to "Hoạt động",
     "Already checked in, found in the room" to "Đã ghi bản ghi, đã tìm thấy trong phòng",
     "Already published, read back just now" to "Đã công bố, vừa đọc lại",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android đang chặn thông báo của ứng dụng này. Hãy bật thông báo trong phần cài đặt hệ thống.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "Bất kỳ ai cũng có thể kiểm tra tại địa chỉ ở bước 03. Ứng dụng này không hứa hẹn bất kỳ phân bổ nào và sẽ không bao giờ làm vậy.",
     "Anyone holding it can sign as you" to
@@ -55,6 +61,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Trước tiên, hãy tạo Passport. Chưa có gì để hiển thị cho đến khi một nội dung được ký.",
     "Created my FLOP Passport on a Solana Seeker." to
         "Đã tạo FLOP Passport của tôi trên Solana Seeker.",
+    "Daily activity" to "Hoạt động hằng ngày",
+    "Daily reminder" to "Lời nhắc hằng ngày",
     "Delete it?" to "Xóa mục này?",
     "Delete the Passport and create it again from your wallet." to
         "Xóa Passport rồi tạo lại từ ví của bạn.",
@@ -70,6 +78,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport cho Seeker. Bản ghi đầu tiên đã được ký.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi đã ký là bằng chứng cho việc đó, và nếu một ngày không có bản ghi thì sau này không ai có thể kiểm tra ngày đó.",
     "Identity derived from your wallet signature" to "Danh tính được tạo từ chữ ký ví của bạn",
     "Identity note published, first check in signed and verified on Technocore." to
         "Đã công bố ghi chú danh tính, bản ghi đầu tiên đã được ký và xác minh trên Technocore.",
@@ -83,9 +93,12 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Ứng dụng không hứa hẹn gì về bất kỳ airdrop nào và sẽ không bao giờ làm vậy.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Giữ tệp này ngoại tuyến. Không bao giờ gửi cho bất kỳ ai, kể cả tác giả ứng dụng.",
+    "Keep your record going" to "Duy trì bản ghi của bạn",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Khóa được tạo trong Seed Vault, rồi niêm phong bằng StrongBox trên thiết bị.",
     "Language" to "Ngôn ngữ",
+    "Leave today's signed record on Technocore." to
+        "Để lại bản ghi đã ký hôm nay trên Technocore.",
     "Make your first signed check-in" to "Tạo bản ghi có chữ ký đầu tiên",
     "My FLOP Passport, created on a Solana Seeker." to
         "FLOP Passport của tôi, được tạo trên Solana Seeker.",
@@ -126,6 +139,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "Đang đọc ghi chú của bạn",
     "Reading your records" to "Đang đọc các bản ghi của bạn",
     "Ready" to "Sẵn sàng",
+    "Remind me once a day" to "Nhắc tôi mỗi ngày một lần",
     "Sealed by Android Keystore" to "Được niêm phong bằng Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Được niêm phong bằng StrongBox, chip bảo mật riêng của điện thoại này",
@@ -226,6 +240,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "not found" to "không tìm thấy",
     "not yet - the note alone is a claim, not a proof" to
         "chưa - riêng ghi chú chỉ là một tuyên bố, không phải bằng chứng",
+    "off" to "tắt",
+    "on" to "bật",
     "our exact bytes, no wallet prefix" to "đúng các byte của chúng tôi, không có tiền tố ví",
     "passport for seeker" to "passport cho seeker",
     "private key, 32 bytes, hex" to "khóa riêng, 32 byte, hex",

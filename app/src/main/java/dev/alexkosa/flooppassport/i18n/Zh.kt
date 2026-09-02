@@ -18,8 +18,11 @@ package dev.alexkosa.flooppassport.i18n
 internal val ZH_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "一条由 Passport 签名的消息，发布到安静的房间后再读回，以证明已送达。",
+    "A once-a-day reminder to leave today's signed record." to "每天提醒一次，留下当天的签名记录。",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "一条位于密钥派生地址的永久记录，之后任何人都能找到并验证您的身份。",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "签名记录必须手动留下，错过的日期之后无法补记。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "打赏不会改变您的 Passport，也不会影响任何空投。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -29,6 +32,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Activity" to "活动",
     "Already checked in, found in the room" to "已留下签名记录，并在房间中找到",
     "Already published, read back just now" to "已发布，刚刚已读回",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android 已阻止此应用发送通知。请在系统设置中将其开启。",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "任何人都能在步骤 03 的地址查看。本应用不对任何分配作出承诺，以后也不会。",
     "Anyone holding it can sign as you" to "任何持有者都能以您的身份签名",
@@ -50,6 +55,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Create your Passport first. There is nothing to show until something has been signed." to
         "请先创建您的 Passport。在签署内容之前，没有可显示的内容。",
     "Created my FLOP Passport on a Solana Seeker." to "已在 Solana Seeker 上创建我的 FLOP Passport。",
+    "Daily activity" to "每日活动",
+    "Daily reminder" to "每日提醒",
     "Delete it?" to "删除？",
     "Delete the Passport and create it again from your wallet." to "删除 Passport，然后通过钱包重新创建。",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -61,6 +68,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker 版 FLOP Passport - 私密备份",
     "FLOP Passport for Seeker by @AlexKosa1" to "由 @AlexKosa1 制作的 Seeker 版 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker 版 FLOP Passport。首次签名记录。",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP 要求智能体做一些有用的事。签名记录可以证明您已完成，而缺少记录的日期之后将无法核验。",
     "Identity derived from your wallet signature" to "由您的钱包签名派生的身份",
     "Identity note published, first check in signed and verified on Technocore." to
         "身份记录已发布，首次记录已签名并在 Technocore 上验证。",
@@ -71,9 +80,11 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "It promises nothing about any airdrop, and never will." to "它不对任何空投作出承诺，以后也不会。",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "请离线保存此文件。绝不要发送给任何人，包括应用作者。",
+    "Keep your record going" to "保持记录连续",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "密钥生成于 Seed Vault，并由设备上的 StrongBox 封存。",
     "Language" to "语言",
+    "Leave today's signed record on Technocore." to "在 Technocore 留下当天的签名记录。",
     "Make your first signed check-in" to "留下首条签名记录",
     "My FLOP Passport, created on a Solana Seeker." to "我的 FLOP Passport，创建于 Solana Seeker。",
     "Next: create your Passport from your wallet." to "下一步：通过钱包创建 Passport。",
@@ -106,6 +117,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "正在读取您的备注",
     "Reading your records" to "正在读取您的记录",
     "Ready" to "就绪",
+    "Remind me once a day" to "每天提醒我一次",
     "Sealed by Android Keystore" to "由 Android Keystore 封存",
     "Sealed by StrongBox, this phone's separate security chip" to "由 StrongBox 封存，即此手机的独立安全芯片",
     "Sealed by this phone's trusted execution environment" to "由此手机的可信执行环境封存",
@@ -197,6 +209,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "nonce" to "随机数",
     "not found" to "未找到",
     "not yet - the note alone is a claim, not a proof" to "尚未，单独的记录只是声明，不是证明",
+    "off" to "关",
+    "on" to "开",
     "our exact bytes, no wallet prefix" to "与我们的字节完全一致，无钱包前缀",
     "passport for seeker" to "Seeker 版 Passport",
     "private key, 32 bytes, hex" to "私钥，32 字节，十六进制",

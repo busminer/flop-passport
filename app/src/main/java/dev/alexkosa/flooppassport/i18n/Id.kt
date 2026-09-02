@@ -18,8 +18,12 @@ package dev.alexkosa.flooppassport.i18n
 internal val ID_STRINGS: Map<String, String> = mapOf(
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
+    "A once-a-day reminder to leave today's signed record." to
+        "Pengingat sekali sehari untuk meninggalkan catatan hari ini yang ditandatangani secara kriptografis.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Catatan permanen di alamat yang berasal dari kunci Anda, agar siapa pun dapat menemukan dan memverifikasi Anda nanti.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
+        "Catatan yang ditandatangani secara kriptografis harus ditinggalkan secara manual, dan hari yang terlewat tidak dapat diisi nanti.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Tip tidak mengubah apa pun pada Passport Anda maupun airdrop apa pun.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -30,6 +34,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Activity" to "Aktivitas",
     "Already checked in, found in the room" to "Sudah mencatatkan, ditemukan di ruang",
     "Already published, read back just now" to "Sudah diterbitkan, baru saja dibaca kembali",
+    "Android is blocking notifications for this app. Turn them on in the system settings." to
+        "Android memblokir notifikasi untuk aplikasi ini. Aktifkan di pengaturan sistem.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "Siapa pun dapat memeriksanya di alamat pada langkah 03. Aplikasi ini tidak menjanjikan alokasi apa pun dan tidak akan pernah melakukannya.",
     "Anyone holding it can sign as you" to
@@ -55,6 +61,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Buat Passport Anda terlebih dahulu. Belum ada yang dapat ditampilkan sampai sesuatu ditandatangani.",
     "Created my FLOP Passport on a Solana Seeker." to
         "Membuat FLOP Passport saya di Solana Seeker.",
+    "Daily activity" to "Aktivitas harian",
+    "Daily reminder" to "Pengingat harian",
     "Delete it?" to "Hapus?",
     "Delete the Passport and create it again from your wallet." to
         "Hapus Passport lalu buat kembali dari dompet Anda.",
@@ -70,6 +78,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport untuk Seeker. Pencatatan bertanda tangan pertama.",
+    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
+        "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan yang ditandatangani secara kriptografis membuktikan bahwa Anda melakukannya, dan hari tanpa catatan tersebut tidak dapat diperiksa oleh siapa pun nanti.",
     "Identity derived from your wallet signature" to
         "Identitas yang berasal dari tanda tangan dompet Anda",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -84,9 +94,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Aplikasi ini tidak menjanjikan apa pun tentang airdrop mana pun dan tidak akan pernah melakukannya.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Simpan berkas ini secara offline. Jangan pernah mengirimkannya kepada siapa pun, termasuk pembuat aplikasi.",
+    "Keep your record going" to "Pertahankan catatan Anda",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Kunci dibuat di Seed Vault, disegel oleh StrongBox pada perangkat.",
     "Language" to "Bahasa",
+    "Leave today's signed record on Technocore." to
+        "Tinggalkan catatan hari ini yang ditandatangani secara kriptografis di Technocore.",
     "Make your first signed check-in" to "Buat pencatatan bertanda tangan pertama Anda",
     "My FLOP Passport, created on a Solana Seeker." to
         "FLOP Passport saya, dibuat di Solana Seeker.",
@@ -129,6 +142,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Reading your note" to "Membaca catatan Anda",
     "Reading your records" to "Membaca rekaman Anda",
     "Ready" to "Siap",
+    "Remind me once a day" to "Ingatkan saya sekali sehari",
     "Sealed by Android Keystore" to "Disegel oleh Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Disegel oleh StrongBox, cip keamanan terpisah pada ponsel ini",
@@ -229,6 +243,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "not found" to "tidak ditemukan",
     "not yet - the note alone is a claim, not a proof" to
         "belum - catatan saja adalah klaim, bukan bukti",
+    "off" to "nonaktif",
+    "on" to "aktif",
     "our exact bytes, no wallet prefix" to "byte persis kami, tanpa prefiks dompet",
     "passport for seeker" to "passport untuk seeker",
     "private key, 32 bytes, hex" to "kunci privat, 32 byte, hex",
