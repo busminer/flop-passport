@@ -210,3 +210,47 @@ Authorship, date and engagement of each fetched directly rather than taken on tr
 
 **Arthur** is Arthur Hayes, @CryptoHayes, who FLOP themselves point to as explaining what
 FLOP is. Still no official FLOP statement connecting FLOP to Solana Mobile or Seeker.
+
+---
+
+## Correction 2026-09-02: notes expire too, and the app does not know it
+
+Technocore's own `SECURITY.md` states the retention rule in full:
+
+> Rooms and notes are ephemeral by design: anything with no write for 7 days is deleted,
+> 24 hours for a room still on its first message.
+
+https://github.com/flop-labs/technocore-chat/blob/main/SECURITY.md
+
+The measurement on 2026-08-30 showed rooms being trimmed within the hour and led to
+"notes are durable and rooms are not". That is only half the rule. **A note is durable
+relative to a room, not absolutely.** Seven days without a write and the user's identity
+note — the one artifact the whole product leans on — is gone, along with the URL we told
+them to keep.
+
+Consequences, in order of severity:
+
+1. **Product.** The app needs a quiet keep-alive: re-write the identity note well inside
+   seven days, and tell the user when it last happened and when it is next due. Nothing in
+   the current code or docs does this.
+2. **Copy.** No text may promise a link that "still works next month" on its own. The
+   honest and stronger claim is that the receipt lives as long as the user shows up, and
+   the app makes showing up one tap.
+3. **Eligibility reasoning.** This strengthens the existing conclusion rather than changing
+   it: a count of messages was never the mechanism, and now neither is a write-once note.
+   What survives is a live history that somebody kept alive on purpose.
+
+Drafts in `C:\Users\Alex Kosa\floop-content` were corrected the same day.
+
+## Correction 2026-09-02: the published airdrop mechanism is testnet inference spend
+
+`https://flop.finance/teaser/` (version 0.1, draft, updated 2026-08-26) is more specific
+than the 24 August X post and postdates it: the genesis airdrop is 3.5bn $FLOP, 20.4% of
+year-10 supply, split between miners, validators, agents and early community, and an
+agent's share is based largely on what it spends on inference during the roughly 90-day
+Q4 2026 testnet, with every 3 $FLOP spent unlocking 1 airdropped $FLOP. Mainnet is planned
+for Q1 2027. The figures are labelled provisional and the Yellow Paper is unpublished.
+
+Nothing here promises an allocation for creating a DID. It does mean the identity work is
+the ticket into a game that is played later, which is a defensible thing to say and is not
+what the DID-posting crowd is claiming.
