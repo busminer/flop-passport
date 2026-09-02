@@ -1,5 +1,7 @@
 package dev.alexkosa.flooppassport.ui.screens
 
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -95,25 +97,42 @@ fun ActivityScreen(vm: PassportViewModel) {
             return@Column
         }
 
-        Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
+        // Three tiles across is right at a normal font size and wrong at a large one: the
+        // columns get so narrow that a two-word label breaks in the middle of a word. Above
+        // 1.3 the same three become rows, which is the layout a person using large type is
+        // reading everything else in anyway.
+        val roomy = LocalConfiguration.current.fontScale <= 1.3f
+        val stats: @Composable (Modifier) -> Unit = { tile ->
             Stat(
                 value = activity.streak(today).toString(),
                 label = "day streak",
                 highlight = activity.streak(today) > 0,
-                modifier = Modifier.weight(1f),
+                wide = !roomy,
+                modifier = tile,
             )
             Stat(
                 value = activity.liveRecords.toString(),
                 label = "live records",
                 highlight = activity.liveRecords > 0,
-                modifier = Modifier.weight(1f),
+                wide = !roomy,
+                modifier = tile,
             )
             Stat(
                 value = activity.activeDays.toString(),
                 label = "active days",
                 highlight = activity.activeDays > 0,
-                modifier = Modifier.weight(1f),
+                wide = !roomy,
+                modifier = tile,
             )
+        }
+        if (roomy) {
+            Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
+                stats(Modifier.weight(1f))
+            }
+        } else {
+            Column(verticalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
+                stats(Modifier.fillMaxWidth())
+            }
         }
 
         Spacer(Modifier.height(FlopSpacing.md))
@@ -235,20 +254,53 @@ private fun dailyText(today: String): String =
     "FLOP Passport for Seeker. Signed record for $today."
 
 @Composable
-private fun Stat(value: String, label: String, highlight: Boolean, modifier: Modifier = Modifier) {
+private fun Stat(
+    value: String,
+    label: String,
+    highlight: Boolean,
+    modifier: Modifier = Modifier,
+    wide: Boolean = false,
+) {
+    if (wide) {
+        // Laid on its side, the label has the whole width and cannot break mid-word.
+        Row(
+            modifier
+                .background(FlopColors.Surface, FlopShapes.md)
+                .padding(FlopSpacing.md),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                t(label).uppercase(),
+                style = FlopType.label,
+                color = FlopColors.TextMuted,
+                modifier = Modifier.weight(1f),
+            )
+            Spacer(Modifier.width(FlopSpacing.sm))
+            Text(
+                value,
+                style = FlopType.h2,
+                color = if (highlight) FlopColors.Green else FlopColors.Grey,
+                maxLines = 1,
+            )
+        }
+        return
+    }
     Column(
         modifier
             .background(FlopColors.Surface, FlopShapes.md)
             .padding(vertical = FlopSpacing.md, horizontal = FlopSpacing.sm),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(t(
-            value),
+        Text(
+            value,
             style = FlopType.h2,
             color = if (highlight) FlopColors.Green else FlopColors.Grey,
+            maxLines = 1,
         )
         Spacer(Modifier.height(FlopSpacing.xs))
-        Text(t(label).uppercase(),
+        Text(
+            t(label).uppercase(),
             style = FlopType.label,
             color = FlopColors.TextMuted,
             textAlign = TextAlign.Center,

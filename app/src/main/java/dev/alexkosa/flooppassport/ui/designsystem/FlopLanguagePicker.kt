@@ -63,7 +63,7 @@ fun FlopLanguageRow(
             Spacer(Modifier.height(FlopSpacing.xs))
             Text(
                 if (chosen == null) {
-                    t("Follow the phone") + "  ·  " + effective.label
+                    t("Use the phone's language") + "  ·  " + effective.label
                 } else {
                     chosen.label
                 },
@@ -109,7 +109,7 @@ fun FlopLanguageDialog(
                     .verticalScroll(rememberScrollState()),
             ) {
                 Option(
-                    title = t("Follow the phone"),
+                    title = t("Use the phone's language"),
                     note = effective.label,
                     selected = picked == null,
                     onClick = { picked = null },

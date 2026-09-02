@@ -45,6 +45,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat" to "Не удалось подключиться к technocore.chat",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
         "Не удалось подключиться к technocore.chat. Это относится только к соединению, а не к вашим записям.",
+    "Could not reach the server." to "Не удалось связаться с сервером.",
     "Could not read the key back from secure storage" to
         "Не удалось считать ключ из защищённого хранилища",
     "Create" to "Создать",
@@ -68,7 +69,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport для Seeker. Первая подписанная запись.",
-    "Follow the phone" to "Следуйте указаниям телефона",
     "Identity derived from your wallet signature" to
         "Личность, полученная из подписи вашего кошелька",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -85,8 +85,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Храните этот файл офлайн. Никому его не отправляйте, включая автора приложения.",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Ключ создан в Seed Vault и запечатан устройством через StrongBox.",
-    "LAST CONNECTION" to "ПОСЛЕДНЕЕ ПОДКЛЮЧЕНИЕ",
-    "LIVE CONNECTION" to "ТЕКУЩЕЕ ПОДКЛЮЧЕНИЕ",
     "Language" to "Язык",
     "Make your first signed check-in" to "Оставьте первую подписанную запись",
     "My FLOP Passport, created on a Solana Seeker." to
@@ -104,11 +102,13 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Ни один кошелёк на этом телефоне не открыл платёжную ссылку.",
     "No. Nothing was published." to "Нет. Ничего не опубликовано.",
     "Not checked yet." to "Ещё не проверено.",
+    "Nothing asked yet" to "Запросов пока не было",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
     "Nothing signed today yet." to "Сегодня пока ничего не подписано.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
+    "Opening a connection" to "Установка соединения",
     "Opening your Solana wallet" to "Открывается ваш кошелёк Solana",
     "Press Create again. Nothing was sent anywhere." to
         "Нажмите «Создать» ещё раз. Ничего никуда не отправлено.",
@@ -121,8 +121,11 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Опубликовано, считано обратно и подтверждено вашим ключом",
     "Publishing your identity note to technocore.chat" to
         "Запись о вашей личности публикуется в technocore.chat",
+    "Publishing your note" to "Публикация заметки",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Только что считано из technocore.chat, а не с этого телефона. По мере роста старые части комнат удаляются, поэтому сегодня любой найдёт именно это.",
+    "Reading your note" to "Чтение заметки",
+    "Reading your records" to "Чтение записей",
     "Ready" to "Готово",
     "Sealed by Android Keystore" to "Запечатано через Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
@@ -131,6 +134,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Запечатано доверенной средой выполнения этого телефона",
     "Sealing the key in this device's secure storage" to
         "Ключ запечатывается в защищённом хранилище устройства",
+    "Sending your signed record" to "Отправка подписанной записи",
     "Sent, but not confirmed in the room yet" to
         "Отправлено, но пока не подтверждено в комнате",
     "Settings" to "Настройки",
@@ -139,6 +143,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Подписано, принято и снова найдено в комнате",
     "Signing your first check-in and sending it" to
         "Первая запись подписывается и отправляется",
+    "Talking to the service" to "Связь с сервисом",
     "Thanks for building this" to "Поблагодарить разработчика",
     "That was the last step. Your Passport is live." to
         "Это был последний шаг. Ваш Passport действует.",
@@ -146,6 +151,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Личность создаётся внутри Seed Vault и запечатывается через StrongBox на телефоне.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Ключ запечатывается в защищённом хранилище телефона, затем считывается обратно и сверяется с вашей личностью.",
+    "The server is busy. Trying again." to "Сервер занят. Повторная попытка.",
     "The stored key does not match your identity" to
         "Сохранённый ключ не соответствует вашей личности",
     "The wallet did not complete the signature" to "Кошелёк не завершил подписание",
@@ -159,6 +165,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Это НЕ ключ вашего кошелька Solana. Собственный ключ кошелька никогда не покидает Seed Vault, и приложение его не видело. Перед вами отдельный ключ, используемый для подписания только в Technocore.",
     "Try again. Nothing was posted." to "Повторите попытку. Ничего не отправлено.",
     "Try again. Nothing was published." to "Повторите попытку. Ничего не опубликовано.",
+    "Use the phone's language" to "Использовать язык телефона",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Подождите немного и нажмите ещё раз для повторной проверки. Не считайте это ошибкой.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
@@ -192,6 +199,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "change" to "изменить",
     "checked" to "проверено",
     "close" to "закрыть",
+    "connection" to "соединение",
     "content" to "содержимое",
     "continue" to "продолжить",
     "copy key" to "копировать ключ",
@@ -211,16 +219,15 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "floop-passport vault self-test" to "самопроверка хранилища floop-passport",
     "identity" to "идентичность",
     "identity note" to "запись о личности",
+    "last connection" to "последнее соединение",
     "live" to "активно",
     "live records" to "доступные записи",
     "matched on our nonce, not just our key" to "совпало по нашему nonce, а не только по ключу",
     "no thanks, continue" to "нет, продолжить",
     "no, nothing was made public" to "нет, ничего не стало общедоступным",
-    "not asked yet" to "ещё не запрашивалось",
     "not found" to "не найдено",
     "not yet - the note alone is a claim, not a proof" to
         "ещё нет — сама запись является утверждением, а не доказательством",
-    "opening" to "открытие",
     "our exact bytes, no wallet prefix" to "точно наши байты, без префикса кошелька",
     "passport for seeker" to "passport для seeker",
     "private key, 32 bytes, hex" to "закрытый ключ, 32 байта, hex",
@@ -244,6 +251,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "signed and verified against your DID" to "подписано и проверено по вашему DID",
     "storage" to "хранилище",
     "support the builder" to "поддержать разработчика",
+    "technocore.chat answered" to "technocore.chat ответил",
     "technocore.chat refused the note" to "technocore.chat отклонил запись",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
     "text" to "текст",

@@ -46,6 +46,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat" to "technocore.chat adresine ulaşılamadı",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
         "technocore.chat adresine ulaşılamadı. Bu, kayıtlarınızla değil yalnızca bağlantıyla ilgilidir.",
+    "Could not reach the server." to "Sunucuya ulaşılamadı.",
     "Could not read the key back from secure storage" to
         "Anahtar güvenli depolamadan geri okunamadı",
     "Create" to "Oluştur",
@@ -69,7 +70,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to
         "Seeker için FLOP Passport. İlk imzalı kayıt.",
-    "Follow the phone" to "Telefondaki adımları izleyin",
     "Identity derived from your wallet signature" to "Cüzdan imzanızdan türetilen kimlik",
     "Identity note published, first check in signed and verified on Technocore." to
         "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde imzalandı ve doğrulandı.",
@@ -85,8 +85,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu dosyayı çevrimdışı tutun. Uygulamanın yazarı dahil hiç kimseye göndermeyin.",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Anahtar Seed Vault içinde oluşturuldu, cihazdaki StrongBox ile mühürlendi.",
-    "LAST CONNECTION" to "SON BAĞLANTI",
-    "LIVE CONNECTION" to "CANLI BAĞLANTI",
     "Language" to "Dil",
     "Make your first signed check-in" to "İlk imzalı kaydınızı bırakın",
     "My FLOP Passport, created on a Solana Seeker." to
@@ -104,11 +102,13 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu telefondaki hiçbir cüzdan ödeme bağlantısını açmadı.",
     "No. Nothing was published." to "Hayır. Hiçbir şey yayımlanmadı.",
     "Not checked yet." to "Henüz kontrol edilmedi.",
+    "Nothing asked yet" to "Henüz bir şey sorulmadı",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Hiçbir şey bulunamadı. Bir şey imzaladıysanız ve burada değilse oda onu artık içermeyecek şekilde kırpılmıştır; bu normaldir ve bu ekran tam olarak bu nedenle vardır.",
     "Nothing signed today yet." to "Bugün henüz hiçbir şey imzalanmadı.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
+    "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
     "Press Create again. Nothing was sent anywhere." to
         "Oluştur'a yeniden basın. Hiçbir yere hiçbir şey gönderilmedi.",
@@ -121,8 +121,11 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Yayımlandı, geri okundu ve anahtarınızla doğrulandı",
     "Publishing your identity note to technocore.chat" to
         "Kimlik notunuz technocore.chat adresinde yayımlanıyor",
+    "Publishing your note" to "Notunuz yayımlanıyor",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Az önce bu telefondan değil, technocore.chat üzerinden okundu. Odalar büyüdükçe kırpılır; dolayısıyla bugün herkesin bulacağı kayıt budur.",
+    "Reading your note" to "Notunuz okunuyor",
+    "Reading your records" to "Kayıtlarınız okunuyor",
     "Ready" to "Hazır",
     "Sealed by Android Keystore" to "Android Keystore ile mühürlendi",
     "Sealed by StrongBox, this phone's separate security chip" to
@@ -131,18 +134,21 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu telefonun güvenilir yürütme ortamıyla mühürlendi",
     "Sealing the key in this device's secure storage" to
         "Anahtar bu cihazın güvenli depolamasında mühürleniyor",
+    "Sending your signed record" to "İmzalı kaydınız gönderiliyor",
     "Sent, but not confirmed in the room yet" to "Gönderildi, ancak odada henüz doğrulanmadı",
     "Settings" to "Ayarlar",
     "Show your private key" to "Özel anahtarınızı gösterin",
     "Signed, accepted and found again in the room" to
         "İmzalandı, kabul edildi ve odada yeniden bulundu",
     "Signing your first check-in and sending it" to "İlk kaydınız imzalanıp gönderiliyor",
+    "Talking to the service" to "Hizmetle iletişim kuruluyor",
     "Thanks for building this" to "Bunu geliştirdiğiniz için teşekkürler",
     "That was the last step. Your Passport is live." to "Bu son adımdı. Passport'ınız yayında.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Anahtar bu telefonun güvenli depolamasında mühürlenir, ardından geri okunur ve kimliğinizle karşılaştırılır.",
+    "The server is busy. Trying again." to "Sunucu meşgul. Yeniden deneniyor.",
     "The stored key does not match your identity" to "Saklanan anahtar kimliğinizle eşleşmiyor",
     "The wallet did not complete the signature" to "Cüzdan imzalama işlemini tamamlamadı",
     "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
@@ -155,6 +161,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu, Solana cüzdan anahtarınız DEĞİLDİR. Cüzdanınızın kendi anahtarı Seed Vault dışına hiçbir zaman çıkmaz ve bu uygulama onu hiç görmemiştir. Gördüğünüz, yalnızca Technocore üzerinde imza atan ayrı bir anahtardır.",
     "Try again. Nothing was posted." to "Yeniden deneyin. Hiçbir şey gönderilmedi.",
     "Try again. Nothing was published." to "Yeniden deneyin. Hiçbir şey yayımlanmadı.",
+    "Use the phone's language" to "Telefonun dilini kullan",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Bunu bir hata olarak değerlendirmeyin.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
@@ -189,6 +196,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "change" to "değiştir",
     "checked" to "kontrol edildi",
     "close" to "kapat",
+    "connection" to "bağlantı",
     "content" to "içerik",
     "continue" to "devam et",
     "copy key" to "anahtarı kopyala",
@@ -208,17 +216,16 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "floop-passport vault self-test" to "floop-passport güvenli depolama öz testi",
     "identity" to "kimlik",
     "identity note" to "kimlik notu",
+    "last connection" to "son bağlantı",
     "live" to "etkin",
     "live records" to "yayındaki kayıtlar",
     "matched on our nonce, not just our key" to
         "yalnızca anahtarımızla değil, nonce değerimizle eşleşti",
     "no thanks, continue" to "hayır, teşekkürler; devam et",
     "no, nothing was made public" to "hayır, hiçbir şey herkese açılmadı",
-    "not asked yet" to "henüz sorulmadı",
     "not found" to "bulunamadı",
     "not yet - the note alone is a claim, not a proof" to
         "henüz değil; not tek başına bir iddiadır, kanıt değildir",
-    "opening" to "açılıyor",
     "our exact bytes, no wallet prefix" to "tam baytlarımız, cüzdan öneki yok",
     "passport for seeker" to "seeker için passport",
     "private key, 32 bytes, hex" to "özel anahtar, 32 bayt, hex",
@@ -242,6 +249,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "signed and verified against your DID" to "imzalandı ve DID'nizle doğrulandı",
     "storage" to "depolama",
     "support the builder" to "geliştiriciyi destekle",
+    "technocore.chat answered" to "technocore.chat yanıtladı",
     "technocore.chat refused the note" to "technocore.chat notu reddetti",
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",

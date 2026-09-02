@@ -46,6 +46,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat" to "Không thể kết nối tới technocore.chat",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
         "Không thể kết nối tới technocore.chat. Điều này không phản ánh trạng thái bản ghi của bạn, chỉ phản ánh kết nối.",
+    "Could not reach the server." to "Không thể kết nối với máy chủ.",
     "Could not read the key back from secure storage" to
         "Không thể đọc lại khóa từ bộ nhớ bảo mật",
     "Create" to "Tạo",
@@ -69,7 +70,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport cho Seeker. Bản ghi đầu tiên đã được ký.",
-    "Follow the phone" to "Làm theo hướng dẫn trên điện thoại",
     "Identity derived from your wallet signature" to "Danh tính được tạo từ chữ ký ví của bạn",
     "Identity note published, first check in signed and verified on Technocore." to
         "Đã công bố ghi chú danh tính, bản ghi đầu tiên đã được ký và xác minh trên Technocore.",
@@ -85,8 +85,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Giữ tệp này ngoại tuyến. Không bao giờ gửi cho bất kỳ ai, kể cả tác giả ứng dụng.",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Khóa được tạo trong Seed Vault, rồi niêm phong bằng StrongBox trên thiết bị.",
-    "LAST CONNECTION" to "KẾT NỐI GẦN NHẤT",
-    "LIVE CONNECTION" to "KẾT NỐI TRỰC TIẾP",
     "Language" to "Ngôn ngữ",
     "Make your first signed check-in" to "Tạo bản ghi có chữ ký đầu tiên",
     "My FLOP Passport, created on a Solana Seeker." to
@@ -103,11 +101,13 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Không có ví nào trên điện thoại này mở liên kết thanh toán.",
     "No. Nothing was published." to "Không. Không có gì được công bố.",
     "Not checked yet." to "Chưa kiểm tra.",
+    "Nothing asked yet" to "Chưa có câu hỏi nào",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Không tìm thấy gì. Nếu bạn đã ký nội dung nhưng không thấy ở đây, phòng đã lược bỏ phần chứa nội dung đó - đây là điều bình thường và chính là lý do màn hình này tồn tại.",
     "Nothing signed today yet." to "Hôm nay chưa có nội dung nào được ký.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Chỉ những ngôn ngữ có bản dịch thực sự mới được liệt kê. Một bộ chọn cung cấp các ngôn ngữ nhưng đều hiển thị bằng tiếng Anh sẽ báo rằng ngôn ngữ của bạn được hỗ trợ, rồi cho thấy điều ngược lại ở màn hình tiếp theo.",
+    "Opening a connection" to "Đang mở kết nối",
     "Opening your Solana wallet" to "Đang mở ví Solana của bạn",
     "Press Create again. Nothing was sent anywhere." to
         "Nhấn Tạo lần nữa. Chưa có gì được gửi đi.",
@@ -120,8 +120,11 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đã công bố, đọc lại và được khóa của bạn chứng thực",
     "Publishing your identity note to technocore.chat" to
         "Đang công bố ghi chú danh tính lên technocore.chat",
+    "Publishing your note" to "Đang công bố ghi chú của bạn",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Vừa được đọc từ technocore.chat, không phải từ điện thoại này. Các phòng được lược bớt khi lớn dần, nên đây là nội dung bất kỳ ai cũng sẽ tìm thấy hôm nay.",
+    "Reading your note" to "Đang đọc ghi chú của bạn",
+    "Reading your records" to "Đang đọc các bản ghi của bạn",
     "Ready" to "Sẵn sàng",
     "Sealed by Android Keystore" to "Được niêm phong bằng Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
@@ -130,12 +133,14 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Được niêm phong bằng môi trường thực thi tin cậy của điện thoại này",
     "Sealing the key in this device's secure storage" to
         "Đang niêm phong khóa trong bộ nhớ bảo mật của thiết bị",
+    "Sending your signed record" to "Đang gửi bản ghi có chữ ký của bạn",
     "Sent, but not confirmed in the room yet" to "Đã gửi nhưng chưa được xác nhận trong phòng",
     "Settings" to "Cài đặt",
     "Show your private key" to "Hiển thị khóa riêng của bạn",
     "Signed, accepted and found again in the room" to
         "Đã ký, được chấp nhận và tìm thấy lại trong phòng",
     "Signing your first check-in and sending it" to "Đang ký và gửi bản ghi đầu tiên",
+    "Talking to the service" to "Đang liên lạc với dịch vụ",
     "Thanks for building this" to "Cảm ơn vì đã xây dựng ứng dụng này",
     "That was the last step. Your Passport is live." to
         "Đó là bước cuối cùng. Passport của bạn đang hoạt động.",
@@ -143,6 +148,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Danh tính được tạo bên trong Seed Vault và niêm phong bằng StrongBox trên điện thoại.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Khóa được niêm phong trong bộ nhớ bảo mật của điện thoại này, sau đó được đọc lại và đối chiếu với danh tính của bạn.",
+    "The server is busy. Trying again." to "Máy chủ đang bận. Đang thử lại.",
     "The stored key does not match your identity" to
         "Khóa đã lưu không khớp với danh tính của bạn",
     "The wallet did not complete the signature" to "Ví chưa hoàn tất việc ký",
@@ -156,6 +162,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đây KHÔNG phải khóa ví Solana của bạn. Khóa của ví không bao giờ rời Seed Vault và ứng dụng này chưa từng thấy nó. Thứ bạn đang xem là một khóa riêng biệt, chỉ dùng để ký trên Technocore.",
     "Try again. Nothing was posted." to "Thử lại. Chưa có gì được đăng.",
     "Try again. Nothing was published." to "Thử lại. Chưa có gì được công bố.",
+    "Use the phone's language" to "Sử dụng ngôn ngữ của điện thoại",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Chờ một lát rồi nhấn lại để kiểm tra. Không nên xem đây là lỗi.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
@@ -189,6 +196,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "change" to "thay đổi",
     "checked" to "đã kiểm tra",
     "close" to "đóng",
+    "connection" to "kết nối",
     "content" to "nội dung",
     "continue" to "tiếp tục",
     "copy key" to "sao chép khóa",
@@ -208,17 +216,16 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "floop-passport vault self-test" to "tự kiểm tra kho khóa floop-passport",
     "identity" to "danh tính",
     "identity note" to "ghi chú danh tính",
+    "last connection" to "kết nối gần nhất",
     "live" to "đang hoạt động",
     "live records" to "bản ghi đang công khai",
     "matched on our nonce, not just our key" to
         "khớp với nonce của chúng tôi, không chỉ với khóa",
     "no thanks, continue" to "không, cảm ơn, tiếp tục",
     "no, nothing was made public" to "không, chưa có gì được công khai",
-    "not asked yet" to "chưa được yêu cầu",
     "not found" to "không tìm thấy",
     "not yet - the note alone is a claim, not a proof" to
         "chưa - riêng ghi chú chỉ là một tuyên bố, không phải bằng chứng",
-    "opening" to "đang mở",
     "our exact bytes, no wallet prefix" to "đúng các byte của chúng tôi, không có tiền tố ví",
     "passport for seeker" to "passport cho seeker",
     "private key, 32 bytes, hex" to "khóa riêng, 32 byte, hex",
@@ -242,6 +249,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "signed and verified against your DID" to "đã ký và xác minh theo DID của bạn",
     "storage" to "lưu trữ",
     "support the builder" to "ủng hộ nhà phát triển",
+    "technocore.chat answered" to "technocore.chat đã phản hồi",
     "technocore.chat refused the note" to "technocore.chat đã từ chối ghi chú",
     "technocore.chat refused the signed write" to
         "technocore.chat đã từ chối bản ghi có chữ ký",

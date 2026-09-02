@@ -46,6 +46,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat" to "Tidak dapat menghubungi technocore.chat",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
         "Tidak dapat menghubungi technocore.chat. Ini tidak menunjukkan apa pun tentang catatan Anda, hanya tentang koneksi.",
+    "Could not reach the server." to "Tidak dapat menghubungi server.",
     "Could not read the key back from secure storage" to
         "Tidak dapat membaca kembali kunci dari penyimpanan aman",
     "Create" to "Buat",
@@ -69,7 +70,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport untuk Seeker. Pencatatan bertanda tangan pertama.",
-    "Follow the phone" to "Ikuti petunjuk ponsel",
     "Identity derived from your wallet signature" to
         "Identitas yang berasal dari tanda tangan dompet Anda",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -86,8 +86,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Simpan berkas ini secara offline. Jangan pernah mengirimkannya kepada siapa pun, termasuk pembuat aplikasi.",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Kunci dibuat di Seed Vault, disegel oleh StrongBox pada perangkat.",
-    "LAST CONNECTION" to "KONEKSI TERAKHIR",
-    "LIVE CONNECTION" to "KONEKSI LANGSUNG",
     "Language" to "Bahasa",
     "Make your first signed check-in" to "Buat pencatatan bertanda tangan pertama Anda",
     "My FLOP Passport, created on a Solana Seeker." to
@@ -106,11 +104,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tidak ada dompet di ponsel ini yang membuka tautan pembayaran.",
     "No. Nothing was published." to "Tidak. Tidak ada yang diterbitkan.",
     "Not checked yet." to "Belum diperiksa.",
+    "Nothing asked yet" to "Belum ada yang ditanyakan",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
     "Nothing signed today yet." to "Belum ada yang ditandatangani hari ini.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
+    "Opening a connection" to "Membuka koneksi",
     "Opening your Solana wallet" to "Membuka dompet Solana Anda",
     "Press Create again. Nothing was sent anywhere." to
         "Tekan Buat lagi. Tidak ada yang dikirim ke mana pun.",
@@ -123,8 +123,11 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Diterbitkan, dibaca kembali, dan disahkan oleh kunci Anda",
     "Publishing your identity note to technocore.chat" to
         "Menerbitkan catatan identitas Anda ke technocore.chat",
+    "Publishing your note" to "Menerbitkan catatan Anda",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Baru saja dibaca dari technocore.chat, bukan dari ponsel ini. Ruang dipangkas saat membesar, jadi inilah yang akan ditemukan siapa pun hari ini.",
+    "Reading your note" to "Membaca catatan Anda",
+    "Reading your records" to "Membaca rekaman Anda",
     "Ready" to "Siap",
     "Sealed by Android Keystore" to "Disegel oleh Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
@@ -133,6 +136,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Disegel oleh lingkungan eksekusi tepercaya ponsel ini",
     "Sealing the key in this device's secure storage" to
         "Menyegel kunci di penyimpanan aman perangkat ini",
+    "Sending your signed record" to "Mengirim rekaman bertanda tangan Anda",
     "Sent, but not confirmed in the room yet" to "Terkirim, tetapi belum dikonfirmasi di ruang",
     "Settings" to "Pengaturan",
     "Show your private key" to "Tampilkan kunci privat Anda",
@@ -140,6 +144,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
     "Signing your first check-in and sending it" to
         "Menandatangani dan mengirim pencatatan pertama Anda",
+    "Talking to the service" to "Berkomunikasi dengan layanan",
     "Thanks for building this" to "Terima kasih telah membuat ini",
     "That was the last step. Your Passport is live." to
         "Itu langkah terakhir. Passport Anda aktif.",
@@ -147,6 +152,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Identitas dibuat di dalam Seed Vault dan disegel oleh StrongBox pada ponsel.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Kunci disegel di penyimpanan aman ponsel ini, lalu dibaca kembali dan dicocokkan dengan identitas Anda.",
+    "The server is busy. Trying again." to "Server sedang sibuk. Mencoba lagi.",
     "The stored key does not match your identity" to
         "Kunci yang tersimpan tidak cocok dengan identitas Anda",
     "The wallet did not complete the signature" to "Dompet tidak menyelesaikan tanda tangan",
@@ -160,6 +166,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Ini BUKAN kunci dompet Solana Anda. Kunci dompet Anda tidak pernah meninggalkan Seed Vault dan tidak pernah dilihat aplikasi ini. Yang Anda lihat adalah kunci terpisah yang hanya menandatangani di Technocore.",
     "Try again. Nothing was posted." to "Coba lagi. Tidak ada yang dikirim.",
     "Try again. Nothing was published." to "Coba lagi. Tidak ada yang diterbitkan.",
+    "Use the phone's language" to "Gunakan bahasa ponsel",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Jangan anggap ini sebagai kegagalan.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
@@ -193,6 +200,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "change" to "ubah",
     "checked" to "diperiksa",
     "close" to "tutup",
+    "connection" to "koneksi",
     "content" to "konten",
     "continue" to "lanjutkan",
     "copy key" to "salin kunci",
@@ -211,17 +219,16 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "floop-passport vault self-test" to "uji mandiri penyimpanan kunci floop-passport",
     "identity" to "identitas",
     "identity note" to "catatan identitas",
+    "last connection" to "koneksi terakhir",
     "live" to "aktif",
     "live records" to "catatan aktif",
     "matched on our nonce, not just our key" to
         "cocok dengan nonce kami, bukan hanya kunci kami",
     "no thanks, continue" to "tidak, terima kasih, lanjutkan",
     "no, nothing was made public" to "tidak, tidak ada yang dijadikan publik",
-    "not asked yet" to "belum diminta",
     "not found" to "tidak ditemukan",
     "not yet - the note alone is a claim, not a proof" to
         "belum - catatan saja adalah klaim, bukan bukti",
-    "opening" to "membuka",
     "our exact bytes, no wallet prefix" to "byte persis kami, tanpa prefiks dompet",
     "passport for seeker" to "passport untuk seeker",
     "private key, 32 bytes, hex" to "kunci privat, 32 byte, hex",
@@ -246,6 +253,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "ditandatangani dan diverifikasi terhadap DID Anda",
     "storage" to "penyimpanan",
     "support the builder" to "dukung pengembang",
+    "technocore.chat answered" to "technocore.chat menjawab",
     "technocore.chat refused the note" to "technocore.chat menolak catatan",
     "technocore.chat refused the signed write" to
         "technocore.chat menolak penulisan bertanda tangan",

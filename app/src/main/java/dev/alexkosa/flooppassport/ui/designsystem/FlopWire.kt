@@ -26,32 +26,37 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.technocore.Technocore
 
 /**
- * The live connection block: what the app is doing right now, to whom, and how long the
- * last answer took.
+ * The connection block: one sentence about what is happening, and the measured round trip.
  *
- * It exists because every claim this app makes rests on having really talked to a service,
- * and a spinner is not evidence of that - a spinner turns exactly as happily in aeroplane
- * mode. A number in milliseconds cannot be animated into existence: it is the time the
- * last request took, written by the code that made it, and it moves when the network
- * moves.
+ * Two rules, both learned from watching it on a real phone.
  *
- * The block also has to be honest while things go badly, because that is when a person
- * stares at it. A retry says which attempt it is on, a refusal shows what came back, and
- * the moment before any answer exists says so in words rather than showing a stale figure.
+ * **It must not move.** Every line is capped at one line and ellipsised rather than
+ * wrapped, so the block is the same height whatever the status says. The first version grew
+ * and shrank as the text changed and the page jumped under the reader - much worse at a
+ * large system font size, where one status could take three lines and shove the screen down.
+ *
+ * **It must not frighten.** A retry in progress is not an error: this service refuses about
+ * one request in three and the next attempt usually succeeds, so a red "HTTP 503 · attempt 2"
+ * mid-retry described a normal Tuesday as a catastrophe. Red is kept for a request that has
+ * finished failing. Everything else is said in words, and no status codes, attempt counts or
+ * exception class names reach the screen. The milliseconds stay, because they are the one
+ * thing here a person can check against their own sense of whether the network is alive.
  */
 @Composable
 fun FlopWire(
     pulse: Technocore.Pulse?,
     active: Boolean,
-    what: String? = null,
     modifier: Modifier = Modifier,
 ) {
+    val busy = active && pulse != null && !pulse.ok
+    val failed = !active && pulse != null && !pulse.ok
+
     Column(
         modifier
             .fillMaxWidth()
@@ -64,26 +69,28 @@ fun FlopWire(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(t(
-                if (active) "LIVE CONNECTION" else "LAST CONNECTION"),
+            Text(
+                t(if (active) "connection" else "last connection").uppercase(),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.weight(1f, fill = false),
             )
+            Spacer(Modifier.width(FlopSpacing.sm))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Dot(active = active, ok = pulse?.ok)
                 Spacer(Modifier.width(FlopSpacing.sm))
                 Text(
-                    when {
-                        pulse == null && active -> "opening"
-                        pulse == null -> "not asked yet"
-                        else -> "${pulse.millis} ms"
-                    },
-                    style = FlopType.h3,
+                    if (pulse == null) "—" else "${pulse.millis} ms",
+                    style = FlopType.bodyMd,
                     color = when {
                         pulse == null -> FlopColors.TextMuted
+                        failed -> FlopColors.ErrorRed
                         pulse.ok -> FlopColors.Green
-                        else -> FlopColors.ErrorRed
+                        else -> FlopColors.TextSecondary
                     },
+                    maxLines = 1,
                 )
             }
         }
@@ -91,9 +98,8 @@ fun FlopWire(
         Spacer(Modifier.height(FlopSpacing.sm))
 
         // A segment travelling left to right rather than a rotation: the motion language
-        // in this app is signal moving along a line, and a spinner would be the one
-        // borrowed gesture in it. The track stays visible when idle so the block does not
-        // change height and shunt the page around.
+        // here is signal moving along a line. The track is always drawn, so the block keeps
+        // its height whether or not anything is in flight.
         BoxWithConstraints(
             Modifier
                 .fillMaxWidth()
@@ -102,8 +108,8 @@ fun FlopWire(
                 .background(FlopColors.Border),
         ) {
             if (active) {
-                val t = rememberInfiniteTransition(label = "wire")
-                val p by t.animateFloat(
+                val transition = rememberInfiniteTransition(label = "wire")
+                val travel by transition.animateFloat(
                     initialValue = 0f,
                     targetValue = 1f,
                     animationSpec = infiniteRepeatable(tween(1200, easing = LinearEasing)),
@@ -112,56 +118,45 @@ fun FlopWire(
                 val segment = maxWidth * 0.32f
                 Box(
                     Modifier
-                        .offset(x = (maxWidth + segment) * p - segment)
+                        .offset(x = (maxWidth + segment) * travel - segment)
                         .width(segment)
                         .height(3.dp)
-                        .background(FlopColors.Cyan, FlopShapes.sm),
+                        .background(FlopColors.Cyan),
                 )
             } else if (pulse != null) {
                 Box(
                     Modifier
                         .fillMaxWidth()
                         .height(3.dp)
-                        .background(
-                            if (pulse.ok) FlopColors.Green else FlopColors.ErrorRed,
-                            FlopShapes.sm,
-                        ),
+                        .background(if (pulse.ok) FlopColors.Green else FlopColors.ErrorRed),
                 )
             }
         }
 
         Spacer(Modifier.height(FlopSpacing.sm))
 
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text(t(
-                pulse?.host ?: "technocore.chat"),
-                style = FlopType.code,
-                color = FlopColors.IceWhite,
-            )
-            Spacer(Modifier.width(FlopSpacing.sm))
-            Text(
-                buildString {
-                    val action = what ?: pulse?.what
-                    if (action != null) append(action)
-                    if (pulse != null && pulse.attempt > 1) {
-                        if (isNotEmpty()) append("  ·  ")
-                        append("attempt ${pulse.attempt}")
-                    }
-                    if (pulse != null && !pulse.ok) {
-                        if (isNotEmpty()) append("  ·  ")
-                        append(pulse.detail)
-                    }
-                },
-                style = FlopType.code,
-                color = if (pulse?.ok == false) FlopColors.ErrorRed else FlopColors.TextMuted,
-                modifier = Modifier.weight(1f),
-                textAlign = TextAlign.End,
-            )
-        }
+        // Exactly one line, always. The ellipsis is what keeps the height fixed.
+        Text(
+            when {
+                failed -> t("Could not reach the server.")
+                busy -> t("The server is busy. Trying again.")
+                active -> t(pulse?.what ?: "Opening a connection")
+                pulse != null -> t("technocore.chat answered")
+                else -> t("Nothing asked yet")
+            },
+            style = FlopType.bodySm,
+            color = when {
+                failed -> FlopColors.ErrorRed
+                busy -> FlopColors.TextSecondary
+                else -> FlopColors.TextMuted
+            },
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
     }
 }
 
-/** Cyan and breathing while a request is open; the outcome's colour once it lands. */
+/** Cyan and breathing while a request is open; the outcome's colour once it has landed. */
 @Composable
 private fun Dot(active: Boolean, ok: Boolean?) {
     val colour = when {
@@ -171,8 +166,8 @@ private fun Dot(active: Boolean, ok: Boolean?) {
         else -> FlopColors.Grey
     }
     if (active) {
-        val t = rememberInfiniteTransition(label = "dot")
-        val a by t.animateFloat(
+        val transition = rememberInfiniteTransition(label = "dot")
+        val alpha by transition.animateFloat(
             initialValue = 0.3f,
             targetValue = 1f,
             animationSpec = infiniteRepeatable(
@@ -180,7 +175,7 @@ private fun Dot(active: Boolean, ok: Boolean?) {
             ),
             label = "breathe",
         )
-        Box(Modifier.size(7.dp).background(colour.copy(alpha = a), FlopShapes.sm))
+        Box(Modifier.size(7.dp).background(colour.copy(alpha = alpha), FlopShapes.sm))
     } else {
         Box(Modifier.size(7.dp).background(colour, FlopShapes.sm))
     }

@@ -1,5 +1,8 @@
 package dev.alexkosa.flooppassport.ui.designsystem
 
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -69,16 +72,40 @@ fun FlopBottomNav(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
                             t(tab.label).uppercase(),
-                            style = FlopType.label,
+                            style = FlopType.label.copy(fontSize = navLabelSize()),
                             color = if (active) FlopColors.IceWhite else FlopColors.Grey,
+                            maxLines = 1,
+                            softWrap = false,
+                            overflow = TextOverflow.Visible,
                         )
                         badge[tab]?.let {
                             Spacer(Modifier.width(FlopSpacing.xs))
-                            Text(t(it), style = FlopType.label, color = FlopColors.Green)
+                            Text(
+                                t(it),
+                                style = FlopType.label.copy(fontSize = navLabelSize()),
+                                color = FlopColors.Green,
+                                maxLines = 1,
+                            )
                         }
                     }
                 }
             }
         }
     }
+}
+
+/**
+ * A tab label that stops growing before it breaks.
+ *
+ * Three tabs share one row, so past a certain size a word simply cannot fit the column and
+ * Compose falls back to breaking it mid-word - "НАСТРОЙ / КИ" on a phone with large type. Android's
+ * own bottom bar caps label scaling for exactly this reason. Body text still follows the
+ * system size in full; this cap applies to navigation labels alone, where a broken word
+ * costs more legibility than the extra millimetre buys.
+ */
+@Composable
+private fun navLabelSize(): TextUnit {
+    val scale = LocalConfiguration.current.fontScale
+    val capped = scale.coerceAtMost(1.15f)
+    return FlopType.label.fontSize * (capped / scale)
 }

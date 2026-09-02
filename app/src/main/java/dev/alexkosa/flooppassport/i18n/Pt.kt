@@ -45,6 +45,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat" to "Não foi possível acessar technocore.chat",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
         "Não foi possível acessar technocore.chat. Isso não diz nada sobre seus registros, apenas sobre a conexão.",
+    "Could not reach the server." to "Não foi possível acessar o servidor.",
     "Could not read the key back from secure storage" to
         "Não foi possível reler a chave do armazenamento seguro",
     "Create" to "Criar",
@@ -67,7 +68,6 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport para Seeker por @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport para Seeker. Primeiro registro assinado.",
-    "Follow the phone" to "Siga as instruções do telefone",
     "Identity derived from your wallet signature" to
         "Identidade derivada da assinatura da sua carteira",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -84,8 +84,6 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Mantenha este arquivo offline. Nunca o envie a ninguém, nem mesmo ao autor do app.",
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Chave criada no Seed Vault e selada pelo StrongBox no dispositivo.",
-    "LAST CONNECTION" to "ÚLTIMA CONEXÃO",
-    "LIVE CONNECTION" to "CONEXÃO AO VIVO",
     "Language" to "Idioma",
     "Make your first signed check-in" to "Faça seu primeiro registro assinado",
     "My FLOP Passport, created on a Solana Seeker." to
@@ -104,11 +102,13 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Nenhuma carteira neste telefone abriu o link de pagamento.",
     "No. Nothing was published." to "Não. Nada foi publicado.",
     "Not checked yet." to "Ainda não verificado.",
+    "Nothing asked yet" to "Nada foi solicitado ainda",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Nada encontrado. Se você assinou algo e ele não está aqui, a sala já removeu essa parte, o que é normal e é exatamente por isso que esta tela existe.",
     "Nothing signed today yet." to "Nada assinado hoje.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Apenas idiomas com uma tradução real são listados. Um seletor que oferecesse idiomas que exibem tudo em inglês diria que seu idioma é compatível e mostraria o contrário na tela seguinte.",
+    "Opening a connection" to "Abrindo uma conexão",
     "Opening your Solana wallet" to "Abrindo sua carteira Solana",
     "Press Create again. Nothing was sent anywhere." to
         "Pressione Criar novamente. Nada foi enviado.",
@@ -121,8 +121,11 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Publicado, consultado novamente e validado pela sua chave",
     "Publishing your identity note to technocore.chat" to
         "Publicando sua nota de identidade em technocore.chat",
+    "Publishing your note" to "Publicando sua nota",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Consultado agora em technocore.chat, não neste telefone. As salas são reduzidas conforme crescem, então isto é o que qualquer pessoa encontraria hoje.",
+    "Reading your note" to "Lendo sua nota",
+    "Reading your records" to "Lendo seus registros",
     "Ready" to "Pronto",
     "Sealed by Android Keystore" to "Selado pelo Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
@@ -131,6 +134,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Selado pelo ambiente de execução confiável deste telefone",
     "Sealing the key in this device's secure storage" to
         "Selando a chave no armazenamento seguro deste dispositivo",
+    "Sending your signed record" to "Enviando seu registro assinado",
     "Sent, but not confirmed in the room yet" to "Enviado, mas ainda não confirmado na sala",
     "Settings" to "Configurações",
     "Show your private key" to "Mostrar sua chave privada",
@@ -138,6 +142,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Assinado, aceito e encontrado novamente na sala",
     "Signing your first check-in and sending it" to
         "Assinando e enviando seu primeiro registro",
+    "Talking to the service" to "Comunicando-se com o serviço",
     "Thanks for building this" to "Obrigado por criar isto",
     "That was the last step. Your Passport is live." to
         "Essa foi a última etapa. Seu Passport está ativo.",
@@ -145,6 +150,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "A identidade é criada dentro do Seed Vault e selada pelo StrongBox no telefone.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "A chave é selada no armazenamento seguro deste telefone, depois relida e comparada com sua identidade.",
+    "The server is busy. Trying again." to "O servidor está ocupado. Tentando novamente.",
     "The stored key does not match your identity" to
         "A chave armazenada não corresponde à sua identidade",
     "The wallet did not complete the signature" to "A carteira não concluiu a assinatura",
@@ -158,6 +164,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Esta NÃO é a chave da sua carteira Solana. A chave da carteira nunca sai do Seed Vault e este app nunca teve acesso a ela. Esta é uma chave separada que assina apenas no Technocore.",
     "Try again. Nothing was posted." to "Tente novamente. Nada foi enviado.",
     "Try again. Nothing was published." to "Tente novamente. Nada foi publicado.",
+    "Use the phone's language" to "Usar o idioma do telefone",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Aguarde um momento e pressione novamente para verificar. Não considere isso uma falha.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
@@ -192,6 +199,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "change" to "alterar",
     "checked" to "registrado",
     "close" to "fechar",
+    "connection" to "conexão",
     "content" to "conteúdo",
     "continue" to "continuar",
     "copy key" to "copiar chave",
@@ -211,17 +219,16 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "floop-passport vault self-test" to "autoteste do armazenamento de chaves floop-passport",
     "identity" to "identidade",
     "identity note" to "nota de identidade",
+    "last connection" to "última conexão",
     "live" to "ativo",
     "live records" to "registros ativos",
     "matched on our nonce, not just our key" to
         "correspondeu ao nosso nonce, não apenas à nossa chave",
     "no thanks, continue" to "não, obrigado, continuar",
     "no, nothing was made public" to "não, nada se tornou público",
-    "not asked yet" to "ainda não solicitado",
     "not found" to "não encontrado",
     "not yet - the note alone is a claim, not a proof" to
         "ainda não - a nota por si só é uma declaração, não uma prova",
-    "opening" to "abrindo",
     "our exact bytes, no wallet prefix" to "nossos bytes exatos, sem prefixo da carteira",
     "passport for seeker" to "passport para seeker",
     "private key, 32 bytes, hex" to "chave privada, 32 bytes, hex",
@@ -245,6 +252,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "signed and verified against your DID" to "assinado e verificado com seu DID",
     "storage" to "armazenamento",
     "support the builder" to "apoiar o desenvolvedor",
+    "technocore.chat answered" to "technocore.chat respondeu",
     "technocore.chat refused the note" to "technocore.chat recusou a nota",
     "technocore.chat refused the signed write" to "technocore.chat recusou a gravação assinada",
     "text" to "texto",

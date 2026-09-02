@@ -94,11 +94,11 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * honest, and no chance of a label drifting away from the request it describes.
      */
     private fun describe(path: String): String = when {
-        path.contains("/say-signed/") -> "sending your signed record"
-        path.startsWith("/kv/") && path.contains("/set/") -> "publishing your note"
-        path.startsWith("/kv/") -> "reading your note"
-        path.startsWith("/r/") -> "reading the room"
-        else -> "asking the service"
+        path.contains("/say-signed/") -> "Sending your signed record"
+        path.startsWith("/kv/") && path.contains("/set/") -> "Publishing your note"
+        path.startsWith("/kv/") -> "Reading your note"
+        path.startsWith("/r/") -> "Reading your records"
+        else -> "Talking to the service"
     }
 
     private val _pulse = MutableStateFlow<Pulse?>(null)
