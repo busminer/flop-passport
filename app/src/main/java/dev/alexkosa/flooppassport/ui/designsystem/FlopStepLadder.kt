@@ -30,6 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.ui.Evidence
 import dev.alexkosa.flooppassport.ui.FlowState
 import dev.alexkosa.flooppassport.technocore.Technocore
@@ -80,14 +81,14 @@ private fun StepRow(
             Spacer(Modifier.width(FlopSpacing.md))
             Column(Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        step.ordinal1,
+                    Text(t(
+                        step.ordinal1),
                         style = FlopType.label,
                         color = if (state is StepState.Pending) FlopColors.Grey else FlopColors.TextMuted,
                     )
                     Spacer(Modifier.width(FlopSpacing.sm))
                     Text(
-                        step.title.uppercase(),
+                        t(step.title).uppercase(),
                         style = FlopType.label,
                         color = when (state) {
                             is StepState.Pending -> FlopColors.Grey
@@ -99,7 +100,7 @@ private fun StepRow(
                 val line = statusLine(state)
                 if (line != null) {
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(line, style = FlopType.bodySm, color = statusColour(state))
+                    Text(t(line), style = FlopType.bodySm, color = statusColour(state))
                 }
                 // While a step is talking to the service, show what the wire is actually
                 // doing. Naming the host is a claim; the milliseconds are the evidence.
@@ -157,13 +158,12 @@ private fun StepRow(
 @Composable
 private fun EvidenceLine(key: String, value: String) {
     Row(Modifier.fillMaxWidth().padding(vertical = 3.dp)) {
-        Text(
-            key.uppercase(),
+        Text(t(key).uppercase(),
             style = FlopType.label,
             color = FlopColors.TextMuted,
             modifier = Modifier.width(96.dp),
         )
-        Text(value, style = FlopType.code, color = FlopColors.IceWhite, modifier = Modifier.weight(1f))
+        Text(t(value), style = FlopType.code, color = FlopColors.IceWhite, modifier = Modifier.weight(1f))
     }
 }
 

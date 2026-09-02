@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.util.Qr
 
 /**
@@ -67,9 +68,9 @@ fun FlopSupportCard(
             if (tokenName != null) FlopBadge(tokenName, FlopState.Active)
         }
         Spacer(Modifier.height(FlopSpacing.xs))
-        Text(
+        Text(t(
             "This app is free and open source. If it was useful, you can send a tip to " +
-                "$displayName. Your wallet opens and you choose the amount there.",
+                "$displayName. Your wallet opens and you choose the amount there."),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
         )
@@ -88,14 +89,14 @@ fun FlopSupportCard(
 
         problem?.let {
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
+            Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
         }
 
         Spacer(Modifier.height(FlopSpacing.sm))
-        Text(
+        Text(t(
             (if (tokenName != null) "$tokenName is preselected and you can switch it. " else "") +
                 "A tip changes nothing about your Passport, and nothing about any airdrop. " +
-                "It is a thank you, not a fee.",
+                "It is a thank you, not a fee."),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
         )

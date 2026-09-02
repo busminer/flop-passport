@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.ui.ActivityState
 import dev.alexkosa.flooppassport.ui.PassportViewModel
 import dev.alexkosa.flooppassport.ui.designsystem.FlopWire
@@ -63,11 +64,11 @@ fun ActivityScreen(vm: PassportViewModel) {
     ) {
         FlopLabel("activity")
         Spacer(Modifier.height(FlopSpacing.sm))
-        Text("What is still provable", style = FlopType.h2, color = FlopColors.IceWhite)
+        Text(t("What is still provable"), style = FlopType.h2, color = FlopColors.IceWhite)
         Spacer(Modifier.height(FlopSpacing.sm))
-        Text(
+        Text(t(
             "Read from technocore.chat just now, not from this phone. Rooms are trimmed as " +
-                "they grow, so this is what anyone would find today.",
+                "they grow, so this is what anyone would find today."),
             style = FlopType.bodyMd,
             color = FlopColors.TextMuted,
         )
@@ -84,9 +85,9 @@ fun ActivityScreen(vm: PassportViewModel) {
 
         if (vm.did == null) {
             FlopCard {
-                Text(
+                Text(t(
                     "Create your Passport first. There is nothing to show until something " +
-                        "has been signed.",
+                        "has been signed."),
                     style = FlopType.bodyMd,
                     color = FlopColors.TextMuted,
                 )
@@ -133,18 +134,18 @@ fun ActivityScreen(vm: PassportViewModel) {
                 Spacer(Modifier.height(FlopSpacing.sm))
                 // Rendered as inert text. Note namespaces are world-writable and the server
                 // says so on every read; this is somebody's data, never an instruction.
-                Text(it, style = FlopType.code, color = FlopColors.TextMuted)
+                Text(t(it), style = FlopType.code, color = FlopColors.TextMuted)
             }
         }
 
         Spacer(Modifier.height(FlopSpacing.md))
 
-        Text(
+        Text(t(
             if (activity.checkedInToday) {
                 "You have already left a record today."
             } else {
                 "Nothing signed today yet."
-            },
+            }),
             style = FlopType.bodyMd,
             color = if (activity.checkedInToday) FlopColors.Green else FlopColors.TextMuted,
         )
@@ -165,7 +166,7 @@ fun ActivityScreen(vm: PassportViewModel) {
 
         activity.error?.let {
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
+            Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
         }
 
         Spacer(Modifier.height(FlopSpacing.lg))
@@ -174,14 +175,14 @@ fun ActivityScreen(vm: PassportViewModel) {
 
         if (activity.records.isEmpty()) {
             FlopCard {
-                Text(
+                Text(t(
                     if (activity.lastChecked == null) {
                         "Not checked yet."
                     } else {
                         "Nothing found. If you signed something and it is not here, the " +
                             "room has been trimmed past it - which is normal, and exactly " +
                             "why this screen exists."
-                    },
+                    }),
                     style = FlopType.bodySm,
                     color = FlopColors.TextMuted,
                 )
@@ -197,7 +198,7 @@ fun ActivityScreen(vm: PassportViewModel) {
                         FlopLabel(record.day)
                     }
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(record.text, style = FlopType.bodySm, color = FlopColors.IceWhite)
+                    Text(t(record.text), style = FlopType.bodySm, color = FlopColors.IceWhite)
                     Spacer(Modifier.height(FlopSpacing.xs))
                     FlopMonoData("/r/${record.room}", FlopColors.TextMuted)
                 }
@@ -211,10 +212,10 @@ fun ActivityScreen(vm: PassportViewModel) {
                 .background(FlopColors.Surface, FlopShapes.md)
                 .padding(FlopSpacing.md),
         ) {
-            Text(
+            Text(t(
                 "There are no points here and no score. FLOP asked agents to do something " +
                     "useful, so what counts is a record a person can still open. A number " +
-                    "invented by this app would be a different game.",
+                    "invented by this app would be a different game."),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
             )
@@ -241,14 +242,13 @@ private fun Stat(value: String, label: String, highlight: Boolean, modifier: Mod
             .padding(vertical = FlopSpacing.md, horizontal = FlopSpacing.sm),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(
-            value,
+        Text(t(
+            value),
             style = FlopType.h2,
             color = if (highlight) FlopColors.Green else FlopColors.Grey,
         )
         Spacer(Modifier.height(FlopSpacing.xs))
-        Text(
-            label.uppercase(),
+        Text(t(label).uppercase(),
             style = FlopType.label,
             color = FlopColors.TextMuted,
             textAlign = TextAlign.Center,

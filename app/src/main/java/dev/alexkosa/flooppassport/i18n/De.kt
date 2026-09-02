@@ -1,0 +1,274 @@
+package dev.alexkosa.flooppassport.i18n
+
+/**
+ * German.
+ *
+ * The key is the English sentence exactly as the screen produces it, so a change to the
+ * English orphans the entry here rather than letting the two drift apart silently. Anything
+ * missing renders English, which keeps a gap cosmetic instead of breaking a screen.
+ *
+ * Product and protocol names stay in Latin script on purpose - FLOP, Seeker, Seed Vault,
+ * StrongBox, Technocore, did:key, SKR. They are what a person sees everywhere else on the
+ * phone, and translating them would make this app the only place they are called something
+ * different.
+ *
+ * Generated from the phrase catalogue and checked for lost product names, eaten leading
+ * spaces and entries left in English; the wording was then read through.
+ */
+internal val DE_STRINGS: Map<String, String> = mapOf(
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
+        "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
+    "A permanent note at an address derived from your key, so anyone can find and verify you later." to
+        "Eine dauerhafte Notiz unter einer von Ihrem Schlüssel abgeleiteten Adresse, damit Sie später jeder finden und verifizieren kann.",
+    "A tip changes nothing about your Passport and nothing about any airdrop." to
+        "Ein Trinkgeld ändert nichts an Ihrem Passport und nichts an einem Airdrop.",
+    "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
+        "Ein Trinkgeld ändert nichts an Ihrem Passport und nichts an einem Airdrop. Es ist ein Dankeschön, keine Gebühr.",
+    "About" to "Über",
+    "Accepted, but we could not read it back yet" to
+        "Akzeptiert, aber noch nicht zurückgelesen",
+    "Activity" to "Aktivität",
+    "Already checked in, found in the room" to "Eintrag bereits erstellt und im Raum gefunden",
+    "Already published, read back just now" to
+        "Bereits veröffentlicht und gerade zurückgelesen",
+    "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
+        "Jeder kann dies unter der Adresse aus Schritt 03 prüfen. Diese App verspricht keine Zuteilung und wird dies niemals tun.",
+    "Anyone holding it can sign as you" to "Jeder, der ihn besitzt, kann als Sie signieren",
+    "Anyone holding seed_hex can sign as this identity on Technocore." to
+        "Jeder, der seed_hex besitzt, kann auf Technocore als diese Identität signieren.",
+    "Anyone with this can be you" to "Jeder mit diesem Schlüssel kann als Sie auftreten",
+    "Apply" to "Übernehmen",
+    "Cancel" to "Abbrechen",
+    "Check in" to "Eintrag erstellen",
+    "Check your connection and try again." to
+        "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "Could not open the security prompt on this screen." to
+        "Die Sicherheitsabfrage konnte auf diesem Bildschirm nicht geöffnet werden.",
+    "Could not reach technocore.chat" to "technocore.chat war nicht erreichbar",
+    "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
+        "technocore.chat war nicht erreichbar. Dies sagt nichts über Ihre Einträge aus, sondern nur über die Verbindung.",
+    "Could not read the key back from secure storage" to
+        "Der Schlüssel konnte nicht aus dem sicheren Speicher zurückgelesen werden",
+    "Create" to "Erstellen",
+    "Create your Passport" to "Erstellen Sie Ihren Passport",
+    "Create your Passport first. There is nothing to show until something has been signed." to
+        "Erstellen Sie zuerst Ihren Passport. Solange nichts signiert wurde, gibt es nichts anzuzeigen.",
+    "Created my FLOP Passport on a Solana Seeker." to
+        "Meinen FLOP Passport auf einem Solana Seeker erstellt.",
+    "Delete it?" to "Löschen?",
+    "Delete the Passport and create it again from your wallet." to
+        "Löschen Sie den Passport und erstellen Sie ihn erneut aus Ihrer Wallet.",
+    "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Beim Löschen wird der Passport nur von diesem Telefon entfernt. Bereits Veröffentliches bleibt öffentlich, und dieselbe Wallet stellt dieselbe Identität wieder her - damit lässt sich nichts rückgängig machen.",
+    "Every language listed here has a full translation." to
+        "Jede hier aufgeführte Sprache ist vollständig übersetzt.",
+    "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
+        "FLOP Passport erstellt aus Ihrer Solana-Wallet eine Technocore-Identität und bewahrt die Belege auf.",
+    "FLOP Passport for Seeker" to "FLOP Passport für Seeker",
+    "FLOP Passport for Seeker - private backup" to
+        "FLOP Passport für Seeker - private Sicherung",
+    "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport für Seeker von @AlexKosa1",
+    "FLOP Passport for Seeker. First signed check-in." to
+        "FLOP Passport für Seeker. Erster signierter Eintrag.",
+    "Follow the phone" to "Folgen Sie den Anweisungen auf dem Telefon",
+    "Identity derived from your wallet signature" to
+        "Aus Ihrer Wallet-Signatur abgeleitete Identität",
+    "Identity note published, first check in signed and verified on Technocore." to
+        "Identitätsnotiz veröffentlicht, erster Eintrag signiert und auf Technocore verifiziert.",
+    "Identity note published, first check in verified on Technocore." to
+        "Identitätsnotiz veröffentlicht, erster Eintrag auf Technocore verifiziert.",
+    "Identity note published, first check in verified." to
+        "Identitätsnotiz veröffentlicht, erster Eintrag verifiziert.",
+    "It never asks for your wallet recovery phrase." to
+        "Die App fragt niemals nach der Wiederherstellungsphrase Ihrer Wallet.",
+    "It promises nothing about any airdrop, and never will." to
+        "Sie verspricht nichts in Bezug auf einen Airdrop und wird dies niemals tun.",
+    "Keep this file offline. Never send it to anyone, including the app author." to
+        "Bewahren Sie diese Datei offline auf. Senden Sie sie niemals an jemanden, auch nicht an den App-Autor.",
+    "Key born in Seed Vault, sealed by StrongBox on device." to
+        "Schlüssel in Seed Vault erzeugt und auf dem Gerät durch StrongBox versiegelt.",
+    "LAST CONNECTION" to "LETZTE VERBINDUNG",
+    "LIVE CONNECTION" to "AKTIVE VERBINDUNG",
+    "Language" to "Sprache",
+    "Make your first signed check-in" to "Erstellen Sie Ihren ersten signierten Eintrag",
+    "My FLOP Passport, created on a Solana Seeker." to
+        "Mein FLOP Passport, erstellt auf einem Solana Seeker.",
+    "Next: create your Passport from your wallet." to
+        "Als Nächstes: Erstellen Sie Ihren Passport aus Ihrer Wallet.",
+    "Next: make your first signed check-in." to
+        "Als Nächstes: Erstellen Sie Ihren ersten signierten Eintrag.",
+    "Next: publish your identity so anyone can verify you." to
+        "Als Nächstes: Veröffentlichen Sie Ihre Identität, damit jeder sie verifizieren kann.",
+    "Next: seal the key in this phone's secure storage." to
+        "Als Nächstes: Versiegeln Sie den Schlüssel im sicheren Speicher dieses Telefons.",
+    "No account, no server of ours, no analytics." to
+        "Kein Konto, kein eigener Server, keine Analysen.",
+    "No wallet on this phone opened the payment link." to
+        "Keine Wallet auf diesem Telefon hat den Zahlungslink geöffnet.",
+    "No. Nothing was published." to "Nein. Es wurde nichts veröffentlicht.",
+    "Not checked yet." to "Noch nicht geprüft.",
+    "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
+        "Nichts gefunden. Wenn Sie etwas signiert haben und es hier fehlt, wurde es aus dem Raum entfernt - das ist normal und genau dafür gibt es diesen Bildschirm.",
+    "Nothing signed today yet." to "Heute wurde noch nichts signiert.",
+    "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
+        "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
+    "Opening your Solana wallet" to "Ihre Solana-Wallet wird geöffnet",
+    "Press Create again. Nothing was sent anywhere." to
+        "Drücken Sie erneut auf Erstellen. Es wurde nichts versendet.",
+    "Protect" to "Schützen",
+    "Protect it" to "Schützen",
+    "Publish" to "Veröffentlichen",
+    "Publish your identity" to "Veröffentlichen Sie Ihre Identität",
+    "Published and read back from the server" to "Veröffentlicht und vom Server zurückgelesen",
+    "Published, read back, and vouched for by your key" to
+        "Veröffentlicht, zurückgelesen und durch Ihren Schlüssel bestätigt",
+    "Publishing your identity note to technocore.chat" to
+        "Ihre Identitätsnotiz wird auf technocore.chat veröffentlicht",
+    "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
+        "Gerade von technocore.chat gelesen, nicht von diesem Telefon. Räume werden beim Wachsen gekürzt, daher würde dies heute jeder finden.",
+    "Ready" to "Bereit",
+    "Sealed by Android Keystore" to "Durch Android Keystore versiegelt",
+    "Sealed by StrongBox, this phone's separate security chip" to
+        "Durch StrongBox versiegelt, den separaten Sicherheitschip dieses Telefons",
+    "Sealed by this phone's trusted execution environment" to
+        "Durch die vertrauenswürdige Ausführungsumgebung dieses Telefons versiegelt",
+    "Sealing the key in this device's secure storage" to
+        "Der Schlüssel wird im sicheren Speicher dieses Geräts versiegelt",
+    "Sent, but not confirmed in the room yet" to "Gesendet, aber im Raum noch nicht bestätigt",
+    "Settings" to "Einstellungen",
+    "Show your private key" to "Privaten Schlüssel anzeigen",
+    "Signed, accepted and found again in the room" to
+        "Signiert, akzeptiert und erneut im Raum gefunden",
+    "Signing your first check-in and sending it" to
+        "Ihr erster Eintrag wird signiert und gesendet",
+    "Thanks for building this" to "Danke für die Entwicklung",
+    "That was the last step. Your Passport is live." to
+        "Das war der letzte Schritt. Ihr Passport ist aktiv.",
+    "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
+        "Die Identität entsteht in Seed Vault und wird auf dem Telefon durch StrongBox versiegelt.",
+    "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
+        "Der Schlüssel wird im sicheren Speicher dieses Telefons versiegelt, dann zurückgelesen und mit Ihrer Identität abgeglichen.",
+    "The stored key does not match your identity" to
+        "Der gespeicherte Schlüssel stimmt nicht mit Ihrer Identität überein",
+    "The wallet did not complete the signature" to
+        "Die Wallet hat die Signatur nicht abgeschlossen",
+    "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
+        "Hier gibt es weder Punkte noch einen Punktestand. FLOP bat Agents, etwas Nützliches zu tun, daher zählt ein Eintrag, den eine Person weiterhin öffnen kann. Eine von dieser App erfundene Zahl wäre ein anderes Spiel.",
+    "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign as you on Technocore. Keep them offline and never send them to anyone, including us." to
+        "Diese 32 Bytes sind Ihr FLOP Passport selbst. Wer sie besitzt, kann auf Technocore als Sie signieren. Bewahren Sie sie offline auf und senden Sie sie niemals an jemanden, auch nicht an uns.",
+    "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
+        "Diese App ist kostenlos und quelloffen, und niemand hat dafür bezahlt. Wenn sie Ihnen einen Nachmittag erspart hat, ist ein Trinkgeld willkommen.",
+    "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
+        "Dies ist NICHT der Schlüssel Ihrer Solana-Wallet. Der eigene Schlüssel Ihrer Wallet verlässt Seed Vault nie, und diese App hat ihn nie gesehen. Sie sehen einen separaten Schlüssel, der nur auf Technocore signiert.",
+    "Try again. Nothing was posted." to "Versuchen Sie es erneut. Es wurde nichts eingestellt.",
+    "Try again. Nothing was published." to
+        "Versuchen Sie es erneut. Es wurde nichts veröffentlicht.",
+    "Wait a moment and press it again to re-check. Do not treat this as a failure." to
+        "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Betrachten Sie dies nicht als Fehler.",
+    "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
+        "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Als neue Nachricht gesendet, würde der Eintrag zweimal öffentlich erscheinen.",
+    "What is still provable" to "Was weiterhin nachweisbar ist",
+    "Yes. Something is already visible to others." to
+        "Ja. Etwas ist bereits für andere sichtbar.",
+    "You do not need this file to recover. The same Solana wallet that" to
+        "Sie benötigen diese Datei nicht zur Wiederherstellung. Dieselbe Solana-Wallet, die",
+    "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
+        "Sie benötigen dies nicht zur Wiederherstellung. Dieselbe Solana-Wallet stellt auf jedem Telefon denselben Passport wieder her. Diese Kopie dient dazu, den Schlüssel andernorts nach Ihren eigenen Bedingungen zu verwenden.",
+    "You have already checked in" to "Sie haben bereits einen Eintrag erstellt",
+    "You have already left a record today." to
+        "Sie haben heute bereits einen Eintrag hinterlassen.",
+    "You're all set" to "Alles ist bereit",
+    "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
+        "Ihr Passport entsteht in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, aus dem kein Schlüssel extrahiert werden kann. Auf diesem Telefon wird er anschließend durch den sicheren Speicher von Android versiegelt. Das Signieren selbst erfolgt in der App, nicht in der Hardware, da Android Keystore diesen Schlüsseltyp nicht speichern kann - daher sagen wir in Hardware versiegelt, nicht signiert.",
+    "Your Passport is live" to "Ihr Passport ist aktiv",
+    "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
+        "Ihr Passport ist aktiv und Ihr erster signierter Eintrag befindet sich auf Technocore. Jeder kann ihn verifizieren, und er bleibt Ihrer.",
+    "Your Passport is live." to "Ihr Passport ist aktiv.",
+    "Your key never leaves this phone." to "Ihr Schlüssel verlässt dieses Telefon nie.",
+    "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
+        "Ihre Wallet signiert eine Erklärung. Dies ist keine Transaktion und bewegt keine Mittel. Dieselbe Wallet stellt auf jedem Gerät denselben Passport wieder her.",
+    "active days" to "aktive Tage",
+    "activity" to "aktivität",
+    "address" to "adresse",
+    "agent: FLOP Passport for Seeker" to "Agent: FLOP Passport für Seeker",
+    "algorithm: Ed25519, did:key, 32-byte seed" to
+        "Algorithmus: Ed25519, did:key, 32-Byte-Seed",
+    "built by a community builder" to "von einem Community-Entwickler erstellt",
+    "cancel" to "abbrechen",
+    "change" to "ändern",
+    "checked" to "geprüft",
+    "close" to "schließen",
+    "content" to "inhalt",
+    "continue" to "fortfahren",
+    "copy key" to "Schlüssel kopieren",
+    "create passport" to "Passport erstellen",
+    "created this Passport rebuilds it on any device." to
+        "diesen Passport erstellt hat, stellt ihn auf jedem Gerät wieder her.",
+    "danger zone" to "Gefahrenbereich",
+    "day streak" to "Tagesserie",
+    "delete passport from this phone" to "Passport von diesem Telefon löschen",
+    "did anything go public?" to "Wurde etwas öffentlich?",
+    "done" to "fertig",
+    "failed" to "fehlgeschlagen",
+    "fetched again and matched exactly" to "erneut abgerufen und exakt abgeglichen",
+    "fetched from the server on opening" to "beim Öffnen vom Server abgerufen",
+    "fingerprint" to "fingerabdruck",
+    "floop-passport vault self-test" to "floop-passport Schlüsselspeicher-Selbsttest",
+    "identity" to "identität",
+    "identity note" to "Identitätsnotiz",
+    "live records" to "aktive Einträge",
+    "matched on our nonce, not just our key" to
+        "anhand unserer Nonce abgeglichen, nicht nur unseres Schlüssels",
+    "no thanks, continue" to "nein danke, fortfahren",
+    "no, nothing was made public" to "nein, nichts wurde öffentlich gemacht",
+    "not asked yet" to "noch nicht angefragt",
+    "not found" to "nicht gefunden",
+    "not yet - the note alone is a claim, not a proof" to
+        "noch nicht - die Notiz allein ist eine Behauptung, kein Nachweis",
+    "opening" to "wird geöffnet",
+    "our exact bytes, no wallet prefix" to "unsere exakten Bytes, ohne Wallet-Präfix",
+    "passport for seeker" to "Passport für Seeker",
+    "private key, 32 bytes, hex" to "privater Schlüssel, 32 Bytes, Hex",
+    "protect passport" to "Passport schützen",
+    "publish identity" to "Identität veröffentlichen",
+    "published" to "veröffentlicht",
+    "re-check with the server" to "erneut beim Server prüfen",
+    "re-checked when the app opened" to "beim Öffnen der App erneut geprüft",
+    "records the server still holds" to "Einträge, die der Server noch vorhält",
+    "recovery" to "wiederherstellung",
+    "room" to "raum",
+    "save my key" to "meinen Schlüssel speichern",
+    "save to a file" to "in Datei speichern",
+    "self test" to "Selbsttest",
+    "send a tip" to "Trinkgeld senden",
+    "sequence" to "sequenz",
+    "settings" to "einstellungen",
+    "sign and check in" to "signieren und Eintrag erstellen",
+    "sign today's record" to "heutigen Eintrag signieren",
+    "signed" to "signiert",
+    "signed and verified against your DID" to "signiert und anhand Ihrer DID verifiziert",
+    "storage" to "speicher",
+    "support the builder" to "Entwickler unterstützen",
+    "technocore.chat refused the note" to "technocore.chat hat die Notiz abgelehnt",
+    "technocore.chat refused the signed write" to
+        "technocore.chat hat den signierten Eintrag abgelehnt",
+    "the same wallet rebuilds this identity anywhere" to
+        "dieselbe Wallet stellt diese Identität überall wieder her",
+    "unconfirmed" to "unbestätigt",
+    "verified" to "verifiziert",
+    "verify it yourself" to "selbst verifizieren",
+    "vouched for" to "bestätigt",
+    "wallet linked" to "Wallet verknüpft",
+    "what this app never does" to "was diese App niemals tut",
+    "what to do" to "was zu tun ist",
+    "when" to "wann",
+    "with a wallet prefix, which is fine and pinned" to
+        "mit einem Wallet-Präfix, der zulässig und fest hinterlegt ist",
+    "working" to "wird verarbeitet",
+    "yes, a signed did-note line carries its hash" to
+        "ja, eine signierte did-note-Zeile enthält ihren Hash",
+    "yes, delete" to "ja, löschen",
+    "yes, something is already public" to "ja, etwas ist bereits öffentlich",
+    "your identity" to "Ihre Identität",
+    "your private key" to "Ihr privater Schlüssel",
+)

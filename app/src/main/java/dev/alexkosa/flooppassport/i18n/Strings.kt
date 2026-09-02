@@ -1,6 +1,7 @@
 package dev.alexkosa.flooppassport.i18n
 
 import android.content.Context
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
 import java.util.Locale
 
@@ -13,14 +14,23 @@ import java.util.Locale
  * cost is that editing an English sentence orphans its translation, which is visible in
  * review rather than at runtime.
  *
- * Only languages with a real table are offered. A picker listing ten languages that all
- * render English is worse than a short honest list: it tells someone their language is
- * supported and then proves otherwise on the next screen.
+ * Only languages with a real table are offered. A picker listing languages that all render
+ * English is worse than a short honest list: it tells someone their language is supported
+ * and then proves otherwise on the next screen. Every entry here has a full table.
  */
 enum class Lang(val code: String, val label: String) {
     /** Each language named the way its own speakers write it: people scan for their script. */
     EN("en", "English"),
     RU("ru", "Русский"),
+    ZH("zh", "中文"),
+    ES("es", "Español"),
+    PT("pt", "Português"),
+    DE("de", "Deutsch"),
+    TR("tr", "Türkçe"),
+    VI("vi", "Tiếng Việt"),
+    ID("id", "Indonesia"),
+    KO("ko", "한국어"),
+    JA("ja", "日本語"),
     ;
 
     companion object {
@@ -34,6 +44,15 @@ enum class Lang(val code: String, val label: String) {
 private val TABLES: Map<Lang, Map<String, String>> = mapOf(
     Lang.EN to emptyMap(),
     Lang.RU to RU_STRINGS,
+    Lang.ZH to ZH_STRINGS,
+    Lang.ES to ES_STRINGS,
+    Lang.PT to PT_STRINGS,
+    Lang.DE to DE_STRINGS,
+    Lang.TR to TR_STRINGS,
+    Lang.VI to VI_STRINGS,
+    Lang.ID to ID_STRINGS,
+    Lang.KO to KO_STRINGS,
+    Lang.JA to JA_STRINGS,
 )
 
 class Translator(val lang: Lang) {
@@ -44,6 +63,18 @@ class Translator(val lang: Lang) {
 }
 
 val LocalTranslator = compositionLocalOf { Translator(Lang.EN) }
+
+/**
+ * Translate a string at the moment it is drawn.
+ *
+ * Deliberately the only entry point the screens use. Translating at display rather than
+ * where a sentence is written means the ViewModel stays plain English - it has no business
+ * knowing about languages - and the rule stays small enough to hold in your head: if it is
+ * rendered, it went through here. A string with no entry in the table comes back exactly as
+ * it went in, so data like a DID or a hash passes through untouched.
+ */
+@Composable
+fun t(english: String): String = LocalTranslator.current(english)
 
 /**
  * Where the choice is kept.

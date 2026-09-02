@@ -24,8 +24,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.i18n.Lang
 import dev.alexkosa.flooppassport.ui.PassportViewModel
+import dev.alexkosa.flooppassport.ui.designsystem.FlopLanguageDialog
+import dev.alexkosa.flooppassport.ui.designsystem.FlopLanguageRow
 import dev.alexkosa.flooppassport.ui.designsystem.FlopBadge
 import dev.alexkosa.flooppassport.ui.designsystem.FlopButtonSecondary
 import dev.alexkosa.flooppassport.ui.designsystem.FlopCard
@@ -58,6 +61,7 @@ fun SettingsScreen(
     tokenName: String,
 ) {
     var confirmingDelete by remember { mutableStateOf(false) }
+    var pickingLanguage by remember { mutableStateOf(false) }
 
     Column(
         Modifier
@@ -70,27 +74,20 @@ fun SettingsScreen(
         Spacer(Modifier.height(FlopSpacing.lg))
 
         // --- language ---------------------------------------------------------------
-        FlopLabel("Language")
-        Spacer(Modifier.height(FlopSpacing.sm))
-        LanguageRow(
-            title = "Follow the phone",
-            subtitle = Lang.fromSystem().label,
-            selected = chosenLang == null,
-            onClick = { onLanguage(null) },
+        // One row, not eleven. The list lives behind it, so the rest of this screen is
+        // still on screen when somebody opens Settings for a different reason.
+        FlopLanguageRow(
+            chosen = chosenLang,
+            effective = effectiveLang,
+            onOpen = { pickingLanguage = true },
         )
-        Lang.entries.forEach { lang ->
-            LanguageRow(
-                title = lang.label,
-                subtitle = lang.code,
-                selected = chosenLang == lang,
-                onClick = { onLanguage(lang) },
-            )
-        }
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(
-            "Only languages with a real translation are listed. A picker offering ten " +
-                "languages that all render English would say your language is supported " +
-                "and then prove otherwise on the next screen.",
+            t(
+                "Only languages with a real translation are listed. A picker offering " +
+                    "languages that all render English would say your language is supported " +
+                    "and then prove otherwise on the next screen.",
+            ),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
         )
@@ -100,19 +97,19 @@ fun SettingsScreen(
         FlopLabel("About")
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopCard {
-            Text(
+            Text(t(
                 "FLOP Passport creates a Technocore identity from your Solana wallet and " +
-                    "keeps the receipts.",
+                    "keeps the receipts."),
                 style = FlopType.bodyMd,
                 color = FlopColors.IceWhite,
             )
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(
+            Text(t(
                 "Your Passport is born inside Seed Vault, the Seeker's hardware key store, " +
                     "from which a key cannot be extracted. On this phone it is then sealed " +
                     "by Android's secure storage. Signing itself happens in the app, not in " +
                     "hardware, because Android Keystore cannot hold this kind of key - so " +
-                    "we say sealed, not signed, in hardware.",
+                    "we say sealed, not signed, in hardware."),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
             )
@@ -128,7 +125,8 @@ fun SettingsScreen(
                 "It never asks for your wallet recovery phrase.",
                 "It promises nothing about any airdrop, and never will.",
             ).forEach {
-                Text("- $it", style = FlopType.bodySm, color = FlopColors.TextMuted)
+                // The bullet is punctuation, the sentence is the copy: translate the sentence.
+                Text("- " + t(it), style = FlopType.bodySm, color = FlopColors.TextMuted)
                 Spacer(Modifier.height(FlopSpacing.xs))
             }
         }
@@ -170,10 +168,10 @@ fun SettingsScreen(
             FlopLabel("danger zone", FlopColors.ErrorRed)
             Spacer(Modifier.height(FlopSpacing.sm))
             FlopCard {
-                Text(
+                Text(t(
                     "Deleting removes the Passport from this phone only. Anything already " +
                         "published stays public, and the same wallet rebuilds the same " +
-                        "identity - so this is not a way to undo anything.",
+                        "identity - so this is not a way to undo anything."),
                     style = FlopType.bodySm,
                     color = FlopColors.TextMuted,
                 )
@@ -184,8 +182,8 @@ fun SettingsScreen(
                         { confirmingDelete = true },
                     )
                 } else {
-                    Text(
-                        "Delete it?",
+                    Text(t(
+                        "Delete it?"),
                         style = FlopType.h3,
                         color = FlopColors.ErrorRed,
                     )
@@ -207,40 +205,17 @@ fun SettingsScreen(
 
         Spacer(Modifier.height(FlopSpacing.xl))
     }
-}
 
-@Composable
-private fun LanguageRow(
-    title: String,
-    subtitle: String,
-    selected: Boolean,
-    onClick: () -> Unit,
-) {
-    Row(
-        Modifier
-            .fillMaxWidth()
-            .padding(bottom = FlopSpacing.sm)
-            .background(FlopColors.Surface, FlopShapes.md)
-            .border(
-                1.dp,
-                if (selected) FlopColors.Cyan else FlopColors.Border,
-                FlopShapes.md,
-            )
-            .clickable { onClick() }
-            .padding(FlopSpacing.md),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Column {
-            Text(
-                title,
-                style = FlopType.bodyMd,
-                color = if (selected) FlopColors.IceWhite else FlopColors.TextMuted,
-            )
-            Spacer(Modifier.height(FlopSpacing.xs))
-            FlopLabel(subtitle)
-        }
-        // A word, not only a colour: the selected row says so.
-        if (selected) FlopBadge("selected", FlopState.Active)
+    if (pickingLanguage) {
+        FlopLanguageDialog(
+            chosen = chosenLang,
+            effective = effectiveLang,
+            onApply = {
+                onLanguage(it)
+                pickingLanguage = false
+            },
+            onDismiss = { pickingLanguage = false },
+        )
     }
 }
+

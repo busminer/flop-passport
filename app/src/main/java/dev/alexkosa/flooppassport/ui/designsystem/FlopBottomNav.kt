@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import dev.alexkosa.flooppassport.i18n.t
 import androidx.compose.ui.unit.dp
 
 /** The three places this app has. Named as nouns, because a tab is a place, not an action. */
@@ -67,13 +68,13 @@ fun FlopBottomNav(
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            tab.label.uppercase(),
+                            t(tab.label).uppercase(),
                             style = FlopType.label,
                             color = if (active) FlopColors.IceWhite else FlopColors.Grey,
                         )
                         badge[tab]?.let {
                             Spacer(Modifier.width(FlopSpacing.xs))
-                            Text(it, style = FlopType.label, color = FlopColors.Green)
+                            Text(t(it), style = FlopType.label, color = FlopColors.Green)
                         }
                     }
                 }

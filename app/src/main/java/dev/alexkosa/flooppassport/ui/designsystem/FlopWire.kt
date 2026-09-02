@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.technocore.Technocore
 
 /**
@@ -63,8 +64,8 @@ fun FlopWire(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(
-                if (active) "LIVE CONNECTION" else "LAST CONNECTION",
+            Text(t(
+                if (active) "LIVE CONNECTION" else "LAST CONNECTION"),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
             )
@@ -132,8 +133,8 @@ fun FlopWire(
         Spacer(Modifier.height(FlopSpacing.sm))
 
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                pulse?.host ?: "technocore.chat",
+            Text(t(
+                pulse?.host ?: "technocore.chat"),
                 style = FlopType.code,
                 color = FlopColors.IceWhite,
             )

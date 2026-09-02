@@ -22,6 +22,7 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import dev.alexkosa.flooppassport.i18n.t
 import androidx.compose.ui.window.DialogProperties
 
 /**
@@ -62,12 +63,12 @@ fun FlopBackupSheet(
             }
 
             Spacer(Modifier.height(FlopSpacing.md))
-            Text("Anyone with this can be you", style = FlopType.h3, color = FlopColors.IceWhite)
+            Text(t("Anyone with this can be you"), style = FlopType.h3, color = FlopColors.IceWhite)
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(
+            Text(t(
                 "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign " +
                     "as you on Technocore. Keep them offline and never send them to anyone, " +
-                    "including us.",
+                    "including us."),
                 style = FlopType.bodyMd,
                 color = FlopColors.TextMuted,
             )
@@ -82,11 +83,11 @@ fun FlopBackupSheet(
                 Column {
                     FlopLabel("identity")
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(did, style = FlopType.code, color = FlopColors.Cyan)
+                    Text(t(did), style = FlopType.code, color = FlopColors.Cyan)
                     Spacer(Modifier.height(FlopSpacing.sm))
                     FlopLabel("private key, 32 bytes, hex")
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(seedHex, style = FlopType.code, color = FlopColors.IceWhite)
+                    Text(t(seedHex), style = FlopType.code, color = FlopColors.IceWhite)
                 }
             }
 
@@ -97,10 +98,10 @@ fun FlopBackupSheet(
                     .background(FlopColors.Cyan.copy(alpha = 0.07f), FlopShapes.md)
                     .padding(FlopSpacing.sm),
             ) {
-                Text(
+                Text(t(
                     "This is NOT your Solana wallet key. Your wallet's own key never " +
                         "leaves Seed Vault and this app has never seen it. What you are " +
-                        "looking at is a separate key that signs only on Technocore.",
+                        "looking at is a separate key that signs only on Technocore."),
                     style = FlopType.bodySm,
                     color = FlopColors.Cyan,
                 )
@@ -113,10 +114,10 @@ fun FlopBackupSheet(
                     .background(FlopColors.Green.copy(alpha = 0.07f), FlopShapes.md)
                     .padding(FlopSpacing.sm),
             ) {
-                Text(
+                Text(t(
                     "You do not need this to recover. The same Solana wallet rebuilds the " +
                         "same Passport on any phone. This copy is for using the key " +
-                        "somewhere else, on your own terms.",
+                        "somewhere else, on your own terms."),
                     style = FlopType.bodySm,
                     color = FlopColors.Green,
                 )

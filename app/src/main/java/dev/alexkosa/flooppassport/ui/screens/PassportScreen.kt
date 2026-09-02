@@ -27,6 +27,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.R
 import dev.alexkosa.flooppassport.ui.PassportViewModel
 import dev.alexkosa.flooppassport.ui.Step
@@ -182,11 +183,11 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                     .padding(FlopSpacing.md),
             ) {
                 Column {
-                    Text("Your Passport is live.", style = FlopType.h3, color = FlopColors.Green)
+                    Text(t("Your Passport is live."), style = FlopType.h3, color = FlopColors.Green)
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(
+                    Text(t(
                         "Anyone can check it at the address in step 03. This app promises " +
-                            "nothing about any allocation, and never will.",
+                            "nothing about any allocation, and never will."),
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
                     )
@@ -248,7 +249,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             })
             gateMessage?.let {
                 Spacer(Modifier.height(FlopSpacing.sm))
-                Text(it, style = FlopType.bodySm, color = FlopColors.ErrorRed)
+                Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
             }
 
 
@@ -279,9 +280,9 @@ private fun ActionBlock(
     onClick: () -> Unit,
 ) {
     Column {
-        Text(title, style = FlopType.h3, color = FlopColors.IceWhite)
+        Text(t(title), style = FlopType.h3, color = FlopColors.IceWhite)
         Spacer(Modifier.height(FlopSpacing.sm))
-        Text(body, style = FlopType.bodyMd, color = FlopColors.TextMuted)
+        Text(t(body), style = FlopType.bodyMd, color = FlopColors.TextMuted)
         Spacer(Modifier.height(FlopSpacing.md))
         FlopButton(button, onClick, enabled = enabled)
     }

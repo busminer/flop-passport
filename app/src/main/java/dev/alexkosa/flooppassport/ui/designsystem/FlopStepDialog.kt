@@ -30,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.ui.Evidence
 import dev.alexkosa.flooppassport.ui.Step
 
@@ -80,16 +81,16 @@ fun FlopStepDialog(
                         .background(FlopColors.Green, FlopShapes.sm),
                     contentAlignment = Alignment.Center,
                 ) {
-                    Text("✓", style = FlopType.label, color = FlopColors.Base)
+                    Text(t("✓"), style = FlopType.label, color = FlopColors.Base)
                 }
                 Spacer(Modifier.width(FlopSpacing.sm))
                 FlopLabel("step ${step.ordinal1} ${step.title} complete", FlopColors.Green)
             }
 
             Spacer(Modifier.height(FlopSpacing.md))
-            Text(headline, style = FlopType.h3, color = FlopColors.IceWhite)
+            Text(t(headline), style = FlopType.h3, color = FlopColors.IceWhite)
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(body, style = FlopType.bodyMd, color = FlopColors.TextMuted)
+            Text(t(body), style = FlopType.bodyMd, color = FlopColors.TextMuted)
 
             if (evidence != null && evidence.lines.isNotEmpty()) {
                 Spacer(Modifier.height(FlopSpacing.md))
@@ -104,7 +105,7 @@ fun FlopStepDialog(
                 ) {
                     evidence.lines.forEach { (k, v) ->
                         FlopLabel(k)
-                        Text(v, style = FlopType.code, color = FlopColors.IceWhite)
+                        Text(t(v), style = FlopType.code, color = FlopColors.IceWhite)
                     }
                 }
             }
@@ -146,9 +147,9 @@ fun FlopProblemDialog(
                 FlopLabel("step ${step.ordinal1} ${step.title} did not finish", FlopColors.ErrorRed)
             }
             Spacer(Modifier.height(FlopSpacing.md))
-            Text(headline, style = FlopType.h3, color = FlopColors.IceWhite)
+            Text(t(headline), style = FlopType.h3, color = FlopColors.IceWhite)
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(whatToDo, style = FlopType.bodyMd, color = FlopColors.TextMuted)
+            Text(t(whatToDo), style = FlopType.bodyMd, color = FlopColors.TextMuted)
 
             Spacer(Modifier.height(FlopSpacing.md))
             Box(
@@ -160,12 +161,12 @@ fun FlopProblemDialog(
                 Column {
                     FlopLabel("did anything go public?")
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(
+                    Text(t(
                         if (publishedSomething) {
                             "Yes. Something is already visible to others."
                         } else {
                             "No. Nothing was published."
-                        },
+                        }),
                         style = FlopType.code,
                         color = if (publishedSomething) FlopColors.Cyan else FlopColors.Green,
                     )
@@ -173,7 +174,7 @@ fun FlopProblemDialog(
                         Spacer(Modifier.height(FlopSpacing.sm))
                         FlopLabel("detail")
                         Spacer(Modifier.height(FlopSpacing.xs))
-                        Text(detail, style = FlopType.code, color = FlopColors.TextMuted)
+                        Text(t(detail), style = FlopType.code, color = FlopColors.TextMuted)
                     }
                 }
             }
@@ -187,8 +188,8 @@ fun FlopProblemDialog(
 /** Centred variant used by the final screen, where the message is the whole point. */
 @Composable
 fun FlopCentredText(text: String, modifier: Modifier = Modifier) {
-    Text(
-        text,
+    Text(t(
+        text),
         style = FlopType.bodyMd,
         color = FlopColors.TextMuted,
         textAlign = TextAlign.Center,

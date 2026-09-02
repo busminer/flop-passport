@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.net.toUri
+import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.util.Qr
 
 /**
@@ -73,20 +74,20 @@ fun FlopSupportInvite(
                 Modifier.size(26.dp).scale(mark).background(FlopColors.Green, FlopShapes.sm),
                 contentAlignment = Alignment.Center,
             ) {
-                Text("✓", style = FlopType.h3, color = FlopColors.Base)
+                Text(t("✓"), style = FlopType.h3, color = FlopColors.Base)
             }
 
             Spacer(Modifier.height(FlopSpacing.md))
-            Text(
-                "You're all set",
+            Text(t(
+                "You're all set"),
                 style = FlopType.h2,
                 color = FlopColors.IceWhite,
                 textAlign = TextAlign.Center,
             )
             Spacer(Modifier.height(FlopSpacing.sm))
-            Text(
+            Text(t(
                 "Your Passport is live and your first signed record is on Technocore. " +
-                    "Anyone can verify it, and it stays yours.",
+                    "Anyone can verify it, and it stays yours."),
                 style = FlopType.bodyMd,
                 color = FlopColors.TextMuted,
                 textAlign = TextAlign.Center,
@@ -102,13 +103,13 @@ fun FlopSupportInvite(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     FlopLabel("built by a community builder")
                     Spacer(Modifier.height(FlopSpacing.sm))
-                    Text("Alex Kosa", style = FlopType.h3, color = FlopColors.IceWhite)
+                    Text(t("Alex Kosa"), style = FlopType.h3, color = FlopColors.IceWhite)
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(displayName, style = FlopType.code, color = FlopColors.Cyan)
+                    Text(t(displayName), style = FlopType.code, color = FlopColors.Cyan)
                     Spacer(Modifier.height(FlopSpacing.sm))
-                    Text(
+                    Text(t(
                         "This app is free and open source, and nobody paid for it. " +
-                            "If it saved you an afternoon, a tip is welcome.",
+                            "If it saved you an afternoon, a tip is welcome."),
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
                         textAlign = TextAlign.Center,
@@ -130,8 +131,8 @@ fun FlopSupportInvite(
             FlopButtonSecondary("no thanks, continue", onDismiss)
 
             Spacer(Modifier.height(FlopSpacing.md))
-            Text(
-                "A tip changes nothing about your Passport and nothing about any airdrop.",
+            Text(t(
+                "A tip changes nothing about your Passport and nothing about any airdrop."),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
                 textAlign = TextAlign.Center,

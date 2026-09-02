@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import dev.alexkosa.flooppassport.i18n.t
 import androidx.compose.ui.unit.dp
 
 /**
@@ -28,12 +29,12 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FlopLabel(text: String, color: Color = FlopColors.TextMuted, modifier: Modifier = Modifier) {
-    Text(text.uppercase(), style = FlopType.label, color = color, modifier = modifier)
+    Text(t(text).uppercase(), style = FlopType.label, color = color, modifier = modifier)
 }
 
 @Composable
 fun FlopMonoData(text: String, color: Color = FlopColors.Cyan, modifier: Modifier = Modifier) {
-    Text(text, style = FlopType.code, color = color, modifier = modifier)
+    Text(t(text), style = FlopType.code, color = color, modifier = modifier)
 }
 
 @Composable
@@ -73,8 +74,7 @@ fun FlopButton(
             .padding(vertical = 15.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(
-            text.uppercase(),
+        Text(t(text).uppercase(),
             style = FlopType.label,
             color = if (enabled) FlopColors.Base else FlopColors.TextMuted,
             textAlign = TextAlign.Center,
@@ -93,7 +93,7 @@ fun FlopButtonSecondary(text: String, onClick: () -> Unit, modifier: Modifier = 
             .padding(vertical = 14.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(text.uppercase(), style = FlopType.label, color = FlopColors.IceWhite)
+        Text(t(text).uppercase(), style = FlopType.label, color = FlopColors.IceWhite)
     }
 }
 
@@ -116,7 +116,7 @@ fun FlopBadge(text: String, state: FlopState, modifier: Modifier = Modifier) {
             .background(fg.copy(alpha = 0.13f), FlopShapes.pill)
             .padding(horizontal = 10.dp, vertical = 4.dp),
     ) {
-        Text(text.uppercase(), style = FlopType.label, color = fg)
+        Text(t(text).uppercase(), style = FlopType.label, color = fg)
     }
 }
 
