@@ -126,6 +126,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Henüz bir şey sorulmadı",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Hiçbir şey bulunamadı. Bir şey imzaladıysanız ve burada değilse oda onu artık içermeyecek şekilde kırpılmıştır; bu normaldir ve bu ekran tam olarak bu nedenle vardır.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Bu metin için henüz bir kefil yok. İmzalamak için yeniden yayımlayın.",
     "Nothing signed today yet." to "Bugün henüz hiçbir şey imzalanmadı.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
@@ -163,6 +165,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Signed, accepted and found again in the room" to
         "İmzalandı, kabul edildi ve odada yeniden bulundu",
     "Signing your first check-in and sending it" to "İlk kaydınız imzalanıp gönderiliyor",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Anahtarınız kefil olduktan sonra biri bu notu değiştirdi. Yeniden yayımlayın.",
     "Talking to the service" to "Hizmetle iletişim kuruluyor",
     "Thanks for building this" to "Bunu geliştirdiğiniz için teşekkürler",
     "That was the last step. Your Passport is live." to "Bu son adımdı. Passport'ınız yayında.",
@@ -189,6 +193,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Yeni mesaj olarak göndermek, kaydı herkese açık olarak iki kez yayımlar.",
     "What is still provable" to "Hâlâ kanıtlanabilenler",
+    "What recovery without a seed phrase costs" to "Seed ifadesi olmadan kurtarmanın bedeli",
     "Yes. Something is already visible to others." to
         "Evet. Bir şey başkaları tarafından zaten görülebiliyor.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -206,9 +211,13 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport'ınız yayında ve ilk imzalı kaydınız Technocore üzerinde. Herkes bunu doğrulayabilir ve kayıt size ait kalır.",
     "Your Passport is live." to "Passport'ınız yayında.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport tek bir cüzdan imzasından yeniden oluşturulur; kaybedilecek bir seed ifadesi bu yüzden yoktur. Aynı gerçek tersine de işler: cüzdanınıza tam olarak o cümleyi imzalatan herhangi bir uygulama bu Passport'u yeniden oluşturabilir. Bir cüzdanın size imzalattığı şeyi burada ve her yerde okuyun.",
     "Your key is never sent anywhere. Only you can export it." to
         "Anahtarınız hiçbir yere gönderilmez. Yalnızca siz dışa aktarabilirsiniz.",
     "Your key never leaves this phone." to "Anahtarınız bu telefondan hiçbir zaman ayrılmaz.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Anahtarınız bu notun tam karmasını taşıyan bir satırı imzaladı.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Cüzdanınız tek bir beyanı imzalar. Bu bir işlem değildir ve hiçbir fonu taşımaz. Aynı cüzdan, aynı Passport'ı herhangi bir cihazda yeniden oluşturur.",
     "active days" to "etkin gün",
@@ -220,6 +229,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "bir topluluk geliştiricisi tarafından oluşturuldu",
     "cancel" to "iptal",
     "change" to "değiştir",
+    "changed" to "değişti",
     "checked" to "kontrol edildi",
     "close" to "kapat",
     "connection" to "bağlantı",
@@ -285,6 +295,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "aynı cüzdan bu kimliği her yerde yeniden oluşturur",
     "unconfirmed" to "doğrulanmadı",
+    "unsigned" to "imzasız",
     "verified" to "doğrulandı",
     "verify it yourself" to "kendiniz doğrulayın",
     "version" to "sürüm",

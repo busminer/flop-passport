@@ -106,6 +106,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "尚未提出请求",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "未找到任何内容。如果您签署过内容但这里没有显示，说明房间已清理掉该记录。这是正常情况，也是此页面存在的原因。",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "尚无任何内容为这段文本背书。请再次发布以为其签名。",
     "Nothing signed today yet." to "今天尚未签署任何记录。",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "仅列出已有实际翻译的语言。如果语言选择器列出的语言都显示为英文，它会声称支持您的语言，却在下一屏显示事实并非如此。",
@@ -136,6 +138,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Show your private key" to "显示您的私钥",
     "Signed, accepted and found again in the room" to "已签名、接受并再次在房间中找到",
     "Signing your first check-in and sending it" to "正在签署并发送您的首条记录",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "在您的密钥为这条备注背书之后，有人改动了它。请再次发布。",
     "Talking to the service" to "正在与服务通信",
     "Thanks for building this" to "感谢开发此应用",
     "That was the last step. Your Passport is live." to "这是最后一步。您的 Passport 已启用。",
@@ -162,6 +166,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "请稍候片刻，再次按下以重新检查。作为新消息发送会公开发布两次。",
     "What is still provable" to "仍可证明的内容",
+    "What recovery without a seed phrase costs" to "无需助记词的恢复方式，代价是什么",
     "Yes. Something is already visible to others." to "是。已有内容对其他人可见。",
     "You do not need this file to recover. The same Solana wallet that" to
         "恢复时不需要此文件。创建它的同一 Solana 钱包",
@@ -178,8 +183,11 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "您的 Passport 已启用，首条签名记录已发布到 Technocore。任何人都能验证，它始终属于您。",
     "Your Passport is live." to "您的 Passport 已启用。",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "您的 Passport 由一次钱包签名重建，因此没有会丢失的助记词。反过来也成立：任何能让您的钱包签署那句一模一样的话的应用，都能重建这个 Passport。请阅读钱包要求您签署的内容，在这里，也在任何地方。",
     "Your key is never sent anywhere. Only you can export it." to "您的密钥不会发送到任何地方。只有您可以将其导出。",
     "Your key never leaves this phone." to "您的密钥绝不会离开此手机。",
+    "Your key signed a line carrying this note's exact hash." to "您的密钥签署了一行，其中带有这条备注的确切哈希值。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "您的钱包只签署一项声明。这不是交易，也不会转移资金。同一钱包可在任何设备上重建相同的 Passport。",
     "active days" to "活跃天数",
@@ -190,6 +198,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "由社区开发者构建",
     "cancel" to "取消",
     "change" to "更改",
+    "changed" to "已更改",
     "checked" to "已检查",
     "close" to "关闭",
     "connection" to "连接",
@@ -251,6 +260,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "text" to "文本",
     "the same wallet rebuilds this identity anywhere" to "同一钱包可在任何地方重建此身份",
     "unconfirmed" to "未确认",
+    "unsigned" to "未签名",
     "verified" to "已验证",
     "verify it yourself" to "自行验证",
     "version" to "版本",

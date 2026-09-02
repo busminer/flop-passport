@@ -107,6 +107,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "まだ質問はありません",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "何も見つかりませんでした。署名したものがここにない場合、ルームの整理によって削除されています。これは通常の動作であり、その確認のためにこの画面があります。",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "このテキストを保証するものはまだありません。署名するにはもう一度公開してください。",
     "Nothing signed today yet." to "今日はまだ何も署名していません。",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "実際の翻訳がある言語のみを表示しています。すべて英語で表示される言語を選択肢に含めると、対応言語と表示されても、次の画面では対応していないことになります。",
@@ -138,6 +140,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Show your private key" to "秘密鍵を表示",
     "Signed, accepted and found again in the room" to "署名、受理され、ルーム内で再確認されました",
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "鍵が保証した後で、誰かがこのノートを書き換えました。もう一度公開してください。",
     "Talking to the service" to "サービスと通信中",
     "Thanks for building this" to "開発への謝意を送る",
     "That was the last step. Your Passport is live." to "これが最後のステップです。Passportは公開されています。",
@@ -164,6 +168,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "少し待ってから、もう一度押して再確認してください。新しいメッセージとして送ると、公開投稿が重複します。",
     "What is still provable" to "現在も証明できること",
+    "What recovery without a seed phrase costs" to "シードフレーズなしの復元が引き受けるもの",
     "Yes. Something is already visible to others." to "はい。すでに他の人から見える情報があります。",
     "You do not need this file to recover. The same Solana wallet that" to
         "復元にこのファイルは不要です。同じSolanaウォレットで",
@@ -180,9 +185,13 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passportは公開され、最初の署名済み記録がTechnocore上にあります。誰でも検証でき、所有者は変わりません。",
     "Your Passport is live." to "Passportは公開されています。",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport はウォレットの署名ひとつから再構成されます。だから失うシードフレーズが ありません。同じことは逆にも働きます。まったく同じ文にウォレットで署名させられる アプリは、この Passport を再構成できます。ウォレットが何に署名を求めているかを、ここでも、ほかのどこでも読んでください。",
     "Your key is never sent anywhere. Only you can export it." to
         "鍵が外部に送信されることはありません。エクスポートできるのは本人だけです。",
     "Your key never leaves this phone." to "鍵がこの端末から出ることはありません。",
+    "Your key signed a line carrying this note's exact hash." to
+        "あなたの鍵が、このノートの正確なハッシュを含む行に署名しました。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "ウォレットは1つの文に署名します。トランザクションではなく、資金は移動しません。同じウォレットから、どの端末でも同じPassportを再構築できます。",
     "active days" to "活動日数",
@@ -193,6 +202,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "コミュニティ開発者による制作",
     "cancel" to "キャンセル",
     "change" to "変更",
+    "changed" to "変更あり",
     "checked" to "確認済み",
     "close" to "閉じる",
     "connection" to "接続",
@@ -255,6 +265,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "text" to "テキスト",
     "the same wallet rebuilds this identity anywhere" to "同じウォレットから、どこでもこのIDを再構築できます",
     "unconfirmed" to "未確認",
+    "unsigned" to "未署名",
     "verified" to "検証済み",
     "verify it yourself" to "自身で検証",
     "version" to "バージョン",

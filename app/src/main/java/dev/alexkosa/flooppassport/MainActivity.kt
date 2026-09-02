@@ -69,14 +69,12 @@ class MainActivity : FragmentActivity() {
      * Android will show its own prompt when they use it.
      */
     private fun askForNotificationsOnce() {
+        // Below Android 13 there is no prompt, and installing the app already grants the
+        // permission. That is not consent to be notified: switching reminders on for
+        // somebody who was never asked is exactly the behaviour the prompt exists to stop.
+        // They stay off, and the switch in Settings is where a person turns them on.
         if (android.os.Build.VERSION.SDK_INT < 33) {
-            ReminderPrefs(this).let { prefs ->
-                if (!prefs.asked) {
-                    prefs.asked = true
-                    prefs.enabled = true
-                    DailyReminder.schedule(this)
-                }
-            }
+            ReminderPrefs(this).asked = true
             return
         }
         val prefs = ReminderPrefs(this)

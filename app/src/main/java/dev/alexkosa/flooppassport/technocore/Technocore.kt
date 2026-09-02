@@ -183,8 +183,20 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     suspend fun readIdentityNote(did: String): String? {
         val r = retrying(DidKey.notePath(did))
         if (r.ok) return stripBanner(r.body)
-        // One attempt: this is a fallback for notes written under an older address, so
-        // it is usually absent and waiting on it three times only delays the answer.
+
+        // Caught live: the app showed NOT FOUND for a note that was sitting on the server
+        // and answered 200 to five requests in a row a second later. Three 503s in a row
+        // are unlucky rather than impossible here, and reporting them as absence tells
+        // somebody their published identity is gone.
+        //
+        // So only a 404 means absent. Anything else is a failure to ask, and the caller
+        // already knows how to say that.
+        if (r.status != 404) {
+            throw java.io.IOException("technocore.chat answered ${r.status} for the note")
+        }
+
+        // One attempt: a fallback for notes written under an older address, usually absent,
+        // and waiting on it three times only delays an answer we already have.
         val legacy = runCatching { get(DidKey.legacyNotePath(did)) }.getOrElse { Response(0, "") }
         return if (legacy.ok) stripBanner(legacy.body) else null
     }
@@ -253,6 +265,29 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
 
         if (rec.optString("text") != swept) {
             return Result.Unconfirmed("The stored text differs from the text we signed")
+        }
+
+        // Check the arithmetic rather than take the service's word for it.
+        //
+        // Matching `from`, `nonce` and `text` only proves the service echoed back what we
+        // sent. Since 05:07 UTC on 31 August the signature is stored beside the record, so
+        // it can be verified the way any stranger would verify it: rebuild
+        // `room|nonce|text` and check it against the key inside the DID. This app tells
+        // people its records are provable; it should be the first to actually prove one.
+        // A record with no `sig` predates that change and is passed through - missing is
+        // "not re-verifiable", never "invalid".
+        val stored = rec.optString("sig")
+        if (stored.isNotEmpty()) {
+            val good = runCatching {
+                dev.alexkosa.flooppassport.crypto.Ed25519.verify(
+                    publicKey = DidKey.publicKey(did),
+                    message = payload.toByteArray(Charsets.UTF_8),
+                    signature = dev.alexkosa.flooppassport.crypto.Ed25519.decodeSignature(stored),
+                )
+            }.getOrDefault(false)
+            if (!good) {
+                return Result.Unconfirmed("The stored record did not verify against this key")
+            }
         }
 
         return Result.Verified(
@@ -338,6 +373,10 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
         // records are opposite facts, and returning the same empty list for both told the
         // user their history was gone when it was only unreachable.
         if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
+        // A 200 whose body is not a room - an HTML error page from a proxy, an empty body,
+        // JSON without `messages` - is a failure to ask, not an identity with no history.
+        // Swallowing it here is what let a captive portal tell somebody their records were
+        // gone.
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
             (0 until messages.length())
@@ -355,7 +394,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
                     )
                 }
                 .sortedBy { it.seq }
-        }.getOrDefault(emptyList())
+        }.getOrElse { throw java.io.IOException("technocore.chat sent something that is not a room") }
     }
 
     /**
@@ -367,6 +406,10 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     suspend fun nextNonce(room: String, did: String): String {
         val now = System.currentTimeMillis()
         val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
+        // Without this, an unreachable server made the highest known nonce zero. A phone
+        // whose clock had once run ahead would then sign a nonce below its own last one and
+        // be refused, with nothing on screen explaining why.
+        if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
         val highest = runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
             (0 until messages.length())

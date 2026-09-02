@@ -126,6 +126,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Aún no se ha solicitado nada",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "No se encontró nada. Si firmó algo y no aparece aquí, la sala ya lo ha descartado, lo cual es normal y es precisamente el motivo de esta pantalla.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Nada ha respaldado este texto todavía. Publique de nuevo para firmarlo.",
     "Nothing signed today yet." to "Aún no se ha firmado nada hoy.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Solo se muestran idiomas con una traducción real. Un selector que ofreciera idiomas que se muestran todos en inglés indicaría que su idioma es compatible y demostraría lo contrario en la pantalla siguiente.",
@@ -163,6 +165,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Signed, accepted and found again in the room" to
         "Firmado, aceptado y encontrado de nuevo en la sala",
     "Signing your first check-in and sending it" to "Firmando y enviando su primer registro",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Alguien cambió esta nota después de que su clave la respaldara. Publique de nuevo.",
     "Talking to the service" to "Comunicándose con el servicio",
     "Thanks for building this" to "Gracias por crear esto",
     "That was the last step. Your Passport is live." to
@@ -191,6 +195,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Espere un momento y vuelva a pulsarlo para comprobarlo de nuevo. Enviarlo como un mensaje nuevo lo publicaría dos veces.",
     "What is still provable" to "Lo que aún puede demostrarse",
+    "What recovery without a seed phrase costs" to "Lo que cuesta recuperar sin frase semilla",
     "Yes. Something is already visible to others." to
         "Sí. Algo ya es visible para otras personas.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -208,9 +213,13 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Su Passport está activo y su primer registro firmado está en Technocore. Cualquiera puede verificarlo y sigue siendo suyo.",
     "Your Passport is live." to "Su Passport está activo.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Su Passport se reconstruye a partir de una sola firma de la billetera, por eso no hay ninguna frase semilla que perder. Lo mismo vale al revés: cualquier aplicación que convenza a su billetera de firmar esa frase exacta puede reconstruir este Passport. Lea lo que una billetera le pide firmar, aquí y en todas partes.",
     "Your key is never sent anywhere. Only you can export it." to
         "Su clave nunca se envía a ningún sitio. Solo usted puede exportarla.",
     "Your key never leaves this phone." to "Su clave nunca sale de este teléfono.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Su clave firmó una línea con el hash exacto de esta nota.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Su cartera firma una declaración. No es una transacción ni mueve fondos. La misma cartera reconstruye el mismo Passport en cualquier dispositivo.",
     "active days" to "días activos",
@@ -222,6 +231,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "creado por un desarrollador de la comunidad",
     "cancel" to "cancelar",
     "change" to "cambiar",
+    "changed" to "modificada",
     "checked" to "comprobado",
     "close" to "cerrar",
     "connection" to "conexión",
@@ -287,6 +297,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "la misma cartera reconstruye esta identidad en cualquier lugar",
     "unconfirmed" to "sin confirmar",
+    "unsigned" to "sin firmar",
     "verified" to "verificado",
     "verify it yourself" to "verifíquelo usted mismo",
     "version" to "versión",

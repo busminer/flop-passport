@@ -126,6 +126,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Запросов пока не было",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "За этот текст пока никто не поручился. Опубликуйте снова, чтобы подписать его.",
     "Nothing signed today yet." to "Сегодня пока ничего не подписано.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
@@ -165,6 +167,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Подписано, принято и снова найдено в комнате",
     "Signing your first check-in and sending it" to
         "Первая запись подписывается и отправляется",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Кто-то изменил заметку после того, как ваш ключ за неё поручился. Опубликуйте снова.",
     "Talking to the service" to "Связь с сервисом",
     "Thanks for building this" to "Поблагодарить разработчика",
     "That was the last step. Your Passport is live." to
@@ -193,6 +197,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Подождите немного и нажмите ещё раз для повторной проверки. Отправка нового сообщения создаст две общедоступные записи.",
     "What is still provable" to "Что ещё можно доказать",
+    "What recovery without a seed phrase costs" to
+        "Чем приходится платить за восстановление без seed-фразы",
     "Yes. Something is already visible to others." to "Да. Другим уже что-то видно.",
     "You do not need this file to recover. The same Solana wallet that" to
         "Этот файл не нужен для восстановления. Тот же кошелёк Solana, который",
@@ -209,9 +215,13 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ваш Passport действует, а первая подписанная запись находится в Technocore. Любой может её проверить, и она остаётся вашей.",
     "Your Passport is live." to "Ваш Passport действует.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport восстанавливается из одной подписи кошелька — поэтому и нет seed-фразы, которую можно потерять. У этого есть обратная сторона: любое приложение, уговорившее ваш кошелёк подписать ровно ту же фразу, восстановит этот Passport. Читайте, что кошелёк просит подписать, здесь и везде.",
     "Your key is never sent anywhere. Only you can export it." to
         "Ваш ключ никуда не отправляется. Экспортировать его можете только вы.",
     "Your key never leaves this phone." to "Ваш ключ никогда не покидает этот телефон.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Ваш ключ подписал строку с точным хэшем этой заметки.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ваш кошелёк подписывает одно утверждение. Это не транзакция, и средства не перемещаются. Тот же кошелёк воссоздаёт тот же Passport на любом устройстве.",
     "active days" to "активных дней",
@@ -223,6 +233,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "создано участником сообщества",
     "cancel" to "отмена",
     "change" to "изменить",
+    "changed" to "изменено",
     "checked" to "проверено",
     "close" to "закрыть",
     "connection" to "соединение",
@@ -286,6 +297,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "тот же кошелёк воссоздаёт эту личность где угодно",
     "unconfirmed" to "не подтверждено",
+    "unsigned" to "без подписи",
     "verified" to "подтверждено",
     "verify it yourself" to "проверить самостоятельно",
     "version" to "версия",

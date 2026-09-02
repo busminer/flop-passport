@@ -1,5 +1,7 @@
 package dev.alexkosa.flooppassport.ui
 
+import dev.alexkosa.flooppassport.technocore.DidNote
+
 /**
  * What this Passport has actually done, as the server can still show it.
  *
@@ -20,6 +22,16 @@ data class ActivityState(
 
     /** The durable identity note, or null when the service no longer returns one. */
     val noteValue: String? = null,
+
+    /**
+     * Whether the key has vouched for the note that is actually there.
+     *
+     * A note address is world-writable, so finding a note proves only that somebody wrote
+     * one. FLOP's own instruction is to publish the note and then sign a line carrying its
+     * hash; MATCHES means the two agree, CHANGED means the note was edited after signing
+     * and should be ignored, MISSING means nothing has vouched for it either way.
+     */
+    val noteVerdict: DidNote.Verdict = DidNote.Verdict.MISSING,
 
     /** Our signed records still readable in the room, newest first. */
     val records: List<Record> = emptyList(),

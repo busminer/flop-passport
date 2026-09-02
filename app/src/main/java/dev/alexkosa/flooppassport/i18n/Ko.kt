@@ -109,6 +109,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "아직 요청한 내용이 없습니다",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "찾은 내용이 없습니다. 서명한 항목이 여기에 없다면 방에서 오래된 기록이 정리된 것입니다. 이는 정상이며 바로 이 화면이 필요한 이유입니다.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "아직 이 텍스트를 보증한 것이 없습니다. 서명하려면 다시 게시하세요.",
     "Nothing signed today yet." to "오늘은 아직 서명된 기록이 없습니다.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "실제 번역이 있는 언어만 표시됩니다. 모든 언어를 영어로 표시하는 선택기는 해당 언어를 지원한다고 안내하지만 다음 화면에서는 그렇지 않음을 보여줍니다.",
@@ -140,6 +142,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Show your private key" to "개인 키 보기",
     "Signed, accepted and found again in the room" to "서명되고 수락됐으며 방에서 다시 확인했습니다",
     "Signing your first check-in and sending it" to "첫 기록에 서명하고 전송하는 중",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "키가 보증한 뒤에 누군가 이 노트를 변경했습니다. 다시 게시하세요.",
     "Talking to the service" to "서비스와 통신하는 중",
     "Thanks for building this" to "제작자에게 감사 표시",
     "That was the last step. Your Passport is live." to "마지막 단계가 완료됐습니다. Passport가 활성화됐습니다.",
@@ -166,6 +170,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "잠시 기다린 뒤 다시 눌러 확인하세요. 새 메시지로 보내면 공개 기록이 두 번 게시됩니다.",
     "What is still provable" to "현재도 증명 가능한 항목",
+    "What recovery without a seed phrase costs" to "시드 구문 없는 복구의 대가",
     "Yes. Something is already visible to others." to "예. 이미 다른 사람이 볼 수 있는 내용이 있습니다.",
     "You do not need this file to recover. The same Solana wallet that" to
         "복구에 이 파일은 필요하지 않습니다. 동일한 Solana 지갑이",
@@ -182,9 +187,13 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport가 활성화됐으며 첫 번째 서명 기록이 Technocore에 있습니다. 누구나 검증할 수 있으며 소유권은 사용자에게 있습니다.",
     "Your Passport is live." to "Passport가 활성화됐습니다.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport는 지갑 서명 하나로 다시 만들어집니다. 그래서 잃어버릴 시드 구문이 없습니다. 같은 사실이 반대로도 작용합니다. 지갑이 정확히 그 문장에 서명하도록 설득한 앱은 이 Passport를 다시 만들 수 있습니다. 지갑이 무엇에 서명하라고 요구하는지, 여기서도 다른 곳에서도 읽어 보세요.",
     "Your key is never sent anywhere. Only you can export it." to
         "키는 어디에도 전송되지 않습니다. 내보낼 수 있는 사람은 사용자뿐입니다.",
     "Your key never leaves this phone." to "키는 이 휴대전화를 벗어나지 않습니다.",
+    "Your key signed a line carrying this note's exact hash." to
+        "키가 이 노트의 정확한 해시를 담은 줄에 서명했습니다.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "지갑은 하나의 문장에 서명합니다. 이는 거래가 아니며 자금을 이동하지 않습니다. 동일한 지갑으로 어느 기기에서든 같은 Passport를 다시 만들 수 있습니다.",
     "active days" to "활동 일수",
@@ -195,6 +204,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "커뮤니티 개발자가 제작",
     "cancel" to "취소",
     "change" to "변경",
+    "changed" to "변경됨",
     "checked" to "확인됨",
     "close" to "닫기",
     "connection" to "연결",
@@ -256,6 +266,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "text" to "텍스트",
     "the same wallet rebuilds this identity anywhere" to "동일한 지갑으로 어디서든 이 신원을 다시 생성",
     "unconfirmed" to "미확인",
+    "unsigned" to "서명 없음",
     "verified" to "검증됨",
     "verify it yourself" to "직접 검증",
     "version" to "버전",

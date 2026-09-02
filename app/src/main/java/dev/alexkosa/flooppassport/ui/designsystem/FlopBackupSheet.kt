@@ -1,5 +1,7 @@
 package dev.alexkosa.flooppassport.ui.designsystem
 
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -44,6 +46,20 @@ fun FlopBackupSheet(
     onSaveFile: () -> Unit,
     onDismiss: () -> Unit,
 ) {
+    // The window is marked secure for exactly as long as this sheet is open.
+    //
+    // Without it the 32 bytes on this screen land in any screenshot, in the recent-apps
+    // thumbnail the system takes when the app goes to the background, and in a screen
+    // recording. A biometric gate in front of a screen that Android is quietly
+    // photographing is theatre. The flag is cleared on the way out so the rest of the app
+    // - and Alex's own store screenshots - still work normally.
+    val host = LocalContext.current
+    val window = (host as? android.app.Activity)?.window
+    DisposableEffect(window) {
+        window?.addFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE)
+        onDispose { window?.clearFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE) }
+    }
+
     val clipboard = LocalClipboardManager.current
 
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
@@ -130,7 +146,11 @@ fun FlopBackupSheet(
                 }
                 Box(Modifier.weight(1f)) {
                     FlopButtonSecondary("copy key", {
-                        clipboard.setText(AnnotatedString(seedHex))
+                        // Marked sensitive so the system does not show the key in its
+                        // clipboard preview toast, and cleared after a minute so it does
+                        // not sit in the buffer for the rest of the day waiting to be
+                        // pasted into the wrong app.
+                        copySensitively(host, seedHex)
                     })
                 }
             }
@@ -138,4 +158,32 @@ fun FlopBackupSheet(
             FlopButtonSecondary("close", onDismiss)
         }
     }
+}
+
+
+/**
+ * Put the key on the clipboard as carefully as Android allows.
+ *
+ * `EXTRA_IS_SENSITIVE` stops the system from rendering the value in the copy confirmation
+ * that pops up on Android 13, which would otherwise put the private key on screen in a
+ * toast that survives leaving the app. The delayed clear is best effort - the clipboard
+ * belongs to the system and another app may take it in the meantime - but a key that
+ * disappears after a minute is a smaller target than one that waits until the next copy.
+ */
+private fun copySensitively(context: android.content.Context, value: String) {
+    val manager = context.getSystemService(android.content.ClipboardManager::class.java) ?: return
+    val clip = android.content.ClipData.newPlainText("FLOP Passport key", value)
+    if (android.os.Build.VERSION.SDK_INT >= 33) {
+        clip.description.extras = android.os.PersistableBundle().apply {
+            putBoolean(android.content.ClipDescription.EXTRA_IS_SENSITIVE, true)
+        }
+    }
+    manager.setPrimaryClip(clip)
+
+    android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+        val current = manager.primaryClip?.getItemAt(0)?.text?.toString()
+        if (current == value) {
+            manager.setPrimaryClip(android.content.ClipData.newPlainText("", ""))
+        }
+    }, 60_000)
 }

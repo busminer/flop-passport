@@ -128,6 +128,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Belum ada yang ditanyakan",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Belum ada yang menjamin teks ini. Terbitkan lagi untuk menandatanganinya.",
     "Nothing signed today yet." to "Belum ada yang ditandatangani hari ini.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
@@ -166,6 +168,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
     "Signing your first check-in and sending it" to
         "Menandatangani dan mengirim pencatatan pertama Anda",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Seseorang mengubah catatan ini setelah kunci Anda menjaminnya. Terbitkan lagi.",
     "Talking to the service" to "Berkomunikasi dengan layanan",
     "Thanks for building this" to "Terima kasih telah membuat ini",
     "That was the last step. Your Passport is live." to
@@ -194,6 +198,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Mengirimnya sebagai pesan baru akan menerbitkannya dua kali secara publik.",
     "What is still provable" to "Yang masih dapat dibuktikan",
+    "What recovery without a seed phrase costs" to "Harga pemulihan tanpa frasa seed",
     "Yes. Something is already visible to others." to
         "Ya. Sesuatu sudah terlihat oleh orang lain.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -211,9 +216,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport Anda aktif dan catatan bertanda tangan pertama Anda ada di Technocore. Siapa pun dapat memverifikasinya, dan catatan itu tetap milik Anda.",
     "Your Passport is live." to "Passport Anda aktif.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport Anda dibangun ulang dari satu tanda tangan dompet, itulah sebabnya tidak ada frasa seed yang bisa hilang. Hal yang sama berlaku sebaliknya: aplikasi mana pun yang membujuk dompet Anda menandatangani kalimat yang persis sama dapat membangun ulang Passport ini. Bacalah apa yang diminta dompet untuk Anda tanda tangani, di sini dan di mana pun.",
     "Your key is never sent anywhere. Only you can export it." to
         "Kunci Anda tidak pernah dikirim ke mana pun. Hanya Anda yang dapat mengekspornya.",
     "Your key never leaves this phone." to "Kunci Anda tidak pernah meninggalkan ponsel ini.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Kunci Anda menandatangani baris yang memuat hash persis catatan ini.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Dompet Anda menandatangani satu pernyataan. Ini bukan transaksi dan tidak memindahkan dana. Dompet yang sama membangun kembali Passport yang sama di perangkat mana pun.",
     "active days" to "hari aktif",
@@ -224,6 +233,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "dibuat oleh pengembang komunitas",
     "cancel" to "batal",
     "change" to "ubah",
+    "changed" to "berubah",
     "checked" to "diperiksa",
     "close" to "tutup",
     "connection" to "koneksi",
@@ -289,6 +299,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "dompet yang sama membangun kembali identitas ini di mana pun",
     "unconfirmed" to "belum dikonfirmasi",
+    "unsigned" to "tanpa tanda tangan",
     "verified" to "terverifikasi",
     "verify it yourself" to "verifikasi sendiri",
     "version" to "versi",

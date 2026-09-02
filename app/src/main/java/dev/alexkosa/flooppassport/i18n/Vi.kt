@@ -125,6 +125,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Chưa có câu hỏi nào",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Không tìm thấy gì. Nếu bạn đã ký nội dung nhưng không thấy ở đây, phòng đã lược bỏ phần chứa nội dung đó - đây là điều bình thường và chính là lý do màn hình này tồn tại.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Chưa có gì bảo chứng cho nội dung này. Hãy đăng lại để ký cho nó.",
     "Nothing signed today yet." to "Hôm nay chưa có nội dung nào được ký.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Chỉ những ngôn ngữ có bản dịch thực sự mới được liệt kê. Một bộ chọn cung cấp các ngôn ngữ nhưng đều hiển thị bằng tiếng Anh sẽ báo rằng ngôn ngữ của bạn được hỗ trợ, rồi cho thấy điều ngược lại ở màn hình tiếp theo.",
@@ -162,6 +164,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Signed, accepted and found again in the room" to
         "Đã ký, được chấp nhận và tìm thấy lại trong phòng",
     "Signing your first check-in and sending it" to "Đang ký và gửi bản ghi đầu tiên",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Ai đó đã sửa ghi chú này sau khi khóa của bạn bảo chứng cho nó. Hãy đăng lại.",
     "Talking to the service" to "Đang liên lạc với dịch vụ",
     "Thanks for building this" to "Cảm ơn vì đã xây dựng ứng dụng này",
     "That was the last step. Your Passport is live." to
@@ -190,6 +194,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Chờ một lát rồi nhấn lại để kiểm tra. Gửi dưới dạng tin nhắn mới sẽ đăng công khai hai lần.",
     "What is still provable" to "Những gì vẫn có thể chứng minh",
+    "What recovery without a seed phrase costs" to
+        "Cái giá của việc khôi phục mà không cần cụm từ hạt giống",
     "Yes. Something is already visible to others." to
         "Có. Một số nội dung đã hiển thị với người khác.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -207,9 +213,13 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport của bạn đang hoạt động và bản ghi có chữ ký đầu tiên đã có trên Technocore. Bất kỳ ai cũng có thể xác minh và nó vẫn thuộc về bạn.",
     "Your Passport is live." to "Passport của bạn đang hoạt động.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Passport của bạn được dựng lại từ một chữ ký ví duy nhất, nên không có cụm từ hạt giống nào để mất. Điều đó cũng đúng theo chiều ngược lại: bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport này. Hãy đọc kỹ những gì một ví yêu cầu bạn ký, ở đây và ở mọi nơi.",
     "Your key is never sent anywhere. Only you can export it." to
         "Khóa của bạn không bao giờ được gửi đi đâu. Chỉ bạn mới có thể xuất khóa.",
     "Your key never leaves this phone." to "Khóa của bạn không bao giờ rời điện thoại này.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Khóa của bạn đã ký một dòng mang đúng mã băm của ghi chú này.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ví của bạn ký một tuyên bố. Đây không phải giao dịch và không chuyển tiền. Cùng ví đó sẽ dựng lại cùng một Passport trên bất kỳ thiết bị nào.",
     "active days" to "ngày hoạt động",
@@ -220,6 +230,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "do một nhà phát triển cộng đồng xây dựng",
     "cancel" to "hủy",
     "change" to "thay đổi",
+    "changed" to "đã thay đổi",
     "checked" to "đã kiểm tra",
     "close" to "đóng",
     "connection" to "kết nối",
@@ -285,6 +296,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "cùng ví đó dựng lại danh tính này ở bất kỳ đâu",
     "unconfirmed" to "chưa xác nhận",
+    "unsigned" to "chưa ký",
     "verified" to "đã xác minh",
     "verify it yourself" to "tự xác minh",
     "version" to "phiên bản",

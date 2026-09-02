@@ -177,6 +177,32 @@ fun SettingsScreen(
             )
         }
 
+        // The one thing about this design that a careful person deserves to be told, and
+        // that no marketing page would volunteer: recovery without a seed phrase and
+        // "anything that can get this signature owns the Passport" are the same property
+        // seen from two sides. An outside review raised it, and the honest response is to
+        // say it here rather than to hope nobody notices.
+        Spacer(Modifier.height(FlopSpacing.sm))
+        FlopCard {
+            Text(
+                t("What recovery without a seed phrase costs").uppercase(),
+                style = FlopType.label,
+                color = FlopColors.TextMuted,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t(
+                    "Your Passport is rebuilt from one wallet signature, which is why no " +
+                        "seed phrase exists to lose. The same fact cuts the other way: any " +
+                        "app that persuades your wallet to sign that exact sentence can " +
+                        "rebuild this Passport. Read what a wallet asks you to sign, here " +
+                        "and everywhere else.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextSecondary,
+            )
+        }
+
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopCard {
             FlopLabel("what this app never does")

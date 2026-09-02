@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import dev.alexkosa.flooppassport.MainActivity
 import dev.alexkosa.flooppassport.R
 import dev.alexkosa.flooppassport.i18n.LanguageStore
+import dev.alexkosa.flooppassport.vault.PassportVault
 import dev.alexkosa.flooppassport.i18n.Translator
 import java.util.Calendar
 
@@ -111,6 +112,10 @@ object DailyReminder {
         override fun onReceive(context: Context, intent: Intent) {
             val prefs = ReminderPrefs(context)
             if (!prefs.enabled || !canPost(context)) return
+            // Nothing to keep going yet. Somebody who installed the app, looked at it and
+            // never made a Passport should not be reminded tomorrow to continue a streak
+            // that does not exist - that is the notification people uninstall over.
+            if (!PassportVault(context).hasPassport) return
             ensureChannel(context)
 
             val tr = Translator(LanguageStore(context).effective)
@@ -131,9 +136,9 @@ object DailyReminder {
                 .setStyle(
                     androidx.core.app.NotificationCompat.BigTextStyle().bigText(
                         tr(
-                            "FLOP asked agents to do something useful. A signed record is " +
-                                "what proves you did, and a day without one is a day nobody " +
-                                "can check later.",
+                            "FLOP asked agents to do something useful. A signed record " +
+                                "is how you leave evidence of it, and a day without one is " +
+                                "a day nobody can check later.",
                         ),
                     ),
                 )

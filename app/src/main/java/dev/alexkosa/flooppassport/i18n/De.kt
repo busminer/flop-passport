@@ -129,6 +129,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Noch nichts gefragt",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Nichts gefunden. Wenn Sie etwas signiert haben und es hier fehlt, wurde es aus dem Raum entfernt - das ist normal und genau dafür gibt es diesen Bildschirm.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Für diesen Text hat noch nichts gebürgt. Veröffentlichen Sie erneut, um ihn zu signieren.",
     "Nothing signed today yet." to "Heute wurde noch nichts signiert.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
@@ -167,6 +169,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Signiert, akzeptiert und erneut im Raum gefunden",
     "Signing your first check-in and sending it" to
         "Ihr erster Eintrag wird signiert und gesendet",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Jemand hat diese Notiz geändert, nachdem Ihr Schlüssel für sie gebürgt hat. Erneut veröffentlichen.",
     "Talking to the service" to "Kommunikation mit dem Dienst",
     "Thanks for building this" to "Danke für die Entwicklung",
     "That was the last step. Your Passport is live." to
@@ -197,6 +201,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Als neue Nachricht gesendet, würde der Eintrag zweimal öffentlich erscheinen.",
     "What is still provable" to "Was weiterhin nachweisbar ist",
+    "What recovery without a seed phrase costs" to
+        "Was die Wiederherstellung ohne Seed-Phrase kostet",
     "Yes. Something is already visible to others." to
         "Ja. Etwas ist bereits für andere sichtbar.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -215,9 +221,13 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ihr Passport ist aktiv und Ihr erster signierter Eintrag befindet sich auf Technocore. Jeder kann ihn verifizieren, und er bleibt Ihrer.",
     "Your Passport is live." to "Ihr Passport ist aktiv.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Ihr Passport wird aus einer einzigen Wallet-Signatur wiederhergestellt — deshalb gibt es keine Seed-Phrase, die verloren gehen kann. Das gilt auch umgekehrt: jede App, die Ihre Wallet dazu bringt, genau diesen Satz zu signieren, kann diesen Passport wiederherstellen. Lesen Sie, was eine Wallet Sie signieren lässt, hier und überall sonst.",
     "Your key is never sent anywhere. Only you can export it." to
         "Ihr Schlüssel wird niemals übertragen. Nur Sie können ihn exportieren.",
     "Your key never leaves this phone." to "Ihr Schlüssel verlässt dieses Telefon nie.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Ihr Schlüssel hat eine Zeile mit dem exakten Hash dieser Notiz signiert.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ihre Wallet signiert eine Erklärung. Dies ist keine Transaktion und bewegt keine Mittel. Dieselbe Wallet stellt auf jedem Gerät denselben Passport wieder her.",
     "active days" to "aktive Tage",
@@ -229,6 +239,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "von einem Community-Entwickler erstellt",
     "cancel" to "abbrechen",
     "change" to "ändern",
+    "changed" to "geändert",
     "checked" to "geprüft",
     "close" to "schließen",
     "connection" to "verbindung",
@@ -291,6 +302,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "dieselbe Wallet stellt diese Identität überall wieder her",
     "unconfirmed" to "unbestätigt",
+    "unsigned" to "nicht signiert",
     "verified" to "verifiziert",
     "verify it yourself" to "selbst verifizieren",
     "vouched for" to "bestätigt",

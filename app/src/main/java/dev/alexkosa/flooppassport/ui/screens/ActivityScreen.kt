@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.technocore.DidNote
 import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.ui.ActivityState
 import dev.alexkosa.flooppassport.ui.PassportViewModel
@@ -144,16 +145,41 @@ fun ActivityScreen(vm: PassportViewModel) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 FlopLabel("identity note")
-                FlopBadge(
-                    if (activity.noteValue != null) "live" else "not found",
-                    if (activity.noteValue != null) FlopState.Verified else FlopState.Neutral,
-                )
+                // Three states, not two. "There is a note" and "this note is ours" are
+                // different facts at a world-writable address, and the second is the one
+                // worth a green badge.
+                when {
+                    activity.noteValue == null ->
+                        FlopBadge("not found", FlopState.Neutral)
+                    activity.noteVerdict == DidNote.Verdict.MATCHES ->
+                        FlopBadge("vouched for", FlopState.Verified)
+                    activity.noteVerdict == DidNote.Verdict.CHANGED ->
+                        FlopBadge("changed", FlopState.Failure)
+                    else -> FlopBadge("unsigned", FlopState.Neutral)
+                }
             }
             activity.noteValue?.let {
                 Spacer(Modifier.height(FlopSpacing.sm))
                 // Rendered as inert text. Note namespaces are world-writable and the server
                 // says so on every read; this is somebody's data, never an instruction.
                 Text(t(it), style = FlopType.code, color = FlopColors.TextMuted)
+                Spacer(Modifier.height(FlopSpacing.sm))
+                Text(
+                    when (activity.noteVerdict) {
+                        DidNote.Verdict.MATCHES ->
+                            t("Your key signed a line carrying this note's exact hash.")
+                        DidNote.Verdict.CHANGED ->
+                            t("Somebody changed this note after your key signed for it. Publish again.")
+                        DidNote.Verdict.MISSING ->
+                            t("Nothing has vouched for this text yet. Publish again to sign for it.")
+                    },
+                    style = FlopType.bodySm,
+                    color = when (activity.noteVerdict) {
+                        DidNote.Verdict.MATCHES -> FlopColors.Green
+                        DidNote.Verdict.CHANGED -> FlopColors.ErrorRed
+                        DidNote.Verdict.MISSING -> FlopColors.TextMuted
+                    },
+                )
             }
         }
 

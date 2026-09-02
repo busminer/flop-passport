@@ -126,6 +126,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Nothing asked yet" to "Nada foi solicitado ainda",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Nada encontrado. Se você assinou algo e ele não está aqui, a sala já removeu essa parte, o que é normal e é exatamente por isso que esta tela existe.",
+    "Nothing has vouched for this text yet. Publish again to sign for it." to
+        "Nada garantiu este texto ainda. Publique novamente para assiná-lo.",
     "Nothing signed today yet." to "Nada assinado hoje.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Apenas idiomas com uma tradução real são listados. Um seletor que oferecesse idiomas que exibem tudo em inglês diria que seu idioma é compatível e mostraria o contrário na tela seguinte.",
@@ -164,6 +166,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Assinado, aceito e encontrado novamente na sala",
     "Signing your first check-in and sending it" to
         "Assinando e enviando seu primeiro registro",
+    "Somebody changed this note after your key signed for it. Publish again." to
+        "Alguém alterou esta nota depois que sua chave a garantiu. Publique novamente.",
     "Talking to the service" to "Comunicando-se com o serviço",
     "Thanks for building this" to "Obrigado por criar isto",
     "That was the last step. Your Passport is live." to
@@ -192,6 +196,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Aguarde um momento e pressione novamente para verificar. Enviar como nova mensagem publicaria duas vezes.",
     "What is still provable" to "O que ainda pode ser comprovado",
+    "What recovery without a seed phrase costs" to "O que custa recuperar sem frase semente",
     "Yes. Something is already visible to others." to
         "Sim. Algo já está visível para outras pessoas.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -209,9 +214,13 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Seu Passport está ativo e seu primeiro registro assinado está no Technocore. Qualquer pessoa pode verificá-lo, e ele continua sendo seu.",
     "Your Passport is live." to "Seu Passport está ativo.",
+    "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
+        "Seu Passport é reconstruído a partir de uma única assinatura da carteira, por isso não existe frase semente para perder. O mesmo vale ao contrário: qualquer aplicativo que convença sua carteira a assinar exatamente essa frase pode reconstruir este Passport. Leia o que uma carteira pede para assinar, aqui e em qualquer lugar.",
     "Your key is never sent anywhere. Only you can export it." to
         "Sua chave nunca é enviada a lugar algum. Somente você pode exportá-la.",
     "Your key never leaves this phone." to "Sua chave nunca sai deste telefone.",
+    "Your key signed a line carrying this note's exact hash." to
+        "Sua chave assinou uma linha com o hash exato desta nota.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Sua carteira assina uma declaração. Não é uma transação e não movimenta fundos. A mesma carteira recria o mesmo Passport em qualquer dispositivo.",
     "active days" to "dias ativos",
@@ -223,6 +232,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "built by a community builder" to "criado por um desenvolvedor da comunidade",
     "cancel" to "cancelar",
     "change" to "alterar",
+    "changed" to "alterada",
     "checked" to "registrado",
     "close" to "fechar",
     "connection" to "conexão",
@@ -287,6 +297,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "the same wallet rebuilds this identity anywhere" to
         "a mesma carteira recria esta identidade em qualquer lugar",
     "unconfirmed" to "não confirmado",
+    "unsigned" to "sem assinatura",
     "verified" to "verificado",
     "verify it yourself" to "verifique por conta própria",
     "version" to "versão",

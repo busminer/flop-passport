@@ -127,10 +127,17 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         room = it.room,
                     )
                 }.sortedByDescending { it.seq }
+                // Both halves are already here, so the check costs nothing: the note that
+                // is published, and every line this key signed. Newest first, as the
+                // convention expects.
+                val signedLines = technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                    .sortedByDescending { it.seq }
+                    .map { it.signedText }
                 activity = ActivityState(
                     checking = false,
                     lastChecked = System.currentTimeMillis(),
                     noteValue = note,
+                    noteVerdict = DidNote.check(identity, note, signedLines),
                     records = records,
                 )
             }.onFailure {
