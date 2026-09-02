@@ -73,6 +73,19 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     fun dismissSupportInvite() {
         showSupportInvite = false
+        vault.supportInviteShown = true
+    }
+
+    /**
+     * Offer the invitation, at most once for this install.
+     *
+     * Every route to the finish calls this, including the quiet reconcile on opening. A
+     * returning user - a reinstall, a second device - arrives at a finished Passport
+     * without ever pressing the last button, and used to reach the end having never been
+     * asked. Once, on whichever route, is the honest middle.
+     */
+    private fun offerSupportInvite() {
+        if (!vault.supportInviteShown) showSupportInvite = true
     }
 
     /**
@@ -195,6 +208,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                                 ),
                             ),
                         )
+                        offerSupportInvite()
                     }
                 }
             }
@@ -439,7 +453,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     // end. Leaving these two out of this branch meant that anyone who had
                     // ever checked in before - a reinstall, a second device - finished the
                     // flow with no invitation and a stale activity tab.
-                    showSupportInvite = true
+                    offerSupportInvite()
                     refreshActivity()
                     return@launch
                 }
@@ -479,7 +493,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         )
                         // The finish is the one moment the app has earned the right to ask
                         // for anything, and only after telling the user they are done.
-                        showSupportInvite = true
+                        offerSupportInvite()
                         refreshActivity()
                     }
 

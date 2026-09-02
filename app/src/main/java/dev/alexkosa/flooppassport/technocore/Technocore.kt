@@ -87,11 +87,14 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * somebody their records are still there, which is the most alarming possible way to
      * report a hiccup.
      *
-     * Reads only. A signed write is sent as a GET as well, and retrying one of those
-     * could post the same line twice in a public room - the one mistake that cannot be
-     * taken back. So writes keep using [get] and stay single-shot on purpose.
+     * For anything that can be repeated without changing the outcome: every read, and
+     * the identity note, which is a key-value set that overwrites rather than appends.
+     *
+     * NOT for a signed room message. Those append, they are sent as a GET like everything
+     * else, and a retry would post the same line twice in public - the one mistake here
+     * that cannot be taken back. Those keep using [get] and stay single-shot on purpose.
      */
-    private suspend fun read(path: String, attempts: Int = 3): Response {
+    private suspend fun retrying(path: String, attempts: Int = 3): Response {
         var last = Response(0, "")
         repeat(attempts) { attempt ->
             last = runCatching { get(path) }.getOrElse { Response(0, it.message ?: "") }
@@ -118,9 +121,9 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     // ---------------------------------------------------------------- identity note
 
     suspend fun readIdentityNote(did: String): String? {
-        val r = read(DidKey.notePath(did))
+        val r = retrying(DidKey.notePath(did))
         if (r.ok) return stripBanner(r.body)
-        val legacy = read(DidKey.legacyNotePath(did))
+        val legacy = retrying(DidKey.legacyNotePath(did))
         return if (legacy.ok) stripBanner(legacy.body) else null
     }
 
@@ -134,7 +137,11 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     suspend fun publishIdentityNote(did: String, value: String): Result {
         val fp = DidKey.fingerprint(did)
         val path = "/kv/did-${fp.substring(0, 2)}/${enc(fp.substring(2))}/set/${enc(value)}"
-        val w = get(path)
+        // Retried, unlike every other write here: this one sets a key to a fixed value, so
+        // doing it twice leaves exactly the state doing it once leaves. A single transient
+        // failure on this call reported the whole step as "could not reach
+        // technocore.chat" - a dropped connection presented to the user as a dead end.
+        val w = retrying(path)
         if (!w.ok) return Result.Refused(w.status, w.body.take(300))
 
         val readBack = readIdentityNote(did)
@@ -206,7 +213,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * the reason a client can look permanently unverified while working perfectly.
      */
     private suspend fun findMessage(room: String, did: String, nonce: String): JSONObject? {
-        val r = read("/r/${enc(room)}?since=0&limit=200&format=json")
+        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
         if (!r.ok) return null
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
@@ -225,7 +232,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * public and append-only; a duplicate cannot be taken back.
      */
     suspend fun findLatestMessage(room: String, did: String): Proof? {
-        val r = read("/r/${enc(room)}?since=0&limit=200&format=json")
+        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
         if (!r.ok) return null
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
@@ -256,7 +263,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * past the service has already forgotten.
      */
     suspend fun findAllMessages(room: String, did: String): List<Proof> {
-        val r = read("/r/${enc(room)}?since=0&limit=200&format=json")
+        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
         if (!r.ok) return emptyList()
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
@@ -286,7 +293,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      */
     suspend fun nextNonce(room: String, did: String): String {
         val now = System.currentTimeMillis()
-        val r = read("/r/${enc(room)}?since=0&limit=200&format=json")
+        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
         val highest = runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
             (0 until messages.length())

@@ -29,7 +29,7 @@ android {
         minSdk = 31
         targetSdk = 36
         versionCode = 1
-        versionName = "0.1.0"
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -42,6 +42,12 @@ android {
                 keyAlias = keystoreProperties.getProperty("keyAlias")
                 keyPassword = keystoreProperties.getProperty("keyPassword")
             }
+            // v3 is what makes a signing key replaceable later: it carries a proof of
+            // rotation, so a future release can be signed by a new key and still be
+            // accepted as an update. Without it this key is the app forever. v1 is off
+            // because it only matters below Android 7 and minSdk here is 31.
+            enableV2Signing = true
+            enableV3Signing = true
         }
     }
 

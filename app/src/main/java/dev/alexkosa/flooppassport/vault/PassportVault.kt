@@ -32,6 +32,18 @@ class PassportVault(context: Context) {
 
     private val prefs = context.getSharedPreferences("floop_passport_vault", Context.MODE_PRIVATE)
 
+    /**
+     * Whether the support invitation has already been shown on this install.
+     *
+     * Persisted so it appears once and never again. Asking twice reads as nagging, and
+     * this app's whole credibility rests on not behaving like something with a funnel.
+     */
+    var supportInviteShown: Boolean
+        get() = prefs.getBoolean(P_INVITED, false)
+        set(value) {
+            prefs.edit().putBoolean(P_INVITED, value).apply()
+        }
+
     companion object {
         private const val KEY_ALIAS = "floop_passport_wrap_v1"
         private const val TRANSFORM = "AES/GCM/NoPadding"
@@ -43,6 +55,7 @@ class PassportVault(context: Context) {
         private const val P_DID = "did"
         private const val P_WALLET = "wallet_address"
         private const val P_SECURITY = "security_level"
+        private const val P_INVITED = "support_invite_shown"
         private const val P_CREATED = "created_at"
     }
 
