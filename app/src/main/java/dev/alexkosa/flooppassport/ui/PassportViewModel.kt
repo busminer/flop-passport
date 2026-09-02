@@ -102,9 +102,13 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * record that existed last week may simply be gone. The screen shows what a stranger
      * would find today, not what this phone remembers doing.
      */
-    fun refreshActivity() {
+    fun refreshActivity(force: Boolean = false) {
         val identity = did ?: return
-        if (activity.checking) return
+        // The guard stops two taps racing each other. It must not stop the refresh that
+        // follows a write, which sets `checking` itself: that combination left the flag on
+        // forever, so the screen said CHECKING for the rest of its life and the record the
+        // user had just signed never appeared.
+        if (activity.checking && !force) return
         activity = activity.copy(checking = true, error = null)
         viewModelScope.launch {
             runCatching {
@@ -157,7 +161,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
             }.onFailure {
                 activity = activity.copy(checking = false, error = it.message)
             }
-            refreshActivity()
+            refreshActivity(force = true)
         }
     }
 
@@ -354,7 +358,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         // both and sees them agree knows this exact text came from the
                         // holder of the key. https://x.com/flop_labs/status/2090661329837371428
                         val vouched = runCatching {
-                            val body = technocore.readIdentityNote(identity) ?: value
+                            // Read it back once more and sign the hash only if it is still
+                            // OUR text. The address is world-writable: without this check a
+                            // stranger who overwrites the note between the read-back above
+                            // and this line gets our signature on their words.
+                            val body = technocore.readIdentityNote(identity)
+                            check(body == value) { "the note changed between reads" }
                             val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
                             technocore.saySigned(
                                 did = identity,
@@ -586,6 +595,11 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         did = null
         walletAddress = null
         flow = FlowState()
+        // Otherwise the next Passport opens the activity screen on the last
+        // one's records: lastChecked is not null, so nothing refreshes, and somebody
+        // else's history is presented as theirs.
+        activity = ActivityState()
+        showSupportInvite = false
     }
 
     /**

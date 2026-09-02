@@ -304,6 +304,11 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
             (0 until messages.length())
                 .map { messages.getJSONObject(it) }
                 .filter { it.optString("from") == did }
+                // A did-note line is this identity's own plumbing, not a check-in. Counting
+                // it meant that publishing - which posts one - made the very next step
+                // announce "you have already checked in", and a brand new Passport reached
+                // the end having never posted the record the whole app exists to post.
+                .filterNot { DidNote.parse(it.optString("text")) != null }
                 .maxByOrNull { it.optInt("seq") }
                 ?.let {
                     Proof(
