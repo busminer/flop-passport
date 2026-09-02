@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -21,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.flooppassport.ui.ActivityState
 import dev.alexkosa.flooppassport.ui.PassportViewModel
+import dev.alexkosa.flooppassport.ui.designsystem.FlopWire
 import dev.alexkosa.flooppassport.ui.designsystem.FlopBadge
 import dev.alexkosa.flooppassport.ui.designsystem.FlopButton
 import dev.alexkosa.flooppassport.ui.designsystem.FlopButtonSecondary
@@ -43,6 +46,7 @@ import dev.alexkosa.flooppassport.ui.designsystem.FlopType
  */
 @Composable
 fun ActivityScreen(vm: PassportViewModel) {
+    val pulse by vm.pulse.collectAsState()
     val activity = vm.activity
     val today = ActivityState.todayUtc()
 
@@ -67,6 +71,14 @@ fun ActivityScreen(vm: PassportViewModel) {
             style = FlopType.bodyMd,
             color = FlopColors.TextMuted,
         )
+
+        // The one place a person waits in this app without having pressed anything
+        // dramatic. Showing the live figure turns "checking..." into something they can
+        // watch, and a slow server into a slow number rather than a frozen screen.
+        if (activity.checking) {
+            Spacer(Modifier.height(FlopSpacing.md))
+            FlopWire(pulse = pulse, active = true)
+        }
 
         Spacer(Modifier.height(FlopSpacing.lg))
 

@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.flooppassport.ui.Evidence
 import dev.alexkosa.flooppassport.ui.FlowState
+import dev.alexkosa.flooppassport.technocore.Technocore
 import dev.alexkosa.flooppassport.ui.Step
 import dev.alexkosa.flooppassport.ui.StepState
 
@@ -45,16 +46,25 @@ import dev.alexkosa.flooppassport.ui.StepState
  * at a nonce.
  */
 @Composable
-fun FlopStepLadder(flow: FlowState, modifier: Modifier = Modifier) {
+fun FlopStepLadder(
+    flow: FlowState,
+    modifier: Modifier = Modifier,
+    pulse: Technocore.Pulse? = null,
+) {
     Column(modifier.fillMaxWidth()) {
         Step.all.forEachIndexed { index, step ->
-            StepRow(step, flow[step], isLast = index == Step.all.lastIndex)
+            StepRow(step, flow[step], isLast = index == Step.all.lastIndex, pulse = pulse)
         }
     }
 }
 
 @Composable
-private fun StepRow(step: Step, state: StepState, isLast: Boolean) {
+private fun StepRow(
+    step: Step,
+    state: StepState,
+    isLast: Boolean,
+    pulse: Technocore.Pulse?,
+) {
     var open by remember { mutableStateOf(false) }
     val evidence = (state as? StepState.Verified)?.evidence
     val canOpen = evidence != null || state is StepState.Failed || state is StepState.Unconfirmed
@@ -90,6 +100,12 @@ private fun StepRow(step: Step, state: StepState, isLast: Boolean) {
                 if (line != null) {
                     Spacer(Modifier.height(FlopSpacing.xs))
                     Text(line, style = FlopType.bodySm, color = statusColour(state))
+                }
+                // While a step is talking to the service, show what the wire is actually
+                // doing. Naming the host is a claim; the milliseconds are the evidence.
+                if (state is StepState.Running) {
+                    Spacer(Modifier.height(FlopSpacing.sm))
+                    FlopWire(pulse = pulse, active = true)
                 }
             }
             StatusWord(state)

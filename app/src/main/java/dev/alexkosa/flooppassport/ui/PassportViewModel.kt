@@ -36,6 +36,13 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     private val vault = PassportVault(app)
     private val technocore = Technocore()
 
+    /**
+     * The last measured round trip to technocore.chat, for the screens that claim to be
+     * talking to it. Straight from the client, not a copy: nothing here can drift from
+     * what the network actually did.
+     */
+    val pulse = technocore.pulse
+
     var flow by mutableStateOf(restoreFlow())
         private set
     var did by mutableStateOf(vault.did)

@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -61,6 +62,9 @@ import dev.alexkosa.flooppassport.util.confirmHaptic
  */
 @Composable
 fun PassportScreen(vm: PassportViewModel = viewModel()) {
+    // Collected here rather than deeper: one subscription for the screen, and the
+    // ladder stays a pure function of what it is given.
+    val pulse by vm.pulse.collectAsState()
     val context = LocalContext.current
     val flow = vm.flow
 
@@ -167,7 +171,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             Spacer(Modifier.height(FlopSpacing.lg))
         }
 
-        FlopStepLadder(flow)
+        FlopStepLadder(flow, pulse = pulse)
         Spacer(Modifier.height(FlopSpacing.lg))
 
         when {

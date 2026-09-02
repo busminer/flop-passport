@@ -2,6 +2,8 @@ package dev.alexkosa.flooppassport.technocore
 
 import dev.alexkosa.flooppassport.crypto.DidKey
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -28,7 +30,16 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
 
     companion object {
         const val UNTRUSTED_BANNER = "!! UNTRUSTED CONTENT"
-        private const val TIMEOUT_MS = 20_000
+        /**
+         * Sized from measurement, not from habit. A healthy call to this service answers
+         * in about half a second and a 503 comes back just as fast; the only thing 20
+         * seconds bought was a user watching a spinner for a minute while three attempts
+         * each waited out a stall. Eight seconds is far past the slow end of normal.
+         */
+        private const val TIMEOUT_MS = 8_000
+
+        /** Shown beside the live figure, so the user sees who is being asked. */
+        private const val HOST = "technocore.chat"
     }
 
     data class Response(val status: Int, val body: String) {
@@ -60,9 +71,53 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
         data class Unconfirmed(val reason: String) : Result()
     }
 
+    /**
+     * The last completed round trip. Null until something has actually been asked.
+     *
+     * A StateFlow rather than Compose state because it is written from the IO dispatcher
+     * on every request; the UI collects it and is the only thing that touches the frame.
+     */
+    data class Pulse(
+        val host: String,
+        val millis: Long,
+        val attempt: Int,
+        val ok: Boolean,
+        val detail: String,
+        /** Plain words for what this call was doing, for a screen to show. */
+        val what: String,
+    )
+
+    /**
+     * Name the request in words a person can read.
+     *
+     * Derived from the path rather than passed in at every call site: one place to keep
+     * honest, and no chance of a label drifting away from the request it describes.
+     */
+    private fun describe(path: String): String = when {
+        path.contains("/say-signed/") -> "sending your signed record"
+        path.startsWith("/kv/") && path.contains("/set/") -> "publishing your note"
+        path.startsWith("/kv/") -> "reading your note"
+        path.startsWith("/r/") -> "reading the room"
+        else -> "asking the service"
+    }
+
+    private val _pulse = MutableStateFlow<Pulse?>(null)
+    val pulse: StateFlow<Pulse?> = _pulse
+
     // ---------------------------------------------------------------- reads
 
-    suspend fun get(path: String): Response = withContext(Dispatchers.IO) {
+    /**
+     * One round trip, measured.
+     *
+     * The measurement is the point: this app keeps telling people it is talking to a real
+     * service, and a spinner is not evidence of that. Every call publishes what actually
+     * happened - the host, the milliseconds, which attempt this was - so a screen can show
+     * the live figure instead of an animation that would spin just as happily offline.
+     */
+    suspend fun get(path: String, attempt: Int = 1): Response = withContext(Dispatchers.IO) {
+        val started = System.nanoTime()
+        fun elapsed() = (System.nanoTime() - started) / 1_000_000
+
         val conn = (URL(baseUrl + path).openConnection() as HttpURLConnection).apply {
             requestMethod = "GET"
             connectTimeout = TIMEOUT_MS
@@ -72,7 +127,12 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
         try {
             val code = conn.responseCode
             val stream = if (code in 200..299) conn.inputStream else conn.errorStream
-            Response(code, stream?.bufferedReader()?.use { it.readText() } ?: "")
+            val body = stream?.bufferedReader()?.use { it.readText() } ?: ""
+            _pulse.value = Pulse(HOST, elapsed(), attempt, code in 200..299, "HTTP $code", describe(path))
+            Response(code, body)
+        } catch (t: Throwable) {
+            _pulse.value = Pulse(HOST, elapsed(), attempt, false, t.javaClass.simpleName, describe(path))
+            throw t
         } finally {
             conn.disconnect()
         }
@@ -97,7 +157,7 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     private suspend fun retrying(path: String, attempts: Int = 3): Response {
         var last = Response(0, "")
         repeat(attempts) { attempt ->
-            last = runCatching { get(path) }.getOrElse { Response(0, it.message ?: "") }
+            last = runCatching { get(path, attempt + 1) }.getOrElse { Response(0, it.message ?: "") }
             if (last.ok) return last
             if (last.status in 400..499) return last
             if (attempt < attempts - 1) delay(400L * (attempt + 1))
@@ -123,7 +183,9 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
     suspend fun readIdentityNote(did: String): String? {
         val r = retrying(DidKey.notePath(did))
         if (r.ok) return stripBanner(r.body)
-        val legacy = retrying(DidKey.legacyNotePath(did))
+        // One attempt: this is a fallback for notes written under an older address, so
+        // it is usually absent and waiting on it three times only delays the answer.
+        val legacy = runCatching { get(DidKey.legacyNotePath(did)) }.getOrElse { Response(0, "") }
         return if (legacy.ok) stripBanner(legacy.body) else null
     }
 
@@ -233,7 +295,10 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      */
     suspend fun findLatestMessage(room: String, did: String): Proof? {
         val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
-        if (!r.ok) return null
+        // Same reason, with a sharper edge: a null here means "you have never checked in",
+        // and the caller acts on that by posting one. A 503 read as "never" would put a
+        // second identical line in a public append-only room.
+        if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
             (0 until messages.length())
@@ -264,7 +329,10 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      */
     suspend fun findAllMessages(room: String, did: String): List<Proof> {
         val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
-        if (!r.ok) return emptyList()
+        // Throw rather than return nothing. An unreachable server and an identity with no
+        // records are opposite facts, and returning the same empty list for both told the
+        // user their history was gone when it was only unreachable.
+        if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
             (0 until messages.length())
