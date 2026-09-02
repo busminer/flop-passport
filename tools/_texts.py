@@ -10,7 +10,7 @@ ROBOT = chr(0x1F916)
 MAN, WOMAN, GIRL = chr(0x1F468), chr(0x1F469), chr(0x1F467)
 
 TEXTS = [
-    "FLOOP Passport for Seeker. First signed check-in.",
+    "FLOP Passport for Seeker. First signed check-in.",
     "  leading and trailing spaces  ",
     "line" + LF + "break" + TAB + "and" + TAB + "tabs",
     "zero" + ZWSP + "width and " + BIDI + "bidi override",

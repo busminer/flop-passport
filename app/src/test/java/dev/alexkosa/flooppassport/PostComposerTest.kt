@@ -87,13 +87,13 @@ class PostComposerTest {
         val url = "https://x.com/AlexKosa1/status/123"
         val value = PostComposer.identityNoteValue(url, "floop-passport")
         assertTrue(value.contains(url))
-        assertTrue(value.startsWith("agent: FLOOP Passport for Seeker"))
+        assertTrue(value.startsWith("agent: FLOP Passport for Seeker"))
         assertTrue("fields follow the server's own key: value convention", value.contains("x: "))
         assertTrue(value.contains("room: floop-passport"))
         // Notes are capped at 8192 characters by the server; ours must stay far below.
         assertTrue(value.length < 400)
-        assertEquals("agent: FLOOP Passport for Seeker", PostComposer.identityNoteValue(null))
-        assertEquals("agent: FLOOP Passport for Seeker", PostComposer.identityNoteValue("   "))
+        assertEquals("agent: FLOP Passport for Seeker", PostComposer.identityNoteValue(null))
+        assertEquals("agent: FLOP Passport for Seeker", PostComposer.identityNoteValue("   "))
     }
 
     @Test
@@ -117,7 +117,7 @@ class PostComposerTest {
 
     @Test
     fun `the user's own sentence leads the post`() {
-        val mine = "I built an open source FLOOP Passport client for Solana Seeker."
+        val mine = "I built an open source FLOP Passport client for Solana Seeker."
         val draft = PostComposer.compose(liveDid, mine)
         assertTrue(draft.fits)
         assertTrue(draft.text.startsWith(mine))

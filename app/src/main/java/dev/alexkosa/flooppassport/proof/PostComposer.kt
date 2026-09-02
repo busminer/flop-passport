@@ -26,7 +26,7 @@ object PostComposer {
     private const val URL_WEIGHT = 23
     const val LIMIT = 280
 
-    const val CREDIT = "FLOOP Passport for Seeker by @AlexKosa1"
+    const val CREDIT = "FLOP Passport for Seeker by @AlexKosa1"
 
     data class Draft(
         val text: String,
@@ -177,7 +177,7 @@ object PostComposer {
         room: String? = null,
         contributionUrl: String? = null,
     ): String = buildString {
-        append("agent: FLOOP Passport for Seeker")
+        append("agent: FLOP Passport for Seeker")
         if (!xPostUrl.isNullOrBlank()) append(" x: ").append(xPostUrl.trim())
         if (!room.isNullOrBlank()) append(" room: ").append(room.trim())
         if (!contributionUrl.isNullOrBlank()) append(" contribution: ").append(contributionUrl.trim())

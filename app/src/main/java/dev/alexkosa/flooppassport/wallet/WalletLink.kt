@@ -32,7 +32,7 @@ object WalletLink {
     /** Wallets discover us by this identity. It is shown on the wallet's approval screen. */
     val IDENTITY_URI: Uri = Uri.parse("https://flooppassport.app")
     val ICON_URI: Uri = Uri.parse("favicon.ico")
-    const val IDENTITY_NAME = "FLOOP Passport"
+    const val IDENTITY_NAME = "FLOP Passport"
     /**
      * The four-argument authorize takes a CLUSTER, whose only legal values are
      * mainnet-beta, testnet and devnet. The CAIP-style "solana:mainnet" belongs to the

@@ -15,7 +15,7 @@ Technocore**, and said this would be rewarded during the $FLOP airdrop.
 That single statement is what makes this app a product rather than a wrapper. It names
 three things a user must do, and the app exists to make each of them possible from a phone:
 
-1. **A unique DID.** FLOOP Passport creates one, derived from the user's own Solana wallet,
+1. **A unique DID.** FLOP Passport creates one, derived from the user's own Solana wallet,
    so it is unique per wallet and reproducible without a seed phrase.
 2. **Useful work on Technocore.** The app produces real signed records with read-back
    verification, and a Proof Capsule for each.

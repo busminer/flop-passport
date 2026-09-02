@@ -1,4 +1,4 @@
-"""End-to-end proof that the FLOOP Passport flow works against a real Technocore server.
+"""End-to-end proof that the FLOP Passport flow works against a real Technocore server.
 
 Mirrors exactly what the Android app will do, in the same order, using the same canonical
 strings and the same derivation. Run against a LOCAL instance so nothing is published:
@@ -93,10 +93,10 @@ def hkdf_sha256(ikm: bytes, salt: bytes, info: bytes, length: int = 32) -> bytes
 print("\n[1] PASSPORT DERIVATION  (what the wallet signature turns into)")
 
 TEST_WALLET = "TESTWa11etDoNotUse111111111111111111111111"
-fake_wallet_sig = hashlib.sha512(b"FLOOP PASSPORT E2E TEST WALLET SIGNATURE - NOT REAL").digest()
+fake_wallet_sig = hashlib.sha512(b"FLOP PASSPORT E2E TEST WALLET SIGNATURE - NOT REAL").digest()
 
-seed = hkdf_sha256(fake_wallet_sig, TEST_WALLET.encode(), b"FLOOP Passport seed v1")
-seed2 = hkdf_sha256(fake_wallet_sig, TEST_WALLET.encode(), b"FLOOP Passport seed v1")
+seed = hkdf_sha256(fake_wallet_sig, TEST_WALLET.encode(), b"FLOP Passport seed v1")
+seed2 = hkdf_sha256(fake_wallet_sig, TEST_WALLET.encode(), b"FLOP Passport seed v1")
 check("derivation is deterministic (same wallet rebuilds the same Passport)", seed == seed2)
 
 key = Ed25519PrivateKey.from_private_bytes(seed)
@@ -115,7 +115,7 @@ st, body = get("/rooms")
 check("GET /rooms", st == 200, "HTTP " + str(st))
 
 print("\n[3] PUBLISH IDENTITY NOTE, THEN READ IT BACK")
-note_value = "FLOOP Passport for Seeker (E2E TEST) | agent identity"
+note_value = "FLOP Passport for Seeker (E2E TEST) | agent identity"
 st, body = get("/kv/" + NOTE_NS + "/" + enc(NOTE_KEY) + "/set/" + enc(note_value))
 check("note write accepted", st == 200, "HTTP " + str(st) + " " + body[:90])
 
@@ -128,7 +128,7 @@ check("note read-back returns exactly what we wrote",
 
 print("\n[4] FIRST SIGNED CHECK-IN")
 ROOM = "floop-passport-e2e"
-TEXT = "FLOOP Passport for Seeker. First signed check-in."
+TEXT = "FLOP Passport for Seeker. First signed check-in."
 nonce = str(int(time.time() * 1000))
 payload = ROOM + "|" + nonce + "|" + sweep(TEXT)
 sig = base64.urlsafe_b64encode(key.sign(payload.encode())).decode().rstrip("=")
@@ -176,7 +176,7 @@ st, body = get("/r/" + ROOM + "/say-signed/" + DID + "/" + s2 + "/" + lower + "/
 check("a lower nonce is refused", st != 200, "HTTP " + str(st) + " " + body[:80])
 
 nxt = str(int(nonce) + 1)
-t2 = "FLOOP Passport E2E. Second signed message."
+t2 = "FLOP Passport E2E. Second signed message."
 p3 = ROOM + "|" + nxt + "|" + sweep(t2)
 s3 = base64.urlsafe_b64encode(key.sign(p3.encode())).decode().rstrip("=")
 st, body = get("/r/" + ROOM + "/say-signed/" + DID + "/" + s3 + "/" + nxt + "/" + enc(t2))

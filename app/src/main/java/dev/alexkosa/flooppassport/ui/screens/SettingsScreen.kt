@@ -101,7 +101,7 @@ fun SettingsScreen(
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopCard {
             Text(
-                "FLOOP Passport creates a Technocore identity from your Solana wallet and " +
+                "FLOP Passport creates a Technocore identity from your Solana wallet and " +
                     "keeps the receipts.",
                 style = FlopType.bodyMd,
                 color = FlopColors.IceWhite,

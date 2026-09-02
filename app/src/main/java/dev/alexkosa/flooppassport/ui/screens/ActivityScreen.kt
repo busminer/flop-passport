@@ -219,7 +219,7 @@ fun ActivityScreen(vm: PassportViewModel) {
  * anyway.
  */
 private fun dailyText(today: String): String =
-    "FLOOP Passport for Seeker. Signed record for $today."
+    "FLOP Passport for Seeker. Signed record for $today."
 
 @Composable
 private fun Stat(value: String, label: String, highlight: Boolean, modifier: Modifier = Modifier) {

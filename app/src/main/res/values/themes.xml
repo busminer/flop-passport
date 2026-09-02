@@ -3,7 +3,7 @@
     <!--
       The system draws its own splash before a single line of our code runs, and it uses
       the launcher icon on a default background. Unstyled, that showed a pale flash and a
-      stray icon a moment before the FLOOP launch scene appeared - which read as the app
+      stray icon a moment before the FLOP launch scene appeared - which read as the app
       starting twice. Styling it to Base with the Chip makes the system's frame and our
       first frame the same picture, so the seam disappears.
     -->

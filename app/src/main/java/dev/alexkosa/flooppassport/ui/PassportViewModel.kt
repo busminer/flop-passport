@@ -17,7 +17,7 @@ import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
 
 const val CHECK_IN_ROOM = "floop-passport"
-const val CHECK_IN_TEXT = "FLOOP Passport for Seeker. First signed check-in."
+const val CHECK_IN_TEXT = "FLOP Passport for Seeker. First signed check-in."
 
 /**
  * Holds the setup so it survives the screen being rebuilt.
@@ -89,7 +89,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             runCatching {
                 val note = technocore.readIdentityNote(identity)
-                val records = technocore.findAllMessages(CHECK_IN_ROOM, identity).map {
+                val records = technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                    // A did-note line is machinery: it vouches for the profile note and
+                    // says nothing about what this person did. Listing it as activity put
+                    // a wall of hex in front of the user and inflated their own count.
+                    .filterNot { DidNote.parse(it.signedText) != null }
+                    .map {
                     ActivityState.Record(
                         seq = it.seq,
                         nonce = it.nonce,
@@ -430,6 +435,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                             ),
                         ),
                     )
+                    // Reaching the end by finding an earlier check-in is still reaching the
+                    // end. Leaving these two out of this branch meant that anyone who had
+                    // ever checked in before - a reinstall, a second device - finished the
+                    // flow with no invitation and a stale activity tab.
+                    showSupportInvite = true
+                    refreshActivity()
                     return@launch
                 }
                 val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
@@ -533,7 +544,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         val identity = did ?: return ""
         val seedHex = revealedSeedHex ?: return ""
         return buildString {
-            appendLine("FLOOP Passport for Seeker - private backup")
+            appendLine("FLOP Passport for Seeker - private backup")
             appendLine()
             appendLine("did: $identity")
             appendLine("fingerprint: " + DidKey.fingerprint(identity))

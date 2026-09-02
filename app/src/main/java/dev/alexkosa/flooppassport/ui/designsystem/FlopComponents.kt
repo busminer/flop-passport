@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 /**
- * The FLOOP component set. Every surface in the app is built from these, so a colour or a
+ * The FLOP component set. Every surface in the app is built from these, so a colour or a
  * radius is changed in one place and the design system's rules are enforced by
  * construction rather than by review.
  */

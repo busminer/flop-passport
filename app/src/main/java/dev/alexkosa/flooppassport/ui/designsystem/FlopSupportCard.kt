@@ -47,7 +47,7 @@ fun FlopSupportCard(
     /** Preselected token. The wallet still lets the sender pick another one. */
     splToken: String? = null,
     tokenName: String? = null,
-    label: String = "FLOOP Passport for Seeker",
+    label: String = "FLOP Passport for Seeker",
     note: String = "Thanks for building this",
 ) {
     val context = LocalContext.current

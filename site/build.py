@@ -93,7 +93,7 @@ def build_index() -> None:
     )
 
     out = page(
-        "FLOOP Passport for Seeker",
+        "FLOP Passport for Seeker",
         "Create a Technocore did:key identity from your Solana wallet, publish it where "
         "anyone can verify it, and keep the receipts. Open source, no account, no server.",
         body,
@@ -109,8 +109,8 @@ def build_privacy() -> None:
     )
     body = body.replace("<!--LOCKUP_SMALL-->", small)
     out = page(
-        "Privacy — FLOOP Passport for Seeker",
-        "FLOOP Passport has no account, no analytics and no server of its own. What the app "
+        "Privacy — FLOP Passport for Seeker",
+        "FLOP Passport has no account, no analytics and no server of its own. What the app "
         "stores, what leaves your phone, and how to delete everything.",
         body,
     )

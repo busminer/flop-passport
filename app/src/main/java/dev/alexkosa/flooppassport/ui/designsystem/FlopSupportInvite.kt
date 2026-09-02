@@ -56,7 +56,7 @@ fun FlopSupportInvite(
     LaunchedEffect(Unit) { shown = true }
     val mark by animateFloatAsState(if (shown) 1f else 0.75f, tween(420), label = "mark")
     val uri = remember(recipient, splToken) {
-        Qr.solanaPay(recipient, "FLOOP Passport for Seeker", "Thanks for building this", splToken)
+        Qr.solanaPay(recipient, "FLOP Passport for Seeker", "Thanks for building this", splToken)
     }
 
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {

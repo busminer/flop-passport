@@ -65,7 +65,7 @@ fun FlopBackupSheet(
             Text("Anyone with this can be you", style = FlopType.h3, color = FlopColors.IceWhite)
             Spacer(Modifier.height(FlopSpacing.sm))
             Text(
-                "These 32 bytes are your FLOOP Passport itself. Whoever holds them can sign " +
+                "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign " +
                     "as you on Technocore. Keep them offline and never send them to anyone, " +
                     "including us.",
                 style = FlopType.bodyMd,

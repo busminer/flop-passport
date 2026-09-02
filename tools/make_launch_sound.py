@@ -1,4 +1,4 @@
-"""Generate the FLOOP Passport launch cue - an original asset, synthesised from scratch.
+"""Generate the FLOP Passport launch cue - an original asset, synthesised from scratch.
 
 Nothing here is sampled, ripped, or derived from any FLOP or Solana Mobile material. It is
 pure additive synthesis, so the file is ours to ship and its licence is not a question.

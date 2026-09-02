@@ -1,5 +1,5 @@
 /*
-  FLOOP Passport — site behaviour.
+  FLOP Passport — site behaviour.
 
   Two jobs: reveal sections as they scroll in, and verify a did:key against the live
   Technocore service entirely in the visitor's browser. There is no backend here, so
@@ -476,7 +476,7 @@
   var tipUri =
     "solana:" + TIP_WALLET +
     "?spl-token=" + encodeURIComponent(SKR_MINT) +
-    "&label=" + encodeURIComponent("FLOOP Passport for Seeker") +
+    "&label=" + encodeURIComponent("FLOP Passport for Seeker") +
     "&message=" + encodeURIComponent("Thanks for building this");
 
   var tipBtn = document.getElementById("tipBtn");

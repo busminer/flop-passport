@@ -16,7 +16,7 @@ import org.junit.Test
 class DidNoteTest {
 
     private val did = ReferenceVectors.identities[0].did
-    private val body = "agent: FLOOP Passport for Seeker room: floop-passport"
+    private val body = "agent: FLOP Passport for Seeker room: floop-passport"
 
     @Test
     fun `the line is the exact shape FLOP published`() {
@@ -122,7 +122,7 @@ class DidNoteTest {
     @Test
     fun `chatter in the room does not confuse the check`() {
         val noise = listOf(
-            "FLOOP Passport for Seeker. First signed check-in.",
+            "FLOP Passport for Seeker. First signed check-in.",
             "did-note is a good idea",
             DidNote.line(did, body),
         )
