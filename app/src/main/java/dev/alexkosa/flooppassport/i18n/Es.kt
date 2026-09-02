@@ -22,6 +22,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Un recordatorio diario para dejar el registro firmado de hoy.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Una nota permanente en una dirección derivada de su clave, para que cualquiera pueda encontrarla y verificar su identidad después.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Una nota pública en una dirección derivada de su clave, para que cualquiera pueda encontrar y verificar su identidad más adelante.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "Un registro firmado debe dejarse manualmente, y un día omitido no puede añadirse después.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -65,8 +67,14 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "¿Eliminarlo?",
     "Delete the Passport and create it again from your wallet." to
         "Elimine el Passport y vuelva a crearlo desde su cartera.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Eliminar solo borra el Passport de este teléfono. Lo que ya se haya publicado puede seguir siendo público, y la misma cartera reconstruye la misma identidad; por tanto, esto no permite deshacer nada.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Al eliminarlo, el Passport solo se borra de este teléfono. Todo lo ya publicado sigue siendo público, y la misma cartera reconstruye la misma identidad; por tanto, esto no deshace nada.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Derivado de una firma de Seed Vault y sellado por StrongBox en el dispositivo.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Derivado de una firma que mi cartera creó dentro de Seed Vault y luego sellado por StrongBox.",
     "Every language listed here has a full translation." to
         "Todos los idiomas de esta lista tienen una traducción completa.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -194,10 +202,14 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Todo está listo",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Su Passport se crea dentro de Seed Vault, el almacén de claves por hardware de Seeker, del que no se puede extraer una clave. En este teléfono queda después sellado por el almacenamiento seguro de Android. La firma se realiza en la aplicación, no en el hardware, porque Android Keystore no puede guardar este tipo de clave; por eso decimos sellado, no firmado, en el hardware.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Su Passport se deriva de una firma que su cartera crea dentro de Seed Vault, el almacén de claves de hardware de Seeker. La clave de la cartera nunca sale de ese hardware. La clave de Passport se calcula a partir de esa firma en esta aplicación y luego se sella mediante el almacenamiento seguro de Android: se sella, no se firma, en hardware, porque Android Keystore no admite este tipo de clave.",
     "Your Passport is live" to "Su Passport está activo",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Su Passport está activo y su primer registro firmado está en Technocore. Cualquiera puede verificarlo y sigue siendo suyo.",
     "Your Passport is live." to "Su Passport está activo.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Su clave nunca se envía a ningún sitio. Solo usted puede exportarla.",
     "Your key never leaves this phone." to "Su clave nunca sale de este teléfono.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Su cartera firma una declaración. No es una transacción ni mueve fondos. La misma cartera reconstruye el mismo Passport en cualquier dispositivo.",

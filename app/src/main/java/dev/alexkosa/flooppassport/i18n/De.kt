@@ -22,6 +22,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Eine tägliche Erinnerung, den heutigen signierten Eintrag zu hinterlassen.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Eine dauerhafte Notiz unter einer von Ihrem Schlüssel abgeleiteten Adresse, damit Sie später jeder finden und verifizieren kann.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Eine öffentliche Notiz unter einer aus Ihrem Schlüssel abgeleiteten Adresse, damit jeder Sie später finden und verifizieren kann.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "Ein signierter Eintrag muss manuell hinterlassen werden, und ein versäumter Tag kann später nicht nachgetragen werden.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -67,8 +69,14 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Löschen?",
     "Delete the Passport and create it again from your wallet." to
         "Löschen Sie den Passport und erstellen Sie ihn erneut aus Ihrer Wallet.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Beim Löschen wird der Passport nur von diesem Telefon entfernt. Bereits veröffentlichte Inhalte können öffentlich bleiben, und dieselbe Wallet stellt dieselbe Identität wieder her - dies macht also nichts rückgängig.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Beim Löschen wird der Passport nur von diesem Telefon entfernt. Bereits Veröffentliches bleibt öffentlich, und dieselbe Wallet stellt dieselbe Identität wieder her - damit lässt sich nichts rückgängig machen.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Aus einer Seed Vault-Signatur abgeleitet und auf dem Gerät durch StrongBox versiegelt.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Aus einer Signatur abgeleitet, die meine Wallet in Seed Vault erstellt hat, dann durch StrongBox versiegelt.",
     "Every language listed here has a full translation." to
         "Jede hier aufgeführte Sprache ist vollständig übersetzt.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -201,10 +209,14 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Alles ist bereit",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Ihr Passport entsteht in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, aus dem kein Schlüssel extrahiert werden kann. Auf diesem Telefon wird er anschließend durch den sicheren Speicher von Android versiegelt. Das Signieren selbst erfolgt in der App, nicht in der Hardware, da Android Keystore diesen Schlüsseltyp nicht speichern kann - daher sagen wir in Hardware versiegelt, nicht signiert.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Ihr Passport wird aus einer Signatur abgeleitet, die Ihre Wallet in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, erstellt. Der Wallet-Schlüssel verlässt diese Hardware nie. Der Passport-Schlüssel wird in dieser App aus der Signatur berechnet und dann durch den sicheren Speicher von Android versiegelt - in Hardware versiegelt, nicht signiert, da Android Keystore diese Art von Schlüssel nicht speichern kann.",
     "Your Passport is live" to "Ihr Passport ist aktiv",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ihr Passport ist aktiv und Ihr erster signierter Eintrag befindet sich auf Technocore. Jeder kann ihn verifizieren, und er bleibt Ihrer.",
     "Your Passport is live." to "Ihr Passport ist aktiv.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Ihr Schlüssel wird niemals übertragen. Nur Sie können ihn exportieren.",
     "Your key never leaves this phone." to "Ihr Schlüssel verlässt dieses Telefon nie.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ihre Wallet signiert eine Erklärung. Dies ist keine Transaktion und bewegt keine Mittel. Dieselbe Wallet stellt auf jedem Gerät denselben Passport wieder her.",

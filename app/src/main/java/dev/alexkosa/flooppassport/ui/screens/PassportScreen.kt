@@ -214,7 +214,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
 
             flow.next == Step.Publish -> ActionBlock(
                 title = "Publish your identity",
-                body = "A permanent note at an address derived from your key, so anyone can " +
+                body = "A public note at an address derived from your key, so anyone can " +
                     "find and verify you later.",
                 button = "publish identity",
                 enabled = !flow.busy,

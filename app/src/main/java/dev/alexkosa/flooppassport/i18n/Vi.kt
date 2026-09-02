@@ -22,6 +22,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Lời nhắc mỗi ngày một lần để để lại bản ghi đã ký hôm nay.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Một ghi chú lâu dài tại địa chỉ được tạo từ khóa của bạn, để sau này bất kỳ ai cũng có thể tìm và xác minh bạn.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Một ghi chú công khai tại địa chỉ được dẫn xuất từ khóa của bạn, để bất kỳ ai cũng có thể tìm và xác minh bạn sau này.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "Bản ghi đã ký phải được để lại thủ công, và không thể bổ sung sau cho ngày đã bỏ lỡ.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -66,8 +68,14 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Xóa mục này?",
     "Delete the Passport and create it again from your wallet." to
         "Xóa Passport rồi tạo lại từ ví của bạn.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Việc xóa chỉ gỡ Passport khỏi điện thoại này. Mọi nội dung đã công bố có thể vẫn công khai, và cùng một ví sẽ tạo lại cùng một danh tính - vì vậy đây không phải là cách hoàn tác bất kỳ điều gì.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Thao tác xóa chỉ gỡ Passport khỏi điện thoại này. Mọi nội dung đã công bố vẫn công khai và cùng ví đó sẽ dựng lại cùng một danh tính - vì vậy đây không phải cách hoàn tác.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Được dẫn xuất từ chữ ký Seed Vault, rồi được StrongBox niêm phong trên thiết bị.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Được dẫn xuất từ chữ ký mà ví của tôi tạo trong Seed Vault, rồi được StrongBox niêm phong.",
     "Every language listed here has a full translation." to
         "Mọi ngôn ngữ được liệt kê ở đây đều có bản dịch đầy đủ.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -193,10 +201,14 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Đã hoàn tất",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport của bạn được tạo bên trong Seed Vault, kho khóa phần cứng của Seeker, nơi không thể trích xuất khóa. Sau đó, khóa được niêm phong bằng bộ nhớ bảo mật của Android trên điện thoại này. Việc ký diễn ra trong ứng dụng, không phải trong phần cứng, vì Android Keystore không thể giữ loại khóa này - do đó chúng tôi nói khóa được niêm phong, không phải được ký, trong phần cứng.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Passport của bạn được dẫn xuất từ một chữ ký do ví tạo trong Seed Vault, kho khóa phần cứng của Seeker. Khóa ví không bao giờ rời khỏi phần cứng đó. Khóa Passport được tính từ chữ ký này trong ứng dụng rồi được bộ nhớ bảo mật của Android niêm phong - được niêm phong, không phải được ký, trong phần cứng, vì Android Keystore không thể lưu loại khóa này.",
     "Your Passport is live" to "Passport của bạn đang hoạt động",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport của bạn đang hoạt động và bản ghi có chữ ký đầu tiên đã có trên Technocore. Bất kỳ ai cũng có thể xác minh và nó vẫn thuộc về bạn.",
     "Your Passport is live." to "Passport của bạn đang hoạt động.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Khóa của bạn không bao giờ được gửi đi đâu. Chỉ bạn mới có thể xuất khóa.",
     "Your key never leaves this phone." to "Khóa của bạn không bao giờ rời điện thoại này.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ví của bạn ký một tuyên bố. Đây không phải giao dịch và không chuyển tiền. Cùng ví đó sẽ dựng lại cùng một Passport trên bất kỳ thiết bị nào.",

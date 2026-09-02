@@ -22,6 +22,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Ежедневное напоминание оставить сегодняшнюю подписанную запись.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Постоянная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вашу личность.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Публичная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вас.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "Подписанную запись нужно оставить вручную, а пропущенный день нельзя заполнить позже.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -65,8 +67,14 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Удалить?",
     "Delete the Passport and create it again from your wallet." to
         "Удалите Passport и создайте его заново из своего кошелька.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Удаление убирает Passport только с этого телефона. Всё уже опубликованное может остаться публичным, а тот же кошелёк восстановит ту же идентичность — поэтому так нельзя отменить выполненные действия.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Удаление убирает Passport только с этого телефона. Всё уже опубликованное останется общедоступным, а тот же кошелёк воссоздаст ту же личность, поэтому отменить что-либо таким способом нельзя.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Получен из подписи Seed Vault и запечатан в StrongBox на устройстве.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Получен из подписи, созданной моим кошельком внутри Seed Vault, затем запечатан в StrongBox.",
     "Every language listed here has a full translation." to
         "Для каждого указанного здесь языка доступен полный перевод.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -195,10 +203,14 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Всё готово",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Ваш Passport создаётся внутри Seed Vault, аппаратного хранилища ключей Seeker, из которого ключ нельзя извлечь. Затем на этом телефоне он запечатывается защищённым хранилищем Android. Само подписание выполняется в приложении, а не аппаратно, поскольку Android Keystore не поддерживает такой тип ключа, поэтому мы говорим об аппаратном запечатывании, а не подписании.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Ваш Passport создаётся из одной подписи, которую кошелёк формирует внутри Seed Vault, аппаратного хранилища ключей Seeker. Ключ кошелька никогда не покидает это оборудование. Ключ Passport вычисляется в этом приложении из подписи, а затем запечатывается защищённым хранилищем Android — именно запечатывается, а не подписывается, аппаратно, поскольку Android Keystore не может хранить ключи такого типа.",
     "Your Passport is live" to "Ваш Passport действует",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ваш Passport действует, а первая подписанная запись находится в Technocore. Любой может её проверить, и она остаётся вашей.",
     "Your Passport is live." to "Ваш Passport действует.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Ваш ключ никуда не отправляется. Экспортировать его можете только вы.",
     "Your key never leaves this phone." to "Ваш ключ никогда не покидает этот телефон.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ваш кошелёк подписывает одно утверждение. Это не транзакция, и средства не перемещаются. Тот же кошелёк воссоздаёт тот же Passport на любом устройстве.",

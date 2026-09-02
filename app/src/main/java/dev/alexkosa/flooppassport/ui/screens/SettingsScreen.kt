@@ -161,11 +161,17 @@ fun SettingsScreen(
             )
             Spacer(Modifier.height(FlopSpacing.sm))
             Text(t(
-                "Your Passport is born inside Seed Vault, the Seeker's hardware key store, " +
-                    "from which a key cannot be extracted. On this phone it is then sealed " +
-                    "by Android's secure storage. Signing itself happens in the app, not in " +
-                    "hardware, because Android Keystore cannot hold this kind of key - so " +
-                    "we say sealed, not signed, in hardware."),
+                // The precise chain, because the shorter version - "born inside Seed
+                // Vault" - claims more than is true. What lives in Seed Vault is the
+                // WALLET key. It signs one statement there, and this Passport is derived
+                // from that signature inside the app. Seed Vault is where the entropy
+                // comes from; it is not where this key lives.
+                "Your Passport is derived from one signature your wallet makes inside " +
+                    "Seed Vault, the Seeker's hardware key store. The wallet key never " +
+                    "leaves that hardware. The Passport key is computed from its " +
+                    "signature in this app and then sealed by Android's secure storage - " +
+                    "sealed, not signed, in hardware, because Android Keystore cannot " +
+                    "hold this kind of key."),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
             )
@@ -177,7 +183,10 @@ fun SettingsScreen(
             Spacer(Modifier.height(FlopSpacing.sm))
             listOf(
                 "No account, no server of ours, no analytics.",
-                "Your key never leaves this phone.",
+                // It leaves the moment somebody uses Save my key, which is a
+                // feature of this app. "Never leaves" was a promise the app itself
+                // breaks on request.
+                "Your key is never sent anywhere. Only you can export it.",
                 "It never asks for your wallet recovery phrase.",
                 "It promises nothing about any airdrop, and never will.",
             ).forEach {
@@ -226,7 +235,7 @@ fun SettingsScreen(
             FlopCard {
                 Text(t(
                     "Deleting removes the Passport from this phone only. Anything already " +
-                        "published stays public, and the same wallet rebuilds the same " +
+                        "published may stay public, and the same wallet rebuilds the same " +
                         "identity - so this is not a way to undo anything."),
                     style = FlopType.bodySm,
                     color = FlopColors.TextMuted,

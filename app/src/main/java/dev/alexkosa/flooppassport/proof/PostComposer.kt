@@ -87,7 +87,7 @@ object PostComposer {
 
         val full = build(
             mine ?: "Created my FLOP Passport on a Solana Seeker.",
-            "The identity is born inside Seed Vault and sealed by StrongBox on the phone.",
+            "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox.",
             did,
             "Identity note published, first check in signed and verified on Technocore.",
             link,
@@ -96,7 +96,7 @@ object PostComposer {
 
         val medium = build(
             mine ?: "Created my FLOP Passport on a Solana Seeker.",
-            "Key born in Seed Vault, sealed by StrongBox on device.",
+            "Derived from a Seed Vault signature, sealed by StrongBox on device.",
             did,
             "Identity note published, first check in verified.",
             link,

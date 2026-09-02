@@ -21,6 +21,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "A once-a-day reminder to leave today's signed record." to "每天提醒一次，留下当天的签名记录。",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "一条位于密钥派生地址的永久记录，之后任何人都能找到并验证您的身份。",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "一条发布在由您的密钥派生出的地址上的公开记录，任何人之后都能找到并验证您的身份。",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "签名记录必须手动留下，错过的日期之后无法补记。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -59,8 +61,14 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Daily reminder" to "每日提醒",
     "Delete it?" to "删除？",
     "Delete the Passport and create it again from your wallet." to "删除 Passport，然后通过钱包重新创建。",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "删除操作只会从此手机移除 Passport。已发布的内容可能仍会保持公开，使用同一钱包也会重建出同一身份，因此这无法撤销任何操作。",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "删除只会从此手机移除 Passport。已发布的内容仍然公开，同一钱包会重建相同身份，因此这无法撤销任何内容。",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "派生自 Seed Vault 中生成的签名，并由设备上的 StrongBox 封存。",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "派生自我的钱包在 Seed Vault 中生成的签名，随后由 StrongBox 封存。",
     "Every language listed here has a full translation." to "此处列出的每种语言都有完整翻译。",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
         "FLOP Passport 根据您的 Solana 钱包创建 Technocore 身份并保留凭据。",
@@ -164,10 +172,13 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "已完成设置",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "您的 Passport 生成于 Seeker 的硬件密钥存储 Seed Vault，其中的密钥无法导出。随后，它会由此手机的 Android 安全存储封存。签名本身在应用内完成，而不是在硬件中，因为 Android Keystore 无法保存此类密钥。因此我们说由硬件封存，而不是由硬件签名。",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "您的 Passport 派生自钱包在 Seeker 的硬件密钥存储区 Seed Vault 中生成的一次签名。钱包密钥始终留在该硬件中。此应用根据该签名计算出 Passport 密钥，再由 Android 的安全存储在硬件中封存，而非签名，因为 Android 密钥库无法保存此类密钥。",
     "Your Passport is live" to "您的 Passport 已启用",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "您的 Passport 已启用，首条签名记录已发布到 Technocore。任何人都能验证，它始终属于您。",
     "Your Passport is live." to "您的 Passport 已启用。",
+    "Your key is never sent anywhere. Only you can export it." to "您的密钥不会发送到任何地方。只有您可以将其导出。",
     "Your key never leaves this phone." to "您的密钥绝不会离开此手机。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "您的钱包只签署一项声明。这不是交易，也不会转移资金。同一钱包可在任何设备上重建相同的 Passport。",

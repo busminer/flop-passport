@@ -22,6 +22,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "오늘의 서명된 기록을 남기도록 하루에 한 번 알려 줍니다.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "키에서 파생된 주소에 남기는 영구 메모로, 나중에 누구나 신원을 찾아 검증할 수 있습니다.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "키에서 파생된 주소에 공개 메모를 남겨, 나중에 누구나 사용자를 찾고 검증할 수 있습니다.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "서명된 기록은 수동으로 남겨야 하며, 놓친 날은 나중에 채울 수 없습니다.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -61,8 +63,14 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "삭제하시겠습니까?",
     "Delete the Passport and create it again from your wallet." to
         "Passport를 삭제하고 지갑에서 다시 생성하세요.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "삭제하면 이 휴대전화에서만 Passport가 제거됩니다. 이미 게시된 내용은 계속 공개될 수 있으며, 같은 지갑으로 같은 신원을 다시 만들 수 있으므로 어떤 것도 되돌릴 수 없습니다.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "삭제하면 이 휴대전화에서만 Passport가 제거됩니다. 이미 게시된 내용은 계속 공개되며 같은 지갑으로 동일한 신원을 다시 만들 수 있으므로, 이 작업으로 이전 기록을 되돌릴 수는 없습니다.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Seed Vault 서명에서 파생되고, 기기의 StrongBox로 봉인되었습니다.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "지갑이 Seed Vault 안에서 생성한 서명에서 파생된 후, StrongBox로 봉인되었습니다.",
     "Every language listed here has a full translation." to "여기에 표시된 모든 언어는 전체 번역이 제공됩니다.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
         "FLOP Passport는 Solana 지갑에서 Technocore 신원을 생성하고 확인 기록을 보관합니다.",
@@ -168,10 +176,14 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "모든 설정이 완료됐습니다",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport는 키를 추출할 수 없는 Seeker의 하드웨어 키 저장소인 Seed Vault 안에서 생성됩니다. 이후 이 휴대전화에서는 Android의 보안 저장소로 봉인됩니다. Android Keystore는 이 종류의 키를 보관할 수 없으므로 서명 자체는 하드웨어가 아닌 앱에서 이루어집니다. 따라서 하드웨어에서 서명됐다고 하지 않고 봉인됐다고 표현합니다.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Passport는 Seeker의 하드웨어 키 저장소인 Seed Vault 안에서 지갑이 생성하는 하나의 서명에서 파생됩니다. 지갑 키는 해당 하드웨어를 벗어나지 않습니다. Passport 키는 이 앱에서 해당 서명으로 계산된 후 Android의 보안 저장소로 봉인됩니다. Android Keystore는 이런 종류의 키를 보관할 수 없으므로, 하드웨어에서 서명되는 것이 아니라 봉인됩니다.",
     "Your Passport is live" to "Passport가 활성화됐습니다",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport가 활성화됐으며 첫 번째 서명 기록이 Technocore에 있습니다. 누구나 검증할 수 있으며 소유권은 사용자에게 있습니다.",
     "Your Passport is live." to "Passport가 활성화됐습니다.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "키는 어디에도 전송되지 않습니다. 내보낼 수 있는 사람은 사용자뿐입니다.",
     "Your key never leaves this phone." to "키는 이 휴대전화를 벗어나지 않습니다.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "지갑은 하나의 문장에 서명합니다. 이는 거래가 아니며 자금을 이동하지 않습니다. 동일한 지갑으로 어느 기기에서든 같은 Passport를 다시 만들 수 있습니다.",

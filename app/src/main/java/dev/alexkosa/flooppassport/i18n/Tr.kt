@@ -22,6 +22,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bugünün imzalı kaydını bırakmak için günde bir kez hatırlatma.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Anahtarınızdan türetilen bir adreste kalıcı bir not; böylece daha sonra herkes sizi bulup doğrulayabilir.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Anahtarınızdan türetilen bir adreste yayımlanan herkese açık bir not; böylece daha sonra herkes sizi bulabilir ve doğrulayabilir.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "İmzalı kayıt elle bırakılmalıdır ve kaçırılan bir gün daha sonra tamamlanamaz.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -66,8 +68,14 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Silinsin mi?",
     "Delete the Passport and create it again from your wallet." to
         "Passport'ı silin ve cüzdanınızdan yeniden oluşturun.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Silme işlemi Passport'ı yalnızca bu telefondan kaldırır. Daha önce yayımlanmış içerikler herkese açık kalabilir ve aynı cüzdan aynı kimliği yeniden oluşturur; dolayısıyla bu işlem hiçbir şeyi geri almaz.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Silme işlemi Passport'ı yalnızca bu telefondan kaldırır. Daha önce yayımlanan her şey herkese açık kalır ve aynı cüzdan aynı kimliği yeniden oluşturur; dolayısıyla bu, herhangi bir şeyi geri alma yolu değildir.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Bir Seed Vault imzasından türetildi, cihazda StrongBox ile mühürlendi.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Cüzdanımın Seed Vault içinde oluşturduğu bir imzadan türetildi, ardından StrongBox ile mühürlendi.",
     "Every language listed here has a full translation." to
         "Burada listelenen her dilin tam çevirisi vardır.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -192,10 +200,14 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Her şey hazır",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport'ınız, Seeker donanım anahtar deposu olan ve içinden anahtar çıkarılamayan Seed Vault içinde oluşturulur. Ardından bu telefonda Android'in güvenli depolamasıyla mühürlenir. Android Keystore bu tür bir anahtarı tutamadığı için imzalama donanımda değil, uygulamada gerçekleşir; bu nedenle donanımda imzalandı değil, mühürlendi deriz.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Passport'ınız, cüzdanınızın Seeker'ın donanım anahtar deposu olan Seed Vault içinde oluşturduğu tek bir imzadan türetilir. Cüzdan anahtarı bu donanımdan hiç çıkmaz. Passport anahtarı, bu uygulamada söz konusu imzadan hesaplanır ve ardından Android'in güvenli depolama alanı tarafından mühürlenir; Android Keystore bu tür bir anahtarı tutamadığı için donanımda imzalanmaz, mühürlenir.",
     "Your Passport is live" to "Passport'ınız yayında",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport'ınız yayında ve ilk imzalı kaydınız Technocore üzerinde. Herkes bunu doğrulayabilir ve kayıt size ait kalır.",
     "Your Passport is live." to "Passport'ınız yayında.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Anahtarınız hiçbir yere gönderilmez. Yalnızca siz dışa aktarabilirsiniz.",
     "Your key never leaves this phone." to "Anahtarınız bu telefondan hiçbir zaman ayrılmaz.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Cüzdanınız tek bir beyanı imzalar. Bu bir işlem değildir ve hiçbir fonu taşımaz. Aynı cüzdan, aynı Passport'ı herhangi bir cihazda yeniden oluşturur.",

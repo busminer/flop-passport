@@ -21,6 +21,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "A once-a-day reminder to leave today's signed record." to "今日の署名済み記録を残すための、1日1回のリマインダー。",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "鍵から導出したアドレスに残る恒久的なノートです。後から誰でも見つけて検証できます。",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "鍵から導出されたアドレスに置かれる公開ノートです。後から誰でも見つけて検証できます。",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "署名済み記録は手動で残す必要があり、記録しなかった日を後から埋めることはできません。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -60,8 +62,14 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "削除しますか？",
     "Delete the Passport and create it again from your wallet." to
         "Passportを削除し、ウォレットから再作成します。",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "削除しても、この端末からPassportが消えるだけです。公開済みの内容は公開されたまま残ることがあり、同じウォレットから同じアイデンティティが再構築されるため、取り消す手段にはなりません。",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "削除されるのは、この端末上のPassportだけです。すでに公開されたものは公開されたままで、同じウォレットから同じIDが再構築されます。取り消しの手段ではありません。",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Seed Vaultの署名から導出し、端末上のStrongBoxで封印。",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "ウォレットがSeed Vault内で生成した署名から導出し、StrongBoxで封印。",
     "Every language listed here has a full translation." to "ここに記載されているすべての言語には、完全な翻訳があります。",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
         "FLOP PassportはSolanaウォレットからTechnocore IDを作成し、証跡を保持します。",
@@ -166,10 +174,14 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "設定が完了しました",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passportは、鍵を取り出せないSeekerのハードウェア鍵ストアであるSeed Vault内で生成されます。その後、この端末ではAndroidのセキュアストレージによって封印されます。Android Keystoreはこの種類の鍵を保持できないため、署名自体はハードウェアではなくアプリ内で行われます。そのため、ハードウェアで署名ではなく封印と表記しています。",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Passportは、SeekerのハードウェアキーストアであるSeed Vault内でウォレットが生成する1つの署名から導出されます。ウォレットの鍵がそのハードウェアの外に出ることはありません。Passportの鍵は、このアプリ内でその署名から計算され、Androidのセキュアストレージで封印されます。Android Keystoreはこの種類の鍵を保持できないため、ハードウェア内で署名されるのではなく、封印されます。",
     "Your Passport is live" to "Passportは公開されています",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passportは公開され、最初の署名済み記録がTechnocore上にあります。誰でも検証でき、所有者は変わりません。",
     "Your Passport is live." to "Passportは公開されています。",
+    "Your key is never sent anywhere. Only you can export it." to
+        "鍵が外部に送信されることはありません。エクスポートできるのは本人だけです。",
     "Your key never leaves this phone." to "鍵がこの端末から出ることはありません。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "ウォレットは1つの文に署名します。トランザクションではなく、資金は移動しません。同じウォレットから、どの端末でも同じPassportを再構築できます。",

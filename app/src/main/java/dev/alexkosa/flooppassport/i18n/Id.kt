@@ -22,6 +22,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Pengingat sekali sehari untuk meninggalkan catatan hari ini yang ditandatangani secara kriptografis.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Catatan permanen di alamat yang berasal dari kunci Anda, agar siapa pun dapat menemukan dan memverifikasi Anda nanti.",
+    "A public note at an address derived from your key, so anyone can find and verify you later." to
+        "Catatan publik di alamat yang diturunkan dari kunci Anda, sehingga siapa pun dapat menemukan dan memverifikasi Anda nanti.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later." to
         "Catatan yang ditandatangani secara kriptografis harus ditinggalkan secara manual, dan hari yang terlewat tidak dapat diisi nanti.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -66,8 +68,14 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Hapus?",
     "Delete the Passport and create it again from your wallet." to
         "Hapus Passport lalu buat kembali dari dompet Anda.",
+    "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
+        "Menghapus hanya akan menghapus Passport dari ponsel ini. Apa pun yang sudah dipublikasikan mungkin tetap bersifat publik, dan dompet yang sama akan membangun kembali identitas yang sama - jadi ini bukan cara untuk mengurungkan apa pun.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Penghapusan hanya menghapus Passport dari ponsel ini. Semua yang sudah diterbitkan tetap publik, dan dompet yang sama membangun kembali identitas yang sama - jadi ini bukan cara untuk membatalkan apa pun.",
+    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
+        "Diturunkan dari tanda tangan Seed Vault, lalu disegel oleh StrongBox di perangkat.",
+    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
+        "Diturunkan dari tanda tangan yang dibuat dompet saya di dalam Seed Vault, lalu disegel oleh StrongBox.",
     "Every language listed here has a full translation." to
         "Setiap bahasa yang tercantum di sini memiliki terjemahan lengkap.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -197,10 +205,14 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "Semua sudah siap",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport Anda dibuat di dalam Seed Vault, penyimpanan kunci perangkat keras Seeker yang tidak memungkinkan kunci diekstrak. Di ponsel ini, Passport kemudian disegel oleh penyimpanan aman Android. Penandatanganan berlangsung di aplikasi, bukan di perangkat keras, karena Android Keystore tidak dapat menyimpan jenis kunci ini - jadi kami menyebutnya disegel, bukan ditandatangani, di perangkat keras.",
+    "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
+        "Passport Anda diturunkan dari satu tanda tangan yang dibuat dompet Anda di dalam Seed Vault, penyimpanan kunci perangkat keras Seeker. Kunci dompet tidak pernah keluar dari perangkat keras tersebut. Kunci Passport dihitung dari tanda tangan itu di aplikasi ini, lalu disegel oleh penyimpanan aman Android - disegel, bukan ditandatangani, di perangkat keras, karena Android Keystore tidak dapat menyimpan jenis kunci ini.",
     "Your Passport is live" to "Passport Anda aktif",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport Anda aktif dan catatan bertanda tangan pertama Anda ada di Technocore. Siapa pun dapat memverifikasinya, dan catatan itu tetap milik Anda.",
     "Your Passport is live." to "Passport Anda aktif.",
+    "Your key is never sent anywhere. Only you can export it." to
+        "Kunci Anda tidak pernah dikirim ke mana pun. Hanya Anda yang dapat mengekspornya.",
     "Your key never leaves this phone." to "Kunci Anda tidak pernah meninggalkan ponsel ini.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Dompet Anda menandatangani satu pernyataan. Ini bukan transaksi dan tidak memindahkan dana. Dompet yang sama membangun kembali Passport yang sama di perangkat mana pun.",
