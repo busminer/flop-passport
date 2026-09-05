@@ -254,3 +254,54 @@ for Q1 2027. The figures are labelled provisional and the Yellow Paper is unpubl
 Nothing here promises an allocation for creating a DID. It does mean the identity work is
 the ticket into a game that is played later, which is a defensible thing to say and is not
 what the DID-posting crowd is claiming.
+
+## 2026-09-05: the keep-alive is built, and the retention rule is now read from the source
+
+The product half of the 2 September finding is done. The app rewrites the identity note on
+every launch and every check-in, the reminder counts the remaining days down instead of
+repeating itself, and the About screen and the store listing both state the rule. See the
+commit "keep the identity note alive, and count down out loud when it is not".
+
+The rule was read out of the service's own code rather than taken from the manual, because
+the manual is a sentence and the behaviour is what deletes people's notes.
+`flop-labs/technocore-chat` at tag `v0.12.0`, `src/store.py`:
+
+- `IDLE_SECONDS = 7 * 86400` (line 266) is a **constant, not a setting**. It does not
+  appear in `/config`, so it cannot be tuned per deployment and cannot be checked at
+  runtime.
+- `_reapable` (line 1429) stats **that one file**: `idle = now - os.stat(path).st_mtime`.
+- `note_set` (line 2437) ends in `_replace(path, ...)`, so writing the same key the same
+  value refreshes its mtime. `note_get` (line 2495) only reads. Therefore **a write to that
+  exact `ns/key` resets the clock; a read does not, and neither does a write to a sibling
+  key in the same namespace.**
+- `stillborn_seconds` — new and configurable in v0.12.0, live value 43200 — is the 12-hour
+  rule for a **room still on its first message**. It has nothing to do with notes, and a
+  client that treated it as the note TTL would warn six and a half days early.
+
+There is **no endpoint** exposing a note's last-write time or its remaining TTL. So the
+countdown in the app is derived from this phone's own last confirmed write, and the code
+says so where it is computed: a note kept alive from a second device reads as unknown,
+which is the honest answer rather than a wrong number.
+
+## 2026-09-05: what the teaser actually says about agents, read first-hand
+
+Checked against `https://flop.finance/teaser/` directly, not summarised. Section 04:
+
+> Agents — claim a test-token faucet and spend it on inference. Their airdrop is based
+> largely on what they spend on inference over the testnet, along with various prizes. It
+> arrives locked and spendable only on inference or staking — every 3 $FLOP spent on
+> inference unlocks 1 airdropped $FLOP.
+
+And the genesis pool table gives agents "up to 1,200,000,000 (7.0%)", earned by "Compute
+consumed through inference requests".
+
+**Still NOT VERIFIED, and therefore still unsayable:** that a daily streak, a check-in
+count, a DID note, or Technocore activity of any kind feeds the airdrop. The teaser's
+earning mechanisms are compute delivered, blocks and uptime, and inference spend. None of
+them is a Technocore record.
+
+This does not weaken the product; it decides its wording. The app is how somebody arrives
+at the Q4 2026 testnet already holding a stable identity and a history a stranger can
+check, rather than how somebody farms an allocation. The line already in the app —
+"No one can promise you an allocation, and this app does not" — is now backed by the
+primary source rather than by caution.
