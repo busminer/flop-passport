@@ -16,10 +16,12 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val JA_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  最後の手順",
     "06  tell them" to "06  伝える",
     "06  tell them  ·  last step" to "06  伝える  ·  最後の手順",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "あと少し書けば、その一行はあなたのものです。本当の一文があれば十分です。",
+    "A few reminders about the last step, and then they stop." to "最後の手順についての数回の通知。そのあとは止まります。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passportで署名したメッセージを静かなルームに投稿し、読み戻して到着を確認します。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -51,6 +53,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Anyone holding it can sign as you" to "これを持つ人は本人として署名できます",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "seed_hexを持つ人は、Technocore上でこのIDとして署名できます。",
+    "Anyone who looks it up sees a key and nothing else." to "調べた人に見えるのは鍵だけで、ほかには何もありません。",
     "Anyone with this can be you" to "これを持つ人は本人になれます",
     "Apply" to "適用",
     "Cancel" to "キャンセル",
@@ -82,6 +85,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "Seed Vaultの署名から導出し、端末上のStrongBoxで封印。",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "ウォレットがSeed Vault内で生成した署名から導出し、StrongBoxで封印。",
+    "Did you post it?" to "投稿しましたか？",
     "Every language listed here has a full translation." to "ここに記載されているすべての言語には、完全な翻訳があります。",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
         "FLOP PassportはSolanaウォレットからTechnocore IDを作成し、証跡を保持します。",
@@ -111,6 +115,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Seed Vault内で生成され、端末のStrongBoxで封印された鍵。",
     "Language" to "言語",
+    "Last reminder about this one." to "この件の通知はこれで最後です。",
     "Leave it blank and the post still works. It just says less." to "空欄のままでも投稿できます. 内容が少なくなるだけです.",
     "Leave today's signed record on Technocore." to "今日の署名済み記録をTechnocoreに残します。",
     "Link to what you built, if there is one" to "作ったものへのリンク（ある場合）",
@@ -134,17 +139,24 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "何も見つかりませんでした。署名したものがここにない場合、ルームの整理によって削除されています。これは通常の動作であり、その確認のためにこの画面があります。",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "このテキストを保証するものはまだありません。署名するにはもう一度公開してください。",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "壊れたものも、失われたものもありません。あなたの Passport は動いています。公開される側の半分が必要になったら、手順 06 は置いてきた場所で待っています。",
     "Nothing signed today yet." to "今日はまだ何も署名していません。",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "自分の言葉で一文お願いします。鍵だけが違う投稿が何千も並べば、それはファーミングとして読まれ、割を食うのは実際に手を動かした人です。",
+    "One step left" to "あと一手順です",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "実際の翻訳がある言語のみを表示しています。すべて英語で表示される言語を選択肢に含めると、対応言語と表示されても、次の画面では対応していないことになります。",
     "Opening a connection" to "接続を開始しています",
     "Opening your Solana wallet" to "Solanaウォレットを開いています",
     "Optional, and the part that actually counts." to "任意ですが、ここが本当に大切な部分です。",
     "Passport at risk" to "Passportが失われるおそれがあります",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "ここにリンクを貼れば、あなたの名前は鍵に恒久的に結び付きます。あとでやろうと思って、そのままになるのがこの部分です。",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "投稿へのリンクを貼り付けてください. リンクはあなたのIDノートに入り、ノートが投稿を示し、投稿にはキーが含まれます. これで誰でも両方を同じキーで確認できます.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "自分の一行を投稿し、戻ってリンクを貼ってください。それがあなたの名前を鍵に結び付けます。FLOP がエージェントに求めた半分は、これです。",
     "Press Create again. Nothing was sent anywhere." to "もう一度「作成」を押してください。どこにも何も送信されていません。",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
         "もう一度「チェックイン」を押してください。technocore.chat は公開サービスで、混んでいるときは書き込みを拒否します。これはこのアプリにも、あなたの端末にも、あなたの鍵にも関係ありません。二、三回試すのはふつうのことです。何も投稿されていません。",
@@ -183,6 +195,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
     "Somebody changed this note after your key signed for it. Publish again." to
         "鍵が保証した後で、誰かがこのノートを書き換えました。もう一度公開してください。",
+    "Still one step short" to "まだ一手順足りません",
     "Talking to the service" to "サービスと通信中",
     "Thanks for building this" to "開発への謝意を送る",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -197,6 +210,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "IDはSeed Vault内で生成され、端末のStrongBoxで封印されます。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "鍵をこの端末のセキュアストレージに封印し、読み戻してIDと照合します。",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "貼ったリンクは、あなた自身の鍵から導かれたアドレスにある身元ノートに入ります。ルームは一日で片付けられますが、ノートは残ります。",
     "The manual" to "マニュアル",
     "The server is busy. Trying again." to "サーバーが混み合っています。再試行しています。",
     "The stored key does not match your identity" to "保存された鍵がIDと一致しません",
@@ -226,6 +241,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was posted." to "もう一度お試しください。何も投稿されていません。",
     "Try again. Nothing was published." to "もう一度お試しください。何も公開されていません。",
     "Two days left before it is deleted." to "削除まであと二日です。",
+    "Unfinished setup" to "未完了の設定",
     "Use the phone's language" to "端末の言語を使用",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "少し待ってから、もう一度押して再確認してください。失敗として扱う必要はありません。",
@@ -243,9 +259,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "復元にこのファイルは不要です。同じSolanaウォレットで",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "復元にこれは不要です。同じSolanaウォレットから、どの端末でも同じPassportを再構築できます。このコピーは、自身の判断で別の場所から鍵を使用するためのものです。",
+    "You finished the five. The last one takes a minute." to "五つは終わりました。最後は一分で済みます。",
     "You have already checked in" to "すでに記録を残しています",
     "You have already left a record today." to "今日はすでに記録を残しています。",
     "You're all set" to "設定が完了しました",
+    "Your Passport has no name on it" to "あなたの Passport に名前がありません",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passportは、鍵を取り出せないSeekerのハードウェア鍵ストアであるSeed Vault内で生成されます。その後、この端末ではAndroidのセキュアストレージによって封印されます。Android Keystoreはこの種類の鍵を保持できないため、署名自体はハードウェアではなくアプリ内で行われます。そのため、ハードウェアで署名ではなく封印と表記しています。",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -281,6 +299,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "address" to "アドレス",
     "agent: FLOP Passport for Seeker" to "エージェント：Seeker用FLOP Passport",
     "algorithm: Ed25519, did:key, 32-byte seed" to "アルゴリズム：Ed25519、did:key、32バイトシード",
+    "attach it" to "結び付ける",
     "built by a community builder" to "コミュニティ開発者による制作",
     "cancel" to "キャンセル",
     "change" to "変更",
@@ -318,6 +337,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "no, nothing was made public" to "いいえ、何も公開されていません",
     "nonce" to "ノンス",
     "not found" to "見つかりません",
+    "not yet" to "まだです",
     "not yet - the note alone is a claim, not a proof" to "まだです - ノートだけでは主張であり、証明ではありません",
     "off" to "オフ",
     "on" to "オン",

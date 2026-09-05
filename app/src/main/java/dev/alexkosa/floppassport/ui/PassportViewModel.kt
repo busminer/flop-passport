@@ -6,6 +6,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import dev.alexkosa.floppassport.crypto.DidKey
 import dev.alexkosa.floppassport.crypto.Ed25519
+import dev.alexkosa.floppassport.notify.FinishNudge
+import dev.alexkosa.floppassport.notify.NudgePrefs
 import dev.alexkosa.floppassport.proof.PostComposer
 import dev.alexkosa.floppassport.proof.SharePrefs
 import dev.alexkosa.floppassport.technocore.DidNote
@@ -505,6 +507,40 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * and the link is in it. A URL sitting in a text field on this phone proves nothing to
      * anybody else, and this app does not hand out green ticks for that.
      */
+    /**
+     * True from the moment the share sheet opened until a link comes back.
+     *
+     * This is the gap where people are lost: they tap post, land in another app, publish,
+     * and never return to the field. Not carelessness - attention simply goes with the
+     * screen. Remembering that they left is what lets the app ask the question at the one
+     * moment it is easy to answer, which is the second they come back.
+     */
+    var awaitingLink by mutableStateOf(false)
+        private set
+
+    /** Called when the post is handed to whichever app the person chose. */
+    fun postHandedOff() {
+        awaitingLink = true
+    }
+
+    fun stopAwaitingLink() {
+        awaitingLink = false
+    }
+
+    /**
+     * Keep the unfinished-step reminders in step with reality.
+     *
+     * One place decides, and it decides on the same fact the screen shows: five steps done
+     * and no link in the note. Called wherever either of those can change, so a person who
+     * finishes never hears from it again, and one who stops halfway hears from it three
+     * times and then not at all.
+     */
+    fun syncFinishNudge(context: android.content.Context) {
+        val unfinished = flow.complete && !nameLinked
+        NudgePrefs(context).pending = unfinished
+        if (unfinished) FinishNudge.start(context) else FinishNudge.cancel(context)
+    }
+
     val nameLinked: Boolean
         get() {
             val url = xPostUrl.trim()

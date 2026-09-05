@@ -16,10 +16,13 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val ID_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  langkah terakhir",
     "06  tell them" to "06  beri tahu mereka",
     "06  tell them  ·  last step" to "06  ceritakan  ·  langkah terakhir",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Beberapa kata lagi dan kalimat itu jadi milik Anda. Cukup satu kalimat sungguhan.",
+    "A few reminders about the last step, and then they stop." to
+        "Beberapa pengingat tentang langkah terakhir, lalu berhenti.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -54,6 +57,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Siapa pun yang memegangnya dapat menandatangani sebagai Anda",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "Siapa pun yang memegang seed_hex dapat menandatangani sebagai identitas ini di Technocore.",
+    "Anyone who looks it up sees a key and nothing else." to
+        "Siapa pun yang mencarinya hanya melihat sebuah kunci, tidak lebih.",
     "Anyone with this can be you" to "Siapa pun yang memilikinya dapat menjadi Anda",
     "Apply" to "Terapkan",
     "Cancel" to "Batal",
@@ -88,6 +93,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Diturunkan dari tanda tangan Seed Vault, lalu disegel oleh StrongBox di perangkat.",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "Diturunkan dari tanda tangan yang dibuat dompet saya di dalam Seed Vault, lalu disegel oleh StrongBox.",
+    "Did you post it?" to "Sudah Anda kirim?",
     "Every language listed here has a full translation." to
         "Setiap bahasa yang tercantum di sini memiliki terjemahan lengkap.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -126,6 +132,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Kunci dibuat di Seed Vault, disegel oleh StrongBox pada perangkat.",
     "Language" to "Bahasa",
+    "Last reminder about this one." to "Pengingat terakhir soal ini.",
     "Leave it blank and the post still works. It just says less." to
         "Biarkan kosong dan postingan tetap berfungsi. Isinya hanya lebih sedikit.",
     "Leave today's signed record on Technocore." to
@@ -158,9 +165,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Belum ada yang menjamin teks ini. Terbitkan lagi untuk menandatanganinya.",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "Tidak ada yang rusak dan tidak ada yang hilang. Passport Anda berfungsi. Kalau Anda mau bagian publiknya, langkah 06 menunggu di tempat Anda meninggalkannya.",
     "Nothing signed today yet." to "Belum ada yang ditandatangani hari ini.",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "Tolong satu kalimat dengan kata-kata Anda sendiri. Ribuan kiriman yang hanya berbeda kuncinya akan dibaca sebagai farming, dan itu menimpa orang-orang yang benar-benar bekerja.",
+    "One step left" to "Tersisa satu langkah",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
     "Opening a connection" to "Membuka koneksi",
@@ -168,8 +178,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Optional, and the part that actually counts." to
         "Opsional, dan bagian yang benar-benar penting.",
     "Passport at risk" to "Passport berisiko",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "Tempelkan tautannya di sini dan nama Anda terikat pada kunci Anda selamanya. Ini bagian yang orang niat kerjakan nanti lalu tidak jadi.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Tempel tautan ke postinganmu. Tautan itu masuk ke catatan identitasmu, jadi catatan mengarah ke postingan dan postingan memuat kuncinya. Siapa pun kemudian dapat memeriksa keduanya dengan kunci yang sama.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "Kirim kalimat Anda, lalu kembali dan tempelkan tautannya. Itulah yang mengikat nama Anda ke kunci Anda, dan itu bagian yang diminta FLOP dari para agen.",
     "Press Create again. Nothing was sent anywhere." to
         "Tekan Buat lagi. Tidak ada yang dikirim ke mana pun.",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
@@ -215,6 +229,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Menandatangani dan mengirim pencatatan pertama Anda",
     "Somebody changed this note after your key signed for it. Publish again." to
         "Seseorang mengubah catatan ini setelah kunci Anda menjaminnya. Terbitkan lagi.",
+    "Still one step short" to "Masih kurang satu langkah",
     "Talking to the service" to "Berkomunikasi dengan layanan",
     "Thanks for building this" to "Terima kasih telah membuat ini",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -229,6 +244,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Identitas dibuat di dalam Seed Vault dan disegel oleh StrongBox pada ponsel.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Kunci disegel di penyimpanan aman ponsel ini, lalu dibaca kembali dan dicocokkan dengan identitas Anda.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "Tautan yang Anda tempel masuk ke catatan identitas Anda, di alamat yang diturunkan dari kunci Anda sendiri. Ruang dibersihkan dalam sehari; catatan tidak.",
     "The manual" to "Panduan",
     "The server is busy. Trying again." to "Server sedang sibuk. Mencoba lagi.",
     "The stored key does not match your identity" to
@@ -259,6 +276,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was posted." to "Coba lagi. Tidak ada yang dikirim.",
     "Try again. Nothing was published." to "Coba lagi. Tidak ada yang diterbitkan.",
     "Two days left before it is deleted." to "Dua hari lagi sebelum dihapus.",
+    "Unfinished setup" to "Penyiapan belum selesai",
     "Use the phone's language" to "Gunakan bahasa ponsel",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Jangan anggap ini sebagai kegagalan.",
@@ -277,9 +295,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Anda tidak memerlukan berkas ini untuk memulihkan. Dompet Solana yang sama yang",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "Anda tidak memerlukan ini untuk memulihkan. Dompet Solana yang sama membangun kembali Passport yang sama di ponsel mana pun. Salinan ini untuk menggunakan kunci di tempat lain sesuai pilihan Anda.",
+    "You finished the five. The last one takes a minute." to
+        "Anda sudah menyelesaikan yang lima. Yang terakhir cuma semenit.",
     "You have already checked in" to "Anda sudah mencatatkan",
     "You have already left a record today." to "Anda sudah meninggalkan catatan hari ini.",
     "You're all set" to "Semua sudah siap",
+    "Your Passport has no name on it" to "Passport Anda belum bernama",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport Anda dibuat di dalam Seed Vault, penyimpanan kunci perangkat keras Seeker yang tidak memungkinkan kunci diekstrak. Di ponsel ini, Passport kemudian disegel oleh penyimpanan aman Android. Penandatanganan berlangsung di aplikasi, bukan di perangkat keras, karena Android Keystore tidak dapat menyimpan jenis kunci ini - jadi kami menyebutnya disegel, bukan ditandatangani, di perangkat keras.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -315,6 +336,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "address" to "alamat",
     "agent: FLOP Passport for Seeker" to "agen: FLOP Passport untuk Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to "algoritma: Ed25519, did:key, seed 32 byte",
+    "attach it" to "tautkan",
     "built by a community builder" to "dibuat oleh pengembang komunitas",
     "cancel" to "batal",
     "change" to "ubah",
@@ -351,6 +373,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "no thanks, continue" to "tidak, terima kasih, lanjutkan",
     "no, nothing was made public" to "tidak, tidak ada yang dijadikan publik",
     "not found" to "tidak ditemukan",
+    "not yet" to "belum",
     "not yet - the note alone is a claim, not a proof" to
         "belum - catatan saja adalah klaim, bukan bukti",
     "off" to "nonaktif",

@@ -45,6 +45,10 @@
             android:exported="false" />
 
         <receiver
+            android:name=".notify.FinishNudge$Receiver"
+            android:exported="false" />
+
+        <receiver
             android:name=".notify.BootReceiver"
             android:exported="true">
             <intent-filter>

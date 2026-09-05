@@ -24,6 +24,17 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.DisposableEffect
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import androidx.compose.foundation.border
+import androidx.compose.foundation.background
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import dev.alexkosa.floppassport.ui.designsystem.FlopShapes
 import dev.alexkosa.floppassport.i18n.t
 import dev.alexkosa.floppassport.proof.PostComposer
 import dev.alexkosa.floppassport.proof.looksLikeUrl
@@ -76,6 +87,39 @@ fun TellThemCard(vm: PassportViewModel) {
     var xField by remember { mutableStateOf(vm.xPostUrl) }
     var contribField by remember { mutableStateOf(vm.contributionUrl) }
     var problem by remember { mutableStateOf<String?>(null) }
+    var askForLink by remember { mutableStateOf(false) }
+
+    // The question arrives when it is easiest to answer: the person is looking at this
+    // screen again, having just posted, with the link still in their clipboard or one tap
+    // away in the other app. A reminder tomorrow asks somebody to reconstruct what they
+    // were doing; this asks somebody who already knows.
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME && vm.awaitingLink && vm.xPostUrl.isBlank()) {
+                askForLink = true
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
+
+    if (askForLink) {
+        FlopLinkPrompt(
+            value = xField,
+            onValueChange = { xField = it },
+            onDismiss = {
+                askForLink = false
+                vm.stopAwaitingLink()
+            },
+            onSave = {
+                val x = xField.trim()
+                if (x.isNotEmpty()) vm.attachPostUrl(x)
+                askForLink = false
+                vm.stopAwaitingLink()
+            },
+        )
+    }
 
     FlopCard {
         // Numbered like the ladder above it, because it is the same sequence continuing.
@@ -186,6 +230,7 @@ fun TellThemCard(vm: PassportViewModel) {
                 "post it",
                 enabled = ready,
                 onClick = {
+                    vm.postHandedOff()
                     context.startActivity(
                         Intent.createChooser(
                             Intent(Intent.ACTION_SEND).apply {
@@ -299,4 +344,62 @@ private fun FlopField(
             unfocusedContainerColor = FlopColors.Base,
         ),
     )
+}
+
+
+/**
+ * "Did you post it? Paste the link."
+ *
+ * Deliberately a dialog rather than a highlight on the card behind it. Somebody returning
+ * from another app is not reading this screen, they are re-orienting on it, and a coloured
+ * border is not what breaks through that. Dismissing is one tap and costs nothing: the
+ * field stays on the card, the step stays open, and the reminders still run.
+ */
+@Composable
+private fun FlopLinkPrompt(
+    value: String,
+    onValueChange: (String) -> Unit,
+    onDismiss: () -> Unit,
+    onSave: () -> Unit,
+) {
+    Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+        Column(
+            Modifier
+                .padding(FlopSpacing.lg)
+                .fillMaxWidth()
+                .background(FlopColors.Surface, FlopShapes.lg)
+                .border(1.dp, FlopColors.Cyan.copy(alpha = 0.45f), FlopShapes.lg)
+                .verticalScroll(rememberScrollState())
+                .padding(FlopSpacing.lg),
+        ) {
+            FlopLabel("06  last step")
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t("Did you post it?"),
+                style = FlopType.h3,
+                color = FlopColors.IceWhite,
+            )
+            Spacer(Modifier.height(FlopSpacing.xs))
+            Text(
+                t(
+                    "Paste the link here and your name is attached to your key for good. " +
+                        "This is the part people mean to do later and then do not.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextMuted,
+            )
+            Spacer(Modifier.height(FlopSpacing.md))
+            FlopField(
+                value = value,
+                onValueChange = onValueChange,
+                label = t("Link to your post"),
+                placeholder = "https://x.com/you/status/...",
+            )
+            Spacer(Modifier.height(FlopSpacing.md))
+            FlopButton(t("attach it"), onSave, enabled = value.trim().isNotEmpty())
+            Spacer(Modifier.height(FlopSpacing.sm))
+            // Equal weight, and it says what it does. Nobody is trapped in this dialog.
+            FlopButtonSecondary(t("not yet"), onDismiss)
+        }
+    }
 }

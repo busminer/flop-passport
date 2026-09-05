@@ -16,10 +16,13 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val DE_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  letzter Schritt",
     "06  tell them" to "06  weitersagen",
     "06  tell them  ·  last step" to "06  sag es weiter  ·  letzter Schritt",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Noch ein paar Worte, dann gehört sie dir. Ein echter Satz genügt.",
+    "A few reminders about the last step, and then they stop." to
+        "Ein paar Erinnerungen an den letzten Schritt, dann hören sie auf.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -54,6 +57,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Anyone holding it can sign as you" to "Jeder, der ihn besitzt, kann als Sie signieren",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "Jeder, der seed_hex besitzt, kann auf Technocore als diese Identität signieren.",
+    "Anyone who looks it up sees a key and nothing else." to
+        "Wer ihn nachschlägt, sieht einen Schlüssel und sonst nichts.",
     "Anyone with this can be you" to "Jeder mit diesem Schlüssel kann als Sie auftreten",
     "Apply" to "Übernehmen",
     "Cancel" to "Abbrechen",
@@ -89,6 +94,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Aus einer Seed Vault-Signatur abgeleitet und auf dem Gerät durch StrongBox versiegelt.",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "Aus einer Signatur abgeleitet, die meine Wallet in Seed Vault erstellt hat, dann durch StrongBox versiegelt.",
+    "Did you post it?" to "Hast du es gepostet?",
     "Every language listed here has a full translation." to
         "Jede hier aufgeführte Sprache ist vollständig übersetzt.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -127,6 +133,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Schlüssel in Seed Vault erzeugt und auf dem Gerät durch StrongBox versiegelt.",
     "Language" to "Sprache",
+    "Last reminder about this one." to "Letzte Erinnerung dazu.",
     "Leave it blank and the post still works. It just says less." to
         "Lass das Feld leer, und der Post funktioniert trotzdem. Er sagt dann nur weniger.",
     "Leave today's signed record on Technocore." to
@@ -159,9 +166,12 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Nichts gefunden. Wenn Sie etwas signiert haben und es hier fehlt, wurde es aus dem Raum entfernt - das ist normal und genau dafür gibt es diesen Bildschirm.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Für diesen Text hat noch nichts gebürgt. Veröffentlichen Sie erneut, um ihn zu signieren.",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "Nichts ist kaputt und nichts ist verloren. Dein Passport funktioniert. Wenn du seine öffentliche Hälfte willst, wartet Schritt 06 dort, wo du ihn gelassen hast.",
     "Nothing signed today yet." to "Heute wurde noch nichts signiert.",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "Ein Satz in deinen eigenen Worten. Tausende Beiträge, die sich nur durch einen Schlüssel unterscheiden, werden als Farming gelesen, und das trifft die, die die Arbeit gemacht haben.",
+    "One step left" to "Ein Schritt fehlt",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
     "Opening a connection" to "Verbindung wird hergestellt",
@@ -169,8 +179,12 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Optional, and the part that actually counts." to
         "Optional, aber der Teil, der wirklich zählt.",
     "Passport at risk" to "Passport gefährdet",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "Füge den Link hier ein, und dein Name hängt dauerhaft an deinem Schlüssel. Das ist der Teil, den man später machen will und dann nicht macht.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Füge den Link zu deinem Post ein. Er kommt in deine Identitätsnotiz, sodass die Notiz auf den Post verweist und der Post den Schlüssel enthält. Dann kann jeder beide Seiten mit demselben Schlüssel prüfen.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "Poste deine Zeile und komm zurück, um den Link einzufügen. Das ist es, was deinen Namen an deinen Schlüssel heftet, und es ist die Hälfte, um die FLOP Agenten gebeten hat.",
     "Press Create again. Nothing was sent anywhere." to
         "Drücken Sie erneut auf Erstellen. Es wurde nichts versendet.",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
@@ -217,6 +231,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Ihr erster Eintrag wird signiert und gesendet",
     "Somebody changed this note after your key signed for it. Publish again." to
         "Jemand hat diese Notiz geändert, nachdem Ihr Schlüssel für sie gebürgt hat. Erneut veröffentlichen.",
+    "Still one step short" to "Immer noch ein Schritt zu wenig",
     "Talking to the service" to "Kommunikation mit dem Dienst",
     "Thanks for building this" to "Danke für die Entwicklung",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -231,6 +246,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Die Identität entsteht in Seed Vault und wird auf dem Telefon durch StrongBox versiegelt.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Der Schlüssel wird im sicheren Speicher dieses Telefons versiegelt, dann zurückgelesen und mit Ihrer Identität abgeglichen.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "Der Link, den du einfügst, geht in deine Identitätsnotiz, an eine aus deinem eigenen Schlüssel abgeleitete Adresse. Räume werden binnen eines Tages geleert, die Notiz nicht.",
     "The manual" to "Das Handbuch",
     "The server is busy. Trying again." to "Der Server ist beschäftigt. Neuer Versuch.",
     "The stored key does not match your identity" to
@@ -263,6 +280,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was published." to
         "Versuchen Sie es erneut. Es wurde nichts veröffentlicht.",
     "Two days left before it is deleted." to "Noch zwei Tage, bevor sie gelöscht wird.",
+    "Unfinished setup" to "Unfertige Einrichtung",
     "Use the phone's language" to "Sprache des Telefons verwenden",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Betrachten Sie dies nicht als Fehler.",
@@ -282,10 +300,13 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Sie benötigen diese Datei nicht zur Wiederherstellung. Dieselbe Solana-Wallet, die",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "Sie benötigen dies nicht zur Wiederherstellung. Dieselbe Solana-Wallet stellt auf jedem Telefon denselben Passport wieder her. Diese Kopie dient dazu, den Schlüssel andernorts nach Ihren eigenen Bedingungen zu verwenden.",
+    "You finished the five. The last one takes a minute." to
+        "Die fünf hast du geschafft. Der letzte dauert eine Minute.",
     "You have already checked in" to "Sie haben bereits einen Eintrag erstellt",
     "You have already left a record today." to
         "Sie haben heute bereits einen Eintrag hinterlassen.",
     "You're all set" to "Alles ist bereit",
+    "Your Passport has no name on it" to "Auf deinem Passport steht kein Name",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Ihr Passport entsteht in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, aus dem kein Schlüssel extrahiert werden kann. Auf diesem Telefon wird er anschließend durch den sicheren Speicher von Android versiegelt. Das Signieren selbst erfolgt in der App, nicht in der Hardware, da Android Keystore diesen Schlüsseltyp nicht speichern kann - daher sagen wir in Hardware versiegelt, nicht signiert.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -322,6 +343,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "agent: FLOP Passport for Seeker" to "Agent: FLOP Passport für Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to
         "Algorithmus: Ed25519, did:key, 32-Byte-Seed",
+    "attach it" to "anhängen",
     "built by a community builder" to "von einem Community-Entwickler erstellt",
     "cancel" to "abbrechen",
     "change" to "ändern",
@@ -357,6 +379,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "no thanks, continue" to "nein danke, fortfahren",
     "no, nothing was made public" to "nein, nichts wurde öffentlich gemacht",
     "not found" to "nicht gefunden",
+    "not yet" to "noch nicht",
     "not yet - the note alone is a claim, not a proof" to
         "noch nicht - die Notiz allein ist eine Behauptung, kein Nachweis",
     "off" to "aus",

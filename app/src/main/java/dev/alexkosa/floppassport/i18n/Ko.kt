@@ -16,10 +16,12 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val KO_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  마지막 단계",
     "06  tell them" to "06  알려주기",
     "06  tell them  ·  last step" to "06  알리기  ·  마지막 단계",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "몇 마디만 더 쓰면 됩니다. 진짜 문장 하나면 충분합니다.",
+    "A few reminders about the last step, and then they stop." to "마지막 단계에 대한 몇 번의 알림, 그 뒤에는 멈춥니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -52,6 +54,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Anyone holding it can sign as you" to "이를 가진 사람은 누구나 사용자의 신원으로 서명할 수 있습니다",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "seed_hex를 가진 사람은 누구나 Technocore에서 이 신원으로 서명할 수 있습니다.",
+    "Anyone who looks it up sees a key and nothing else." to "찾아본 사람에게는 키 하나만 보이고 그 외에는 없습니다.",
     "Anyone with this can be you" to "이를 가진 사람은 누구나 사용자의 신원이 될 수 있습니다",
     "Apply" to "적용",
     "Cancel" to "취소",
@@ -83,6 +86,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "Seed Vault 서명에서 파생되고, 기기의 StrongBox로 봉인되었습니다.",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "지갑이 Seed Vault 안에서 생성한 서명에서 파생된 후, StrongBox로 봉인되었습니다.",
+    "Did you post it?" to "올리셨나요?",
     "Every language listed here has a full translation." to "여기에 표시된 모든 언어는 전체 번역이 제공됩니다.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
         "FLOP Passport는 Solana 지갑에서 Technocore 신원을 생성하고 확인 기록을 보관합니다.",
@@ -113,6 +117,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Seed Vault에서 생성되고 기기의 StrongBox로 봉인된 키입니다.",
     "Language" to "언어",
+    "Last reminder about this one." to "이 건에 대한 마지막 알림입니다.",
     "Leave it blank and the post still works. It just says less." to
         "비워 두어도 게시물은 그대로 작동합니다. 내용만 줄어듭니다.",
     "Leave today's signed record on Technocore." to "Technocore에 오늘의 서명된 기록을 남기세요.",
@@ -137,17 +142,24 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "찾은 내용이 없습니다. 서명한 항목이 여기에 없다면 방에서 오래된 기록이 정리된 것입니다. 이는 정상이며 바로 이 화면이 필요한 이유입니다.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "아직 이 텍스트를 보증한 것이 없습니다. 서명하려면 다시 게시하세요.",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "고장난 것도, 잃어버린 것도 없습니다. 당신의 Passport는 잘 작동합니다. 공개된 절반이 필요해지면 06단계가 그 자리에 그대로 있습니다.",
     "Nothing signed today yet." to "오늘은 아직 서명된 기록이 없습니다.",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "당신의 말로 한 문장만 써 주세요. 키만 다른 수천 개의 글은 파밍으로 읽히고, 그 대가는 실제로 일한 사람들이 치릅니다.",
+    "One step left" to "한 단계 남았습니다",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "실제 번역이 있는 언어만 표시됩니다. 모든 언어를 영어로 표시하는 선택기는 해당 언어를 지원한다고 안내하지만 다음 화면에서는 그렇지 않음을 보여줍니다.",
     "Opening a connection" to "연결을 여는 중",
     "Opening your Solana wallet" to "Solana 지갑 여는 중",
     "Optional, and the part that actually counts." to "선택 사항이지만, 실제로 중요한 부분입니다.",
     "Passport at risk" to "Passport가 위험합니다",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "여기에 링크를 붙여 넣으면 당신의 이름이 키에 영구히 붙습니다. 사람들이 나중에 하려다 결국 하지 않는 부분이 바로 이것입니다.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "게시물 링크를 붙여 넣으세요. 이 링크는 신원 노트에 들어가 노트는 게시물을 가리키고 게시물은 키를 담게 됩니다. 그러면 누구나 하나의 키로 양쪽을 확인할 수 있습니다.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "당신의 한 줄을 올리고, 돌아와서 링크를 붙여 넣으세요. 그것이 당신의 이름을 당신의 키에 붙여 주며, FLOP이 에이전트에게 요청한 절반입니다.",
     "Press Create again. Nothing was sent anywhere." to "생성을 다시 누르세요. 어디에도 전송된 내용은 없습니다.",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
         "체크인을 한 번 더 누르세요. technocore.chat은 공용 서비스라 바쁠 때 쓰기를 거절합니다. 이 앱이나 당신의 휴대폰, 당신의 키와는 아무 상관이 없습니다. 두세 번 시도하는 것은 정상입니다. 올라간 것은 없습니다.",
@@ -186,6 +198,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Signing your first check-in and sending it" to "첫 기록에 서명하고 전송하는 중",
     "Somebody changed this note after your key signed for it. Publish again." to
         "키가 보증한 뒤에 누군가 이 노트를 변경했습니다. 다시 게시하세요.",
+    "Still one step short" to "아직 한 단계가 모자랍니다",
     "Talking to the service" to "서비스와 통신하는 중",
     "Thanks for building this" to "제작자에게 감사 표시",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -200,6 +213,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "신원은 Seed Vault 안에서 생성되고 휴대전화의 StrongBox로 봉인됩니다.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "키는 이 휴대전화의 보안 키 저장소에 봉인된 뒤 다시 읽어 신원과 대조됩니다.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "붙여 넣은 링크는 당신의 키에서 유도된 주소에 있는 신원 노트로 들어갑니다. 방은 하루 안에 정리되지만 노트는 남습니다.",
     "The manual" to "사용 설명서",
     "The server is busy. Trying again." to "서버가 사용 중입니다. 다시 시도합니다.",
     "The stored key does not match your identity" to "저장된 키가 신원과 일치하지 않습니다",
@@ -229,6 +244,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was posted." to "다시 시도하세요. 게시된 내용은 없습니다.",
     "Try again. Nothing was published." to "다시 시도하세요. 공개된 내용은 없습니다.",
     "Two days left before it is deleted." to "삭제되기까지 이틀 남았습니다.",
+    "Unfinished setup" to "완료되지 않은 설정",
     "Use the phone's language" to "휴대전화의 언어 사용",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "잠시 기다린 뒤 다시 눌러 확인하세요. 실패로 간주하지 마세요.",
@@ -246,9 +262,11 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "복구에 이 파일은 필요하지 않습니다. 동일한 Solana 지갑이",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "복구에 이것은 필요하지 않습니다. 동일한 Solana 지갑으로 어느 휴대전화에서든 같은 Passport를 다시 만들 수 있습니다. 이 사본은 사용자가 원하는 방식으로 다른 곳에서 키를 사용하기 위한 것입니다.",
+    "You finished the five. The last one takes a minute." to "다섯 단계는 끝냈습니다. 마지막은 1분이면 됩니다.",
     "You have already checked in" to "이미 서명 기록을 남겼습니다",
     "You have already left a record today." to "오늘 이미 기록을 남겼습니다.",
     "You're all set" to "모든 설정이 완료됐습니다",
+    "Your Passport has no name on it" to "당신의 Passport에는 이름이 없습니다",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport는 키를 추출할 수 없는 Seeker의 하드웨어 키 저장소인 Seed Vault 안에서 생성됩니다. 이후 이 휴대전화에서는 Android의 보안 저장소로 봉인됩니다. Android Keystore는 이 종류의 키를 보관할 수 없으므로 서명 자체는 하드웨어가 아닌 앱에서 이루어집니다. 따라서 하드웨어에서 서명됐다고 하지 않고 봉인됐다고 표현합니다.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -284,6 +302,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "address" to "주소",
     "agent: FLOP Passport for Seeker" to "에이전트: Seeker용 FLOP Passport",
     "algorithm: Ed25519, did:key, 32-byte seed" to "알고리즘: Ed25519, did:key, 32바이트 시드",
+    "attach it" to "연결하기",
     "built by a community builder" to "커뮤니티 개발자가 제작",
     "cancel" to "취소",
     "change" to "변경",
@@ -320,6 +339,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "no thanks, continue" to "후원하지 않고 계속",
     "no, nothing was made public" to "아니요, 공개된 내용 없음",
     "not found" to "찾을 수 없음",
+    "not yet" to "아직요",
     "not yet - the note alone is a claim, not a proof" to "아직 아님 - 메모만으로는 주장일 뿐 증명이 아님",
     "off" to "끔",
     "on" to "켬",

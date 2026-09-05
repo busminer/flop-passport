@@ -16,10 +16,13 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val TR_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  son adım",
     "06  tell them" to "06  onlara anlat",
     "06  tell them  ·  last step" to "06  anlat  ·  son adım",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Birkaç kelime daha, ve satır senin olur. Tek bir gerçek cümle yeter.",
+    "A few reminders about the last step, and then they stop." to
+        "Son adım için birkaç hatırlatma, sonra kesiliyor.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -54,6 +57,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bunu elinde tutan herkes sizin adınıza imzalayabilir",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "seed_hex değerini elinde tutan herkes Technocore üzerinde bu kimlik adına imzalayabilir.",
+    "Anyone who looks it up sees a key and nothing else." to
+        "Ona bakan yalnızca bir anahtar görür, başka bir şey değil.",
     "Anyone with this can be you" to "Buna sahip olan herkes siz olabilir",
     "Apply" to "Uygula",
     "Cancel" to "İptal",
@@ -88,6 +93,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bir Seed Vault imzasından türetildi, cihazda StrongBox ile mühürlendi.",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "Cüzdanımın Seed Vault içinde oluşturduğu bir imzadan türetildi, ardından StrongBox ile mühürlendi.",
+    "Did you post it?" to "Paylaştın mı?",
     "Every language listed here has a full translation." to
         "Burada listelenen her dilin tam çevirisi vardır.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -125,6 +131,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Anahtar Seed Vault içinde oluşturuldu, cihazdaki StrongBox ile mühürlendi.",
     "Language" to "Dil",
+    "Last reminder about this one." to "Bu konuda son hatırlatma.",
     "Leave it blank and the post still works. It just says less." to
         "Boş bıraksan da gönderi çalışır. Sadece daha az şey söyler.",
     "Leave today's signed record on Technocore." to
@@ -156,17 +163,24 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Hiçbir şey bulunamadı. Bir şey imzaladıysanız ve burada değilse oda onu artık içermeyecek şekilde kırpılmıştır; bu normaldir ve bu ekran tam olarak bu nedenle vardır.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Bu metin için henüz bir kefil yok. İmzalamak için yeniden yayımlayın.",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "Bozulan bir şey yok, kaybolan bir şey de. Passport'un çalışıyor. Onun kamuya açık yarısını istediğinde, 06. adım bıraktığın yerde duruyor.",
     "Nothing signed today yet." to "Bugün henüz hiçbir şey imzalanmadı.",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "Lütfen kendi cümlenle bir satır yaz. Yalnızca anahtarı farklı olan binlerce gönderi çiftlik gibi okunur ve bunun bedelini işi gerçekten yapanlar öder.",
+    "One step left" to "Bir adım kaldı",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
     "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
     "Optional, and the part that actually counts." to "İsteğe bağlı, ama asıl önemli olan bu.",
     "Passport at risk" to "Passport risk altında",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "Bağlantıyı buraya yapıştır, adın anahtarına kalıcı olarak bağlansın. Bu, insanların sonra yaparım deyip yapmadığı kısım.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Gönderinin bağlantısını yapıştır. Kimlik notuna eklenir; böylece not gönderiyi gösterir, gönderi de anahtarı taşır. Sonra herkes iki ucu da aynı anahtarla kontrol edebilir.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "Satırını paylaş, sonra geri gelip bağlantıyı yapıştır. Adını anahtarına bağlayan şey budur ve FLOP'un ajanlardan istediği yarı da budur.",
     "Press Create again. Nothing was sent anywhere." to
         "Oluştur'a yeniden basın. Hiçbir yere hiçbir şey gönderilmedi.",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
@@ -212,6 +226,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Signing your first check-in and sending it" to "İlk kaydınız imzalanıp gönderiliyor",
     "Somebody changed this note after your key signed for it. Publish again." to
         "Anahtarınız kefil olduktan sonra biri bu notu değiştirdi. Yeniden yayımlayın.",
+    "Still one step short" to "Hâlâ bir adım eksik",
     "Talking to the service" to "Hizmetle iletişim kuruluyor",
     "Thanks for building this" to "Bunu geliştirdiğiniz için teşekkürler",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -226,6 +241,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Anahtar bu telefonun güvenli depolamasında mühürlenir, ardından geri okunur ve kimliğinizle karşılaştırılır.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "Yapıştıracağın bağlantı, kendi anahtarından türetilmiş bir adresteki kimlik notuna girer. Odalar bir gün içinde temizlenir, not temizlenmez.",
     "The manual" to "Kılavuz",
     "The server is busy. Trying again." to "Sunucu meşgul. Yeniden deneniyor.",
     "The stored key does not match your identity" to "Saklanan anahtar kimliğinizle eşleşmiyor",
@@ -255,6 +272,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was posted." to "Yeniden deneyin. Hiçbir şey gönderilmedi.",
     "Try again. Nothing was published." to "Yeniden deneyin. Hiçbir şey yayımlanmadı.",
     "Two days left before it is deleted." to "Silinmesine iki gün kaldı.",
+    "Unfinished setup" to "Tamamlanmamış kurulum",
     "Use the phone's language" to "Telefonun dilini kullan",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Bunu bir hata olarak değerlendirmeyin.",
@@ -273,9 +291,12 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kurtarmak için bu dosyaya ihtiyacınız yok. Bu Passport'ı oluşturan aynı Solana cüzdanı",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "Kurtarmak için buna ihtiyacınız yok. Aynı Solana cüzdanı, aynı Passport'ı herhangi bir telefonda yeniden oluşturur. Bu kopya, anahtarı kendi koşullarınızla başka bir yerde kullanmanız içindir.",
+    "You finished the five. The last one takes a minute." to
+        "Beşini bitirdin. Sonuncusu bir dakika sürüyor.",
     "You have already checked in" to "Zaten kayıt bıraktınız",
     "You have already left a record today." to "Bugün zaten bir kayıt bıraktınız.",
     "You're all set" to "Her şey hazır",
+    "Your Passport has no name on it" to "Passport'unda hiç isim yok",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Passport'ınız, Seeker donanım anahtar deposu olan ve içinden anahtar çıkarılamayan Seed Vault içinde oluşturulur. Ardından bu telefonda Android'in güvenli depolamasıyla mühürlenir. Android Keystore bu tür bir anahtarı tutamadığı için imzalama donanımda değil, uygulamada gerçekleşir; bu nedenle donanımda imzalandı değil, mühürlendi deriz.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -312,6 +333,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "agent: FLOP Passport for Seeker" to "aracı: Seeker için FLOP Passport",
     "algorithm: Ed25519, did:key, 32-byte seed" to
         "algoritma: Ed25519, did:key, 32 baytlık seed",
+    "attach it" to "bağla",
     "built by a community builder" to "bir topluluk geliştiricisi tarafından oluşturuldu",
     "cancel" to "iptal",
     "change" to "değiştir",
@@ -349,6 +371,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "no thanks, continue" to "hayır, teşekkürler; devam et",
     "no, nothing was made public" to "hayır, hiçbir şey herkese açılmadı",
     "not found" to "bulunamadı",
+    "not yet" to "şimdi değil",
     "not yet - the note alone is a claim, not a proof" to
         "henüz değil; not tek başına bir iddiadır, kanıt değildir",
     "off" to "kapalı",

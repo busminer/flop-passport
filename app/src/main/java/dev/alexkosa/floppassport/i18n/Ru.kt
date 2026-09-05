@@ -16,10 +16,13 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val RU_STRINGS: Map<String, String> = mapOf(
+    "06  last step" to "06  последний шаг",
     "06  tell them" to "06  расскажите им",
     "06  tell them  ·  last step" to "06  расскажите  ·  последний шаг",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Ещё несколько слов, и строчка ваша. Нужно всего одно живое предложение.",
+    "A few reminders about the last step, and then they stop." to
+        "Несколько напоминаний про последний шаг, потом они прекращаются.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -53,6 +56,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Anyone holding it can sign as you" to "Любой владелец сможет подписывать от вашего имени",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "Любой владелец seed_hex сможет подписывать от имени этой личности в Technocore.",
+    "Anyone who looks it up sees a key and nothing else." to
+        "Кто на него посмотрит, увидит ключ и больше ничего.",
     "Anyone with this can be you" to "Любой владелец сможет действовать от вашего имени",
     "Apply" to "Применить",
     "Cancel" to "Отмена",
@@ -87,6 +92,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Получен из подписи Seed Vault и запечатан в StrongBox на устройстве.",
     "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
         "Получен из подписи, созданной моим кошельком внутри Seed Vault, затем запечатан в StrongBox.",
+    "Did you post it?" to "Опубликовали?",
     "Every language listed here has a full translation." to
         "Для каждого указанного здесь языка доступен полный перевод.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -125,6 +131,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Ключ создан в Seed Vault и запечатан устройством через StrongBox.",
     "Language" to "Язык",
+    "Last reminder about this one." to "Про это напоминаю в последний раз.",
     "Leave it blank and the post still works. It just says less." to
         "Можно оставить поле пустым, публикация всё равно получится. Просто в ней будет меньше подробностей.",
     "Leave today's signed record on Technocore." to
@@ -156,9 +163,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "За этот текст пока никто не поручился. Опубликуйте снова, чтобы подписать его.",
+    "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
+        "Ничего не сломалось и ничего не потеряно. Ваш Passport работает. Когда захотите его публичную половину, шаг 06 будет там, где вы его оставили.",
     "Nothing signed today yet." to "Сегодня пока ничего не подписано.",
     "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
         "Одно предложение своими словами. Тысячи постов, отличающихся только ключом, читаются как ферма, и достаётся за это тем, кто правда работал.",
+    "One step left" to "Остался один шаг",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
     "Opening a connection" to "Установка соединения",
@@ -166,8 +176,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Optional, and the part that actually counts." to
         "Необязательно, но именно это действительно важно.",
     "Passport at risk" to "Passport под угрозой",
+    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
+        "Вставьте сюда ссылку, и ваше имя привяжется к ключу навсегда. Это то, что люди собираются сделать потом и не делают.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Вставьте ссылку на свою публикацию. Она попадёт в заметку вашего идентификатора: заметка будет ссылаться на публикацию, а публикация будет содержать ключ. Тогда любой сможет сверить их по одному ключу.",
+    "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
+        "Опубликуйте свою строчку, потом вернитесь и вставьте ссылку. Именно это привязывает ваше имя к вашему ключу, и это та половина, о которой FLOP просил агентов.",
     "Press Create again. Nothing was sent anywhere." to
         "Нажмите «Создать» ещё раз. Ничего никуда не отправлено.",
     "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
@@ -214,6 +228,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Первая запись подписывается и отправляется",
     "Somebody changed this note after your key signed for it. Publish again." to
         "Кто-то изменил заметку после того, как ваш ключ за неё поручился. Опубликуйте снова.",
+    "Still one step short" to "Всё ещё не хватает одного шага",
     "Talking to the service" to "Связь с сервисом",
     "Thanks for building this" to "Поблагодарить разработчика",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
@@ -228,6 +243,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Личность создаётся внутри Seed Vault и запечатывается через StrongBox на телефоне.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Ключ запечатывается в защищённом хранилище телефона, затем считывается обратно и сверяется с вашей личностью.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
+        "Ссылка, которую вы вставите, уходит в вашу заметку личности, по адресу, выведенному из вашего же ключа. Комнаты чистятся за сутки, заметка нет.",
     "The manual" to "Инструкция",
     "The server is busy. Trying again." to "Сервер занят. Повторная попытка.",
     "The stored key does not match your identity" to
@@ -258,6 +275,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Try again. Nothing was posted." to "Повторите попытку. Ничего не отправлено.",
     "Try again. Nothing was published." to "Повторите попытку. Ничего не опубликовано.",
     "Two days left before it is deleted." to "До удаления осталось два дня.",
+    "Unfinished setup" to "Незаконченная настройка",
     "Use the phone's language" to "Использовать язык телефона",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Подождите немного и нажмите ещё раз для повторной проверки. Не считайте это ошибкой.",
@@ -276,9 +294,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Этот файл не нужен для восстановления. Тот же кошелёк Solana, который",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "Это не нужно для восстановления. Тот же кошелёк Solana воссоздаёт тот же Passport на любом телефоне. Эта копия нужна для самостоятельного использования ключа в другом месте.",
+    "You finished the five. The last one takes a minute." to
+        "Пять вы прошли. Последний занимает минуту.",
     "You have already checked in" to "Вы уже оставили запись",
     "You have already left a record today." to "Сегодня вы уже оставили запись.",
     "You're all set" to "Всё готово",
+    "Your Passport has no name on it" to "На вашем Passport нет имени",
     "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
         "Ваш Passport создаётся внутри Seed Vault, аппаратного хранилища ключей Seeker, из которого ключ нельзя извлечь. Затем на этом телефоне он запечатывается защищённым хранилищем Android. Само подписание выполняется в приложении, а не аппаратно, поскольку Android Keystore не поддерживает такой тип ключа, поэтому мы говорим об аппаратном запечатывании, а не подписании.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
@@ -315,6 +336,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "agent: FLOP Passport for Seeker" to "агент: FLOP Passport для Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to
         "алгоритм: Ed25519, did:key, 32-байтовый seed",
+    "attach it" to "привязать",
     "built by a community builder" to "создано участником сообщества",
     "cancel" to "отмена",
     "change" to "изменить",
@@ -351,6 +373,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "no thanks, continue" to "нет, продолжить",
     "no, nothing was made public" to "нет, ничего не стало общедоступным",
     "not found" to "не найдено",
+    "not yet" to "пока нет",
     "not yet - the note alone is a claim, not a proof" to
         "ещё нет — сама запись является утверждением, а не доказательством",
     "off" to "выкл.",

@@ -94,6 +94,13 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         }
     }
 
+    // The reminders about the unfinished last step follow the same two facts the screen
+    // shows. Recomputed when either moves, so a person who finishes is never nagged and a
+    // person who stops is reminded three times and then left alone.
+    LaunchedEffect(flow.complete, vm.nameLinked) {
+        vm.syncFinishNudge(context)
+    }
+
     // One tick each time a step actually settles, not on every recomposition.
     val verifiedCount = remember(flow) { Step.all.count { flow[it] is StepState.Verified } }
     LaunchedEffect(verifiedCount) {
