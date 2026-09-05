@@ -1,5 +1,6 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
@@ -114,6 +115,10 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 publishedSomething = state.publishedSomething,
                 detail = state.detail,
                 onDismiss = { vm.dismissAnnouncement() },
+                onRetry = {
+                    vm.dismissAnnouncement()
+                    retry(vm, step) { walletLauncher.launch(it) }
+                },
             )
 
             is StepState.Unconfirmed -> FlopProblemDialog(
@@ -123,6 +128,13 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 publishedSomething = true,
                 detail = state.detail,
                 onDismiss = { vm.dismissAnnouncement() },
+                // Not "send again". The write may already be in the room, and the step
+                // looks for it before it would ever post a second copy.
+                retryLabel = "check again",
+                onRetry = {
+                    vm.dismissAnnouncement()
+                    retry(vm, step) { walletLauncher.launch(it) }
+                },
             )
 
             else -> Unit
@@ -303,5 +315,22 @@ private fun ActionBlock(
         Text(t(body), style = FlopType.bodyMd, color = FlopColors.TextMuted)
         Spacer(Modifier.height(FlopSpacing.md))
         FlopButton(button, onClick, enabled = enabled)
+    }
+}
+
+/**
+ * Run a step again.
+ *
+ * Written once, here, because the retry button and the step's own button have to do the
+ * same thing - and a second copy of this mapping is a bug waiting for the day a step is
+ * added. `Ready` is not an action; it settles when step 04 does.
+ */
+private fun retry(vm: PassportViewModel, step: Step, launchIntent: (Intent) -> Unit) {
+    when (step) {
+        Step.Create -> vm.createPassport(launchIntent)
+        Step.Protect -> vm.protect()
+        Step.Publish -> vm.publish()
+        Step.CheckIn -> vm.checkIn()
+        Step.Ready -> Unit
     }
 }

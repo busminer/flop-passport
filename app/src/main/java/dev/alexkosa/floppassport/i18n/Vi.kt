@@ -280,6 +280,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "cancel" to "hủy",
     "change" to "thay đổi",
     "changed" to "đã thay đổi",
+    "check again" to "kiểm lại",
     "checked" to "đã kiểm tra",
     "close" to "đóng",
     "connection" to "kết nối",
@@ -333,6 +334,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "room" to "phòng",
     "save my key" to "lưu khóa của tôi",
     "save to a file" to "lưu vào tệp",
+    "say it another way" to "nói cách khác",
     "self test" to "tự kiểm tra",
     "send a tip" to "gửi tiền ủng hộ",
     "send a tip in {token}" to "gửi tiền ủng hộ bằng {token}",
@@ -357,6 +359,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "the post" to "bài đăng",
     "the same wallet rebuilds this identity anywhere" to
         "cùng ví đó dựng lại danh tính này ở bất kỳ đâu",
+    "try again" to "thử lại",
     "unconfirmed" to "chưa xác nhận",
     "unsigned" to "chưa ký",
     "verified" to "đã xác minh",

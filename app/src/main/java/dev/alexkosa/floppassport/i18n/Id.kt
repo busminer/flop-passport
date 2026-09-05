@@ -282,6 +282,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "cancel" to "batal",
     "change" to "ubah",
     "changed" to "berubah",
+    "check again" to "periksa lagi",
     "checked" to "diperiksa",
     "close" to "tutup",
     "connection" to "koneksi",
@@ -334,6 +335,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "room" to "ruang",
     "save my key" to "simpan kunci saya",
     "save to a file" to "simpan ke berkas",
+    "say it another way" to "ucapkan dengan cara lain",
     "self test" to "uji mandiri",
     "send a tip" to "kirim tip",
     "send a tip in {token}" to "kirim tip dalam {token}",
@@ -359,6 +361,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "the post" to "postingan",
     "the same wallet rebuilds this identity anywhere" to
         "dompet yang sama membangun kembali identitas ini di mana pun",
+    "try again" to "coba lagi",
     "unconfirmed" to "belum dikonfirmasi",
     "unsigned" to "tanpa tanda tangan",
     "verified" to "terverifikasi",

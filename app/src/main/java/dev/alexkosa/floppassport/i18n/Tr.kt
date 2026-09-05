@@ -279,6 +279,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "cancel" to "iptal",
     "change" to "değiştir",
     "changed" to "değişti",
+    "check again" to "yeniden kontrol et",
     "checked" to "kontrol edildi",
     "close" to "kapat",
     "connection" to "bağlantı",
@@ -332,6 +333,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "room" to "oda",
     "save my key" to "anahtarımı kaydet",
     "save to a file" to "dosyaya kaydet",
+    "say it another way" to "başka türlü söyle",
     "self test" to "öz test",
     "send a tip" to "bahşiş gönder",
     "send a tip in {token}" to "{token} ile bahşiş gönder",
@@ -356,6 +358,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "the post" to "gönderi",
     "the same wallet rebuilds this identity anywhere" to
         "aynı cüzdan bu kimliği her yerde yeniden oluşturur",
+    "try again" to "yeniden dene",
     "unconfirmed" to "doğrulanmadı",
     "unsigned" to "imzasız",
     "verified" to "doğrulandı",

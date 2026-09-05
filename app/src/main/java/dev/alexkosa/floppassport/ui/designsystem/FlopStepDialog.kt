@@ -131,6 +131,10 @@ fun FlopProblemDialog(
     publishedSomething: Boolean,
     detail: String?,
     onDismiss: () -> Unit,
+    /** Runs the step again. The way out of a failure belongs in the window that reports it. */
+    onRetry: (() -> Unit)? = null,
+    /** "try again" when nothing was sent, "check again" when something might already be there. */
+    retryLabel: String = "try again",
 ) {
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         // Scrolls for the same reason as the success dialog, and it matters more here: this
@@ -184,7 +188,15 @@ fun FlopProblemDialog(
             }
 
             Spacer(Modifier.height(FlopSpacing.lg))
-            FlopButton("ok", onDismiss)
+            // The action first, and as the primary button. A failed step is not finished,
+            // and a dialog whose only way out is "ok" says that it is.
+            if (onRetry != null) {
+                FlopButton(retryLabel, onRetry)
+                Spacer(Modifier.height(FlopSpacing.sm))
+                FlopButtonSecondary("close", onDismiss)
+            } else {
+                FlopButton("ok", onDismiss)
+            }
         }
     }
 }

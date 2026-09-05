@@ -280,6 +280,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "cancel" to "cancelar",
     "change" to "alterar",
     "changed" to "alterada",
+    "check again" to "conferir de novo",
     "checked" to "registrado",
     "close" to "fechar",
     "connection" to "conexão",
@@ -333,6 +334,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "room" to "sala",
     "save my key" to "salvar minha chave",
     "save to a file" to "salvar em um arquivo",
+    "say it another way" to "dizer de outro jeito",
     "self test" to "autoteste",
     "send a tip" to "enviar uma contribuição",
     "send a tip in {token}" to "enviar uma contribuição em {token}",
@@ -356,6 +358,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "the post" to "a publicação",
     "the same wallet rebuilds this identity anywhere" to
         "a mesma carteira recria esta identidade em qualquer lugar",
+    "try again" to "tentar de novo",
     "unconfirmed" to "não confirmado",
     "unsigned" to "sem assinatura",
     "verified" to "verificado",

@@ -1,6 +1,7 @@
 package dev.alexkosa.floppassport.ui.screens
 
 import android.content.Intent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -122,7 +123,21 @@ fun TellThemCard(vm: PassportViewModel) {
         )
 
         Spacer(Modifier.height(FlopSpacing.md))
-        FlopLabel("the post")
+        Row(
+            Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            FlopLabel("the post")
+            // Quiet, and next to the thing it changes. A prominent button here would read
+            // as "this draft is a rough one", which it is not.
+            Text(
+                t("say it another way"),
+                style = FlopType.bodySm,
+                color = FlopColors.Cyan,
+                modifier = Modifier.clickable { vm.nextWording() },
+            )
+        }
         Spacer(Modifier.height(FlopSpacing.xs))
         // Shown in full, exactly as it will be posted. A preview that abbreviates the DID
         // would hide the one thing that has to be right.

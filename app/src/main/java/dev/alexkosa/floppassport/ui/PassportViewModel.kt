@@ -14,6 +14,7 @@ import dev.alexkosa.floppassport.notify.NoteLife
 import dev.alexkosa.floppassport.vault.PassportVault
 import dev.alexkosa.floppassport.wallet.WalletLink
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
@@ -472,9 +473,26 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         republishNote()
     }
 
+    /**
+     * How far the user has stepped away from the wording their key was given.
+     *
+     * Kept in the ViewModel, so turning the phone while reading the draft does not hand
+     * back a different post than the one that was on screen a second ago.
+     */
+    var wordingShift by mutableIntStateOf(0)
+        private set
+
+    /** Offer the next wording. Wraps, so the original always comes back around. */
+    fun nextWording() {
+        wordingShift = (wordingShift + 1) % PostComposer.VOICES.size
+    }
+
     /** The post text the app offers, or null before there is a Passport to post about. */
-    fun postDraft(): PostComposer.Draft? =
-        did?.let { PostComposer.compose(it, contributionLine.ifBlank { null }) }
+    fun postDraft(): PostComposer.Draft? = did?.let { identity ->
+        val base = PostComposer.VOICES.indexOf(PostComposer.voiceFor(identity))
+        val voice = PostComposer.VOICES[(base + wordingShift) % PostComposer.VOICES.size]
+        PostComposer.compose(identity, contributionLine.ifBlank { null }, voice = voice)
+    }
 
     private fun republishNote() {
         val identity = did ?: return

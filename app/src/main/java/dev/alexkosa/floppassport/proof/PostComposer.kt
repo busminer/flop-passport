@@ -37,6 +37,81 @@ object PostComposer {
     }
 
     /**
+     * One person's way of saying it.
+     *
+     * [opener] leads the post when the user wrote nothing of their own; their own line
+     * always wins over it. [mechanism] is the sentence that makes somebody stop, and
+     * [brief] is the same claim at a size that still fits when the rest is long.
+     * [closer] is the specific technical reason the whole thing works, and it is the first
+     * line dropped when space runs out.
+     */
+    data class Voice(
+        val opener: String,
+        val mechanism: String,
+        val brief: String,
+        val closer: String,
+    )
+
+    /**
+     * Six of them, all saying something true and checkable, none saying anything about
+     * what it earns.
+     *
+     * Written to open on the surprising part rather than on the announcement. "I created
+     * my Passport" is news to nobody; "wipe this phone and the same identity comes back"
+     * is a claim a reader can test, and the DID underneath is how they test it.
+     */
+    val VOICES: List<Voice> = listOf(
+        Voice(
+            opener = "My identity on Technocore. Stored nowhere, written down nowhere.",
+            mechanism = "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
+            brief = "Derived from one Seed Vault signature. No seed phrase to lose.",
+            closer = "It works only because Seed Vault signs the exact bytes it is handed.",
+        ),
+        Voice(
+            opener = "Wipe this phone and the same identity comes back.",
+            mechanism = "It is not stored. It is computed from one signature my wallet makes in Seed Vault.",
+            brief = "Computed from one Seed Vault signature, not stored anywhere.",
+            closer = "Same wallet, same sentence, same key. Every time, on any device.",
+        ),
+        Voice(
+            opener = "Nothing here to back up, and nothing anyone can take away.",
+            mechanism = "This key was not generated. It was derived from a single Seed Vault signature.",
+            brief = "Not generated. Derived from a single Seed Vault signature.",
+            closer = "Only possible because Seed Vault signs the exact bytes it is handed.",
+        ),
+        Voice(
+            opener = "Anyone can check this key against what it signed. You included.",
+            mechanism = "It came from one line my wallet signed inside Seed Vault. No seed phrase.",
+            brief = "One line signed in Seed Vault, and that is the whole key.",
+            closer = "Most wallets wrap a message first. Seed Vault signs it exactly as given.",
+        ),
+        Voice(
+            opener = "A key that still proves I am the same person tomorrow.",
+            mechanism = "Derived from one Seed Vault signature on my Seeker. Nothing written down.",
+            brief = "One Seed Vault signature on a Seeker. Nothing written down.",
+            closer = "Change one byte of that sentence and the key changes. That is the point.",
+        ),
+        Voice(
+            opener = "Made my Technocore identity on a Solana Seeker.",
+            mechanism = "One wallet signature inside Seed Vault, and the key falls out of it.",
+            brief = "One wallet signature inside Seed Vault. That is the key.",
+            closer = "Reproducible because Seed Vault signs exactly the bytes it is handed.",
+        ),
+    )
+
+    /**
+     * Which voice this identity speaks in.
+     *
+     * Taken from the key's own fingerprint rather than from a random number, so the draft
+     * a person reads is the draft they send: a wording that reshuffles itself between
+     * opening the screen and pressing the button is a wording nobody trusts. Two different
+     * keys almost always land on different voices, which is the whole point.
+     */
+    fun voiceFor(did: String): Voice =
+        VOICES[(DidKey.fingerprint(did).take(6).toLong(16) % VOICES.size).toInt()]
+
+
+    /**
      * X's counting, not Kotlin's: a URL always costs 23 whatever its true length, so a
      * draft that looks over the limit locally can be comfortably inside it, and a draft
      * built without this rule wastes the space that would have carried the proof link.
@@ -61,9 +136,14 @@ object PostComposer {
      * Longest variant that fits, in descending order of what it says. Callers can also
      * offer the list so the user picks.
      */
-    fun compose(did: String, contribution: String? = null, includeLink: Boolean = true): Draft =
-        drafts(did, contribution, includeLink).firstOrNull { it.fits }
-            ?: drafts(did, contribution, includeLink).last()
+    fun compose(
+        did: String,
+        contribution: String? = null,
+        includeLink: Boolean = true,
+        voice: Voice = voiceFor(did),
+    ): Draft =
+        drafts(did, contribution, includeLink, voice).firstOrNull { it.fits }
+            ?: drafts(did, contribution, includeLink, voice).last()
 
     /**
      * [contribution] is the user's own sentence about what they actually did.
@@ -78,6 +158,8 @@ object PostComposer {
         did: String,
         contribution: String? = null,
         includeLink: Boolean = true,
+        /** Overridden only by the "say it another way" control, which walks the list. */
+        voice: Voice = voiceFor(did),
     ): List<Draft> {
         val link = if (includeLink) noteUrl(did) else null
         val mine = contribution?.trim()?.takeIf { it.isNotEmpty() }
@@ -96,33 +178,36 @@ object PostComposer {
         // nothing gets the two Seed Vault lines instead of a bland "created my Passport"
         // followed by them, which is what pushed this variant over the limit and quietly
         // dropped the most specific sentence in the whole post.
+        // The opener leads here too, not only in the shorter variants. It is the line that
+        // decides whether the rest is read at all, and dropping it left every post that
+        // nobody wrote a line for opening on a technical sentence about byte handling.
         val full = build(
-            mine,
-            "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
-            "It works only because Seed Vault signs the exact bytes it is handed.",
+            mine ?: voice.opener,
+            voice.mechanism,
+            voice.closer,
             did,
             link,
             CREDIT,
         )
 
         val medium = build(
-            mine ?: "Created my FLOP Passport on a Solana Seeker.",
-            "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
+            mine ?: voice.opener,
+            voice.mechanism,
             did,
             link,
             CREDIT,
         )
 
         val short = build(
-            mine ?: "My FLOP Passport, created on a Solana Seeker.",
-            "Derived from one Seed Vault signature. No seed phrase to lose.",
+            mine ?: voice.opener,
+            voice.brief,
             did,
             link,
             CREDIT,
         )
 
         val minimal = build(
-            mine ?: "My FLOP Passport, created on a Solana Seeker.",
+            mine ?: voice.opener,
             did,
             link,
             CREDIT,
@@ -162,8 +247,12 @@ object PostComposer {
     }
 
     /** True when this line still leaves a postable draft. */
-    fun contributionFits(did: String, contribution: String?, includeLink: Boolean = true): Boolean =
-        compose(did, contribution, includeLink).fits
+    fun contributionFits(
+        did: String,
+        contribution: String?,
+        includeLink: Boolean = true,
+        voice: Voice = voiceFor(did),
+    ): Boolean = compose(did, contribution, includeLink, voice).fits
 
     /**
      * The value written into the durable identity note.

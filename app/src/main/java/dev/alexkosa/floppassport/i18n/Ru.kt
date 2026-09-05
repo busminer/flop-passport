@@ -282,6 +282,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "cancel" to "отмена",
     "change" to "изменить",
     "changed" to "изменено",
+    "check again" to "проверить ещё раз",
     "checked" to "проверено",
     "close" to "закрыть",
     "connection" to "соединение",
@@ -334,6 +335,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "room" to "комната",
     "save my key" to "сохранить мой ключ",
     "save to a file" to "сохранить в файл",
+    "say it another way" to "сказать иначе",
     "self test" to "самопроверка",
     "send a tip" to "отправить чаевые",
     "send a tip in {token}" to "отправить чаевые в {token}",
@@ -357,6 +359,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "the post" to "публикация",
     "the same wallet rebuilds this identity anywhere" to
         "тот же кошелёк воссоздаёт эту личность где угодно",
+    "try again" to "попробовать снова",
     "unconfirmed" to "не подтверждено",
     "unsigned" to "без подписи",
     "verified" to "подтверждено",
