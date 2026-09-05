@@ -1,0 +1,12 @@
+# Everything here is source, not site. Without this list Cloudflare would publish
+# the build script and the HTML fragments alongside the pages they were built into,
+# which is both untidy and a small invitation to read the parts nobody assembled.
+build.py
+preview.py
+quotes.py
+_serve.vbs
+_*.html
+__pycache__/
+CNAME
+wrangler.jsonc
+.assetsignore

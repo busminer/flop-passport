@@ -1,0 +1,11 @@
+{
+  "name": "flop-passport-site",
+  "compatibility_date": "2026-09-05",
+  "account_id": "c5b315c92be3f248e670ea69574c5d48",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true
+}

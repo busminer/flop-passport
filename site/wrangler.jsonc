@@ -1,0 +1,32 @@
+{
+  // Static hosting for flop.alexkosa.dev, deployed with:
+  //
+  //     python site/build.py
+  //     npx wrangler deploy --config site/wrangler.jsonc
+  //
+  // A Worker with an assets directory and no script: Cloudflare serves the files
+  // directly and nothing of ours runs per request. The site is built HTML, and the
+  // one thing it does that matters - verifying a Passport's signature - happens in
+  // the reader's own browser, which is the whole point of it. A server would be
+  // something else to trust.
+  //
+  // `routes` is written here on purpose. Deploying this Worker from a config that
+  // omits it detaches the custom domain, and the site goes dark in a way that looks
+  // like DNS rather than like a deploy.
+  "name": "flop-passport-site",
+  "compatibility_date": "2026-09-05",
+  "account_id": "c5b315c92be3f248e670ea69574c5d48",
+  "assets": {
+    "directory": ".",
+    // The store needs a policy at a stable address. Serving /privacy without the
+    // extension keeps that address the same whatever the files are called later.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "flop.alexkosa.dev",
+      "custom_domain": true
+    }
+  ]
+}
