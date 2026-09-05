@@ -14,7 +14,9 @@ beats a picture of them.
 from __future__ import annotations
 
 import html
+import json
 import re
+from pathlib import Path
 
 AVATAR = "/assets/flop_labs_avatar.jpg"
 NAME = "Flop Labs"
@@ -103,8 +105,44 @@ def _body(text: str) -> str:
     return TOKEN.sub(r'<span class="tok">\1</span>', html.escape(text))
 
 
-def card(post: dict) -> str:
+def _table(lang: str) -> dict:
+    """Translations for the cards, keyed by post id, plus the card's own few labels."""
+    if lang == "en":
+        return {}
+    path = Path(__file__).parent / "i18n" / f"{lang}.quotes.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _translation(post: dict, table: dict, lang: str) -> str:
+    """The quote in the reader's language, underneath the original, never instead of it.
+
+    The section promises these words "quoted in full", and a translation is not the quote:
+    it is one reading of it, and the point of the section is that nobody has to take our
+    reading of anything. So the original stays first and stays whole, and the translation
+    sits below it, marked as one, for a reader who would otherwise be facing a wall of a
+    language they do not read.
+    """
+    text = table.get(post["id"])
+    if not text:
+        return ""
+    label = table.get("_label", "Translation")
+    return (
+        f'\n          <div class="tweet-trans" lang="{lang}">'
+        f'<span class="tweet-trans-label">{html.escape(label)}</span>'
+        f"<p>{_body(text)}</p></div>"
+    )
+
+
+def card(post: dict, lang: str = "en") -> str:
     url = f"https://x.com/{HANDLE}/status/{post['id']}"
+    t = _table(lang)
+    likes = html.escape(t.get("_likes", "likes"))
+    reposts = html.escape(t.get("_reposts", "reposts"))
+    views = html.escape(t.get("_views", "views"))
+    open_original = html.escape(t.get("_open", "Open the original on X")) + " &rarr;"
+    date = html.escape(t.get(post["id"] + ":date", post["date"]))
     return f"""        <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="{AVATAR}" width="44" height="44"
@@ -115,17 +153,17 @@ def card(post: dict) -> str:
             </div>
             {X_MARK}
           </div>
-          <p class="tweet-body">{_body(post['text'])}</p>
-          <div class="tweet-date">{post['date']}</div>
+          <p class="tweet-body" lang="en">{_body(post['text'])}</p>{_translation(post, t, lang)}
+          <div class="tweet-date">{date}</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>{post['likes']}</b> likes</span>
-            <span class="tweet-stat"><b>{post['reposts']}</b> reposts</span>
-            <span class="tweet-stat"><b>{post['views']}</b> views</span>
+            <span class="tweet-stat"><b>{post['likes']}</b> {likes}</span>
+            <span class="tweet-stat"><b>{post['reposts']}</b> {reposts}</span>
+            <span class="tweet-stat"><b>{post['views']}</b> {views}</span>
           </div>
-          <a class="tweet-link" href="{url}" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="{url}" rel="noopener">{open_original}</a>
         </article>
 """
 
 
-def render() -> str:
-    return "".join(card(p) for p in POSTS)
+def render(lang: str = "en") -> str:
+    return "".join(card(p, lang) for p in POSTS)

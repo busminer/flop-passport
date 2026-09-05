@@ -599,3 +599,72 @@ ul.plain li::marker { color: var(--cyan); }
 .faq li { margin-bottom: var(--sm); }
 .faq li:last-child { margin-bottom: 0; }
 .faq li strong { color: var(--ice); }
+
+/* ---------------------------------------------------------------- languages */
+/*
+  Eleven links, always open, never a dropdown.
+
+  A menu that has to be opened hides the one fact a reader in Jakarta or Chongqing needs
+  before they decide to keep reading - that their language is here at all. So the whole set
+  is on the page, in each language's own script, as its own row under the header. It is a
+  scrolling strip when it does not fit, the same way the section nav above it behaves,
+  because a wrapped second line of eleven links pushes the page itself off the screen.
+*/
+.langs {
+  order: 4;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--md);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 8px 0 2px;
+  border-top: 1px solid var(--surface-light);
+}
+.langs::-webkit-scrollbar { display: none; }
+.langs-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+  white-space: nowrap;
+}
+.langs a {
+  font-size: 13px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.langs a:hover { color: var(--ice); }
+/* The page you are on, marked rather than removed: a missing link reads as a bug. */
+.langs a[aria-current="page"] { color: var(--cyan); font-weight: 500; }
+
+header .wrap { flex-wrap: wrap; }
+
+/* ---------------------------------------------------------------- quote translations */
+/*
+  The translation of a quote is not the quote. The original stays above it, whole and in
+  its own language, and this block is visibly a second thing - indented, quieter, labelled -
+  so nobody can mistake our wording for FLOP's.
+*/
+.tweet-trans {
+  margin: 12px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--surface-light);
+}
+.tweet-trans-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 6px;
+}
+.tweet-trans p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-2);
+  white-space: pre-wrap;
+}

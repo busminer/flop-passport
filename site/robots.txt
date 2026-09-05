@@ -1,0 +1,5 @@
+# FLOP Passport for Seeker. Everything here is meant to be read and indexed.
+User-agent: *
+Allow: /
+
+Sitemap: https://flop.alexkosa.dev/sitemap.xml

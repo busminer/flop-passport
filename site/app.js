@@ -10,6 +10,26 @@
 (function () {
   "use strict";
 
+  // ---------------------------------------------------------------- language
+  /*
+    Same rule as the app: the English sentence is its own key, and a sentence with no
+    entry renders in English rather than as an identifier. The table is written into the
+    page by the build, so a translated page needs no second request before it can answer.
+    Values are filled in after the lookup - pasting a room name into the key first is
+    exactly how a string stops matching its own table.
+  */
+  var STRINGS = window.FLOP_I18N || {};
+
+  function T(english, values) {
+    var out = STRINGS[english] || english;
+    if (values) {
+      for (var name in values) {
+        out = out.split("{" + name + "}").join(values[name]);
+      }
+    }
+    return out;
+  }
+
   // ---------------------------------------------------------------- reveal
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -50,7 +70,7 @@
     var bytes = [0];
     for (var i = 0; i < str.length; i++) {
       var value = B58.indexOf(str[i]);
-      if (value === -1) throw new Error("not base58btc: " + str[i]);
+      if (value === -1) throw new Error(T("Not valid base58: {character}", { character: str[i] }));
       for (var j = 0; j < bytes.length; j++) bytes[j] *= 58;
       bytes[0] += value;
       var carry = 0;
@@ -74,14 +94,14 @@
    * them an empty card.
    */
   function publicKeyOf(did) {
-    if (did.indexOf("did:key:") !== 0) throw new Error("A did:key starts with did:key:z6Mk");
+    if (did.indexOf("did:key:") !== 0) throw new Error(T("A did:key starts with did:key:z6Mk"));
     var mb = did.slice("did:key:".length);
     if (mb.length !== 48 || mb[0] !== "z") {
-      throw new Error("Expected 48 characters starting with z, got " + mb.length);
+      throw new Error(T("Expected 48 characters starting with z, got {count}", { count: mb.length }));
     }
     var raw = base58Decode(mb.slice(1));
     if (raw.length !== 34 || raw[0] !== 0xed || raw[1] !== 0x01) {
-      throw new Error("Only Ed25519 keys (z6Mk…) are accepted");
+      throw new Error(T("Only Ed25519 keys (z6Mk…) are accepted"));
     }
     return raw.slice(2);
   }
@@ -300,7 +320,7 @@
   async function verify() {
     var did = (input.value || "").trim();
     if (!did) {
-      problem("Paste a did:key first.");
+      problem(T("Paste a did:key first."));
       return;
     }
 
@@ -308,13 +328,13 @@
     try {
       key = publicKeyOf(did);
     } catch (e) {
-      problem("That is not a usable did:key. " + e.message);
+      problem(T("That is not a usable did:key.") + " " + e.message);
       return;
     }
 
     button.disabled = true;
-    button.textContent = "Checking…";
-    show([el("p", null, "Asking technocore.chat…")]);
+    button.textContent = T("Checking…");
+    show([el("p", null, T("Asking technocore.chat…"))]);
 
     try {
       var fp = await fingerprint(did);
@@ -330,9 +350,10 @@
       head.style.gap = "8px";
       head.style.alignItems = "center";
       head.style.flexWrap = "wrap";
-      head.appendChild(el("span", "badge cyan", "key is real"));
+      head.appendChild(el("span", "badge cyan", T("key is real")));
       head.appendChild(
-        el("span", text ? "badge cyan" : "badge grey", text ? "note published" : "no note found")
+        el("span", text ? "badge cyan" : "badge grey",
+          text ? T("note published") : T("no note found"))
       );
 
       // The badge that actually means something. A published note is a claim; a note the
@@ -340,39 +361,44 @@
       // is a warning worth shouting about.
       var vouch = text ? await checkVouch(did, fp, text) : { state: "missing" };
       if (vouch.state === "matches") {
-        head.appendChild(el("span", "badge green", "vouched for by the key"));
+        head.appendChild(el("span", "badge green", T("vouched for by the key")));
       } else if (vouch.state === "changed") {
-        head.appendChild(el("span", "badge red", "note changed since signing"));
+        head.appendChild(el("span", "badge red", T("note changed since signing")));
       }
       if (vouch.signed) {
         head.appendChild(
-          el("span", "badge green", vouch.signed + (vouch.signed === 1 ? " record" : " records") + " checked here")
+          el("span", "badge green", vouch.signed === 1
+            ? T("{count} record checked here", { count: vouch.signed })
+            : T("{count} records checked here", { count: vouch.signed }))
         );
       }
       nodes.push(head);
 
       var list = el("dl", "kv");
-      row(list, "identity", did);
-      row(list, "public key", Array.from(key).map(function (b) {
+      row(list, T("identity"), did);
+      row(list, T("public key"), Array.from(key).map(function (b) {
         return b.toString(16).padStart(2, "0");
       }).join(""));
-      row(list, "fingerprint", fp);
-      row(list, "note address", "technocore.chat" + path);
-      if (text) row(list, "note content", text);
+      row(list, T("fingerprint"), fp);
+      row(list, T("note address"), "technocore.chat" + path);
+      if (text) row(list, T("note content"), text);
       nodes.push(list);
 
       if (vouch.state === "matches") {
-        row(list, "vouched by", "did-note in /r/" + vouch.room + ", seq " + vouch.seq);
+        row(list, T("vouched by"),
+          T("did-note in /r/{room}, entry {seq}", { room: vouch.room, seq: vouch.seq }));
       } else if (vouch.state === "changed") {
-        row(list, "signed hash", vouch.claimed);
-        row(list, "actual hash", vouch.actual);
+        row(list, T("signed hash"), vouch.claimed);
+        row(list, T("actual hash"), vouch.actual);
       }
       if (vouch.room && vouch.selfChecked) {
-        row(list, "signatures", vouch.signed + " verified in this browser, from /r/" + vouch.room);
-        if (vouch.newest) row(list, "most recent", vouch.newest);
+        row(list, T("signatures"),
+          T("{count} verified in this browser, from /r/{room}",
+            { count: vouch.signed, room: vouch.room }));
+        if (vouch.newest) row(list, T("most recent"), vouch.newest);
       }
 
-      var note = el("p", null,
+      var note = el("p", null, T(
         !text
           ? "This key is well formed, but nothing is published at its note address yet. " +
             "That is what step 03 in the app does."
@@ -386,7 +412,7 @@
             "hash no longer matches."
           : "This note is a claim, not a proof: note addresses are world-writable, and no " +
             "signed did-note line was found vouching for this text."
-      );
+      ));
       note.style.fontSize = "14px";
       note.style.marginTop = "16px";
       nodes.push(note);
@@ -395,7 +421,7 @@
       // badge: a service reporting an author is not the same thing as arithmetic anyone
       // can redo. Before 31 August 2026 only the first was on offer.
       if (vouch.room) {
-        var proof = el("p", null,
+        var proof = el("p", null, T(
           vouch.selfChecked
             ? "Nothing above was taken on trust. This page pulled the stored records, " +
               "rebuilt the exact bytes each signature covers, and checked them against " +
@@ -404,14 +430,14 @@
             : "Your browser cannot check Ed25519 signatures, so the authorship above is " +
               "technocore.chat's word rather than something proved here. A current " +
               "Chrome, Edge, Firefox or Safari will check it for itself."
-        );
+        ));
         proof.style.fontSize = "14px";
         proof.style.marginTop = "12px";
         proof.style.color = vouch.selfChecked ? "var(--green)" : "var(--muted)";
         nodes.push(proof);
       }
 
-      var link = el("a", null, "Open the note yourself →");
+      var link = el("a", null, T("Open the note yourself →"));
       link.href = "https://technocore.chat" + path;
       link.rel = "noopener";
       link.style.fontFamily = "var(--mono)";
@@ -420,13 +446,13 @@
 
       show(nodes);
     } catch (e) {
-      problem(
+      problem(T(
         "Could not reach technocore.chat from your browser. That says nothing about this " +
           "identity, only about the connection."
-      );
+      ));
     } finally {
       button.disabled = false;
-      button.textContent = "Verify";
+      button.textContent = T("Verify");
     }
   }
 
@@ -489,13 +515,13 @@
     copyAddr.addEventListener("click", function () {
       navigator.clipboard.writeText(TIP_WALLET).then(
         function () {
-          copyAddr.textContent = "Copied";
-          setTimeout(function () { copyAddr.textContent = "Copy address"; }, 1800);
+          copyAddr.textContent = T("Copied");
+          setTimeout(function () { copyAddr.textContent = T("Copy address"); }, 1800);
         },
         function () {
           // Clipboard access can be refused; saying so beats a button that silently
           // does nothing and leaves someone tapping it.
-          copyAddr.textContent = "Copy blocked - select it below";
+          copyAddr.textContent = T("Copy blocked - select it below");
         }
       );
     });
