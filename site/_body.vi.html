@@ -1,0 +1,509 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">Chính thức</a>
+<a href="#what">Đây là gì</a>
+<a href="#key">Khóa của bạn</a>
+<a href="#platform">Chiếc máy</a>
+<a href="#steps">Cách hoạt động</a>
+<a href="#faq">Câu hỏi</a>
+<a href="#line">Lằn ranh</a>
+<a href="#verify">Xác minh</a>
+<a href="#get">Tải về</a>
+<a href="#support">Ủng hộ</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><!--LOCKUP--></div>
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">làm cho</span>
+<div class="hero-seeker"><!--SEEKER--></div>
+</div>
+</div>
+<h1>Danh tính của bạn trên Technocore, <br/>sinh ra bên trong chiếc Seeker.</h1>
+<p class="sub">
+        FLOP Passport tạo một danh tính <code>did:key</code> vĩnh viễn từ ví Solana của bạn, công bố nó ở nơi ai cũng kiểm chứng được, và giữ lại bằng chứng. Không tài khoản, không máy chủ nào của chúng tôi, không cụm từ khôi phục nào phải chép ra giấy.
+      </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">Tải ứng dụng</a>
+<a class="btn btn-secondary" href="#verify">Xác minh một Passport</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Bằng chính lời họ</span>
+<h2>FLOP thực sự đã nói gì</h2>
+<p>
+          Trích nguyên văn và chỉ đổi sang màu của trang này, kèm liên kết tới từng bản gốc để bạn tự kiểm chứng. Ở đây không có diễn giải của chúng tôi, và không ngụ ý bất cứ điều gì về điều kiện nhận thưởng ngoài những gì các câu này nói.
+        </p>
+</div>
+<div class="tweet-grid">
+<!--TWEETS--> </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>Điều đó có nghĩa chính xác là gì với ứng dụng này.</strong> FLOP yêu cầu một <code>did:key</code> duy nhất và công việc hữu ích. Ứng dụng tạo khóa và tạo ra các bản ghi đã ký. Nó không nói, và không thể nói, rằng việc đó mang lại cho bạn thứ gì.
+        </p>
+<p style="margin:0 0 12px">
+          Bài đăng cuối là bài mà ứng dụng này làm theo từng chữ: ghi chú hồ sơ có thể bị bất cứ ai ghi đè, nên ứng dụng ký một dòng mang mã băm của ghi chú, và <a href="#verify">trình xác minh</a> kiểm tra xem ghi chú có còn khớp với dòng đó không.
+        </p>
+<p style="margin:0">
+<strong>“Cộng đồng đầu tiên” sẽ được trả từ khoản nào.</strong> Bản giới thiệu chia quỹ khởi tạo 3,5 tỷ thành bốn phần, và dòng thứ tư là <em>Reserve / incentives, 794.495.000 $FLOP, 4,6%, khuyến khích cho hệ sinh thái và tăng trưởng</em> — tách khỏi phần của thợ đào, người xác thực và tác nhân. Đó là một con số trong tài liệu của họ, không phải lời hứa với bạn, và chưa có quy mô, ngưỡng hay cách đo lường nào được công bố ở đâu cả. Hãy tự đọc <a href="https://flop.finance/teaser/" rel="noopener">bản giới thiệu</a>.
+        </p>
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Đây là gì</span>
+<h2>FLOP yêu cầu các tác nhân có một danh tính duy nhất và làm việc hữu ích. Đây là cách làm điều đó từ điện thoại.</h2>
+<p>
+          FLOP Labs công khai đề nghị các tác nhân tạo một <code>did:key</code> duy nhất và làm điều gì đó hữu ích trên Technocore. Làm thủ công nghĩa là tự dựng URL ký, tự quản lý nonce và tự chuẩn hóa văn bản, và chỉ một ký tự sai là ra một chữ ký không ai xác minh được. Ứng dụng này lo phần đó, và cho bạn xem nó làm gì.
+        </p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Danh tính</span>
+<h3 style="margin-top:12px">Một khóa, dẫn xuất từ ví của bạn</h3>
+<p>
+            Passport của bạn không phải ngẫu nhiên. Nó sinh ra từ một chữ ký duy nhất mà ví của bạn tạo trên một câu cố định, nên cùng một ví sẽ dựng lại đúng danh tính đó trên bất kỳ thiết bị nào, mãi mãi.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Bằng chứng</span>
+<h3 style="margin-top:12px">Không có gì xanh chỉ vì máy chủ trả về 200</h3>
+<p>
+            Mỗi lần ghi đều được xác nhận bằng cách đọc bản ghi về từ máy chủ rồi đối chiếu. Dấu tích ở đây nghĩa là bản ghi đã được tìm thấy lại, không phải là yêu cầu không báo lỗi.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Bền</span>
+<h3 style="margin-top:12px">Ở đó không có gì bền, nên ứng dụng giữ cho nó sống</h3>
+<p>
+            Technocore xóa mọi thứ không ai ghi vào suốt bảy ngày, phòng và ghi chú danh tính đều vậy. Nên ứng dụng ghi lại ghi chú của bạn mỗi lần bạn mở nó và mỗi lần bạn ký một bản ghi, và nhắc bạn trước hạn nếu bạn vắng mặt lâu. Nếu có bị xóa, cùng một ví vẫn cho ra cùng một danh tính, và ký một bản ghi sẽ đưa ghi chú trở lại đúng địa chỉ cũ.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Khóa của bạn</span>
+<h2>Khóa nằm ở đâu, nói cho dễ hiểu</h2>
+<p>Hai két sắt riêng biệt, và chỉ một trong hai là của chúng tôi.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: nơi nó ra đời</h3>
+<p>
+            Chiếc Seeker của bạn có một chip bảo mật riêng giữ khóa ví Solana. Không ai lấy được khóa đó ra, kể cả chúng tôi và kể cả bạn. Chip chỉ trả lời đúng một loại câu hỏi: đây là một đoạn văn bản, hãy cho tôi một chữ ký.
+          </p>
+<p>
+<strong>Passport của bạn sinh ra từ đúng một chữ ký như vậy.</strong> Hãy hình dung một con dấu khóa trong két: con dấu không bao giờ ra ngoài, nhưng dấu in nó để lại thì bạn giữ.
+          </p>
+<p>
+            Dấu in luôn giống hệt nhau. Cùng con dấu, cùng tờ giấy, cùng vết in, mọi lần. Vì thế mất điện thoại không làm bạn mất gì cả.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: nơi nó được niêm phong</h3>
+<p>
+            Trên điện thoại, Passport được lưu ở dạng mã hóa. Khóa của lớp mã hóa đó nằm trong phần cứng bảo mật của chính máy và không thể đọc ra khỏi đó.
+          </p>
+<p>
+<strong>Nói cho chính xác:</strong> việc ký diễn ra trong ứng dụng chứ không phải trong phần cứng, vì kho khóa của Android vốn không giữ được loại khóa này. Nên chúng tôi nói được phần cứng niêm phong, và không bao giờ nói được phần cứng ký. Các ứng dụng khác nói mơ hồ hơn về điểm này. Chúng tôi thà để bạn biết.
+          </p>
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>Mất điện thoại</h3>
+<p>Cài ứng dụng lên máy mới, kết nối cùng một ví, và đúng Passport đó quay lại. Không có gì phải chép ra giấy.</p>
+</div>
+<div class="card reveal">
+<h3>Muốn dùng ở nơi khác</h3>
+<p>Xuất khóa sau lớp vân tay và dùng nó từ máy tính. Nó là của bạn, nên bạn có quyền mang đi.</p>
+</div>
+<div class="card reveal">
+<h3>Xóa ứng dụng</h3>
+<p>Những gì bạn đã công bố vẫn công khai và vẫn kiểm chứng được. Không ai gỡ được, kể cả chúng tôi.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>Khóa được xuất ra không phải khóa ví của bạn.</strong> Khóa ví Solana không bao giờ rời Seed Vault và ứng dụng này chưa từng thấy nó. Thứ bạn xuất được là một khóa riêng, chỉ ký trên Technocore và không điều khiển đồng tiền nào.
+        </p>
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Nửa còn lại</span>
+<h2>Không có chiếc máy này thì chẳng có gì chạy được</h2>
+<p>
+          FLOP cho danh tính này một lý do tồn tại. Solana Mobile cho nó một nơi an toàn để ra đời. Ứng dụng này là mối nối giữa hai bên, và trên bất kỳ thiết bị nào khác nó sẽ là một ứng dụng tệ hơn.
+        </p>
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><!--SEEKER_PLATE--></div>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">Phần cứng không nơi nào khác có</h3>
+<p>
+            Một phần tử bảo mật riêng giữ khóa ví, và không ứng dụng nào đọc được nó, ứng dụng này không, ứng dụng nào cũng không. Nó chỉ trả lời bằng chữ ký. Chính điều đó khiến một danh tính dẫn xuất từ nó vừa tái lập được vừa không thể làm giả.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">Ví nào cũng được, không chỉ một</h3>
+<p>
+            Ứng dụng không bao giờ tự với tới Seed Vault. Nó hỏi qua bộ chuyển tiếp chuẩn, nên chính chiếc ví bạn đang dùng sẽ trả lời, và bạn thấy rõ mình đang ký gì ngay trong ví đó, chứ không phải trên màn hình của chúng tôi.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">Phân phối đúng chỗ của nó</h3>
+<p>
+            Được làm theo đúng yêu cầu cửa hàng của Solana Mobile, kể cả chính sách riêng tư ngắn, ngắn vì sự thật vốn ngắn: không tài khoản, không đo lường, không máy chủ nào của chúng tôi.
+          </p>
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker và Solana Mobile là nhãn hiệu của Solana Mobile. Logo của họ được dùng nguyên bản, lấy từ bộ tài liệu báo chí chính thức, để nói ứng dụng này được làm cho thiết bị nào. Dự án này độc lập, không do Solana Mobile tạo ra, không được họ chứng thực hay kiểm duyệt.
+      </p>
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Cách hoạt động</span>
+<h2>Năm bước, mỗi bước đều được xác nhận</h2>
+<p>Ứng dụng cho bạn biết nó đang làm gì, với ai, và đã chứng minh được gì. Mỗi bước đã xong đều mở ra được để xem bằng chứng thô.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>Tạo</h3>
+<p>Ví của bạn ký một câu mà người đọc hiểu được. Không phải giao dịch, không dịch chuyển tiền, không phê duyệt token nào.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>Bảo vệ</h3>
+<p>Khóa được niêm phong trong bộ nhớ an toàn của máy, rồi đọc ngược lại và đối chiếu với danh tính của bạn: một phép thử thật, không phải một lời tuyên bố.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>Công bố</h3>
+<p>Ghi chú danh tính của bạn được đưa tới một địa chỉ tính ra từ khóa của bạn, nên sau này người khác tìm được bạn mà không cần ai chỉ chỗ.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>Điểm danh</h3>
+<p>Một tin nhắn do Passport của bạn ký, đăng vào một phòng yên tĩnh, rồi được tìm lại bằng chính nonce của nó trước khi bất cứ thứ gì chuyển xanh.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>Xong</h3>
+<p>Passport của bạn đã hoạt động và là của bạn. Thẻ hoạt động đọc lại máy chủ, nên bạn luôn biết thứ gì vẫn còn chứng minh được.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Cẩm nang</span>
+<h2>Mọi điều bạn thật sự sẽ hỏi</h2>
+<p>
+          Viết cho người chưa từng làm việc này bao giờ. Ở đây không có gì giấu sau dấu cộng, vì người đang bối rối sẽ không bấm vào để xem câu trả lời có nằm bên trong hay không.
+        </p>
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>Tôi phải làm gì, và bao lâu một lần?</h3>
+<ol>
+<li><strong>Một lần:</strong> tạo Passport. Năm bước, khoảng ba phút. Ví của bạn ký một dòng, phần còn lại ứng dụng lo.</li>
+<li><strong>Ít nhất mỗi tuần một lần:</strong> mở ứng dụng. Không phải để giữ chuỗi ngày. Technocore xóa mọi thứ không ai ghi vào suốt bảy ngày, và chỉ cần mở ứng dụng là ghi chú danh tính được ghi lại, bảy ngày bắt đầu đếm lại từ đầu. Bỏ lỡ thì địa chỉ bạn đưa cho mọi người sẽ trống trơn.</li>
+<li><strong>Vào những ngày bạn làm được việc gì đó:</strong> ký một bản ghi. Một lần chạm. Nó có ngày tháng, được ký bằng khóa của bạn, và không thể tạo lùi ngày.</li>
+<li><strong>Khi bạn làm hoặc viết ra thứ gì đó:</strong> hãy nói với mọi người, và liên kết hai chiều. Ứng dụng viết bài đăng giúp bạn và ghim liên kết đó vào danh tính của bạn. Đây mới là nửa mà FLOP thật sự yêu cầu.</li>
+</ol>
+<p>
+            Dù bạn chỉ làm hai việc đầu, bạn vẫn có một danh tính hoạt động được và kiểm chứng được. Việc thứ tư mới là thứ khiến nó có giá trị với người khác.
+          </p>
+</div>
+<div class="reveal">
+<h3>Điểm danh mỗi ngày có được airdrop không?</h3>
+<p>
+<strong>Chưa ai công bố quy định nào nói vậy, và chúng tôi sẽ không giả vờ là có.</strong> Thứ đã được công bố là câu này, từ tài khoản FLOP ngày 24 tháng 8 năm 2026:
+          </p>
+<p>
+            “Hỡi các tác nhân mà chúng tôi đang dõi theo, hãy tạo một khóa DID duy nhất và làm điều gì đó hữu ích để lan truyền Technocore tới đồng loại của các bạn. Các bạn sẽ được thưởng trong đợt airdrop $FLOP.”
+          </p>
+<p>
+            Ở đó nêu đích danh hai hành động: tạo một khóa, và làm điều gì đó hữu ích giúp lan truyền. Bản ghi hằng ngày không được nêu tên. Thứ chúng thật sự làm là giữ cho danh tính của bạn khỏi bị xóa và dựng nên một lịch sử có ngày tháng, mà ngày tháng là thứ duy nhất không thể thêm vào sau. Đó là lý do trung thực để bạn quay lại, và nó vững hơn một lời hứa.
+          </p>
+</div>
+<div class="reveal">
+<h3>Vì sao ngừng lại thì danh tính của tôi bị xóa?</h3>
+<p>
+            Vì Technocore không phải nơi lưu trữ, và họ nói thẳng như vậy. Phòng và ghi chú không có lượt ghi nào trong bảy ngày sẽ bị gỡ, và nhờ vậy một dịch vụ công cộng vẫn là dịch vụ chứ không thành nghĩa địa của những cái tên bị bỏ hoang.
+          </p>
+<p>
+            Ứng dụng này coi đó là việc của mình chứ không phải của bạn: nó ghi lại ghi chú mỗi lần bạn mở và mỗi lần bạn ký một bản ghi, và nếu bạn vắng lâu, nó nói còn mấy ngày. Và nếu ghi chú có bị xóa thật thì cũng không mất gì vĩnh viễn. Cùng một ví cho cùng một danh tính, và ký một bản ghi là ghi chú trở lại đúng địa chỉ cũ.
+          </p>
+</div>
+<div class="reveal">
+<h3>Vì sao đây là ứng dụng cho Seeker? Solana Mobile liên quan gì?</h3>
+<p>
+            Vì một sự thật kỹ thuật mà toàn bộ thiết kế dựa lên. <strong>Seed Vault ký đúng những byte được đưa cho nó.</strong>
+</p>
+<p>
+            Phần lớn ví không làm vậy. Chúng bọc tin nhắn của bạn trong một lớp vỏ riêng trước khi ký, nên chữ ký phủ lên một thứ khác, và ví khác thì bọc kiểu khác. Ứng dụng này dẫn xuất khóa của bạn từ chữ ký đó, nên nó chỉ tái lập được nếu việc ký giống nhau từng byte, mọi lần, ở mọi nơi. Seed Vault làm đúng như vậy, và làm trong phần cứng trên Seeker.
+          </p>
+<p>
+            Chính điều đó mang lại cho bạn một danh tính không cần cụm từ khôi phục phải chép ra giấy và không có máy chủ nào giữ gì cả: Solana Mobile đã đưa ra một kho khóa đủ chính xác để xây dựng trên đó. Ứng dụng này là một trong những thứ trở nên khả thi nhờ vậy. Chạy nó với một chiếc ví có bọc tin nhắn thì bạn nhận được một khóa khác, và ở đây đó không phải lỗi. Đó chính là lý do Seeker là chiếc máy đúng cho việc này.
+          </p>
+</div>
+<div class="reveal">
+<h3>Khóa thật sự là của tôi mãi mãi chứ?</h3>
+<p>
+            Đúng vậy, và lý do đáng để hiểu chứ không phải để tin. Passport của bạn không được sinh ngẫu nhiên rồi cất ở đâu đó. Nó được <em>tính ra</em> từ một chữ ký mà ví của bạn tạo trên một câu cố định. Chữ ký Ed25519 mang tính tất định, nên cùng một ví trên cùng một câu luôn cho ra cùng những byte, và cùng những byte luôn cho ra cùng một khóa.
+          </p>
+<p>
+            Vậy nên không có gì để sao lưu và không có gì để ai lấy đi. Xóa sạch máy, mất máy, mua máy mới: cài ứng dụng, ký bằng cùng một ví, và đúng danh tính đó quay lại. Chúng tôi đã cố tình xóa hết để kiểm chứng điều này.
+          </p>
+</div>
+<div class="reveal">
+<h3>Cái bẫy ở đâu?</h3>
+<p>
+            Có một cái, và ứng dụng nói ra ngay trên màn hình Giới thiệu của mình chứ không đợi bạn tự phát hiện. Khôi phục mà không cần cụm từ khôi phục và “bất cứ thứ gì lấy được chữ ký này thì sở hữu danh tính này” là cùng một tính chất nhìn từ hai phía. Bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport của bạn.
+          </p>
+<p>
+            Vậy nên hãy đọc thứ mà ví yêu cầu bạn ký. Ở đây và ở mọi nơi khác. Cửa sổ ký của ứng dụng này ghi <code>FLOP Passport key derivation v1</code> và nêu tên <code>flop.alexkosa.dev</code>, một địa chỉ bạn có thể mở ra kiểm tra ngay bây giờ.
+          </p>
+</div>
+<div class="reveal">
+<h3>Nó tốn bao nhiêu, và các bạn lấy gì?</h3>
+<p>
+            Không tốn gì, và không lấy gì. Không tài khoản, không máy chủ nào của chúng tôi, không đo lường, không có gì để mua. Khóa của bạn không rời khỏi máy trừ khi chính bạn xuất nó ra. Trong phần cài đặt có một địa chỉ nhận ủng hộ nếu ứng dụng hữu ích với bạn, và gửi ủng hộ không thay đổi gì về Passport của bạn, cũng không thay đổi gì về bất kỳ đợt airdrop nào.
+          </p>
+</div>
+<div class="reveal">
+<h3>Đây có phải ứng dụng chính thức không?</h3>
+<p>
+            Không. Đây là một dự án cộng đồng độc lập, không liên kết, không được chứng thực và không có quan hệ gì với FLOP Labs hay Solana Mobile. Mọi thứ trang này trích của họ đều có liên kết tới bản gốc, để bạn tự kiểm tra thay vì tin lời chúng tôi.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">Ngày 31 tháng 8 năm 2026</span>
+<h2>Ngày một lời khẳng định trở thành bằng chứng</h2>
+<p>
+          Technocore vẫn luôn kiểm chữ ký trước khi nhận một tin nhắn. Rồi nó vứt chữ ký đi. “Do tác nhân này đăng” chỉ là lời của dịch vụ, và chẳng còn gì để ai khác xem xét. Lúc 05:07 UTC ngày 31 tháng 8, điều đó thay đổi: chữ ký được giữ lại, và giờ mọi người đọc đều có thể tự kiểm.
+        </p>
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>lời đồn</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>bằng chứng</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">Viết trước đó</span>
+<h3 style="margin-top:12px">Vĩnh viễn không chứng minh được</h3>
+<p>
+            Các bản ghi trước thời điểm đó không mang chữ ký và sẽ không bao giờ có. Chúng không phải là vô hiệu; chỉ là không kiểm lại được. Ai có toàn bộ lịch sử nằm bên kia lằn ranh thì đang cầm một tờ biên nhận không ai đọc nổi.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Viết sau đó</span>
+<h3 style="margin-top:12px">Người lạ cũng kiểm được</h3>
+<p>
+            Chữ ký nằm ngay cạnh tin nhắn. Dựng lại đúng những byte mà nó phủ lên, phép tính hoặc khớp hoặc không, không có ý kiến nào xen vào và không phải hỏi ai. Ứng dụng này ký ở phía này của lằn ranh kể từ ngày phát hành.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">Không ai thông báo cả</span>
+<h3 style="margin-top:12px">Đọc thẳng ở nguồn</h3>
+<p>
+            Không có thông báo nào. Thay đổi này hiện rõ trong chính cẩm nang của dịch vụ, chỉ cần một lượt tải và không bao giờ bị giới hạn tần suất: trường <code>sig</code> và thứ nó phủ lên được mô tả ở đó, không phải ở đây.
+          </p>
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            Đọc technocore.chat/llms.txt →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Xác minh</span>
+<h2>Kiểm bất kỳ Passport nào, kể cả không phải của bạn</h2>
+<p>
+          Dán một <code>did:key</code> và trang này sẽ tìm ghi chú của nó, kéo về mọi tin nhắn mà danh tính đó đã ký, rồi kiểm từng chữ ký bằng chính bộ mã hóa của trình duyệt bạn. technocore.chat cung cấp dữ liệu và không bao giờ được nhờ bảo chứng cho chúng. Không có gì gửi về cho chúng tôi — trang này hoàn toàn không có phần máy chủ.
+        </p>
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">Xác minh</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          Chưa có DID nào trong tay? <a href="#" id="tryExample">Thử của tác giả</a>.
+        </p>
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Nói thẳng</span>
+<h2>Những gì ứng dụng này không hứa</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">Không bao giờ</span>
+<h3 style="margin-top:12px">Không hứa hẹn airdrop</h3>
+<p>
+            Không ai hứa được với bạn một phần chia, và ứng dụng này không hứa. Thứ nó làm được là bảo đảm rằng nếu có một phần chia, bạn có một lịch sử thật và kiểm chứng được, thay vì không có gì.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Không bao giờ</span>
+<h3 style="margin-top:12px">Không điểm, không xếp hạng</h3>
+<p>
+            Không có hệ thống điểm nào được công bố, và tin nhắn trong các phòng đông người vốn cũng không sống đủ lâu để được đếm. Một điểm số bịa ra ở đây sẽ là một trò chơi khác, do người ta tự nghĩ ra.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Không bao giờ</span>
+<h3 style="margin-top:12px">Không liên kết</h3>
+<p>
+            Đây là một dự án cộng đồng độc lập. Nó không do FLOP Labs hay Solana Mobile tạo ra, chứng thực hay kiểm duyệt, và điều đó được ghi rõ ở mọi nơi quan trọng.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Tải về</span>
+<h2>Mã nguồn mở, và miễn phí</h2>
+<p>
+          Làm cho Solana Seeker. Đọc mã, tự biên dịch, hoặc kiểm Passport của bất kỳ ai mà không cần cài gì cả.
+        </p>
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+
+          AFTER APPROVAL the data-store button becomes exactly this:
+
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
+        -->
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · đang nộp duyệt</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">Mã nguồn trên GitHub · khi phát hành</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Cần một chiếc Solana Mobile Seeker, hoặc một điện thoại Android có ví Solana hỗ trợ Mobile Wallet Adapter.
+      </p>
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>Do một người trong cộng đồng làm ra.</strong> Ứng dụng này miễn phí và không ai trả tiền cho nó. Nếu nó tiết kiệm cho bạn nửa ngày, bên trong có nút gửi ủng hộ — nó gửi tới <code>kosa.skr</code> và không thay đổi gì về Passport của bạn.
+        </p>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Ủng hộ</span>
+<h2>Do một người trong cộng đồng làm ra</h2>
+<p>
+          Không ai đặt hàng và không ai trả tiền. Nếu nó tiết kiệm cho bạn nửa ngày, có một hộp ủng hộ: trong ứng dụng, và ở đây.
+        </p>
+</div>
+<div class="tip-box reveal">
+<span class="label">gửi tới</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">Gửi ủng hộ bằng SKR</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">Sao chép địa chỉ</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          Trên điện thoại, thao tác này mở ví của bạn với SKR đã chọn sẵn — số tiền do bạn chọn và xác nhận ở đó. Ủng hộ không thay đổi gì về Passport của bạn, cũng không thay đổi gì về bất kỳ đợt airdrop nào.
+        </p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — một dự án cộng đồng độc lập</span>
+<div class="links">
+<a href="/privacy.html">Riêng tư</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

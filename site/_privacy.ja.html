@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">ホーム</a>
+<a href="/#verify">検証</a>
+<a href="/#get">入手する</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">プライバシーポリシー</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>最終更新日 2026 年 8 月 31 日。本ポリシーは Android アプリ <code>dev.alexkosa.floppassport</code> および本ウェブサイトを対象とします。</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>短い版。</strong>アカウントも、解析も、広告も、当方が運用するサーバーもありません。本アプリは、当方が手を届かせられるいかなる場所にも、あなたの個人データを収集・送信・保存しません。鍵はあなたの端末に留まります。
+        </p>
+</div>
+<h3 style="margin-top:48px">責任の所在</h3>
+<p>
+        FLOP Passport for Seeker は、個人開発者 Alex Kosa による独立したオープンソースプロジェクトです。FLOP Labs や Solana Mobile が制作・推奨・審査したものではありません。連絡先：X の <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>、または公開リポジトリの issue から。
+      </p>
+<h3 style="margin-top:32px">アプリが端末に保存するもの</h3>
+<ul class="plain">
+<li>
+<strong>あなたの Passport の鍵</strong>。暗号化された状態でのみ保存され、端末のハードウェア鍵ストアが保持する鍵で包まれます。その鍵はストアから読み出せません。
+        </li>
+<li>
+<strong>あなたの公開された身元</strong>、すなわち <code>did:key</code> とその指紋、そしてそれを導いた Solana ウォレットのアドレス。
+        </li>
+<li>
+<strong>選択した言語</strong>と、起動音を有効にしているかどうか。
+        </li>
+</ul>
+<p>
+        これらはすべて、端末上のアプリ専用領域に置かれます。本アプリでは Android の自動バックアップと端末間の引き継ぎを意図的に無効にしているので、いずれもクラウドのバックアップには複製されません。
+      </p>
+<h3 style="margin-top:32px">端末から出ていくもの。そして、それはボタンを押したときだけ</h3>
+<ul class="plain">
+<li>
+<strong>technocore.chat へ</strong>。身元を公開するとき、また記録に署名するとき：あなたの公開 <code>did:key</code>、署名対象のテキスト、カウンター、そして署名。この情報は設計上公開されるものであり、それこそが公開された身元の意義です。後から誰でも読めます。
+        </li>
+<li>
+<strong>あなたのウォレットアプリへ</strong>。Passport を作成するとき：署名すべき一文。ウォレットは端末上でそれを処理し、当方がネットワーク経由で何かを送ることはありません。
+        </li>
+<li>
+<strong>あなたが選んだファイルへ</strong>。鍵を書き出すとき。保存先はシステムのファイル選択画面で指定します。どこにもアップロードされません。
+        </li>
+</ul>
+<p>
+<strong>開発者へは何も送られません。</strong>送る先となるバックエンドがそもそもありません。アプリが通信するのは、FLOP Labs が運用する technocore.chat と、あなた自身のウォレットアプリだけで、これが全部です。
+      </p>
+<h3 style="margin-top:32px">アプリが決して求めず、決して触れないもの</h3>
+<ul class="plain">
+<li>Solana ウォレットの復元フレーズや秘密鍵。アプリはそれを見たことがなく、見ることもできません。</li>
+<li>氏名、メールアドレス、電話番号、その他アカウントの認証情報。</li>
+<li>連絡先、写真、ファイル、位置情報、カメラ、マイク。</li>
+<li>広告 ID。広告はなく、広告 SDK もありません。</li>
+</ul>
+<h3 style="margin-top:32px">解析と追跡</h3>
+<p>
+        ありません。アプリには解析 SDK も、クラッシュ報告サービスも、いかなる第三者の追跡も含まれていません。本サイトは cookie を設定せず、解析も行わず、サーバー側のコードもありません。外部への通信は、二つのウェブフォントと、検証ツールを使うときにあなたのブラウザから technocore.chat を直接読みに行くものだけで、後者が当方を経由することはありません。
+      </p>
+<h3 style="margin-top:32px">権限</h3>
+<ul class="plain">
+<li><strong>インターネット</strong> — 公開や署名を行うときに technocore.chat へ接続するため。</li>
+<li><strong>バイブレーション</strong> — 手順が検証できたときの短い合図のため。</li>
+<li><strong>生体認証</strong> — 秘密鍵を表示する画面を守るため。</li>
+</ul>
+<p>ストレージ権限は要求しません。ファイルの保存はシステムの選択画面を使います。</p>
+<h3 style="margin-top:32px">データの削除</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>端末上で。</strong>設定 → 危険な操作 → Passport を削除、またはアプリをアンインストールします。どちらでも、暗号化された鍵、あなたの身元、設定が端末から完全に消えます。他のどこにも複製はなく、当方が代わりに削除するものもありません。
+        </p>
+<p style="margin:0">
+<strong>公開済みのものについて。</strong>あなたが Technocore 上に公開すると決めたものは公開されており、当方の管理外です。ホストもしていませんし、取り除くこともできません。公開ルームの記録はルームの整理に伴ってそのサービスが破棄し、ノートは残ります。technocore.chat 上の内容についての要望は、運用者である FLOP Labs へお願いします。
+        </p>
+</div>
+<h3 style="margin-top:32px">子どもについて</h3>
+<p>
+        本アプリは子どもに向けたものではなく、子どもを含め誰からもデータを収集しません。
+      </p>
+<h3 style="margin-top:32px">変更について</h3>
+<p>
+        本ポリシーが変更された場合、冒頭の日付も併せて変わり、以前の版は公開リポジトリの履歴に残るので、誰でも見比べられます。
+      </p>
+<h3 style="margin-top:32px">あなたの権利</h3>
+<p>
+        アクセス、訂正、可搬性、消去の権利は、他者が保持するあなたに関するデータをあなたが制御できるようにするためのものです。当方は一切保持していません。アクセスも書き出しも消去もするものがないのは、あなたに関する何もが当方に届かないからです。鍵はいつでもアプリから書き出せますし、アプリを削除すれば、それが保持していたものはすべて消えます。
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — 独立したコミュニティのプロジェクト</span>
+<div class="links">
+<a href="/">ホーム</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

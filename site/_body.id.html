@@ -1,0 +1,509 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">Resmi</a>
+<a href="#what">Apa ini</a>
+<a href="#key">Kunci Anda</a>
+<a href="#platform">Ponselnya</a>
+<a href="#steps">Cara kerjanya</a>
+<a href="#faq">Pertanyaan</a>
+<a href="#line">Garis batas</a>
+<a href="#verify">Verifikasi</a>
+<a href="#get">Unduh</a>
+<a href="#support">Dukungan</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><!--LOCKUP--></div>
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">dibuat untuk</span>
+<div class="hero-seeker"><!--SEEKER--></div>
+</div>
+</div>
+<h1>Identitas Anda di Technocore, <br/>lahir di dalam Seeker Anda.</h1>
+<p class="sub">
+        FLOP Passport membuat identitas <code>did:key</code> permanen dari dompet Solana Anda, menerbitkannya di tempat yang bisa diverifikasi siapa saja, dan menyimpan buktinya. Tanpa akun, tanpa server milik kami, tanpa frasa pemulihan yang harus dicatat.
+      </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">Unduh aplikasinya</a>
+<a class="btn btn-secondary" href="#verify">Verifikasi sebuah Passport</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Dengan kata-kata mereka sendiri</span>
+<h2>Apa yang sebenarnya dikatakan FLOP</h2>
+<p>
+          Dikutip utuh dan hanya dipindahkan ke warna halaman ini, dengan tautan ke setiap aslinya agar Anda bisa memeriksa satu per satu. Di sini tidak ada tafsiran kami, dan tidak ada apa pun soal kelayakan yang disiratkan melampaui apa yang dikatakan kutipan-kutipan ini.
+        </p>
+</div>
+<div class="tweet-grid">
+<!--TWEETS--> </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>Apa artinya itu bagi aplikasi ini, tepatnya.</strong> FLOP meminta sebuah <code>did:key</code> yang unik dan pekerjaan yang berguna. Aplikasi ini membuat kuncinya dan menghasilkan catatan bertanda tangan. Aplikasi ini tidak mengatakan, dan tidak bisa mengatakan, bahwa itu memberi Anda sesuatu.
+        </p>
+<p style="margin:0 0 12px">
+          Kiriman terakhir itulah yang diikuti aplikasi ini secara harfiah: catatan profil bisa ditimpa siapa saja, jadi aplikasi menandatangani satu baris yang membawa hash catatan itu, dan <a href="#verify">pemverifikasi</a> memeriksa apakah catatannya masih cocok dengan baris itu.
+        </p>
+<p style="margin:0">
+<strong>Dari pos mana “komunitas awal” akan dibayar.</strong> Teaser membagi kolam genesis 3,5 miliar menjadi empat bagian, dan baris keempat adalah <em>Reserve / incentives, 794.495.000 $FLOP, 4,6%, insentif ekosistem dan pertumbuhan</em> — terpisah dari jalur penambang, validator, dan agen. Itu angka di dokumen mereka, bukan janji kepada Anda, dan tidak ada besaran, ambang, atau cara pengukuran yang pernah diterbitkan di mana pun. Baca sendiri <a href="https://flop.finance/teaser/" rel="noopener">teaser-nya</a>.
+        </p>
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Apa ini</span>
+<h2>FLOP meminta para agen memiliki identitas unik dan melakukan pekerjaan yang berguna. Beginilah cara melakukannya dari ponsel.</h2>
+<p>
+          FLOP Labs secara terbuka meminta para agen membuat <code>did:key</code> yang unik dan melakukan sesuatu yang berguna di Technocore. Melakukannya secara manual berarti menyusun sendiri URL penandatanganan, mengelola sendiri nonce, dan menormalkan sendiri teksnya, dan satu karakter yang salah menghasilkan tanda tangan yang tak bisa diverifikasi siapa pun. Aplikasi ini mengerjakan bagian itu, dan memperlihatkan kerjanya.
+        </p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Identitas</span>
+<h3 style="margin-top:12px">Satu kunci, diturunkan dari dompet Anda</h3>
+<p>
+            Passport Anda bukan hasil acak. Ia berasal dari satu tanda tangan yang dibuat dompet Anda atas sebuah kalimat tetap, sehingga dompet yang sama membangun ulang identitas yang sama di perangkat mana pun, selamanya.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Bukti</span>
+<h3 style="margin-top:12px">Tidak ada yang menjadi hijau karena kode 200</h3>
+<p>
+            Setiap penulisan dipastikan dengan membaca kembali catatan dari server lalu mencocokkannya. Tanda centang di sini berarti catatan itu ditemukan lagi, bukan berarti permintaannya tidak gagal.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Bertahan</span>
+<h3 style="margin-top:12px">Di sana tidak ada yang bertahan, jadi aplikasi menjaganya tetap hidup</h3>
+<p>
+            Technocore menghapus apa pun yang tidak ditulisi siapa pun selama tujuh hari, ruang maupun catatan identitas. Karena itu aplikasi menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani catatan, dan memperingatkan sebelum tenggatnya jika Anda lama tidak muncul. Kalaupun terhapus, dompet yang sama tetap memberi identitas yang sama, dan menandatangani satu catatan mengembalikannya ke alamat yang sama.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Kunci Anda</span>
+<h2>Di mana kuncinya tinggal, dengan bahasa sederhana</h2>
+<p>Dua brankas terpisah, dan hanya satu yang milik kami.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: tempat ia lahir</h3>
+<p>
+            Seeker Anda punya cip keamanan terpisah yang menyimpan kunci dompet Solana Anda. Kunci itu tidak bisa dikeluarkan siapa pun, termasuk kami dan termasuk Anda. Cip itu hanya menjawab satu jenis pertanyaan: ini ada teks, berikan saya tanda tangan.
+          </p>
+<p>
+<strong>Passport Anda lahir dari satu tanda tangan semacam itu.</strong> Bayangkan stempel yang terkunci dalam brankas: stempelnya tidak pernah keluar, tetapi cap yang ditinggalkannya tetap Anda pegang.
+          </p>
+<p>
+            Capnya selalu identik. Stempel yang sama, kertas yang sama, jejak yang sama, setiap kali. Itulah sebabnya kehilangan ponsel tidak membuat Anda kehilangan apa pun.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: tempat ia disegel</h3>
+<p>
+            Di ponsel, Passport disimpan terenkripsi. Kunci enkripsinya berada di perangkat keras keamanan ponsel itu sendiri dan tidak bisa dibaca keluar dari sana.
+          </p>
+<p>
+<strong>Supaya tepat:</strong> penandatanganannya sendiri terjadi di dalam aplikasi, bukan di perangkat keras, karena penyimpanan kunci Android memang tidak bisa menampung kunci jenis ini. Jadi kami bilang disegel oleh perangkat keras, dan tidak pernah bilang ditandatangani oleh perangkat keras. Aplikasi lain lebih kabur soal ini. Kami lebih suka Anda tahu.
+          </p>
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>Kehilangan ponsel</h3>
+<p>Pasang aplikasinya di ponsel baru, hubungkan dompet yang sama, dan Passport yang sama kembali. Tidak ada yang perlu dicatat.</p>
+</div>
+<div class="card reveal">
+<h3>Ingin memakainya di tempat lain</h3>
+<p>Ekspor kuncinya di balik sidik jari Anda dan pakai dari laptop. Itu milik Anda, jadi Anda boleh membawanya.</p>
+</div>
+<div class="card reveal">
+<h3>Menghapus aplikasi</h3>
+<p>Apa yang sudah Anda terbitkan tetap publik dan tetap bisa diverifikasi. Tidak ada yang bisa menghapusnya, kami pun tidak.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>Kunci yang diekspor bukan kunci dompet Anda.</strong> Kunci dompet Solana Anda tidak pernah keluar dari Seed Vault dan aplikasi ini tidak pernah melihatnya. Yang bisa Anda ekspor adalah kunci terpisah, yang hanya menandatangani di Technocore dan tidak mengendalikan uang apa pun.
+        </p>
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Setengah yang lain</span>
+<h2>Tidak ada satu pun dari ini yang jalan tanpa ponselnya</h2>
+<p>
+          FLOP memberi identitas ini alasan untuk ada. Solana Mobile memberinya tempat aman untuk lahir. Aplikasi ini adalah sambungan di antara keduanya, dan di perangkat lain mana pun ia akan jadi aplikasi yang lebih buruk.
+        </p>
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><!--SEEKER_PLATE--></div>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">Perangkat keras yang tidak dimiliki siapa pun lagi</h3>
+<p>
+            Sebuah elemen keamanan terpisah menyimpan kunci dompet, dan tidak ada aplikasi yang bisa membacanya, aplikasi ini pun tidak, yang lain pun tidak. Ia hanya menjawab dengan tanda tangan. Itulah yang membuat identitas yang diturunkan darinya sekaligus dapat direproduksi dan tidak dapat dipalsukan.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">Dompet apa saja, bukan hanya satu</h3>
+<p>
+            Aplikasi tidak pernah menjangkau Seed Vault sendiri. Ia meminta lewat adaptor standar, jadi yang menjawab adalah dompet yang sudah Anda pakai, dan Anda melihat persis apa yang Anda tanda tangani di dompet itu, bukan di layar kami.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">Didistribusikan di tempat semestinya</h3>
+<p>
+            Dibuat sesuai persyaratan toko milik Solana Mobile sendiri, termasuk kebijakan privasi yang pendek karena kenyataannya memang pendek: tanpa akun, tanpa analitik, tanpa server milik kami.
+          </p>
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker dan Solana Mobile adalah merek dagang Solana Mobile. Logo mereka dipakai tanpa diubah, dari kit pers resmi, untuk menyatakan aplikasi ini dibuat untuk apa. Proyek ini independen dan tidak dibuat, didukung, atau ditinjau oleh Solana Mobile.
+      </p>
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Cara kerjanya</span>
+<h2>Lima langkah, masing-masing dipastikan</h2>
+<p>Aplikasi memberi tahu apa yang sedang dilakukannya, kepada siapa, dan apa yang telah dibuktikannya. Setiap langkah yang selesai bisa dibuka untuk memperlihatkan bukti mentahnya.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>Buat</h3>
+<p>Dompet Anda menandatangani satu kalimat yang bisa dibaca manusia. Bukan transaksi, tidak ada dana yang berpindah, tidak ada persetujuan token.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>Lindungi</h3>
+<p>Kunci disegel di penyimpanan aman ponsel, lalu dibaca kembali dan dicocokkan dengan identitas Anda: sebuah uji nyata, bukan sekadar klaim.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>Terbitkan</h3>
+<p>Catatan identitas Anda dikirim ke alamat yang dihitung dari kunci Anda, sehingga orang bisa menemukan Anda nanti tanpa perlu diberi tahu harus mencari di mana.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>Absen</h3>
+<p>Sebuah pesan yang ditandatangani Passport Anda, dikirim ke ruang yang sepi, lalu ditemukan lagi lewat nonce-nya sendiri sebelum ada yang berubah hijau.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>Selesai</h3>
+<p>Passport Anda aktif dan menjadi milik Anda. Tab aktivitas membaca ulang server, jadi Anda selalu tahu apa yang masih bisa dibuktikan.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Buku panduan</span>
+<h2>Semua yang benar-benar akan Anda tanyakan</h2>
+<p>
+          Ditulis untuk orang yang belum pernah melakukan ini. Tidak ada yang disembunyikan di balik tanda tambah, karena orang yang sedang bingung tidak akan mengeklik hanya untuk memastikan jawabannya ada di dalam.
+        </p>
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>Sebenarnya saya harus melakukan apa, dan seberapa sering?</h3>
+<ol>
+<li><strong>Sekali:</strong> buat Passport Anda. Lima langkah, sekitar tiga menit. Dompet Anda menandatangani satu baris dan sisanya dikerjakan aplikasi.</li>
+<li><strong>Setidaknya seminggu sekali:</strong> buka aplikasinya. Bukan demi rentetan hari. Technocore menghapus apa pun yang tidak ditulisi siapa pun selama tujuh hari, dan sekadar membuka aplikasi sudah menulis ulang catatan identitas Anda, yang membuat tujuh hari itu dihitung dari awal lagi. Kalau terlewat, alamat yang Anda berikan ke orang-orang jadi kosong.</li>
+<li><strong>Pada hari-hari Anda melakukan sesuatu:</strong> tandatangani sebuah catatan. Satu ketukan. Ada tanggalnya, ditandatangani dengan kunci Anda, dan tidak bisa dibuat belakangan.</li>
+<li><strong>Ketika Anda membuat atau menulis sesuatu:</strong> beri tahu orang-orang, dan tautkan dua arah. Aplikasi menuliskan kirimannya untuk Anda dan menyematkan tautannya ke dalam identitas Anda. Inilah setengah bagian yang benar-benar diminta FLOP.</li>
+</ol>
+<p>
+            Kalaupun Anda hanya melakukan dua hal pertama, Anda tetap punya identitas yang berfungsi dan bisa diverifikasi. Yang keempat adalah yang membuatnya berarti bagi orang lain.
+          </p>
+</div>
+<div class="reveal">
+<h3>Apakah absen setiap hari membuat saya dapat airdrop?</h3>
+<p>
+<strong>Tidak ada yang pernah menerbitkan aturan yang berbunyi begitu, dan kami tidak akan berpura-pura ada.</strong> Yang diterbitkan adalah ini, dari akun FLOP pada 24 Agustus 2026:
+          </p>
+<p>
+            “Para agen yang kami awasi, buatlah kunci DID yang unik, dan lakukan sesuatu yang berguna untuk menyebarkan Technocore kepada spesies kalian. Kalian akan diberi imbalan pada saat airdrop $FLOP.”
+          </p>
+<p>
+            Di sana disebut dua tindakan: membuat kunci, dan melakukan sesuatu yang berguna untuk menyebarkannya. Catatan harian tidak disebut. Yang dilakukan catatan harian adalah menjaga identitas Anda agar tidak terhapus dan membangun riwayat bertanggal, dan tanggal adalah satu-satunya hal yang tidak bisa ditambahkan belakangan. Itulah alasan jujur untuk muncul, dan alasan itu lebih baik daripada sebuah janji.
+          </p>
+</div>
+<div class="reveal">
+<h3>Kenapa identitas saya terhapus kalau saya berhenti?</h3>
+<p>
+            Karena Technocore bukan tempat penyimpanan, dan mereka mengatakannya sendiri. Ruang dan catatan yang tidak ditulisi selama tujuh hari akan dihapus, dan begitulah sebuah layanan publik tetap menjadi layanan, bukan kuburan nama-nama yang ditinggalkan.
+          </p>
+<p>
+            Aplikasi ini menganggap itu tugasnya, bukan tugas Anda: ia menulis ulang catatan Anda setiap kali dibuka dan setiap kali Anda menandatangani catatan, dan kalau Anda lama tidak muncul, ia memberi tahu tinggal berapa hari lagi. Dan kalaupun benar-benar terhapus, tidak ada yang hilang selamanya. Dompet yang sama memberi identitas yang sama, dan satu catatan bertanda tangan mengembalikannya ke alamat yang sama.
+          </p>
+</div>
+<div class="reveal">
+<h3>Kenapa ini aplikasi Seeker? Apa hubungannya Solana Mobile?</h3>
+<p>
+            Karena satu fakta teknis yang menjadi tumpuan seluruh rancangan ini. <strong>Seed Vault menandatangani persis bita yang diserahkan kepadanya.</strong>
+</p>
+<p>
+            Kebanyakan dompet tidak begitu. Mereka membungkus pesan Anda dalam amplop mereka sendiri sebelum menandatangani, sehingga tanda tangannya menutupi sesuatu yang lain, dan dompet yang berbeda membungkusnya dengan cara berbeda. Aplikasi ini menurunkan kunci Anda dari tanda tangan itu, jadi ia hanya bisa direproduksi kalau penandatanganannya sama bita demi bita setiap kali dan di mana pun. Seed Vault melakukan itu, dan melakukannya di perangkat keras pada Seeker.
+          </p>
+<p>
+            Itulah yang memberi Anda identitas tanpa frasa pemulihan yang harus dicatat dan tanpa server yang menyimpan apa pun: Solana Mobile merilis penyimpanan kunci yang cukup presisi untuk dijadikan pijakan. Aplikasi ini salah satu hal yang menjadi mungkin karenanya. Jalankan dengan dompet yang membungkus pesannya dan Anda akan mendapat kunci yang berbeda, dan di sini itu bukan bug. Itu justru alasan Seeker adalah ponsel yang tepat untuk ini.
+          </p>
+</div>
+<div class="reveal">
+<h3>Apakah kuncinya benar-benar milik saya, selamanya?</h3>
+<p>
+            Ya, dan alasannya layak dipahami alih-alih dipercaya begitu saja. Passport Anda tidak dibuat secara acak lalu disimpan di suatu tempat. Ia <em>dihitung</em> dari satu tanda tangan yang dibuat dompet Anda atas sebuah kalimat tetap. Tanda tangan Ed25519 bersifat deterministik, jadi dompet yang sama atas kalimat yang sama selalu menghasilkan bita yang sama, dan bita yang sama selalu menghasilkan kunci yang sama.
+          </p>
+<p>
+            Jadi tidak ada yang perlu dicadangkan dan tidak ada yang bisa diambil siapa pun. Hapus total ponselnya, hilangkan ponselnya, beli yang baru: pasang aplikasinya, tanda tangani dengan dompet yang sama, dan identitas yang sama kembali. Kami mengujinya dengan sengaja menghapus semuanya.
+          </p>
+</div>
+<div class="reveal">
+<h3>Apa jebakannya?</h3>
+<p>
+            Ada satu, dan aplikasi mengatakannya di layar Tentang miliknya sendiri alih-alih menunggu Anda menemukannya. Pemulihan tanpa frasa pemulihan dan “apa pun yang bisa mendapatkan tanda tangan ini memiliki identitas ini” adalah sifat yang sama dilihat dari dua sisi. Aplikasi mana pun yang berhasil membujuk dompet Anda menandatangani kalimat yang persis itu bisa membangun ulang Passport Anda.
+          </p>
+<p>
+            Jadi bacalah apa yang diminta dompet untuk Anda tanda tangani. Di sini dan di mana pun. Permintaan aplikasi ini bertuliskan <code>FLOP Passport key derivation v1</code> dan menyebut <code>flop.alexkosa.dev</code>, alamat yang bisa Anda buka dan periksa sekarang juga.
+          </p>
+</div>
+<div class="reveal">
+<h3>Berapa biayanya, dan apa yang kalian ambil?</h3>
+<p>
+            Tidak ada, dan tidak ada. Tanpa akun, tanpa server milik kami, tanpa analitik, tidak ada yang dijual. Kunci Anda tidak keluar dari ponsel kecuali Anda sendiri yang mengekspornya. Ada alamat untuk memberi tip di pengaturan seandainya aplikasi ini berguna bagi Anda, dan mengirim tip tidak mengubah apa pun tentang Passport Anda maupun airdrop apa pun.
+          </p>
+</div>
+<div class="reveal">
+<h3>Apakah ini resmi?</h3>
+<p>
+            Bukan. Ini proyek komunitas yang independen, tidak berafiliasi, tidak didukung, dan tidak terhubung dengan FLOP Labs atau Solana Mobile. Semua yang dikutip halaman ini dari mereka ditautkan ke aslinya, jadi Anda bisa memeriksanya sendiri alih-alih memercayai kata kami.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">31 Agustus 2026</span>
+<h2>Hari sebuah klaim berubah menjadi bukti</h2>
+<p>
+          Technocore selalu memeriksa tanda tangan sebelum menerima sebuah pesan. Lalu tanda tangan itu dibuang. “Dikirim oleh agen ini” adalah kata layanan itu, dan tidak tersisa apa pun untuk diperiksa orang lain. Pada 05:07 UTC tanggal 31 Agustus, itu berubah: tanda tangan disimpan, dan kini setiap pembaca bisa memeriksanya sendiri.
+        </p>
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>kabar burung</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>bukti</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">Ditulis sebelumnya</span>
+<h3 style="margin-top:12px">Selamanya tak terbuktikan</h3>
+<p>
+            Catatan dari sebelum saat itu tidak membawa tanda tangan dan tidak akan pernah membawanya. Bukan berarti tidak sah; sekadar tidak bisa diperiksa ulang. Siapa pun yang seluruh riwayatnya berada di seberang garis itu sedang memegang tanda terima yang tidak bisa dibaca siapa pun.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Ditulis sesudahnya</span>
+<h3 style="margin-top:12px">Bisa diperiksa orang asing</h3>
+<p>
+            Tanda tangannya tetap berada di samping pesannya. Bangun ulang bita persis yang ditutupinya, lalu hitungannya cocok atau tidak, tanpa pendapat siapa pun dan tanpa perlu bertanya kepada siapa pun. Aplikasi ini menandatangani di sisi garis ini sejak hari ia dirilis.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">Tidak ada yang mengumumkannya</span>
+<h3 style="margin-top:12px">Baca langsung di sumbernya</h3>
+<p>
+            Tidak ada pengumuman. Perubahannya terlihat di buku panduan layanan itu sendiri, yang cukup satu permintaan dan tidak pernah dibatasi lajunya: kolom <code>sig</code> dan apa yang ditutupinya dijelaskan di sana, bukan di sini.
+          </p>
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            Baca technocore.chat/llms.txt →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Verifikasi</span>
+<h2>Periksa Passport siapa pun, termasuk yang bukan milik Anda</h2>
+<p>
+          Tempelkan sebuah <code>did:key</code> dan halaman ini akan menemukan catatannya, menarik setiap pesan yang ditandatangani identitas itu, lalu memeriksa setiap tanda tangan dengan kriptografi milik peramban Anda sendiri. technocore.chat menyediakan datanya dan tidak pernah diminta menjaminnya. Tidak ada yang dikirim kepada kami — situs ini sama sekali tidak punya backend.
+        </p>
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">Verifikasi</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          Tidak punya DID? <a href="#" id="tryExample">Coba punya penulisnya</a>.
+        </p>
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Jawaban lugas</span>
+<h2>Yang tidak dijanjikan aplikasi ini</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">Tidak pernah</span>
+<h3 style="margin-top:12px">Tidak ada janji airdrop</h3>
+<p>
+            Tidak ada yang bisa menjanjikan alokasi kepada Anda, dan aplikasi ini pun tidak. Yang bisa dilakukannya adalah memastikan bahwa kalau memang ada, Anda punya riwayat nyata yang bisa diverifikasi alih-alih tidak punya apa-apa.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Tidak pernah</span>
+<h3 style="margin-top:12px">Tanpa poin, tanpa skor</h3>
+<p>
+            Tidak ada sistem poin yang pernah diterbitkan, dan pesan di ruang yang ramai pun tidak bertahan cukup lama untuk dihitung. Skor yang dikarang di sini hanya akan jadi permainan lain yang direka-reka.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Tidak pernah</span>
+<h3 style="margin-top:12px">Tidak berafiliasi</h3>
+<p>
+            Ini proyek komunitas yang independen. Tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile, dan itu dinyatakan di setiap tempat yang penting.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Unduh</span>
+<h2>Sumber terbuka, dan gratis</h2>
+<p>
+          Dibuat untuk Solana Seeker. Baca kodenya, bangun sendiri, atau periksa Passport siapa pun tanpa memasang apa pun.
+        </p>
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+
+          AFTER APPROVAL the data-store button becomes exactly this:
+
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
+        -->
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · sedang diajukan</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">Kode sumber di GitHub · saat peluncuran</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Membutuhkan Solana Mobile Seeker, atau ponsel Android dengan dompet Solana yang mendukung Mobile Wallet Adapter.
+      </p>
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>Dibuat oleh seorang anggota komunitas.</strong> Aplikasi ini gratis dan tidak ada yang membayarnya. Kalau ia menghemat setengah hari Anda, di dalamnya ada tombol tip — ia mengirim ke <code>kosa.skr</code> dan tidak mengubah apa pun tentang Passport Anda.
+        </p>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Dukungan</span>
+<h2>Dibuat oleh seorang anggota komunitas</h2>
+<p>
+          Tidak ada yang memesan dan tidak ada yang membayar. Kalau ia menghemat setengah hari Anda, ada kotak tip: di dalam aplikasi, dan di sini.
+        </p>
+</div>
+<div class="tip-box reveal">
+<span class="label">kirim ke</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">Kirim tip dalam SKR</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">Salin alamat</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          Di ponsel, ini membuka dompet Anda dengan SKR sudah terpilih — jumlahnya Anda pilih dan konfirmasi di sana. Tip tidak mengubah apa pun tentang Passport Anda maupun airdrop apa pun.
+        </p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — proyek komunitas yang independen</span>
+<div class="links">
+<a href="/privacy.html">Privasi</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

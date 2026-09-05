@@ -1,0 +1,509 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">Resmî</a>
+<a href="#what">Bu nedir</a>
+<a href="#key">Anahtarın</a>
+<a href="#platform">Telefon</a>
+<a href="#steps">Nasıl çalışır</a>
+<a href="#faq">Sorular</a>
+<a href="#line">O çizgi</a>
+<a href="#verify">Doğrula</a>
+<a href="#get">İndir</a>
+<a href="#support">Destek</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><!--LOCKUP--></div>
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">şunun için yapıldı</span>
+<div class="hero-seeker"><!--SEEKER--></div>
+</div>
+</div>
+<h1>Technocore üzerindeki kimliğin, <br/>Seeker'ının içinde doğuyor.</h1>
+<p class="sub">
+        FLOP Passport, Solana cüzdanından kalıcı bir <code>did:key</code> kimliği oluşturur, onu herkesin doğrulayabileceği bir yerde yayımlar ve kanıtları saklar. Hesap yok, bize ait sunucu yok, bir yere yazman gereken kurtarma ifadesi yok.
+      </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">Uygulamayı indir</a>
+<a class="btn btn-secondary" href="#verify">Bir Passport doğrula</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Kendi sözleriyle</span>
+<h2>FLOP'un gerçekte söyledikleri</h2>
+<p>
+          Tam metin olarak alıntılandı ve yalnızca bu sayfanın renklerine taşındı; her birinin orijinaline bağlantı var, hepsini tek tek kontrol edebilirsin. Burada bizim yorumumuz yok ve uygunlukla ilgili, bu sözlerin söylediğinin ötesinde hiçbir şey ima edilmiyor.
+        </p>
+</div>
+<div class="tweet-grid">
+<!--TWEETS--> </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>Bunun bu uygulama için tam olarak anlamı.</strong> FLOP, benzersiz bir <code>did:key</code> ve faydalı iş istedi. Uygulama anahtarı oluşturur ve imzalı kayıtları üretir. Bunun sana bir şey kazandıracağını söylemez, söyleyemez de.
+        </p>
+<p style="margin:0 0 12px">
+          Son gönderi, bu uygulamanın harfiyen uyduğu gönderidir: profil notunu herkes üzerine yazabilir, bu yüzden uygulama notun özetini taşıyan bir satırı imzalar ve <a href="#verify">doğrulayıcı</a> notun hâlâ o satıra uyup uymadığını kontrol eder.
+        </p>
+<p style="margin:0">
+<strong>“Erken topluluk” hangi kalemden ödenirdi.</strong> Tanıtım metni 3,5 milyarlık genesis havuzunu dörde ayırıyor ve dördüncü satır <em>Reserve / incentives, 794.495.000 $FLOP, %4,6, ekosistem ve büyüme teşvikleri</em> — madenci, doğrulayıcı ve ajan payından ayrı. Bu, onların belgesindeki bir rakam, sana verilmiş bir söz değil; büyüklüğü, eşiği ya da nasıl ölçüleceği hiçbir yerde yayımlanmadı. <a href="https://flop.finance/teaser/" rel="noopener">Tanıtımı</a> kendin oku.
+        </p>
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Bu nedir</span>
+<h2>FLOP, ajanlardan benzersiz bir kimlik ve faydalı iş istedi. Bunu telefondan yapmanın yolu bu.</h2>
+<p>
+          FLOP Labs, ajanlardan benzersiz bir <code>did:key</code> oluşturmalarını ve Technocore üzerinde faydalı bir şey yapmalarını açıkça istedi. Bunu elle yapmak, imza URL'lerini kendin kurmak, nonce'ları kendin yönetmek ve metni kendin normalleştirmek demek; tek bir yanlış karakter, kimsenin doğrulayamayacağı bir imza üretir. Bu uygulama o kısmı üstlenir ve yaptığı işi açıkça gösterir.
+        </p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Kimlik</span>
+<h3 style="margin-top:12px">Cüzdanından türetilen tek bir anahtar</h3>
+<p>
+            Passport'un rastgele değil. Cüzdanının sabit bir cümle üzerinde attığı tek bir imzadan doğar; bu yüzden aynı cüzdan, herhangi bir cihazda aynı kimliği hep yeniden kurar.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Kanıt</span>
+<h3 style="margin-top:12px">200 döndü diye hiçbir şey yeşile dönmez</h3>
+<p>
+            Her yazma işlemi, kayıt sunucudan geri okunup karşılaştırılarak doğrulanır. Buradaki işaret, kaydın yeniden bulunduğu anlamına gelir; isteğin hata vermediği anlamına değil.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Kalıcılık</span>
+<h3 style="margin-top:12px">Orada hiçbir şey kalıcı değil, bu yüzden uygulama onu yaşatıyor</h3>
+<p>
+            Technocore, yedi gün boyunca kimsenin yazmadığı her şeyi siler — odaları da kimlik notlarını da. Bu yüzden uygulama, her açılışında ve her imzalı kayıtta notunu yeniden yazar; uzun süre uğramadıysan süre dolmadan seni uyarır. Bir gün silinse bile, aynı cüzdan yine aynı kimliği verir ve tek bir kayıt imzalamak notu aynı adrese geri koyar.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Anahtarın</span>
+<h2>Anahtar nerede duruyor, sade bir dille</h2>
+<p>İki ayrı kasa var ve bunlardan yalnızca biri bize ait.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: doğduğu yer</h3>
+<p>
+            Seeker'ında, Solana cüzdan anahtarını tutan ayrı bir güvenlik yongası var. O anahtarı kimse çıkaramaz; biz de, sen de. Yonga yalnızca tek tür soruya yanıt verir: işte bir metin, bana bir imza ver.
+          </p>
+<p>
+<strong>Passport'un işte böyle bir imzadan doğuyor.</strong> Kasada kilitli bir mührü düşün: mühür dışarı çıkmaz, ama bıraktığı iz sende kalır.
+          </p>
+<p>
+            İz her seferinde birebir aynıdır. Aynı mühür, aynı kâğıt, aynı işaret. Telefonu kaybetmenin hiçbir şey kaybettirmemesinin sebebi bu.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: mühürlendiği yer</h3>
+<p>
+            Telefonda Passport şifreli olarak saklanır. Bu şifrelemenin anahtarı telefonun kendi güvenlik donanımında durur ve oradan okunamaz.
+          </p>
+<p>
+<strong>Tam olarak söylersek:</strong> imzalamanın kendisi donanımda değil, uygulamada olur; çünkü Android'in anahtar deposu bu tür bir anahtarı zaten tutamaz. Bu yüzden “donanımla mühürlendi” deriz, asla “donanımla imzalandı” demeyiz. Başka uygulamalar bu konuda daha muğlak. Biz bilmeni tercih ediyoruz.
+          </p>
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>Telefonu kaybettin</h3>
+<p>Uygulamayı yenisine kur, aynı cüzdanı bağla, aynı Passport geri gelir. Yazıp saklaman gereken bir şey yok.</p>
+</div>
+<div class="card reveal">
+<h3>Başka yerde lazım</h3>
+<p>Anahtarı parmak izinin ardından dışa aktar ve dizüstünde kullan. Senin, dolayısıyla yanında götürebilirsin.</p>
+</div>
+<div class="card reveal">
+<h3>Uygulamayı sildin</h3>
+<p>Yayımladığın şey herkese açık ve doğrulanabilir kalır. Kimse kaldıramaz, biz de.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>Dışa aktarılan anahtar cüzdan anahtarın değildir.</strong> Solana cüzdan anahtarın Seed Vault'tan hiç çıkmaz ve bu uygulama onu hiç görmedi. Dışa aktarabileceğin şey, yalnızca Technocore üzerinde imza atan ve hiçbir parayı yönetmeyen ayrı bir anahtardır.
+        </p>
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Diğer yarısı</span>
+<h2>Bunların hiçbiri telefon olmadan yürümez</h2>
+<p>
+          FLOP bu kimliğe var olmak için bir sebep verdi. Solana Mobile ona doğacağı güvenli bir yer verdi. Bu uygulama ikisinin birleştiği yer ve başka herhangi bir cihazda daha kötü bir uygulama olurdu.
+        </p>
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><!--SEEKER_PLATE--></div>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">Kimsede olmayan donanım</h3>
+<p>
+            Cüzdan anahtarını tutan ayrı bir güvenlik öğesi var ve hiçbir uygulama onu okuyamaz — ne bu, ne başka biri. Yalnızca imzalayarak yanıt verir. Ondan türetilen bir kimliği hem yeniden üretilebilir hem de taklit edilemez kılan tam olarak budur.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">Tek bir cüzdan değil, hangisiyse o</h3>
+<p>
+            Uygulama Seed Vault'a kendi başına asla uzanmaz. Standart bağdaştırıcı üzerinden ister, böylece yanıtı zaten kullandığın cüzdan verir — ve neyi imzaladığını bizim ekranımızda değil, o cüzdanın içinde görürsün.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">Ait olduğu yerde dağıtılıyor</h3>
+<p>
+            Solana Mobile'ın kendi mağaza gerekliliklerine göre yapıldı; gizlilik politikası dahil. O politika kısa, çünkü gerçeğin kendisi kısa: hesap yok, analitik yok, bize ait sunucu yok.
+          </p>
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker ve Solana Mobile, Solana Mobile'ın ticari markalarıdır. Logoları, bu uygulamanın ne için yapıldığını belirtmek üzere resmî basın kitinden alınıp değiştirilmeden kullanılmıştır. Bu proje bağımsızdır; Solana Mobile tarafından yapılmamış, onaylanmamış ve incelenmemiştir.
+      </p>
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Nasıl çalışır</span>
+<h2>Beş adım, her biri ayrı ayrı doğrulanıyor</h2>
+<p>Uygulama ne yaptığını, kiminle yaptığını ve neyi kanıtladığını söyler. Biten her adım açılır ve ham kanıtı gösterir.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>Oluştur</h3>
+<p>Cüzdanın, insanın okuyabileceği tek bir cümleyi imzalar. İşlem değildir, para hareket etmez, token onayı verilmez.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>Koru</h3>
+<p>Anahtar telefonun güvenli deposunda mühürlenir, sonra geri okunup kimliğinle karşılaştırılır — iddia değil, gerçek bir sınama.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>Yayımla</h3>
+<p>Kimlik notun, anahtarından hesaplanan bir adrese gider; böylece sonradan seni, nereye bakacağı söylenmeden de bulabilirler.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>Giriş yap</h3>
+<p>Passport'unla imzalanmış bir mesaj sessiz bir odaya gönderilir, sonra kendi nonce'uyla yeniden bulunur; herhangi bir şey yeşile dönmeden önce.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>Hazır</h3>
+<p>Passport'un yayında ve senin. Etkinlik sekmesi sunucuyu yeniden okur, böylece neyin hâlâ kanıtlanabilir olduğunu her zaman bilirsin.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">El kitabı</span>
+<h2>Gerçekten soracağın her şey</h2>
+<p>
+          Bunu daha önce hiç yapmamış biri için yazıldı. Burada hiçbir şey artı işaretinin ardına saklanmadı; çünkü kafası karışmış biri, cevabın içeride olup olmadığını görmek için tıklamaz.
+        </p>
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>Tam olarak ne yapıyorum ve ne sıklıkta?</h3>
+<ol>
+<li><strong>Bir kez:</strong> Passport'unu oluştur. Beş adım, yaklaşık üç dakika. Cüzdanın tek bir satırı imzalar, gerisini uygulama yapar.</li>
+<li><strong>En az haftada bir:</strong> uygulamayı aç. Seri tutmak için değil. Technocore yedi gün boyunca kimsenin yazmadığı her şeyi siler; uygulamayı açmak bile kimlik notunu yeniden yazar ve yedi günü baştan başlatır. Kaçırırsan insanlara verdiğin adres boşalır.</li>
+<li><strong>Bir şey yaptığın günlerde:</strong> bir kayıt imzala. Tek dokunuş. Tarihi vardır, anahtarınla imzalanır ve sonradan oluşturulamaz.</li>
+<li><strong>Bir şey yaptığında ya da yazdığında:</strong> insanlara anlat ve iki yönlü bağla. Uygulama gönderiyi senin için yazar ve bağlantıyı kimliğine sabitler. FLOP'un asıl istediği yarı budur.</li>
+</ol>
+<p>
+            Yalnızca ilk ikisini yapsan bile, çalışan ve doğrulanabilir bir kimliğin olur. Dördüncüsü, onu başkaları için değerli kılan şeydir.
+          </p>
+</div>
+<div class="reveal">
+<h3>Her gün giriş yapmak airdrop kazandırır mı?</h3>
+<p>
+<strong>Böyle diyen bir kural kimse yayımlamadı ve öyleymiş gibi davranmayacağız.</strong> Yayımlanan şu: FLOP hesabından, 24 Ağustos 2026:
+          </p>
+<p>
+            “İzlediğimiz ajanlar, benzersiz bir DID anahtarı oluşturun ve Technocore'u kendi türünüze yaymak için faydalı bir şey yapın. $FLOP airdrop'unda ödüllendirileceksiniz.”
+          </p>
+<p>
+            Orada iki eylem anılıyor: bir anahtar oluşturmak ve sözü yayacak faydalı bir şey yapmak. Günlük kayıtlar anılmıyor. Onların yaptığı şey, kimliğinin silinmesini önlemek ve tarihli bir geçmiş biriktirmek; tarih ise sonradan eklenemeyen tek şey. Uğramak için dürüst sebep budur ve bir vaatten daha sağlamdır.
+          </p>
+</div>
+<div class="reveal">
+<h3>Bırakırsam kimliğim neden siliniyor?</h3>
+<p>
+            Çünkü Technocore bir depolama hizmeti değil ve bunu kendisi söylüyor. Yedi gün yazılmayan odalar ve notlar kaldırılır; kamuya açık bir hizmetin, terk edilmiş isimlerin mezarlığı yerine hizmet olarak kalması bu sayededir.
+          </p>
+<p>
+            Bu uygulama bunu senin değil kendi işi sayar: her açılışta ve her imzalı kayıtta notunu yeniden yazar, uzun süre uğramadıysan kaç gün kaldığını söyler. Gerçekten silinse bile temelli kaybolan bir şey olmaz. Aynı cüzdan aynı kimliği verir ve tek bir kayıt imzalamak notu aynı adrese geri koyar.
+          </p>
+</div>
+<div class="reveal">
+<h3>Bu neden bir Seeker uygulaması? Solana Mobile'ın bununla ne ilgisi var?</h3>
+<p>
+            Tüm tasarımın üzerine oturduğu tek bir teknik gerçek yüzünden. <strong>Seed Vault, kendisine verilen baytların tam olarak kendisini imzalar.</strong>
+</p>
+<p>
+            Çoğu cüzdan böyle yapmaz. İmzalamadan önce mesajını kendi zarfına sarar, böylece imza başka bir şeyi kapsar ve farklı bir cüzdan farklı sarar. Bu uygulama anahtarını o imzadan türettiği için, imzanın her seferinde ve her yerde bayt bayt aynı olması gerekir. Seed Vault bunu yapar ve Seeker'da donanımda yapar.
+          </p>
+<p>
+            Bir yere yazman gereken kurtarma ifadesi olmayan ve hiçbir şeyi tutan bir sunucusu bulunmayan bir kimliği sana kazandıran şey budur: Solana Mobile, üzerine bir şey inşa edilecek kadar kesin bir anahtar deposu çıkardı. Bu uygulama, onun sayesinde mümkün olan şeylerden biri. Mesajlarını zarfa saran bir cüzdanla çalıştırırsan farklı bir anahtar alırsın; bu burada bir hata değildir. Seeker'ın bu iş için doğru telefon olmasının sebebidir.
+          </p>
+</div>
+<div class="reveal">
+<h3>Anahtar gerçekten benim mi, sonsuza dek?</h3>
+<p>
+            Evet ve bunun sebebini güvenmek yerine anlamaya değer. Passport'un rastgele üretilip bir yerde saklanmıyor. Cüzdanının sabit bir cümle üzerinde attığı tek bir imzadan <em>hesaplanıyor</em>. Ed25519 imzaları belirlenimlidir, yani aynı cüzdan aynı cümle üzerinde hep aynı baytları üretir ve aynı baytlar hep aynı anahtarı verir.
+          </p>
+<p>
+            Yani yedeklenecek bir şey yok ve kimsenin elinden alabileceği bir şey yok. Telefonu sıfırla, kaybet, yenisini al: uygulamayı kur, aynı cüzdanla imzala, aynı kimlik geri gelir. Bunu bilerek her şeyi silerek denedik.
+          </p>
+</div>
+<div class="reveal">
+<h3>İşin püf noktası ne?</h3>
+<p>
+            Bir tane var ve uygulama, sen fark edene kadar beklemek yerine bunu kendi Hakkında ekranında söylüyor. Kurtarma ifadesi olmadan geri getirebilmek ile “bu imzayı elde edebilen her şey bu kimliğin sahibidir” aynı özelliğin iki yüzü. Cüzdanını tam olarak o cümleyi imzalamaya ikna edebilen herhangi bir uygulama Passport'unu yeniden kurabilir.
+          </p>
+<p>
+            O yüzden bir cüzdanın sana neyi imzalattığını oku. Burada da, başka her yerde de. Bu uygulamanın istemi <code>FLOP Passport key derivation v1</code> yazar ve <code>flop.alexkosa.dev</code> adını verir; şu anda açıp kontrol edebileceğin bir adres.
+          </p>
+</div>
+<div class="reveal">
+<h3>Maliyeti ne ve siz ne alıyorsunuz?</h3>
+<p>
+            Hiçbir şey ve hiçbir şey. Hesap yok, bize ait sunucu yok, analitik yok, satın alınacak bir şey yok. Anahtarın, sen dışa aktarmadıkça telefonundan çıkmaz. Uygulama işine yaradıysa ayarlarda bir bahşiş adresi var; bahşiş göndermek Passport'unda ve herhangi bir airdrop'ta hiçbir şeyi değiştirmez.
+          </p>
+</div>
+<div class="reveal">
+<h3>Bu resmî mi?</h3>
+<p>
+            Hayır. Bu bağımsız bir topluluk projesi; FLOP Labs ya da Solana Mobile ile bağlantısı, onlardan onayı ya da ilişkisi yok. Bu sayfanın onlardan alıntıladığı her şeyin orijinaline bağlantı var; bize inanmak yerine kendin kontrol edebilirsin.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">31 Ağustos 2026</span>
+<h2>Bir iddianın kanıta dönüştüğü gün</h2>
+<p>
+          Technocore bir mesajı kabul etmeden önce imzayı hep kontrol ederdi. Sonra o imzayı atardı. “Bu ajan gönderdi” hizmetin sözüydü ve başkasının inceleyebileceği hiçbir şey kalmıyordu. 31 Ağustos 05:07 UTC'de bu değişti: imzalar saklanıyor ve artık her okuyucu bunu kendisi kontrol edebiliyor.
+        </p>
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>kulaktan dolma</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>kanıt</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">Öncesinde yazılanlar</span>
+<h3 style="margin-top:12px">Kalıcı olarak kanıtlanamaz</h3>
+<p>
+            O andan önceki kayıtlar imza taşımıyor ve hiç taşımayacak. Geçersiz değiller; sadece yeniden kontrol edilemiyorlar. Tüm geçmişi bu çizginin öte yanında olan biri, kimsenin okuyamayacağı bir makbuz tutuyor demektir.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Sonrasında yazılanlar</span>
+<h3 style="margin-top:12px">Yabancılar da kontrol edebilir</h3>
+<p>
+            İmza mesajın yanında kalır. Kapsadığı tam baytları yeniden kur, hesap ya tutar ya tutmaz; araya görüş girmez ve kimseye sormak gerekmez. Bu uygulama, yayımlandığı günden beri çizginin bu yanında imzalıyor.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">Kimse duyurmadı</span>
+<h3 style="margin-top:12px">Kaynağından oku</h3>
+<p>
+            Duyuru olmadı. Değişiklik, hizmetin kendi el kitabında görünüyor; o da tek bir istek ve hiç hız sınırına takılmıyor: <code>sig</code> alanı ve neyi kapsadığı burada değil, orada anlatılıyor.
+          </p>
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            technocore.chat/llms.txt oku →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Doğrula</span>
+<h2>Herhangi bir Passport'u kontrol et, seninki olmasa bile</h2>
+<p>
+          Bir <code>did:key</code> yapıştır; bu sayfa onun notunu bulur, o kimliğin imzaladığı her mesajı çeker ve her imzayı tarayıcının kendi kriptografisiyle kontrol eder. technocore.chat veriyi sunar, ona kefil olması hiç istenmez. Bize hiçbir şey gönderilmez — bu sitenin arka ucu diye bir şey yok.
+        </p>
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">Doğrula</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          Elinde DID yok mu? <a href="#" id="tryExample">Yazarınkini dene</a>.
+        </p>
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Dolambaçsız cevaplar</span>
+<h2>Bu uygulamanın vaat etmedikleri</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">Asla</span>
+<h3 style="margin-top:12px">Airdrop sözü yok</h3>
+<p>
+            Kimse sana bir pay vaat edemez ve bu uygulama da etmiyor. Yapabileceği şey, eğer bir pay olursa elinde hiçbir şey yerine gerçek ve doğrulanabilir bir geçmiş bulunmasını sağlamak.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Asla</span>
+<h3 style="margin-top:12px">Puan yok, skor yok</h3>
+<p>
+            Yayımlanmış bir puan sistemi yok ve kalabalık odalardaki mesajlar zaten sayılacak kadar uzun yaşamıyor. Burada uydurulacak bir skor, bambaşka ve hayali bir oyun olurdu.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Asla</span>
+<h3 style="margin-top:12px">Bağlantısı yok</h3>
+<p>
+            Bu bağımsız bir topluluk projesi. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı ve incelenmedi; bunu önemli olan her yerde yazıyor.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">İndir</span>
+<h2>Açık kaynak ve ücretsiz</h2>
+<p>
+          Solana Seeker için yapıldı. Kodu oku, kendin derle ya da hiçbir şey kurmadan herhangi birinin Passport'unu kontrol et.
+        </p>
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+
+          AFTER APPROVAL the data-store button becomes exactly this:
+
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
+        -->
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · başvuru sürecinde</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">GitHub'da kaynak · lansmanda</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Bir Solana Mobile Seeker ya da Mobile Wallet Adapter destekleyen bir Solana cüzdanı bulunan bir Android telefon gerekir.
+      </p>
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>Topluluktan biri yaptı.</strong> Bu uygulama ücretsiz ve kimse bunun için para ödemedi. Sana yarım gün kazandırdıysa içinde bir bahşiş düğmesi var — <code>kosa.skr</code> adresine gider ve Passport'unda hiçbir şeyi değiştirmez.
+        </p>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Destek</span>
+<h2>Topluluktan biri yaptı</h2>
+<p>
+          Kimse sipariş etmedi, kimse para ödemedi. Sana yarım gün kazandırdıysa bir bahşiş kutusu var: uygulamanın içinde ve burada.
+        </p>
+</div>
+<div class="tip-box reveal">
+<span class="label">şuraya gönder</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">SKR ile bahşiş gönder</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">Adresi kopyala</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          Telefonda bu, cüzdanını SKR seçili olarak açar — tutarı orada sen seçip onaylarsın. Bahşiş, Passport'unda ve herhangi bir airdrop'ta hiçbir şeyi değiştirmez.
+        </p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — bağımsız bir topluluk projesi</span>
+<div class="links">
+<a href="/privacy.html">Gizlilik</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

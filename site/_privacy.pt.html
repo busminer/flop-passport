@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">Início</a>
+<a href="/#verify">Verificar</a>
+<a href="/#get">Baixar</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">Política de privacidade</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>Última atualização em 31 de agosto de 2026. Esta política cobre o aplicativo Android <code>dev.alexkosa.floppassport</code> e este site.</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>A versão curta.</strong> Não há conta, não há analytics, não há publicidade e não há servidor operado por nós. O app não coleta, transmite nem armazena seus dados pessoais em nenhum lugar ao qual possamos chegar. Sua chave fica no seu telefone.
+        </p>
+</div>
+<h3 style="margin-top:48px">Quem é responsável</h3>
+<p>
+        O FLOP Passport for Seeker é um projeto independente de código aberto de Alex Kosa, desenvolvedor individual. Não é feito, endossado ou revisado pela FLOP Labs ou pela Solana Mobile. Contato: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> no X, ou abrindo uma issue no repositório público.
+      </p>
+<h3 style="margin-top:32px">O que o app guarda no seu aparelho</h3>
+<ul class="plain">
+<li>
+<strong>A chave do seu Passport</strong>, criptografada. Ela é guardada apenas como texto cifrado, envolvida por uma chave mantida no repositório de chaves com respaldo de hardware do seu telefone, de onde não pode ser lida.
+        </li>
+<li>
+<strong>Sua identidade pública</strong>: o <code>did:key</code> e a impressão digital dele, e o endereço da carteira Solana de onde foi derivado.
+        </li>
+<li>
+<strong>Seu idioma preferido</strong> e se o som de abertura está ligado.
+        </li>
+</ul>
+<p>
+        Tudo isso fica no armazenamento privado do app no seu aparelho. O backup automático do Android e a transferência entre aparelhos estão desligados de propósito para este app, então nada disso é copiado para um backup na nuvem.
+      </p>
+<h3 style="margin-top:32px">O que sai do seu aparelho, e só quando você aperta um botão</h3>
+<ul class="plain">
+<li>
+<strong>Para o technocore.chat</strong>, quando você publica sua identidade ou assina um registro: seu <code>did:key</code> público, o texto que você está assinando, um contador e a assinatura. Essa informação é pública por design, que é justamente o sentido de uma identidade pública, e qualquer um pode ler depois.
+        </li>
+<li>
+<strong>Para o app da sua carteira</strong>, quando você cria o Passport: uma frase para assinar. A carteira cuida disso no seu aparelho; nada é enviado pela rede por nós.
+        </li>
+<li>
+<strong>Para um arquivo que você escolher</strong>, quando você exporta sua chave. Você escolhe o destino pelo seletor de arquivos do sistema. Nada é enviado para lugar nenhum.
+        </li>
+</ul>
+<p>
+<strong>Nada é enviado ao desenvolvedor, nunca.</strong> Não existe backend para onde enviar. O app conversa com o technocore.chat, operado pela FLOP Labs, e com o app da sua carteira, e essa é a lista completa.
+      </p>
+<h3 style="margin-top:32px">O que o app nunca pede e nunca toca</h3>
+<ul class="plain">
+<li>A frase de recuperação ou a chave privada da sua carteira Solana. O app nunca viu e não pode ver.</li>
+<li>Seu nome, e-mail, telefone ou qualquer credencial de conta.</li>
+<li>Seus contatos, fotos, arquivos, localização, câmera ou microfone.</li>
+<li>Identificadores de publicidade. Não há anúncios nem SDKs de anúncios.</li>
+</ul>
+<h3 style="margin-top:32px">Analytics e rastreamento</h3>
+<p>
+        Nenhum. O app não contém SDK de analytics, serviço de relatório de falhas nem rastreamento de terceiros de qualquer tipo. Este site não define cookies, não roda analytics e não tem código de servidor; as únicas requisições que ele faz para fora são as duas fontes web e, quando você usa o verificador, uma leitura direta do technocore.chat que sai do seu navegador e nunca passa por nós.
+      </p>
+<h3 style="margin-top:32px">Permissões</h3>
+<ul class="plain">
+<li><strong>Internet</strong> — para alcançar o technocore.chat quando você publica ou assina algo.</li>
+<li><strong>Vibração</strong> — um toque curto de confirmação quando um passo é verificado.</li>
+<li><strong>Biometria</strong> — para proteger a tela que mostra sua chave privada.</li>
+</ul>
+<p>Nenhuma permissão de armazenamento é pedida; salvar um arquivo usa o seletor do sistema.</p>
+<h3 style="margin-top:32px">Apagar seus dados</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>No seu aparelho.</strong> Configurações → Zona de perigo → apagar o Passport, ou desinstale o app. Os dois removem completamente do telefone a chave criptografada, sua identidade e suas preferências. Não há cópia em nenhum outro lugar, e não há nada para apagarmos em seu nome.
+        </p>
+<p style="margin:0">
+<strong>O que foi publicado.</strong> Tudo o que você escolheu publicar no Technocore é público e está fora do nosso controle: não hospedamos e não podemos remover. Registros em salas públicas são descartados por aquele serviço conforme as salas são compactadas; as notas permanecem. Pedidos sobre conteúdo no technocore.chat vão para a FLOP Labs, que o opera.
+        </p>
+</div>
+<h3 style="margin-top:32px">Crianças</h3>
+<p>
+        O app não é direcionado a crianças e não coleta dados de ninguém, inclusive de crianças.
+      </p>
+<h3 style="margin-top:32px">Mudanças</h3>
+<p>
+        Se esta política mudar, a data no topo muda junto e a versão anterior fica no histórico do repositório público, onde qualquer um pode comparar.
+      </p>
+<h3 style="margin-top:32px">Seus direitos</h3>
+<p>
+        Os direitos de acesso, correção, portabilidade e exclusão existem para dar a você controle sobre dados que outra pessoa guarda a seu respeito. Nós não guardamos nenhum: não há nada a acessar, exportar ou apagar, porque nada sobre você chega até nós. Sua chave pode ser exportada do app a qualquer momento, e apagar o app remove tudo o que ele guardava.
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — um projeto independente da comunidade</span>
+<div class="links">
+<a href="/">Início</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

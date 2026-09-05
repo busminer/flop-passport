@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">Ana sayfa</a>
+<a href="/#verify">Doğrula</a>
+<a href="/#get">İndir</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">Gizlilik politikası</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>Son güncelleme 31 Ağustos 2026. Bu politika, <code>dev.alexkosa.floppassport</code> Android uygulamasını ve bu web sitesini kapsar.</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>Kısa hâli.</strong> Hesap yok, analitik yok, reklam yok ve bizim işlettiğimiz bir sunucu yok. Uygulama, kişisel verilerini ulaşabileceğimiz hiçbir yerde toplamaz, iletmez ve saklamaz. Anahtarın telefonunda kalır.
+        </p>
+</div>
+<h3 style="margin-top:48px">Kim sorumlu</h3>
+<p>
+        FLOP Passport for Seeker, bireysel geliştirici Alex Kosa'nın bağımsız açık kaynak projesidir. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı ve incelenmedi. İletişim: X'te <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> ya da herkese açık depoda bir issue açarak.
+      </p>
+<h3 style="margin-top:32px">Uygulamanın cihazında sakladıkları</h3>
+<ul class="plain">
+<li>
+<strong>Passport anahtarın</strong>, şifreli olarak. Yalnızca şifreli metin olarak saklanır ve telefonunun donanım destekli anahtar deposundaki bir anahtarla sarılır; o anahtar oradan okunamaz.
+        </li>
+<li>
+<strong>Herkese açık kimliğin</strong> — <code>did:key</code> ve parmak izi — ve türetildiği Solana cüzdan adresi.
+        </li>
+<li>
+<strong>Dil tercihin</strong> ve açılış sesinin açık olup olmadığı.
+        </li>
+</ul>
+<p>
+        Bunların tamamı cihazındaki uygulamaya özel alanda durur. Android'in otomatik yedeklemesi ve cihazdan cihaza aktarım bu uygulama için bilerek kapatıldı, böylece hiçbiri bir bulut yedeğine kopyalanmaz.
+      </p>
+<h3 style="margin-top:32px">Cihazından ne çıkar ve bu yalnızca bir düğmeye bastığında olur</h3>
+<ul class="plain">
+<li>
+<strong>technocore.chat'e</strong>, kimliğini yayımladığında ya da bir kaydı imzaladığında: herkese açık <code>did:key</code>'in, imzaladığın metin, bir sayaç ve imza. Bu bilgi tasarım gereği herkese açıktır — herkese açık bir kimliğin bütün amacı budur — ve sonrasında herkes okuyabilir.
+        </li>
+<li>
+<strong>Cüzdan uygulamana</strong>, Passport'u oluştururken: imzalanacak bir cümle. Cüzdan bunu cihazında işler; bizim tarafımızdan ağ üzerinden hiçbir şey gönderilmez.
+        </li>
+<li>
+<strong>Seçtiğin bir dosyaya</strong>, anahtarını dışa aktardığında. Hedefi sistem dosya seçicisiyle sen belirlersin. Hiçbir yere yükleme yapılmaz.
+        </li>
+</ul>
+<p>
+<strong>Geliştiriciye asla hiçbir şey gönderilmez.</strong> Gönderilecek bir arka uç yok zaten. Uygulama, FLOP Labs'in işlettiği technocore.chat ile ve senin kendi cüzdan uygulamanla konuşur — liste bundan ibaret.
+      </p>
+<h3 style="margin-top:32px">Uygulamanın asla istemedikleri ve asla dokunmadıkları</h3>
+<ul class="plain">
+<li>Solana cüzdanının kurtarma ifadesi ya da özel anahtarı. Uygulama bunları hiç görmedi ve göremez.</li>
+<li>Adın, e-posta adresin, telefon numaran ya da herhangi bir hesap bilgisi.</li>
+<li>Kişilerin, fotoğrafların, dosyaların, konumun, kameran ya da mikrofonun.</li>
+<li>Reklam kimlikleri. Reklam yok, reklam SDK'sı yok.</li>
+</ul>
+<h3 style="margin-top:32px">Analitik ve izleme</h3>
+<p>
+        Yok. Uygulamada analitik SDK'sı, çökme raporlama hizmeti ya da herhangi bir üçüncü taraf izleme bulunmuyor. Bu web sitesi çerez koymaz, analitik çalıştırmaz ve sunucu tarafı kodu yoktur; dışarıya yaptığı tek istekler iki web yazı tipi ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan yapılan bir okuma; o da tarayıcından gider ve asla bizim üzerimizden geçmez.
+      </p>
+<h3 style="margin-top:32px">İzinler</h3>
+<ul class="plain">
+<li><strong>İnternet</strong> — bir şey yayımladığında ya da imzaladığında technocore.chat'e ulaşmak için.</li>
+<li><strong>Titreşim</strong> — bir adım doğrulandığında kısa bir onay dokunuşu.</li>
+<li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için.</li>
+</ul>
+<p>Depolama izni istenmez; dosya kaydetmek sistem seçicisini kullanır.</p>
+<h3 style="margin-top:32px">Verilerini silmek</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>Cihazında.</strong> Ayarlar → Tehlikeli bölge → Passport'u sil, ya da uygulamayı kaldır. İkisi de şifreli anahtarı, kimliğini ve tercihlerini telefondan tamamen kaldırır. Başka hiçbir yerde kopyası yok ve senin adına silebileceğimiz bir şey yok.
+        </p>
+<p style="margin:0">
+<strong>Yayımlanmış olanlar.</strong> Technocore üzerinde yayımlamayı seçtiğin her şey herkese açıktır ve bizim denetimimiz dışındadır — onu barındırmıyoruz ve kaldıramayız. Herkese açık odalardaki kayıtlar, odalar sıkıştırıldıkça o hizmet tarafından atılır; notlar kalır. technocore.chat üzerindeki içerikle ilgili talepler, hizmeti işleten FLOP Labs'e gider.
+        </p>
+</div>
+<h3 style="margin-top:32px">Çocuklar</h3>
+<p>
+        Uygulama çocuklara yönelik değildir ve çocuklar dahil hiç kimseden veri toplamaz.
+      </p>
+<h3 style="margin-top:32px">Değişiklikler</h3>
+<p>
+        Bu politika değişirse üstteki tarih de onunla birlikte değişir ve önceki sürüm herkese açık deponun geçmişinde kalır; isteyen karşılaştırabilir.
+      </p>
+<h3 style="margin-top:32px">Haklarını</h3>
+<p>
+        Erişim, düzeltme, taşınabilirlik ve silme hakları, başkasının senin hakkında tuttuğu veriler üzerinde sana denetim vermek için vardır. Bizde hiç yok: erişilecek, dışa aktarılacak ya da silinecek bir şey yok, çünkü seninle ilgili hiçbir şey bize ulaşmıyor. Anahtarını istediğin zaman uygulamadan dışa aktarabilirsin ve uygulamayı silmek, sakladığı her şeyi kaldırır.
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — bağımsız bir topluluk projesi</span>
+<div class="links">
+<a href="/">Ana sayfa</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

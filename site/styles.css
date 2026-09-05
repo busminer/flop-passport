@@ -668,3 +668,33 @@ header .wrap { flex-wrap: wrap; }
   color: var(--text-2);
   white-space: pre-wrap;
 }
+
+/* ---------------------------------------------------------------- CJK typography */
+/*
+  Chinese, Japanese and Korean pages get a typeface that was drawn for them.
+
+  Space Mono has no CJK glyphs, so on those pages every heading was already being rendered
+  by whatever the browser fell back to - while the Latin words inside the same sentence
+  stayed in a wide monospace face. The result is a headline made of two fonts at two
+  rhythms, with a visible gap on either side of every word like "Technocore". Naming a CJK
+  stack ends the argument: one face draws the whole line.
+
+  Line height goes up because CJK glyphs fill their box to the edges, and the tight
+  tracking that suits Latin display type is removed - CJK is already monospaced by nature,
+  and negative tracking there only glues characters together.
+*/
+html[lang="zh"] h1, html[lang="zh"] h2, html[lang="zh"] h3,
+html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3,
+html[lang="ko"] h1, html[lang="ko"] h2, html[lang="ko"] h3 {
+  font-family: var(--sans), "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Noto Sans SC",
+               "Microsoft YaHei", "Malgun Gothic", sans-serif;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+html[lang="zh"] body, html[lang="ja"] body, html[lang="ko"] body { line-height: 1.75; }
+/* A CJK line may be broken between any two characters; a Latin word inside it may not. */
+html[lang="zh"] p, html[lang="ja"] p, html[lang="ko"] p,
+html[lang="zh"] li, html[lang="ja"] li, html[lang="ko"] li {
+  line-break: strict;
+  overflow-wrap: break-word;
+}

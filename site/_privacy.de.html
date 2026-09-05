@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">Start</a>
+<a href="/#verify">Prüfen</a>
+<a href="/#get">Holen</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">Datenschutzerklärung</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>Zuletzt aktualisiert am 31. August 2026. Diese Erklärung gilt für die Android-Anwendung <code>dev.alexkosa.floppassport</code> und für diese Website.</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>Die kurze Fassung.</strong> Es gibt kein Konto, keine Analytik, keine Werbung und keinen von uns betriebenen Server. Die App erhebt, überträgt und speichert deine personenbezogenen Daten nirgends, wo wir herankommen. Dein Schlüssel bleibt auf deinem Telefon.
+        </p>
+</div>
+<h3 style="margin-top:48px">Wer verantwortlich ist</h3>
+<p>
+        FLOP Passport for Seeker ist ein unabhängiges Open-Source-Projekt von Alex Kosa, einem einzelnen Entwickler. Es wird von FLOP Labs oder Solana Mobile weder hergestellt noch unterstützt noch geprüft. Kontakt: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> auf X, oder über ein Issue im öffentlichen Repository.
+      </p>
+<h3 style="margin-top:32px">Was die App auf deinem Gerät speichert</h3>
+<ul class="plain">
+<li>
+<strong>Deinen Passport-Schlüssel</strong>, verschlüsselt. Er liegt nur als Chiffrat vor, umschlossen von einem Schlüssel im hardwaregestützten Schlüsselspeicher deines Telefons, der sich dort nicht auslesen lässt.
+        </li>
+<li>
+<strong>Deine öffentliche Identität</strong> — den <code>did:key</code> und seinen Fingerabdruck — sowie die Solana-Wallet-Adresse, aus der sie abgeleitet wurde.
+        </li>
+<li>
+<strong>Deine Sprachauswahl</strong> und ob der Startton eingeschaltet ist.
+        </li>
+</ul>
+<p>
+        All das liegt im privaten Speicher der App auf deinem Gerät. Androids automatische Sicherung und die Geräteübertragung sind für diese App bewusst abgeschaltet, damit nichts davon in ein Cloud-Backup kopiert wird.
+      </p>
+<h3 style="margin-top:32px">Was dein Gerät verlässt, und nur wenn du eine Taste drückst</h3>
+<ul class="plain">
+<li>
+<strong>An technocore.chat</strong>, wenn du deine Identität veröffentlichst oder einen Eintrag signierst: dein öffentlicher <code>did:key</code>, der Text, den du signierst, ein Zähler und die Signatur. Diese Angaben sind bewusst öffentlich — das ist der Sinn einer öffentlichen Identität — und jeder kann sie danach lesen.
+        </li>
+<li>
+<strong>An deine Wallet-App</strong>, wenn du den Passport anlegst: ein Satz zum Signieren. Die Wallet verarbeitet das auf deinem Gerät; über das Netz senden wir nichts.
+        </li>
+<li>
+<strong>In eine Datei, die du wählst</strong>, wenn du deinen Schlüssel exportierst. Das Ziel wählst du über die Dateiauswahl des Systems. Nichts wird hochgeladen.
+        </li>
+</ul>
+<p>
+<strong>An den Entwickler geht nie etwas.</strong> Es gibt kein Backend, an das man es senden könnte. Die App spricht mit technocore.chat, betrieben von FLOP Labs, und mit deiner eigenen Wallet-App — und das ist die vollständige Liste.
+      </p>
+<h3 style="margin-top:32px">Wonach die App nie fragt und was sie nie anfasst</h3>
+<ul class="plain">
+<li>Die Wiederherstellungsphrase oder den privaten Schlüssel deiner Solana-Wallet. Die App hat beides nie gesehen und kann es nicht.</li>
+<li>Deinen Namen, deine E-Mail-Adresse, deine Telefonnummer oder irgendwelche Zugangsdaten.</li>
+<li>Deine Kontakte, Fotos, Dateien, deinen Standort, die Kamera oder das Mikrofon.</li>
+<li>Werbe-IDs. Es gibt keine Werbung und keine Werbe-SDKs.</li>
+</ul>
+<h3 style="margin-top:32px">Analytik und Tracking</h3>
+<p>
+        Keine. Die App enthält kein Analytik-SDK, keinen Absturzbericht-Dienst und kein Tracking Dritter irgendeiner Art. Diese Website setzt keine Cookies, betreibt keine Analytik und hat keinen serverseitigen Code; ihre einzigen ausgehenden Anfragen sind die zwei Webschriften und, wenn du den Prüfer nutzt, ein direkter Lesezugriff auf technocore.chat, der von deinem Browser ausgeht und nie über uns läuft.
+      </p>
+<h3 style="margin-top:32px">Berechtigungen</h3>
+<ul class="plain">
+<li><strong>Internet</strong> — um technocore.chat zu erreichen, wenn du etwas veröffentlichst oder signierst.</li>
+<li><strong>Vibration</strong> — ein kurzes Signal, wenn ein Schritt bestätigt ist.</li>
+<li><strong>Biometrie</strong> — um den Bildschirm zu schützen, der deinen privaten Schlüssel zeigt.</li>
+</ul>
+<p>Eine Speicherberechtigung wird nicht angefordert; zum Speichern einer Datei dient die Systemauswahl.</p>
+<h3 style="margin-top:32px">Deine Daten löschen</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>Auf deinem Gerät.</strong> Einstellungen → Gefahrenzone → Passport löschen, oder deinstalliere die App. Beides entfernt den verschlüsselten Schlüssel, deine Identität und deine Einstellungen vollständig vom Telefon. Anderswo gibt es keine Kopie, und für uns gibt es nichts, was wir für dich löschen könnten.
+        </p>
+<p style="margin:0">
+<strong>Was veröffentlicht wurde.</strong> Alles, was du auf Technocore veröffentlicht hast, ist öffentlich und außerhalb unserer Kontrolle — wir hosten es nicht und können es nicht entfernen. Einträge in öffentlichen Räumen verwirft dieser Dienst, wenn Räume verdichtet werden; Notizen bleiben. Anfragen zu Inhalten auf technocore.chat gehen an FLOP Labs, die den Dienst betreiben.
+        </p>
+</div>
+<h3 style="margin-top:32px">Kinder</h3>
+<p>
+        Die App richtet sich nicht an Kinder und erhebt von niemandem Daten, auch nicht von Kindern.
+      </p>
+<h3 style="margin-top:32px">Änderungen</h3>
+<p>
+        Ändert sich diese Erklärung, ändert sich das Datum oben mit, und die vorherige Fassung bleibt in der Historie des öffentlichen Repositorys, wo jeder beide vergleichen kann.
+      </p>
+<h3 style="margin-top:32px">Deine Rechte</h3>
+<p>
+        Rechte auf Auskunft, Berichtigung, Übertragbarkeit und Löschung gibt es, damit du Kontrolle über Daten hast, die jemand anders über dich hält. Wir halten keine: es gibt nichts zum Abrufen, Exportieren oder Löschen, weil nichts über dich jemals bei uns ankommt. Deinen Schlüssel kannst du jederzeit aus der App exportieren, und das Löschen der App entfernt alles, was sie behalten hat.
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — ein unabhängiges Community-Projekt</span>
+<div class="links">
+<a href="/">Start</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

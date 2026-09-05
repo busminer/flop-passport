@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">Beranda</a>
+<a href="/#verify">Verifikasi</a>
+<a href="/#get">Unduh</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">Kebijakan privasi</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>Terakhir diperbarui 31 Agustus 2026. Kebijakan ini mencakup aplikasi Android <code>dev.alexkosa.floppassport</code> dan situs web ini.</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>Versi singkatnya.</strong> Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada server yang kami operasikan. Aplikasi tidak mengumpulkan, mengirim, atau menyimpan data pribadi Anda di mana pun yang bisa kami jangkau. Kunci Anda tetap di ponsel Anda.
+        </p>
+</div>
+<h3 style="margin-top:48px">Siapa yang bertanggung jawab</h3>
+<p>
+        FLOP Passport for Seeker adalah proyek sumber terbuka independen oleh Alex Kosa, seorang pengembang perorangan. Tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile. Kontak: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> di X, atau dengan membuka issue di repositori publik.
+      </p>
+<h3 style="margin-top:32px">Apa yang disimpan aplikasi di perangkat Anda</h3>
+<ul class="plain">
+<li>
+<strong>Kunci Passport Anda</strong>, terenkripsi. Ia hanya disimpan sebagai teks sandi, dibungkus oleh kunci yang berada di penyimpanan kunci berbasis perangkat keras di ponsel Anda, yang tidak bisa dibaca keluar dari sana.
+        </li>
+<li>
+<strong>Identitas publik Anda</strong> — <code>did:key</code> dan sidik jarinya — serta alamat dompet Solana asal penurunannya.
+        </li>
+<li>
+<strong>Preferensi bahasa Anda</strong> dan apakah suara pembuka dinyalakan.
+        </li>
+</ul>
+<p>
+        Semuanya berada di penyimpanan privat aplikasi pada perangkat Anda. Pencadangan otomatis Android dan pemindahan antarperangkat sengaja dimatikan untuk aplikasi ini, sehingga tidak ada satu pun darinya yang disalin ke cadangan awan.
+      </p>
+<h3 style="margin-top:32px">Apa yang meninggalkan perangkat Anda, dan hanya saat Anda menekan tombol</h3>
+<ul class="plain">
+<li>
+<strong>Ke technocore.chat</strong>, saat Anda menerbitkan identitas atau menandatangani catatan: <code>did:key</code> publik Anda, teks yang sedang Anda tanda tangani, sebuah penghitung, dan tanda tangannya. Informasi ini memang publik menurut rancangannya — itulah inti sebuah identitas publik — dan setelahnya siapa pun bisa membacanya.
+        </li>
+<li>
+<strong>Ke aplikasi dompet Anda</strong>, saat Anda membuat Passport: sebuah kalimat untuk ditandatangani. Dompet menanganinya di perangkat Anda; tidak ada yang kami kirim lewat jaringan.
+        </li>
+<li>
+<strong>Ke berkas yang Anda pilih</strong>, saat Anda mengekspor kunci. Tujuannya Anda tentukan lewat pemilih berkas sistem. Tidak ada yang diunggah.
+        </li>
+</ul>
+<p>
+<strong>Tidak pernah ada yang dikirim ke pengembang.</strong> Tidak ada backend untuk menerimanya. Aplikasi berbicara dengan technocore.chat, yang dioperasikan FLOP Labs, dan dengan aplikasi dompet Anda sendiri — dan itulah daftar lengkapnya.
+      </p>
+<h3 style="margin-top:32px">Apa yang tidak pernah diminta dan tidak pernah disentuh aplikasi</h3>
+<ul class="plain">
+<li>Frasa pemulihan atau kunci privat dompet Solana Anda. Aplikasi tidak pernah melihatnya dan tidak bisa.</li>
+<li>Nama, alamat surel, nomor telepon, atau kredensial akun apa pun milik Anda.</li>
+<li>Kontak, foto, berkas, lokasi, kamera, atau mikrofon Anda.</li>
+<li>Pengenal iklan. Tidak ada iklan dan tidak ada SDK iklan.</li>
+</ul>
+<h3 style="margin-top:32px">Analitik dan pelacakan</h3>
+<p>
+        Tidak ada. Aplikasi tidak memuat SDK analitik, layanan pelaporan crash, maupun pelacakan pihak ketiga dalam bentuk apa pun. Situs ini tidak memasang cookie, tidak menjalankan analitik, dan tidak punya kode sisi server; satu-satunya permintaan keluarnya adalah dua fonta web dan, saat Anda memakai pemverifikasi, pembacaan langsung dari technocore.chat yang berangkat dari peramban Anda dan tidak pernah melewati kami.
+      </p>
+<h3 style="margin-top:32px">Izin</h3>
+<ul class="plain">
+<li><strong>Internet</strong> — untuk menjangkau technocore.chat saat Anda menerbitkan atau menandatangani sesuatu.</li>
+<li><strong>Getar</strong> — satu getaran singkat saat sebuah langkah terverifikasi.</li>
+<li><strong>Biometrik</strong> — untuk mengunci layar yang menampilkan kunci privat Anda.</li>
+</ul>
+<p>Izin penyimpanan tidak diminta; menyimpan berkas memakai pemilih sistem.</p>
+<h3 style="margin-top:32px">Menghapus data Anda</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>Di perangkat Anda.</strong> Pengaturan → Zona berbahaya → hapus Passport, atau copot aplikasinya. Keduanya menghapus kunci terenkripsi, identitas, dan preferensi Anda sepenuhnya dari ponsel. Tidak ada salinan di tempat lain, dan tidak ada yang perlu kami hapus atas nama Anda.
+        </p>
+<p style="margin:0">
+<strong>Apa yang sudah diterbitkan.</strong> Apa pun yang Anda pilih terbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menampungnya dan tidak bisa menghapusnya. Catatan di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan; catatan identitas tetap ada. Permintaan mengenai konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.
+        </p>
+</div>
+<h3 style="margin-top:32px">Anak-anak</h3>
+<p>
+        Aplikasi ini tidak ditujukan untuk anak-anak dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.
+      </p>
+<h3 style="margin-top:32px">Perubahan</h3>
+<p>
+        Kalau kebijakan ini berubah, tanggal di bagian atas ikut berubah, dan versi sebelumnya tetap ada di riwayat repositori publik, tempat siapa pun bisa membandingkannya.
+      </p>
+<h3 style="margin-top:32px">Hak Anda</h3>
+<p>
+        Hak atas akses, koreksi, portabilitas, dan penghapusan ada untuk memberi Anda kendali atas data yang dipegang orang lain tentang Anda. Kami tidak memegang satu pun: tidak ada yang bisa diakses, diekspor, atau dihapus, karena tidak ada apa pun tentang Anda yang pernah sampai kepada kami. Kunci Anda bisa diekspor dari aplikasi kapan saja, dan menghapus aplikasi menghilangkan semua yang pernah disimpannya.
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — proyek komunitas yang independen</span>
+<div class="links">
+<a href="/">Beranda</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

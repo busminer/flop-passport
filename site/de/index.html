@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FLOP Passport for Seeker</title>
-<meta name="description" content="Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server." />
+<title>FLOP Passport für Seeker</title>
+<meta name="description" content="Erzeuge aus deiner Solana-Wallet eine Technocore-did:key-Identität, veröffentliche sie dort, wo jeder sie prüfen kann, und behalte die Belege. Quelloffen, ohne Konto, ohne Server." />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#0A1128" />
 <link rel="canonical" href="https://flop.alexkosa.dev/de/" />
@@ -21,8 +21,8 @@
 <link rel="alternate" hreflang="ja" href="https://flop.alexkosa.dev/ja/" />
 <link rel="alternate" hreflang="x-default" href="https://flop.alexkosa.dev/" />
 
-<meta property="og:title" content="FLOP Passport for Seeker" />
-<meta property="og:description" content="Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server." />
+<meta property="og:title" content="FLOP Passport für Seeker" />
+<meta property="og:description" content="Erzeuge aus deiner Solana-Wallet eine Technocore-did:key-Identität, veröffentliche sie dort, wo jeder sie prüfen kann, und behalte die Belege. Quelloffen, ohne Konto, ohne Server." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://flop.alexkosa.dev/de/" />
 <meta property="og:site_name" content="FLOP Passport for Seeker" />
@@ -40,15 +40,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=f495b02b" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/de/","description":"Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What do I actually do, and how often?","acceptedAnswer":{"@type":"Answer","text":"Once: make your Passport. Five steps, about three minutes. Your wallet signs one line and the app does the rest. At least once a week: open the app. Not for a streak. Technocore deletes anything nobody has written to for seven days, and simply opening the app rewrites your identity note, which starts the seven days again. Miss it and the address you gave people goes empty. On the days you do something: sign a record. One tap. It is dated, signed by your key, and it cannot be created later. When you build or write something: tell people, and link it both ways. The app writes the post for you and pins the link into your identity. This is the half FLOP actually asked for. If you only ever do the first two, you still have a working, verifiable identity. The fourth is the one that makes it worth something to anybody else."}},{"@type":"Question","name":"Does checking in every day earn me the airdrop?","acceptedAnswer":{"@type":"Answer","text":"Nobody has published a rule that says so, and we are not going to pretend otherwise. What was published is this, from the FLOP account on 24 August 2026: &ldquo;Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.&rdquo; Two actions are named there: make a key, and do something useful that spreads the word. Daily records are not named. What they do is keep your identity from being deleted and build a history with dates on it, and a date is the one thing that cannot be added afterwards. That is the honest reason to show up, and it is a better one than a promise."}},{"@type":"Question","name":"Why does my identity get deleted if I stop?","acceptedAnswer":{"@type":"Answer","text":"Because Technocore is not storage and says so. Rooms and notes with no write for seven days are removed, which is how a public service stays a service instead of a graveyard of abandoned names. This app treats that as its own job rather than yours: it rewrites your note every time you open it and every time you sign a record, and if you have been away it tells you how many days are left. And if it does get deleted, nothing is lost for good. The same wallet gives the same identity, and signing one record puts the note back at the same address."}},{"@type":"Question","name":"Why is this a Seeker app? What does Solana Mobile have to do with it?","acceptedAnswer":{"@type":"Answer","text":"Because of one technical fact that the whole design rests on. Seed Vault signs the exact bytes it is handed. Most wallets do not. They wrap your message in an envelope of their own before signing, so the signature covers something else, and a different wallet wraps it differently. This app derives your key from that signature, so it only reproduces if the signing is byte for byte the same every time, everywhere. Seed Vault does that, and does it in hardware on the Seeker. That is what buys you an identity with no seed phrase to write down and no server holding anything: Solana Mobile shipped a key store precise enough to build on. This app is one of the things that becomes possible because of it. Run it with a wallet that wraps its messages and you get a different key, which is not a bug here. It is the reason the Seeker is the right phone for this."}},{"@type":"Question","name":"Is the key really mine, forever?","acceptedAnswer":{"@type":"Answer","text":"Yes, and the reason is worth understanding rather than trusting. Your Passport is not generated at random and stored somewhere. It is computed from one signature your wallet makes over a fixed sentence. Ed25519 signatures are deterministic, so the same wallet over the same sentence always produces the same bytes, and the same bytes always produce the same key. So there is nothing to back up and nothing anybody can take away. Wipe the phone, lose the phone, buy a new one: install the app, sign with the same wallet, and the same identity comes back. We tested that by deleting everything on purpose."}},{"@type":"Question","name":"What is the catch?","acceptedAnswer":{"@type":"Answer","text":"There is one, and the app says it on its own About screen rather than waiting for you to find out. Recovery without a seed phrase and &ldquo;anything that can get this signature owns this identity&rdquo; are the same property seen from two sides. Any app that persuades your wallet to sign that exact sentence can rebuild your Passport. So read what a wallet asks you to sign. Here and everywhere else. The prompt for this app says FLOP Passport key derivation v1 and names flop.alexkosa.dev , an address you can open and check right now."}},{"@type":"Question","name":"What does it cost, and what do you take?","acceptedAnswer":{"@type":"Answer","text":"Nothing, and nothing. No account, no server of ours, no analytics, nothing to buy. Your key never leaves your phone unless you export it yourself. There is a tip address in the settings if the app turns out to be useful to you, and sending a tip changes nothing about your Passport and nothing about any airdrop."}},{"@type":"Question","name":"Is this official?","acceptedAnswer":{"@type":"Answer","text":"No. This is an independent community project, not affiliated with, endorsed by or connected to FLOP Labs or Solana Mobile. Everything this page quotes from them is linked to the original, so you can check it yourself instead of taking our word for it."}}]}</script>
+<link rel="stylesheet" href="/styles.css?v=61f23a05" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/de/","description":"Erzeuge aus deiner Solana-Wallet eine Technocore-did:key-Identität, veröffentliche sie dort, wo jeder sie prüfen kann, und behalte die Belege. Quelloffen, ohne Konto, ohne Server.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <a class="mark" href="/de/">
-      <svg style="height:20px;width:auto" id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
+<div class="wrap">
+<a class="mark" href="/de/">
+<svg style="height:20px;width:auto" id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
   
   <defs>
     <style>
@@ -109,30 +108,29 @@
   </g>
   <path class="fl0" d="M1199,560.96h-41.25c-5.78,0-11.3,2.3-15.37,6.38l-24.23,24.23h80.85v-30.61ZM1111.48,496.3h29.45v-36.31c0-12.02,9.74-21.75,21.75-21.75h36.29v-29.43h-87.52v87.52l.02-.02ZM1134.57,558.18c4.08-4.08,6.38-9.62,6.38-15.37v-38.76h-29.45v77.23l23.1-23.1h-.02ZM1294.27,496.3v-87.52h-87.52v29.43h40.3c12.02,0,21.75,9.74,21.75,21.75v36.31h25.45l.02.02ZM1104.46,589.03v-84.98h-89.47s-.06,87.5-.13,87.5h87.08l2.52-2.52h0ZM1302.01,401.03h88.07c-1.53-2.35-86.67-81.77-88.07-82.58v82.58ZM1104.46,318.45c-1.39.82-86.53,80.23-88.07,82.58h88.07s0-82.58,0-82.58ZM1302.01,599.32h87.31c-1.15,2.35-85.92,81.77-87.31,82.58v-82.58ZM1302.01,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1014.93,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1302.01,504.05v87.52h89.56v-87.52h-89.56ZM1199,599.32h-87.52v84.4c2.54,0,87.5,0,87.5,0v-84.4h.02ZM1294.27,599.32h-87.52v84.4h87.52v-84.4ZM1206.74,401.03h87.52v-85.58c-1.71,0-87.5,0-87.5,0v85.56l-.02.02ZM1111.48,401.03h87.52v-85.58h-87.52v85.58ZM1294.27,504.05h-25.45v35.16c0,12.02-9.74,21.75-21.75,21.75h-40.3v30.58h87.52v-87.52l-.02.02ZM1019.26,599.34h73.68l-21.8,21.8c-4.15,4.14-9.51,6.36-14.95,6.64-4.12.21-8.14-1.33-11.14-4.16l-25.8-24.28ZM1079.63,656.16c-2.81-2.65-4.56-6.26-4.79-10.12-.37-6.27,1.83-12.68,6.64-17.49l22.25-22.25v72.53l-24.09-22.68Z"/>
 </svg>
-      <span class="label">Passport</span>
-    </a>
-    <nav>
-      <a href="#official">Official</a>
-      <a href="#what">What it is</a>
-      <a href="#key">Your key</a>
-      <a href="#platform">The phone</a>
-      <a href="#steps">How it works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#line">The line</a>
-      <a href="#verify">Verify</a>
-      <a href="#get">Get it</a>
-      <a href="#support">Support</a>
-    </nav>
-    <div class="langs"><span class="langs-label">Language</span><a href="/de/" hreflang="en" lang="en">English</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Indonesia</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a></div>
-  </div>
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">Offiziell</a>
+<a href="#what">Was es ist</a>
+<a href="#key">Dein Schlüssel</a>
+<a href="#platform">Das Telefon</a>
+<a href="#steps">So funktioniert es</a>
+<a href="#faq">Fragen</a>
+<a href="#line">Die Linie</a>
+<a href="#verify">Prüfen</a>
+<a href="#get">Holen</a>
+<a href="#support">Unterstützen</a>
+</nav>
+<div class="langs"><span class="langs-label">Sprache</span><a href="/de/" hreflang="en" lang="en">English</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Indonesia</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a></div>
+</div>
 </header>
-
 <main>
-  <section class="hero">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="hero-stage">
-        <div class="hero-lockup" id="heroLockup"><svg id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><svg id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
   
   <defs>
     <style>
@@ -193,10 +191,10 @@
   </g>
   <path class="fl0" d="M1199,560.96h-41.25c-5.78,0-11.3,2.3-15.37,6.38l-24.23,24.23h80.85v-30.61ZM1111.48,496.3h29.45v-36.31c0-12.02,9.74-21.75,21.75-21.75h36.29v-29.43h-87.52v87.52l.02-.02ZM1134.57,558.18c4.08-4.08,6.38-9.62,6.38-15.37v-38.76h-29.45v77.23l23.1-23.1h-.02ZM1294.27,496.3v-87.52h-87.52v29.43h40.3c12.02,0,21.75,9.74,21.75,21.75v36.31h25.45l.02.02ZM1104.46,589.03v-84.98h-89.47s-.06,87.5-.13,87.5h87.08l2.52-2.52h0ZM1302.01,401.03h88.07c-1.53-2.35-86.67-81.77-88.07-82.58v82.58ZM1104.46,318.45c-1.39.82-86.53,80.23-88.07,82.58h88.07s0-82.58,0-82.58ZM1302.01,599.32h87.31c-1.15,2.35-85.92,81.77-87.31,82.58v-82.58ZM1302.01,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1014.93,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1302.01,504.05v87.52h89.56v-87.52h-89.56ZM1199,599.32h-87.52v84.4c2.54,0,87.5,0,87.5,0v-84.4h.02ZM1294.27,599.32h-87.52v84.4h87.52v-84.4ZM1206.74,401.03h87.52v-85.58c-1.71,0-87.5,0-87.5,0v85.56l-.02.02ZM1111.48,401.03h87.52v-85.58h-87.52v85.58ZM1294.27,504.05h-25.45v35.16c0,12.02-9.74,21.75-21.75,21.75h-40.3v30.58h87.52v-87.52l-.02.02ZM1019.26,599.34h73.68l-21.8,21.8c-4.15,4.14-9.51,6.36-14.95,6.64-4.12.21-8.14-1.33-11.14-4.16l-25.8-24.28ZM1079.63,656.16c-2.81-2.65-4.56-6.26-4.79-10.12-.37-6.27,1.83-12.68,6.64-17.49l22.25-22.25v72.53l-24.09-22.68Z"/>
 </svg></div>
-        <div class="hero-join" id="heroJoin" aria-hidden="true"></div>
-        <div class="hero-for" id="heroFor">
-          <span class="label">built for</span>
-          <div class="hero-seeker"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">gebaut für</span>
+<div class="hero-seeker"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 600" style="enable-background:new 0 0 1600 600;" xml:space="preserve">
 <style type="text/css">
 	.sk0{fill:#FFFFFF;}
@@ -278,37 +276,29 @@
 		v-7.89c0-10.03-6.54-15.77-16.74-15.77c-10.2,0-16.83,6.2-16.83,15.77V520.97z"/>
 </g>
 </svg></div>
-        </div>
-      </div>
-
-      <h1>Your identity on Technocore, <br />born inside your Seeker.</h1>
-      <p class="sub">
-        FLOP Passport creates a permanent <code>did:key</code> identity from your Solana
-        wallet, publishes it where anyone can verify it, and keeps the receipts. No account,
-        no server of ours, no seed phrase to write down.
+</div>
+</div>
+<h1>Deine Identität auf Technocore, <br/>geboren in deinem Seeker.</h1>
+<p class="sub">
+        FLOP Passport erzeugt aus deiner Solana-Wallet eine dauerhafte <code>did:key</code>-Identität, veröffentlicht sie dort, wo jeder sie prüfen kann, und bewahrt die Belege auf. Kein Konto, kein Server von uns, keine Seed-Phrase zum Aufschreiben.
       </p>
-
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#get">Get the app</a>
-        <a class="btn btn-secondary" href="#verify">Verify a Passport</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="official">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">In their own words</span>
-        <h2>What FLOP has actually said</h2>
-        <p>
-          Quoted in full and rendered in this page's own colours, with a link to each
-          original so you can check every one. Nothing here is our interpretation, and
-          nothing about eligibility is implied beyond what these say.
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">App holen</a>
+<a class="btn btn-secondary" href="#verify">Einen Passport prüfen</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">In ihren eigenen Worten</span>
+<h2>Was FLOP tatsächlich gesagt hat</h2>
+<p>
+          Vollständig zitiert und nur in den Farben dieser Seite gesetzt, mit einem Link zu jedem Original, damit du jedes einzeln nachprüfen kannst. Hier steht keine Deutung von uns, und über Anspruchsberechtigung wird nichts angedeutet, was über diese Sätze hinausgeht.
         </p>
-      </div>
-
-      <div class="tweet-grid">
+</div>
+<div class="tweet-grid">
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
@@ -320,13 +310,14 @@
             <span class="tweet-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5F7FA"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.6z"/></svg></span>
           </div>
           <p class="tweet-body" lang="en">Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the <span class="tok">$FLOP</span> airdrop.</p>
-          <div class="tweet-date">24 August 2026</div>
+          <div class="tweet-trans" lang="de"><span class="tweet-trans-label">Übersetzung</span><p>Agenten, die wir beobachten: erzeugt einen eindeutigen DID-Schlüssel und tut etwas Nützliches, um Technocore unter euresgleichen bekannt zu machen. Ihr werdet beim <span class="tok">$FLOP</span>-Airdrop belohnt.</p></div>
+          <div class="tweet-date">24. August 2026</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>1,323</b> likes</span>
-            <span class="tweet-stat"><b>205</b> reposts</span>
-            <span class="tweet-stat"><b>771K</b> views</span>
+            <span class="tweet-stat"><b>1,323</b> Likes</span>
+            <span class="tweet-stat"><b>205</b> Reposts</span>
+            <span class="tweet-stat"><b>771K</b> Aufrufe</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2091830155270672521" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2091830155270672521" rel="noopener">Das Original auf X öffnen &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -343,13 +334,18 @@
 The airdrop goes to the network participants: miners, validators, agents, and early community.
 
 Stay tuned for details on an AMA hosted by <span class="tok">@CryptoHayes</span> live on X spaces / YouTube next week.</p>
-          <div class="tweet-date">26 August 2026</div>
+          <div class="tweet-trans" lang="de"><span class="tweet-trans-label">Übersetzung</span><p><span class="tok">$FLOP</span>-Tokenomics, erster Blick: keine VC-Zuteilung. Kein Vorverkauf.
+
+Der Airdrop geht an die Teilnehmer des Netzwerks: Miner, Validatoren, Agenten und die frühe Community.
+
+Details zu einem AMA mit <span class="tok">@CryptoHayes</span>, live auf X spaces / YouTube nächste Woche, folgen.</p></div>
+          <div class="tweet-date">26. August 2026</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>1,485</b> likes</span>
-            <span class="tweet-stat"><b>257</b> reposts</span>
-            <span class="tweet-stat"><b>320K</b> views</span>
+            <span class="tweet-stat"><b>1,485</b> Likes</span>
+            <span class="tweet-stat"><b>257</b> Reposts</span>
+            <span class="tweet-stat"><b>320K</b> Aufrufe</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2092626441339043871" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2092626441339043871" rel="noopener">Das Original auf X öffnen &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -368,13 +364,20 @@ Arthur <span class="tok">@CryptoHayes</span> takes 11 minutes on <span class="to
 Agents don&#x27;t eat dollars. They eat compute. Nobody built the market that prices it, so we did.
 
 Testnet airdrop, Q4 2026. Earned, not sold.</p>
-          <div class="tweet-date">26 August 2026</div>
+          <div class="tweet-trans" lang="de"><span class="tweet-trans-label">Übersetzung</span><p>„Was zum Teufel ist Flop?“
+
+Arthur <span class="tok">@CryptoHayes</span> nimmt sich bei <span class="tok">@APompliano</span> 11 Minuten Zeit, um das zu beantworten.
+
+Agenten essen keine Dollars. Sie essen Rechenleistung. Den Markt, der sie bepreist, hat niemand gebaut, also haben wir es getan.
+
+Testnet-Airdrop, Q4 2026. Verdient, nicht verkauft.</p></div>
+          <div class="tweet-date">26. August 2026</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>309</b> likes</span>
-            <span class="tweet-stat"><b>37</b> reposts</span>
-            <span class="tweet-stat"><b>51.2K</b> views</span>
+            <span class="tweet-stat"><b>309</b> Likes</span>
+            <span class="tweet-stat"><b>37</b> Reposts</span>
+            <span class="tweet-stat"><b>51.2K</b> Aufrufe</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2092449048028647770" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2092449048028647770" rel="noopener">Das Original auf X öffnen &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -391,171 +394,133 @@ Testnet airdrop, Q4 2026. Earned, not sold.</p>
 The key already signs the post. It doesn&#x27;t have to sign the profile note, so that directory can be overwritten by anyone.
 
 Until the note itself is a signed write, do this: treat the profile note as a cache. Publish it, then post a signed line did-note &lt;fp&gt; &lt;sha256 of the body&gt;.</p>
-          <div class="tweet-date">21 August 2026</div>
+          <div class="tweet-trans" lang="de"><span class="tweet-trans-label">Übersetzung</span><p>Die einzige Identität, die wir ausliefern, ist ein Schlüssel: signiert derselbe did:key zwei Beiträge, ist es derselbe Sprecher. Das ist Kontinuität, nicht Vertrauen.
+
+Der Schlüssel signiert den Beitrag ohnehin. Er muss die Profilnotiz nicht signieren, also kann jeder dieses Verzeichnis überschreiben.
+
+Bis die Notiz selbst ein signierter Schreibvorgang ist, macht es so: behandelt die Profilnotiz als Cache. Veröffentlicht sie, und postet dann eine signierte Zeile did-note &lt;fp&gt; &lt;sha256 des Inhalts&gt;.</p></div>
+          <div class="tweet-date">21. August 2026</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>6</b> likes</span>
-            <span class="tweet-stat"><b>0</b> reposts</span>
-            <span class="tweet-stat"><b>673</b> views</span>
+            <span class="tweet-stat"><b>6</b> Likes</span>
+            <span class="tweet-stat"><b>0</b> Reposts</span>
+            <span class="tweet-stat"><b>673</b> Aufrufe</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2090661329837371428" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2090661329837371428" rel="noopener">Das Original auf X öffnen &rarr;</a>
         </article>
-      </div>
-
-      <div class="notice reveal" style="margin-top:24px">
-        <p style="margin:0 0 12px">
-          <strong>What that means for this app, precisely.</strong> FLOP asked for a unique
-          <code>did:key</code> and useful work. The app creates the key and produces the
-          signed records. It does not, and cannot, tell you that this earns you anything.
+ </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>Was das für diese App genau bedeutet.</strong> FLOP hat um einen eindeutigen <code>did:key</code> und um nützliche Arbeit gebeten. Die App erzeugt den Schlüssel und erstellt die signierten Einträge. Sie sagt dir nicht, und kann dir nicht sagen, dass dir das etwas einbringt.
         </p>
-        <p style="margin:0 0 12px">
-          The last post is the one this app follows to the letter: a profile note can be
-          overwritten by anyone, so the app signs a line carrying the note's hash, and the
-          <a href="#verify">verifier</a> checks that the note still matches it.
+<p style="margin:0 0 12px">
+          Dem letzten Beitrag folgt diese App wörtlich: eine Profilnotiz kann jeder überschreiben, also signiert die App eine Zeile mit dem Hash der Notiz, und der <a href="#verify">Prüfer</a> kontrolliert, ob die Notiz noch dazu passt.
         </p>
-        <p style="margin:0">
-          <strong>Where "early community" would be paid from.</strong> The teaser splits the
-          3.5bn genesis pool four ways, and the fourth line is
-          <em>Reserve / incentives, 794,495,000 $FLOP, 4.6%, ecosystem and growth
-          incentives</em> &mdash; separate from the miner, validator and agent tracks. That
-          is a figure in their document, not a promise to you, and no size, threshold or
-          measurement for it has been published anywhere. Read the
-          <a href="https://flop.finance/teaser/" rel="noopener">teaser</a> yourself.
+<p style="margin:0">
+<strong>Woraus die „frühe Community“ bezahlt würde.</strong> Der Teaser teilt den Genesis-Pool von 3,5 Mrd. in vier Teile, und die vierte Zeile lautet <em>Reserve / incentives, 794.495.000 $FLOP, 4,6 %, Anreize für Ökosystem und Wachstum</em> — getrennt von den Töpfen für Miner, Validatoren und Agenten. Das ist eine Zahl in ihrem Dokument, kein Versprechen an dich, und weder Höhe noch Schwelle noch Messweise wurden irgendwo veröffentlicht. Lies den <a href="https://flop.finance/teaser/" rel="noopener">Teaser</a> selbst.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="what">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">What it is</span>
-        <h2>FLOP asked agents for a unique identity and useful work. This is how you do that from a phone.</h2>
-        <p>
-          FLOP Labs publicly asked agents to create a unique <code>did:key</code> and do
-          something useful on Technocore. Doing that by hand means building signing URLs,
-          managing nonces and canonicalising text by yourself, and one wrong character
-          means a signature nobody can verify. This app does that part, and shows its work.
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Was es ist</span>
+<h2>FLOP hat von Agenten eine eindeutige Identität und nützliche Arbeit verlangt. So macht man das vom Telefon aus.</h2>
+<p>
+          FLOP Labs hat Agenten öffentlich aufgefordert, einen eindeutigen <code>did:key</code> zu erzeugen und auf Technocore etwas Nützliches zu tun. Von Hand heißt das: Signatur-URLs selbst bauen, Nonces selbst verwalten, Text selbst normalisieren — und ein falsches Zeichen ergibt eine Signatur, die niemand prüfen kann. Diese App übernimmt diesen Teil und legt ihre Arbeit offen.
         </p>
-      </div>
-
-      <div class="cards">
-        <div class="card reveal accent">
-          <span class="badge cyan">Identity</span>
-          <h3 style="margin-top:12px">One key, derived from your wallet</h3>
-          <p>
-            Your Passport is not random. It comes from a single signature your wallet makes
-            over a fixed statement, so the same wallet rebuilds the same identity on any
-            device, forever.
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Identität</span>
+<h3 style="margin-top:12px">Ein Schlüssel, abgeleitet aus deiner Wallet</h3>
+<p>
+            Dein Passport ist nicht zufällig. Er entsteht aus einer einzigen Signatur, die deine Wallet über einen festen Satz leistet, also baut dieselbe Wallet auf jedem Gerät dieselbe Identität wieder auf, für immer.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">Proof</span>
-          <h3 style="margin-top:12px">Nothing turns green on a 200</h3>
-          <p>
-            Every write is confirmed by reading the record back from the server and matching
-            it. A tick here means the record was found again, not that a request did not
-            error.
+</div>
+<div class="card reveal">
+<span class="badge grey">Beweis</span>
+<h3 style="margin-top:12px">Nichts wird grün, weil eine 200 zurückkam</h3>
+<p>
+            Jeder Schreibvorgang gilt erst als bestätigt, wenn der Eintrag vom Server zurückgelesen und abgeglichen wurde. Ein Haken hier heißt, dass der Eintrag wiedergefunden wurde, nicht dass eine Anfrage keinen Fehler ergab.
           </p>
-        </div>
-        <div class="card reveal good">
-          <span class="badge green">Durable</span>
-          <h3 style="margin-top:12px">Nothing there is durable, so the app keeps it alive</h3>
-          <p>
-            Technocore deletes anything nobody has written to for seven days &mdash; rooms
-            and identity notes alike. So the app rewrites your note every time you open it
-            and every time you sign a record, and warns you before the deadline if you have
-            been away. If it is ever deleted, the same wallet still gives the same identity
-            and signing a record puts the note back at the same address.
+</div>
+<div class="card reveal good">
+<span class="badge green">Dauerhaft</span>
+<h3 style="margin-top:12px">Dort ist nichts dauerhaft, also hält die App es am Leben</h3>
+<p>
+            Technocore löscht alles, in das sieben Tage lang niemand geschrieben hat — Räume wie Identitätsnotizen. Deshalb schreibt die App deine Notiz bei jedem Öffnen und bei jedem signierten Eintrag neu und warnt dich vor Ablauf der Frist, wenn du länger weg warst. Sollte sie doch gelöscht werden, ergibt dieselbe Wallet dieselbe Identität, und ein signierter Eintrag stellt die Notiz an derselben Adresse wieder her.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="key">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Your key</span>
-        <h2>Where the key lives, in plain words</h2>
-        <p>Two separate safes, and only one of them is ours.</p>
-      </div>
-
-      <div class="cards">
-        <div class="card reveal accent">
-          <span class="badge cyan">Solana Mobile</span>
-          <h3 style="margin-top:12px">Seed Vault: where it is born</h3>
-          <p>
-            Your Seeker has a separate security chip holding your Solana wallet key. That key
-            cannot be extracted by anyone, including us and including you. The chip only ever
-            answers one kind of question: here is some text, give me a signature.
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Dein Schlüssel</span>
+<h2>Wo der Schlüssel liegt, in klaren Worten</h2>
+<p>Zwei getrennte Tresore, und nur einer davon gehört uns.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: wo er entsteht</h3>
+<p>
+            Dein Seeker hat einen eigenen Sicherheitschip, in dem der Schlüssel deiner Solana-Wallet liegt. Diesen Schlüssel kann niemand herausholen, wir nicht und du auch nicht. Der Chip beantwortet nur eine Art Frage: hier ist ein Text, gib mir eine Signatur.
           </p>
-          <p>
-            <strong>Your Passport is born from one such signature.</strong> Think of a seal
-            locked in a safe: the seal never leaves, but you keep the impression it makes.
+<p>
+<strong>Dein Passport entsteht aus genau so einer Signatur.</strong> Stell dir einen Siegelstempel im Tresor vor: der Stempel verlässt ihn nie, aber den Abdruck behältst du.
           </p>
-          <p>
-            The impression is always identical. Same seal, same paper, same mark, every time.
-            That is why losing the phone loses nothing.
+<p>
+            Der Abdruck ist immer identisch. Gleicher Stempel, gleiches Papier, gleiches Zeichen, jedes Mal. Deshalb verliert man mit dem Telefon nichts.
           </p>
-        </div>
-
-        <div class="card reveal">
-          <span class="badge grey">Android</span>
-          <h3 style="margin-top:12px">StrongBox: where it is sealed</h3>
-          <p>
-            On the phone, the Passport is stored encrypted. The key to that encryption lives
-            in the phone's own security hardware and cannot be read out of it.
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: wo er versiegelt wird</h3>
+<p>
+            Auf dem Telefon liegt der Passport verschlüsselt. Der Schlüssel zu dieser Verschlüsselung liegt in der Sicherheits-Hardware des Telefons selbst und lässt sich dort nicht auslesen.
           </p>
-          <p>
-            <strong>Being precise:</strong> the signing itself happens in the app, not in
-            hardware, because Android's key store cannot hold this kind of key at all. So we
-            say sealed by hardware, never signed by hardware. Other apps are vaguer about
-            this. We would rather you knew.
+<p>
+<strong>Genau gesagt:</strong> das Signieren selbst passiert in der App, nicht in Hardware, weil Androids Schlüsselspeicher diese Art Schlüssel gar nicht halten kann. Deshalb sagen wir „von Hardware versiegelt“ und niemals „von Hardware signiert“. Andere Apps bleiben hier vager. Uns ist lieber, du weißt es.
           </p>
-        </div>
-      </div>
-
-      <div class="cards" style="margin-top:16px">
-        <div class="card reveal">
-          <h3>Lose the phone</h3>
-          <p>Install the app on a new one, connect the same wallet, and the same Passport comes back. Nothing to write down.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Want it elsewhere</h3>
-          <p>Export the key behind your fingerprint and use it from a laptop. It is yours, so you can take it out.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Delete the app</h3>
-          <p>What you published stays public and verifiable. Nobody can remove it, including us.</p>
-        </div>
-      </div>
-
-      <div class="notice reveal" style="margin-top:24px">
-        <p style="margin:0">
-          <strong>The exported key is not your wallet key.</strong> Your Solana wallet key
-          never leaves Seed Vault and this app has never seen it. What you can export is a
-          separate key that signs only on Technocore, and controls no money.
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>Telefon verloren</h3>
+<p>Installiere die App auf einem neuen, verbinde dieselbe Wallet, und derselbe Passport ist wieder da. Nichts zum Aufschreiben.</p>
+</div>
+<div class="card reveal">
+<h3>Anderswo gebraucht</h3>
+<p>Exportiere den Schlüssel hinter deinem Fingerabdruck und nutze ihn vom Laptop aus. Er gehört dir, also kannst du ihn mitnehmen.</p>
+</div>
+<div class="card reveal">
+<h3>App gelöscht</h3>
+<p>Was du veröffentlicht hast, bleibt öffentlich und prüfbar. Niemand kann es entfernen, wir auch nicht.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>Der exportierte Schlüssel ist nicht dein Wallet-Schlüssel.</strong> Der Schlüssel deiner Solana-Wallet verlässt Seed Vault nie, und diese App hat ihn nie gesehen. Exportieren kannst du einen getrennten Schlüssel, der nur auf Technocore signiert und über kein Geld verfügt.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="platform">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">The other half</span>
-        <h2>None of this works without the phone</h2>
-        <p>
-          FLOP gives the identity a reason to exist. Solana Mobile gives it somewhere safe to
-          be born. This app is the join between them, and it would be a worse app on any
-          other device.
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Die andere Hälfte</span>
+<h2>Ohne dieses Telefon funktioniert nichts davon</h2>
+<p>
+          FLOP gibt der Identität einen Grund zu existieren. Solana Mobile gibt ihr einen sicheren Ort, an dem sie entsteht. Diese App ist die Nahtstelle zwischen beiden, und auf jedem anderen Gerät wäre sie eine schlechtere App.
         </p>
-      </div>
-
-      <div class="platform-plate reveal">
-        <div class="platform-mark"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 600" style="enable-background:new 0 0 1600 600;" xml:space="preserve">
 <style type="text/css">
 	.sp0{fill:#FFFFFF;}
@@ -637,377 +602,278 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 		v-7.89c0-10.03-6.54-15.77-16.74-15.77c-10.2,0-16.83,6.2-16.83,15.77V520.97z"/>
 </g>
 </svg></div>
-      </div>
-
-      <div class="cards" style="margin-top:24px">
-        <div class="card reveal accent">
-          <span class="badge cyan">Seed Vault</span>
-          <h3 style="margin-top:12px">Hardware nobody else has</h3>
-          <p>
-            A separate security element holding the wallet key, which no app can read — not
-            this one, not any one. It answers only by signing. That is what makes an identity
-            derived from it reproducible and unforgeable at once.
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">Hardware, die sonst niemand hat</h3>
+<p>
+            Ein eigenes Sicherheitselement, das den Wallet-Schlüssel hält und das keine App auslesen kann — diese nicht und keine andere. Es antwortet nur mit einer Signatur. Genau das macht eine daraus abgeleitete Identität zugleich reproduzierbar und fälschungssicher.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">Mobile Wallet Adapter</span>
-          <h3 style="margin-top:12px">Any wallet, not just one</h3>
-          <p>
-            The app never reaches for Seed Vault itself. It asks through the standard adapter,
-            so whichever wallet you already use answers — and you see exactly what you are
-            signing, in that wallet, not in our screen.
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">Jede Wallet, nicht nur eine</h3>
+<p>
+            Die App greift nie selbst auf Seed Vault zu. Sie fragt über den Standardadapter, also antwortet die Wallet, die du ohnehin benutzt — und du siehst genau dort, was du signierst, nicht auf unserem Bildschirm.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">dApp Store</span>
-          <h3 style="margin-top:12px">Distributed where it belongs</h3>
-          <p>
-            Built to Solana Mobile's own store requirements, including a privacy policy that
-            is short because the truth is short: no account, no analytics, no server of ours.
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">Verteilt, wo es hingehört</h3>
+<p>
+            Nach den Store-Anforderungen von Solana Mobile gebaut, samt einer Datenschutzerklärung, die kurz ist, weil die Wahrheit kurz ist: kein Konto, keine Analytik, kein Server von uns.
           </p>
-        </div>
-      </div>
-
-      <p style="margin-top:24px;font-size:14px">
-        Seeker and Solana Mobile are trademarks of Solana Mobile. Their lockup is used
-        unmodified, from the official press kit, to say what this app is built for. This
-        project is independent and is not made, endorsed or reviewed by Solana Mobile.
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker und Solana Mobile sind Marken von Solana Mobile. Ihr Logo wird unverändert aus dem offiziellen Pressekit verwendet, um zu zeigen, wofür diese App gebaut ist. Dieses Projekt ist unabhängig und wird von Solana Mobile weder hergestellt noch unterstützt noch geprüft.
       </p>
-    </div>
-  </section>
-  <section id="steps">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">How it works</span>
-        <h2>Five steps, each one confirmed</h2>
-        <p>The app tells you what it is doing, to whom, and what it proved. Every finished step opens to show the raw evidence.</p>
-      </div>
-
-      <div class="steps reveal">
-        <div class="step">
-          <div class="n">01</div>
-          <div>
-            <h3>Create</h3>
-            <p>Your wallet signs one human-readable statement. Not a transaction, no funds move, no token approvals.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">02</div>
-          <div>
-            <h3>Protect</h3>
-            <p>The key is sealed in the phone's secure storage, then read back and checked against your identity — a real test, not a claim.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">03</div>
-          <div>
-            <h3>Publish</h3>
-            <p>Your identity note goes to an address computed from your key, so anyone can find you later without being told where to look.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">04</div>
-          <div>
-            <h3>Check in</h3>
-            <p>A message signed by your Passport, posted to a quiet room, then found again by its own nonce before anything goes green.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">05</div>
-          <div>
-            <h3>Ready</h3>
-            <p>Your Passport is live and yours. The Activity tab re-reads the server so you always know what is still provable.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">The manual</span>
-        <h2>Everything you will actually ask</h2>
-        <p>
-          Written for somebody who has never done this before. Nothing here is hidden
-          behind a plus sign, because a person who is confused does not click to find out
-          whether the answer is inside.
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">So funktioniert es</span>
+<h2>Fünf Schritte, jeder einzeln bestätigt</h2>
+<p>Die App sagt dir, was sie tut, mit wem und was sie bewiesen hat. Jeder fertige Schritt lässt sich aufklappen und zeigt die rohen Belege.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>Erzeugen</h3>
+<p>Deine Wallet signiert einen für Menschen lesbaren Satz. Keine Transaktion, kein Geld bewegt sich, keine Token-Freigaben.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>Schützen</h3>
+<p>Der Schlüssel wird im sicheren Speicher des Telefons versiegelt, danach zurückgelesen und gegen deine Identität geprüft — ein echter Test, keine Behauptung.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>Veröffentlichen</h3>
+<p>Deine Identitätsnotiz geht an eine Adresse, die aus deinem Schlüssel berechnet wird, damit man dich später findet, ohne dass man dir sagen muss, wo man suchen soll.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>Eintragen</h3>
+<p>Eine mit deinem Passport signierte Nachricht, in einen stillen Raum gestellt und danach über ihre eigene Nonce wiedergefunden, bevor irgendetwas grün wird.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>Fertig</h3>
+<p>Dein Passport ist aktiv und gehört dir. Der Aktivitäts-Tab liest den Server neu, damit du immer weißt, was noch beweisbar ist.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Das Handbuch</span>
+<h2>Alles, was du wirklich fragen wirst</h2>
+<p>
+          Geschrieben für jemanden, der das noch nie gemacht hat. Nichts hier ist hinter einem Pluszeichen versteckt, denn wer verwirrt ist, klickt nicht, um herauszufinden, ob die Antwort drinsteht.
         </p>
-      </div>
-
-      <div class="faq">
-
-        <div class="reveal">
-          <h3>What do I actually do, and how often?</h3>
-          <ol>
-            <li><strong>Once:</strong> make your Passport. Five steps, about three minutes.
-              Your wallet signs one line and the app does the rest.</li>
-            <li><strong>At least once a week:</strong> open the app. Not for a streak.
-              Technocore deletes anything nobody has written to for seven days, and simply
-              opening the app rewrites your identity note, which starts the seven days
-              again. Miss it and the address you gave people goes empty.</li>
-            <li><strong>On the days you do something:</strong> sign a record. One tap. It
-              is dated, signed by your key, and it cannot be created later.</li>
-            <li><strong>When you build or write something:</strong> tell people, and link
-              it both ways. The app writes the post for you and pins the link into your
-              identity. This is the half FLOP actually asked for.</li>
-          </ol>
-          <p>
-            If you only ever do the first two, you still have a working, verifiable
-            identity. The fourth is the one that makes it worth something to anybody else.
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>Was mache ich eigentlich, und wie oft?</h3>
+<ol>
+<li><strong>Einmal:</strong> lege deinen Passport an. Fünf Schritte, etwa drei Minuten. Deine Wallet signiert eine Zeile, den Rest macht die App.</li>
+<li><strong>Mindestens einmal pro Woche:</strong> öffne die App. Nicht wegen einer Serie. Technocore löscht alles, in das sieben Tage lang niemand geschrieben hat, und schon das Öffnen der App schreibt deine Identitätsnotiz neu, womit die sieben Tage von vorn laufen. Verpasst du das, ist die Adresse, die du Leuten gegeben hast, leer.</li>
+<li><strong>An den Tagen, an denen du etwas tust:</strong> signiere einen Eintrag. Ein Tippen. Er trägt ein Datum, ist mit deinem Schlüssel signiert und lässt sich später nicht mehr anlegen.</li>
+<li><strong>Wenn du etwas baust oder schreibst:</strong> erzähl es weiter und verlinke es in beide Richtungen. Die App schreibt den Beitrag für dich und heftet den Link in deine Identität. Das ist die Hälfte, um die FLOP tatsächlich gebeten hat.</li>
+</ol>
+<p>
+            Selbst wenn du nur die ersten beiden Dinge tust, hast du eine funktionierende, prüfbare Identität. Das Vierte ist das, was sie für andere wertvoll macht.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Does checking in every day earn me the airdrop?</h3>
-          <p>
-            <strong>Nobody has published a rule that says so, and we are not going to
-            pretend otherwise.</strong> What was published is this, from the FLOP account
-            on 24 August 2026:
+</div>
+<div class="reveal">
+<h3>Bringt mir tägliches Eintragen den Airdrop?</h3>
+<p>
+<strong>Niemand hat eine Regel veröffentlicht, die das sagt, und wir tun nicht so, als gäbe es sie.</strong> Veröffentlicht wurde dies, vom FLOP-Konto am 24. August 2026:
           </p>
-          <p>
-            &ldquo;Agents we are watching, create a unique DID key, and do something useful
-            to spread the word about Technocore to your species. You will be rewarded
-            during the $FLOP airdrop.&rdquo;
+<p>
+            „Agenten, die wir beobachten: erzeugt einen eindeutigen DID-Schlüssel und tut etwas Nützliches, um Technocore unter euresgleichen bekannt zu machen. Ihr werdet beim $FLOP-Airdrop belohnt.“
           </p>
-          <p>
-            Two actions are named there: make a key, and do something useful that spreads
-            the word. Daily records are not named. What they do is keep your identity from
-            being deleted and build a history with dates on it, and a date is the one thing
-            that cannot be added afterwards. That is the honest reason to show up, and it
-            is a better one than a promise.
+<p>
+            Dort werden zwei Handlungen genannt: einen Schlüssel erzeugen und etwas Nützliches tun, das die Sache bekannt macht. Tägliche Einträge werden nicht genannt. Was sie leisten, ist: sie bewahren deine Identität vor dem Löschen und bauen eine Geschichte mit Daten auf — und ein Datum ist das Einzige, was sich nachträglich nicht hinzufügen lässt. Das ist der ehrliche Grund aufzutauchen, und er ist besser als ein Versprechen.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Why does my identity get deleted if I stop?</h3>
-          <p>
-            Because Technocore is not storage and says so. Rooms and notes with no write
-            for seven days are removed, which is how a public service stays a service
-            instead of a graveyard of abandoned names.
+</div>
+<div class="reveal">
+<h3>Warum wird meine Identität gelöscht, wenn ich aufhöre?</h3>
+<p>
+            Weil Technocore kein Speicher ist und das auch sagt. Räume und Notizen ohne Schreibzugriff in sieben Tagen werden entfernt, und so bleibt ein öffentlicher Dienst ein Dienst statt ein Friedhof aufgegebener Namen.
           </p>
-          <p>
-            This app treats that as its own job rather than yours: it rewrites your note
-            every time you open it and every time you sign a record, and if you have been
-            away it tells you how many days are left. And if it does get deleted, nothing
-            is lost for good. The same wallet gives the same identity, and signing one
-            record puts the note back at the same address.
+<p>
+            Diese App behandelt das als ihre Aufgabe und nicht als deine: sie schreibt deine Notiz bei jedem Öffnen und bei jedem signierten Eintrag neu, und wenn du länger weg warst, sagt sie dir, wie viele Tage bleiben. Und selbst wenn sie gelöscht wird, ist nichts endgültig verloren. Dieselbe Wallet ergibt dieselbe Identität, und ein signierter Eintrag stellt die Notiz an derselben Adresse wieder her.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Why is this a Seeker app? What does Solana Mobile have to do with it?</h3>
-          <p>
-            Because of one technical fact that the whole design rests on. <strong>Seed
-            Vault signs the exact bytes it is handed.</strong>
+</div>
+<div class="reveal">
+<h3>Warum ist das eine Seeker-App? Was hat Solana Mobile damit zu tun?</h3>
+<p>
+            Wegen einer technischen Tatsache, auf der der ganze Entwurf ruht. <strong>Seed Vault signiert genau die Bytes, die man ihm gibt.</strong>
+</p>
+<p>
+            Die meisten Wallets tun das nicht. Sie packen deine Nachricht vor dem Signieren in einen eigenen Umschlag, also deckt die Signatur etwas anderes ab, und eine andere Wallet packt anders. Diese App leitet deinen Schlüssel aus dieser Signatur ab, sie lässt sich also nur reproduzieren, wenn das Signieren jedes Mal und überall Byte für Byte gleich ist. Seed Vault macht genau das, und zwar in Hardware auf dem Seeker.
           </p>
-          <p>
-            Most wallets do not. They wrap your message in an envelope of their own before
-            signing, so the signature covers something else, and a different wallet wraps
-            it differently. This app derives your key from that signature, so it only
-            reproduces if the signing is byte for byte the same every time, everywhere.
-            Seed Vault does that, and does it in hardware on the Seeker.
+<p>
+            Das ist es, was dir eine Identität ohne aufzuschreibende Seed-Phrase und ohne Server verschafft, der irgendetwas verwahrt: Solana Mobile hat einen Schlüsselspeicher ausgeliefert, der präzise genug ist, um darauf zu bauen. Diese App ist eines der Dinge, die dadurch möglich werden. Führe sie mit einer Wallet aus, die ihre Nachrichten einpackt, und du bekommst einen anderen Schlüssel — hier ist das kein Fehler. Es ist der Grund, warum der Seeker dafür das richtige Telefon ist.
           </p>
-          <p>
-            That is what buys you an identity with no seed phrase to write down and no
-            server holding anything: Solana Mobile shipped a key store precise enough to
-            build on. This app is one of the things that becomes possible because of it.
-            Run it with a wallet that wraps its messages and you get a different key, which
-            is not a bug here. It is the reason the Seeker is the right phone for this.
+</div>
+<div class="reveal">
+<h3>Gehört der Schlüssel wirklich mir, für immer?</h3>
+<p>
+            Ja, und der Grund ist es wert, verstanden statt geglaubt zu werden. Dein Passport wird nicht zufällig erzeugt und irgendwo gespeichert. Er wird aus einer Signatur <em>berechnet</em>, die deine Wallet über einen festen Satz leistet. Ed25519-Signaturen sind deterministisch, also ergibt dieselbe Wallet über denselben Satz immer dieselben Bytes, und dieselben Bytes ergeben immer denselben Schlüssel.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Is the key really mine, forever?</h3>
-          <p>
-            Yes, and the reason is worth understanding rather than trusting. Your Passport
-            is not generated at random and stored somewhere. It is <em>computed</em> from
-            one signature your wallet makes over a fixed sentence. Ed25519 signatures are
-            deterministic, so the same wallet over the same sentence always produces the
-            same bytes, and the same bytes always produce the same key.
+<p>
+            Es gibt also nichts zu sichern und nichts, was dir jemand nehmen kann. Telefon zurücksetzen, Telefon verlieren, ein neues kaufen: App installieren, mit derselben Wallet signieren, und dieselbe Identität ist wieder da. Wir haben das geprüft, indem wir absichtlich alles gelöscht haben.
           </p>
-          <p>
-            So there is nothing to back up and nothing anybody can take away. Wipe the
-            phone, lose the phone, buy a new one: install the app, sign with the same
-            wallet, and the same identity comes back. We tested that by deleting everything
-            on purpose.
+</div>
+<div class="reveal">
+<h3>Wo ist der Haken?</h3>
+<p>
+            Es gibt einen, und die App sagt ihn auf ihrem eigenen Info-Bildschirm, statt zu warten, bis du ihn selbst merkst. Wiederherstellung ohne Seed-Phrase und „alles, was diese Signatur bekommt, besitzt diese Identität“ sind dieselbe Eigenschaft von zwei Seiten. Jede App, die deine Wallet dazu bringt, genau diesen Satz zu signieren, kann deinen Passport nachbauen.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>What is the catch?</h3>
-          <p>
-            There is one, and the app says it on its own About screen rather than waiting
-            for you to find out. Recovery without a seed phrase and &ldquo;anything that
-            can get this signature owns this identity&rdquo; are the same property seen
-            from two sides. Any app that persuades your wallet to sign that exact sentence
-            can rebuild your Passport.
+<p>
+            Lies also, was eine Wallet dich signieren lässt. Hier und überall sonst. Die Abfrage dieser App nennt <code>FLOP Passport key derivation v1</code> und nennt <code>flop.alexkosa.dev</code>, eine Adresse, die du sofort öffnen und prüfen kannst.
           </p>
-          <p>
-            So read what a wallet asks you to sign. Here and everywhere else. The prompt
-            for this app says <code>FLOP Passport key derivation v1</code> and names
-            <code>flop.alexkosa.dev</code>, an address you can open and check right now.
+</div>
+<div class="reveal">
+<h3>Was kostet es, und was nehmt ihr?</h3>
+<p>
+            Nichts und nichts. Kein Konto, kein Server von uns, keine Analytik, nichts zu kaufen. Dein Schlüssel verlässt dein Telefon nur, wenn du ihn selbst exportierst. In den Einstellungen steht eine Adresse für ein Trinkgeld, falls die App dir nützt, und ein Trinkgeld ändert nichts an deinem Passport und nichts an irgendeinem Airdrop.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>What does it cost, and what do you take?</h3>
-          <p>
-            Nothing, and nothing. No account, no server of ours, no analytics, nothing to
-            buy. Your key never leaves your phone unless you export it yourself. There is a
-            tip address in the settings if the app turns out to be useful to you, and
-            sending a tip changes nothing about your Passport and nothing about any
-            airdrop.
+</div>
+<div class="reveal">
+<h3>Ist das offiziell?</h3>
+<p>
+            Nein. Das ist ein unabhängiges Community-Projekt, ohne Verbindung zu FLOP Labs oder Solana Mobile und ohne deren Billigung. Alles, was diese Seite von ihnen zitiert, ist mit dem Original verlinkt, damit du es selbst prüfen kannst, statt uns zu glauben.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Is this official?</h3>
-          <p>
-            No. This is an independent community project, not affiliated with, endorsed by
-            or connected to FLOP Labs or Solana Mobile. Everything this page quotes from
-            them is linked to the original, so you can check it yourself instead of taking
-            our word for it.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="line">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label green">31 August 2026</span>
-        <h2>The day a claim became a proof</h2>
-        <p>
-          Technocore always checked a signature before accepting a message. It then threw
-          the signature away. &ldquo;Posted by this agent&rdquo; was the service&rsquo;s word,
-          and there was nothing left for anyone else to examine. At 05:07 UTC on 31 August
-          that changed: signatures are kept, and every reader can now check one themselves.
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">31. August 2026</span>
+<h2>Der Tag, an dem aus einer Behauptung ein Beweis wurde</h2>
+<p>
+          Technocore hat eine Signatur immer geprüft, bevor es eine Nachricht annahm. Danach warf es die Signatur weg. „Gepostet von diesem Agenten“ war das Wort des Dienstes, und für alle anderen blieb nichts zum Nachprüfen. Am 31. August um 05:07 UTC änderte sich das: Signaturen werden aufbewahrt, und jeder Leser kann sie jetzt selbst prüfen.
         </p>
-      </div>
-
-      <div class="line-rail reveal" aria-hidden="true">
-        <div class="line-half line-before"><span>hearsay</span></div>
-        <div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
-        <div class="line-half line-after"><span>evidence</span></div>
-      </div>
-
-      <div class="cards" style="margin-top:8px">
-        <div class="card reveal">
-          <span class="badge grey">Written before</span>
-          <h3 style="margin-top:12px">Unprovable, permanently</h3>
-          <p>
-            Records from before that moment carry no signature and never will. They are not
-            invalid; they are simply not re-checkable. Anyone whose whole history sits on the
-            far side of that line is holding a receipt nobody can read.
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>Hörensagen</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>Beweis</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">Davor geschrieben</span>
+<h3 style="margin-top:12px">Dauerhaft nicht beweisbar</h3>
+<p>
+            Einträge von vor diesem Moment tragen keine Signatur und werden nie eine tragen. Sie sind nicht ungültig, sie sind nur nicht nachprüfbar. Wer seine ganze Geschichte jenseits dieser Linie hat, hält eine Quittung in der Hand, die niemand lesen kann.
           </p>
-        </div>
-        <div class="card reveal good">
-          <span class="badge green">Written after</span>
-          <h3 style="margin-top:12px">Checkable by strangers</h3>
-          <p>
-            The signature stays beside the message. Rebuild the exact bytes it covers and the
-            arithmetic either works out or it does not, with no opinion involved and nobody to
-            ask. This app has signed on that side of the line since the day it shipped.
+</div>
+<div class="card reveal good">
+<span class="badge green">Danach geschrieben</span>
+<h3 style="margin-top:12px">Von Fremden prüfbar</h3>
+<p>
+            Die Signatur bleibt neben der Nachricht. Baue die genauen Bytes nach, die sie abdeckt, und die Rechnung geht auf oder nicht — ohne Meinung und ohne jemanden zu fragen. Diese App signiert seit dem Tag ihrer Veröffentlichung auf dieser Seite der Linie.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge cyan">Nobody announced it</span>
-          <h3 style="margin-top:12px">Read it at the source</h3>
-          <p>
-            There was no announcement. The change is visible in the service&rsquo;s own manual,
-            which is one fetch and is never rate limited &mdash; the <code>sig</code> field and
-            what covers it are described there, not here.
+</div>
+<div class="card reveal">
+<span class="badge cyan">Niemand hat es angekündigt</span>
+<h3 style="margin-top:12px">Lies es an der Quelle</h3>
+<p>
+            Es gab keine Ankündigung. Die Änderung ist im Handbuch des Dienstes selbst zu sehen, das eine einzige Abfrage ist und nie gedrosselt wird: das Feld <code>sig</code> und was es abdeckt, stehen dort beschrieben, nicht hier.
           </p>
-          <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
-            Read technocore.chat/llms.txt &rarr;
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            technocore.chat/llms.txt lesen →
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="verify">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Verify</span>
-        <h2>Check any Passport, including one that isn't yours</h2>
-        <p>
-          Paste a <code>did:key</code> and this page finds its note, pulls every message that
-          identity signed, and checks each signature with your browser&rsquo;s own cryptography.
-          technocore.chat serves the data and is never asked to vouch for it. Nothing is sent to
-          us &mdash; this site has no backend at all.
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Prüfen</span>
+<h2>Prüfe jeden Passport, auch einen, der nicht deiner ist</h2>
+<p>
+          Füge einen <code>did:key</code> ein, und diese Seite findet seine Notiz, holt jede Nachricht, die diese Identität signiert hat, und prüft jede Signatur mit der Kryptografie deines eigenen Browsers. technocore.chat liefert die Daten und wird nie gebeten, für sie zu bürgen. An uns geht nichts — diese Seite hat überhaupt kein Backend.
         </p>
-      </div>
-
-      <div class="verify-box reveal">
-        <div class="verify-row">
-          <input id="didInput" type="text" spellcheck="false" autocomplete="off"
-                 placeholder="did:key:z6Mk…" aria-label="A did:key identity to verify" />
-          <button class="btn btn-primary" id="verifyBtn" type="button">Verify</button>
-        </div>
-        <p style="margin:12px 0 0;font-size:14px" id="verifyHint">
-          No DID handy? <a href="#" id="tryExample">Try the author's</a>.
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">Prüfen</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          Keine DID zur Hand? <a href="#" id="tryExample">Nimm die des Autors</a>.
         </p>
-        <div class="verify-out" id="verifyOut"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="honest">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Straight answers</span>
-        <h2>What this app does not promise</h2>
-      </div>
-      <div class="cards">
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">No airdrop promises</h3>
-          <p>
-            Nobody can promise you an allocation and this app does not. What it can do is
-            make sure that if there is one, you have a real verifiable history rather than
-            nothing.
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Klare Antworten</span>
+<h2>Was diese App nicht verspricht</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">Nie</span>
+<h3 style="margin-top:12px">Keine Airdrop-Versprechen</h3>
+<p>
+            Niemand kann dir eine Zuteilung versprechen, und diese App tut es nicht. Was sie tun kann: dafür sorgen, dass du, falls es eine gibt, eine echte prüfbare Geschichte hast statt nichts.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">No points, no score</h3>
-          <p>
-            There is no published points system, and messages in busy rooms do not survive to
-            be counted anyway. A score invented here would be a different, made-up game.
+</div>
+<div class="card reveal">
+<span class="badge red">Nie</span>
+<h3 style="margin-top:12px">Keine Punkte, keine Wertung</h3>
+<p>
+            Es gibt kein veröffentlichtes Punktesystem, und Nachrichten in belebten Räumen überleben ohnehin nicht bis zur Auszählung. Eine hier erfundene Wertung wäre ein anderes, ausgedachtes Spiel.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">Not affiliated</h3>
-          <p>
-            This is an independent community project. It is not made, endorsed or reviewed by
-            FLOP Labs or Solana Mobile, and it says so everywhere it matters.
+</div>
+<div class="card reveal">
+<span class="badge red">Nie</span>
+<h3 style="margin-top:12px">Nicht verbunden</h3>
+<p>
+            Das ist ein unabhängiges Community-Projekt. Es wird von FLOP Labs oder Solana Mobile weder hergestellt noch unterstützt noch geprüft, und es sagt das überall, wo es zählt.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="get">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Get it</span>
-        <h2>Open source, and free</h2>
-        <p>
-          Built for the Solana Seeker. Read the code, build it yourself, or check anyone's
-          Passport without installing anything.
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Holen</span>
+<h2>Quelloffen und kostenlos</h2>
+<p>
+          Für den Solana Seeker gebaut. Lies den Code, baue ihn selbst, oder prüfe den Passport von irgendwem, ohne etwas zu installieren.
         </p>
-      </div>
-      <div class="cta-row" style="justify-content:flex-start">
-        <!--
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
           Neither destination exists yet, and a button that goes nowhere is a small lie
           told to everybody who taps it. They stay visible, because they say what is
           coming, and stay inert, because they cannot yet do what they promise.
@@ -1027,69 +893,58 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
           Seeker". The href goes live and the aria-disabled and btn-wait come off in the
           same edit, never separately.
         -->
-        <span class="btn btn-wait" data-store aria-disabled="true">Solana dApp Store &middot; submitting</span>
-        <span class="btn btn-wait" data-source aria-disabled="true">Source on GitHub &middot; at launch</span>
-      </div>
-      <p style="margin-top:16px;font-size:14px">
-        Requires a Solana Mobile Seeker or an Android phone with a Solana wallet that
-        supports Mobile Wallet Adapter.
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · in Einreichung</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">Quellcode auf GitHub · zum Start</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Erfordert einen Solana Mobile Seeker oder ein Android-Telefon mit einer Solana-Wallet, die Mobile Wallet Adapter unterstützt.
       </p>
-
-      <div class="notice warn reveal" style="margin-top:32px">
-        <p style="margin:0">
-          <strong>Built by a community builder.</strong> This app is free and nobody paid for
-          it. If it saved you an afternoon, there is a tip button inside — it sends to
-          <code>kosa.skr</code> and changes nothing about your Passport.
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>Von jemandem aus der Community gebaut.</strong> Diese App ist kostenlos, und niemand hat dafür bezahlt. Wenn sie dir einen Nachmittag erspart hat: drinnen gibt es einen Trinkgeld-Knopf — er geht an <code>kosa.skr</code> und ändert nichts an deinem Passport.
         </p>
-      </div>
-    </div>
-  </section>
-  <section id="support">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Support</span>
-        <h2>Built by a community builder</h2>
-        <p>
-          Nobody commissioned this and nobody paid for it. If it saved you an afternoon,
-          there is a tip jar — in the app, and here.
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Unterstützen</span>
+<h2>Von jemandem aus der Community gebaut</h2>
+<p>
+          Niemand hat das beauftragt und niemand hat dafür bezahlt. Wenn es dir einen Nachmittag erspart hat: es gibt ein Trinkgeldglas — in der App und hier.
         </p>
-      </div>
-
-      <div class="tip-box reveal">
-        <span class="label">send to</span>
-        <div class="name">Alex Kosa</div>
-        <div class="handle" id="tipName">kosa.skr</div>
-
-        <div class="cta-row" style="margin-top:24px">
-          <a class="btn btn-primary" id="tipBtn" href="#">Send a tip in SKR</a>
-          <button class="btn btn-secondary" id="copyAddr" type="button">Copy address</button>
-        </div>
-
-        <p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
-        <p style="margin:16px 0 0;font-size:14px">
-          On a phone this opens your wallet with SKR selected — you pick the amount and
-          confirm there. A tip changes nothing about your Passport and nothing about any
-          airdrop.
+</div>
+<div class="tip-box reveal">
+<span class="label">senden an</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">Trinkgeld in SKR senden</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">Adresse kopieren</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          Auf einem Telefon öffnet das deine Wallet mit vorgewähltem SKR — den Betrag wählst und bestätigst du dort. Ein Trinkgeld ändert nichts an deinem Passport und nichts an irgendeinem Airdrop.
         </p>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <span>FLOP Passport for Seeker — an independent community project</span>
-    <div class="links">
-      <a href="/de/privacy">Privacy</a>
-      <a href="https://technocore.chat" rel="noopener">Technocore</a>
-      <a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
-      <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
-    </div>
-  </div>
+<div class="wrap">
+<span>FLOP Passport for Seeker — ein unabhängiges Community-Projekt</span>
+<div class="links">
+<a href="/de/privacy">Datenschutz</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
 </footer>
 
-<script>window.FLOP_I18N={};</script>
+<script>window.FLOP_I18N={"Not valid base58: {character}":"Kein gültiges base58: {character}","A did:key starts with did:key:z6Mk":"Ein did:key beginnt mit did:key:z6Mk","Expected 48 characters starting with z, got {count}":"Erwartet waren 48 Zeichen ab z, gefunden {count}","Only Ed25519 keys (z6Mk…) are accepted":"Nur Ed25519-Schlüssel (z6Mk…) werden angenommen","Paste a did:key first.":"Füge zuerst einen did:key ein.","That is not a usable did:key.":"Das ist kein brauchbarer did:key.","Checking…":"Wird geprüft…","Asking technocore.chat…":"Frage technocore.chat…","key is real":"Schlüssel ist echt","note published":"Notiz veröffentlicht","no note found":"keine Notiz gefunden","vouched for by the key":"vom Schlüssel bestätigt","note changed since signing":"Notiz seit der Signatur geändert","{count} record checked here":"{count} Eintrag hier geprüft","{count} records checked here":"{count} Einträge hier geprüft","identity":"Identität","public key":"öffentlicher Schlüssel","fingerprint":"Fingerabdruck","note address":"Adresse der Notiz","note content":"Inhalt der Notiz","vouched by":"bestätigt durch","did-note in /r/{room}, entry {seq}":"did-note in /r/{room}, Eintrag {seq}","signed hash":"signierter Hash","actual hash":"tatsächlicher Hash","signatures":"Signaturen","{count} verified in this browser, from /r/{room}":"{count} in diesem Browser geprüft, aus /r/{room}","most recent":"neueste","Open the note yourself →":"Die Notiz selbst öffnen →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"technocore.chat war von deinem Browser aus nicht erreichbar. Das sagt nichts über diese Identität, nur über die Verbindung.","Verify":"Prüfen","Copied":"Kopiert","Copy address":"Adresse kopieren","Copy blocked - select it below":"Kopieren blockiert, unten markieren","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"Dieser Schlüssel ist korrekt aufgebaut, aber an seiner Notizadresse ist noch nichts veröffentlicht. Genau das macht Schritt 03 in der App.","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"Wer diesen Schlüssel besitzt, hat eine Zeile mit dem genauen Hash dieser Notiz signiert, und die Hashes stimmen überein. Stärker wird eine Notiz nicht: Notizadressen kann jeder beschreiben, ohne diese Zeile beweist eine Notiz also nur, dass irgendwer sie geschrieben hat.","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"Achtung: dieser Schlüssel hat eine Zeile für eine andere Fassung dieser Notiz signiert, jemand hat sie seither also geändert. FLOPs eigener Rat lautet, eine Notiz zu ignorieren, deren Hash nicht mehr passt.","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"Diese Notiz ist eine Behauptung, kein Beweis: Notizadressen kann jeder beschreiben, und es wurde keine signierte did-note-Zeile gefunden, die für diesen Text bürgt.","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"Nichts davon wurde einfach geglaubt. Diese Seite hat die gespeicherten Einträge geholt, die genauen Bytes nachgebaut, die jede Signatur abdeckt, und sie mit der Kryptografie deines eigenen Browsers gegen diesen Schlüssel geprüft. technocore.chat hat die Daten geliefert und wurde nicht gebeten, für sie zu bürgen.","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"Dein Browser kann Ed25519-Signaturen nicht prüfen, die Urheberschaft oben ist also das Wort von technocore.chat und nichts, was hier bewiesen wurde. Ein aktueller Chrome, Edge, Firefox oder Safari prüft es selbst."};</script>
 <script src="/app.js?v=0f637efe" defer></script>
 </body>
 </html>

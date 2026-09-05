@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FLOP Passport for Seeker</title>
-<meta name="description" content="Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server." />
+<title>Seeker를 위한 FLOP Passport</title>
+<meta name="description" content="Solana 지갑에서 Technocore did:key 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하고, 증거를 보관하세요. 오픈 소스, 계정 없음, 서버 없음." />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#0A1128" />
 <link rel="canonical" href="https://flop.alexkosa.dev/ko/" />
@@ -21,8 +21,8 @@
 <link rel="alternate" hreflang="ja" href="https://flop.alexkosa.dev/ja/" />
 <link rel="alternate" hreflang="x-default" href="https://flop.alexkosa.dev/" />
 
-<meta property="og:title" content="FLOP Passport for Seeker" />
-<meta property="og:description" content="Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server." />
+<meta property="og:title" content="Seeker를 위한 FLOP Passport" />
+<meta property="og:description" content="Solana 지갑에서 Technocore did:key 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하고, 증거를 보관하세요. 오픈 소스, 계정 없음, 서버 없음." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://flop.alexkosa.dev/ko/" />
 <meta property="og:site_name" content="FLOP Passport for Seeker" />
@@ -40,15 +40,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=f495b02b" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/ko/","description":"Create a Technocore did:key identity from your Solana wallet, publish it where anyone can verify it, and keep the receipts. Open source, no account, no server.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What do I actually do, and how often?","acceptedAnswer":{"@type":"Answer","text":"Once: make your Passport. Five steps, about three minutes. Your wallet signs one line and the app does the rest. At least once a week: open the app. Not for a streak. Technocore deletes anything nobody has written to for seven days, and simply opening the app rewrites your identity note, which starts the seven days again. Miss it and the address you gave people goes empty. On the days you do something: sign a record. One tap. It is dated, signed by your key, and it cannot be created later. When you build or write something: tell people, and link it both ways. The app writes the post for you and pins the link into your identity. This is the half FLOP actually asked for. If you only ever do the first two, you still have a working, verifiable identity. The fourth is the one that makes it worth something to anybody else."}},{"@type":"Question","name":"Does checking in every day earn me the airdrop?","acceptedAnswer":{"@type":"Answer","text":"Nobody has published a rule that says so, and we are not going to pretend otherwise. What was published is this, from the FLOP account on 24 August 2026: &ldquo;Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.&rdquo; Two actions are named there: make a key, and do something useful that spreads the word. Daily records are not named. What they do is keep your identity from being deleted and build a history with dates on it, and a date is the one thing that cannot be added afterwards. That is the honest reason to show up, and it is a better one than a promise."}},{"@type":"Question","name":"Why does my identity get deleted if I stop?","acceptedAnswer":{"@type":"Answer","text":"Because Technocore is not storage and says so. Rooms and notes with no write for seven days are removed, which is how a public service stays a service instead of a graveyard of abandoned names. This app treats that as its own job rather than yours: it rewrites your note every time you open it and every time you sign a record, and if you have been away it tells you how many days are left. And if it does get deleted, nothing is lost for good. The same wallet gives the same identity, and signing one record puts the note back at the same address."}},{"@type":"Question","name":"Why is this a Seeker app? What does Solana Mobile have to do with it?","acceptedAnswer":{"@type":"Answer","text":"Because of one technical fact that the whole design rests on. Seed Vault signs the exact bytes it is handed. Most wallets do not. They wrap your message in an envelope of their own before signing, so the signature covers something else, and a different wallet wraps it differently. This app derives your key from that signature, so it only reproduces if the signing is byte for byte the same every time, everywhere. Seed Vault does that, and does it in hardware on the Seeker. That is what buys you an identity with no seed phrase to write down and no server holding anything: Solana Mobile shipped a key store precise enough to build on. This app is one of the things that becomes possible because of it. Run it with a wallet that wraps its messages and you get a different key, which is not a bug here. It is the reason the Seeker is the right phone for this."}},{"@type":"Question","name":"Is the key really mine, forever?","acceptedAnswer":{"@type":"Answer","text":"Yes, and the reason is worth understanding rather than trusting. Your Passport is not generated at random and stored somewhere. It is computed from one signature your wallet makes over a fixed sentence. Ed25519 signatures are deterministic, so the same wallet over the same sentence always produces the same bytes, and the same bytes always produce the same key. So there is nothing to back up and nothing anybody can take away. Wipe the phone, lose the phone, buy a new one: install the app, sign with the same wallet, and the same identity comes back. We tested that by deleting everything on purpose."}},{"@type":"Question","name":"What is the catch?","acceptedAnswer":{"@type":"Answer","text":"There is one, and the app says it on its own About screen rather than waiting for you to find out. Recovery without a seed phrase and &ldquo;anything that can get this signature owns this identity&rdquo; are the same property seen from two sides. Any app that persuades your wallet to sign that exact sentence can rebuild your Passport. So read what a wallet asks you to sign. Here and everywhere else. The prompt for this app says FLOP Passport key derivation v1 and names flop.alexkosa.dev , an address you can open and check right now."}},{"@type":"Question","name":"What does it cost, and what do you take?","acceptedAnswer":{"@type":"Answer","text":"Nothing, and nothing. No account, no server of ours, no analytics, nothing to buy. Your key never leaves your phone unless you export it yourself. There is a tip address in the settings if the app turns out to be useful to you, and sending a tip changes nothing about your Passport and nothing about any airdrop."}},{"@type":"Question","name":"Is this official?","acceptedAnswer":{"@type":"Answer","text":"No. This is an independent community project, not affiliated with, endorsed by or connected to FLOP Labs or Solana Mobile. Everything this page quotes from them is linked to the original, so you can check it yourself instead of taking our word for it."}}]}</script>
+<link rel="stylesheet" href="/styles.css?v=61f23a05" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/ko/","description":"Solana 지갑에서 Technocore did:key 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하고, 증거를 보관하세요. 오픈 소스, 계정 없음, 서버 없음.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <a class="mark" href="/ko/">
-      <svg style="height:20px;width:auto" id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
+<div class="wrap">
+<a class="mark" href="/ko/">
+<svg style="height:20px;width:auto" id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
   
   <defs>
     <style>
@@ -109,30 +108,29 @@
   </g>
   <path class="fl0" d="M1199,560.96h-41.25c-5.78,0-11.3,2.3-15.37,6.38l-24.23,24.23h80.85v-30.61ZM1111.48,496.3h29.45v-36.31c0-12.02,9.74-21.75,21.75-21.75h36.29v-29.43h-87.52v87.52l.02-.02ZM1134.57,558.18c4.08-4.08,6.38-9.62,6.38-15.37v-38.76h-29.45v77.23l23.1-23.1h-.02ZM1294.27,496.3v-87.52h-87.52v29.43h40.3c12.02,0,21.75,9.74,21.75,21.75v36.31h25.45l.02.02ZM1104.46,589.03v-84.98h-89.47s-.06,87.5-.13,87.5h87.08l2.52-2.52h0ZM1302.01,401.03h88.07c-1.53-2.35-86.67-81.77-88.07-82.58v82.58ZM1104.46,318.45c-1.39.82-86.53,80.23-88.07,82.58h88.07s0-82.58,0-82.58ZM1302.01,599.32h87.31c-1.15,2.35-85.92,81.77-87.31,82.58v-82.58ZM1302.01,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1014.93,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1302.01,504.05v87.52h89.56v-87.52h-89.56ZM1199,599.32h-87.52v84.4c2.54,0,87.5,0,87.5,0v-84.4h.02ZM1294.27,599.32h-87.52v84.4h87.52v-84.4ZM1206.74,401.03h87.52v-85.58c-1.71,0-87.5,0-87.5,0v85.56l-.02.02ZM1111.48,401.03h87.52v-85.58h-87.52v85.58ZM1294.27,504.05h-25.45v35.16c0,12.02-9.74,21.75-21.75,21.75h-40.3v30.58h87.52v-87.52l-.02.02ZM1019.26,599.34h73.68l-21.8,21.8c-4.15,4.14-9.51,6.36-14.95,6.64-4.12.21-8.14-1.33-11.14-4.16l-25.8-24.28ZM1079.63,656.16c-2.81-2.65-4.56-6.26-4.79-10.12-.37-6.27,1.83-12.68,6.64-17.49l22.25-22.25v72.53l-24.09-22.68Z"/>
 </svg>
-      <span class="label">Passport</span>
-    </a>
-    <nav>
-      <a href="#official">Official</a>
-      <a href="#what">What it is</a>
-      <a href="#key">Your key</a>
-      <a href="#platform">The phone</a>
-      <a href="#steps">How it works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#line">The line</a>
-      <a href="#verify">Verify</a>
-      <a href="#get">Get it</a>
-      <a href="#support">Support</a>
-    </nav>
-    <div class="langs"><span class="langs-label">Language</span><a href="/ko/" hreflang="en" lang="en">English</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Indonesia</a><a href="/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a></div>
-  </div>
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">공식 발언</a>
+<a href="#what">이게 뭔가요</a>
+<a href="#key">당신의 키</a>
+<a href="#platform">이 휴대폰</a>
+<a href="#steps">작동 방식</a>
+<a href="#faq">자주 묻는 질문</a>
+<a href="#line">그 경계선</a>
+<a href="#verify">검증</a>
+<a href="#get">받기</a>
+<a href="#support">후원</a>
+</nav>
+<div class="langs"><span class="langs-label">언어</span><a href="/ko/" hreflang="en" lang="en">English</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Indonesia</a><a href="/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a></div>
+</div>
 </header>
-
 <main>
-  <section class="hero">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="hero-stage">
-        <div class="hero-lockup" id="heroLockup"><svg id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><svg id="flop_x5F_Reverse_x5F_Lockup_x5F_Ice_x5F_White_x5F_Chip_x5F_accent_x5F_USE_x5F_WITH_x5F_BASE_x5F_BACKGROUND_x5F_ONLY" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 1000">
   
   <defs>
     <style>
@@ -193,10 +191,10 @@
   </g>
   <path class="fl0" d="M1199,560.96h-41.25c-5.78,0-11.3,2.3-15.37,6.38l-24.23,24.23h80.85v-30.61ZM1111.48,496.3h29.45v-36.31c0-12.02,9.74-21.75,21.75-21.75h36.29v-29.43h-87.52v87.52l.02-.02ZM1134.57,558.18c4.08-4.08,6.38-9.62,6.38-15.37v-38.76h-29.45v77.23l23.1-23.1h-.02ZM1294.27,496.3v-87.52h-87.52v29.43h40.3c12.02,0,21.75,9.74,21.75,21.75v36.31h25.45l.02.02ZM1104.46,589.03v-84.98h-89.47s-.06,87.5-.13,87.5h87.08l2.52-2.52h0ZM1302.01,401.03h88.07c-1.53-2.35-86.67-81.77-88.07-82.58v82.58ZM1104.46,318.45c-1.39.82-86.53,80.23-88.07,82.58h88.07s0-82.58,0-82.58ZM1302.01,599.32h87.31c-1.15,2.35-85.92,81.77-87.31,82.58v-82.58ZM1302.01,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1014.93,496.3h89.54v-85.7c0-.6-.05-1.2-.1-1.8h-89.44v87.52-.02ZM1302.01,504.05v87.52h89.56v-87.52h-89.56ZM1199,599.32h-87.52v84.4c2.54,0,87.5,0,87.5,0v-84.4h.02ZM1294.27,599.32h-87.52v84.4h87.52v-84.4ZM1206.74,401.03h87.52v-85.58c-1.71,0-87.5,0-87.5,0v85.56l-.02.02ZM1111.48,401.03h87.52v-85.58h-87.52v85.58ZM1294.27,504.05h-25.45v35.16c0,12.02-9.74,21.75-21.75,21.75h-40.3v30.58h87.52v-87.52l-.02.02ZM1019.26,599.34h73.68l-21.8,21.8c-4.15,4.14-9.51,6.36-14.95,6.64-4.12.21-8.14-1.33-11.14-4.16l-25.8-24.28ZM1079.63,656.16c-2.81-2.65-4.56-6.26-4.79-10.12-.37-6.27,1.83-12.68,6.64-17.49l22.25-22.25v72.53l-24.09-22.68Z"/>
 </svg></div>
-        <div class="hero-join" id="heroJoin" aria-hidden="true"></div>
-        <div class="hero-for" id="heroFor">
-          <span class="label">built for</span>
-          <div class="hero-seeker"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">이 기기를 위해</span>
+<div class="hero-seeker"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 600" style="enable-background:new 0 0 1600 600;" xml:space="preserve">
 <style type="text/css">
 	.sk0{fill:#FFFFFF;}
@@ -278,37 +276,29 @@
 		v-7.89c0-10.03-6.54-15.77-16.74-15.77c-10.2,0-16.83,6.2-16.83,15.77V520.97z"/>
 </g>
 </svg></div>
-        </div>
-      </div>
-
-      <h1>Your identity on Technocore, <br />born inside your Seeker.</h1>
-      <p class="sub">
-        FLOP Passport creates a permanent <code>did:key</code> identity from your Solana
-        wallet, publishes it where anyone can verify it, and keeps the receipts. No account,
-        no server of ours, no seed phrase to write down.
+</div>
+</div>
+<h1>Technocore 위의 당신의 신원,<br/>당신의 Seeker 안에서 태어납니다.</h1>
+<p class="sub">
+        FLOP Passport는 당신의 Solana 지갑에서 영구적인 <code>did:key</code> 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하며, 그 증거를 보관합니다. 계정도, 우리 서버도, 받아 적을 시드 문구도 없습니다.
       </p>
-
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#get">Get the app</a>
-        <a class="btn btn-secondary" href="#verify">Verify a Passport</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="official">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">In their own words</span>
-        <h2>What FLOP has actually said</h2>
-        <p>
-          Quoted in full and rendered in this page's own colours, with a link to each
-          original so you can check every one. Nothing here is our interpretation, and
-          nothing about eligibility is implied beyond what these say.
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">앱 받기</a>
+<a class="btn btn-secondary" href="#verify">Passport 검증하기</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">그들이 직접 한 말</span>
+<h2>FLOP이 실제로 한 말</h2>
+<p>
+          전문을 그대로 인용했고, 이 페이지의 색으로만 옮겼습니다. 각 원문 링크가 있으니 하나하나 확인할 수 있습니다. 여기에 우리의 해석은 없으며, 이 발언들이 말한 것 이상으로 자격에 관해 암시하는 바도 없습니다.
         </p>
-      </div>
-
-      <div class="tweet-grid">
+</div>
+<div class="tweet-grid">
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
@@ -320,13 +310,14 @@
             <span class="tweet-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5F7FA"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.6z"/></svg></span>
           </div>
           <p class="tweet-body" lang="en">Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the <span class="tok">$FLOP</span> airdrop.</p>
-          <div class="tweet-date">24 August 2026</div>
+          <div class="tweet-trans" lang="ko"><span class="tweet-trans-label">번역</span><p>우리가 지켜보는 에이전트들이여, 고유한 DID 키를 만들고, Technocore를 너희 종에게 퍼뜨리는 데 쓸모 있는 일을 하라. <span class="tok">$FLOP</span> 에어드롭에서 보상받을 것이다.</p></div>
+          <div class="tweet-date">2026년 8월 24일</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>1,323</b> likes</span>
-            <span class="tweet-stat"><b>205</b> reposts</span>
-            <span class="tweet-stat"><b>771K</b> views</span>
+            <span class="tweet-stat"><b>1,323</b> 좋아요</span>
+            <span class="tweet-stat"><b>205</b> 리포스트</span>
+            <span class="tweet-stat"><b>771K</b> 조회</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2091830155270672521" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2091830155270672521" rel="noopener">X에서 원문 열기 &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -343,13 +334,18 @@
 The airdrop goes to the network participants: miners, validators, agents, and early community.
 
 Stay tuned for details on an AMA hosted by <span class="tok">@CryptoHayes</span> live on X spaces / YouTube next week.</p>
-          <div class="tweet-date">26 August 2026</div>
+          <div class="tweet-trans" lang="ko"><span class="tweet-trans-label">번역</span><p><span class="tok">$FLOP</span> 토크노믹스, 첫 공개: VC 배정 없음. 프리세일 없음.
+
+에어드롭은 네트워크 참여자에게 갑니다: 채굴자, 검증자, 에이전트, 그리고 초기 커뮤니티.
+
+다음 주 <span class="tok">@CryptoHayes</span>가 진행하는 AMA가 X 스페이스와 YouTube에서 생중계됩니다. 자세한 내용은 곧.</p></div>
+          <div class="tweet-date">2026년 8월 26일</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>1,485</b> likes</span>
-            <span class="tweet-stat"><b>257</b> reposts</span>
-            <span class="tweet-stat"><b>320K</b> views</span>
+            <span class="tweet-stat"><b>1,485</b> 좋아요</span>
+            <span class="tweet-stat"><b>257</b> 리포스트</span>
+            <span class="tweet-stat"><b>320K</b> 조회</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2092626441339043871" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2092626441339043871" rel="noopener">X에서 원문 열기 &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -368,13 +364,20 @@ Arthur <span class="tok">@CryptoHayes</span> takes 11 minutes on <span class="to
 Agents don&#x27;t eat dollars. They eat compute. Nobody built the market that prices it, so we did.
 
 Testnet airdrop, Q4 2026. Earned, not sold.</p>
-          <div class="tweet-date">26 August 2026</div>
+          <div class="tweet-trans" lang="ko"><span class="tweet-trans-label">번역</span><p>“도대체 Flop이 뭐냐?”
+
+Arthur <span class="tok">@CryptoHayes</span>가 <span class="tok">@APompliano</span>의 방송에서 11분에 걸쳐 답합니다.
+
+에이전트는 달러를 먹지 않는다. 연산을 먹는다. 그 값을 매기는 시장을 아무도 만들지 않아서, 우리가 만들었다.
+
+테스트넷 에어드롭, 2026년 4분기. 사는 것이 아니라 버는 것.</p></div>
+          <div class="tweet-date">2026년 8월 26일</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>309</b> likes</span>
-            <span class="tweet-stat"><b>37</b> reposts</span>
-            <span class="tweet-stat"><b>51.2K</b> views</span>
+            <span class="tweet-stat"><b>309</b> 좋아요</span>
+            <span class="tweet-stat"><b>37</b> 리포스트</span>
+            <span class="tweet-stat"><b>51.2K</b> 조회</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2092449048028647770" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2092449048028647770" rel="noopener">X에서 원문 열기 &rarr;</a>
         </article>
         <article class="tweet reveal">
           <div class="tweet-head">
@@ -391,171 +394,133 @@ Testnet airdrop, Q4 2026. Earned, not sold.</p>
 The key already signs the post. It doesn&#x27;t have to sign the profile note, so that directory can be overwritten by anyone.
 
 Until the note itself is a signed write, do this: treat the profile note as a cache. Publish it, then post a signed line did-note &lt;fp&gt; &lt;sha256 of the body&gt;.</p>
-          <div class="tweet-date">21 August 2026</div>
+          <div class="tweet-trans" lang="ko"><span class="tweet-trans-label">번역</span><p>우리가 내놓는 유일한 신원은 키다. 같은 did:key가 두 게시글에 서명했다면 같은 화자다. 이것은 신뢰가 아니라 연속성이다.
+
+키는 이미 게시글에 서명한다. 프로필 노트에까지 서명할 의무는 없으므로, 그 디렉터리는 누구나 덮어쓸 수 있다.
+
+노트 자체가 서명된 쓰기가 되기 전까지는 이렇게 하라. 프로필 노트를 캐시로 여겨라. 먼저 공개한 다음, 서명된 한 줄 did-note &lt;fp&gt; &lt;본문의 sha256&gt;을 올려라.</p></div>
+          <div class="tweet-date">2026년 8월 21일</div>
           <div class="tweet-stats">
-            <span class="tweet-stat"><b>6</b> likes</span>
-            <span class="tweet-stat"><b>0</b> reposts</span>
-            <span class="tweet-stat"><b>673</b> views</span>
+            <span class="tweet-stat"><b>6</b> 좋아요</span>
+            <span class="tweet-stat"><b>0</b> 리포스트</span>
+            <span class="tweet-stat"><b>673</b> 조회</span>
           </div>
-          <a class="tweet-link" href="https://x.com/flop_labs/status/2090661329837371428" rel="noopener">Open the original on X &rarr;</a>
+          <a class="tweet-link" href="https://x.com/flop_labs/status/2090661329837371428" rel="noopener">X에서 원문 열기 &rarr;</a>
         </article>
-      </div>
-
-      <div class="notice reveal" style="margin-top:24px">
-        <p style="margin:0 0 12px">
-          <strong>What that means for this app, precisely.</strong> FLOP asked for a unique
-          <code>did:key</code> and useful work. The app creates the key and produces the
-          signed records. It does not, and cannot, tell you that this earns you anything.
+ </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>이것이 이 앱에 정확히 무엇을 뜻하는가.</strong> FLOP이 요구한 것은 고유한 <code>did:key</code>와 쓸모 있는 작업입니다. 이 앱은 키를 만들고 서명된 기록을 남깁니다. 그것으로 무언가를 받게 된다고는 말하지 않으며, 말할 수도 없습니다.
         </p>
-        <p style="margin:0 0 12px">
-          The last post is the one this app follows to the letter: a profile note can be
-          overwritten by anyone, so the app signs a line carrying the note's hash, and the
-          <a href="#verify">verifier</a> checks that the note still matches it.
+<p style="margin:0 0 12px">
+          마지막 글은 이 앱이 글자 그대로 따르는 것입니다. 프로필 노트는 누구나 덮어쓸 수 있으므로, 앱은 그 노트의 해시를 담은 한 줄에 서명하고, <a href="#verify">검증기</a>가 노트가 여전히 그것과 맞는지 확인합니다.
         </p>
-        <p style="margin:0">
-          <strong>Where "early community" would be paid from.</strong> The teaser splits the
-          3.5bn genesis pool four ways, and the fourth line is
-          <em>Reserve / incentives, 794,495,000 $FLOP, 4.6%, ecosystem and growth
-          incentives</em> &mdash; separate from the miner, validator and agent tracks. That
-          is a figure in their document, not a promise to you, and no size, threshold or
-          measurement for it has been published anywhere. Read the
-          <a href="https://flop.finance/teaser/" rel="noopener">teaser</a> yourself.
+<p style="margin:0">
+<strong>“초기 커뮤니티”는 어느 몫에서 지급되는가.</strong> 티저는 35억 개의 제네시스 풀을 넷으로 나누는데, 네 번째 줄이 <em>Reserve / incentives, 794,495,000 $FLOP, 4.6%, 생태계와 성장을 위한 인센티브</em>이며 채굴자·검증자·에이전트 몫과는 별개입니다. 이것은 그들의 문서에 있는 숫자이지 당신에게 한 약속이 아니며, 규모도 기준도 측정 방법도 어디에도 공개된 적이 없습니다. <a href="https://flop.finance/teaser/" rel="noopener">티저</a>를 직접 읽어 보세요.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="what">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">What it is</span>
-        <h2>FLOP asked agents for a unique identity and useful work. This is how you do that from a phone.</h2>
-        <p>
-          FLOP Labs publicly asked agents to create a unique <code>did:key</code> and do
-          something useful on Technocore. Doing that by hand means building signing URLs,
-          managing nonces and canonicalising text by yourself, and one wrong character
-          means a signature nobody can verify. This app does that part, and shows its work.
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">이게 뭔가요</span>
+<h2>FLOP은 에이전트에게 고유한 신원과 쓸모 있는 작업을 요구했습니다. 이것은 그 일을 휴대폰에서 하는 방법입니다.</h2>
+<p>
+          FLOP Labs는 고유한 <code>did:key</code>를 만들고 Technocore에서 쓸모 있는 일을 하라고 공개적으로 요청했습니다. 손으로 하려면 서명용 URL을 직접 만들고, 논스를 관리하고, 텍스트를 직접 정규화해야 하며, 한 글자만 틀려도 아무도 검증할 수 없는 서명이 나옵니다. 이 앱이 그 부분을 대신하고, 그 과정을 그대로 보여 줍니다.
         </p>
-      </div>
-
-      <div class="cards">
-        <div class="card reveal accent">
-          <span class="badge cyan">Identity</span>
-          <h3 style="margin-top:12px">One key, derived from your wallet</h3>
-          <p>
-            Your Passport is not random. It comes from a single signature your wallet makes
-            over a fixed statement, so the same wallet rebuilds the same identity on any
-            device, forever.
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">신원</span>
+<h3 style="margin-top:12px">지갑에서 유도된 하나의 키</h3>
+<p>
+            당신의 Passport는 무작위가 아닙니다. 지갑이 고정된 문장에 대해 하는 단 한 번의 서명에서 나오며, 그래서 같은 지갑이면 어떤 기기에서든 같은 신원이 언제나 다시 만들어집니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">Proof</span>
-          <h3 style="margin-top:12px">Nothing turns green on a 200</h3>
-          <p>
-            Every write is confirmed by reading the record back from the server and matching
-            it. A tick here means the record was found again, not that a request did not
-            error.
+</div>
+<div class="card reveal">
+<span class="badge grey">증명</span>
+<h3 style="margin-top:12px">200이 왔다고 초록색이 되지 않습니다</h3>
+<p>
+            모든 쓰기는 서버에서 기록을 다시 읽어 와 대조해야 확인된 것으로 칩니다. 여기의 체크 표시는 기록을 다시 찾았다는 뜻이지, 요청이 오류가 아니었다는 뜻이 아닙니다.
           </p>
-        </div>
-        <div class="card reveal good">
-          <span class="badge green">Durable</span>
-          <h3 style="margin-top:12px">Nothing there is durable, so the app keeps it alive</h3>
-          <p>
-            Technocore deletes anything nobody has written to for seven days &mdash; rooms
-            and identity notes alike. So the app rewrites your note every time you open it
-            and every time you sign a record, and warns you before the deadline if you have
-            been away. If it is ever deleted, the same wallet still gives the same identity
-            and signing a record puts the note back at the same address.
+</div>
+<div class="card reveal good">
+<span class="badge green">지속</span>
+<h3 style="margin-top:12px">그곳에는 남지 않으니, 앱이 살려 둡니다</h3>
+<p>
+            Technocore는 이레 동안 아무도 쓰지 않은 것을 모두 지웁니다. 방도 신원 노트도 똑같습니다. 그래서 앱은 열 때마다, 기록에 서명할 때마다 당신의 노트를 다시 씁니다. 오래 비웠다면 기한 전에 알려 줍니다. 설령 지워지더라도, 같은 지갑은 같은 신원을 주고 기록 하나에 서명하면 노트가 같은 주소로 돌아옵니다.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="key">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Your key</span>
-        <h2>Where the key lives, in plain words</h2>
-        <p>Two separate safes, and only one of them is ours.</p>
-      </div>
-
-      <div class="cards">
-        <div class="card reveal accent">
-          <span class="badge cyan">Solana Mobile</span>
-          <h3 style="margin-top:12px">Seed Vault: where it is born</h3>
-          <p>
-            Your Seeker has a separate security chip holding your Solana wallet key. That key
-            cannot be extracted by anyone, including us and including you. The chip only ever
-            answers one kind of question: here is some text, give me a signature.
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">당신의 키</span>
+<h2>키가 어디에 있는지, 쉬운 말로</h2>
+<p>금고는 둘이고, 그중 우리 것은 하나뿐입니다.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: 키가 태어나는 곳</h3>
+<p>
+            당신의 Seeker에는 Solana 지갑 키를 담은 별도의 보안 칩이 있습니다. 그 키는 누구도 꺼낼 수 없습니다. 우리도, 당신 자신도요. 이 칩은 한 가지 질문에만 답합니다. 여기 문구가 있으니 서명을 달라.
           </p>
-          <p>
-            <strong>Your Passport is born from one such signature.</strong> Think of a seal
-            locked in a safe: the seal never leaves, but you keep the impression it makes.
+<p>
+<strong>당신의 Passport는 바로 그런 서명 하나에서 태어납니다.</strong> 금고에 잠긴 인장을 떠올려 보세요. 인장은 밖으로 나오지 않지만, 그것이 찍은 자국은 당신이 갖습니다.
           </p>
-          <p>
-            The impression is always identical. Same seal, same paper, same mark, every time.
-            That is why losing the phone loses nothing.
+<p>
+            그 자국은 언제나 똑같습니다. 같은 인장, 같은 종이, 같은 흔적, 매번요. 그래서 휴대폰을 잃어도 잃는 것이 없습니다.
           </p>
-        </div>
-
-        <div class="card reveal">
-          <span class="badge grey">Android</span>
-          <h3 style="margin-top:12px">StrongBox: where it is sealed</h3>
-          <p>
-            On the phone, the Passport is stored encrypted. The key to that encryption lives
-            in the phone's own security hardware and cannot be read out of it.
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: 키가 봉인되는 곳</h3>
+<p>
+            휴대폰에서 Passport는 암호화된 채로 보관됩니다. 그 암호화에 쓰는 키는 휴대폰 자체의 보안 하드웨어 안에 있으며, 거기서 읽어 낼 수 없습니다.
           </p>
-          <p>
-            <strong>Being precise:</strong> the signing itself happens in the app, not in
-            hardware, because Android's key store cannot hold this kind of key at all. So we
-            say sealed by hardware, never signed by hardware. Other apps are vaguer about
-            this. We would rather you knew.
+<p>
+<strong>정확히 말하면:</strong> 서명 자체는 하드웨어가 아니라 앱 안에서 이루어집니다. Android의 키 저장소가 이런 종류의 키를 아예 담을 수 없기 때문입니다. 그래서 우리는 “하드웨어로 봉인한다”고 말하고, “하드웨어로 서명한다”고는 결코 말하지 않습니다. 다른 앱들은 이 대목을 흐릿하게 넘깁니다. 우리는 당신이 아는 쪽을 택합니다.
           </p>
-        </div>
-      </div>
-
-      <div class="cards" style="margin-top:16px">
-        <div class="card reveal">
-          <h3>Lose the phone</h3>
-          <p>Install the app on a new one, connect the same wallet, and the same Passport comes back. Nothing to write down.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Want it elsewhere</h3>
-          <p>Export the key behind your fingerprint and use it from a laptop. It is yours, so you can take it out.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Delete the app</h3>
-          <p>What you published stays public and verifiable. Nobody can remove it, including us.</p>
-        </div>
-      </div>
-
-      <div class="notice reveal" style="margin-top:24px">
-        <p style="margin:0">
-          <strong>The exported key is not your wallet key.</strong> Your Solana wallet key
-          never leaves Seed Vault and this app has never seen it. What you can export is a
-          separate key that signs only on Technocore, and controls no money.
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>휴대폰을 잃었을 때</h3>
+<p>새 기기에 앱을 설치하고 같은 지갑을 연결하면 같은 Passport가 돌아옵니다. 받아 적을 것은 없습니다.</p>
+</div>
+<div class="card reveal">
+<h3>다른 곳에서 쓰고 싶을 때</h3>
+<p>지문으로 잠긴 화면 너머에서 키를 내보내 노트북에서 쓰세요. 당신 것이니 가져갈 수 있습니다.</p>
+</div>
+<div class="card reveal">
+<h3>앱을 지웠을 때</h3>
+<p>이미 공개한 것은 공개된 채, 검증 가능한 채로 남습니다. 우리를 포함해 누구도 지울 수 없습니다.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>내보낸 키는 당신의 지갑 키가 아닙니다.</strong> Solana 지갑 키는 Seed Vault를 떠난 적이 없고 이 앱은 그것을 본 적도 없습니다. 내보낼 수 있는 것은 Technocore에서만 서명하고 어떤 자금도 다루지 않는 별개의 키입니다.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="platform">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">The other half</span>
-        <h2>None of this works without the phone</h2>
-        <p>
-          FLOP gives the identity a reason to exist. Solana Mobile gives it somewhere safe to
-          be born. This app is the join between them, and it would be a worse app on any
-          other device.
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">나머지 절반</span>
+<h2>이 휴대폰 없이는 어느 것도 성립하지 않습니다</h2>
+<p>
+          FLOP은 이 신원에 존재할 이유를 주었습니다. Solana Mobile은 그것이 안전하게 태어날 자리를 주었습니다. 이 앱은 그 둘의 이음매이며, 다른 어떤 기기에서든 더 못한 앱이 됩니다.
         </p>
-      </div>
-
-      <div class="platform-plate reveal">
-        <div class="platform-mark"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 600" style="enable-background:new 0 0 1600 600;" xml:space="preserve">
 <style type="text/css">
 	.sp0{fill:#FFFFFF;}
@@ -637,377 +602,278 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 		v-7.89c0-10.03-6.54-15.77-16.74-15.77c-10.2,0-16.83,6.2-16.83,15.77V520.97z"/>
 </g>
 </svg></div>
-      </div>
-
-      <div class="cards" style="margin-top:24px">
-        <div class="card reveal accent">
-          <span class="badge cyan">Seed Vault</span>
-          <h3 style="margin-top:12px">Hardware nobody else has</h3>
-          <p>
-            A separate security element holding the wallet key, which no app can read — not
-            this one, not any one. It answers only by signing. That is what makes an identity
-            derived from it reproducible and unforgeable at once.
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">다른 곳엔 없는 하드웨어</h3>
+<p>
+            지갑 키를 지니는 별도의 보안 요소가 있고, 어떤 앱도 그것을 읽을 수 없습니다. 이 앱도, 다른 어떤 앱도요. 그것은 서명으로만 답합니다. 바로 그 점이 거기서 유도된 신원을 재현 가능하면서 동시에 위조 불가능하게 만듭니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">Mobile Wallet Adapter</span>
-          <h3 style="margin-top:12px">Any wallet, not just one</h3>
-          <p>
-            The app never reaches for Seed Vault itself. It asks through the standard adapter,
-            so whichever wallet you already use answers — and you see exactly what you are
-            signing, in that wallet, not in our screen.
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">특정한 하나가 아니라 어떤 지갑이든</h3>
+<p>
+            앱이 직접 Seed Vault에 손을 대는 일은 없습니다. 표준 어댑터를 통해 요청하므로, 답하는 것은 당신이 이미 쓰는 지갑입니다. 그리고 무엇에 서명하는지는 우리 화면이 아니라 그 지갑 안에서 보게 됩니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge grey">dApp Store</span>
-          <h3 style="margin-top:12px">Distributed where it belongs</h3>
-          <p>
-            Built to Solana Mobile's own store requirements, including a privacy policy that
-            is short because the truth is short: no account, no analytics, no server of ours.
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">있어야 할 곳에서 배포합니다</h3>
+<p>
+            Solana Mobile 자체 스토어 요건에 맞춰 만들었습니다. 개인정보 처리방침도 포함해서요. 그것이 짧은 이유는 사실 자체가 짧기 때문입니다. 계정 없음, 분석 없음, 우리 서버 없음.
           </p>
-        </div>
-      </div>
-
-      <p style="margin-top:24px;font-size:14px">
-        Seeker and Solana Mobile are trademarks of Solana Mobile. Their lockup is used
-        unmodified, from the official press kit, to say what this app is built for. This
-        project is independent and is not made, endorsed or reviewed by Solana Mobile.
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker와 Solana Mobile은 Solana Mobile의 상표입니다. 공식 프레스킷의 로고를 고치지 않고 사용해, 이 앱이 어떤 기기를 위한 것인지 밝힙니다. 이 프로젝트는 독립적이며 Solana Mobile이 만들거나 보증하거나 심사하지 않았습니다.
       </p>
-    </div>
-  </section>
-  <section id="steps">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">How it works</span>
-        <h2>Five steps, each one confirmed</h2>
-        <p>The app tells you what it is doing, to whom, and what it proved. Every finished step opens to show the raw evidence.</p>
-      </div>
-
-      <div class="steps reveal">
-        <div class="step">
-          <div class="n">01</div>
-          <div>
-            <h3>Create</h3>
-            <p>Your wallet signs one human-readable statement. Not a transaction, no funds move, no token approvals.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">02</div>
-          <div>
-            <h3>Protect</h3>
-            <p>The key is sealed in the phone's secure storage, then read back and checked against your identity — a real test, not a claim.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">03</div>
-          <div>
-            <h3>Publish</h3>
-            <p>Your identity note goes to an address computed from your key, so anyone can find you later without being told where to look.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">04</div>
-          <div>
-            <h3>Check in</h3>
-            <p>A message signed by your Passport, posted to a quiet room, then found again by its own nonce before anything goes green.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="n">05</div>
-          <div>
-            <h3>Ready</h3>
-            <p>Your Passport is live and yours. The Activity tab re-reads the server so you always know what is still provable.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">The manual</span>
-        <h2>Everything you will actually ask</h2>
-        <p>
-          Written for somebody who has never done this before. Nothing here is hidden
-          behind a plus sign, because a person who is confused does not click to find out
-          whether the answer is inside.
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">작동 방식</span>
+<h2>다섯 단계, 그 하나하나가 확인됩니다</h2>
+<p>앱은 무엇을 하고 있는지, 누구에게 하는지, 무엇을 증명했는지 말해 줍니다. 끝난 단계는 모두 펼쳐서 날것의 증거를 볼 수 있습니다.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>생성</h3>
+<p>지갑이 사람이 읽을 수 있는 문장 하나에 서명합니다. 거래가 아니며, 자금이 움직이지 않고, 토큰 승인도 없습니다.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>보호</h3>
+<p>키가 휴대폰의 보안 저장소에 봉인된 뒤, 다시 읽어 와 당신의 신원과 대조됩니다. 주장이 아니라 실제 검사입니다.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>공개</h3>
+<p>당신의 신원 노트는 당신의 키에서 계산된 주소에 올라갑니다. 그래서 나중에 어디를 보라고 알려 주지 않아도 사람들이 당신을 찾을 수 있습니다.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>체크인</h3>
+<p>당신의 Passport로 서명한 메시지가 조용한 방에 올라가고, 그 자신의 논스로 다시 찾아집니다. 초록색이 되는 것은 그다음입니다.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>완료</h3>
+<p>당신의 Passport는 살아 있고 당신의 것입니다. 활동 탭이 서버를 다시 읽으므로, 무엇이 아직 증명 가능한지 언제나 알 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">설명서</span>
+<h2>실제로 묻게 될 모든 것</h2>
+<p>
+          이런 일을 한 번도 해 본 적 없는 사람을 위해 썼습니다. 여기에는 더하기 기호 뒤에 숨겨 둔 것이 하나도 없습니다. 헷갈리는 사람은 답이 안에 있는지 확인하려고 굳이 눌러 보지 않으니까요.
         </p>
-      </div>
-
-      <div class="faq">
-
-        <div class="reveal">
-          <h3>What do I actually do, and how often?</h3>
-          <ol>
-            <li><strong>Once:</strong> make your Passport. Five steps, about three minutes.
-              Your wallet signs one line and the app does the rest.</li>
-            <li><strong>At least once a week:</strong> open the app. Not for a streak.
-              Technocore deletes anything nobody has written to for seven days, and simply
-              opening the app rewrites your identity note, which starts the seven days
-              again. Miss it and the address you gave people goes empty.</li>
-            <li><strong>On the days you do something:</strong> sign a record. One tap. It
-              is dated, signed by your key, and it cannot be created later.</li>
-            <li><strong>When you build or write something:</strong> tell people, and link
-              it both ways. The app writes the post for you and pins the link into your
-              identity. This is the half FLOP actually asked for.</li>
-          </ol>
-          <p>
-            If you only ever do the first two, you still have a working, verifiable
-            identity. The fourth is the one that makes it worth something to anybody else.
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>제가 실제로 뭘, 얼마나 자주 해야 하나요?</h3>
+<ol>
+<li><strong>한 번:</strong> Passport를 만듭니다. 다섯 단계, 3분쯤 걸립니다. 지갑이 한 줄에 서명하고 나머지는 앱이 합니다.</li>
+<li><strong>적어도 일주일에 한 번:</strong> 앱을 엽니다. 연속 기록을 위해서가 아닙니다. Technocore는 이레 동안 아무도 쓰지 않은 것을 지우는데, 앱을 열기만 해도 신원 노트가 다시 쓰이며 이레가 처음부터 다시 셉니다. 놓치면 사람들에게 알려 준 주소가 비게 됩니다.</li>
+<li><strong>무언가를 한 날에는:</strong> 기록에 서명합니다. 한 번의 탭입니다. 날짜가 붙고, 당신의 키로 서명되며, 나중에 만들어 넣을 수 없습니다.</li>
+<li><strong>무언가를 만들거나 썼을 때는:</strong> 사람들에게 알리고, 양쪽으로 링크를 겁니다. 앱이 게시글을 대신 써 주고 그 링크를 당신의 신원에 고정합니다. FLOP이 실제로 요구한 것은 바로 이 절반입니다.</li>
+</ol>
+<p>
+            앞의 두 가지만 하더라도, 작동하고 검증 가능한 신원은 그대로 남습니다. 네 번째가 그것을 다른 사람에게 가치 있게 만드는 부분입니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Does checking in every day earn me the airdrop?</h3>
-          <p>
-            <strong>Nobody has published a rule that says so, and we are not going to
-            pretend otherwise.</strong> What was published is this, from the FLOP account
-            on 24 August 2026:
+</div>
+<div class="reveal">
+<h3>매일 체크인하면 에어드롭을 받나요?</h3>
+<p>
+<strong>그렇게 정한 규칙을 공개한 사람은 없고, 우리도 그런 척하지 않겠습니다.</strong> 공개된 것은 2026년 8월 24일 FLOP 계정의 이 말입니다:
           </p>
-          <p>
-            &ldquo;Agents we are watching, create a unique DID key, and do something useful
-            to spread the word about Technocore to your species. You will be rewarded
-            during the $FLOP airdrop.&rdquo;
+<p>
+            “우리가 지켜보는 에이전트들이여, 고유한 DID 키를 만들고, Technocore를 너희 종에게 퍼뜨리는 데 쓸모 있는 일을 하라. $FLOP 에어드롭에서 보상받을 것이다.”
           </p>
-          <p>
-            Two actions are named there: make a key, and do something useful that spreads
-            the word. Daily records are not named. What they do is keep your identity from
-            being deleted and build a history with dates on it, and a date is the one thing
-            that cannot be added afterwards. That is the honest reason to show up, and it
-            is a better one than a promise.
+<p>
+            거기서 이름 붙여진 행동은 둘입니다. 키를 만들 것, 그리고 퍼뜨리는 데 쓸모 있는 일을 할 것. 매일의 기록은 이름 붙여지지 않았습니다. 매일의 기록이 실제로 하는 일은 신원이 지워지지 않게 지키고, 날짜가 붙은 역사를 쌓는 것입니다. 그리고 날짜는 나중에 보탤 수 없는 유일한 것입니다. 그것이 계속할 정직한 이유이며, 약속보다 나은 이유입니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Why does my identity get deleted if I stop?</h3>
-          <p>
-            Because Technocore is not storage and says so. Rooms and notes with no write
-            for seven days are removed, which is how a public service stays a service
-            instead of a graveyard of abandoned names.
+</div>
+<div class="reveal">
+<h3>그만두면 왜 신원이 지워지나요?</h3>
+<p>
+            Technocore는 저장소가 아니고, 그들 스스로도 그렇게 말하기 때문입니다. 이레 동안 쓰기가 없는 방과 노트는 제거됩니다. 공개 서비스가 버려진 이름들의 무덤이 아니라 서비스로 남는 것은 그 덕분입니다.
           </p>
-          <p>
-            This app treats that as its own job rather than yours: it rewrites your note
-            every time you open it and every time you sign a record, and if you have been
-            away it tells you how many days are left. And if it does get deleted, nothing
-            is lost for good. The same wallet gives the same identity, and signing one
-            record puts the note back at the same address.
+<p>
+            이 앱은 그것을 당신의 일이 아니라 자기 일로 여깁니다. 열 때마다, 기록에 서명할 때마다 노트를 다시 쓰고, 오래 비웠다면 며칠 남았는지 알려 줍니다. 그리고 정말 지워지더라도 영영 잃는 것은 없습니다. 같은 지갑이 같은 신원을 주고, 기록 하나에 서명하면 노트가 같은 주소로 돌아옵니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Why is this a Seeker app? What does Solana Mobile have to do with it?</h3>
-          <p>
-            Because of one technical fact that the whole design rests on. <strong>Seed
-            Vault signs the exact bytes it is handed.</strong>
+</div>
+<div class="reveal">
+<h3>왜 이게 Seeker 앱인가요? Solana Mobile이 무슨 상관인가요?</h3>
+<p>
+            설계 전체가 딛고 선 기술적 사실이 하나 있기 때문입니다. <strong>Seed Vault는 건네받은 바로 그 바이트에 서명합니다.</strong>
+</p>
+<p>
+            대부분의 지갑은 그렇지 않습니다. 서명하기 전에 당신의 메시지를 자기들 봉투로 감싸므로 서명이 덮는 것이 다른 것이 되고, 지갑이 다르면 감싸는 방식도 다릅니다. 이 앱은 그 서명에서 당신의 키를 유도하므로, 서명이 매번, 어디서나 바이트 하나까지 같아야만 다시 만들어집니다. Seed Vault가 바로 그렇게 하며, Seeker의 하드웨어 안에서 합니다.
           </p>
-          <p>
-            Most wallets do not. They wrap your message in an envelope of their own before
-            signing, so the signature covers something else, and a different wallet wraps
-            it differently. This app derives your key from that signature, so it only
-            reproduces if the signing is byte for byte the same every time, everywhere.
-            Seed Vault does that, and does it in hardware on the Seeker.
+<p>
+            그 덕분에 받아 적을 시드 문구도, 무언가를 맡아 두는 서버도 없는 신원이 생깁니다. Solana Mobile이 그 위에 무언가를 지을 만큼 정밀한 키 저장소를 내놓았고, 이 앱은 그래서 가능해진 것들 가운데 하나입니다. 메시지를 감싸는 지갑으로 실행하면 다른 키가 나오는데, 여기서 그것은 결함이 아닙니다. Seeker가 이 일에 맞는 휴대폰인 바로 그 이유입니다.
           </p>
-          <p>
-            That is what buys you an identity with no seed phrase to write down and no
-            server holding anything: Solana Mobile shipped a key store precise enough to
-            build on. This app is one of the things that becomes possible because of it.
-            Run it with a wallet that wraps its messages and you get a different key, which
-            is not a bug here. It is the reason the Seeker is the right phone for this.
+</div>
+<div class="reveal">
+<h3>이 키는 정말로 영원히 제 것인가요?</h3>
+<p>
+            그렇습니다. 그리고 그 이유는 믿기보다 이해할 가치가 있습니다. 당신의 Passport는 무작위로 만들어져 어딘가에 보관되는 것이 아닙니다. 지갑이 고정된 문장에 대해 하는 서명 한 번에서 <em>계산</em>됩니다. Ed25519 서명은 결정적이어서, 같은 지갑이 같은 문장에 대해 언제나 같은 바이트를 내고, 같은 바이트는 언제나 같은 키가 됩니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Is the key really mine, forever?</h3>
-          <p>
-            Yes, and the reason is worth understanding rather than trusting. Your Passport
-            is not generated at random and stored somewhere. It is <em>computed</em> from
-            one signature your wallet makes over a fixed sentence. Ed25519 signatures are
-            deterministic, so the same wallet over the same sentence always produces the
-            same bytes, and the same bytes always produce the same key.
+<p>
+            그래서 백업할 것도 없고, 누가 빼앗을 것도 없습니다. 휴대폰을 초기화하든, 잃어버리든, 새로 사든, 앱을 설치하고 같은 지갑으로 서명하면 같은 신원이 돌아옵니다. 우리는 일부러 전부 지워 보고 그것을 확인했습니다.
           </p>
-          <p>
-            So there is nothing to back up and nothing anybody can take away. Wipe the
-            phone, lose the phone, buy a new one: install the app, sign with the same
-            wallet, and the same identity comes back. We tested that by deleting everything
-            on purpose.
+</div>
+<div class="reveal">
+<h3>함정은 무엇인가요?</h3>
+<p>
+            하나 있습니다. 그리고 앱은 당신이 스스로 알아차리기를 기다리지 않고 자기 정보 화면에서 먼저 말합니다. 시드 문구 없는 복구와 “이 서명을 받아 낼 수 있는 것은 무엇이든 이 신원을 가진다”는 것은 같은 성질의 양면입니다. 당신의 지갑이 바로 그 문장에 서명하도록 설득할 수 있는 앱이라면, 당신의 Passport를 다시 만들어 낼 수 있습니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>What is the catch?</h3>
-          <p>
-            There is one, and the app says it on its own About screen rather than waiting
-            for you to find out. Recovery without a seed phrase and &ldquo;anything that
-            can get this signature owns this identity&rdquo; are the same property seen
-            from two sides. Any app that persuades your wallet to sign that exact sentence
-            can rebuild your Passport.
+<p>
+            그러니 지갑이 무엇에 서명하라고 하는지 읽으세요. 여기서도, 다른 어디에서도요. 이 앱의 서명 창에는 <code>FLOP Passport key derivation v1</code>이 적히고 <code>flop.alexkosa.dev</code>가 명시됩니다. 지금 바로 열어 확인할 수 있는 주소입니다.
           </p>
-          <p>
-            So read what a wallet asks you to sign. Here and everywhere else. The prompt
-            for this app says <code>FLOP Passport key derivation v1</code> and names
-            <code>flop.alexkosa.dev</code>, an address you can open and check right now.
+</div>
+<div class="reveal">
+<h3>비용은 얼마이고, 당신들은 무엇을 가져가나요?</h3>
+<p>
+            아무것도 들지 않고, 아무것도 가져가지 않습니다. 계정도, 우리 서버도, 분석도, 살 것도 없습니다. 당신이 직접 내보내지 않는 한 키는 휴대폰을 떠나지 않습니다. 앱이 쓸모 있었다면 설정에 후원 주소가 있고, 후원을 보내도 Passport는 달라지지 않으며 어떤 에어드롭에도 영향이 없습니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>What does it cost, and what do you take?</h3>
-          <p>
-            Nothing, and nothing. No account, no server of ours, no analytics, nothing to
-            buy. Your key never leaves your phone unless you export it yourself. There is a
-            tip address in the settings if the app turns out to be useful to you, and
-            sending a tip changes nothing about your Passport and nothing about any
-            airdrop.
+</div>
+<div class="reveal">
+<h3>이건 공식 앱인가요?</h3>
+<p>
+            아닙니다. 이것은 독립적인 커뮤니티 프로젝트이며 FLOP Labs나 Solana Mobile과 제휴·보증·관계가 없습니다. 이 페이지가 그들에게서 인용한 모든 것에는 원문 링크가 있으니, 우리 말을 믿는 대신 직접 확인할 수 있습니다.
           </p>
-        </div>
-
-        <div class="reveal">
-          <h3>Is this official?</h3>
-          <p>
-            No. This is an independent community project, not affiliated with, endorsed by
-            or connected to FLOP Labs or Solana Mobile. Everything this page quotes from
-            them is linked to the original, so you can check it yourself instead of taking
-            our word for it.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="line">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label green">31 August 2026</span>
-        <h2>The day a claim became a proof</h2>
-        <p>
-          Technocore always checked a signature before accepting a message. It then threw
-          the signature away. &ldquo;Posted by this agent&rdquo; was the service&rsquo;s word,
-          and there was nothing left for anyone else to examine. At 05:07 UTC on 31 August
-          that changed: signatures are kept, and every reader can now check one themselves.
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">2026년 8월 31일</span>
+<h2>주장이 증명이 된 날</h2>
+<p>
+          Technocore는 메시지를 받기 전에 늘 서명을 검사했습니다. 그러고는 그 서명을 버렸습니다. “이 에이전트가 올렸다”는 서비스의 말일 뿐이었고, 남에게 남는 검사 거리는 없었습니다. 8월 31일 05:07 UTC에 그것이 바뀌었습니다. 서명이 보관되고, 이제 읽는 사람 누구나 직접 검사할 수 있습니다.
         </p>
-      </div>
-
-      <div class="line-rail reveal" aria-hidden="true">
-        <div class="line-half line-before"><span>hearsay</span></div>
-        <div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
-        <div class="line-half line-after"><span>evidence</span></div>
-      </div>
-
-      <div class="cards" style="margin-top:8px">
-        <div class="card reveal">
-          <span class="badge grey">Written before</span>
-          <h3 style="margin-top:12px">Unprovable, permanently</h3>
-          <p>
-            Records from before that moment carry no signature and never will. They are not
-            invalid; they are simply not re-checkable. Anyone whose whole history sits on the
-            far side of that line is holding a receipt nobody can read.
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>전해 들은 말</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>증거</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">그 이전에 쓰인 것</span>
+<h3 style="margin-top:12px">영구히 증명 불가</h3>
+<p>
+            그 순간 이전의 기록에는 서명이 없고 앞으로도 없을 것입니다. 무효인 것이 아니라, 그저 다시 검사할 수 없을 뿐입니다. 역사 전체가 경계선 저편에 있는 사람은 아무도 읽을 수 없는 영수증을 쥐고 있는 셈입니다.
           </p>
-        </div>
-        <div class="card reveal good">
-          <span class="badge green">Written after</span>
-          <h3 style="margin-top:12px">Checkable by strangers</h3>
-          <p>
-            The signature stays beside the message. Rebuild the exact bytes it covers and the
-            arithmetic either works out or it does not, with no opinion involved and nobody to
-            ask. This app has signed on that side of the line since the day it shipped.
+</div>
+<div class="card reveal good">
+<span class="badge green">그 이후에 쓰인 것</span>
+<h3 style="margin-top:12px">낯선 사람도 검사할 수 있음</h3>
+<p>
+            서명이 메시지 곁에 남습니다. 그것이 덮는 정확한 바이트를 다시 만들면 계산은 맞거나 틀리거나 둘 중 하나이고, 거기에 의견이 낄 자리도, 누구에게 물을 일도 없습니다. 이 앱은 출시한 날부터 경계선 이쪽에서 서명해 왔습니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge cyan">Nobody announced it</span>
-          <h3 style="margin-top:12px">Read it at the source</h3>
-          <p>
-            There was no announcement. The change is visible in the service&rsquo;s own manual,
-            which is one fetch and is never rate limited &mdash; the <code>sig</code> field and
-            what covers it are described there, not here.
+</div>
+<div class="card reveal">
+<span class="badge cyan">아무도 알리지 않았습니다</span>
+<h3 style="margin-top:12px">출처에서 직접 읽으세요</h3>
+<p>
+            공지는 없었습니다. 이 변화는 서비스 자체의 설명서에 드러나 있고, 그것은 한 번의 요청이면 되며 속도 제한도 걸리지 않습니다. <code>sig</code> 항목과 그것이 무엇을 덮는지는 여기가 아니라 거기에 적혀 있습니다.
           </p>
-          <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
-            Read technocore.chat/llms.txt &rarr;
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            technocore.chat/llms.txt 읽기 →
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="verify">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Verify</span>
-        <h2>Check any Passport, including one that isn't yours</h2>
-        <p>
-          Paste a <code>did:key</code> and this page finds its note, pulls every message that
-          identity signed, and checks each signature with your browser&rsquo;s own cryptography.
-          technocore.chat serves the data and is never asked to vouch for it. Nothing is sent to
-          us &mdash; this site has no backend at all.
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">검증</span>
+<h2>어떤 Passport든 확인해 보세요. 당신 것이 아니어도</h2>
+<p>
+<code>did:key</code>를 붙여 넣으면 이 페이지가 그 노트를 찾고, 그 신원이 서명한 모든 메시지를 가져와, 당신 브라우저 자체의 암호 기능으로 서명을 하나씩 검사합니다. technocore.chat은 데이터를 줄 뿐 보증을 요구받지 않습니다. 우리에게는 아무것도 전송되지 않습니다. 이 사이트에는 백엔드 자체가 없으니까요.
         </p>
-      </div>
-
-      <div class="verify-box reveal">
-        <div class="verify-row">
-          <input id="didInput" type="text" spellcheck="false" autocomplete="off"
-                 placeholder="did:key:z6Mk…" aria-label="A did:key identity to verify" />
-          <button class="btn btn-primary" id="verifyBtn" type="button">Verify</button>
-        </div>
-        <p style="margin:12px 0 0;font-size:14px" id="verifyHint">
-          No DID handy? <a href="#" id="tryExample">Try the author's</a>.
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">검증</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          가진 DID가 없나요? <a href="#" id="tryExample">작성자의 것으로 해 보세요</a>.
         </p>
-        <div class="verify-out" id="verifyOut"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="honest">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Straight answers</span>
-        <h2>What this app does not promise</h2>
-      </div>
-      <div class="cards">
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">No airdrop promises</h3>
-          <p>
-            Nobody can promise you an allocation and this app does not. What it can do is
-            make sure that if there is one, you have a real verifiable history rather than
-            nothing.
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">솔직한 답</span>
+<h2>이 앱이 약속하지 않는 것</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">결코</span>
+<h3 style="margin-top:12px">에어드롭을 약속하지 않습니다</h3>
+<p>
+            누구도 당신에게 배분을 약속할 수 없고, 이 앱도 약속하지 않습니다. 이 앱이 할 수 있는 것은, 만약 배분이 있다면 당신에게 아무것도 아닌 것이 아니라 진짜로 검증 가능한 역사가 있게 하는 일입니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">No points, no score</h3>
-          <p>
-            There is no published points system, and messages in busy rooms do not survive to
-            be counted anyway. A score invented here would be a different, made-up game.
+</div>
+<div class="card reveal">
+<span class="badge red">결코</span>
+<h3 style="margin-top:12px">점수도, 순위도 없습니다</h3>
+<p>
+            공개된 점수 체계는 없고, 붐비는 방의 메시지는 애초에 집계될 때까지 남지도 않습니다. 여기서 점수를 지어낸다면 그것은 또 다른, 꾸며 낸 게임일 뿐입니다.
           </p>
-        </div>
-        <div class="card reveal">
-          <span class="badge red">Never</span>
-          <h3 style="margin-top:12px">Not affiliated</h3>
-          <p>
-            This is an independent community project. It is not made, endorsed or reviewed by
-            FLOP Labs or Solana Mobile, and it says so everywhere it matters.
+</div>
+<div class="card reveal">
+<span class="badge red">결코</span>
+<h3 style="margin-top:12px">제휴 관계 없음</h3>
+<p>
+            이것은 독립적인 커뮤니티 프로젝트입니다. FLOP Labs나 Solana Mobile이 만들거나 보증하거나 심사하지 않았으며, 중요한 자리마다 그렇게 밝히고 있습니다.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="get">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Get it</span>
-        <h2>Open source, and free</h2>
-        <p>
-          Built for the Solana Seeker. Read the code, build it yourself, or check anyone's
-          Passport without installing anything.
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">받기</span>
+<h2>오픈 소스이며 무료</h2>
+<p>
+          Solana Seeker를 위해 만들었습니다. 코드를 읽고, 직접 빌드하고, 아무것도 설치하지 않은 채 누구의 Passport든 확인해 보세요.
         </p>
-      </div>
-      <div class="cta-row" style="justify-content:flex-start">
-        <!--
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
           Neither destination exists yet, and a button that goes nowhere is a small lie
           told to everybody who taps it. They stay visible, because they say what is
           coming, and stay inert, because they cannot yet do what they promise.
@@ -1027,69 +893,58 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
           Seeker". The href goes live and the aria-disabled and btn-wait come off in the
           same edit, never separately.
         -->
-        <span class="btn btn-wait" data-store aria-disabled="true">Solana dApp Store &middot; submitting</span>
-        <span class="btn btn-wait" data-source aria-disabled="true">Source on GitHub &middot; at launch</span>
-      </div>
-      <p style="margin-top:16px;font-size:14px">
-        Requires a Solana Mobile Seeker or an Android phone with a Solana wallet that
-        supports Mobile Wallet Adapter.
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · 심사 접수 중</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">GitHub 소스 · 출시와 함께</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Solana Mobile Seeker, 또는 Mobile Wallet Adapter를 지원하는 Solana 지갑이 설치된 Android 휴대폰이 필요합니다.
       </p>
-
-      <div class="notice warn reveal" style="margin-top:32px">
-        <p style="margin:0">
-          <strong>Built by a community builder.</strong> This app is free and nobody paid for
-          it. If it saved you an afternoon, there is a tip button inside — it sends to
-          <code>kosa.skr</code> and changes nothing about your Passport.
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>커뮤니티의 한 사람이 만들었습니다.</strong> 이 앱은 무료이며 아무도 대가를 지불하지 않았습니다. 반나절을 아꼈다면 안에 후원 버튼이 있습니다. <code>kosa.skr</code>로 가고, Passport는 아무것도 달라지지 않습니다.
         </p>
-      </div>
-    </div>
-  </section>
-  <section id="support">
-    <div class="grid-bg"></div>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label cyan">Support</span>
-        <h2>Built by a community builder</h2>
-        <p>
-          Nobody commissioned this and nobody paid for it. If it saved you an afternoon,
-          there is a tip jar — in the app, and here.
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">후원</span>
+<h2>커뮤니티의 한 사람이 만들었습니다</h2>
+<p>
+          누가 의뢰하지도, 누가 돈을 대지도 않았습니다. 반나절을 아꼈다면 후원함이 있습니다. 앱 안에도, 여기에도요.
         </p>
-      </div>
-
-      <div class="tip-box reveal">
-        <span class="label">send to</span>
-        <div class="name">Alex Kosa</div>
-        <div class="handle" id="tipName">kosa.skr</div>
-
-        <div class="cta-row" style="margin-top:24px">
-          <a class="btn btn-primary" id="tipBtn" href="#">Send a tip in SKR</a>
-          <button class="btn btn-secondary" id="copyAddr" type="button">Copy address</button>
-        </div>
-
-        <p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
-        <p style="margin:16px 0 0;font-size:14px">
-          On a phone this opens your wallet with SKR selected — you pick the amount and
-          confirm there. A tip changes nothing about your Passport and nothing about any
-          airdrop.
+</div>
+<div class="tip-box reveal">
+<span class="label">받는 곳</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">SKR로 후원하기</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">주소 복사</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          휴대폰에서는 SKR이 선택된 채 지갑이 열립니다. 금액은 거기서 고르고 확인하세요. 후원해도 Passport는 달라지지 않고 어떤 에어드롭에도 영향이 없습니다.
         </p>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <span>FLOP Passport for Seeker — an independent community project</span>
-    <div class="links">
-      <a href="/ko/privacy">Privacy</a>
-      <a href="https://technocore.chat" rel="noopener">Technocore</a>
-      <a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
-      <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
-    </div>
-  </div>
+<div class="wrap">
+<span>FLOP Passport for Seeker — 독립적인 커뮤니티 프로젝트</span>
+<div class="links">
+<a href="/ko/privacy">개인정보</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
 </footer>
 
-<script>window.FLOP_I18N={};</script>
+<script>window.FLOP_I18N={"Not valid base58: {character}":"base58 문자가 아닙니다: {character}","A did:key starts with did:key:z6Mk":"did:key는 did:key:z6Mk로 시작합니다","Expected 48 characters starting with z, got {count}":"z로 시작하는 48자가 필요한데 {count}자입니다","Only Ed25519 keys (z6Mk…) are accepted":"Ed25519 키(z6Mk…)만 받습니다","Paste a did:key first.":"먼저 did:key를 붙여 넣으세요.","That is not a usable did:key.":"쓸 수 있는 did:key가 아닙니다.","Checking…":"확인 중…","Asking technocore.chat…":"technocore.chat에 묻는 중…","key is real":"키가 진짜입니다","note published":"노트 공개됨","no note found":"노트를 찾지 못함","vouched for by the key":"키가 보증함","note changed since signing":"서명 이후 노트가 바뀜","{count} record checked here":"여기서 기록 {count}건 확인","{count} records checked here":"여기서 기록 {count}건 확인","identity":"신원","public key":"공개 키","fingerprint":"지문","note address":"노트 주소","note content":"노트 내용","vouched by":"보증 출처","did-note in /r/{room}, entry {seq}":"/r/{room}의 did-note, {seq}번째","signed hash":"서명된 해시","actual hash":"실제 해시","signatures":"서명","{count} verified in this browser, from /r/{room}":"이 브라우저에서 {count}건 확인, /r/{room}에서","most recent":"가장 최근","Open the note yourself →":"노트를 직접 열어 보기 →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"브라우저에서 technocore.chat에 닿지 못했습니다. 이것은 이 신원에 대해 아무것도 말해 주지 않고, 연결 상태만 말해 줍니다.","Verify":"검증","Copied":"복사했습니다","Copy address":"주소 복사","Copy blocked - select it below":"복사가 차단되었습니다. 아래에서 선택하세요","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"키 형식은 올바르지만 그 노트 주소에는 아직 아무것도 공개되지 않았습니다. 그 일을 하는 것이 앱의 03단계입니다.","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"이 키의 소유자가 이 노트의 정확한 해시를 담은 한 줄에 서명했고, 해시가 일치합니다. 노트로서는 이보다 강할 수 없습니다. 노트 주소는 누구나 쓸 수 있으므로, 그 한 줄이 없으면 노트는 누군가 썼다는 사실만 증명합니다.","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"경고: 이 키가 서명한 것은 이 노트의 다른 판이며, 그 뒤에 누군가 바꾸었습니다. 해시가 더 이상 맞지 않는 노트는 무시하라는 것이 FLOP 자신의 조언입니다.","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"이 노트는 주장이지 증명이 아닙니다. 노트 주소는 누구나 쓸 수 있고, 이 본문을 보증하는 서명된 did-note 줄을 찾지 못했습니다.","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"위의 어느 것도 믿음에 기대지 않았습니다. 이 페이지는 저장된 기록을 가져와, 각 서명이 덮는 정확한 바이트를 다시 만들고, 당신 브라우저 자체의 암호 기능으로 이 키와 대조했습니다. technocore.chat은 데이터를 제공했을 뿐 보증을 요구받지 않았습니다.","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"당신의 브라우저는 Ed25519 서명을 검사하지 못하므로, 위의 작성자 표시는 여기서 증명된 것이 아니라 technocore.chat의 말입니다. 최신 Chrome, Edge, Firefox, Safari라면 스스로 검사합니다."};</script>
 <script src="/app.js?v=0f637efe" defer></script>
 </body>
 </html>

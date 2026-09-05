@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">Trang chủ</a>
+<a href="/#verify">Xác minh</a>
+<a href="/#get">Tải về</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">Chính sách riêng tư</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>Cập nhật lần cuối ngày 31 tháng 8 năm 2026. Chính sách này áp dụng cho ứng dụng Android <code>dev.alexkosa.floppassport</code> và trang web này.</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>Bản ngắn gọn.</strong> Không có tài khoản, không đo lường, không quảng cáo và không máy chủ nào do chúng tôi vận hành. Ứng dụng không thu thập, truyền đi hay lưu dữ liệu cá nhân của bạn ở bất cứ nơi nào chúng tôi với tới được. Khóa của bạn nằm lại trên máy bạn.
+        </p>
+</div>
+<h3 style="margin-top:48px">Ai chịu trách nhiệm</h3>
+<p>
+        FLOP Passport for Seeker là dự án nguồn mở độc lập của Alex Kosa, một lập trình viên cá nhân. Nó không do FLOP Labs hay Solana Mobile tạo ra, chứng thực hay kiểm duyệt. Liên hệ: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> trên X, hoặc mở một issue trong kho mã công khai.
+      </p>
+<h3 style="margin-top:32px">Ứng dụng lưu gì trên máy bạn</h3>
+<ul class="plain">
+<li>
+<strong>Khóa Passport của bạn</strong>, đã mã hóa. Nó chỉ được lưu ở dạng bản mã, được bọc bởi một khóa nằm trong kho khóa có phần cứng bảo vệ của máy bạn, và khóa đó không đọc ra ngoài được.
+        </li>
+<li>
+<strong>Danh tính công khai của bạn</strong> — <code>did:key</code> và dấu vân của nó — cùng địa chỉ ví Solana mà nó được dẫn xuất từ đó.
+        </li>
+<li>
+<strong>Ngôn ngữ bạn chọn</strong> và việc âm thanh khởi động có bật hay không.
+        </li>
+</ul>
+<p>
+        Tất cả nằm trong vùng lưu trữ riêng của ứng dụng trên máy bạn. Sao lưu tự động của Android và tính năng chuyển máy được tắt có chủ đích cho ứng dụng này, nên không thứ nào trong đó được sao lên bản sao lưu đám mây.
+      </p>
+<h3 style="margin-top:32px">Cái gì rời khỏi máy bạn, và chỉ khi bạn bấm nút</h3>
+<ul class="plain">
+<li>
+<strong>Tới technocore.chat</strong>, khi bạn công bố danh tính hoặc ký một bản ghi: <code>did:key</code> công khai của bạn, đoạn văn bản bạn đang ký, một bộ đếm và chữ ký. Thông tin này công khai theo thiết kế — đó chính là ý nghĩa của một danh tính công khai — và sau đó ai cũng đọc được.
+        </li>
+<li>
+<strong>Tới ứng dụng ví của bạn</strong>, khi bạn tạo Passport: một câu để ký. Ví xử lý việc đó ngay trên máy bạn; chúng tôi không gửi gì qua mạng cả.
+        </li>
+<li>
+<strong>Tới một tệp do bạn chọn</strong>, khi bạn xuất khóa. Bạn chọn nơi lưu bằng trình chọn tệp của hệ thống. Không có gì được tải lên đâu cả.
+        </li>
+</ul>
+<p>
+<strong>Không bao giờ có gì được gửi cho người phát triển.</strong> Không có phần máy chủ nào để gửi tới. Ứng dụng chỉ trò chuyện với technocore.chat, do FLOP Labs vận hành, và với chính ứng dụng ví của bạn — đó là toàn bộ danh sách.
+      </p>
+<h3 style="margin-top:32px">Ứng dụng không bao giờ hỏi và không bao giờ đụng tới</h3>
+<ul class="plain">
+<li>Cụm từ khôi phục hay khóa riêng tư của ví Solana của bạn. Ứng dụng chưa từng thấy và không thể thấy.</li>
+<li>Tên, địa chỉ email, số điện thoại hay bất kỳ thông tin đăng nhập nào của bạn.</li>
+<li>Danh bạ, ảnh, tệp, vị trí, máy ảnh hay micrô của bạn.</li>
+<li>Mã định danh quảng cáo. Không có quảng cáo và không có SDK quảng cáo.</li>
+</ul>
+<h3 style="margin-top:32px">Đo lường và theo dõi</h3>
+<p>
+        Không có. Ứng dụng không chứa SDK đo lường, không có dịch vụ báo lỗi và không có bất kỳ hình thức theo dõi nào của bên thứ ba. Trang web này không đặt cookie, không chạy đo lường và không có mã máy chủ; những yêu cầu ra ngoài duy nhất là hai bộ phông chữ web và, khi bạn dùng trình xác minh, một lượt đọc trực tiếp từ technocore.chat đi thẳng từ trình duyệt của bạn và không bao giờ qua chúng tôi.
+      </p>
+<h3 style="margin-top:32px">Quyền truy cập</h3>
+<ul class="plain">
+<li><strong>Internet</strong> — để tới technocore.chat khi bạn công bố hoặc ký thứ gì đó.</li>
+<li><strong>Rung</strong> — một nhịp xác nhận ngắn khi một bước được kiểm chứng.</li>
+<li><strong>Sinh trắc học</strong> — để khóa màn hình hiển thị khóa riêng tư của bạn.</li>
+</ul>
+<p>Không xin quyền truy cập bộ nhớ; việc lưu tệp dùng trình chọn của hệ thống.</p>
+<h3 style="margin-top:32px">Xóa dữ liệu của bạn</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>Trên máy bạn.</strong> Cài đặt → Vùng nguy hiểm → xóa Passport, hoặc gỡ ứng dụng. Cả hai đều xóa hoàn toàn khỏi máy khóa đã mã hóa, danh tính và các tùy chọn của bạn. Không có bản sao ở đâu khác, và chúng tôi cũng không có gì để xóa thay bạn.
+        </p>
+<p style="margin:0">
+<strong>Những gì đã công bố.</strong> Mọi thứ bạn chọn công bố trên Technocore đều công khai và nằm ngoài tầm kiểm soát của chúng tôi — chúng tôi không lưu trữ và không thể gỡ. Bản ghi trong các phòng công khai sẽ bị dịch vụ đó loại bỏ khi phòng được nén lại; ghi chú thì còn. Yêu cầu về nội dung trên technocore.chat xin gửi tới FLOP Labs, đơn vị vận hành nó.
+        </p>
+</div>
+<h3 style="margin-top:32px">Trẻ em</h3>
+<p>
+        Ứng dụng không hướng tới trẻ em và không thu thập dữ liệu của bất kỳ ai, kể cả trẻ em.
+      </p>
+<h3 style="margin-top:32px">Thay đổi</h3>
+<p>
+        Nếu chính sách này thay đổi, ngày ở đầu trang cũng đổi theo, và bản trước vẫn nằm trong lịch sử của kho mã công khai, nơi ai cũng có thể so sánh.
+      </p>
+<h3 style="margin-top:32px">Quyền của bạn</h3>
+<p>
+        Quyền truy cập, chỉnh sửa, mang đi và xóa tồn tại để bạn kiểm soát dữ liệu mà người khác giữ về bạn. Chúng tôi không giữ gì cả: không có gì để truy cập, để xuất hay để xóa, vì không thứ gì về bạn từng đến được chỗ chúng tôi. Khóa của bạn có thể xuất ra từ ứng dụng bất cứ lúc nào, và xóa ứng dụng sẽ gỡ mọi thứ nó từng giữ.
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — một dự án cộng đồng độc lập</span>
+<div class="links">
+<a href="/">Trang chủ</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

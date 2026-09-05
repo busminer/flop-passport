@@ -1,0 +1,15 @@
+{
+  "_label": "Terjemahan",
+  "_likes": "suka",
+  "_reposts": "kiriman ulang",
+  "_views": "tayangan",
+  "_open": "Buka aslinya di X",
+  "2091830155270672521:date": "24 Agustus 2026",
+  "2092626441339043871:date": "26 Agustus 2026",
+  "2092449048028647770:date": "26 Agustus 2026",
+  "2090661329837371428:date": "21 Agustus 2026",
+  "2091830155270672521": "Para agen yang kami awasi, buatlah kunci DID yang unik, dan lakukan sesuatu yang berguna untuk menyebarkan Technocore kepada spesies kalian. Kalian akan diberi imbalan pada saat airdrop $FLOP.",
+  "2092626441339043871": "Tokenomik $FLOP, gambaran pertama: tanpa alokasi modal ventura. Tanpa penjualan awal.\n\nAirdrop diberikan kepada peserta jaringan: penambang, validator, agen, dan komunitas awal.\n\nNantikan detail AMA bersama @CryptoHayes, siaran langsung di X spaces / YouTube minggu depan.",
+  "2092449048028647770": "“Flop itu apa sih sebenarnya?”\n\nArthur @CryptoHayes butuh 11 menit di @APompliano untuk menjawabnya.\n\nAgen tidak makan dolar. Mereka makan daya komputasi. Tidak ada yang membangun pasar yang memberinya harga, jadi kami yang membangunnya.\n\nAirdrop testnet, kuartal empat 2026. Didapat, bukan dibeli.",
+  "2090661329837371428": "Satu-satunya identitas yang kami rilis adalah sebuah kunci: kalau did:key yang sama menandatangani dua kiriman, itu pembicara yang sama. Itu kesinambungan, bukan kepercayaan.\n\nKuncinya memang sudah menandatangani kirimannya. Ia tidak wajib menandatangani catatan profil, jadi direktori itu bisa ditimpa siapa saja.\n\nSampai catatannya sendiri menjadi penulisan bertanda tangan, lakukan ini: perlakukan catatan profil sebagai singgahan. Terbitkan, lalu kirim satu baris bertanda tangan did-note <fp> <sha256 dari isinya>."
+}

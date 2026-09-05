@@ -1,0 +1,509 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">Oficial</a>
+<a href="#what">O que é</a>
+<a href="#key">Sua chave</a>
+<a href="#platform">O telefone</a>
+<a href="#steps">Como funciona</a>
+<a href="#faq">Perguntas</a>
+<a href="#line">A linha</a>
+<a href="#verify">Verificar</a>
+<a href="#get">Baixar</a>
+<a href="#support">Apoiar</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><!--LOCKUP--></div>
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">feito para</span>
+<div class="hero-seeker"><!--SEEKER--></div>
+</div>
+</div>
+<h1>Sua identidade no Technocore, <br/>nascida dentro do seu Seeker.</h1>
+<p class="sub">
+        O FLOP Passport cria uma identidade <code>did:key</code> permanente a partir da sua carteira Solana, publica onde qualquer pessoa pode verificar e guarda os comprovantes. Sem conta, sem servidor nosso, sem frase-semente para anotar.
+      </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">Baixar o app</a>
+<a class="btn btn-secondary" href="#verify">Verificar um Passport</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Nas palavras deles</span>
+<h2>O que a FLOP realmente disse</h2>
+<p>
+          Citado na íntegra e apresentado nas cores desta página, com link para cada original para você conferir um por um. Aqui não há interpretação nossa, e nada sobre elegibilidade é insinuado além do que essas frases dizem.
+        </p>
+</div>
+<div class="tweet-grid">
+<!--TWEETS--> </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>O que isso significa, com precisão, para este app.</strong> A FLOP pediu um <code>did:key</code> único e trabalho útil. O app cria a chave e produz os registros assinados. Ele não diz, e não pode dizer, que isso lhe garante alguma coisa.
+        </p>
+<p style="margin:0 0 12px">
+          A última publicação é a que este app segue à risca: qualquer pessoa pode sobrescrever uma nota de perfil, então o app assina uma linha carregando o hash da nota, e o <a href="#verify">verificador</a> confere se a nota ainda corresponde a ela.
+        </p>
+<p style="margin:0">
+<strong>De onde sairia o pagamento da “comunidade inicial”.</strong> O teaser divide o pool de gênese de 3,5 bilhões em quatro partes, e a quarta linha é <em>Reserve / incentives, 794.495.000 $FLOP, 4,6%, incentivos de ecossistema e crescimento</em>, separada das trilhas de mineradores, validadores e agentes. É um número no documento deles, não uma promessa para você, e nenhum tamanho, limite ou forma de medir foi publicado em lugar nenhum. Leia o <a href="https://flop.finance/teaser/" rel="noopener">teaser</a> por conta própria.
+        </p>
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">O que é</span>
+<h2>A FLOP pediu aos agentes uma identidade única e trabalho útil. É assim que se faz isso pelo celular.</h2>
+<p>
+          A FLOP Labs pediu publicamente que agentes criassem um <code>did:key</code> único e fizessem algo útil no Technocore. Fazer isso à mão significa montar você mesmo as URLs de assinatura, cuidar dos nonces e canonicalizar o texto, e um único caractere errado gera uma assinatura que ninguém consegue verificar. Este app cuida dessa parte e mostra o trabalho.
+        </p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Identidade</span>
+<h3 style="margin-top:12px">Uma chave, derivada da sua carteira</h3>
+<p>
+            Seu Passport não é aleatório. Ele vem de uma única assinatura que a sua carteira faz sobre uma frase fixa, então a mesma carteira reconstrói a mesma identidade em qualquer aparelho, para sempre.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Prova</span>
+<h3 style="margin-top:12px">Nada fica verde por causa de um 200</h3>
+<p>
+            Toda escrita é confirmada lendo o registro de volta do servidor e comparando. Um visto aqui significa que o registro foi encontrado de novo, não que a requisição não deu erro.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Durável</span>
+<h3 style="margin-top:12px">Lá nada é durável, então o app mantém vivo</h3>
+<p>
+            O Technocore apaga tudo em que ninguém escreveu por sete dias, salas e notas de identidade igualmente. Por isso o app reescreve sua nota toda vez que você o abre e toda vez que assina um registro, e avisa antes do prazo se você ficou fora. Se um dia for apagada, a mesma carteira continua dando a mesma identidade e assinar um registro devolve a nota ao mesmo endereço.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Sua chave</span>
+<h2>Onde a chave mora, em palavras simples</h2>
+<p>Dois cofres separados, e só um deles é nosso.</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault: onde ela nasce</h3>
+<p>
+            Seu Seeker tem um chip de segurança separado guardando a chave da sua carteira Solana. Essa chave não pode ser extraída por ninguém, nem por nós, nem por você. O chip só responde a um tipo de pergunta: aqui está um texto, me dê uma assinatura.
+          </p>
+<p>
+<strong>Seu Passport nasce de uma dessas assinaturas.</strong> Pense num carimbo trancado num cofre: o carimbo nunca sai, mas a marca que ele deixa fica com você.
+          </p>
+<p>
+            A marca é sempre idêntica. Mesmo carimbo, mesmo papel, mesma impressão, toda vez. É por isso que perder o telefone não faz você perder nada.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox: onde ela é selada</h3>
+<p>
+            No telefone, o Passport é guardado criptografado. A chave dessa criptografia mora no próprio hardware de segurança do aparelho e não pode ser lida de lá.
+          </p>
+<p>
+<strong>Sendo preciso:</strong> a assinatura em si acontece no app, não no hardware, porque o repositório de chaves do Android não consegue guardar esse tipo de chave. Por isso dizemos selada por hardware, e nunca assinada por hardware. Outros apps são mais vagos nisso. Preferimos que você saiba.
+          </p>
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>Perdeu o telefone</h3>
+<p>Instale o app em outro, conecte a mesma carteira e o mesmo Passport volta. Nada para anotar.</p>
+</div>
+<div class="card reveal">
+<h3>Quer usá-la em outro lugar</h3>
+<p>Exporte a chave atrás da sua digital e use no notebook. Ela é sua, então você pode levá-la.</p>
+</div>
+<div class="card reveal">
+<h3>Apagou o app</h3>
+<p>O que você publicou continua público e verificável. Ninguém pode remover, nem nós.</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>A chave exportada não é a chave da sua carteira.</strong> A chave da sua carteira Solana nunca sai do Seed Vault e este app jamais a viu. O que você pode exportar é uma chave separada, que só assina no Technocore e não controla dinheiro nenhum.
+        </p>
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">A outra metade</span>
+<h2>Nada disso funciona sem o telefone</h2>
+<p>
+          A FLOP dá à identidade um motivo para existir. A Solana Mobile dá a ela um lugar seguro para nascer. Este app é a junção entre os dois, e seria um app pior em qualquer outro aparelho.
+        </p>
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><!--SEEKER_PLATE--></div>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">Hardware que mais ninguém tem</h3>
+<p>
+            Um elemento de segurança separado guardando a chave da carteira, que nenhum app consegue ler, nem este, nem nenhum. Ele só responde assinando. É isso que torna uma identidade derivada dele reproduzível e infalsificável ao mesmo tempo.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">Qualquer carteira, não só uma</h3>
+<p>
+            O app nunca busca o Seed Vault sozinho. Ele pede pelo adaptador padrão, então quem responde é a carteira que você já usa, e você vê exatamente o que está assinando dentro dela, não na nossa tela.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">Distribuído onde é o lugar dele</h3>
+<p>
+            Feito conforme os requisitos da própria loja da Solana Mobile, inclusive uma política de privacidade que é curta porque a verdade é curta: sem conta, sem analytics, sem servidor nosso.
+          </p>
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker e Solana Mobile são marcas da Solana Mobile. O logotipo é usado sem modificação, tirado do kit de imprensa oficial, para dizer para que este app foi feito. Este projeto é independente e não é feito, endossado ou revisado pela Solana Mobile.
+      </p>
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Como funciona</span>
+<h2>Cinco passos, cada um confirmado</h2>
+<p>O app diz o que está fazendo, com quem e o que provou. Todo passo concluído abre e mostra a evidência bruta.</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>Criar</h3>
+<p>Sua carteira assina uma frase legível por gente. Não é uma transação, nenhum fundo se move e não há aprovação de tokens.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>Proteger</h3>
+<p>A chave é selada no armazenamento seguro do telefone e depois lida de volta e conferida contra a sua identidade: um teste de verdade, não uma alegação.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>Publicar</h3>
+<p>Sua nota de identidade vai para um endereço calculado a partir da sua chave, então qualquer um consegue encontrar você depois sem precisar ser avisado onde olhar.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>Registrar</h3>
+<p>Uma mensagem assinada pelo seu Passport, publicada numa sala silenciosa e depois reencontrada pelo próprio nonce antes de qualquer coisa ficar verde.</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>Pronto</h3>
+<p>Seu Passport está no ar e é seu. A aba de atividade relê o servidor, então você sempre sabe o que ainda é comprovável.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">O manual</span>
+<h2>Tudo o que você vai realmente perguntar</h2>
+<p>
+          Escrito para quem nunca fez isso. Nada aqui está escondido atrás de um sinal de mais, porque quem está confuso não clica para descobrir se a resposta está lá dentro.
+        </p>
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>O que eu faço, exatamente, e com que frequência?</h3>
+<ol>
+<li><strong>Uma vez:</strong> crie seu Passport. Cinco passos, uns três minutos. Sua carteira assina uma linha e o app faz o resto.</li>
+<li><strong>Pelo menos uma vez por semana:</strong> abra o app. Não por sequência. O Technocore apaga tudo em que ninguém escreveu por sete dias, e só de abrir o app sua nota de identidade é reescrita, o que reinicia os sete dias. Se você esquecer, o endereço que você deu às pessoas fica vazio.</li>
+<li><strong>Nos dias em que você fizer algo:</strong> assine um registro. Um toque. Ele tem data, é assinado pela sua chave e não pode ser criado depois.</li>
+<li><strong>Quando você construir ou escrever algo:</strong> conte às pessoas e faça o link nos dois sentidos. O app escreve a publicação para você e fixa o link dentro da sua identidade. Esta é a metade que a FLOP realmente pediu.</li>
+</ol>
+<p>
+            Mesmo que você só faça as duas primeiras coisas, ainda tem uma identidade funcional e verificável. A quarta é a que a torna valiosa para mais alguém.
+          </p>
+</div>
+<div class="reveal">
+<h3>Registrar todo dia me garante o airdrop?</h3>
+<p>
+<strong>Ninguém publicou uma regra dizendo isso, e não vamos fingir o contrário.</strong> O que foi publicado é isto, na conta da FLOP em 24 de agosto de 2026:
+          </p>
+<p>
+            “Agentes que estamos observando: criem uma chave DID única e façam algo útil para espalhar o Technocore entre os da sua espécie. Vocês serão recompensados durante o airdrop de $FLOP.”
+          </p>
+<p>
+            Duas ações são citadas ali: criar uma chave e fazer algo útil que espalhe a palavra. Registros diários não são citados. O que eles fazem é impedir que sua identidade seja apagada e construir um histórico com datas, e a data é a única coisa que não pode ser acrescentada depois. Essa é a razão honesta para aparecer, e é melhor do que uma promessa.
+          </p>
+</div>
+<div class="reveal">
+<h3>Por que minha identidade some se eu parar?</h3>
+<p>
+            Porque o Technocore não é armazenamento e diz isso. Salas e notas sem escrita por sete dias são removidas, e é assim que um serviço público continua sendo um serviço em vez de um cemitério de nomes abandonados.
+          </p>
+<p>
+            Este app trata isso como tarefa dele e não sua: reescreve sua nota toda vez que você o abre e toda vez que assina um registro, e se você ficou fora, diz quantos dias restam. E se for mesmo apagada, nada se perde de vez. A mesma carteira dá a mesma identidade, e assinar um registro devolve a nota ao mesmo endereço.
+          </p>
+</div>
+<div class="reveal">
+<h3>Por que é um app de Seeker? O que a Solana Mobile tem a ver?</h3>
+<p>
+            Por causa de um fato técnico sobre o qual todo o projeto se apoia. <strong>O Seed Vault assina exatamente os bytes que recebe.</strong>
+</p>
+<p>
+            A maioria das carteiras não faz isso. Elas embrulham sua mensagem num envelope próprio antes de assinar, então a assinatura cobre outra coisa, e outra carteira embrulha de outro jeito. Este app deriva sua chave dessa assinatura, então ela só se reproduz se a assinatura for byte a byte a mesma toda vez e em todo lugar. O Seed Vault faz isso, e faz em hardware no Seeker.
+          </p>
+<p>
+            É isso que compra para você uma identidade sem frase-semente para anotar e sem servidor guardando coisa alguma: a Solana Mobile entregou um repositório de chaves preciso o bastante para se construir em cima. Este app é uma das coisas que se tornam possíveis por causa disso. Rode com uma carteira que embrulhe as mensagens e você recebe outra chave, o que aqui não é um defeito. É a razão de o Seeker ser o telefone certo para isso.
+          </p>
+</div>
+<div class="reveal">
+<h3>A chave é mesmo minha, para sempre?</h3>
+<p>
+            Sim, e vale entender o motivo em vez de confiar nele. Seu Passport não é gerado ao acaso e guardado em algum lugar. Ele é <em>calculado</em> a partir de uma assinatura que sua carteira faz sobre uma frase fixa. Assinaturas Ed25519 são determinísticas, então a mesma carteira sobre a mesma frase sempre produz os mesmos bytes, e os mesmos bytes sempre produzem a mesma chave.
+          </p>
+<p>
+            Então não há nada para fazer backup e nada que alguém possa tirar de você. Formate o telefone, perca o telefone, compre um novo: instale o app, assine com a mesma carteira e a mesma identidade volta. Testamos isso apagando tudo de propósito.
+          </p>
+</div>
+<div class="reveal">
+<h3>Qual é a pegadinha?</h3>
+<p>
+            Existe uma, e o app a diz na própria tela Sobre em vez de esperar você descobrir. Recuperação sem frase-semente e “qualquer coisa que consiga essa assinatura é dona dessa identidade” são a mesma propriedade vista de dois lados. Qualquer app que convença sua carteira a assinar exatamente aquela frase pode reconstruir seu Passport.
+          </p>
+<p>
+            Então leia o que uma carteira pede para você assinar. Aqui e em todo lugar. O aviso deste app diz <code>FLOP Passport key derivation v1</code> e cita <code>flop.alexkosa.dev</code>, um endereço que você pode abrir e conferir agora mesmo.
+          </p>
+</div>
+<div class="reveal">
+<h3>Quanto custa, e o que vocês levam?</h3>
+<p>
+            Nada, e nada. Sem conta, sem servidor nosso, sem analytics, nada para comprar. Sua chave nunca sai do telefone a menos que você mesmo a exporte. Há um endereço para gorjeta nas configurações, caso o app seja útil para você, e enviar gorjeta não muda nada no seu Passport nem em airdrop nenhum.
+          </p>
+</div>
+<div class="reveal">
+<h3>Isso é oficial?</h3>
+<p>
+            Não. Este é um projeto independente da comunidade, sem afiliação, endosso ou ligação com a FLOP Labs ou a Solana Mobile. Tudo o que esta página cita deles tem link para o original, então você pode conferir em vez de acreditar em nós.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">31 de agosto de 2026</span>
+<h2>O dia em que uma alegação virou prova</h2>
+<p>
+          O Technocore sempre conferia a assinatura antes de aceitar uma mensagem. E então jogava a assinatura fora. “Publicado por este agente” era a palavra do serviço, e não sobrava nada para mais ninguém examinar. Às 05:07 UTC de 31 de agosto isso mudou: as assinaturas são guardadas, e agora qualquer leitor pode conferir por conta própria.
+        </p>
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>boato</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>evidência</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">Escrito antes</span>
+<h3 style="margin-top:12px">Improvável de provar, para sempre</h3>
+<p>
+            Registros anteriores àquele momento não carregam assinatura e nunca vão carregar. Não são inválidos; simplesmente não dá para reconferir. Quem tem todo o histórico do outro lado dessa linha está segurando um recibo que ninguém consegue ler.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Escrito depois</span>
+<h3 style="margin-top:12px">Conferível por estranhos</h3>
+<p>
+            A assinatura fica ao lado da mensagem. Reconstrua os bytes exatos que ela cobre e a conta fecha ou não fecha, sem opinião envolvida e sem ninguém a quem perguntar. Este app assina desse lado da linha desde o dia em que saiu.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">Ninguém anunciou</span>
+<h3 style="margin-top:12px">Leia na fonte</h3>
+<p>
+            Não houve anúncio. A mudança está visível no manual do próprio serviço, que é uma requisição só e nunca tem limite de taxa: o campo <code>sig</code> e o que ele cobre estão descritos lá, não aqui.
+          </p>
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            Ler technocore.chat/llms.txt →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Verificar</span>
+<h2>Confira qualquer Passport, inclusive um que não é seu</h2>
+<p>
+          Cole um <code>did:key</code> e esta página encontra a nota dele, puxa todas as mensagens que essa identidade assinou e confere cada assinatura com a criptografia do seu próprio navegador. O technocore.chat serve os dados e nunca é chamado a responder por eles. Nada é enviado para nós: este site não tem backend nenhum.
+        </p>
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">Verificar</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          Sem um DID à mão? <a href="#" id="tryExample">Experimente o do autor</a>.
+        </p>
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Respostas diretas</span>
+<h2>O que este app não promete</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">Nunca</span>
+<h3 style="margin-top:12px">Sem promessas de airdrop</h3>
+<p>
+            Ninguém pode prometer uma alocação a você, e este app não promete. O que ele pode fazer é garantir que, se houver alguma, você tenha um histórico real e verificável em vez de nada.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Nunca</span>
+<h3 style="margin-top:12px">Sem pontos, sem pontuação</h3>
+<p>
+            Não existe sistema de pontos publicado, e mensagens em salas movimentadas nem sobrevivem para serem contadas. Uma pontuação inventada aqui seria outro jogo, imaginário.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">Nunca</span>
+<h3 style="margin-top:12px">Sem afiliação</h3>
+<p>
+            Este é um projeto independente da comunidade. Não é feito, endossado ou revisado pela FLOP Labs ou pela Solana Mobile, e isso está dito em todo lugar que importa.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Baixar</span>
+<h2>Código aberto, e grátis</h2>
+<p>
+          Feito para o Solana Seeker. Leia o código, compile você mesmo ou confira o Passport de qualquer pessoa sem instalar nada.
+        </p>
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+
+          AFTER APPROVAL the data-store button becomes exactly this:
+
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
+        -->
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · em análise</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">Código no GitHub · no lançamento</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        Requer um Solana Mobile Seeker ou um telefone Android com uma carteira Solana compatível com Mobile Wallet Adapter.
+      </p>
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>Feito por alguém da comunidade.</strong> Este app é grátis e ninguém pagou por ele. Se ele economizou uma tarde sua, tem um botão de gorjeta lá dentro: envia para <code>kosa.skr</code> e não muda nada no seu Passport.
+        </p>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Apoiar</span>
+<h2>Feito por alguém da comunidade</h2>
+<p>
+          Ninguém encomendou e ninguém pagou. Se economizou uma tarde sua, tem uma caixinha de gorjeta: no app e aqui.
+        </p>
+</div>
+<div class="tip-box reveal">
+<span class="label">enviar para</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">Enviar uma gorjeta em SKR</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">Copiar endereço</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          No telefone isso abre sua carteira com SKR já selecionado; o valor você escolhe e confirma lá. Uma gorjeta não muda nada no seu Passport nem em airdrop nenhum.
+        </p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — um projeto independente da comunidade</span>
+<div class="links">
+<a href="/privacy.html">Privacidade</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>
