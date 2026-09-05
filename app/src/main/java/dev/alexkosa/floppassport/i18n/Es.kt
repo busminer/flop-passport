@@ -142,6 +142,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Nada ha respaldado este texto todavía. Publique de nuevo para firmarlo.",
     "Nothing signed today yet." to "Aún no se ha firmado nada hoy.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Una frase con tus propias palabras. Miles de posts que solo se diferencian por una clave se leen como granjeo, y eso recae sobre quienes sí hicieron el trabajo.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Solo se muestran idiomas con una traducción real. Un selector que ofreciera idiomas que se muestran todos en inglés indicaría que su idioma es compatible y demostraría lo contrario en la pantalla siguiente.",
     "Opening a connection" to "Abriendo una conexión",
@@ -221,6 +223,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Esta aplicación vuelve a escribir tu nota cada vez que la abres y cada vez que firmas un registro, por lo que el plazo de siete días comienza de nuevo. Ábrela al menos una vez por semana y nunca se perderá nada.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Esta NO es la clave de su cartera Solana. La clave de la cartera nunca sale de Seed Vault y esta aplicación nunca la ha visto. Lo que está viendo es una clave independiente que solo firma en Technocore.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Esta línea es lo que hace tuyo el post. Todo lo de abajo es la prueba.",
     "Three days left before it is deleted." to "Quedan tres días para que se elimine.",
     "Told only when your identity note is days away from being deleted." to
         "Solo recibirás un aviso cuando falten pocos días para que se elimine tu nota de identidad.",

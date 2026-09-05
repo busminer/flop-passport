@@ -144,6 +144,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Belum ada yang menjamin teks ini. Terbitkan lagi untuk menandatanganinya.",
     "Nothing signed today yet." to "Belum ada yang ditandatangani hari ini.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Tolong satu kalimat dengan kata-kata Anda sendiri. Ribuan kiriman yang hanya berbeda kuncinya akan dibaca sebagai farming, dan itu menimpa orang-orang yang benar-benar bekerja.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
     "Opening a connection" to "Membuka koneksi",
@@ -225,6 +227,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Aplikasi ini menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani catatan, sehingga periode tujuh hari dimulai lagi. Buka aplikasi setidaknya sekali seminggu agar tidak ada yang hilang.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Ini BUKAN kunci dompet Solana Anda. Kunci dompet Anda tidak pernah meninggalkan Seed Vault dan tidak pernah dilihat aplikasi ini. Yang Anda lihat adalah kunci terpisah yang hanya menandatangani di Technocore.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Kalimat inilah yang membuat kiriman ini milik Anda. Semua di bawahnya adalah buktinya.",
     "Three days left before it is deleted." to "Tiga hari lagi sebelum dihapus.",
     "Told only when your identity note is days away from being deleted." to
         "Anda hanya diberi tahu saat catatan identitas Anda tinggal beberapa hari lagi sebelum dihapus.",

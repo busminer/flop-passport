@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.proof.PostComposer
 import dev.alexkosa.floppassport.proof.looksLikeUrl
 import dev.alexkosa.floppassport.proof.looksLikeXPost
 import dev.alexkosa.floppassport.ui.PassportViewModel
@@ -69,6 +70,9 @@ fun TellThemCard(vm: PassportViewModel) {
     val clipboard = LocalClipboardManager.current
 
     val draft = vm.postDraft() ?: return
+    // One place decides. The hint under the field and the state of the button are the
+    // same fact shown twice, and they must never disagree with each other.
+    val ready = PostComposer.isRealSentence(vm.contributionLine)
     var xField by remember { mutableStateOf(vm.xPostUrl) }
     var contribField by remember { mutableStateOf(vm.contributionUrl) }
     var problem by remember { mutableStateOf<String?>(null) }
@@ -116,10 +120,21 @@ fun TellThemCard(vm: PassportViewModel) {
             placeholder = t("Shipped a Technocore client for the Seeker"),
         )
         Spacer(Modifier.height(FlopSpacing.xs))
+        // Says why, not just that. A required field with no reason attached reads as an
+        // obstacle; this one is the difference between a contributor and a bot, and the
+        // person filling it in is the one it protects.
         Text(
-            t("Leave it blank and the post still works. It just says less."),
+            t(
+                if (ready) {
+                    "This line is what makes the post yours. Everything under it is the proof."
+                } else {
+                    "One sentence in your own words, please. Thousands of posts that differ " +
+                        "only by a key get read as farming, and that lands on the people who " +
+                        "did the work."
+                },
+            ),
             style = FlopType.bodySm,
-            color = FlopColors.TextMuted,
+            color = if (ready) FlopColors.TextMuted else FlopColors.Cyan,
         )
 
         Spacer(Modifier.height(FlopSpacing.md))
@@ -153,7 +168,8 @@ fun TellThemCard(vm: PassportViewModel) {
         Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
             FlopButton(
                 "post it",
-                {
+                enabled = ready,
+                onClick = {
                     context.startActivity(
                         Intent.createChooser(
                             Intent(Intent.ACTION_SEND).apply {

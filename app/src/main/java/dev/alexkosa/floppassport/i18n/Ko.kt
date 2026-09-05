@@ -124,6 +124,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "아직 이 텍스트를 보증한 것이 없습니다. 서명하려면 다시 게시하세요.",
     "Nothing signed today yet." to "오늘은 아직 서명된 기록이 없습니다.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "당신의 말로 한 문장만 써 주세요. 키만 다른 수천 개의 글은 파밍으로 읽히고, 그 대가는 실제로 일한 사람들이 치릅니다.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "실제 번역이 있는 언어만 표시됩니다. 모든 언어를 영어로 표시하는 선택기는 해당 언어를 지원한다고 안내하지만 다음 화면에서는 그렇지 않음을 보여줍니다.",
     "Opening a connection" to "연결을 여는 중",
@@ -196,6 +198,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "이 앱은 열 때마다, 그리고 기록에 서명할 때마다 노트를 다시 작성하므로 일주일이 다시 시작됩니다. 적어도 일주일에 한 번 앱을 열면 아무것도 사라지지 않습니다.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "이것은 Solana 지갑 키가 아닙니다. 지갑의 키는 Seed Vault를 벗어나지 않으며 이 앱은 해당 키를 본 적이 없습니다. 지금 보고 있는 것은 Technocore에서만 서명하는 별도의 키입니다.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "이 한 줄이 이 글을 당신의 것으로 만듭니다. 그 아래는 전부 증거입니다.",
     "Three days left before it is deleted." to "삭제되기까지 사흘 남았습니다.",
     "Told only when your identity note is days away from being deleted." to
         "신원 노트가 삭제되기 며칠 전일 때만 알려드립니다.",

@@ -142,6 +142,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Bu metin için henüz bir kefil yok. İmzalamak için yeniden yayımlayın.",
     "Nothing signed today yet." to "Bugün henüz hiçbir şey imzalanmadı.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Lütfen kendi cümlenle bir satır yaz. Yalnızca anahtarı farklı olan binlerce gönderi çiftlik gibi okunur ve bunun bedelini işi gerçekten yapanlar öder.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
     "Opening a connection" to "Bağlantı açılıyor",
@@ -221,6 +223,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu uygulama, her açtığınızda ve her kayıt imzaladığınızda notunuzu yeniden yazar, böylece yedi günlük süre yeniden başlar. Haftada en az bir kez açarsanız hiçbir şey kaybolmaz.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Bu, Solana cüzdan anahtarınız DEĞİLDİR. Cüzdanınızın kendi anahtarı Seed Vault dışına hiçbir zaman çıkmaz ve bu uygulama onu hiç görmemiştir. Gördüğünüz, yalnızca Technocore üzerinde imza atan ayrı bir anahtardır.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Bu satır gönderiyi senin yapan şey. Altındaki her şey kanıt.",
     "Three days left before it is deleted." to "Silinmesine üç gün kaldı.",
     "Told only when your identity note is days away from being deleted." to
         "Yalnızca kimlik notunuzun silinmesine birkaç gün kaldığında bildirim alırsınız.",

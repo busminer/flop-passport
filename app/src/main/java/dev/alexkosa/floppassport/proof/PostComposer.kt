@@ -28,6 +28,24 @@ object PostComposer {
 
     const val CREDIT = "FLOP Passport for Seeker by @AlexKosa1"
 
+    /** The same credit at a size that survives when the rest of the post is long. */
+    private const val CREDIT_SHORT = "FLOP Passport by @AlexKosa1"
+
+    /**
+     * Who this is about, and where it belongs.
+     *
+     * The handle was checked against the live account rather than typed from memory:
+     * @flop_labs, "Flop Labs", a verified organisation. A post that tags the wrong account
+     * is worse than one that tags nobody.
+     *
+     * The tags are what make a post findable by somebody who is not already following the
+     * person who wrote it, which is the entire reason the post exists.
+     */
+    const val TAGS = "@flop_labs #FLOP #SolanaMobile"
+
+    /** A shorter tail for drafts that have run out of room. */
+    private const val TAGS_SHORT = "@flop_labs #FLOP"
+
     data class Draft(
         val text: String,
         val variant: String,
@@ -167,35 +185,30 @@ object PostComposer {
         fun build(vararg lines: String?) =
             lines.filterNotNull().joinToString("\n\n").trimEnd()
 
-        // Three sentences the community route does not have, in descending order of how
-        // much they cost. The Seeker line is not flattery: the derivation is only possible
-        // because Seed Vault signs the exact bytes it is handed. A wallet that wraps the
-        // message in its own envelope, which most do, produces a different signature for
-        // the same statement and there is no reproducible key at the end of it. That was
-        // measured on a real Seeker before this app was built, and it is the most specific
-        // true thing a post about this can say.
-        // No fallback opener here, unlike every variant below it. Somebody who wrote
-        // nothing gets the two Seed Vault lines instead of a bland "created my Passport"
-        // followed by them, which is what pushed this variant over the limit and quietly
-        // dropped the most specific sentence in the whole post.
-        // The opener leads here too, not only in the shorter variants. It is the line that
-        // decides whether the rest is read at all, and dropping it left every post that
-        // nobody wrote a line for opening on a technical sentence about byte handling.
+        // Two tails, because the tags cost real space and the post has a hard limit. The
+        // long one names the app in full and carries both tags; the short one keeps the
+        // account, the project and the credit, which are the three things that make the
+        // post findable and attributable at all.
+        val tail = CREDIT + "\n" + TAGS
+        val tailShort = CREDIT_SHORT + " " + TAGS_SHORT
+
+        // Descending by what it costs. The user's own line leads every one of them: it is
+        // required before the post can be sent, so the openers below it exist to show
+        // somebody what a good line looks like, not to stand in for one.
         val full = build(
             mine ?: voice.opener,
             voice.mechanism,
-            voice.closer,
             did,
             link,
-            CREDIT,
+            tail,
         )
 
         val medium = build(
             mine ?: voice.opener,
-            voice.mechanism,
+            voice.brief,
             did,
             link,
-            CREDIT,
+            tail,
         )
 
         val short = build(
@@ -203,20 +216,20 @@ object PostComposer {
             voice.brief,
             did,
             link,
-            CREDIT,
+            tailShort,
         )
 
         val minimal = build(
             mine ?: voice.opener,
             did,
             link,
-            CREDIT,
+            tailShort,
         )
 
         // Last resort: the DID and the credit are the two things that cannot be dropped,
         // because without the key the post proves nothing and without the credit it does
         // not point anyone at the app.
-        val bare = build(mine, did, CREDIT)
+        val bare = build(mine, did, tailShort)
 
         return listOf(
             Draft(full, "full", weightedLength(full)),
@@ -225,6 +238,35 @@ object PostComposer {
             Draft(minimal, "minimal", weightedLength(minimal)),
             Draft(bare, "bare", weightedLength(bare)),
         )
+    }
+
+    /**
+     * Whether this line is something a person actually wrote.
+     *
+     * The app will not post without one. Not to be strict for its own sake: five thousand
+     * posts whose only difference is a key read as one machine talking to itself, and the
+     * people who would be hurt by that are the ones who did the work. One real sentence
+     * about what they did is what separates a contributor from a bot, and it is the half
+     * FLOP actually asked for.
+     *
+     * The rule is deliberately low, and it is script-aware. Most of the people this is
+     * written for do not write in a language that puts spaces between words: a
+     * word-counting rule would have accepted two lazy English words and rejected a
+     * thoughtful Chinese sentence. So Han, kana and Hangul are counted by character, and
+     * everything else by words as well as length.
+     */
+    fun isRealSentence(line: String?): Boolean {
+        val text = line?.trim().orEmpty()
+        if (text.isEmpty()) return false
+        // Anything a machine would type to get past a check. Kept short on purpose: this
+        // is a doormat, not a filter, and a long list would start rejecting real people.
+        val filler = setOf("gm", "gn", "hi", "hello", "test", "hey", "ok", "flop", "done", "签到", "打卡")
+        if (text.lowercase() in filler) return false
+        val dense = text.any {
+            it in '\u4e00'..'\u9fff' || it in '\u3040'..'\u30ff' || it in '\uac00'..'\ud7af'
+        }
+        if (dense) return text.count { !it.isWhitespace() } >= 8
+        return text.length >= 20 && text.split(Regex("\\s+")).count { it.isNotBlank() } >= 4
     }
 
     /**

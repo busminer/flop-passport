@@ -121,6 +121,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "このテキストを保証するものはまだありません。署名するにはもう一度公開してください。",
     "Nothing signed today yet." to "今日はまだ何も署名していません。",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "自分の言葉で一文お願いします。鍵だけが違う投稿が何千も並べば、それはファーミングとして読まれ、割を食うのは実際に手を動かした人です。",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "実際の翻訳がある言語のみを表示しています。すべて英語で表示される言語を選択肢に含めると、対応言語と表示されても、次の画面では対応していないことになります。",
     "Opening a connection" to "接続を開始しています",
@@ -193,6 +195,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "このアプリは、開くたび、また記録に署名するたびにノートを書き直すため、七日間の期限が再び始まります。少なくとも週に一度開けば、何も失われません。",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "これはSolanaウォレットの鍵ではありません。ウォレット自体の鍵はSeed Vaultから出ず、このアプリが取得したこともありません。表示しているのは、Technocore上でのみ署名する別の鍵です。",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "この一文が、この投稿をあなたのものにします。その下はすべて証拠です。",
     "Three days left before it is deleted." to "削除まであと三日です。",
     "Told only when your identity note is days away from being deleted." to
         "身元情報のノートが削除される数日前にのみ通知されます。",

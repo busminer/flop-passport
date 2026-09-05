@@ -142,6 +142,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Nada garantiu este texto ainda. Publique novamente para assiná-lo.",
     "Nothing signed today yet." to "Nada assinado hoje.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Uma frase com suas próprias palavras. Milhares de posts que só diferem por uma chave são lidos como farm, e isso sobra para quem realmente fez o trabalho.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Apenas idiomas com uma tradução real são listados. Um seletor que oferecesse idiomas que exibem tudo em inglês diria que seu idioma é compatível e mostraria o contrário na tela seguinte.",
     "Opening a connection" to "Abrindo uma conexão",
@@ -222,6 +224,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Este app regrava sua nota sempre que você o abre e sempre que assina um registro, reiniciando os sete dias. Abra-o pelo menos uma vez por semana e nada será perdido.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Esta NÃO é a chave da sua carteira Solana. A chave da carteira nunca sai do Seed Vault e este app nunca teve acesso a ela. Esta é uma chave separada que assina apenas no Technocore.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Esta linha é o que torna o post seu. Tudo abaixo dela é a prova.",
     "Three days left before it is deleted." to "Faltam três dias para ela ser excluída.",
     "Told only when your identity note is days away from being deleted." to
         "Você só recebe um aviso quando faltam poucos dias para sua nota de identidade ser excluída.",

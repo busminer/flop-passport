@@ -145,6 +145,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Für diesen Text hat noch nichts gebürgt. Veröffentlichen Sie erneut, um ihn zu signieren.",
     "Nothing signed today yet." to "Heute wurde noch nichts signiert.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Ein Satz in deinen eigenen Worten. Tausende Beiträge, die sich nur durch einen Schlüssel unterscheiden, werden als Farming gelesen, und das trifft die, die die Arbeit gemacht haben.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
     "Opening a connection" to "Verbindung wird hergestellt",
@@ -228,6 +230,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Diese App schreibt deine Notiz jedes Mal neu, wenn du sie öffnest oder einen Eintrag signierst. Dadurch beginnen die sieben Tage erneut. Öffne sie mindestens einmal pro Woche, dann geht nichts verloren.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Dies ist NICHT der Schlüssel Ihrer Solana-Wallet. Der eigene Schlüssel Ihrer Wallet verlässt Seed Vault nie, und diese App hat ihn nie gesehen. Sie sehen einen separaten Schlüssel, der nur auf Technocore signiert.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Diese Zeile macht den Beitrag zu deinem. Alles darunter ist der Beleg.",
     "Three days left before it is deleted." to "Noch drei Tage, bevor sie gelöscht wird.",
     "Told only when your identity note is days away from being deleted." to
         "Du wirst nur benachrichtigt, wenn deine Identitätsnotiz kurz vor dem Löschen steht.",

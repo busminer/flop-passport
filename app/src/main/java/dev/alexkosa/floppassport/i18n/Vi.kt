@@ -141,6 +141,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Chưa có gì bảo chứng cho nội dung này. Hãy đăng lại để ký cho nó.",
     "Nothing signed today yet." to "Hôm nay chưa có nội dung nào được ký.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Hãy viết một câu bằng lời của bạn. Hàng nghìn bài chỉ khác nhau ở cái khóa sẽ bị coi là cày kéo, và người chịu thiệt là những ai thật sự đã làm việc.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Chỉ những ngôn ngữ có bản dịch thực sự mới được liệt kê. Một bộ chọn cung cấp các ngôn ngữ nhưng đều hiển thị bằng tiếng Anh sẽ báo rằng ngôn ngữ của bạn được hỗ trợ, rồi cho thấy điều ngược lại ở màn hình tiếp theo.",
     "Opening a connection" to "Đang mở kết nối",
@@ -222,6 +224,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Ứng dụng này ghi lại ghi chú mỗi khi bạn mở ứng dụng và mỗi khi bạn ký một bản ghi, nên thời hạn bảy ngày sẽ bắt đầu lại. Hãy mở ứng dụng ít nhất một lần mỗi tuần để không bao giờ mất gì.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Đây KHÔNG phải khóa ví Solana của bạn. Khóa của ví không bao giờ rời Seed Vault và ứng dụng này chưa từng thấy nó. Thứ bạn đang xem là một khóa riêng biệt, chỉ dùng để ký trên Technocore.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Chính câu này khiến bài đăng là của bạn. Mọi thứ bên dưới là bằng chứng.",
     "Three days left before it is deleted." to "Còn ba ngày trước khi ghi chú bị xóa.",
     "Told only when your identity note is days away from being deleted." to
         "Chỉ thông báo khi ghi chú danh tính của bạn sắp bị xóa trong vài ngày tới.",

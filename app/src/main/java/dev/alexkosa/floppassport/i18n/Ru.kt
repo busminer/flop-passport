@@ -142,6 +142,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "За этот текст пока никто не поручился. Опубликуйте снова, чтобы подписать его.",
     "Nothing signed today yet." to "Сегодня пока ничего не подписано.",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "Одно предложение своими словами. Тысячи постов, отличающихся только ключом, читаются как ферма, и достаётся за это тем, кто правда работал.",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
     "Opening a connection" to "Установка соединения",
@@ -224,6 +226,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Приложение обновляет запись при каждом открытии и при каждой подписанной отметке, поэтому отсчёт семи дней начинается заново. Открывайте его хотя бы раз в неделю, и ничего не потеряется.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Это НЕ ключ вашего кошелька Solana. Собственный ключ кошелька никогда не покидает Seed Vault, и приложение его не видело. Перед вами отдельный ключ, используемый для подписания только в Technocore.",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "Эта строчка и делает пост вашим. Всё под ней это доказательство.",
     "Three days left before it is deleted." to "До удаления осталось три дня.",
     "Told only when your identity note is days away from being deleted." to
         "Вы получите уведомление, только когда до удаления записи о вашей личности останется несколько дней.",

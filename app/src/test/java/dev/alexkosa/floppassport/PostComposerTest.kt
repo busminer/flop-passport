@@ -153,4 +153,41 @@ class PostComposerTest {
             assertTrue(draft.text.contains(liveDid))
         }
     }
+
+    @Test
+    fun `every variant names FLOP and the platform`() {
+        for (draft in PostComposer.drafts(liveDid)) {
+            assertTrue("variant ${draft.variant} drops the project", draft.text.contains("@flop_labs"))
+            assertTrue("variant ${draft.variant} drops the tag", draft.text.contains("#FLOP"))
+        }
+    }
+
+    @Test
+    fun `a real sentence is required, and the rule speaks more than English`() {
+        // Nothing, and the things somebody types to get past a check.
+        for (empty in listOf(null, "", "   ", "gm", "GM", "test", "打卡")) {
+            assertFalse("accepted '$empty'", PostComposer.isRealSentence(empty))
+        }
+        // Two words in English is not a sentence about anything.
+        assertFalse(PostComposer.isRealSentence("did it"))
+        assertTrue(
+            PostComposer.isRealSentence("I shipped an open source Technocore client for the Seeker."),
+        )
+        // The rule this app will meet most often. A thoughtful Chinese sentence is short in
+        // characters and has no spaces at all; counting words would have thrown it out.
+        assertTrue(PostComposer.isRealSentence("我为 Seeker 写了一个开源的 Technocore 客户端"))
+        assertTrue(PostComposer.isRealSentence("Seeker 向けに Technocore のクライアントを作りました"))
+    }
+
+    @Test
+    fun `the post still fits once the tags are in it`() {
+        val mine = "I shipped an open source Technocore client for the Seeker."
+        for (voice in PostComposer.VOICES) {
+            val draft = PostComposer.compose(liveDid, mine, voice = voice)
+            assertTrue("voice does not fit: ${draft.weightedLength}", draft.fits)
+            assertTrue(draft.text.startsWith(mine))
+            assertTrue(draft.text.contains(liveDid))
+            assertTrue(draft.text.contains("@flop_labs"))
+        }
+    }
 }

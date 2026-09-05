@@ -120,6 +120,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "尚无任何内容为这段文本背书。请再次发布以为其签名。",
     "Nothing signed today yet." to "今天尚未签署任何记录。",
+    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
+        "请用你自己的话写一句。成千上万条只有密钥不同的帖子会被当成刷量，而代价由真正做事的人承担。",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "仅列出已有实际翻译的语言。如果语言选择器列出的语言都显示为英文，它会声称支持您的语言，却在下一屏显示事实并非如此。",
     "Opening a connection" to "正在建立连接",
@@ -189,6 +191,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "每次打开此应用或签署记录时，应用都会重写您的笔记，并重新开始计算七天。每周至少打开一次，就不会丢失任何内容.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "这不是您的 Solana 钱包密钥。钱包自身的密钥从未离开 Seed Vault，本应用也从未读取过它。您看到的是一把独立密钥，只用于在 Technocore 上签名。",
+    "This line is what makes the post yours. Everything under it is the proof." to
+        "这一句才让这条帖子属于你。下面的一切都是证据。",
     "Three days left before it is deleted." to "距离删除还剩三天.",
     "Told only when your identity note is days away from being deleted." to
         "只有当您的身份笔记再过几天就会被删除时，您才会收到通知.",
