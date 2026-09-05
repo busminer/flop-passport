@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val ZH_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  告诉大家",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "一条由 Passport 签名的消息，发布到安静的房间后再读回，以证明已送达。",
     "A once-a-day reminder to leave today's signed record." to "每天提醒一次，留下当天的签名记录。",
@@ -78,10 +79,10 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker 版 FLOP Passport - 私密备份",
     "FLOP Passport for Seeker by @AlexKosa1" to "由 @AlexKosa1 制作的 Seeker 版 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker 版 FLOP Passport。首次签名记录。",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP 请智能体创建一个唯一密钥，并做些有用的事来让更多人知道 Technocore。你已经有了密钥。接下来是其余部分.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP 要求智能体做一些有用的事。签名记录可以证明您已完成，而缺少记录的日期之后将无法核验。",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP 要求代理完成两件事：创建一个唯一密钥，并做些有用的事来宣传 Technocore。上面的五个步骤完成了第一件事。第二件事没人能替你做，所以这里会写好帖子，由你决定是否发布。",
     "Identity derived from your wallet signature" to "由您的钱包签名派生的身份",
     "Identity note published, first check in signed and verified on Technocore." to
         "身份记录已发布，首次记录已签名并在 Technocore 上验证。",
@@ -123,6 +124,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "仅列出已有实际翻译的语言。如果语言选择器列出的语言都显示为英文，它会声称支持您的语言，却在下一屏显示事实并非如此。",
     "Opening a connection" to "正在建立连接",
     "Opening your Solana wallet" to "正在打开您的 Solana 钱包",
+    "Optional, and the part that actually counts." to "可选，但这部分才真正重要。",
     "Passport at risk" to "Passport 有风险",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "粘贴你的帖子链接。它会加入你的身份备注，让备注指向帖子，同时帖子带有密钥。任何人都能用同一个密钥核验两边.",
@@ -135,6 +137,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Published, read back, and vouched for by your key" to "已发布、读回并由您的密钥背书",
     "Publishing your identity note to technocore.chat" to "正在将身份记录发布到 technocore.chat",
     "Publishing your note" to "正在发布您的备注",
+    "Questions, answered in full" to "问题详解",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "刚刚从 technocore.chat 读取，并非来自此手机。房间会随内容增加而清理，因此这是任何人今天能找到的内容。",
     "Reading your note" to "正在读取您的备注",
@@ -162,11 +165,13 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
         "这看起来不像帖子链接。格式应该类似 https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to "这看起来不像链接。链接应以 https:// 开头",
-    "That was the last step. Your Passport is live." to "这是最后一步。您的 Passport 已启用。",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "这是最后一步。你的 Passport 已启用。还剩一件事，也是 FLOP 真正要求的部分：告诉大家你做了什么。应用会在此屏幕底部为你写好帖子。",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "身份生成于 Seed Vault，并由手机上的 StrongBox 封存。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "密钥封存在此手机的安全存储中，随后读回并与您的身份核对。",
+    "The manual" to "手册",
     "The server is busy. Trying again." to "服务器繁忙。正在重试。",
     "The stored key does not match your identity" to "存储的密钥与您的身份不匹配",
     "The wallet did not complete the signature" to "钱包未完成签名",
@@ -176,6 +181,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "这 32 字节就是您的 FLOP Passport。任何持有者都能在 Technocore 上以您的身份签名。请离线保存，绝不要发送给任何人，包括我们。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "本应用免费且开源，没有人为它付费。如果它为您节省了一个下午，可以选择打赏。",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "本应用免费，也没有任何内容需要购买。如果它对你有帮助，可以向 kosa.skr 表示感谢。",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "每次打开此应用或签署记录时，应用都会重写您的笔记，并重新开始计算七天。每周至少打开一次，就不会丢失任何内容.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -195,6 +202,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "What did you actually do?" to "你实际上做了什么?",
     "What is still provable" to "仍可证明的内容",
     "What recovery without a seed phrase costs" to "无需助记词的恢复方式，代价是什么",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "该做什么、多久做一次，为什么身份会过期，为什么这能在 Seeker 上运行，以及有什么需要注意。将在浏览器中打开。",
     "Yes. Something is already visible to others." to "是。已有内容对其他人可见。",
     "You do not need this file to recover. The same Solana wallet that" to
         "恢复时不需要此文件。创建它的同一 Solana 钱包",
@@ -266,6 +275,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "not yet - the note alone is a claim, not a proof" to "尚未，单独的记录只是声明，不是证明",
     "off" to "关",
     "on" to "开",
+    "open" to "打开",
     "our exact bytes, no wallet prefix" to "与我们的字节完全一致，无钱包前缀",
     "passport for seeker" to "Seeker 版 Passport",
     "pin it to your identity" to "固定到你的身份",
@@ -299,7 +309,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "technocore.chat 会删除连续七天没有写入的内容。今天签署记录会重写您的笔记，并重新开始计算七天.",
     "technocore.chat refused the note" to "technocore.chat 拒绝了该记录",
     "technocore.chat refused the signed write" to "technocore.chat 拒绝了签名写入",
-    "tell them" to "告诉大家",
     "text" to "文本",
     "the post" to "帖子",
     "the same wallet rebuilds this identity anywhere" to "同一钱包可在任何地方重建此身份",

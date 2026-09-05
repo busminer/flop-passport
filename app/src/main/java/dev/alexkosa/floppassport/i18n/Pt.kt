@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val PT_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  conte a eles",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Uma mensagem assinada pelo seu Passport, publicada em uma sala tranquila e depois consultada novamente para provar que chegou.",
     "A once-a-day reminder to leave today's signed record." to
@@ -86,10 +87,10 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport para Seeker por @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport para Seeker. Primeiro registro assinado.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP pediu aos agentes que criassem uma chave única e fizessem algo útil para divulgar Technocore. Você tem a chave. Este é o resto.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP pediu aos agentes que fizessem algo útil. Um registro assinado comprova o que foi feito, e um dia sem registro não poderá ser verificado depois.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP pediu aos agentes duas coisas: criar uma chave única e fazer algo útil para divulgar o Technocore. As cinco etapas acima fizeram a primeira. Ninguém pode fazer a segunda por você, então o app escreve a publicação e você decide se quer enviá-la.",
     "Identity derived from your wallet signature" to
         "Identidade derivada da assinatura da sua carteira",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -145,6 +146,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Apenas idiomas com uma tradução real são listados. Um seletor que oferecesse idiomas que exibem tudo em inglês diria que seu idioma é compatível e mostraria o contrário na tela seguinte.",
     "Opening a connection" to "Abrindo uma conexão",
     "Opening your Solana wallet" to "Abrindo sua carteira Solana",
+    "Optional, and the part that actually counts." to "Opcional, e a parte que realmente conta.",
     "Passport at risk" to "Passport em risco",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Cole o link da sua publicação. Ele vai para a sua nota de identidade, assim a nota aponta para a publicação e a publicação contém a chave. Qualquer pessoa pode verificar os dois lados com a mesma chave.",
@@ -160,6 +162,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Publicando sua nota de identidade em technocore.chat",
     "Publishing your note" to "Publicando sua nota",
+    "Questions, answered in full" to "Perguntas, respondidas por completo",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Consultado agora em technocore.chat, não neste telefone. As salas são reduzidas conforme crescem, então isto é o que qualquer pessoa encontraria hoje.",
     "Reading your note" to "Lendo sua nota",
@@ -194,12 +197,13 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Isso não parece ser um link de uma publicação. Deve ser parecido com https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Isso não parece ser um link. Deve começar com https://",
-    "That was the last step. Your Passport is live." to
-        "Essa foi a última etapa. Seu Passport está ativo.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Essa foi a última etapa. Seu Passport está ativo. Só falta uma coisa, e é o que FLOP realmente pediu: contar às pessoas o que você fez. O app escreve a publicação para você na parte inferior desta tela.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "A identidade é criada dentro do Seed Vault e selada pelo StrongBox no telefone.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "A chave é selada no armazenamento seguro deste telefone, depois relida e comparada com sua identidade.",
+    "The manual" to "O manual",
     "The server is busy. Trying again." to "O servidor está ocupado. Tentando novamente.",
     "The stored key does not match your identity" to
         "A chave armazenada não corresponde à sua identidade",
@@ -210,6 +214,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Estes 32 bytes são o próprio FLOP Passport. Quem os possuir pode assinar em seu nome no Technocore. Mantenha-os offline e nunca os envie a ninguém, nem mesmo a nós.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Este app é gratuito e de código aberto, e ninguém pagou por ele. Se ele poupou uma tarde, uma contribuição é bem-vinda.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Este app é gratuito e não há nada para comprar. Se ele foi útil, envie seu agradecimento para kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Este app regrava sua nota sempre que você o abre e sempre que assina um registro, reiniciando os sete dias. Abra-o pelo menos uma vez por semana e nada será perdido.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -229,6 +235,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "What did you actually do?" to "O que você realmente fez?",
     "What is still provable" to "O que ainda pode ser comprovado",
     "What recovery without a seed phrase costs" to "O que custa recuperar sem frase semente",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "O que fazer e com que frequência, por que a identidade expira, por que isso funciona em um Seeker e qual é o porém. Abre no seu navegador.",
     "Yes. Something is already visible to others." to
         "Sim. Algo já está visível para outras pessoas.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -306,6 +314,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "ainda não - a nota por si só é uma declaração, não uma prova",
     "off" to "desativado",
     "on" to "ativado",
+    "open" to "abrir",
     "our exact bytes, no wallet prefix" to "nossos bytes exatos, sem prefixo da carteira",
     "passport for seeker" to "passport para seeker",
     "pin it to your identity" to "fixe na sua identidade",
@@ -339,7 +348,6 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "technocore.chat exclui tudo que fica sete dias sem uma gravação. Assinar hoje regrava sua nota e reinicia os sete dias.",
     "technocore.chat refused the note" to "technocore.chat recusou a nota",
     "technocore.chat refused the signed write" to "technocore.chat recusou a gravação assinada",
-    "tell them" to "conte a eles",
     "text" to "texto",
     "the post" to "a publicação",
     "the same wallet rebuilds this identity anywhere" to

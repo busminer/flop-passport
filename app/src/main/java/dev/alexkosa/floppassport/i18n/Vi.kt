@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val VI_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  kể cho mọi người",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Một tin nhắn được Passport của bạn ký, gửi vào một phòng yên tĩnh rồi đọc lại để chứng minh đã được ghi nhận.",
     "A once-a-day reminder to leave today's signed record." to
@@ -88,10 +89,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport cho Seeker. Bản ghi đầu tiên đã được ký.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP đã đề nghị mọi người tạo một khóa riêng và làm điều gì đó hữu ích để nhiều người biết đến Technocore. Bạn đã có khóa. Đây là phần còn lại.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi đã ký là bằng chứng cho việc đó, và nếu một ngày không có bản ghi thì sau này không ai có thể kiểm tra ngày đó.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP yêu cầu các trợ lý làm hai việc: tạo một khóa duy nhất và làm điều gì đó hữu ích để lan truyền thông tin về Technocore. Năm bước trên đã hoàn thành việc đầu tiên. Không ai có thể làm việc thứ hai thay bạn, nên ứng dụng sẽ viết bài đăng và bạn quyết định có gửi hay không.",
     "Identity derived from your wallet signature" to "Danh tính được tạo từ chữ ký ví của bạn",
     "Identity note published, first check in signed and verified on Technocore." to
         "Đã công bố ghi chú danh tính, bản ghi đầu tiên đã được ký và xác minh trên Technocore.",
@@ -144,6 +145,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Chỉ những ngôn ngữ có bản dịch thực sự mới được liệt kê. Một bộ chọn cung cấp các ngôn ngữ nhưng đều hiển thị bằng tiếng Anh sẽ báo rằng ngôn ngữ của bạn được hỗ trợ, rồi cho thấy điều ngược lại ở màn hình tiếp theo.",
     "Opening a connection" to "Đang mở kết nối",
     "Opening your Solana wallet" to "Đang mở ví Solana của bạn",
+    "Optional, and the part that actually counts." to
+        "Không bắt buộc, nhưng đây mới là phần thực sự quan trọng.",
     "Passport at risk" to "Passport có nguy cơ",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Dán liên kết đến bài đăng của bạn. Liên kết này sẽ được đưa vào ghi chú danh tính của bạn, để ghi chú trỏ đến bài đăng và bài đăng chứa khóa. Sau đó, bất kỳ ai cũng có thể đối chiếu cả hai bằng cùng một khóa.",
@@ -159,6 +162,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Đang công bố ghi chú danh tính lên technocore.chat",
     "Publishing your note" to "Đang công bố ghi chú của bạn",
+    "Questions, answered in full" to "Câu hỏi, được giải đáp đầy đủ",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Vừa được đọc từ technocore.chat, không phải từ điện thoại này. Các phòng được lược bớt khi lớn dần, nên đây là nội dung bất kỳ ai cũng sẽ tìm thấy hôm nay.",
     "Reading your note" to "Đang đọc ghi chú của bạn",
@@ -193,12 +197,13 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đây có vẻ không phải là liên kết đến một bài đăng. Liên kết phải có dạng https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Đây có vẻ không phải là một liên kết. Liên kết phải bắt đầu bằng https://",
-    "That was the last step. Your Passport is live." to
-        "Đó là bước cuối cùng. Passport của bạn đang hoạt động.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Đó là bước cuối cùng. Passport của bạn đã hoạt động. Chỉ còn một việc, và đó là điều FLOP thực sự yêu cầu: kể cho mọi người bạn đã làm gì. Ứng dụng viết bài đăng cho bạn ở cuối màn hình này.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Danh tính được tạo bên trong Seed Vault và niêm phong bằng StrongBox trên điện thoại.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Khóa được niêm phong trong bộ nhớ bảo mật của điện thoại này, sau đó được đọc lại và đối chiếu với danh tính của bạn.",
+    "The manual" to "Hướng dẫn",
     "The server is busy. Trying again." to "Máy chủ đang bận. Đang thử lại.",
     "The stored key does not match your identity" to
         "Khóa đã lưu không khớp với danh tính của bạn",
@@ -209,6 +214,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "32 byte này chính là FLOP Passport của bạn. Bất kỳ ai giữ chúng đều có thể ký dưới danh nghĩa của bạn trên Technocore. Hãy giữ chúng ngoại tuyến và không bao giờ gửi cho bất kỳ ai, kể cả chúng tôi.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Ứng dụng này miễn phí, mã nguồn mở và không ai trả tiền để làm nó. Nếu nó giúp bạn tiết kiệm một buổi chiều, bạn có thể gửi tiền ủng hộ.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Ứng dụng này miễn phí và không có gì để mua. Nếu thấy hữu ích, bạn có thể gửi lời cảm ơn đến kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Ứng dụng này ghi lại ghi chú mỗi khi bạn mở ứng dụng và mỗi khi bạn ký một bản ghi, nên thời hạn bảy ngày sẽ bắt đầu lại. Hãy mở ứng dụng ít nhất một lần mỗi tuần để không bao giờ mất gì.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -229,6 +236,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "What is still provable" to "Những gì vẫn có thể chứng minh",
     "What recovery without a seed phrase costs" to
         "Cái giá của việc khôi phục mà không cần cụm từ hạt giống",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "Cần làm gì và bao lâu một lần, vì sao danh tính hết hạn, vì sao cách này hoạt động trên Seeker và có điều gì cần lưu ý. Mở trong trình duyệt của bạn.",
     "Yes. Something is already visible to others." to
         "Có. Một số nội dung đã hiển thị với người khác.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -305,6 +314,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "chưa - riêng ghi chú chỉ là một tuyên bố, không phải bằng chứng",
     "off" to "tắt",
     "on" to "bật",
+    "open" to "mở",
     "our exact bytes, no wallet prefix" to "đúng các byte của chúng tôi, không có tiền tố ví",
     "passport for seeker" to "passport cho seeker",
     "pin it to your identity" to "ghim vào danh tính của bạn",
@@ -339,7 +349,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat đã từ chối ghi chú",
     "technocore.chat refused the signed write" to
         "technocore.chat đã từ chối bản ghi có chữ ký",
-    "tell them" to "nói cho họ biết",
     "text" to "văn bản",
     "the post" to "bài đăng",
     "the same wallet rebuilds this identity anywhere" to

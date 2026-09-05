@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val ID_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  beri tahu mereka",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
     "A once-a-day reminder to leave today's signed record." to
@@ -88,10 +89,10 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport untuk Seeker. Pencatatan bertanda tangan pertama.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP meminta para agen membuat kunci unik dan melakukan sesuatu yang berguna untuk menyebarkan kabar tentang Technocore. Kamu sudah punya kuncinya. Ini sisanya.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan yang ditandatangani secara kriptografis membuktikan bahwa Anda melakukannya, dan hari tanpa catatan tersebut tidak dapat diperiksa oleh siapa pun nanti.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP meminta agen melakukan dua hal: membuat kunci unik, dan melakukan sesuatu yang berguna untuk menyebarkan kabar tentang Technocore. Lima langkah di atas menyelesaikan yang pertama. Tidak ada yang bisa melakukan yang kedua untuk Anda, jadi aplikasi ini menulis postingannya dan Anda memutuskan apakah akan mengirimnya.",
     "Identity derived from your wallet signature" to
         "Identitas yang berasal dari tanda tangan dompet Anda",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -147,6 +148,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
     "Opening a connection" to "Membuka koneksi",
     "Opening your Solana wallet" to "Membuka dompet Solana Anda",
+    "Optional, and the part that actually counts." to
+        "Opsional, dan bagian yang benar-benar penting.",
     "Passport at risk" to "Passport berisiko",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Tempel tautan ke postinganmu. Tautan itu masuk ke catatan identitasmu, jadi catatan mengarah ke postingan dan postingan memuat kuncinya. Siapa pun kemudian dapat memeriksa keduanya dengan kunci yang sama.",
@@ -162,6 +165,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Menerbitkan catatan identitas Anda ke technocore.chat",
     "Publishing your note" to "Menerbitkan catatan Anda",
+    "Questions, answered in full" to "Pertanyaan, dijawab lengkap",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Baru saja dibaca dari technocore.chat, bukan dari ponsel ini. Ruang dipangkas saat membesar, jadi inilah yang akan ditemukan siapa pun hari ini.",
     "Reading your note" to "Membaca catatan Anda",
@@ -196,12 +200,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Itu sepertinya bukan tautan ke postingan. Bentuknya harus seperti https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Itu sepertinya bukan tautan. Tautan harus diawali dengan https://",
-    "That was the last step. Your Passport is live." to
-        "Itu langkah terakhir. Passport Anda aktif.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Itu adalah langkah terakhir. Passport Anda sudah aktif. Tinggal satu hal lagi, dan inilah bagian yang benar-benar diminta FLOP: beri tahu orang-orang apa yang telah Anda lakukan. Aplikasi ini menulis postingannya untuk Anda di bagian bawah layar ini.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Identitas dibuat di dalam Seed Vault dan disegel oleh StrongBox pada ponsel.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Kunci disegel di penyimpanan aman ponsel ini, lalu dibaca kembali dan dicocokkan dengan identitas Anda.",
+    "The manual" to "Panduan",
     "The server is busy. Trying again." to "Server sedang sibuk. Mencoba lagi.",
     "The stored key does not match your identity" to
         "Kunci yang tersimpan tidak cocok dengan identitas Anda",
@@ -212,6 +217,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "32 byte ini adalah FLOP Passport Anda sendiri. Siapa pun yang memegangnya dapat menandatangani sebagai Anda di Technocore. Simpan secara offline dan jangan pernah mengirimkannya kepada siapa pun, termasuk kami.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Aplikasi ini gratis dan bersumber terbuka, dan tidak ada yang membayarnya. Jika aplikasi ini menghemat waktu Anda, tip dapat diberikan.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Aplikasi ini gratis dan tidak ada yang bisa dibeli di dalamnya. Jika aplikasi ini berguna, ucapan terima kasih dapat dikirim ke kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Aplikasi ini menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani catatan, sehingga periode tujuh hari dimulai lagi. Buka aplikasi setidaknya sekali seminggu agar tidak ada yang hilang.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -231,6 +238,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "What did you actually do?" to "Apa yang sebenarnya kamu lakukan?",
     "What is still provable" to "Yang masih dapat dibuktikan",
     "What recovery without a seed phrase costs" to "Harga pemulihan tanpa frasa seed",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "Apa yang harus dilakukan dan seberapa sering, mengapa identitas ini kedaluwarsa, mengapa ini berfungsi di Seeker, dan apa kekurangannya. Dibuka di browser Anda.",
     "Yes. Something is already visible to others." to
         "Ya. Sesuatu sudah terlihat oleh orang lain.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -306,6 +315,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "belum - catatan saja adalah klaim, bukan bukti",
     "off" to "nonaktif",
     "on" to "aktif",
+    "open" to "buka",
     "our exact bytes, no wallet prefix" to "byte persis kami, tanpa prefiks dompet",
     "passport for seeker" to "passport untuk seeker",
     "pin it to your identity" to "sematkan ke identitasmu",
@@ -341,7 +351,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat menolak catatan",
     "technocore.chat refused the signed write" to
         "technocore.chat menolak penulisan bertanda tangan",
-    "tell them" to "beri tahu mereka",
     "text" to "teks",
     "the post" to "postingan",
     "the same wallet rebuilds this identity anywhere" to

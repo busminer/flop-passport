@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val KO_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  알려주기",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
     "A once-a-day reminder to leave today's signed record." to
@@ -80,10 +81,10 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker용 FLOP Passport - 비공개 백업",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1이 만든 Seeker용 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker용 FLOP Passport. 첫 번째 서명 기록.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP은 에이전트들에게 고유한 키를 만들고 Technocore를 알리는 데 도움이 되는 일을 하라고 요청했습니다. 키는 이미 있습니다. 이제 나머지를 완료하세요.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP은 에이전트에게 유용한 일을 하도록 요청했습니다. 서명된 기록은 이를 수행했다는 증거이며, 기록이 없는 날은 나중에 누구도 확인할 수 없습니다.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP은 에이전트에게 두 가지를 요청했습니다. 고유한 키를 만들고, Technocore를 알리는 데 도움이 되는 일을 하는 것입니다. 위의 다섯 단계에서 첫 번째 작업을 마쳤습니다. 두 번째 작업은 누구도 대신할 수 없으므로, 이 앱이 게시물을 작성하면 보낼지는 직접 결정하세요.",
     "Identity derived from your wallet signature" to "지갑 서명에서 파생된 신원",
     "Identity note published, first check in signed and verified on Technocore." to
         "신원 메모가 게시됐으며 첫 기록이 서명되고 Technocore에서 검증됐습니다.",
@@ -127,6 +128,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "실제 번역이 있는 언어만 표시됩니다. 모든 언어를 영어로 표시하는 선택기는 해당 언어를 지원한다고 안내하지만 다음 화면에서는 그렇지 않음을 보여줍니다.",
     "Opening a connection" to "연결을 여는 중",
     "Opening your Solana wallet" to "Solana 지갑 여는 중",
+    "Optional, and the part that actually counts." to "선택 사항이지만, 실제로 중요한 부분입니다.",
     "Passport at risk" to "Passport가 위험합니다",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "게시물 링크를 붙여 넣으세요. 이 링크는 신원 노트에 들어가 노트는 게시물을 가리키고 게시물은 키를 담게 됩니다. 그러면 누구나 하나의 키로 양쪽을 확인할 수 있습니다.",
@@ -139,6 +141,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Published, read back, and vouched for by your key" to "게시하고 다시 읽었으며 키로 보증했습니다",
     "Publishing your identity note to technocore.chat" to "technocore.chat에 신원 메모 게시 중",
     "Publishing your note" to "노트를 게시하는 중",
+    "Questions, answered in full" to "질문과 자세한 답변",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "이 휴대전화가 아니라 technocore.chat에서 방금 읽었습니다. 방은 커지면서 오래된 기록이 정리되므로, 현재 누구나 찾을 수 있는 내용은 이것입니다.",
     "Reading your note" to "노트를 읽는 중",
@@ -169,11 +172,13 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "게시물 링크처럼 보이지 않습니다. https://x.com/you/status/123 같은 형식이어야 합니다.",
     "That does not look like a link. It should start with https://" to
         "링크처럼 보이지 않습니다. https://로 시작해야 합니다",
-    "That was the last step. Your Passport is live." to "마지막 단계가 완료됐습니다. Passport가 활성화됐습니다.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "마지막 단계까지 마쳤습니다. Passport가 활성화되었습니다. 이제 한 가지만 남았습니다. FLOP이 실제로 요청한 일, 즉 무엇을 했는지 사람들에게 알리는 것입니다. 이 화면 아래에서 앱이 게시물을 작성해 줍니다.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "신원은 Seed Vault 안에서 생성되고 휴대전화의 StrongBox로 봉인됩니다.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "키는 이 휴대전화의 보안 키 저장소에 봉인된 뒤 다시 읽어 신원과 대조됩니다.",
+    "The manual" to "사용 설명서",
     "The server is busy. Trying again." to "서버가 사용 중입니다. 다시 시도합니다.",
     "The stored key does not match your identity" to "저장된 키가 신원과 일치하지 않습니다",
     "The wallet did not complete the signature" to "지갑이 서명을 완료하지 않았습니다",
@@ -183,6 +188,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "이 32바이트가 FLOP Passport 자체입니다. 이를 가진 사람은 누구나 Technocore에서 사용자의 신원으로 서명할 수 있습니다. 오프라인으로 보관하고 저희를 포함해 누구에게도 보내지 마세요.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "이 앱은 무료 오픈 소스이며 제작비를 지원한 곳은 없습니다. 이 앱으로 시간을 절약했다면 후원할 수 있습니다.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "이 앱은 무료이며 구매할 항목도 없습니다. 도움이 되었다면 kosa.skr로 감사의 뜻을 전할 수 있습니다.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "이 앱은 열 때마다, 그리고 기록에 서명할 때마다 노트를 다시 작성하므로 일주일이 다시 시작됩니다. 적어도 일주일에 한 번 앱을 열면 아무것도 사라지지 않습니다.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -202,6 +209,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "What did you actually do?" to "실제로 무엇을 했나요?",
     "What is still provable" to "현재도 증명 가능한 항목",
     "What recovery without a seed phrase costs" to "시드 구문 없는 복구의 대가",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "무엇을 얼마나 자주 해야 하는지, 왜 신원이 만료되는지, 왜 Seeker에서 작동하는지, 주의할 점은 무엇인지 설명합니다. 브라우저에서 열립니다.",
     "Yes. Something is already visible to others." to "예. 이미 다른 사람이 볼 수 있는 내용이 있습니다.",
     "You do not need this file to recover. The same Solana wallet that" to
         "복구에 이 파일은 필요하지 않습니다. 동일한 Solana 지갑이",
@@ -275,6 +284,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "not yet - the note alone is a claim, not a proof" to "아직 아님 - 메모만으로는 주장일 뿐 증명이 아님",
     "off" to "끔",
     "on" to "켬",
+    "open" to "열기",
     "our exact bytes, no wallet prefix" to "지갑 접두사 없이 정확한 원본 바이트",
     "passport for seeker" to "Seeker용 Passport",
     "pin it to your identity" to "신원에 고정",
@@ -308,7 +318,6 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "technocore.chat은 일주일 동안 아무도 작성하지 않은 항목을 삭제합니다. 오늘 서명하면 노트가 다시 작성되고 일주일이 다시 시작됩니다.",
     "technocore.chat refused the note" to "technocore.chat에서 메모를 거부함",
     "technocore.chat refused the signed write" to "technocore.chat에서 서명된 쓰기를 거부함",
-    "tell them" to "알리기",
     "text" to "텍스트",
     "the post" to "게시물",
     "the same wallet rebuilds this identity anywhere" to "동일한 지갑으로 어디서든 이 신원을 다시 생성",

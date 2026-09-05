@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val TR_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  onlara anlat",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
     "A once-a-day reminder to leave today's signed record." to
@@ -88,10 +89,10 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to
         "Seeker için FLOP Passport. İlk imzalı kayıt.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP, ajanlardan benzersiz bir anahtar oluşturmalarını ve Technocore'u duyurmak için faydalı bir şey yapmalarını istedi. Anahtar sende. Gerisi bu.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP, ajanlardan yararlı bir şey yapmalarını istedi. Bunu yaptığınızı imzalı bir kayıt kanıtlar; kayıtsız geçen bir günü daha sonra kimse doğrulayamaz.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP aracılardan iki şey istedi: benzersiz bir anahtar oluşturmak ve Technocore’u duyurmak için faydalı bir şey yapmak. Yukarıdaki beş adım ilkini yaptı. İkincisini sizin yerinize kimse yapamaz, bu yüzden uygulama gönderiyi yazar ve gönderip göndermemeye siz karar verirsiniz.",
     "Identity derived from your wallet signature" to "Cüzdan imzanızdan türetilen kimlik",
     "Identity note published, first check in signed and verified on Technocore." to
         "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde imzalandı ve doğrulandı.",
@@ -145,6 +146,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
     "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
+    "Optional, and the part that actually counts." to "İsteğe bağlı, ama asıl önemli olan bu.",
     "Passport at risk" to "Passport risk altında",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Gönderinin bağlantısını yapıştır. Kimlik notuna eklenir; böylece not gönderiyi gösterir, gönderi de anahtarı taşır. Sonra herkes iki ucu da aynı anahtarla kontrol edebilir.",
@@ -160,6 +162,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Kimlik notunuz technocore.chat adresinde yayımlanıyor",
     "Publishing your note" to "Notunuz yayımlanıyor",
+    "Questions, answered in full" to "Sorular, eksiksiz yanıtlarıyla",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Az önce bu telefondan değil, technocore.chat üzerinden okundu. Odalar büyüdükçe kırpılır; dolayısıyla bugün herkesin bulacağı kayıt budur.",
     "Reading your note" to "Notunuz okunuyor",
@@ -194,11 +197,13 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu, gönderi bağlantısına benzemiyor. https://x.com/you/status/123 gibi görünmeli.",
     "That does not look like a link. It should start with https://" to
         "Bu bir bağlantıya benzemiyor. https:// ile başlamalı",
-    "That was the last step. Your Passport is live." to "Bu son adımdı. Passport'ınız yayında.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Bu son adımdı. Passport’ınız aktif. Geriye bir şey kaldı ve FLOP’un asıl istediği de bu: insanlara ne yaptığınızı anlatın. Uygulama gönderiyi bu ekranın altında sizin için yazar.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Anahtar bu telefonun güvenli depolamasında mühürlenir, ardından geri okunur ve kimliğinizle karşılaştırılır.",
+    "The manual" to "Kılavuz",
     "The server is busy. Trying again." to "Sunucu meşgul. Yeniden deneniyor.",
     "The stored key does not match your identity" to "Saklanan anahtar kimliğinizle eşleşmiyor",
     "The wallet did not complete the signature" to "Cüzdan imzalama işlemini tamamlamadı",
@@ -208,6 +213,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu 32 bayt doğrudan FLOP Passport'ınızdır. Bunları elinde tutan kişi Technocore üzerinde sizin adınıza imzalayabilir. Çevrimdışı tutun ve biz dahil hiç kimseye göndermeyin.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Bu uygulama ücretsiz ve açık kaynaklıdır; geliştirilmesi için kimse ödeme yapmadı. Size bir öğleden sonra kazandırdıysa bahşiş bırakabilirsiniz.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Bu uygulama ücretsizdir ve içinde satın alınacak hiçbir şey yoktur. İşinize yaradıysa, teşekkürünüzü kosa.skr adresine gönderebilirsiniz.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Bu uygulama, her açtığınızda ve her kayıt imzaladığınızda notunuzu yeniden yazar, böylece yedi günlük süre yeniden başlar. Haftada en az bir kez açarsanız hiçbir şey kaybolmaz.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -227,6 +234,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "What did you actually do?" to "Gerçekte ne yaptın?",
     "What is still provable" to "Hâlâ kanıtlanabilenler",
     "What recovery without a seed phrase costs" to "Seed ifadesi olmadan kurtarmanın bedeli",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "Ne yapmanız ve bunu ne sıklıkta yapmanız gerektiği, kimliğin süresinin neden dolduğu, bunun Seeker’da neden çalıştığı ve işin püf noktası. Tarayıcınızda açılır.",
     "Yes. Something is already visible to others." to
         "Evet. Bir şey başkaları tarafından zaten görülebiliyor.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -304,6 +313,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "henüz değil; not tek başına bir iddiadır, kanıt değildir",
     "off" to "kapalı",
     "on" to "açık",
+    "open" to "aç",
     "our exact bytes, no wallet prefix" to "tam baytlarımız, cüzdan öneki yok",
     "passport for seeker" to "seeker için passport",
     "pin it to your identity" to "kimliğine sabitle",
@@ -338,7 +348,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat notu reddetti",
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",
-    "tell them" to "onlara anlat",
     "text" to "metin",
     "the post" to "gönderi",
     "the same wallet rebuilds this identity anywhere" to

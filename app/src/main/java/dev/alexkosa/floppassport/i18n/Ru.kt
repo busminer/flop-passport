@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val RU_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  расскажите им",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
     "A once-a-day reminder to leave today's signed record." to
@@ -87,10 +88,10 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport для Seeker. Первая подписанная запись.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP попросил агентов создать уникальный ключ и сделать что-нибудь полезное, чтобы рассказать о Technocore. Ключ у вас уже есть. Осталось вот что.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP попросил агентов сделать что-то полезное. Подписанная запись подтверждает, что это сделано, а день без неё позже никто не сможет проверить.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP попросил агентов сделать две вещи: создать уникальный ключ и помочь рассказать о Technocore. Пять шагов выше сделали первое. Второе никто не сделает за вас, поэтому приложение напишет пост, а вы решите, публиковать ли его.",
     "Identity derived from your wallet signature" to
         "Личность, полученная из подписи вашего кошелька",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -145,6 +146,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
     "Opening a connection" to "Установка соединения",
     "Opening your Solana wallet" to "Открывается ваш кошелёк Solana",
+    "Optional, and the part that actually counts." to
+        "Необязательно, но именно это действительно важно.",
     "Passport at risk" to "Passport под угрозой",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Вставьте ссылку на свою публикацию. Она попадёт в заметку вашего идентификатора: заметка будет ссылаться на публикацию, а публикация будет содержать ключ. Тогда любой сможет сверить их по одному ключу.",
@@ -160,6 +163,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Запись о вашей личности публикуется в technocore.chat",
     "Publishing your note" to "Публикация заметки",
+    "Questions, answered in full" to "Полные ответы на вопросы",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Только что считано из technocore.chat, а не с этого телефона. По мере роста старые части комнат удаляются, поэтому сегодня любой найдёт именно это.",
     "Reading your note" to "Чтение заметки",
@@ -195,12 +199,13 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Это не похоже на ссылку на публикацию. Она должна выглядеть примерно так: https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Это не похоже на ссылку. Она должна начинаться с https://",
-    "That was the last step. Your Passport is live." to
-        "Это был последний шаг. Ваш Passport действует.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Это был последний шаг. Ваш Passport активен. Осталось одно, и именно об этом просил FLOP: расскажите людям, что вы сделали. Приложение напишет для вас пост внизу этого экрана.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Личность создаётся внутри Seed Vault и запечатывается через StrongBox на телефоне.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Ключ запечатывается в защищённом хранилище телефона, затем считывается обратно и сверяется с вашей личностью.",
+    "The manual" to "Инструкция",
     "The server is busy. Trying again." to "Сервер занят. Повторная попытка.",
     "The stored key does not match your identity" to
         "Сохранённый ключ не соответствует вашей личности",
@@ -211,6 +216,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Эти 32 байта и есть ваш FLOP Passport. Их владелец сможет подписывать от вашего имени в Technocore. Храните их офлайн и никому не отправляйте, включая нас.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Это бесплатное приложение с открытым исходным кодом, созданное без оплаты. Если оно сэкономило вам несколько часов, можно оставить чаевые.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Приложение бесплатное, и покупать в нём нечего. Если оно оказалось полезным, поблагодарить можно через kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Приложение обновляет запись при каждом открытии и при каждой подписанной отметке, поэтому отсчёт семи дней начинается заново. Открывайте его хотя бы раз в неделю, и ничего не потеряется.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -231,6 +238,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "What is still provable" to "Что ещё можно доказать",
     "What recovery without a seed phrase costs" to
         "Чем приходится платить за восстановление без seed-фразы",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "Что делать и как часто, почему срок действия идентификатора истекает, почему это работает на Seeker и в чём подвох. Откроется в браузере.",
     "Yes. Something is already visible to others." to "Да. Другим уже что-то видно.",
     "You do not need this file to recover. The same Solana wallet that" to
         "Этот файл не нужен для восстановления. Тот же кошелёк Solana, который",
@@ -306,6 +315,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "ещё нет — сама запись является утверждением, а не доказательством",
     "off" to "выкл.",
     "on" to "вкл.",
+    "open" to "открыть",
     "our exact bytes, no wallet prefix" to "точно наши байты, без префикса кошелька",
     "passport for seeker" to "passport для seeker",
     "pin it to your identity" to "привязать к идентификатору",
@@ -339,7 +349,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "technocore.chat удаляет всё, что не обновлялось семь дней. Подпишите отметку сегодня, чтобы обновить запись и начать отсчёт семи дней заново.",
     "technocore.chat refused the note" to "technocore.chat отклонил запись",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
-    "tell them" to "рассказать другим",
     "text" to "текст",
     "the post" to "публикация",
     "the same wallet rebuilds this identity anywhere" to

@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import android.content.Intent
+import androidx.core.net.toUri
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -52,6 +54,12 @@ import dev.alexkosa.floppassport.BuildConfig
  * this thing is and what it does with their data, then the tip jar, then the destructive
  * button last and on its own.
  */
+/**
+ * The long-form answers live on the site, so they can be fixed the afternoon somebody
+ * asks something new instead of waiting for a release and a store review.
+ */
+const val MANUAL_URL = "https://flop.alexkosa.dev/#faq"
+
 @Composable
 fun SettingsScreen(
     vm: PassportViewModel,
@@ -150,6 +158,53 @@ fun SettingsScreen(
                 style = FlopType.bodySm,
                 color = FlopColors.TextSecondary,
             )
+        }
+
+        // --- the manual ---------------------------------------------------------------
+        //
+        // A link out rather than another screen in here. The questions people actually ask
+        // are long-form and they change as the project does; a page can be corrected the
+        // afternoon somebody asks something new, while a screen has to wait for a release
+        // and a store review. What stays in the app is the short version, on the screens
+        // where each thing happens.
+        Spacer(Modifier.height(FlopSpacing.xl))
+        FlopLabel("The manual")
+        Spacer(Modifier.height(FlopSpacing.sm))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .background(FlopColors.Surface, FlopShapes.md)
+                .border(1.dp, FlopColors.Border, FlopShapes.md)
+                .clickable {
+                    runCatching {
+                        context.startActivity(
+                            Intent(Intent.ACTION_VIEW, MANUAL_URL.toUri()),
+                        )
+                    }
+                }
+                .padding(FlopSpacing.md),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(
+                    t("Questions, answered in full"),
+                    style = FlopType.bodyMd,
+                    color = FlopColors.IceWhite,
+                )
+                Spacer(Modifier.height(FlopSpacing.xs))
+                Text(
+                    t(
+                        "What to do and how often, why the identity expires, why this " +
+                            "works on a Seeker, and what the catch is. Opens in your " +
+                            "browser.",
+                    ),
+                    style = FlopType.bodySm,
+                    color = FlopColors.TextMuted,
+                )
+            }
+            Spacer(Modifier.width(FlopSpacing.md))
+            FlopBadge("open", FlopState.Active)
         }
 
         // --- about ------------------------------------------------------------------

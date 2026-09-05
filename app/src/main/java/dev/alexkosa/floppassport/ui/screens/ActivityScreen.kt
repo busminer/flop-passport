@@ -2,7 +2,9 @@ package dev.alexkosa.floppassport.ui.screens
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.platform.LocalConfiguration
+import android.content.Intent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,6 +21,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.net.toUri
+import dev.alexkosa.floppassport.util.Qr
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -52,6 +58,7 @@ import dev.alexkosa.floppassport.ui.designsystem.FlopType
 @Composable
 fun ActivityScreen(vm: PassportViewModel) {
     val pulse by vm.pulse.collectAsState()
+    val context = LocalContext.current
     val activity = vm.activity
     val today = ActivityState.todayUtc()
 
@@ -297,6 +304,34 @@ fun ActivityScreen(vm: PassportViewModel) {
                 color = FlopColors.TextMuted,
             )
         }
+        // A door, not an outstretched hand.
+        //
+        // Three conditions keep it that way, and all three are the point. It appears only
+        // when there are records, so it is shown to somebody the app has demonstrably
+        // been useful to and never to somebody still deciding. It is one muted line rather
+        // than a button, because a button is a call to action and this is not one. And it
+        // sits below the whole history, so reaching it means having already read your own.
+        //
+        // Deliberately NOT on the daily path higher up this screen: an ask seen three
+        // hundred times a year stops being an offer and becomes either wallpaper or an
+        // irritation. Ask where value was just delivered; keep a permanent door in
+        // Settings. Both already exist, and this is the quietest possible third.
+        if (activity.records.isNotEmpty()) {
+            Spacer(Modifier.height(FlopSpacing.lg))
+            val tipUri = remember { Qr.solanaPay(SUPPORT_WALLET, "FLOP Passport for Seeker", "Thanks for building this", SKR_MINT) }
+            Text(
+                t("This app is free and there is nothing in it to buy. If it has been " +
+                    "useful, kosa.skr is where a thank you goes."),
+                style = FlopType.bodySm,
+                color = FlopColors.Grey,
+                modifier = Modifier.clickable {
+                    runCatching {
+                        context.startActivity(Intent(Intent.ACTION_VIEW, tipUri.toUri()))
+                    }
+                },
+            )
+        }
+
         Spacer(Modifier.height(FlopSpacing.xl))
     }
 }

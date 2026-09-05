@@ -16,6 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val DE_STRINGS: Map<String, String> = mapOf(
+    "06  tell them" to "06  weitersagen",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
     "A once-a-day reminder to leave today's signed record." to
@@ -89,10 +90,10 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport für Seeker von @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport für Seeker. Erster signierter Eintrag.",
-    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
-        "FLOP hat Agenten gebeten, einen einzigartigen Schlüssel zu erstellen und Technocore mit etwas Nützlichem bekannter zu machen. Du hast den Schlüssel. Das hier ist der Rest.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP hat Agenten gebeten, etwas Nützliches zu tun. Ein signierter Eintrag belegt, dass Sie es getan haben, und ein Tag ohne Eintrag kann später von niemandem überprüft werden.",
+    "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
+        "FLOP hat Agenten um zwei Dinge gebeten: einen einzigartigen Schlüssel zu erstellen und etwas Sinnvolles zu tun, um Technocore bekannter zu machen. Die fünf Schritte oben haben das Erste erledigt. Das Zweite kann dir niemand abnehmen, deshalb schreibt die App den Beitrag und du entscheidest, ob du ihn veröffentlichst.",
     "Identity derived from your wallet signature" to
         "Aus Ihrer Wallet-Signatur abgeleitete Identität",
     "Identity note published, first check in signed and verified on Technocore." to
@@ -148,6 +149,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
     "Opening a connection" to "Verbindung wird hergestellt",
     "Opening your Solana wallet" to "Ihre Solana-Wallet wird geöffnet",
+    "Optional, and the part that actually counts." to
+        "Optional, aber der Teil, der wirklich zählt.",
     "Passport at risk" to "Passport gefährdet",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Füge den Link zu deinem Post ein. Er kommt in deine Identitätsnotiz, sodass die Notiz auf den Post verweist und der Post den Schlüssel enthält. Dann kann jeder beide Seiten mit demselben Schlüssel prüfen.",
@@ -163,6 +166,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Publishing your identity note to technocore.chat" to
         "Ihre Identitätsnotiz wird auf technocore.chat veröffentlicht",
     "Publishing your note" to "Ihre Notiz wird veröffentlicht",
+    "Questions, answered in full" to "Fragen, ausführlich beantwortet",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
         "Gerade von technocore.chat gelesen, nicht von diesem Telefon. Räume werden beim Wachsen gekürzt, daher würde dies heute jeder finden.",
     "Reading your note" to "Ihre Notiz wird gelesen",
@@ -198,12 +202,13 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Das sieht nicht wie ein Link zu einem Post aus. Er sollte so aussehen: https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Das sieht nicht wie ein Link aus. Er sollte mit https:// beginnen",
-    "That was the last step. Your Passport is live." to
-        "Das war der letzte Schritt. Ihr Passport ist aktiv.",
+    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Das war der letzte Schritt. Dein Passport ist aktiv. Eine Sache fehlt noch, und genau darum hat FLOP gebeten: Erzähle anderen, was du gemacht hast. Die App schreibt den Beitrag unten auf diesem Bildschirm für dich.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Die Identität entsteht in Seed Vault und wird auf dem Telefon durch StrongBox versiegelt.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Der Schlüssel wird im sicheren Speicher dieses Telefons versiegelt, dann zurückgelesen und mit Ihrer Identität abgeglichen.",
+    "The manual" to "Das Handbuch",
     "The server is busy. Trying again." to "Der Server ist beschäftigt. Neuer Versuch.",
     "The stored key does not match your identity" to
         "Der gespeicherte Schlüssel stimmt nicht mit Ihrer Identität überein",
@@ -215,6 +220,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Diese 32 Bytes sind Ihr FLOP Passport selbst. Wer sie besitzt, kann auf Technocore als Sie signieren. Bewahren Sie sie offline auf und senden Sie sie niemals an jemanden, auch nicht an uns.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Diese App ist kostenlos und quelloffen, und niemand hat dafür bezahlt. Wenn sie Ihnen einen Nachmittag erspart hat, ist ein Trinkgeld willkommen.",
+    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
+        "Diese App ist kostenlos und es gibt nichts zu kaufen. Wenn sie dir geholfen hat, kannst du dich bei kosa.skr bedanken.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Diese App schreibt deine Notiz jedes Mal neu, wenn du sie öffnest oder einen Eintrag signierst. Dadurch beginnen die sieben Tage erneut. Öffne sie mindestens einmal pro Woche, dann geht nichts verloren.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -236,6 +243,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "What is still provable" to "Was weiterhin nachweisbar ist",
     "What recovery without a seed phrase costs" to
         "Was die Wiederherstellung ohne Seed-Phrase kostet",
+    "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
+        "Was zu tun ist und wie oft, warum die Identität abläuft, warum das auf einem Seeker funktioniert und wo der Haken ist. Wird in deinem Browser geöffnet.",
     "Yes. Something is already visible to others." to
         "Ja. Etwas ist bereits für andere sichtbar.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -312,6 +321,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "noch nicht - die Notiz allein ist eine Behauptung, kein Nachweis",
     "off" to "aus",
     "on" to "an",
+    "open" to "Öffnen",
     "our exact bytes, no wallet prefix" to "unsere exakten Bytes, ohne Wallet-Präfix",
     "passport for seeker" to "Passport für Seeker",
     "pin it to your identity" to "An Identität heften",
@@ -346,7 +356,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat hat die Notiz abgelehnt",
     "technocore.chat refused the signed write" to
         "technocore.chat hat den signierten Eintrag abgelehnt",
-    "tell them" to "Sag es ihnen",
     "the post" to "Der Post",
     "the same wallet rebuilds this identity anywhere" to
         "dieselbe Wallet stellt diese Identität überall wieder her",

@@ -588,3 +588,14 @@ ul.plain li::marker { color: var(--cyan); }
   cursor: default;
 }
 .btn-wait:hover { border-color: var(--surface-light); color: var(--muted); }
+
+/* The manual. Everything open, nothing behind a plus sign: a person who is confused
+   enough to come here is not going to click to find out whether the answer is inside. */
+.faq { display: flex; flex-direction: column; gap: var(--lg); max-width: 760px; }
+.faq h3 { margin: 0 0 var(--sm); color: var(--ice); }
+.faq p { margin: 0 0 var(--sm); }
+.faq p:last-child { margin-bottom: 0; }
+.faq ol { margin: 0 0 var(--sm); padding-left: 1.35em; }
+.faq li { margin-bottom: var(--sm); }
+.faq li:last-child { margin-bottom: 0; }
+.faq li strong { color: var(--ice); }
