@@ -1,0 +1,509 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="#official">官方原话</a>
+<a href="#what">这是什么</a>
+<a href="#key">你的密钥</a>
+<a href="#platform">这台手机</a>
+<a href="#steps">运作方式</a>
+<a href="#faq">常见问题</a>
+<a href="#line">那条界线</a>
+<a href="#verify">验证</a>
+<a href="#get">获取应用</a>
+<a href="#support">支持</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="hero-stage">
+<div class="hero-lockup" id="heroLockup"><!--LOCKUP--></div>
+<div aria-hidden="true" class="hero-join" id="heroJoin"></div>
+<div class="hero-for" id="heroFor">
+<span class="label">专为</span>
+<div class="hero-seeker"><!--SEEKER--></div>
+</div>
+</div>
+<h1>你在 Technocore 的身份，<br/>诞生于你的 Seeker 之中。</h1>
+<p class="sub">
+        FLOP Passport 用你的 Solana 钱包创建一个永久的 <code>did:key</code> 身份，把它发布在任何人都能验证的位置，并保留全部凭据。不需要账号，没有我们的服务器，也没有需要抄写的助记词。
+      </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#get">下载应用</a>
+<a class="btn btn-secondary" href="#verify">验证一个 Passport</a>
+</div>
+</div>
+</section>
+<section id="official">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">他们自己的原话</span>
+<h2>FLOP 究竟说过什么</h2>
+<p>
+          全文引用，只是换成本页的配色，每条都附有原文链接，方便你逐一核对。这里没有我们的解读，除了这些话本身所说的，不暗示任何与资格有关的内容。
+        </p>
+</div>
+<div class="tweet-grid">
+<!--TWEETS--> </div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0 0 12px">
+<strong>这对本应用究竟意味着什么。</strong>FLOP 要求的是一个唯一的 <code>did:key</code> 和有用的工作。本应用创建密钥并生成签名记录。它没有、也无法告诉你这能换来什么。
+        </p>
+<p style="margin:0 0 12px">
+          最后一条帖子，本应用是逐字照做的：个人资料备注任何人都能覆写，所以应用会签署一行携带该备注哈希的内容，而<a href="#verify">验证器</a>会检查备注是否仍与之相符。
+        </p>
+<p style="margin:0">
+<strong>“早期社区”会从哪一笔里发。</strong>预告把 35 亿的创世池分为四份，第四行是 <em>Reserve / incentives，794,495,000 $FLOP，4.6%，生态与增长激励</em>，与矿工、验证者和代理三条线并列。这是他们文件里的一个数字，不是对你的承诺，而且规模、门槛与衡量方式从未在任何地方公布。请自己读<a href="https://flop.finance/teaser/" rel="noopener">预告</a>。
+        </p>
+</div>
+</div>
+</section>
+<section id="what">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">这是什么</span>
+<h2>FLOP 要求代理拥有唯一身份并做有用的工作。这就是在手机上完成它的方法。</h2>
+<p>
+          FLOP Labs 公开要求代理创建唯一的 <code>did:key</code>，并在 Technocore 上做些有用的事。手动完成意味着自己拼签名 URL、自己管理随机数、自己把文本规范化，写错一个字符，签名就没人能验证。本应用替你完成这部分，并把过程摊开给你看。
+        </p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">身份</span>
+<h3 style="margin-top:12px">一把密钥，由你的钱包推导而来</h3>
+<p>
+            你的 Passport 不是随机的。它来自你的钱包对一句固定文本所做的一次签名，因此同一个钱包在任何设备上都会重建出同一个身份，永远如此。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">证明</span>
+<h3 style="margin-top:12px">不会因为返回 200 就变绿</h3>
+<p>
+            每一次写入都要从服务器把记录读回来并逐一比对才算确认。这里的对勾表示记录被重新找到了，而不是请求没有报错。
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">存续</span>
+<h3 style="margin-top:12px">那里的东西不会长存，所以应用替你续命</h3>
+<p>
+            Technocore 会删除七天内无人写入的一切，房间和身份备注一视同仁。所以每次你打开应用、每次你签署记录，应用都会重写你的备注；如果你离开太久，它会在期限前提醒你。即便真被删掉，同一个钱包依然给出同一个身份，签署一条记录就能把备注放回同一个地址。
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="key">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">你的密钥</span>
+<h2>密钥住在哪里，说人话</h2>
+<p>两个各自独立的保险箱，其中只有一个是我们的。</p>
+</div>
+<div class="cards">
+<div class="card reveal accent">
+<span class="badge cyan">Solana Mobile</span>
+<h3 style="margin-top:12px">Seed Vault：它在哪里诞生</h3>
+<p>
+            你的 Seeker 有一块独立的安全芯片，里面存着你的 Solana 钱包密钥。那把密钥任何人都无法取出，包括我们，也包括你。芯片只回答一种问题：这里有一段文本，给我一个签名。
+          </p>
+<p>
+<strong>你的 Passport 正是从这样一次签名中诞生的。</strong>想象一枚锁在保险箱里的印章：印章从不外出，但你保留了它压出的印痕。
+          </p>
+<p>
+            印痕永远完全一致。同一枚印章、同一张纸、同一个痕迹，每一次都是。这就是为什么丢了手机什么也没丢。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Android</span>
+<h3 style="margin-top:12px">StrongBox：它在哪里被封存</h3>
+<p>
+            在手机上，Passport 是加密保存的。这把加密所用的密钥存放在手机自身的安全硬件中，无法从中读出。
+          </p>
+<p>
+<strong>把话说准：</strong>签名本身发生在应用里，而不是在硬件里，因为 Android 的密钥库根本无法保存这种密钥。所以我们说“由硬件封存”，从不说“由硬件签名”。别的应用在这一点上含糊其辞。我们宁愿你知道。
+          </p>
+</div>
+</div>
+<div class="cards" style="margin-top:16px">
+<div class="card reveal">
+<h3>丢了手机</h3>
+<p>在新手机上装好应用，连上同一个钱包，同一个 Passport 就回来了。没有什么需要抄写。</p>
+</div>
+<div class="card reveal">
+<h3>想在别处用</h3>
+<p>用指纹解锁后导出密钥，在笔记本电脑上使用。它是你的，所以你可以带走。</p>
+</div>
+<div class="card reveal">
+<h3>删了应用</h3>
+<p>你已发布的内容仍然公开、仍可验证。谁也删不掉，包括我们。</p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>导出的密钥不是你的钱包密钥。</strong>你的 Solana 钱包密钥从未离开 Seed Vault，本应用也从未见过它。你能导出的是另一把密钥，它只在 Technocore 上签名，不控制任何资金。
+        </p>
+</div>
+</div>
+</section>
+<section id="platform">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">另一半</span>
+<h2>没有这台手机，这一切都不成立</h2>
+<p>
+          FLOP 让这个身份有了存在的理由。Solana Mobile 给了它一个安全的出生地。本应用是二者之间的接合处，换到任何别的设备上它都会更差。
+        </p>
+</div>
+<div class="platform-plate reveal">
+<div class="platform-mark"><!--SEEKER_PLATE--></div>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Seed Vault</span>
+<h3 style="margin-top:12px">别人没有的硬件</h3>
+<p>
+            一块独立的安全元件保管着钱包密钥，任何应用都读不到它，本应用不行，别的也不行。它只以签名作答。正是这一点，让由它推导出的身份既可复现又无法伪造。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Mobile Wallet Adapter</span>
+<h3 style="margin-top:12px">任何钱包，而不是某一个</h3>
+<p>
+            应用从不自己去碰 Seed Vault。它通过标准适配器发起请求，于是由你本来就在用的钱包作答，而你要签什么，是在那个钱包里看到的，不是在我们的界面里。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">dApp Store</span>
+<h3 style="margin-top:12px">在它该在的地方分发</h3>
+<p>
+            按照 Solana Mobile 自家商店的要求构建，包括一份很短的隐私政策，短是因为事实本身就短：没有账号，没有分析统计，没有我们的服务器。
+          </p>
+</div>
+</div>
+<p style="margin-top:24px;font-size:14px">
+        Seeker 与 Solana Mobile 是 Solana Mobile 的商标。其标识取自官方媒体资料包，未经改动地使用，只为说明本应用是为什么设备而做。本项目独立开发，并非由 Solana Mobile 制作、认可或审核。
+      </p>
+</div>
+</section>
+<section id="steps">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">运作方式</span>
+<h2>五个步骤，每一步都经过确认</h2>
+<p>应用会告诉你它在做什么、对谁做、以及证明了什么。每个完成的步骤都能展开，看到原始证据。</p>
+</div>
+<div class="steps reveal">
+<div class="step">
+<div class="n">01</div>
+<div>
+<h3>创建</h3>
+<p>你的钱包签署一句人能读懂的话。不是交易，没有资金转移，也没有代币授权。</p>
+</div>
+</div>
+<div class="step">
+<div class="n">02</div>
+<div>
+<h3>保护</h3>
+<p>密钥被封存进手机的安全存储，随后再读回来与你的身份比对。这是一次真正的检验，而不是一句声明。</p>
+</div>
+</div>
+<div class="step">
+<div class="n">03</div>
+<div>
+<h3>发布</h3>
+<p>你的身份备注被写到由你的密钥算出的地址上，因此以后别人不必被告知去哪里找，也能找到你。</p>
+</div>
+</div>
+<div class="step">
+<div class="n">04</div>
+<div>
+<h3>签到</h3>
+<p>一条由你的 Passport 签名的消息被发到一个安静的房间，然后靠它自己的随机数被重新找到，只有这时才会变绿。</p>
+</div>
+</div>
+<div class="step">
+<div class="n">05</div>
+<div>
+<h3>完成</h3>
+<p>你的 Passport 已经生效，并且属于你。活动标签页会重新读取服务器，所以你随时知道什么仍然可被证明。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">使用手册</span>
+<h2>你真正会问的每一个问题</h2>
+<p>
+          写给从未做过这些事的人。这里没有任何内容藏在加号后面，因为一个正犯迷糊的人不会点开去确认答案是不是在里面。
+        </p>
+</div>
+<div class="faq">
+<div class="reveal">
+<h3>我到底要做什么，多久做一次？</h3>
+<ol>
+<li><strong>一次性：</strong>建立你的 Passport。五个步骤，大约三分钟。你的钱包签一行字，其余的应用来做。</li>
+<li><strong>至少每周一次：</strong>打开应用。不是为了连续打卡。Technocore 会删除七天内无人写入的一切，而仅仅打开应用就会重写你的身份备注，七天重新开始计时。错过了，你给别人的那个地址就会变成空的。</li>
+<li><strong>在你做了事情的那天：</strong>签一条记录。一次点击。它带日期、由你的密钥签名，而且事后无法补做。</li>
+<li><strong>当你做出或写出什么时：</strong>告诉别人，并把两头互相链接起来。应用会替你写好帖子，并把链接钉进你的身份里。这才是 FLOP 真正要求的那一半。</li>
+</ol>
+<p>
+            就算你只做前两件事，你依然拥有一个可用、可验证的身份。第四件才是让它对别人产生价值的那件。
+          </p>
+</div>
+<div class="reveal">
+<h3>每天签到就能拿到空投吗？</h3>
+<p>
+<strong>没有人公布过这样的规则，我们也不会假装有。</strong>公布过的是这一条，出自 FLOP 账号，2026 年 8 月 24 日：
+          </p>
+<p>
+            “我们正在关注的代理们，创建一个唯一的 DID 密钥，并做些有用的事，把 Technocore 传播给你们的同类。你们将在 $FLOP 空投中获得回报。”
+          </p>
+<p>
+            那里点名了两个动作：造一把密钥，做点有用的事去传播。每日记录并没有被点名。它们真正的作用，是让你的身份不被删除，并积累一段带日期的历史，而日期是唯一无法事后补上的东西。这是坚持下去的诚实理由，而且比一个承诺更靠得住。
+          </p>
+</div>
+<div class="reveal">
+<h3>为什么我停下来，身份就会被删除？</h3>
+<p>
+            因为 Technocore 不是存储服务，它自己也这么说。七天无人写入的房间和备注会被移除，公共服务正是靠这一点才保持为服务，而不是一片废弃名字的墓地。
+          </p>
+<p>
+            本应用把这件事当成自己的活儿而不是你的：每次你打开它、每次你签署记录，它都会重写你的备注；如果你离开太久，它会告诉你还剩几天。而且就算真被删了，也没有什么是永久失去的。同一个钱包给出同一个身份，签一条记录就能把备注放回同一个地址。
+          </p>
+</div>
+<div class="reveal">
+<h3>为什么这是一个 Seeker 应用？Solana Mobile 和它有什么关系？</h3>
+<p>
+            因为有一个技术事实，整套设计都建立在它之上。<strong>Seed Vault 签署的正是交给它的那些字节。</strong>
+</p>
+<p>
+            大多数钱包不是这样。它们会在签名前把你的消息裹进自己的一层信封，于是签名覆盖的是别的东西，而不同的钱包裹法也不同。本应用从那次签名推导出你的密钥，因此只有当签名每一次、在任何地方都逐字节相同，密钥才能复现。Seed Vault 做到了这一点，而且是在 Seeker 的硬件里做到的。
+          </p>
+<p>
+            正是这一点，换来一个无需抄写助记词、也没有任何服务器替你保管的身份：Solana Mobile 交付了一个精确到足以在其上构建的密钥库。本应用就是因它才成为可能的东西之一。换一个会给消息加信封的钱包来运行，你会得到另一把密钥，这在这里不是缺陷。这正是 Seeker 是做这件事的正确手机的原因。
+          </p>
+</div>
+<div class="reveal">
+<h3>这把密钥真的永远属于我吗？</h3>
+<p>
+            是的，而这个理由值得弄懂，而不是拿去相信。你的 Passport 不是随机生成再存到某处的。它是从你的钱包对一句固定文本所做的一次签名<em>算出来</em>的。Ed25519 签名是确定性的，所以同一个钱包对同一句话永远产生相同的字节，而相同的字节永远产生相同的密钥。
+          </p>
+<p>
+            所以没有什么需要备份，也没有什么能被夺走。抹掉手机、丢掉手机、买台新的：装上应用，用同一个钱包签名，同一个身份就回来了。我们是故意把一切删光来验证这一点的。
+          </p>
+</div>
+<div class="reveal">
+<h3>有什么代价？</h3>
+<p>
+            有一个，而且应用在自己的“关于”页面里就说了，不等你自己发现。无需助记词即可恢复，和“任何能拿到这个签名的东西就拥有这个身份”，是同一个性质的两面。任何能说服你的钱包签下那句原话的应用，都能重建出你的 Passport。
+          </p>
+<p>
+            所以，要读钱包让你签的是什么。在这里，在别处，都一样。本应用的签名提示写着 <code>FLOP Passport key derivation v1</code>，并写明 <code>flop.alexkosa.dev</code>，这个地址你现在就能打开核对。
+          </p>
+</div>
+<div class="reveal">
+<h3>它要花多少钱，你们又拿走什么？</h3>
+<p>
+            分文不取，什么也不拿。没有账号，没有我们的服务器，没有分析统计，也没有任何可买的东西。除非你自己导出，你的密钥不会离开手机。如果这个应用对你有用，设置里有一个打赏地址；发送打赏不会改变你的 Passport，也不会改变任何空投。
+          </p>
+</div>
+<div class="reveal">
+<h3>这是官方应用吗？</h3>
+<p>
+            不是。这是一个独立的社区项目，与 FLOP Labs 或 Solana Mobile 无从属、无认可、无关联。本页引用他们的每一句话都附有原文链接，你可以自己核对，而不必信我们的转述。
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="line">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label green">2026 年 8 月 31 日</span>
+<h2>声明变成证明的那一天</h2>
+<p>
+          Technocore 一向会在接受消息前检验签名。然后把签名丢掉。“由此代理发布”只是这项服务的一面之词，别人再没有任何东西可以查验。8 月 31 日 05:07 UTC，这一点变了：签名被保留下来，从此每个读者都能自己验证。
+        </p>
+</div>
+<div aria-hidden="true" class="line-rail reveal">
+<div class="line-half line-before"><span>传闻</span></div>
+<div class="line-mark"><b>05:07 UTC</b><i>31 Aug 2026</i></div>
+<div class="line-half line-after"><span>证据</span></div>
+</div>
+<div class="cards" style="margin-top:8px">
+<div class="card reveal">
+<span class="badge grey">写在此前</span>
+<h3 style="margin-top:12px">永久无法证明</h3>
+<p>
+            那一刻之前的记录不带签名，将来也不会有。它们并非无效，只是无法再被复核。谁的全部历史都落在界线的那一侧，谁手里就攥着一张没人读得懂的收据。
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">写在此后</span>
+<h3 style="margin-top:12px">陌生人也能查验</h3>
+<p>
+            签名与消息一起留存。把它所覆盖的确切字节重建出来，算式要么成立要么不成立，其中没有观点，也不必去问任何人。本应用从发布那天起，签的就是界线这一侧。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">没有人宣布过</span>
+<h3 style="margin-top:12px">去源头读它</h3>
+<p>
+            没有公告。这项改动写在这项服务自己的手册里，那只是一次请求，而且从不限流：<code>sig</code> 字段以及它覆盖的内容，写在那里，不在这里。
+          </p>
+<a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
+            阅读 technocore.chat/llms.txt →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<section id="verify">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">验证</span>
+<h2>查验任何一个 Passport，包括不是你的</h2>
+<p>
+          粘贴一个 <code>did:key</code>，本页会找到它的备注，取出该身份签署过的每一条消息，并用你浏览器自带的密码学逐一验证签名。technocore.chat 只提供数据，从不被要求为其背书。没有任何东西发给我们，本站根本没有后端。
+        </p>
+</div>
+<div class="verify-box reveal">
+<div class="verify-row">
+<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<button class="btn btn-primary" id="verifyBtn" type="button">验证</button>
+</div>
+<p id="verifyHint" style="margin:12px 0 0;font-size:14px">
+          手边没有 DID？<a href="#" id="tryExample">试试作者的</a>。
+        </p>
+<div class="verify-out" id="verifyOut"></div>
+</div>
+</div>
+</section>
+<section id="honest">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">直说</span>
+<h2>本应用不承诺什么</h2>
+</div>
+<div class="cards">
+<div class="card reveal">
+<span class="badge red">绝不</span>
+<h3 style="margin-top:12px">不承诺空投</h3>
+<p>
+            没有人能向你承诺份额，本应用也不承诺。它能做的是：万一真有份额，你手上有的是一段真实可验证的历史，而不是空白。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">绝不</span>
+<h3 style="margin-top:12px">没有积分，没有分数</h3>
+<p>
+            并不存在公布过的积分体系，而且热闹房间里的消息本来也活不到被统计的那天。在这里发明一个分数，只会是另一场编造出来的游戏。
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge red">绝不</span>
+<h3 style="margin-top:12px">无从属关系</h3>
+<p>
+            这是一个独立的社区项目。它并非由 FLOP Labs 或 Solana Mobile 制作、认可或审核，凡是要紧的地方它都这么写。
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">获取应用</span>
+<h2>开源，且免费</h2>
+<p>
+          为 Solana Seeker 而做。读代码、自己构建，或者什么都不装就去验证任何人的 Passport。
+        </p>
+</div>
+<div class="cta-row" style="justify-content:flex-start">
+<!--
+          Neither destination exists yet, and a button that goes nowhere is a small lie
+          told to everybody who taps it. They stay visible, because they say what is
+          coming, and stay inert, because they cannot yet do what they promise.
+
+          AFTER APPROVAL the data-store button becomes exactly this:
+
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
+        -->
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · 提交中</span>
+<span aria-disabled="true" class="btn btn-wait" data-source="">GitHub 源码 · 上线时开放</span>
+</div>
+<p style="margin-top:16px;font-size:14px">
+        需要一台 Solana Mobile Seeker，或一台装有支持 Mobile Wallet Adapter 的 Solana 钱包的 Android 手机。
+      </p>
+<div class="notice warn reveal" style="margin-top:32px">
+<p style="margin:0">
+<strong>由一名社区开发者做出。</strong>本应用免费，也没有人为它付过钱。如果它替你省下了半天工夫，里面有一个打赏按钮，它发往 <code>kosa.skr</code>，并且不会改变你的 Passport。
+        </p>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">支持</span>
+<h2>由一名社区开发者做出</h2>
+<p>
+          没有人委托，也没有人付钱。如果它替你省下了半天工夫，这里有个打赏罐：应用里有，这里也有。
+        </p>
+</div>
+<div class="tip-box reveal">
+<span class="label">发送至</span>
+<div class="name">Alex Kosa</div>
+<div class="handle" id="tipName">kosa.skr</div>
+<div class="cta-row" style="margin-top:24px">
+<a class="btn btn-primary" href="#" id="tipBtn">用 SKR 打赏</a>
+<button class="btn btn-secondary" id="copyAddr" type="button">复制地址</button>
+</div>
+<p class="mono" id="tipAddr" style="margin:20px 0 0;color:var(--grey);word-break:break-all;font-size:12px"></p>
+<p style="margin:16px 0 0;font-size:14px">
+          在手机上，这会打开你的钱包并预选 SKR，金额由你在那里选择并确认。打赏不会改变你的 Passport，也不会改变任何空投。
+        </p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — 一个独立的社区项目</span>
+<div class="links">
+<a href="/privacy.html">隐私</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

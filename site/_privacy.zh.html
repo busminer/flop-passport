@@ -1,0 +1,115 @@
+<header>
+<div class="wrap">
+<a class="mark" href="/">
+<!--LOCKUP_SMALL-->
+<span class="label">Passport</span>
+</a>
+<nav>
+<a href="/">首页</a>
+<a href="/#verify">验证</a>
+<a href="/#get">获取应用</a>
+</nav>
+<!--LANGS-->
+</div>
+</header>
+<main>
+<section>
+<div class="grid-bg"></div>
+<div class="wrap">
+<div class="section-head">
+<span class="label cyan">隐私政策</span>
+<h2>FLOP Passport for Seeker</h2>
+<p>最后更新于 2026 年 8 月 31 日。本政策适用于 Android 应用 <code>dev.alexkosa.floppassport</code> 及本网站。</p>
+</div>
+<div class="notice">
+<p style="margin:0">
+<strong>简短版本。</strong>没有账号，没有分析统计，没有广告，也没有我们运营的服务器。本应用不会在任何我们能触及的地方收集、传输或保存你的个人数据。你的密钥留在你的手机上。
+        </p>
+</div>
+<h3 style="margin-top:48px">谁来负责</h3>
+<p>
+        FLOP Passport for Seeker 是由个人开发者 Alex Kosa 开发的独立开源项目。它并非由 FLOP Labs 或 Solana Mobile 制作、认可或审核。联系方式：X 上的 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>，或在公开仓库中提交 issue。
+      </p>
+<h3 style="margin-top:32px">应用在你设备上保存什么</h3>
+<ul class="plain">
+<li>
+<strong>你的 Passport 密钥</strong>，加密保存。它只以密文形式存在，由你手机硬件密钥库中的一把密钥包裹，而那把密钥无法从中读出。
+        </li>
+<li>
+<strong>你的公开身份</strong>，即 <code>did:key</code> 及其指纹，以及推导它所用的 Solana 钱包地址。
+        </li>
+<li>
+<strong>你选择的语言</strong>，以及启动音效是否开启。
+        </li>
+</ul>
+<p>
+        这些全都存放在你设备上应用的私有存储中。本应用刻意关闭了 Android 的自动备份与设备迁移，因此其中任何内容都不会被复制到云备份。
+      </p>
+<h3 style="margin-top:32px">什么会离开你的设备，而且只在你按下按钮时</h3>
+<ul class="plain">
+<li>
+<strong>发往 technocore.chat</strong>，当你发布身份或签署记录时：你的公开 <code>did:key</code>、你正在签署的文本、一个计数器和签名。这些信息按设计就是公开的，这正是公开身份的意义，之后任何人都能读到。
+        </li>
+<li>
+<strong>发往你的钱包应用</strong>，当你创建 Passport 时：一句待签的文本。钱包在你的设备上处理它，我们不会通过网络发送任何东西。
+        </li>
+<li>
+<strong>发往你选择的文件</strong>，当你导出密钥时。保存位置由你通过系统文件选择器指定。不会上传到任何地方。
+        </li>
+</ul>
+<p>
+<strong>任何东西都不会发给开发者。</strong>根本没有后端可发。应用只与 FLOP Labs 运营的 technocore.chat 以及你自己的钱包应用通信，这就是完整的清单。
+      </p>
+<h3 style="margin-top:32px">应用从不索取、也从不触碰什么</h3>
+<ul class="plain">
+<li>你的 Solana 钱包助记词或私钥。应用从未见过，也不可能见到。</li>
+<li>你的姓名、邮箱地址、电话号码或任何账号凭据。</li>
+<li>你的通讯录、照片、文件、位置、摄像头或麦克风。</li>
+<li>广告标识符。这里没有广告，也没有广告 SDK。</li>
+</ul>
+<h3 style="margin-top:32px">分析与追踪</h3>
+<p>
+        没有。应用中不含任何分析 SDK、崩溃上报服务或任何第三方追踪。本网站不设置 cookie，不做分析统计，也没有服务端代码；它唯一的对外请求是两个网页字体，以及当你使用验证器时，从你的浏览器直接读取 technocore.chat，而这从不经过我们。
+      </p>
+<h3 style="margin-top:32px">权限</h3>
+<ul class="plain">
+<li><strong>网络</strong> — 当你发布或签署内容时，用来访问 technocore.chat。</li>
+<li><strong>振动</strong> — 步骤通过验证时的一次短促提示。</li>
+<li><strong>生物识别</strong> — 用来守住显示你私钥的那个页面。</li>
+</ul>
+<p>不申请存储权限；保存文件走系统选择器。</p>
+<h3 style="margin-top:32px">删除你的数据</h3>
+<div class="notice warn">
+<p style="margin:0 0 12px">
+<strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport，或者卸载应用。两者都会把加密密钥、你的身份和你的偏好从手机上彻底移除。别处没有副本，我们这边也没有什么可以替你删除。
+        </p>
+<p style="margin:0">
+<strong>已经发布的内容。</strong>你选择发布到 Technocore 上的内容是公开的，且不在我们控制之内，我们既不托管也无法移除。公共房间中的记录会随着房间压缩被该服务丢弃，备注则会保留。关于 technocore.chat 上内容的请求，应当提交给运营它的 FLOP Labs。
+        </p>
+</div>
+<h3 style="margin-top:32px">儿童</h3>
+<p>
+        本应用不面向儿童，也不从任何人（包括儿童）处收集数据。
+      </p>
+<h3 style="margin-top:32px">变更</h3>
+<p>
+        如果本政策发生变更，顶部的日期会随之改变，先前版本会留在公开仓库的历史中，任何人都可以比对。
+      </p>
+<h3 style="margin-top:32px">你的权利</h3>
+<p>
+        访问权、更正权、可携权和删除权之所以存在，是为了让你掌控别人手上关于你的数据。我们一份也没有：没有什么可访问、可导出或可擦除的，因为关于你的任何东西从未到达我们这里。你的密钥随时可以从应用中导出，而删除应用会移除它保存过的一切。
+      </p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>FLOP Passport for Seeker — 一个独立的社区项目</span>
+<div class="links">
+<a href="/">首页</a>
+<a href="https://technocore.chat" rel="noopener">Technocore</a>
+<a href="https://alexkosa.dev" rel="noopener">alexkosa.dev</a>
+<a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>
+</div>
+</div>
+</footer>

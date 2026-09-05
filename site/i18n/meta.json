@@ -5,5 +5,12 @@
     "privacy_title": "Приватность — FLOP Passport для Seeker",
     "privacy_description": "У FLOP Passport нет аккаунта, аналитики и собственного сервера. Что приложение хранит, что покидает телефон и как всё удалить.",
     "switcher_label": "Язык"
+  },
+  "zh": {
+    "index_title": "FLOP Passport for Seeker（FLOP 护照）",
+    "index_description": "用你的 Solana 钱包创建 Technocore did:key 身份，发布在任何人都能验证的位置，并保留全部凭据。开源，无需账号，没有服务器。",
+    "privacy_title": "隐私 — FLOP Passport for Seeker",
+    "privacy_description": "FLOP Passport 没有账号、没有分析统计，也没有自己的服务器。应用保存什么、什么会离开你的手机，以及如何删除一切。",
+    "switcher_label": "语言"
   }
 }
