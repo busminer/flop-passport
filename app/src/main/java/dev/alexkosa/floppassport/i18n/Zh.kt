@@ -19,11 +19,15 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  告诉大家",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "一条由 Passport 签名的消息，发布到安静的房间后再读回，以证明已送达。",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "一条由你的 Passport 签名的消息，发到一个安静的房间，然后再读回来证明它确实到了。和第 03 步同一个服务，同一条规则：被拒就再按一次。那是他们的负载，不是你的密钥。",
     "A once-a-day reminder to leave today's signed record." to "每天提醒一次，留下当天的签名记录。",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "一条位于密钥派生地址的永久记录，之后任何人都能找到并验证您的身份。",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "一条发布在由您的密钥派生出的地址上的公开记录，任何人之后都能找到并验证您的身份。",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "一条公开备注，地址由你的密钥算出，方便别人以后找到并核验你。这一步要发往 technocore.chat，那是别人的公共服务：繁忙时它会拒绝，办法就是再按一次。尝试两三次很正常，说明你的手机没有问题。",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "签署的记录必须手动留下，错过的日期以后无法补上。此开关还会在您的身份笔记被删除前提醒您.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -33,6 +37,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "About" to "关于",
     "Accepted, but we could not read it back yet" to "已接受，但暂时无法读回",
     "Activity" to "活动",
+    "All five done" to "五步全部完成",
     "Already checked in, found in the room" to "已留下签名记录，并在房间中找到",
     "Already published, read back just now" to "已发布，刚刚已读回",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -115,6 +120,10 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "No wallet on this phone opened the payment link." to "此手机上没有钱包打开付款链接。",
     "No. Nothing was published." to "没有。未发布任何内容。",
     "Not checked yet." to "尚未检查。",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "尚未完成。你的 Passport 还没有绑定任何公开名字，而这一步没有人能替你做。",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "还没完成。五个都变绿之前，你的身份并未发布，谁也无从核验。继续。",
     "Nothing asked yet" to "尚未提出请求",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "未找到任何内容。如果您签署过内容但这里没有显示，说明房间已清理掉该记录。这是正常情况，也是此页面存在的原因。",
@@ -132,6 +141,10 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "粘贴你的帖子链接。它会加入你的身份备注，让备注指向帖子，同时帖子带有密钥。任何人都能用同一个密钥核验两边.",
     "Press Create again. Nothing was sent anywhere." to "请再次按“创建”。没有向任何地方发送内容。",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "请再按一次签到。technocore.chat 是公共服务，繁忙时会拒绝写入，这与本应用、你的手机或你的密钥都无关。尝试两三次很正常。刚才什么都没有发出。",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "请再按一次发布。technocore.chat 是公共服务，繁忙时会拒绝写入，这与本应用、你的手机或你的密钥都无关。尝试两三次很正常。刚才什么都没有发布。",
     "Protect" to "保护",
     "Protect it" to "保护它",
     "Publish" to "发布",
@@ -211,6 +224,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "What recovery without a seed phrase costs" to "无需助记词的恢复方式，代价是什么",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "该做什么、多久做一次，为什么身份会过期，为什么这能在 Seeker 上运行，以及有什么需要注意。将在浏览器中打开。",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "写一句只有你会写的话。彼此之间只差一个密钥的帖子会被当成刷量，而代价由真正做事的人承担。",
     "Yes. Something is already visible to others." to "是。已有内容对其他人可见。",
     "You do not need this file to recover. The same Solana wallet that" to
         "恢复时不需要此文件。创建它的同一 Solana 钱包",
@@ -224,8 +239,13 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "您的 Passport 派生自钱包在 Seeker 的硬件密钥存储区 Seed Vault 中生成的一次签名。钱包密钥始终留在该硬件中。此应用根据该签名计算出 Passport 密钥，再由 Android 的安全存储在硬件中封存，而非签名，因为 Android 密钥库无法保存此类密钥。",
     "Your Passport is live" to "您的 Passport 已启用",
+    "Your Passport is live and it is yours." to "你的 Passport 已生效，并且属于你。",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "你的 Passport 已生效，并且属于你。还剩一件事，正是 FLOP 真正要求的：公开说出来，并链接回来。见下方第 06 步。",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "您的 Passport 已启用，首条签名记录已发布到 Technocore。任何人都能验证，它始终属于您。",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "你的 Passport 已生效，属于你，并且署上了你的名字。",
     "Your Passport is live." to "您的 Passport 已启用。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "您的 Passport 由一次钱包签名重建，因此没有会丢失的助记词。反过来也成立：任何能让您的钱包签署那句一模一样的话的应用，都能重建这个 Passport。请阅读钱包要求您签署的内容，在这里，也在任何地方。",
@@ -237,6 +257,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Your key never leaves this phone." to "您的密钥绝不会离开此手机。",
     "Your key signed a line carrying this note's exact hash." to "您的密钥签署了一行，其中带有这条备注的确切哈希值。",
     "Your note has to be kept alive" to "您的笔记需要保持有效",
+    "Your post is in your identity note, at your key's own address." to
+        "你的帖子已在你的身份备注里，就在你密钥自己的地址上。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "您的钱包只签署一项声明。这不是交易，也不会转移资金。同一钱包可在任何设备上重建相同的 Passport。",
     "active days" to "活跃天数",
@@ -293,6 +315,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "发布身份",
     "publish these to my note" to "将这些发布到我的备注",
     "published" to "已发布",
+    "publishing" to "发布中",
     "re-check with the server" to "通过服务器重新检查",
     "re-checked when the app opened" to "应用打开时已重新检查",
     "records the server still holds" to "服务器仍保留的记录",

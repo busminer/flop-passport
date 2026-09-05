@@ -26,6 +26,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.alexkosa.floppassport.i18n.t
@@ -184,24 +188,127 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             Spacer(Modifier.height(FlopSpacing.lg))
         }
 
+        // Said before the ladder rather than after it. Four ticks and a shrug looks very
+        // like five ticks unless something on the screen counts them out loud.
+        if (!flow.complete && verifiedCount > 0) {
+            Box(
+                Modifier
+                    .fillMaxWidth()
+                    .background(FlopColors.Surface, FlopShapes.md)
+                    .border(1.dp, FlopColors.Cyan.copy(alpha = 0.35f), FlopShapes.md)
+                    .padding(FlopSpacing.md),
+            ) {
+                Column {
+                    Text(
+                        "$verifiedCount / 5",
+                        style = FlopType.h3,
+                        color = FlopColors.Cyan,
+                    )
+                    Spacer(Modifier.height(FlopSpacing.xs))
+                    Text(
+                        t(
+                            "Not finished yet. Until all five are green your identity is not " +
+                                "published and there is nothing anyone can verify. Keep going.",
+                        ),
+                        style = FlopType.bodySm,
+                        color = FlopColors.TextMuted,
+                    )
+                }
+            }
+            Spacer(Modifier.height(FlopSpacing.md))
+        }
+
         FlopStepLadder(flow, pulse = pulse)
+        // Drawn under the ladder rather than inside it: the five are the Passport and the
+        // app can prove every one of them, this one is what the Passport is for and only
+        // half of it can be proved. Same sequence, different promise, so it is shown as a
+        // continuation and never counted into the five.
+        if (flow.complete) {
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .background(FlopColors.Surface, FlopShapes.md)
+                    .border(
+                        1.dp,
+                        if (vm.nameLinked) FlopColors.Green.copy(alpha = 0.5f)
+                        else FlopColors.Cyan.copy(alpha = 0.35f),
+                        FlopShapes.md,
+                    )
+                    .padding(FlopSpacing.md),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    FlopLabel("06  tell them")
+                    Spacer(Modifier.height(FlopSpacing.xs))
+                    Text(
+                        t(
+                            if (vm.nameLinked) {
+                                "Your post is in your identity note, at your key's own address."
+                            } else {
+                                "Not done. Your Passport is not attached to any public name " +
+                                    "yet, and this is the one step nobody can do for you."
+                            },
+                        ),
+                        style = FlopType.bodySm,
+                        color = FlopColors.TextMuted,
+                    )
+                }
+                Spacer(Modifier.width(FlopSpacing.sm))
+                FlopBadge(
+                    if (vm.nameLinked) "linked" else "open",
+                    if (vm.nameLinked) FlopState.Verified else FlopState.Neutral,
+                )
+            }
+        }
         Spacer(Modifier.height(FlopSpacing.lg))
 
         when {
             flow.complete -> Box(
                 Modifier
                     .fillMaxWidth()
-                    .background(FlopColors.Green.copy(alpha = 0.08f), FlopShapes.md)
-                    .padding(FlopSpacing.md),
+                    .background(FlopColors.Green.copy(alpha = 0.12f), FlopShapes.md)
+                    .border(2.dp, FlopColors.Green, FlopShapes.md)
+                    .padding(FlopSpacing.lg),
             ) {
-                Column {
-                    Text(t("Your Passport is live."), style = FlopType.h3, color = FlopColors.Green)
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Box(
+                        Modifier.size(44.dp).background(FlopColors.Green, FlopShapes.md),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text("\u2713", style = FlopType.h2, color = FlopColors.Base)
+                    }
+                    Spacer(Modifier.height(FlopSpacing.sm))
+                    Text(
+                        t("All five done"),
+                        style = FlopType.h2,
+                        color = FlopColors.Green,
+                        textAlign = TextAlign.Center,
+                    )
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(t(
-                        "Anyone can check it at the address in step 03. This app promises " +
-                            "nothing about any allocation, and never will."),
+                    Text(
+                        t(
+                            if (vm.nameLinked) {
+                                "Your Passport is live, it is yours, and your name is on it."
+                            } else {
+                                "Your Passport is live and it is yours. One thing is left, " +
+                                    "and it is the one FLOP actually asked for: say so " +
+                                    "publicly, and link it back. Step 06 below."
+                            },
+                        ),
+                        style = FlopType.bodyMd,
+                        color = FlopColors.IceWhite,
+                        textAlign = TextAlign.Center,
+                    )
+                    Spacer(Modifier.height(FlopSpacing.sm))
+                    Text(
+                        t(
+                            "Anyone can check it at the address in step 03. This app promises " +
+                                "nothing about any allocation, and never will.",
+                        ),
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
+                        textAlign = TextAlign.Center,
                     )
                 }
             }
@@ -227,7 +334,10 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             flow.next == Step.Publish -> ActionBlock(
                 title = "Publish your identity",
                 body = "A public note at an address derived from your key, so anyone can " +
-                    "find and verify you later.",
+                    "find and verify you later. This one goes to technocore.chat, which is " +
+                    "someone else's public service: when it is busy it refuses, and pressing " +
+                    "again is the answer. Two or three attempts is normal and means nothing " +
+                    "is wrong with your phone.",
                 button = "publish identity",
                 enabled = !flow.busy,
                 onClick = { vm.publish() },
@@ -236,7 +346,8 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             else -> ActionBlock(
                 title = "Make your first signed check-in",
                 body = "A message signed by your Passport, posted to a quiet room and then " +
-                    "read back to prove it landed.",
+                    "read back to prove it landed. Same service as step 03, same rule: if it " +
+                    "refuses, press again. It is their load, not your key.",
                 button = "sign and check in",
                 enabled = !flow.busy,
                 onClick = { vm.checkIn() },

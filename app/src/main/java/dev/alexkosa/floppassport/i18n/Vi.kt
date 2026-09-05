@@ -19,12 +19,16 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  kể cho mọi người",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Một tin nhắn được Passport của bạn ký, gửi vào một phòng yên tĩnh rồi đọc lại để chứng minh đã được ghi nhận.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "Một tin nhắn do Passport của bạn ký, đăng vào một phòng yên tĩnh rồi đọc ngược lại để chứng minh nó đã tới. Cùng dịch vụ với bước 03, cùng một quy tắc: bị từ chối thì bấm lại. Đó là tải của họ, không phải khóa của bạn.",
     "A once-a-day reminder to leave today's signed record." to
         "Lời nhắc mỗi ngày một lần để để lại bản ghi đã ký hôm nay.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Một ghi chú lâu dài tại địa chỉ được tạo từ khóa của bạn, để sau này bất kỳ ai cũng có thể tìm và xác minh bạn.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Một ghi chú công khai tại địa chỉ được dẫn xuất từ khóa của bạn, để bất kỳ ai cũng có thể tìm và xác minh bạn sau này.",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "Một ghi chú công khai ở địa chỉ tính ra từ khóa của bạn, để sau này ai cũng tìm được và kiểm chứng được bạn. Bước này đi tới technocore.chat, dịch vụ công cộng của người khác: khi bận nó sẽ từ chối, và cách xử lý là bấm lại. Hai ba lần thử là bình thường và có nghĩa là máy của bạn không sao cả.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "Bạn phải tự ký một bản ghi mỗi ngày và không thể bổ sung cho ngày đã bỏ lỡ. Đây cũng là công tắc cảnh báo bạn trước khi ghi chú danh tính bị xóa.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -35,6 +39,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to
         "Đã được chấp nhận, nhưng chưa thể đọc lại",
     "Activity" to "Hoạt động",
+    "All five done" to "Xong cả năm bước",
     "Already checked in, found in the room" to "Đã ghi bản ghi, đã tìm thấy trong phòng",
     "Already published, read back just now" to "Đã công bố, vừa đọc lại",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -137,6 +142,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Không có ví nào trên điện thoại này mở liên kết thanh toán.",
     "No. Nothing was published." to "Không. Không có gì được công bố.",
     "Not checked yet." to "Chưa kiểm tra.",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "Chưa xong. Passport của bạn vẫn chưa gắn với tên công khai nào, và đây là bước không ai làm thay bạn được.",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "Vẫn chưa xong. Chừng nào cả năm chưa xanh thì danh tính của bạn chưa được công bố và không ai kiểm chứng được gì cả. Cứ tiếp tục.",
     "Nothing asked yet" to "Chưa có câu hỏi nào",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Không tìm thấy gì. Nếu bạn đã ký nội dung nhưng không thấy ở đây, phòng đã lược bỏ phần chứa nội dung đó - đây là điều bình thường và chính là lý do màn hình này tồn tại.",
@@ -156,6 +165,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Dán liên kết đến bài đăng của bạn. Liên kết này sẽ được đưa vào ghi chú danh tính của bạn, để ghi chú trỏ đến bài đăng và bài đăng chứa khóa. Sau đó, bất kỳ ai cũng có thể đối chiếu cả hai bằng cùng một khóa.",
     "Press Create again. Nothing was sent anywhere." to
         "Nhấn Tạo lần nữa. Chưa có gì được gửi đi.",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Hãy bấm điểm danh lần nữa. technocore.chat là dịch vụ công cộng và nó từ chối ghi khi đang bận, điều đó không liên quan gì tới ứng dụng này, tới máy của bạn hay tới khóa của bạn. Hai ba lần thử là chuyện bình thường. Chưa có gì được gửi đi.",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Hãy bấm công bố lần nữa. technocore.chat là dịch vụ công cộng và nó từ chối ghi khi đang bận, điều đó không liên quan gì tới ứng dụng này, tới máy của bạn hay tới khóa của bạn. Hai ba lần thử là chuyện bình thường. Chưa có gì được công bố.",
     "Protect" to "Bảo vệ",
     "Protect it" to "Bảo vệ mục này",
     "Publish" to "Công bố",
@@ -246,6 +259,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Cái giá của việc khôi phục mà không cần cụm từ hạt giống",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Cần làm gì và bao lâu một lần, vì sao danh tính hết hạn, vì sao cách này hoạt động trên Seeker và có điều gì cần lưu ý. Mở trong trình duyệt của bạn.",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "Hãy viết một dòng mà chỉ bạn mới viết ra. Những bài chỉ khác nhau đúng một cái khóa sẽ bị coi là cày kéo, và người chịu thiệt là những ai thật sự đã làm việc.",
     "Yes. Something is already visible to others." to
         "Có. Một số nội dung đã hiển thị với người khác.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -260,8 +275,13 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Passport của bạn được dẫn xuất từ một chữ ký do ví tạo trong Seed Vault, kho khóa phần cứng của Seeker. Khóa ví không bao giờ rời khỏi phần cứng đó. Khóa Passport được tính từ chữ ký này trong ứng dụng rồi được bộ nhớ bảo mật của Android niêm phong - được niêm phong, không phải được ký, trong phần cứng, vì Android Keystore không thể lưu loại khóa này.",
     "Your Passport is live" to "Passport của bạn đang hoạt động",
+    "Your Passport is live and it is yours." to "Passport của bạn đã hoạt động và là của bạn.",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "Passport của bạn đã hoạt động và là của bạn. Còn một việc, đúng việc mà FLOP đã yêu cầu: nói ra công khai và liên kết ngược lại. Bước 06 ở dưới.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport của bạn đang hoạt động và bản ghi có chữ ký đầu tiên đã có trên Technocore. Bất kỳ ai cũng có thể xác minh và nó vẫn thuộc về bạn.",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "Passport của bạn đã hoạt động, là của bạn, và mang tên bạn.",
     "Your Passport is live." to "Passport của bạn đang hoạt động.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport của bạn được dựng lại từ một chữ ký ví duy nhất, nên không có cụm từ hạt giống nào để mất. Điều đó cũng đúng theo chiều ngược lại: bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport này. Hãy đọc kỹ những gì một ví yêu cầu bạn ký, ở đây và ở mọi nơi.",
@@ -275,6 +295,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Your key signed a line carrying this note's exact hash." to
         "Khóa của bạn đã ký một dòng mang đúng mã băm của ghi chú này.",
     "Your note has to be kept alive" to "Ghi chú của bạn cần được duy trì",
+    "Your post is in your identity note, at your key's own address." to
+        "Bài đăng của bạn đã nằm trong ghi chú danh tính, ngay tại địa chỉ của chính khóa bạn.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ví của bạn ký một tuyên bố. Đây không phải giao dịch và không chuyển tiền. Cùng ví đó sẽ dựng lại cùng một Passport trên bất kỳ thiết bị nào.",
     "active days" to "ngày hoạt động",
@@ -333,6 +355,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "công bố danh tính",
     "publish these to my note" to "đăng vào ghi chú của tôi",
     "published" to "đã công bố",
+    "publishing" to "đang công bố",
     "re-check with the server" to "kiểm tra lại với máy chủ",
     "re-checked when the app opened" to "đã kiểm tra lại khi mở ứng dụng",
     "records the server still holds" to "các bản ghi máy chủ vẫn còn lưu",

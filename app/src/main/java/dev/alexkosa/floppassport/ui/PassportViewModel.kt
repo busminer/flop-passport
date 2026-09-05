@@ -498,6 +498,20 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     /** The example shown in the empty field. Follows the wording, so the card reads as one. */
     val exampleLine: String get() = voice.example
 
+    /**
+     * Whether the public name is really attached, rather than merely typed.
+     *
+     * The test is the same one the five steps use: the note was read back off the server
+     * and the link is in it. A URL sitting in a text field on this phone proves nothing to
+     * anybody else, and this app does not hand out green ticks for that.
+     */
+    val nameLinked: Boolean
+        get() {
+            val url = xPostUrl.trim()
+            if (url.isEmpty()) return false
+            return activity.noteValue?.contains(url) == true
+        }
+
     /** The post text the app offers, or null before there is a Passport to post about. */
     fun postDraft(): PostComposer.Draft? = did?.let { identity ->
         PostComposer.compose(identity, contributionLine.ifBlank { null }, voice = voice)
@@ -600,7 +614,10 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         StepState.Failed(
                             "technocore.chat refused the note",
                             publishedSomething = false,
-                            whatToDo = "Try again. Nothing was published.",
+                            whatToDo = "Press publish again. technocore.chat is a public " +
+                                "service and it refuses writes when it is busy, which has " +
+                                "nothing to do with this app, your phone or your key. Two " +
+                                "or three attempts is normal. Nothing was published.",
                             detail = "HTTP ${r.status}: ${r.message}",
                         ),
                     )
@@ -717,7 +734,10 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         StepState.Failed(
                             "technocore.chat refused the signed write",
                             publishedSomething = false,
-                            whatToDo = "Try again. Nothing was posted.",
+                            whatToDo = "Press check in again. technocore.chat is a public " +
+                                "service and it refuses writes when it is busy, which has " +
+                                "nothing to do with this app, your phone or your key. Two " +
+                                "or three attempts is normal. Nothing was posted.",
                             detail = "HTTP ${r.status}: ${r.message}",
                         ),
                     )

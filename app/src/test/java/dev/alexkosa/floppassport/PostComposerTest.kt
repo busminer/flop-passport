@@ -157,8 +157,10 @@ class PostComposerTest {
     @Test
     fun `every variant names FLOP and the platform`() {
         for (draft in PostComposer.drafts(liveDid)) {
-            assertTrue("variant ${draft.variant} drops the project", draft.text.contains("@flop_labs"))
             assertTrue("variant ${draft.variant} drops the tag", draft.text.contains("#FLOP"))
+            // Tags, never an at-mention: thousands of these arriving at one account is a
+            // brigade however well meant, and this decision is worth a test of its own.
+            assertFalse("variant ${draft.variant} mentions an account", draft.text.contains("@flop"))
         }
     }
 
@@ -187,7 +189,7 @@ class PostComposerTest {
             assertTrue("voice does not fit: ${draft.weightedLength}", draft.fits)
             assertTrue(draft.text.startsWith(mine))
             assertTrue(draft.text.contains(liveDid))
-            assertTrue(draft.text.contains("@flop_labs"))
+            assertTrue(draft.text.contains("#FLOP"))
         }
     }
 

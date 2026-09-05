@@ -19,12 +19,16 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  알려주기",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "당신의 Passport로 서명한 메시지를 조용한 방에 올리고, 도착했음을 증명하기 위해 다시 읽어 옵니다. 03단계와 같은 서비스, 같은 규칙입니다. 거절당하면 한 번 더 누르세요. 그쪽의 부하이지 당신의 키 문제가 아닙니다.",
     "A once-a-day reminder to leave today's signed record." to
         "오늘의 서명된 기록을 남기도록 하루에 한 번 알려 줍니다.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "키에서 파생된 주소에 남기는 영구 메모로, 나중에 누구나 신원을 찾아 검증할 수 있습니다.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "키에서 파생된 주소에 공개 메모를 남겨, 나중에 누구나 사용자를 찾고 검증할 수 있습니다.",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "당신의 키에서 계산된 주소에 올리는 공개 노트입니다. 그래야 나중에 누구든 당신을 찾아 확인할 수 있습니다. 이 단계는 technocore.chat으로 갑니다. 남의 공용 서비스라 바쁠 때는 거절하며, 그럴 때의 답은 한 번 더 누르는 것입니다. 두세 번 시도는 정상이고, 휴대폰에는 아무 문제가 없다는 뜻입니다.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "서명된 기록은 직접 남겨야 하며, 놓친 날은 나중에 채울 수 없습니다. 이 설정을 켜면 신원 노트가 삭제되기 전에 알림도 받을 수 있습니다.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -34,6 +38,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "About" to "정보",
     "Accepted, but we could not read it back yet" to "수락됐지만 아직 다시 읽지 못했습니다",
     "Activity" to "활동",
+    "All five done" to "다섯 단계 모두 완료",
     "Already checked in, found in the room" to "이미 서명 기록을 남겼으며 방에서 확인했습니다",
     "Already published, read back just now" to "이미 게시됐으며 방금 다시 읽었습니다",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -119,6 +124,10 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "No wallet on this phone opened the payment link." to "이 휴대전화의 지갑에서 결제 링크를 열지 못했습니다.",
     "No. Nothing was published." to "아니요. 게시된 내용은 없습니다.",
     "Not checked yet." to "아직 확인하지 않았습니다.",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "아직입니다. 당신의 Passport는 아직 어떤 공개된 이름에도 연결되어 있지 않고, 이것은 아무도 대신해 줄 수 없는 단계입니다.",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "아직 끝나지 않았습니다. 다섯 개가 모두 초록이 되기 전에는 신원이 공개되지 않았고, 누구도 확인할 수 있는 것이 없습니다. 계속하세요.",
     "Nothing asked yet" to "아직 요청한 내용이 없습니다",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "찾은 내용이 없습니다. 서명한 항목이 여기에 없다면 방에서 오래된 기록이 정리된 것입니다. 이는 정상이며 바로 이 화면이 필요한 이유입니다.",
@@ -136,6 +145,10 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "게시물 링크를 붙여 넣으세요. 이 링크는 신원 노트에 들어가 노트는 게시물을 가리키고 게시물은 키를 담게 됩니다. 그러면 누구나 하나의 키로 양쪽을 확인할 수 있습니다.",
     "Press Create again. Nothing was sent anywhere." to "생성을 다시 누르세요. 어디에도 전송된 내용은 없습니다.",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "체크인을 한 번 더 누르세요. technocore.chat은 공용 서비스라 바쁠 때 쓰기를 거절합니다. 이 앱이나 당신의 휴대폰, 당신의 키와는 아무 상관이 없습니다. 두세 번 시도하는 것은 정상입니다. 올라간 것은 없습니다.",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "공개를 한 번 더 누르세요. technocore.chat은 공용 서비스라 바쁠 때 쓰기를 거절합니다. 이 앱이나 당신의 휴대폰, 당신의 키와는 아무 상관이 없습니다. 두세 번 시도하는 것은 정상입니다. 공개된 것은 없습니다.",
     "Protect" to "보호",
     "Protect it" to "보호하기",
     "Publish" to "게시",
@@ -218,6 +231,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "What recovery without a seed phrase costs" to "시드 구문 없는 복구의 대가",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "무엇을 얼마나 자주 해야 하는지, 왜 신원이 만료되는지, 왜 Seeker에서 작동하는지, 주의할 점은 무엇인지 설명합니다. 브라우저에서 열립니다.",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "당신만 쓸 법한 한 줄을 쓰세요. 서로 키 하나만 다른 글들은 파밍으로 읽히고, 그 대가는 실제로 일한 사람들이 치릅니다.",
     "Yes. Something is already visible to others." to "예. 이미 다른 사람이 볼 수 있는 내용이 있습니다.",
     "You do not need this file to recover. The same Solana wallet that" to
         "복구에 이 파일은 필요하지 않습니다. 동일한 Solana 지갑이",
@@ -231,8 +246,13 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Passport는 Seeker의 하드웨어 키 저장소인 Seed Vault 안에서 지갑이 생성하는 하나의 서명에서 파생됩니다. 지갑 키는 해당 하드웨어를 벗어나지 않습니다. Passport 키는 이 앱에서 해당 서명으로 계산된 후 Android의 보안 저장소로 봉인됩니다. Android Keystore는 이런 종류의 키를 보관할 수 없으므로, 하드웨어에서 서명되는 것이 아니라 봉인됩니다.",
     "Your Passport is live" to "Passport가 활성화됐습니다",
+    "Your Passport is live and it is yours." to "당신의 Passport는 살아 있고 당신의 것입니다.",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "당신의 Passport는 살아 있고 당신의 것입니다. 한 가지가 남았고, 그것이 바로 FLOP이 요청한 것입니다. 공개적으로 알리고 다시 연결하세요. 아래 06단계입니다.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport가 활성화됐으며 첫 번째 서명 기록이 Technocore에 있습니다. 누구나 검증할 수 있으며 소유권은 사용자에게 있습니다.",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "당신의 Passport는 살아 있고, 당신의 것이며, 당신의 이름이 붙어 있습니다.",
     "Your Passport is live." to "Passport가 활성화됐습니다.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport는 지갑 서명 하나로 다시 만들어집니다. 그래서 잃어버릴 시드 구문이 없습니다. 같은 사실이 반대로도 작용합니다. 지갑이 정확히 그 문장에 서명하도록 설득한 앱은 이 Passport를 다시 만들 수 있습니다. 지갑이 무엇에 서명하라고 요구하는지, 여기서도 다른 곳에서도 읽어 보세요.",
@@ -246,6 +266,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Your key signed a line carrying this note's exact hash." to
         "키가 이 노트의 정확한 해시를 담은 줄에 서명했습니다.",
     "Your note has to be kept alive" to "노트를 유지해야 합니다",
+    "Your post is in your identity note, at your key's own address." to
+        "당신의 글은 당신 키의 주소에 있는 신원 노트 안에 있습니다.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "지갑은 하나의 문장에 서명합니다. 이는 거래가 아니며 자금을 이동하지 않습니다. 동일한 지갑으로 어느 기기에서든 같은 Passport를 다시 만들 수 있습니다.",
     "active days" to "활동 일수",
@@ -302,6 +324,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "신원 게시",
     "publish these to my note" to "내 노트에 게시",
     "published" to "게시됨",
+    "publishing" to "게시 중",
     "re-check with the server" to "서버에서 다시 확인",
     "re-checked when the app opened" to "앱을 열 때 다시 확인함",
     "records the server still holds" to "서버에 아직 남아 있는 기록",

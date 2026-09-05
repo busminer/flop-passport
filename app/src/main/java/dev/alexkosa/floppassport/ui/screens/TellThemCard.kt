@@ -88,7 +88,10 @@ fun TellThemCard(vm: PassportViewModel) {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             FlopLabel("06  tell them")
-            if (vm.xPostUrl.isNotBlank()) FlopBadge("linked", FlopState.Verified)
+            // Green only once the note came back from the server carrying the link. A URL
+            // typed into a field on this phone is not evidence of anything to anyone else.
+            if (vm.nameLinked) FlopBadge("linked", FlopState.Verified)
+            else if (vm.xPostUrl.isNotBlank()) FlopBadge("publishing", FlopState.Active)
         }
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(
@@ -136,9 +139,9 @@ fun TellThemCard(vm: PassportViewModel) {
                 if (ready) {
                     "This line is what makes the post yours. Everything under it is the proof."
                 } else {
-                    "One sentence in your own words, please. Thousands of posts that differ " +
-                        "only by a key get read as farming, and that lands on the people who " +
-                        "did the work."
+                    "Write one line only you would write. Posts that differ from each other " +
+                        "by nothing but a key get read as farming, and that lands on the " +
+                        "people who did the work."
                 },
             ),
             style = FlopType.bodySm,

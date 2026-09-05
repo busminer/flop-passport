@@ -32,19 +32,22 @@ object PostComposer {
     private const val CREDIT_SHORT = "FLOP Passport by @AlexKosa1"
 
     /**
-     * Who this is about, and where it belongs.
+     * Where this belongs, without shouting at anybody.
      *
-     * The handle was checked against the live account rather than typed from memory:
-     * @flop_labs, "Flop Labs", a verified organisation. A post that tags the wrong account
-     * is worse than one that tags nobody.
+     * Tags, not a mention. A hashtag is findable by anyone looking for the subject and
+     * notifies nobody; an `@` aimed at the project from thousands of accounts carrying
+     * near-identical structure is indistinguishable from a brigade, both to the people
+     * reading those notifications and to the systems that rank them. The post exists to
+     * help this project, and the surest way to fail at that would be to make its mentions
+     * unusable for a week.
      *
-     * The tags are what make a post findable by somebody who is not already following the
-     * person who wrote it, which is the entire reason the post exists.
+     * `#FLOP` is the tag the project's own posts carry, checked on the live account rather
+     * than assumed.
      */
-    const val TAGS = "@flop_labs #FLOP #SolanaMobile"
+    const val TAGS = "#FLOP #SolanaMobile #Seeker"
 
     /** A shorter tail for drafts that have run out of room. */
-    private const val TAGS_SHORT = "@flop_labs #FLOP"
+    private const val TAGS_SHORT = "#FLOP #SolanaMobile"
 
     data class Draft(
         val text: String,

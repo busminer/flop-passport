@@ -19,12 +19,16 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  расскажите им",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "Сообщение, подписанное вашим Passport, уходит в тихую комнату, а потом читается обратно, чтобы доказать, что оно дошло. Тот же сервис, что и на шаге 03, и то же правило: отказал — нажмите ещё раз. Это их нагрузка, а не ваш ключ.",
     "A once-a-day reminder to leave today's signed record." to
         "Ежедневное напоминание оставить сегодняшнюю подписанную запись.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Постоянная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вашу личность.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Публичная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вас.",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "Публичная заметка по адресу, вычисленному из вашего ключа, чтобы вас потом нашли и проверили. Этот шаг идёт в technocore.chat, а это чужой публичный сервис: когда он загружен, он отказывает, и ответ на это — нажать ещё раз. Две-три попытки это нормально и значит, что с телефоном всё в порядке.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "Подписанную отметку нужно оставлять вручную, а пропущенный день нельзя добавить позже. Этот переключатель также включает предупреждения перед удалением записи о вашей личности.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -35,6 +39,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to
         "Принято, но пока не удалось считать обратно",
     "Activity" to "Активность",
+    "All five done" to "Все пять сделаны",
     "Already checked in, found in the room" to "Запись уже оставлена и найдена в комнате",
     "Already published, read back just now" to "Уже опубликовано и только что считано обратно",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -138,6 +143,10 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Ни один кошелёк на этом телефоне не открыл платёжную ссылку.",
     "No. Nothing was published." to "Нет. Ничего не опубликовано.",
     "Not checked yet." to "Ещё не проверено.",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "Не сделано. Ваш Passport пока не привязан ни к какому публичному имени, и это тот шаг, который за вас не сделает никто.",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "Ещё не готово. Пока все пять не зелёные, ваша личность не опубликована и проверить никто ничего не может. Продолжайте.",
     "Nothing asked yet" to "Запросов пока не было",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
@@ -157,6 +166,10 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Вставьте ссылку на свою публикацию. Она попадёт в заметку вашего идентификатора: заметка будет ссылаться на публикацию, а публикация будет содержать ключ. Тогда любой сможет сверить их по одному ключу.",
     "Press Create again. Nothing was sent anywhere." to
         "Нажмите «Создать» ещё раз. Ничего никуда не отправлено.",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Нажмите «отметиться» ещё раз. technocore.chat это публичный сервис, и он отказывает в записи, когда загружен. К приложению, вашему телефону и вашему ключу это отношения не имеет. Две-три попытки это нормально. Отправлено ничего не было.",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Нажмите «опубликовать» ещё раз. technocore.chat это публичный сервис, и он отказывает в записи, когда загружен. К приложению, вашему телефону и вашему ключу это отношения не имеет. Две-три попытки это нормально. Опубликовано ничего не было.",
     "Protect" to "Защитить",
     "Protect it" to "Защитите",
     "Publish" to "Опубликовать",
@@ -248,6 +261,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Чем приходится платить за восстановление без seed-фразы",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Что делать и как часто, почему срок действия идентификатора истекает, почему это работает на Seeker и в чём подвох. Откроется в браузере.",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "Напишите строчку, которую напишете только вы. Посты, отличающиеся друг от друга одним лишь ключом, читаются как ферма, и достаётся за это тем, кто правда работал.",
     "Yes. Something is already visible to others." to "Да. Другим уже что-то видно.",
     "You do not need this file to recover. The same Solana wallet that" to
         "Этот файл не нужен для восстановления. Тот же кошелёк Solana, который",
@@ -261,8 +276,13 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Ваш Passport создаётся из одной подписи, которую кошелёк формирует внутри Seed Vault, аппаратного хранилища ключей Seeker. Ключ кошелька никогда не покидает это оборудование. Ключ Passport вычисляется в этом приложении из подписи, а затем запечатывается защищённым хранилищем Android — именно запечатывается, а не подписывается, аппаратно, поскольку Android Keystore не может хранить ключи такого типа.",
     "Your Passport is live" to "Ваш Passport действует",
+    "Your Passport is live and it is yours." to "Ваш Passport живой и он ваш.",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "Ваш Passport живой и он ваш. Осталось одно, и это ровно то, о чём просил FLOP: сказать об этом публично и связать обратно. Шаг 06 ниже.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ваш Passport действует, а первая подписанная запись находится в Technocore. Любой может её проверить, и она остаётся вашей.",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "Ваш Passport живой, он ваш, и на нём стоит ваше имя.",
     "Your Passport is live." to "Ваш Passport действует.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport восстанавливается из одной подписи кошелька — поэтому и нет seed-фразы, которую можно потерять. У этого есть обратная сторона: любое приложение, уговорившее ваш кошелёк подписать ровно ту же фразу, восстановит этот Passport. Читайте, что кошелёк просит подписать, здесь и везде.",
@@ -276,6 +296,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your key signed a line carrying this note's exact hash." to
         "Ваш ключ подписал строку с точным хэшем этой заметки.",
     "Your note has to be kept alive" to "Запись нужно поддерживать",
+    "Your post is in your identity note, at your key's own address." to
+        "Ваш пост лежит в вашей заметке личности, по адресу вашего же ключа.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ваш кошелёк подписывает одно утверждение. Это не транзакция, и средства не перемещаются. Тот же кошелёк воссоздаёт тот же Passport на любом устройстве.",
     "active days" to "активных дней",
@@ -334,6 +356,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "опубликовать личность",
     "publish these to my note" to "добавить в мою заметку",
     "published" to "опубликовано",
+    "publishing" to "публикуется",
     "re-check with the server" to "повторно проверить на сервере",
     "re-checked when the app opened" to "повторно проверено при открытии приложения",
     "records the server still holds" to "записи, ещё хранящиеся на сервере",

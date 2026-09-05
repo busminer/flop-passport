@@ -19,12 +19,16 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  beri tahu mereka",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "Sebuah pesan yang ditandatangani Passport Anda, dikirim ke ruang yang sepi lalu dibaca kembali untuk membuktikan bahwa ia sampai. Layanan yang sama dengan langkah 03, aturan yang sama: kalau ditolak, tekan lagi. Itu beban mereka, bukan kunci Anda.",
     "A once-a-day reminder to leave today's signed record." to
         "Pengingat sekali sehari untuk meninggalkan catatan hari ini yang ditandatangani secara kriptografis.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Catatan permanen di alamat yang berasal dari kunci Anda, agar siapa pun dapat menemukan dan memverifikasi Anda nanti.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Catatan publik di alamat yang diturunkan dari kunci Anda, sehingga siapa pun dapat menemukan dan memverifikasi Anda nanti.",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "Sebuah catatan publik di alamat yang dihitung dari kunci Anda, supaya orang bisa menemukan dan memverifikasi Anda nanti. Langkah ini menuju technocore.chat, layanan publik milik orang lain: saat sibuk ia menolak, dan jawabannya adalah menekan lagi. Dua atau tiga percobaan itu wajar dan berarti ponsel Anda baik-baik saja.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "Catatan bertanda tangan harus dibuat sendiri, dan hari yang terlewat tidak dapat diisi nanti. Ini juga merupakan pengaturan yang memperingatkan Anda sebelum catatan identitas Anda dihapus.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -35,6 +39,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to
         "Diterima, tetapi belum dapat dibaca kembali",
     "Activity" to "Aktivitas",
+    "All five done" to "Kelimanya selesai",
     "Already checked in, found in the room" to "Sudah mencatatkan, ditemukan di ruang",
     "Already published, read back just now" to "Sudah diterbitkan, baru saja dibaca kembali",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -140,6 +145,10 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tidak ada dompet di ponsel ini yang membuka tautan pembayaran.",
     "No. Nothing was published." to "Tidak. Tidak ada yang diterbitkan.",
     "Not checked yet." to "Belum diperiksa.",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "Belum dilakukan. Passport Anda belum terhubung ke nama publik mana pun, dan ini langkah yang tidak bisa dikerjakan orang lain untuk Anda.",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "Belum selesai. Sampai kelimanya hijau, identitas Anda belum diterbitkan dan tidak ada yang bisa diverifikasi siapa pun. Lanjutkan.",
     "Nothing asked yet" to "Belum ada yang ditanyakan",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
@@ -159,6 +168,10 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tempel tautan ke postinganmu. Tautan itu masuk ke catatan identitasmu, jadi catatan mengarah ke postingan dan postingan memuat kuncinya. Siapa pun kemudian dapat memeriksa keduanya dengan kunci yang sama.",
     "Press Create again. Nothing was sent anywhere." to
         "Tekan Buat lagi. Tidak ada yang dikirim ke mana pun.",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Tekan absen sekali lagi. technocore.chat adalah layanan publik dan ia menolak penulisan saat sedang sibuk, dan itu tidak ada hubungannya dengan aplikasi ini, ponsel Anda, atau kunci Anda. Dua atau tiga percobaan itu wajar. Tidak ada yang terkirim.",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Tekan terbitkan sekali lagi. technocore.chat adalah layanan publik dan ia menolak penulisan saat sedang sibuk, dan itu tidak ada hubungannya dengan aplikasi ini, ponsel Anda, atau kunci Anda. Dua atau tiga percobaan itu wajar. Tidak ada yang diterbitkan.",
     "Protect" to "Lindungi",
     "Protect it" to "Lindungi",
     "Publish" to "Terbitkan",
@@ -248,6 +261,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "What recovery without a seed phrase costs" to "Harga pemulihan tanpa frasa seed",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Apa yang harus dilakukan dan seberapa sering, mengapa identitas ini kedaluwarsa, mengapa ini berfungsi di Seeker, dan apa kekurangannya. Dibuka di browser Anda.",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "Tulis satu baris yang hanya Anda yang akan menulisnya. Kiriman yang satu sama lain hanya berbeda kuncinya akan dibaca sebagai farming, dan itu menimpa orang-orang yang benar-benar bekerja.",
     "Yes. Something is already visible to others." to
         "Ya. Sesuatu sudah terlihat oleh orang lain.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -262,8 +277,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Passport Anda diturunkan dari satu tanda tangan yang dibuat dompet Anda di dalam Seed Vault, penyimpanan kunci perangkat keras Seeker. Kunci dompet tidak pernah keluar dari perangkat keras tersebut. Kunci Passport dihitung dari tanda tangan itu di aplikasi ini, lalu disegel oleh penyimpanan aman Android - disegel, bukan ditandatangani, di perangkat keras, karena Android Keystore tidak dapat menyimpan jenis kunci ini.",
     "Your Passport is live" to "Passport Anda aktif",
+    "Your Passport is live and it is yours." to "Passport Anda aktif dan menjadi milik Anda.",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "Passport Anda aktif dan milik Anda. Tersisa satu hal, dan itulah yang benar-benar diminta FLOP: katakan di depan umum, lalu tautkan kembali. Langkah 06 di bawah.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport Anda aktif dan catatan bertanda tangan pertama Anda ada di Technocore. Siapa pun dapat memverifikasinya, dan catatan itu tetap milik Anda.",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "Passport Anda aktif, milik Anda, dan nama Anda ada padanya.",
     "Your Passport is live." to "Passport Anda aktif.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport Anda dibangun ulang dari satu tanda tangan dompet, itulah sebabnya tidak ada frasa seed yang bisa hilang. Hal yang sama berlaku sebaliknya: aplikasi mana pun yang membujuk dompet Anda menandatangani kalimat yang persis sama dapat membangun ulang Passport ini. Bacalah apa yang diminta dompet untuk Anda tanda tangani, di sini dan di mana pun.",
@@ -277,6 +297,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Your key signed a line carrying this note's exact hash." to
         "Kunci Anda menandatangani baris yang memuat hash persis catatan ini.",
     "Your note has to be kept alive" to "Catatan Anda harus tetap aktif",
+    "Your post is in your identity note, at your key's own address." to
+        "Kiriman Anda sudah ada di catatan identitas Anda, di alamat milik kunci Anda sendiri.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Dompet Anda menandatangani satu pernyataan. Ini bukan transaksi dan tidak memindahkan dana. Dompet yang sama membangun kembali Passport yang sama di perangkat mana pun.",
     "active days" to "hari aktif",
@@ -334,6 +356,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "terbitkan identitas",
     "publish these to my note" to "terbitkan ini ke catatan saya",
     "published" to "diterbitkan",
+    "publishing" to "menerbitkan",
     "re-check with the server" to "periksa ulang dengan server",
     "re-checked when the app opened" to "diperiksa ulang saat aplikasi dibuka",
     "records the server still holds" to "catatan yang masih disimpan server",

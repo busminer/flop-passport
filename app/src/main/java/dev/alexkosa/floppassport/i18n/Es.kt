@@ -19,12 +19,16 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  cuéntales",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Un mensaje firmado por su Passport, publicado en una sala tranquila y después leído de nuevo para demostrar que llegó.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
+        "Un mensaje firmado por tu Passport, publicado en una sala tranquila y luego leído de vuelta para probar que llegó. El mismo servicio del paso 03 y la misma regla: si rechaza, vuelve a pulsar. Es su carga, no tu clave.",
     "A once-a-day reminder to leave today's signed record." to
         "Un recordatorio diario para dejar el registro firmado de hoy.",
     "A permanent note at an address derived from your key, so anyone can find and verify you later." to
         "Una nota permanente en una dirección derivada de su clave, para que cualquiera pueda encontrarla y verificar su identidad después.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Una nota pública en una dirección derivada de su clave, para que cualquiera pueda encontrar y verificar su identidad más adelante.",
+    "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
+        "Una nota pública en una dirección calculada a partir de tu clave, para que cualquiera pueda encontrarte y verificarte después. Esta va a technocore.chat, que es un servicio público de otra gente: cuando está ocupado rechaza, y la respuesta es volver a pulsar. Dos o tres intentos es lo normal y significa que tu teléfono está bien.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "Debes dejar un registro firmado manualmente, y no puedes recuperar más adelante un día perdido. Esta opción también activa el aviso antes de que se elimine tu nota de identidad.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
@@ -35,6 +39,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to
         "Aceptado, pero aún no pudimos volver a leerlo",
     "Activity" to "Actividad",
+    "All five done" to "Los cinco, hechos",
     "Already checked in, found in the room" to "Registro ya firmado y encontrado en la sala",
     "Already published, read back just now" to "Ya publicado y leído de nuevo ahora mismo",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -138,6 +143,10 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Ninguna cartera de este teléfono abrió el enlace de pago.",
     "No. Nothing was published." to "No. No se publicó nada.",
     "Not checked yet." to "Aún no comprobado.",
+    "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
+        "Sin hacer. Tu Passport todavía no está ligado a ningún nombre público, y este es el paso que nadie puede dar por ti.",
+    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
+        "Todavía no está listo. Hasta que los cinco estén en verde, tu identidad no está publicada y no hay nada que nadie pueda verificar. Sigue.",
     "Nothing asked yet" to "Aún no se ha solicitado nada",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "No se encontró nada. Si firmó algo y no aparece aquí, la sala ya lo ha descartado, lo cual es normal y es precisamente el motivo de esta pantalla.",
@@ -156,6 +165,10 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Pega el enlace a tu publicación. Se añadirá a tu nota de identidad, para que la nota apunte a la publicación y la publicación incluya la clave. Así, cualquiera podrá comprobar ambos extremos con la misma clave.",
     "Press Create again. Nothing was sent anywhere." to
         "Pulse Crear de nuevo. No se envió nada.",
+    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Pulsa registrarte otra vez. technocore.chat es un servicio público y rechaza escrituras cuando está ocupado, lo que no tiene nada que ver con esta app, con tu teléfono ni con tu clave. Dos o tres intentos es lo normal. No se envió nada.",
+    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Pulsa publicar otra vez. technocore.chat es un servicio público y rechaza escrituras cuando está ocupado, lo que no tiene nada que ver con esta app, con tu teléfono ni con tu clave. Dos o tres intentos es lo normal. No se publicó nada.",
     "Protect" to "Proteger",
     "Protect it" to "Protéjalo",
     "Publish" to "Publicar",
@@ -244,6 +257,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "What recovery without a seed phrase costs" to "Lo que cuesta recuperar sin frase semilla",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Qué hacer y con qué frecuencia, por qué caduca la identidad, por qué funciona en un Seeker y cuál es la pega. Se abre en tu navegador.",
+    "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
+        "Escribe una línea que solo tú escribirías. Los posts que se diferencian entre sí únicamente por una clave se leen como granjeo, y eso recae sobre quienes sí hicieron el trabajo.",
     "Yes. Something is already visible to others." to
         "Sí. Algo ya es visible para otras personas.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -258,8 +273,13 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Su Passport se deriva de una firma que su cartera crea dentro de Seed Vault, el almacén de claves de hardware de Seeker. La clave de la cartera nunca sale de ese hardware. La clave de Passport se calcula a partir de esa firma en esta aplicación y luego se sella mediante el almacenamiento seguro de Android: se sella, no se firma, en hardware, porque Android Keystore no admite este tipo de clave.",
     "Your Passport is live" to "Su Passport está activo",
+    "Your Passport is live and it is yours." to "Tu Passport está activo y es tuyo.",
+    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
+        "Tu Passport está activo y es tuyo. Queda una cosa, y es justo la que pidió FLOP: dilo en público y enlázalo de vuelta. Paso 06, abajo.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Su Passport está activo y su primer registro firmado está en Technocore. Cualquiera puede verificarlo y sigue siendo suyo.",
+    "Your Passport is live, it is yours, and your name is on it." to
+        "Tu Passport está activo, es tuyo y lleva tu nombre.",
     "Your Passport is live." to "Su Passport está activo.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Su Passport se reconstruye a partir de una sola firma de la billetera, por eso no hay ninguna frase semilla que perder. Lo mismo vale al revés: cualquier aplicación que convenza a su billetera de firmar esa frase exacta puede reconstruir este Passport. Lea lo que una billetera le pide firmar, aquí y en todas partes.",
@@ -273,6 +293,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Your key signed a line carrying this note's exact hash." to
         "Su clave firmó una línea con el hash exacto de esta nota.",
     "Your note has to be kept alive" to "Debes mantener activa tu nota",
+    "Your post is in your identity note, at your key's own address." to
+        "Tu post está en tu nota de identidad, en la propia dirección de tu clave.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Su cartera firma una declaración. No es una transacción ni mueve fondos. La misma cartera reconstruye el mismo Passport en cualquier dispositivo.",
     "active days" to "días activos",
@@ -332,6 +354,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "publish identity" to "publicar identidad",
     "publish these to my note" to "publicar esto en mi nota",
     "published" to "publicado",
+    "publishing" to "publicando",
     "re-check with the server" to "comprobar de nuevo con el servidor",
     "re-checked when the app opened" to "comprobado de nuevo al abrir la aplicación",
     "records the server still holds" to "registros que el servidor aún conserva",
