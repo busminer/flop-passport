@@ -35,3 +35,4 @@ recovery-*.txt
 # Throwaway data from the local Technocore test server
 tests/_localdata/
 tests/_server.log
+design/store/_work/
