@@ -23,6 +23,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "A few more words, and it is yours. One real sentence is all this needs." to
         "再写几个字就成了。只需要一句真话。",
     "A few reminders about the last step, and then they stop." to "关于最后一步的几条提醒，之后就不再打扰。",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "有点长了。删短一些，整条帖子连同密钥就都放得下。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "一条由 Passport 签名的消息，发布到安静的房间后再读回，以证明已送达。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

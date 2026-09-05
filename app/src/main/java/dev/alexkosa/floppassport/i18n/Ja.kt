@@ -23,6 +23,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "A few more words, and it is yours. One real sentence is all this needs." to
         "あと少し書けば、その一行はあなたのものです。本当の一文があれば十分です。",
     "A few reminders about the last step, and then they stop." to "最後の手順についての数回の通知。そのあとは止まります。",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "少し長すぎます。短くすれば、鍵も含めて投稿全体が収まります。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passportで署名したメッセージを静かなルームに投稿し、読み戻して到着を確認します。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

@@ -83,7 +83,10 @@ fun TellThemCard(vm: PassportViewModel) {
     val draft = vm.postDraft() ?: return
     // One place decides. The hint under the field and the state of the button are the
     // same fact shown twice, and they must never disagree with each other.
-    val ready = PostComposer.isRealSentence(vm.contributionLine)
+    // Two conditions, not one. A line can be a real sentence and still leave a post over
+    // the limit, and X does not refuse those - it cuts them, most likely through the middle
+    // of the key, which is the one thing in the post that has to survive whole.
+    val ready = PostComposer.isRealSentence(vm.contributionLine) && draft.fits
     var xField by remember { mutableStateOf(vm.xPostUrl) }
     var contribField by remember { mutableStateOf(vm.contributionUrl) }
     var problem by remember { mutableStateOf<String?>(null) }
@@ -187,6 +190,7 @@ fun TellThemCard(vm: PassportViewModel) {
             t(
                 when {
                     ready -> "This line is what makes the post yours. Everything under it is the proof."
+                    !draft.fits -> "A little too long. Trim it and the whole post fits, key included."
                     complaint != null -> complaint
                     else -> "Write one line only you would write. Posts that differ from each " +
                         "other by nothing but a key get read as farming, and that lands on " +

@@ -24,6 +24,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Unas palabras más y ya es tuya. Basta con una frase de verdad.",
     "A few reminders about the last step, and then they stop." to
         "Unos pocos recordatorios sobre el último paso, y luego se acaban.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Un poco largo. Recórtalo y el post entero cabe, clave incluida.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Un mensaje firmado por su Passport, publicado en una sala tranquila y después leído de nuevo para demostrar que llegó.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

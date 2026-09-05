@@ -24,6 +24,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Beberapa kata lagi dan kalimat itu jadi milik Anda. Cukup satu kalimat sungguhan.",
     "A few reminders about the last step, and then they stop." to
         "Beberapa pengingat tentang langkah terakhir, lalu berhenti.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Agak kepanjangan. Persingkat sedikit dan seluruh kiriman muat, termasuk kuncinya.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

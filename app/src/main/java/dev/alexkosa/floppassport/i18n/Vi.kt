@@ -24,6 +24,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Thêm vài chữ nữa là xong. Chỉ cần một câu thật.",
     "A few reminders about the last step, and then they stop." to
         "Vài lời nhắc về bước cuối, rồi sẽ thôi.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Hơi dài. Rút ngắn lại là cả bài vừa đủ, kể cả khóa.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Một tin nhắn được Passport của bạn ký, gửi vào một phòng yên tĩnh rồi đọc lại để chứng minh đã được ghi nhận.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

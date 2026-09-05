@@ -223,4 +223,31 @@ class PostComposerTest {
             assertNull("example still complains: $example", PostComposer.whyNotASentence(example))
         }
     }
+
+    @Test
+    fun `every version of the post names Solana Mobile in words`() {
+        // Not only the hashtag. The key store is the reason any of this works, and a
+        // reader searching for the platform will not find a post that only says
+        // "Seed Vault" - nor will they see the two projects crossing, which is the point.
+        for (voice in PostComposer.VOICES) {
+            assertTrue("mechanism: ${voice.mechanism}", voice.mechanism.contains("Solana Mobile"))
+            assertTrue("brief: ${voice.brief}", voice.brief.contains("Solana Mobile"))
+        }
+    }
+
+    @Test
+    fun `a line right at the budget still leaves a postable draft, in every voice`() {
+        // 280 characters, because most people posting this will not be paying X for more.
+        // A draft over the limit is not refused by X, it is cut - and the cut lands in the
+        // key, which is the one part of the post that has to survive whole.
+        val budget = PostComposer.contributionBudget(liveDid)
+        for (voice in PostComposer.VOICES) {
+            val draft = PostComposer.compose(liveDid, "x".repeat(budget), voice = voice)
+            assertTrue(
+                "voice does not fit at the budget: ${draft.weightedLength}",
+                draft.weightedLength <= PostComposer.LIMIT,
+            )
+            assertTrue(draft.text.contains(liveDid))
+        }
+    }
 }

@@ -24,6 +24,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Birkaç kelime daha, ve satır senin olur. Tek bir gerçek cümle yeter.",
     "A few reminders about the last step, and then they stop." to
         "Son adım için birkaç hatırlatma, sonra kesiliyor.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Biraz uzun oldu. Kısalt, o zaman anahtar dahil tüm gönderi sığar.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

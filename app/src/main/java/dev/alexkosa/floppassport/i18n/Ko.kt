@@ -23,6 +23,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "A few more words, and it is yours. One real sentence is all this needs." to
         "몇 마디만 더 쓰면 됩니다. 진짜 문장 하나면 충분합니다.",
     "A few reminders about the last step, and then they stop." to "마지막 단계에 대한 몇 번의 알림, 그 뒤에는 멈춥니다.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "조금 깁니다. 줄이면 키까지 포함해 글 전체가 들어갑니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

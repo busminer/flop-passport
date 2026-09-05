@@ -24,6 +24,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Ещё несколько слов, и строчка ваша. Нужно всего одно живое предложение.",
     "A few reminders about the last step, and then they stop." to
         "Несколько напоминаний про последний шаг, потом они прекращаются.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Чуть длинновато. Сократите, и весь пост поместится вместе с ключом.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to

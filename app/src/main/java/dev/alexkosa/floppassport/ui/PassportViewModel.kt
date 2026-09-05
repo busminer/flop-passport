@@ -96,7 +96,17 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * without ever pressing the last button, and used to reach the end having never been
      * asked. Once, on whichever route, is the honest middle.
      */
+    /**
+     * Ask once, at the end, and only after the person has been told they are finished.
+     *
+     * It used to fire when the fifth step went green, which is in the middle of somebody's
+     * work: they still had the post to write and the link to bring back, and the app
+     * interrupted that to ask them for money. Now it waits for the link to land in the note
+     * and for the congratulation to have been earned. Ask where something was just
+     * finished, never where something is still owed.
+     */
     private fun offerSupportInvite() {
+        if (!flow.complete || !nameLinked) return
         if (!vault.supportInviteShown) showSupportInvite = true
     }
 
@@ -558,6 +568,11 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             runCatching { keepNoteAlive(identity, activity.noteValue) }
             refreshActivity(force = true)
+            // The one moment the app has earned the right to ask for anything: the link is
+            // in the note, the note has been read back, and the person has just been told
+            // they are finished. `offerSupportInvite` checks that for itself, so calling
+            // here is safe on every other republish too.
+            offerSupportInvite()
         }
     }
 

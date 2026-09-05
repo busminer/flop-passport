@@ -24,6 +24,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Noch ein paar Worte, dann gehört sie dir. Ein echter Satz genügt.",
     "A few reminders about the last step, and then they stop." to
         "Ein paar Erinnerungen an den letzten Schritt, dann hören sie auf.",
+    "A little too long. Trim it and the whole post fits, key included." to
+        "Etwas zu lang. Kürze es, dann passt der ganze Beitrag, Schlüssel inklusive.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
