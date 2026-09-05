@@ -231,6 +231,14 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             )
         }
 
+        // The other half of what FLOP asked for, and the only part of this screen that is
+        // about somebody else seeing you. It sits after the ladder because it only makes
+        // sense once there is a key to point at.
+        if (vm.did != null) {
+            Spacer(Modifier.height(FlopSpacing.lg))
+            TellThemCard(vm)
+        }
+
         if (vm.did != null) {
             Spacer(Modifier.height(FlopSpacing.lg))
             FlopButtonSecondary("save my key", {

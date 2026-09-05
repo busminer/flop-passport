@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import dev.alexkosa.flooppassport.crypto.DidKey
 import dev.alexkosa.flooppassport.crypto.Ed25519
 import dev.alexkosa.flooppassport.proof.PostComposer
+import dev.alexkosa.flooppassport.proof.SharePrefs
 import dev.alexkosa.flooppassport.technocore.DidNote
 import dev.alexkosa.flooppassport.technocore.Technocore
 import dev.alexkosa.flooppassport.notify.NoteLife
@@ -156,7 +157,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 // notes written by an earlier release, with a different wording, are kept
                 // alive rather than abandoned. A note that is present, is not our text and
                 // nothing vouches for is somebody else's, and is left alone.
-                val ours = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+                val ours = noteValue()
                 val renewable = note == null || note == ours ||
                     activity.noteVerdict == DidNote.Verdict.MATCHES
                 if (renewable && NoteLife.daysSinceWrite(getApplication()) != 0) {
@@ -226,7 +227,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      */
     private suspend fun keepNoteAlive(identity: String, observed: String?) {
         runCatching {
-            val ours = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+            val ours = noteValue()
             if (!renewNote(identity)) return
 
             // A signed line vouches for exact bytes, so it survives this write only if the
@@ -417,6 +418,72 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    // ------------------------------------------------------------ what the note says
+
+    private val share = SharePrefs(app)
+
+    /**
+     * The note this Passport should be publishing right now, in one place.
+     *
+     * It is read in four spots - publishing, renewing, vouching, and deciding whether a
+     * note found on the server is ours - and every one of them has to produce byte-identical
+     * text. They do not any more once the note carries the person's own links: composing it
+     * separately in each caller would mean a note written with an X link and a comparison
+     * made without one, so the app would decide its own note belonged to a stranger and
+     * stop renewing it. Exactly the failure this whole path exists to prevent, arrived at
+     * from the other side.
+     */
+    private fun noteValue(): String = PostComposer.identityNoteValue(
+        xPostUrl = share.xPostUrl.ifBlank { null },
+        room = CHECK_IN_ROOM,
+        contributionUrl = share.contributionUrl.ifBlank { null },
+    )
+
+    /** What the person wrote about themselves, and where they put it. */
+    var contributionLine by mutableStateOf(share.contributionLine)
+        private set
+    var contributionUrl by mutableStateOf(share.contributionUrl)
+        private set
+    var xPostUrl by mutableStateOf(share.xPostUrl)
+        private set
+
+    fun saveContributionLine(value: String) {
+        contributionLine = value
+        share.contributionLine = value
+    }
+
+    /**
+     * Attach a link to the note, and republish it so the change is public rather than
+     * merely saved.
+     *
+     * A field the user filled in that only lives on their phone is worse than no field: it
+     * looks done and proves nothing. So each of these writes the note again immediately,
+     * and the signed line that vouches for the note is re-posted because the bytes changed.
+     */
+    fun attachContributionUrl(value: String) {
+        contributionUrl = value
+        share.contributionUrl = value
+        republishNote()
+    }
+
+    fun attachPostUrl(value: String) {
+        xPostUrl = value
+        share.xPostUrl = value
+        republishNote()
+    }
+
+    /** The post text the app offers, or null before there is a Passport to post about. */
+    fun postDraft(): PostComposer.Draft? =
+        did?.let { PostComposer.compose(it, contributionLine.ifBlank { null }) }
+
+    private fun republishNote() {
+        val identity = did ?: return
+        viewModelScope.launch {
+            runCatching { keepNoteAlive(identity, activity.noteValue) }
+            refreshActivity(force = true)
+        }
+    }
+
     // ------------------------------------------------------------ keeping the note alive
 
     /**
@@ -435,7 +502,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * about, which is the failure this whole path exists to prevent.
      */
     private suspend fun renewNote(identity: String): Boolean {
-        val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+        val value = noteValue()
         val ok = technocore.publishIdentityNote(identity, value) is Technocore.Result.Verified
         if (ok) NoteLife.recordWrite(getApplication())
         return ok
@@ -473,7 +540,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         set(Step.Publish, StepState.Running("Publishing your identity note to technocore.chat"))
         viewModelScope.launch {
             try {
-                val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+                val value = noteValue()
                 when (val r = technocore.publishIdentityNote(identity, value)) {
                     is Technocore.Result.Verified -> {
                         NoteLife.recordWrite(getApplication())

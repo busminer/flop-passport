@@ -85,28 +85,38 @@ object PostComposer {
         fun build(vararg lines: String?) =
             lines.filterNotNull().joinToString("\n\n").trimEnd()
 
+        // Three sentences the community route does not have, in descending order of how
+        // much they cost. The Seeker line is not flattery: the derivation is only possible
+        // because Seed Vault signs the exact bytes it is handed. A wallet that wraps the
+        // message in its own envelope, which most do, produces a different signature for
+        // the same statement and there is no reproducible key at the end of it. That was
+        // measured on a real Seeker before this app was built, and it is the most specific
+        // true thing a post about this can say.
+        // No fallback opener here, unlike every variant below it. Somebody who wrote
+        // nothing gets the two Seed Vault lines instead of a bland "created my Passport"
+        // followed by them, which is what pushed this variant over the limit and quietly
+        // dropped the most specific sentence in the whole post.
         val full = build(
-            mine ?: "Created my FLOP Passport on a Solana Seeker.",
-            "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox.",
+            mine,
+            "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
+            "It works only because Seed Vault signs the exact bytes it is handed.",
             did,
-            "Identity note published, first check in signed and verified on Technocore.",
             link,
             CREDIT,
         )
 
         val medium = build(
             mine ?: "Created my FLOP Passport on a Solana Seeker.",
-            "Derived from a Seed Vault signature, sealed by StrongBox on device.",
+            "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
             did,
-            "Identity note published, first check in verified.",
             link,
             CREDIT,
         )
 
         val short = build(
             mine ?: "My FLOP Passport, created on a Solana Seeker.",
+            "Derived from one Seed Vault signature. No seed phrase to lose.",
             did,
-            "Identity note published, first check in verified on Technocore.",
             link,
             CREDIT,
         )
