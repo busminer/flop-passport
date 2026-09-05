@@ -73,19 +73,31 @@ fun TellThemCard(vm: PassportViewModel) {
     var problem by remember { mutableStateOf<String?>(null) }
 
     FlopCard {
+        // Numbered like the ladder above it, because it is the same sequence continuing.
+        // The five steps build the identity; this one is what the identity was for, and a
+        // person who has just been walked through five numbered steps reads an unnumbered
+        // box as something else entirely.
         Row(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            FlopLabel("tell them")
+            FlopLabel("06  tell them")
             if (vm.xPostUrl.isNotBlank()) FlopBadge("linked", FlopState.Verified)
         }
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(
+            t("Optional, and the part that actually counts."),
+            style = FlopType.h3,
+            color = FlopColors.IceWhite,
+        )
+        Spacer(Modifier.height(FlopSpacing.xs))
+        Text(
             t(
-                "FLOP asked agents to create a unique key and to do something useful to " +
-                    "spread the word about Technocore. You have the key. This is the rest.",
+                "FLOP asked agents to do two things: create a unique key, and do something " +
+                    "useful to spread the word about Technocore. The five steps above did " +
+                    "the first. Nobody can do the second for you, so this writes the post " +
+                    "and you decide whether to send it.",
             ),
             style = FlopType.bodyMd,
             color = FlopColors.TextMuted,

@@ -231,10 +231,15 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
             )
         }
 
-        // The other half of what FLOP asked for, and the only part of this screen that is
-        // about somebody else seeing you. It sits after the ladder because it only makes
-        // sense once there is a key to point at.
-        if (vm.did != null) {
+        // Only after the ladder is finished, and this condition is the whole point.
+        //
+        // Gated on `did != null` it appeared the moment a key existed, which is one tap
+        // in: a person who had not published anything, checked in anywhere or posted a
+        // word was shown a field asking for the link to their post. Caught on a clean
+        // install on a second phone. The five steps are a guided sequence that explains
+        // itself, and a box from step six sitting under step one undoes that guidance for
+        // everybody who is not already sure what the app is.
+        if (flow[Step.Ready] is StepState.Verified) {
             Spacer(Modifier.height(FlopSpacing.lg))
             TellThemCard(vm)
         }
@@ -276,7 +281,12 @@ private fun nextHint(next: Step?): String = when (next) {
     Step.Protect -> "Next: seal the key in this phone's secure storage."
     Step.Publish -> "Next: publish your identity so anyone can verify you."
     Step.CheckIn -> "Next: make your first signed check-in."
-    Step.Ready, null -> "That was the last step. Your Passport is live."
+    // The ladder ends, the app does not. Saying so here is what stops the last dialog
+    // from feeling like a door closing on somebody who still has the useful half to do.
+    Step.Ready, null ->
+        "That was the last step. Your Passport is live. One thing left, and it is the " +
+            "part FLOP actually asked for: tell people what you did. The app writes the " +
+            "post for you at the bottom of this screen."
 }
 
 @Composable
