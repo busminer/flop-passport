@@ -68,7 +68,25 @@ object PostComposer {
         val mechanism: String,
         val brief: String,
         val closer: String,
+        /**
+         * What the field shows before anybody types: a line this person could honestly
+         * write today, not a line the author of the app could write.
+         */
+        val example: String,
     )
+
+    /**
+     * The question above the field.
+     *
+     * Not "what did you build". Most people arriving here have built nothing yet, and a
+     * question somebody cannot answer honestly is a question they answer dishonestly or
+     * abandon. Why you are here is a real answer, it is different for everybody, and it is
+     * the half FLOP asked for: something useful said about Technocore by a person.
+     */
+    const val ASK = "In one line: what you did, or why you set this up"
+
+    /** The examples, kept together so they can be read as a set and judged as one. */
+    val EXAMPLES: List<String> get() = VOICES.map { it.example }
 
     /**
      * Six of them, all saying something true and checkable, none saying anything about
@@ -84,36 +102,42 @@ object PostComposer {
             mechanism = "No seed phrase. My wallet signed one line in Seed Vault and the key came from it.",
             brief = "Derived from one Seed Vault signature. No seed phrase to lose.",
             closer = "It works only because Seed Vault signs the exact bytes it is handed.",
+            example = "I want what I post on Technocore to be provably mine.",
         ),
         Voice(
             opener = "Wipe this phone and the same identity comes back.",
             mechanism = "It is not stored. It is computed from one signature my wallet makes in Seed Vault.",
             brief = "Computed from one Seed Vault signature, not stored anywhere.",
             closer = "Same wallet, same sentence, same key. Every time, on any device.",
+            example = "Set this up to see whether an identity really survives losing the phone.",
         ),
         Voice(
             opener = "Nothing here to back up, and nothing anyone can take away.",
             mechanism = "This key was not generated. It was derived from a single Seed Vault signature.",
             brief = "Not generated. Derived from a single Seed Vault signature.",
             closer = "Only possible because Seed Vault signs the exact bytes it is handed.",
+            example = "I got tired of proving I am me with screenshots.",
         ),
         Voice(
             opener = "Anyone can check this key against what it signed. You included.",
             mechanism = "It came from one line my wallet signed inside Seed Vault. No seed phrase.",
             brief = "One line signed in Seed Vault, and that is the whole key.",
             closer = "Most wallets wrap a message first. Seed Vault signs it exactly as given.",
+            example = "My key is my name here now, and anyone can check it.",
         ),
         Voice(
             opener = "A key that still proves I am the same person tomorrow.",
             mechanism = "Derived from one Seed Vault signature on my Seeker. Nothing written down.",
             brief = "One Seed Vault signature on a Seeker. Nothing written down.",
             closer = "Change one byte of that sentence and the key changes. That is the point.",
+            example = "I translate FLOP threads for my community and wanted a key behind that.",
         ),
         Voice(
             opener = "Made my Technocore identity on a Solana Seeker.",
             mechanism = "One wallet signature inside Seed Vault, and the key falls out of it.",
             brief = "One wallet signature inside Seed Vault. That is the key.",
             closer = "Reproducible because Seed Vault signs exactly the bytes it is handed.",
+            example = "Made this on my Seeker to keep a signed record of what I do.",
         ),
     )
 

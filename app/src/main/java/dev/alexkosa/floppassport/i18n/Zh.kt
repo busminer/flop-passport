@@ -91,6 +91,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified." to "身份记录已发布，首次记录已验证。",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "即使它被删除，您的 Passport 也没有消失：同一个钱包仍会生成相同的身份，签署一条记录即可将笔记重新发布到同一地址.",
+    "In one line: what you did, or why you set this up" to "用一句话说：你做了什么，或者为什么建立它",
     "It never asks for your wallet recovery phrase." to "它绝不会要求您提供钱包恢复助记词。",
     "It promises nothing about any airdrop, and never will." to "它不对任何空投作出承诺，以后也不会。",
     "It will be deleted after seven days without a record." to "连续七天没有记录后，它将被删除.",

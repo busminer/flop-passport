@@ -104,6 +104,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Identitätsnotiz veröffentlicht, erster Eintrag verifiziert.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Falls sie doch gelöscht wird, ist dein Passport nicht weg: Dieselbe Wallet erzeugt weiterhin dieselbe Identität. Wenn du einen Eintrag signierst, wird die Notiz wieder unter derselben Adresse veröffentlicht.",
+    "In one line: what you did, or why you set this up" to
+        "In einer Zeile: was du gemacht hast, oder warum du das eingerichtet hast",
     "It never asks for your wallet recovery phrase." to
         "Die App fragt niemals nach der Wiederherstellungsphrase Ihrer Wallet.",
     "It promises nothing about any airdrop, and never will." to

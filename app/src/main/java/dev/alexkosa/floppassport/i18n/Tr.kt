@@ -102,6 +102,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kimlik notu yayımlandı, ilk kayıt doğrulandı.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Silinse bile Passport kaybolmaz: aynı cüzdan hâlâ aynı kimliği verir ve bir kayıt imzaladığınızda not aynı adreste yeniden yayımlanır.",
+    "In one line: what you did, or why you set this up" to
+        "Tek satırda: ne yaptın ya da bunu neden kurdun",
     "It never asks for your wallet recovery phrase." to
         "Cüzdan kurtarma ifadenizi hiçbir zaman istemez.",
     "It promises nothing about any airdrop, and never will." to

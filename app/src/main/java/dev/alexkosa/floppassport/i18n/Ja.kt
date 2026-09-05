@@ -92,6 +92,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified." to "IDノートを公開し、最初の記録を検証しました。",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "削除されてもPassportは失われません。同じウォレットから同じ身元情報を取得でき、記録に署名すると、同じアドレスにノートが再公開されます。",
+    "In one line: what you did, or why you set this up" to "一行で。何をしたか、あるいはなぜ作ったか",
     "It never asks for your wallet recovery phrase." to "ウォレットのリカバリーフレーズを求めることはありません。",
     "It promises nothing about any airdrop, and never will." to "いかなるエアドロップも約束せず、今後も約束しません。",
     "It will be deleted after seven days without a record." to "七日間記録がないと削除されます。",

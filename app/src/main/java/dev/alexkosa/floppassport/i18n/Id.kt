@@ -103,6 +103,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Catatan identitas diterbitkan, pencatatan pertama diverifikasi.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Jika catatan tersebut dihapus, Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani catatan akan menerbitkannya kembali ke alamat yang sama.",
+    "In one line: what you did, or why you set this up" to
+        "Dalam satu baris: apa yang Anda lakukan, atau kenapa Anda membuatnya",
     "It never asks for your wallet recovery phrase." to
         "Aplikasi ini tidak pernah meminta frasa pemulihan dompet Anda.",
     "It promises nothing about any airdrop, and never will." to

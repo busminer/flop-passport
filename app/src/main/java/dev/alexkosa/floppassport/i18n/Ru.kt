@@ -102,6 +102,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Запись о личности опубликована, первая запись проверена.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Если запись всё же удалят, ваш Passport не исчезнет: тот же кошелёк по-прежнему создаёт ту же личность, а подписанная отметка вернёт запись по тому же адресу.",
+    "In one line: what you did, or why you set this up" to
+        "Одной строкой: что вы сделали или зачем это завели",
     "It never asks for your wallet recovery phrase." to
         "Приложение никогда не запрашивает фразу восстановления кошелька.",
     "It promises nothing about any airdrop, and never will." to

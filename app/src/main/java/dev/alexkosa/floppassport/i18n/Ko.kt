@@ -93,6 +93,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified." to "신원 메모가 게시됐으며 첫 기록이 검증됐습니다.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "노트가 삭제되더라도 Passport는 사라지지 않습니다. 같은 지갑에서는 여전히 같은 신원이 생성되며, 기록에 서명하면 같은 주소에 노트가 다시 게시됩니다.",
+    "In one line: what you did, or why you set this up" to "한 줄로: 무엇을 했는지, 또는 왜 만들었는지",
     "It never asks for your wallet recovery phrase." to "지갑 복구 문구를 요청하지 않습니다.",
     "It promises nothing about any airdrop, and never will." to
         "어떠한 에어드롭도 약속하지 않으며 앞으로도 약속하지 않습니다.",

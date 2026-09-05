@@ -102,6 +102,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đã công bố ghi chú danh tính, bản ghi đầu tiên đã được xác minh.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Nếu ghi chú bị xóa, Passport của bạn vẫn không mất: cùng một ví vẫn tạo ra cùng một danh tính, và việc ký một bản ghi sẽ đăng lại ghi chú tại cùng một địa chỉ.",
+    "In one line: what you did, or why you set this up" to
+        "Một dòng thôi: bạn đã làm gì, hoặc vì sao bạn lập cái này",
     "It never asks for your wallet recovery phrase." to
         "Ứng dụng không bao giờ yêu cầu cụm từ khôi phục ví của bạn.",
     "It promises nothing about any airdrop, and never will." to

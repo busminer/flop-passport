@@ -487,10 +487,19 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         wordingShift = (wordingShift + 1) % PostComposer.VOICES.size
     }
 
+    /** The wording this identity speaks in, moved along by "say it another way". */
+    private val voice: PostComposer.Voice
+        get() {
+            val identity = did ?: return PostComposer.VOICES.first()
+            val base = PostComposer.VOICES.indexOf(PostComposer.voiceFor(identity))
+            return PostComposer.VOICES[(base + wordingShift) % PostComposer.VOICES.size]
+        }
+
+    /** The example shown in the empty field. Follows the wording, so the card reads as one. */
+    val exampleLine: String get() = voice.example
+
     /** The post text the app offers, or null before there is a Passport to post about. */
     fun postDraft(): PostComposer.Draft? = did?.let { identity ->
-        val base = PostComposer.VOICES.indexOf(PostComposer.voiceFor(identity))
-        val voice = PostComposer.VOICES[(base + wordingShift) % PostComposer.VOICES.size]
         PostComposer.compose(identity, contributionLine.ifBlank { null }, voice = voice)
     }
 

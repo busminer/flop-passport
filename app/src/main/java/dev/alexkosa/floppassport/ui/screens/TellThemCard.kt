@@ -116,8 +116,16 @@ fun TellThemCard(vm: PassportViewModel) {
         FlopField(
             value = vm.contributionLine,
             onValueChange = { vm.saveContributionLine(it) },
-            label = t("What did you actually do?"),
-            placeholder = t("Shipped a Technocore client for the Seeker"),
+            label = t(PostComposer.ASK),
+            // The example differs between people, for the same reason the wording does:
+            // an example is a suggestion, and one suggestion shown to everybody comes back
+            // as one sentence written by everybody.
+            // Not translated, on purpose. The post itself goes out in English because
+            // that is the language this audience reads, so the example has to model the
+            // language the line should be written in. The question above it is translated;
+            // what to write is explained in the reader's language, and the shape of a good
+            // answer is shown in the language it will be posted in.
+            placeholder = vm.exampleLine,
         )
         Spacer(Modifier.height(FlopSpacing.xs))
         // Says why, not just that. A required field with no reason attached reads as an

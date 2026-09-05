@@ -102,6 +102,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Nota de identidad publicada; primer registro verificado.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Si se elimina, tu Passport no desaparece: la misma cartera sigue generando la misma identidad, y firmar un registro vuelve a publicar la nota en la misma dirección.",
+    "In one line: what you did, or why you set this up" to
+        "En una línea: qué hiciste, o por qué lo creaste",
     "It never asks for your wallet recovery phrase." to
         "Nunca solicita la frase de recuperación de su cartera.",
     "It promises nothing about any airdrop, and never will." to

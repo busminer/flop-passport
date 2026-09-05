@@ -190,4 +190,18 @@ class PostComposerTest {
             assertTrue(draft.text.contains("@flop_labs"))
         }
     }
+
+    @Test
+    fun `the example in the field is a line the person reading it could post`() {
+        for (example in PostComposer.EXAMPLES) {
+            // If an example would not pass the app's own check, it is a trap: somebody
+            // copies it, the button stays dead, and there is nothing on screen saying why.
+            assertTrue("would be rejected: $example", PostComposer.isRealSentence(example))
+            // And it must be something a person who has only just arrived can honestly say.
+            // "Shipped a Technocore client" was the author's line, not theirs.
+            assertFalse("claims work the reader has not done", example.contains("Shipped"))
+            assertTrue("still fits the post", PostComposer.compose(liveDid, example).fits)
+        }
+        assertEquals(PostComposer.VOICES.size, PostComposer.EXAMPLES.toSet().size)
+    }
 }
