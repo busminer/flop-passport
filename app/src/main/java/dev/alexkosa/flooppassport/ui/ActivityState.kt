@@ -1,5 +1,6 @@
 package dev.alexkosa.flooppassport.ui
 
+import dev.alexkosa.flooppassport.notify.NoteLife
 import dev.alexkosa.flooppassport.technocore.DidNote
 
 /**
@@ -35,6 +36,16 @@ data class ActivityState(
 
     /** Our signed records still readable in the room, newest first. */
     val records: List<Record> = emptyList(),
+
+    /**
+     * Days since this phone last wrote the identity note, or [NoteLife.UNKNOWN].
+     *
+     * Measured from our own write rather than read off the server, because the service
+     * publishes neither a last-write time nor a remaining TTL. That makes it a fact about
+     * this phone: a note kept alive from a second device would show as unknown here, which
+     * is the honest answer rather than a wrong number.
+     */
+    val daysSinceNoteWrite: Int = NoteLife.UNKNOWN,
 ) {
     data class Record(
         val seq: Int,
@@ -48,6 +59,14 @@ data class ActivityState(
     }
 
     val liveRecords: Int get() = records.size
+
+    /** Days before the note is deleted, or [NoteLife.UNKNOWN] when nothing is known. */
+    val noteDaysLeft: Int
+        get() = if (daysSinceNoteWrite == NoteLife.UNKNOWN) {
+            NoteLife.UNKNOWN
+        } else {
+            (NoteLife.TTL_DAYS - daysSinceNoteWrite).coerceAtLeast(0)
+        }
 
     /** Distinct days on which this identity left something still readable. */
     val activeDays: Int get() = records.map { it.day }.distinct().size

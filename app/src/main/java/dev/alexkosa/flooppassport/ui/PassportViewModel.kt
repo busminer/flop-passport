@@ -9,6 +9,7 @@ import dev.alexkosa.flooppassport.crypto.Ed25519
 import dev.alexkosa.flooppassport.proof.PostComposer
 import dev.alexkosa.flooppassport.technocore.DidNote
 import dev.alexkosa.flooppassport.technocore.Technocore
+import dev.alexkosa.flooppassport.notify.NoteLife
 import dev.alexkosa.flooppassport.vault.PassportVault
 import dev.alexkosa.flooppassport.wallet.WalletLink
 import androidx.compose.runtime.getValue
@@ -139,7 +140,31 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     noteValue = note,
                     noteVerdict = DidNote.check(identity, note, signedLines),
                     records = records,
+                    daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
                 )
+                // Turning up counts. Somebody who opens the app to look at their history
+                // has proved they are still here, and one idempotent write buys them
+                // another seven days - so the note outlives every user who keeps the app
+                // rather than only those who remember to sign something.
+                //
+                // Skipped when a note is present but is not ours: that is the CHANGED
+                // case, where somebody else overwrote the address, and the screen says so
+                // and offers to publish. Repairing it quietly behind the user's back would
+                // hide the one event they most need to see.
+                // Renewable means "this address is ours to write". A note whose hash a
+                // valid signed line carries is ours whatever its text says - which is how
+                // notes written by an earlier release, with a different wording, are kept
+                // alive rather than abandoned. A note that is present, is not our text and
+                // nothing vouches for is somebody else's, and is left alone.
+                val ours = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+                val renewable = note == null || note == ours ||
+                    activity.noteVerdict == DidNote.Verdict.MATCHES
+                if (renewable && NoteLife.daysSinceWrite(getApplication()) != 0) {
+                    keepNoteAlive(identity, note)
+                    activity = activity.copy(
+                        daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
+                    )
+                }
             }.onFailure {
                 activity = activity.copy(
                     checking = false,
@@ -150,7 +175,20 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    /** A further signed record on a later day, which is what keeps a streak alive. */
+    /**
+     * A further signed record on a later day, which is what keeps a streak alive - and,
+     * in the same breath, what keeps the identity note from being deleted.
+     *
+     * The record and the note expire under the same seven-day rule but for different
+     * reasons: the room stays alive because everybody writes to it, while a person's note
+     * is written by that person alone. So a check-in that only signed a line would leave
+     * somebody with a growing streak and, seven days after their last setup, an empty
+     * address. Renewing here costs one idempotent write and means an active person can
+     * never reach the edge.
+     *
+     * Order matters. The record is signed first and the note second: if the connection
+     * dies halfway, the day the person turned up is the part that survives.
+     */
     fun checkInAgain(text: String) {
         val identity = did ?: return
         if (flow.busy || activity.checking) return
@@ -165,10 +203,41 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     nonce = nonce,
                     sign = { vault.sign(it) },
                 )
+                keepNoteAlive(identity, activity.noteValue)
             }.onFailure {
                 activity = activity.copy(checking = false, error = it.message)
             }
             refreshActivity(force = true)
+        }
+    }
+
+    /**
+     * Rewrite the note, and re-sign for it only when nothing valid vouches for it.
+     *
+     * Two different jobs with two different costs. The note write is a fixed-value key set
+     * that resets the seven-day clock, so it happens every time. The signed line is a
+     * public message in a shared room, so posting one daily would fill the room with
+     * identical machinery lines and inflate nothing but noise - it is written only when
+     * the room no longer holds one that matches, which happens after compaction drops the
+     * old line, or after somebody overwrote the note.
+     *
+     * Failures are swallowed on purpose. This runs beside something the user asked for,
+     * and a lost connection here must not turn their successful check-in into an error.
+     */
+    private suspend fun keepNoteAlive(identity: String, observed: String?) {
+        runCatching {
+            val ours = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+            if (!renewNote(identity)) return
+
+            // A signed line vouches for exact bytes, so it survives this write only if the
+            // note that was already there was byte-identical to what we just wrote AND
+            // something valid vouched for it. Both halves matter: an earlier release
+            // composed a different note text, and renewing over it while keeping the old
+            // signed line would leave every one of those users permanently reading
+            // "changed" about their own note.
+            val stillVouched =
+                observed == ours && activity.noteVerdict == DidNote.Verdict.MATCHES
+            if (!stillVouched) vouchForNote(identity, ours)
         }
     }
 
@@ -348,6 +417,55 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    // ------------------------------------------------------------ keeping the note alive
+
+    /**
+     * Write the identity note again, and remember that we did.
+     *
+     * The note is not a thing you publish once. technocore.chat deletes any note with no
+     * write for seven days, so the address this app asks a person to save goes empty a week
+     * after they stop turning up - silently, at the one address they were told to trust.
+     *
+     * The repair is that every path which proves the person is still here also renews the
+     * note: finishing the setup, signing a later record, and simply opening the app. The
+     * write is a key set to a fixed value, so doing it a hundred times leaves exactly what
+     * doing it once leaves, and [Technocore.publishIdentityNote] already reads it back
+     * before calling it done. Only a confirmed read-back stamps the clock in [NoteLife] -
+     * a hopeful write that stamped it would start a seven-day countdown nobody is warned
+     * about, which is the failure this whole path exists to prevent.
+     */
+    private suspend fun renewNote(identity: String): Boolean {
+        val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
+        val ok = technocore.publishIdentityNote(identity, value) is Technocore.Result.Verified
+        if (ok) NoteLife.recordWrite(getApplication())
+        return ok
+    }
+
+    /**
+     * Sign a line carrying the note's hash, which is what makes the note worth anything.
+     *
+     * FLOP's own instruction, and the reason this is separate from writing the note: the
+     * note address is world-writable, so a note proves only that somebody wrote one.
+     * https://x.com/flop_labs/status/2090661329837371428
+     *
+     * It reads the note back one more time and signs only if it is still *our* text. Skip
+     * that and a stranger who overwrites the note between the write and this line gets our
+     * signature on their words.
+     */
+    private suspend fun vouchForNote(identity: String, expected: String): Boolean =
+        runCatching {
+            val body = technocore.readIdentityNote(identity)
+            check(body == expected) { "the note changed between reads" }
+            val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
+            technocore.saySigned(
+                did = identity,
+                room = CHECK_IN_ROOM,
+                text = DidNote.line(identity, body),
+                nonce = nonce,
+                sign = { vault.sign(it) },
+            ) is Technocore.Result.Verified
+        }.getOrDefault(false)
+
     // ---------------------------------------------------------------- 03 publish
     fun publish() {
         val identity = did ?: return
@@ -358,28 +476,8 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 val value = PostComposer.identityNoteValue(room = CHECK_IN_ROOM)
                 when (val r = technocore.publishIdentityNote(identity, value)) {
                     is Technocore.Result.Verified -> {
-                        // FLOP's own instruction, and the reason this step is worth more
-                        // than "a note exists": the note lives in a world-writable
-                        // namespace, so the key has to vouch for it separately. Publish,
-                        // then sign a line carrying the note's hash. A reader who finds
-                        // both and sees them agree knows this exact text came from the
-                        // holder of the key. https://x.com/flop_labs/status/2090661329837371428
-                        val vouched = runCatching {
-                            // Read it back once more and sign the hash only if it is still
-                            // OUR text. The address is world-writable: without this check a
-                            // stranger who overwrites the note between the read-back above
-                            // and this line gets our signature on their words.
-                            val body = technocore.readIdentityNote(identity)
-                            check(body == value) { "the note changed between reads" }
-                            val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
-                            technocore.saySigned(
-                                did = identity,
-                                room = CHECK_IN_ROOM,
-                                text = DidNote.line(identity, body),
-                                nonce = nonce,
-                                sign = { vault.sign(it) },
-                            ) is Technocore.Result.Verified
-                        }.getOrDefault(false)
+                        NoteLife.recordWrite(getApplication())
+                        val vouched = vouchForNote(identity, value)
 
                         settle(
                             Step.Publish,

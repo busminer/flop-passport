@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.alexkosa.flooppassport.notify.NoteLife
 import dev.alexkosa.flooppassport.technocore.DidNote
 import dev.alexkosa.flooppassport.i18n.t
 import dev.alexkosa.flooppassport.ui.ActivityState
@@ -179,6 +180,37 @@ fun ActivityScreen(vm: PassportViewModel) {
                         DidNote.Verdict.CHANGED -> FlopColors.ErrorRed
                         DidNote.Verdict.MISSING -> FlopColors.TextMuted
                     },
+                )
+            }
+
+            // The note's shelf life, said out loud on the screen that shows the note.
+            //
+            // technocore.chat deletes any note with no write for seven days, so the
+            // address this app told somebody to save empties itself a week after they stop
+            // turning up. The app renews it on every visit, which means an active person
+            // never sees anything but the reassuring line - and somebody coming back after
+            // a fortnight is told what happened rather than left staring at "not found".
+            if (activity.daysSinceNoteWrite != NoteLife.UNKNOWN) {
+                Spacer(Modifier.height(FlopSpacing.sm))
+                val left = activity.noteDaysLeft
+                Text(
+                    when {
+                        activity.noteValue == null && left == 0 -> t(
+                            "Deleted after seven days without a record. Sign one now and " +
+                                "it goes back to the same address.",
+                        )
+                        activity.daysSinceNoteWrite == 0 -> t(
+                            "Renewed today. technocore.chat keeps it for seven days after " +
+                                "the last write, and this app rewrites it every time you " +
+                                "open it.",
+                        )
+                        left <= 3 -> t(NoteLife.countdown(activity.daysSinceNoteWrite))
+                        else -> t(
+                            "It will be deleted after seven days without a record.",
+                        )
+                    },
+                    style = FlopType.bodySm,
+                    color = if (left <= 3) FlopColors.ErrorRed else FlopColors.TextMuted,
                 )
             }
         }

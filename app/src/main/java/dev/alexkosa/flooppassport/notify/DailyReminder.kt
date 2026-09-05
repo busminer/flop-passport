@@ -38,23 +38,52 @@ import java.util.Calendar
 object DailyReminder {
 
     const val CHANNEL_ID = "daily_activity"
+
+    /**
+     * A second channel, on purpose.
+     *
+     * "Your streak could be longer" and "the address you saved goes empty tomorrow" are
+     * not the same message, and Android lets a person keep one and mute the other only if
+     * they arrive on different channels. Anyone who finds the daily nudge tiresome can
+     * switch it off and still be told before their identity note is deleted - which is the
+     * one notification this app would be negligent not to send.
+     */
+    const val EXPIRY_CHANNEL_ID = "note_expiry"
+
     private const val REQUEST_CODE = 4201
     private const val NOTIFICATION_ID = 4201
 
     /** Late morning: past the alarm-clock rush, well before a person stops opening apps. */
     private const val HOUR = 11
 
+    /** The blank line between the headline and the explanation in the expanded view. */
+    private const val LINE_BREAK = "\n\n"
+
     fun ensureChannel(context: Context) {
         val tr = Translator(LanguageStore(context).effective)
-        val channel = NotificationChannel(
-            CHANNEL_ID,
-            tr("Daily activity"),
-            NotificationManager.IMPORTANCE_DEFAULT,
-        ).apply {
-            description = tr("A once-a-day reminder to leave today's signed record.")
-            setShowBadge(true)
-        }
-        NotificationManagerCompat.from(context).createNotificationChannel(channel)
+        val manager = NotificationManagerCompat.from(context)
+        manager.createNotificationChannel(
+            NotificationChannel(
+                CHANNEL_ID,
+                tr("Daily activity"),
+                NotificationManager.IMPORTANCE_DEFAULT,
+            ).apply {
+                description = tr("A once-a-day reminder to leave today's signed record.")
+                setShowBadge(true)
+            },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(
+                EXPIRY_CHANNEL_ID,
+                tr("Passport at risk"),
+                NotificationManager.IMPORTANCE_HIGH,
+            ).apply {
+                description = tr(
+                    "Told only when your identity note is days away from being deleted.",
+                )
+                setShowBadge(true)
+            },
+        )
     }
 
     fun schedule(context: Context) {
@@ -101,12 +130,23 @@ object DailyReminder {
     )
 
     /**
-     * Posts the reminder.
+     * Posts the reminder, and says the thing that is actually true today.
      *
-     * Deliberately says nothing about whether today's record already exists: finding that
-     * out means asking the server, and a background network call that can fail is a poor
-     * reason to stay silent. Opening the app answers it in a second, which is where the
-     * answer belongs.
+     * The first version of this said the same sentence every morning and deliberately
+     * asked the server nothing, on the grounds that a background call which can fail is a
+     * poor reason to stay silent. That is still right about the network - and wrong about
+     * staying quiet, because the app already knows the one fact that matters without
+     * asking anybody: when it last wrote the note. From that it can do the two things a
+     * daily reminder normally cannot.
+     *
+     * It can shut up. Somebody who signed a record this morning is told nothing at eleven,
+     * which is the difference between a reminder people keep and one they switch off in
+     * week two.
+     *
+     * And it can escalate. On the fourth quiet day it stops being a nudge, moves to the
+     * channel a person cannot reasonably mute, and starts naming the day their identity
+     * note is deleted. Past seven days it says the note is gone rather than pretending -
+     * and says, correctly, that the Passport itself is not.
      */
     class Receiver : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -116,8 +156,12 @@ object DailyReminder {
             // never made a Passport should not be reminded tomorrow to continue a streak
             // that does not exist - that is the notification people uninstall over.
             if (!PassportVault(context).hasPassport) return
-            ensureChannel(context)
 
+            val daysSince = NoteLife.daysSinceWrite(context)
+            val urgency = NoteLife.urgency(daysSince)
+            if (urgency == NoteLife.Urgency.SILENT) return
+
+            ensureChannel(context)
             val tr = Translator(LanguageStore(context).effective)
             val open = PendingIntent.getActivity(
                 context,
@@ -128,23 +172,61 @@ object DailyReminder {
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
             )
 
+            val title: String
+            val text: String
+            val detail: String
+            when (urgency) {
+                NoteLife.Urgency.LOST -> {
+                    title = tr("Your identity note has been deleted")
+                    text = tr("Seven days without a record. Open the app to publish it again.")
+                    detail = tr(
+                        "Your Passport itself is not lost: the same wallet still gives the " +
+                            "same identity, and signing a record now publishes the note " +
+                            "back to the same address.",
+                    )
+                }
+                NoteLife.Urgency.WARNING -> {
+                    title = tr("Your identity note expires soon")
+                    text = tr(NoteLife.countdown(daysSince))
+                    detail = tr(
+                        "technocore.chat deletes anything with no write for seven days. " +
+                            "Signing today rewrites your note and starts the seven days " +
+                            "again.",
+                    )
+                }
+                else -> {
+                    title = tr("Keep your record going")
+                    text = tr("Leave today's signed record on Technocore.")
+                    detail = tr(
+                        "FLOP asked agents to do something useful. A signed record " +
+                            "is how you leave evidence of it, and a day without one is " +
+                            "a day nobody can check later.",
+                    )
+                }
+            }
+
+            val urgent = urgency != NoteLife.Urgency.NUDGE
             val notification: Notification = androidx.core.app.NotificationCompat
-                .Builder(context, CHANNEL_ID)
+                .Builder(
+                    context,
+                    if (urgent) EXPIRY_CHANNEL_ID else CHANNEL_ID,
+                )
                 .setSmallIcon(R.drawable.flop_chip)
-                .setContentTitle(tr("Keep your record going"))
-                .setContentText(tr("Leave today's signed record on Technocore."))
+                .setContentTitle(title)
+                .setContentText(text)
                 .setStyle(
-                    androidx.core.app.NotificationCompat.BigTextStyle().bigText(
-                        tr(
-                            "FLOP asked agents to do something useful. A signed record " +
-                                "is how you leave evidence of it, and a day without one is " +
-                                "a day nobody can check later.",
-                        ),
-                    ),
+                    androidx.core.app.NotificationCompat.BigTextStyle()
+                        .bigText(text + LINE_BREAK + detail),
                 )
                 .setContentIntent(open)
                 .setAutoCancel(true)
-                .setPriority(androidx.core.app.NotificationCompat.PRIORITY_DEFAULT)
+                .setPriority(
+                    if (urgent) {
+                        androidx.core.app.NotificationCompat.PRIORITY_HIGH
+                    } else {
+                        androidx.core.app.NotificationCompat.PRIORITY_DEFAULT
+                    },
+                )
                 .build()
 
             NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)

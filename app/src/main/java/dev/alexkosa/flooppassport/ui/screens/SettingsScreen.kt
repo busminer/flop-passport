@@ -128,7 +128,11 @@ fun SettingsScreen(
                 )
                 Spacer(Modifier.height(FlopSpacing.xs))
                 Text(
-                    t("A signed record has to be left by hand, and a missed day cannot be filled in later."),
+                    t(
+                        "A signed record has to be left by hand, and a missed day cannot " +
+                            "be filled in later. This is also the switch that warns you " +
+                            "before your identity note is deleted.",
+                    ),
                     style = FlopType.bodySm,
                     color = FlopColors.TextMuted,
                 )
@@ -172,6 +176,56 @@ fun SettingsScreen(
                     "signature in this app and then sealed by Android's secure storage - " +
                     "sealed, not signed, in hardware, because Android Keystore cannot " +
                     "hold this kind of key."),
+                style = FlopType.bodySm,
+                color = FlopColors.TextMuted,
+            )
+        }
+
+        // The seven-day rule, spelled out where somebody reading about the app will meet
+        // it - not buried in a FAQ nobody opens.
+        //
+        // It is the single fact most likely to quietly ruin a Passport, and it is not
+        // ours: technocore.chat states it in its own manual, "Rooms and notes with no
+        // write for 7 days are deleted". An app that asks a person to save an address and
+        // does not tell them the address empties itself is setting them up.
+        //
+        // The card says the rule, then says what the app already does about it, then says
+        // the one thing left for the person to do. In that order, because a warning with
+        // no action attached only produces anxiety.
+        Spacer(Modifier.height(FlopSpacing.sm))
+        FlopCard {
+            Text(
+                t("Your note has to be kept alive").uppercase(),
+                style = FlopType.label,
+                color = FlopColors.TextMuted,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t(
+                    "technocore.chat deletes anything nobody has written to for seven " +
+                        "days. That includes the identity note at the address you save " +
+                        "and share.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextSecondary,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t(
+                    "This app rewrites your note every time you open it and every time " +
+                        "you sign a record, so the seven days start again. Open it at " +
+                        "least once a week and nothing is ever lost.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextMuted,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t(
+                    "If it does get deleted, your Passport is not gone: the same wallet " +
+                        "still gives the same identity, and signing a record publishes " +
+                        "the note back to the same address.",
+                ),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
             )
