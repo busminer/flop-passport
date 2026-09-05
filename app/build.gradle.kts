@@ -21,11 +21,11 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "dev.alexkosa.flooppassport"
+    namespace = "dev.alexkosa.floppassport"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "dev.alexkosa.flooppassport"
+        applicationId = "dev.alexkosa.floppassport"
         minSdk = 31
         targetSdk = 36
         versionCode = 1

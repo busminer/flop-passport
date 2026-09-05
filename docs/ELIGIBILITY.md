@@ -103,7 +103,7 @@ not."**
 | Local Proof Capsule on the phone | **yes** | the user, and anyone they show it to |
 
 Retention is per room, so a room nobody floods keeps its history. Check-ins therefore go to
-`floop-passport`, not to `lobby`. A user's history stays readable by a URL they can hand to
+`flop-passport`, not to `lobby`. A user's history stays readable by a URL they can hand to
 someone, which is the entire point of producing it.
 
 ### The honest consequence for eligibility

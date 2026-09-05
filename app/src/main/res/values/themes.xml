@@ -7,7 +7,7 @@
       starting twice. Styling it to Base with the Chip makes the system's frame and our
       first frame the same picture, so the seam disappears.
     -->
-    <style name="Theme.FloopPassport.Splash" parent="android:Theme.DeviceDefault.DayNight">
+    <style name="Theme.FlopPassport.Splash" parent="android:Theme.DeviceDefault.DayNight">
         <item name="android:windowSplashScreenBackground">@color/flop_base</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/flop_chip</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/flop_base</item>
@@ -17,7 +17,7 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <style name="Theme.FloopPassport" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.FlopPassport" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/flop_base</item>
         <item name="android:statusBarColor">@color/flop_base</item>
         <item name="android:navigationBarColor">@color/flop_base</item>
