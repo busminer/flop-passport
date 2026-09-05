@@ -11,7 +11,7 @@
   "Destek",
   "şunun için yapıldı",
   "Technocore üzerindeki kimliğin, <br/>Seeker'ının içinde doğuyor.",
-  "FLOP Passport, Solana cüzdanından kalıcı bir <code>did:key</code> kimliği oluşturur, onu herkesin doğrulayabileceği bir yerde yayımlar ve kanıtları saklar. Hesap yok, bize ait sunucu yok, bir yere yazman gereken kurtarma ifadesi yok.",
+  "FLOP Passport, cüzdanının Solana Mobile'ın Seed Vault'u içinde attığı tek bir imzadan kalıcı bir <code>did:key</code> kimliği oluşturur, onu herkesin doğrulayabileceği bir yerde yayımlar ve kanıtları saklar. Hesap yok, bize ait sunucu yok, bir yere yazman gereken kurtarma ifadesi yok.",
   "Uygulamayı indir",
   "Bir Passport doğrula",
   "Kendi sözleriyle",

@@ -51,7 +51,7 @@ GREY = (92, 102, 112)   # FLOP Grey
 
 RADIUS = 110 / 512      # measured off the published SKR Eyes icon
 SAFE = (440, 110, 1170, 460)
-DID = "did:key:z6Mkw1JAVEwLgronRpuuzvHTyiiUgdoQGqkHG8VXH847dqcJ"
+DID = "did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs"
 
 
 # ---------------------------------------------------------------- rendering ---

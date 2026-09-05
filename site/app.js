@@ -484,7 +484,7 @@
   if (example) {
     example.addEventListener("click", function (e) {
       e.preventDefault();
-      input.value = "did:key:z6Mkw1JAVEwLgronRpuuzvHTyiiUgdoQGqkHG8VXH847dqcJ";
+      input.value = "did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs";
       verify();
     });
   }

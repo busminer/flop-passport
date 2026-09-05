@@ -11,7 +11,7 @@
   "Support",
   "built for",
   "Your identity on Technocore, <br/>born inside your Seeker.",
-  "\n        FLOP Passport creates a permanent <code>did:key</code> identity from your Solana\n        wallet, publishes it where anyone can verify it, and keeps the receipts. No account,\n        no server of ours, no seed phrase to write down.\n      ",
+  "\n        FLOP Passport creates a permanent <code>did:key</code> identity from one signature\n        your wallet makes inside Solana Mobile's Seed Vault, publishes it where anyone can\n        verify it, and keeps the receipts. No account, no server of ours, no seed phrase to\n        write down.\n      ",
   "Get the app",
   "Verify a Passport",
   "In their own words",

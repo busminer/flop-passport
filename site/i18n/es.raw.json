@@ -11,7 +11,7 @@
   "Apoyar",
   "hecho para",
   "Tu identidad en Technocore, <br/>nacida dentro de tu Seeker.",
-  "FLOP Passport crea una identidad <code>did:key</code> permanente a partir de tu cartera Solana, la publica donde cualquiera puede verificarla y guarda los comprobantes. Sin cuenta, sin ningún servidor nuestro y sin frase semilla que apuntar.",
+  "FLOP Passport crea una identidad <code>did:key</code> permanente a partir de una sola firma que tu cartera hace dentro del Seed Vault de Solana Mobile, la publica donde cualquiera puede verificarla y guarda los comprobantes. Sin cuenta, sin ningún servidor nuestro y sin frase semilla que apuntar.",
   "Descargar la app",
   "Verificar un Passport",
   "En sus propias palabras",

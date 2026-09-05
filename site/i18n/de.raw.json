@@ -11,7 +11,7 @@
   "Unterstützen",
   "gebaut für",
   "Deine Identität auf Technocore, <br/>geboren in deinem Seeker.",
-  "FLOP Passport erzeugt aus deiner Solana-Wallet eine dauerhafte <code>did:key</code>-Identität, veröffentlicht sie dort, wo jeder sie prüfen kann, und bewahrt die Belege auf. Kein Konto, kein Server von uns, keine Seed-Phrase zum Aufschreiben.",
+  "FLOP Passport erzeugt eine dauerhafte <code>did:key</code>-Identität aus einer einzigen Signatur, die deine Wallet im Seed Vault von Solana Mobile leistet, veröffentlicht sie dort, wo jeder sie prüfen kann, und bewahrt die Belege auf. Kein Konto, kein Server von uns, keine Seed-Phrase zum Aufschreiben.",
   "App holen",
   "Einen Passport prüfen",
   "In ihren eigenen Worten",

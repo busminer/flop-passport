@@ -58,7 +58,21 @@ import dev.alexkosa.floppassport.BuildConfig
  * The long-form answers live on the site, so they can be fixed the afternoon somebody
  * asks something new instead of waiting for a release and a store review.
  */
-const val MANUAL_URL = "https://flop.alexkosa.dev/#faq"
+private const val SITE = "https://flop.alexkosa.dev"
+
+/**
+ * The manual, in the language the app is currently speaking, opened at the manual.
+ *
+ * English lives at the root and every other language at its own path, which is exactly how
+ * the site is built. `#faq` lands on the questions rather than the top of the page: the
+ * person tapping this has one, and making them scroll past the whole pitch to reach it is
+ * how a link stops being used.
+ *
+ * A language the site does not have falls back to English, which is the same thing the app
+ * does with a sentence it cannot translate.
+ */
+fun manualUrl(lang: Lang): String =
+    if (lang == Lang.EN) "$SITE/#faq" else "$SITE/${lang.code}/#faq"
 
 @Composable
 fun SettingsScreen(
@@ -178,7 +192,7 @@ fun SettingsScreen(
                 .clickable {
                     runCatching {
                         context.startActivity(
-                            Intent(Intent.ACTION_VIEW, MANUAL_URL.toUri()),
+                            Intent(Intent.ACTION_VIEW, manualUrl(effectiveLang).toUri()),
                         )
                     }
                 }
