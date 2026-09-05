@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val ID_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  beri tahu mereka",
+    "06  tell them  ·  last step" to "06  ceritakan  ·  langkah terakhir",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "Beberapa kata lagi dan kalimat itu jadi milik Anda. Cukup satu kalimat sungguhan.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Pesan yang ditandatangani oleh Passport Anda, dikirim ke ruang yang tenang lalu dibaca kembali untuk membuktikan bahwa pesan telah diterima.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -40,6 +43,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Diterima, tetapi belum dapat dibaca kembali",
     "Activity" to "Aktivitas",
     "All five done" to "Kelimanya selesai",
+    "All six done" to "Keenamnya selesai",
     "Already checked in, found in the room" to "Sudah mencatatkan, ditemukan di ruang",
     "Already published, read back just now" to "Sudah diterbitkan, baru saja dibaca kembali",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -219,6 +223,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Itu sepertinya bukan tautan. Tautan harus diawali dengan https://",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Itu adalah langkah terakhir. Passport Anda sudah aktif. Tinggal satu hal lagi, dan inilah bagian yang benar-benar diminta FLOP: beri tahu orang-orang apa yang telah Anda lakukan. Aplikasi ini menulis postingannya untuk Anda di bagian bawah layar ini.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "Lima langkah membangun identitas Anda. Di luar ponsel ini belum ada yang tahu bahwa itu milik Anda. Langkah 06 di bawah: tulis satu kalimat, kirim, lalu kembali dan tempelkan tautannya. Bagian terakhir itulah yang menaruh nama Anda di samping kunci Anda untuk seterusnya, dan di situlah orang berhenti.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Identitas dibuat di dalam Seed Vault dan disegel oleh StrongBox pada ponsel.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -245,6 +251,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Kalimat inilah yang membuat kiriman ini milik Anda. Semua di bawahnya adalah buktinya.",
     "Three days left before it is deleted." to "Tiga hari lagi sebelum dihapus.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "Tiga hal, berurutan: tulis kalimat Anda, kirim, lalu kembali dan tempelkan tautannya. Yang terakhir itulah yang membuatnya permanen, dan justru itu yang dilupakan orang.",
     "Told only when your identity note is days away from being deleted." to
         "Anda hanya diberi tahu saat catatan identitas Anda tinggal beberapa hari lagi sebelum dihapus.",
     "Tomorrow is the last day." to "Besok adalah hari terakhir.",
@@ -285,6 +293,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "Passport Anda aktif, milik Anda, dan nama Anda ada padanya.",
     "Your Passport is live." to "Passport Anda aktif.",
+    "Your Passport is live. One step left." to "Passport Anda aktif. Tersisa satu langkah.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport Anda dibangun ulang dari satu tanda tangan dompet, itulah sebabnya tidak ada frasa seed yang bisa hilang. Hal yang sama berlaku sebaliknya: aplikasi mana pun yang membujuk dompet Anda menandatangani kalimat yang persis sama dapat membangun ulang Passport ini. Bacalah apa yang diminta dompet untuk Anda tanda tangani, di sini dan di mana pun.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

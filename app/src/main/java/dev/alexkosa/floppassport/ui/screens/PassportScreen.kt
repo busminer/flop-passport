@@ -264,7 +264,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         Spacer(Modifier.height(FlopSpacing.lg))
 
         when {
-            flow.complete -> Box(
+            flow.complete && vm.nameLinked -> Box(
                 Modifier
                     .fillMaxWidth()
                     .background(FlopColors.Green.copy(alpha = 0.12f), FlopShapes.md)
@@ -280,22 +280,14 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                     }
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Text(
-                        t("All five done"),
+                        t("All six done"),
                         style = FlopType.h2,
                         color = FlopColors.Green,
                         textAlign = TextAlign.Center,
                     )
                     Spacer(Modifier.height(FlopSpacing.xs))
                     Text(
-                        t(
-                            if (vm.nameLinked) {
-                                "Your Passport is live, it is yours, and your name is on it."
-                            } else {
-                                "Your Passport is live and it is yours. One thing is left, " +
-                                    "and it is the one FLOP actually asked for: say so " +
-                                    "publicly, and link it back. Step 06 below."
-                            },
-                        ),
+                        t("Your Passport is live, it is yours, and your name is on it."),
                         style = FlopType.bodyMd,
                         color = FlopColors.IceWhite,
                         textAlign = TextAlign.Center,
@@ -309,6 +301,36 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
                         textAlign = TextAlign.Center,
+                    )
+                }
+            }
+
+            flow.complete -> Box(
+                Modifier
+                    .fillMaxWidth()
+                    .background(FlopColors.Surface, FlopShapes.md)
+                    .border(2.dp, FlopColors.Cyan, FlopShapes.md)
+                    .padding(FlopSpacing.lg),
+            ) {
+                Column {
+                    FlopLabel("5 of 6")
+                    Spacer(Modifier.height(FlopSpacing.sm))
+                    Text(
+                        t("Your Passport is live. One step left."),
+                        style = FlopType.h3,
+                        color = FlopColors.IceWhite,
+                    )
+                    Spacer(Modifier.height(FlopSpacing.xs))
+                    Text(
+                        t(
+                            "The five steps built your identity. Nobody outside this phone " +
+                                "knows it is yours yet. Step 06 below: write one line, post " +
+                                "it, then come back and paste the link. That last part is " +
+                                "what puts your name beside your key for good, and it is " +
+                                "where people stop.",
+                        ),
+                        style = FlopType.bodySm,
+                        color = FlopColors.TextMuted,
                     )
                 }
             }

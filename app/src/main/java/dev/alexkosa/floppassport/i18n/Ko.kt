@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val KO_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  알려주기",
+    "06  tell them  ·  last step" to "06  알리기  ·  마지막 단계",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "몇 마디만 더 쓰면 됩니다. 진짜 문장 하나면 충분합니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport로 암호학적 서명된 메시지를 조용한 방에 게시한 뒤 다시 읽어 도착했음을 증명합니다.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -39,6 +42,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to "수락됐지만 아직 다시 읽지 못했습니다",
     "Activity" to "활동",
     "All five done" to "다섯 단계 모두 완료",
+    "All six done" to "여섯 단계 모두 완료",
     "Already checked in, found in the room" to "이미 서명 기록을 남겼으며 방에서 확인했습니다",
     "Already published, read back just now" to "이미 게시됐으며 방금 다시 읽었습니다",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -190,6 +194,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "링크처럼 보이지 않습니다. https://로 시작해야 합니다",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "마지막 단계까지 마쳤습니다. Passport가 활성화되었습니다. 이제 한 가지만 남았습니다. FLOP이 실제로 요청한 일, 즉 무엇을 했는지 사람들에게 알리는 것입니다. 이 화면 아래에서 앱이 게시물을 작성해 줍니다.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "다섯 단계가 당신의 신원을 만들었습니다. 이 휴대폰 밖에서는 그것이 당신 것이라는 사실을 아직 아무도 모릅니다. 아래 06단계입니다. 한 줄을 쓰고, 올리고, 돌아와 링크를 붙여 넣으세요. 그 마지막이 당신의 이름을 당신의 키 옆에 영영 놓아 주며, 사람들이 멈추는 곳도 바로 거기입니다.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "신원은 Seed Vault 안에서 생성되고 휴대전화의 StrongBox로 봉인됩니다.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -215,6 +221,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "이 한 줄이 이 글을 당신의 것으로 만듭니다. 그 아래는 전부 증거입니다.",
     "Three days left before it is deleted." to "삭제되기까지 사흘 남았습니다.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "순서대로 세 가지입니다. 당신의 한 줄을 쓰고, 올리고, 돌아와서 링크를 붙여 넣으세요. 마지막이 이것을 영구적으로 만들고, 사람들이 잊는 것도 바로 그것입니다.",
     "Told only when your identity note is days away from being deleted." to
         "신원 노트가 삭제되기 며칠 전일 때만 알려드립니다.",
     "Tomorrow is the last day." to "내일이 마지막 날입니다.",
@@ -254,6 +262,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "당신의 Passport는 살아 있고, 당신의 것이며, 당신의 이름이 붙어 있습니다.",
     "Your Passport is live." to "Passport가 활성화됐습니다.",
+    "Your Passport is live. One step left." to "당신의 Passport는 살아 있습니다. 한 단계 남았습니다.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport는 지갑 서명 하나로 다시 만들어집니다. 그래서 잃어버릴 시드 구문이 없습니다. 같은 사실이 반대로도 작용합니다. 지갑이 정확히 그 문장에 서명하도록 설득한 앱은 이 Passport를 다시 만들 수 있습니다. 지갑이 무엇에 서명하라고 요구하는지, 여기서도 다른 곳에서도 읽어 보세요.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

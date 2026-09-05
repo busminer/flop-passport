@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val TR_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  onlara anlat",
+    "06  tell them  ·  last step" to "06  anlat  ·  son adım",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "Birkaç kelime daha, ve satır senin olur. Tek bir gerçek cümle yeter.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -40,6 +43,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kabul edildi, ancak henüz geri okuyamadık",
     "Activity" to "Etkinlik",
     "All five done" to "Beşi de tamam",
+    "All six done" to "Altısı da tamam",
     "Already checked in, found in the room" to "Kayıt zaten bırakılmış, odada bulundu",
     "Already published, read back just now" to "Zaten yayımlanmış, az önce geri okundu",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -216,6 +220,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu bir bağlantıya benzemiyor. https:// ile başlamalı",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Bu son adımdı. Passport’ınız aktif. Geriye bir şey kaldı ve FLOP’un asıl istediği de bu: insanlara ne yaptığınızı anlatın. Uygulama gönderiyi bu ekranın altında sizin için yazar.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "Beş adım kimliğini kurdu. Bu telefonun dışında onun senin olduğunu henüz kimse bilmiyor. Aşağıda 06. adım: bir satır yaz, paylaş, sonra geri gelip bağlantıyı yapıştır. Adını anahtarının yanına kalıcı olarak koyan tam da bu son kısımdır ve insanlar tam burada duruyor.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -241,6 +247,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Bu satır gönderiyi senin yapan şey. Altındaki her şey kanıt.",
     "Three days left before it is deleted." to "Silinmesine üç gün kaldı.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "Sırayla üç şey: satırını yaz, paylaş, sonra geri gel ve bağlantıyı yapıştır. Kalıcı yapan sonuncusudur ve unutulan da tam olarak odur.",
     "Told only when your identity note is days away from being deleted." to
         "Yalnızca kimlik notunuzun silinmesine birkaç gün kaldığında bildirim alırsınız.",
     "Tomorrow is the last day." to "Yarın son gün.",
@@ -281,6 +289,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "Passport'un yayında, senin ve üzerinde adın var.",
     "Your Passport is live." to "Passport'ınız yayında.",
+    "Your Passport is live. One step left." to "Passport'un yayında. Bir adım kaldı.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport tek bir cüzdan imzasından yeniden oluşturulur; kaybedilecek bir seed ifadesi bu yüzden yoktur. Aynı gerçek tersine de işler: cüzdanınıza tam olarak o cümleyi imzalatan herhangi bir uygulama bu Passport'u yeniden oluşturabilir. Bir cüzdanın size imzalattığı şeyi burada ve her yerde okuyun.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

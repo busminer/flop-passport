@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val VI_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  kể cho mọi người",
+    "06  tell them  ·  last step" to "06  kể cho mọi người  ·  bước cuối",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "Thêm vài chữ nữa là xong. Chỉ cần một câu thật.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Một tin nhắn được Passport của bạn ký, gửi vào một phòng yên tĩnh rồi đọc lại để chứng minh đã được ghi nhận.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -40,6 +43,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đã được chấp nhận, nhưng chưa thể đọc lại",
     "Activity" to "Hoạt động",
     "All five done" to "Xong cả năm bước",
+    "All six done" to "Xong cả sáu bước",
     "Already checked in, found in the room" to "Đã ghi bản ghi, đã tìm thấy trong phòng",
     "Already published, read back just now" to "Đã công bố, vừa đọc lại",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -216,6 +220,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đây có vẻ không phải là một liên kết. Liên kết phải bắt đầu bằng https://",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Đó là bước cuối cùng. Passport của bạn đã hoạt động. Chỉ còn một việc, và đó là điều FLOP thực sự yêu cầu: kể cho mọi người bạn đã làm gì. Ứng dụng viết bài đăng cho bạn ở cuối màn hình này.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "Năm bước đã dựng nên danh tính của bạn. Ngoài chiếc máy này ra, chưa ai biết nó là của bạn. Bước 06 ở dưới: viết một dòng, đăng lên, rồi quay lại dán liên kết. Chính phần cuối đó đặt tên bạn cạnh khóa của bạn mãi mãi, và đó cũng là chỗ người ta dừng lại.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Danh tính được tạo bên trong Seed Vault và niêm phong bằng StrongBox trên điện thoại.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -242,6 +248,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Chính câu này khiến bài đăng là của bạn. Mọi thứ bên dưới là bằng chứng.",
     "Three days left before it is deleted." to "Còn ba ngày trước khi ghi chú bị xóa.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "Ba việc, theo thứ tự: viết câu của bạn, đăng lên, rồi quay lại dán liên kết. Việc cuối mới làm cho nó bền lâu, và đó cũng là việc người ta hay quên.",
     "Told only when your identity note is days away from being deleted." to
         "Chỉ thông báo khi ghi chú danh tính của bạn sắp bị xóa trong vài ngày tới.",
     "Tomorrow is the last day." to "Ngày mai là ngày cuối cùng.",
@@ -283,6 +291,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "Passport của bạn đã hoạt động, là của bạn, và mang tên bạn.",
     "Your Passport is live." to "Passport của bạn đang hoạt động.",
+    "Your Passport is live. One step left." to "Passport của bạn đã hoạt động. Còn một bước.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport của bạn được dựng lại từ một chữ ký ví duy nhất, nên không có cụm từ hạt giống nào để mất. Điều đó cũng đúng theo chiều ngược lại: bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport này. Hãy đọc kỹ những gì một ví yêu cầu bạn ký, ở đây và ở mọi nơi.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

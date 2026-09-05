@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val RU_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  расскажите им",
+    "06  tell them  ·  last step" to "06  расскажите  ·  последний шаг",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "Ещё несколько слов, и строчка ваша. Нужно всего одно живое предложение.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Сообщение, подписанное вашим Passport, отправляется в тихую комнату и считывается оттуда для подтверждения доставки.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -40,6 +43,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Принято, но пока не удалось считать обратно",
     "Activity" to "Активность",
     "All five done" to "Все пять сделаны",
+    "All six done" to "Все шесть сделаны",
     "Already checked in, found in the room" to "Запись уже оставлена и найдена в комнате",
     "Already published, read back just now" to "Уже опубликовано и только что считано обратно",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -218,6 +222,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Это не похоже на ссылку. Она должна начинаться с https://",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Это был последний шаг. Ваш Passport активен. Осталось одно, и именно об этом просил FLOP: расскажите людям, что вы сделали. Приложение напишет для вас пост внизу этого экрана.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "Пять шагов построили вашу личность. За пределами этого телефона пока никто не знает, что она ваша. Шаг 06 ниже: напишите строчку, опубликуйте, потом вернитесь и вставьте ссылку. Именно это ставит ваше имя рядом с вашим ключом навсегда, и именно здесь люди останавливаются.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Личность создаётся внутри Seed Vault и запечатывается через StrongBox на телефоне.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -244,6 +250,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Эта строчка и делает пост вашим. Всё под ней это доказательство.",
     "Three days left before it is deleted." to "До удаления осталось три дня.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "Три вещи, по порядку: напишите свою строчку, опубликуйте пост, потом вернитесь и вставьте ссылку. Последнее и делает всё это постоянным, и именно про него забывают.",
     "Told only when your identity note is days away from being deleted." to
         "Вы получите уведомление, только когда до удаления записи о вашей личности останется несколько дней.",
     "Tomorrow is the last day." to "Завтра последний день.",
@@ -284,6 +292,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "Ваш Passport живой, он ваш, и на нём стоит ваше имя.",
     "Your Passport is live." to "Ваш Passport действует.",
+    "Your Passport is live. One step left." to "Ваш Passport живой. Остался один шаг.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport восстанавливается из одной подписи кошелька — поэтому и нет seed-фразы, которую можно потерять. У этого есть обратная сторона: любое приложение, уговорившее ваш кошелёк подписать ровно ту же фразу, восстановит этот Passport. Читайте, что кошелёк просит подписать, здесь и везде.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val JA_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  伝える",
+    "06  tell them  ·  last step" to "06  伝える  ·  最後の手順",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "あと少し書けば、その一行はあなたのものです。本当の一文があれば十分です。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Passportで署名したメッセージを静かなルームに投稿し、読み戻して到着を確認します。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -38,6 +41,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to "受理されましたが、まだ読み戻せません",
     "Activity" to "アクティビティ",
     "All five done" to "五つすべて完了",
+    "All six done" to "六つすべて完了",
     "Already checked in, found in the room" to "記録済みで、ルーム内に見つかりました",
     "Already published, read back just now" to "公開済みで、たった今読み戻しました",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -187,6 +191,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "リンクではないようです. https:// で始めてください",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "これが最後のステップでした。Passport は有効です。残るのは1つ、FLOP が実際に求めていたことです: 自分がしたことをみんなに伝えてください。この画面の下に、アプリが投稿文を作ります。",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "五つの手順があなたの身元を作りました。この端末の外では、それがあなたのものだとまだ誰も知りません。下の手順 06 です。一行書き、投稿し、戻ってリンクを貼ってください。その最後の部分が、あなたの名前を鍵の隣に恒久的に置きます。そして人が止まるのも、まさにそこです。",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "IDはSeed Vault内で生成され、端末のStrongBoxで封印されます。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -212,6 +218,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "この一文が、この投稿をあなたのものにします。その下はすべて証拠です。",
     "Three days left before it is deleted." to "削除まであと三日です。",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "順番に三つ。自分の一行を書き、投稿し、それから戻ってリンクを貼る。最後のひとつがこれを恒久的にし、そして忘れられるのもそれです。",
     "Told only when your identity note is days away from being deleted." to
         "身元情報のノートが削除される数日前にのみ通知されます。",
     "Tomorrow is the last day." to "明日が最後の日です。",
@@ -251,6 +259,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "あなたの Passport は有効で、あなたのもので、あなたの名前が付いています。",
     "Your Passport is live." to "Passportは公開されています。",
+    "Your Passport is live. One step left." to "あなたの Passport は有効です。あと一手順です。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport はウォレットの署名ひとつから再構成されます。だから失うシードフレーズが ありません。同じことは逆にも働きます。まったく同じ文にウォレットで署名させられる アプリは、この Passport を再構成できます。ウォレットが何に署名を求めているかを、ここでも、ほかのどこでも読んでください。",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

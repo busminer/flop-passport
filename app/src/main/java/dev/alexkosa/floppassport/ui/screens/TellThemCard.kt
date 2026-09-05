@@ -87,7 +87,7 @@ fun TellThemCard(vm: PassportViewModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            FlopLabel("06  tell them")
+            FlopLabel("06  tell them  ·  last step")
             // Green only once the note came back from the server carrying the link. A URL
             // typed into a field on this phone is not evidence of anything to anyone else.
             if (vm.nameLinked) FlopBadge("linked", FlopState.Verified)
@@ -95,7 +95,11 @@ fun TellThemCard(vm: PassportViewModel) {
         }
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(
-            t("Optional, and the part that actually counts."),
+            t(
+                "Three things, in this order: write your line, post it, then come back and " +
+                    "paste the link. The last one is what makes it permanent, and it is the " +
+                    "one people forget.",
+            ),
             style = FlopType.h3,
             color = FlopColors.IceWhite,
         )
@@ -134,14 +138,15 @@ fun TellThemCard(vm: PassportViewModel) {
         // Says why, not just that. A required field with no reason attached reads as an
         // obstacle; this one is the difference between a contributor and a bot, and the
         // person filling it in is the one it protects.
+        val complaint = PostComposer.whyNotASentence(vm.contributionLine)
         Text(
             t(
-                if (ready) {
-                    "This line is what makes the post yours. Everything under it is the proof."
-                } else {
-                    "Write one line only you would write. Posts that differ from each other " +
-                        "by nothing but a key get read as farming, and that lands on the " +
-                        "people who did the work."
+                when {
+                    ready -> "This line is what makes the post yours. Everything under it is the proof."
+                    complaint != null -> complaint
+                    else -> "Write one line only you would write. Posts that differ from each " +
+                        "other by nothing but a key get read as farming, and that lands on " +
+                        "the people who did the work."
                 },
             ),
             style = FlopType.bodySm,

@@ -4,6 +4,8 @@ import dev.alexkosa.floppassport.proof.PostComposer
 import dev.alexkosa.floppassport.technocore.Canonical
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -205,5 +207,20 @@ class PostComposerTest {
             assertTrue("still fits the post", PostComposer.compose(liveDid, example).fits)
         }
         assertEquals(PostComposer.VOICES.size, PostComposer.EXAMPLES.toSet().size)
+    }
+
+    @Test
+    fun `a line that is not enough yet says so`() {
+        // Nothing typed: the screen pitches, it does not complain.
+        assertNull(PostComposer.whyNotASentence(null))
+        assertNull(PostComposer.whyNotASentence("   "))
+        // Something typed that will not do: there has to be a sentence to show, because a
+        // button that refuses silently is indistinguishable from one that is broken.
+        assertNotNull(PostComposer.whyNotASentence("did it"))
+        // And once it will do, the complaint goes away.
+        assertNull(PostComposer.whyNotASentence("I set this up on my Seeker today."))
+        for (example in PostComposer.EXAMPLES) {
+            assertNull("example still complains: $example", PostComposer.whyNotASentence(example))
+        }
     }
 }

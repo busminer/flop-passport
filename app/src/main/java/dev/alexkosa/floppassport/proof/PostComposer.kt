@@ -282,6 +282,20 @@ object PostComposer {
      * thoughtful Chinese sentence. So Han, kana and Hangul are counted by character, and
      * everything else by words as well as length.
      */
+    /**
+     * What is still wrong with this line, or null when nothing is.
+     *
+     * Exists so the screen can say it. A button that refuses and explains nothing is
+     * indistinguishable from a broken one, and the person it refuses has no way to tell
+     * which they are looking at.
+     */
+    fun whyNotASentence(line: String?): String? {
+        val text = line?.trim().orEmpty()
+        if (text.isEmpty()) return null  // nothing typed yet: the pitch belongs there, not a complaint
+        if (isRealSentence(text)) return null
+        return "A few more words, and it is yours. One real sentence is all this needs."
+    }
+
     fun isRealSentence(line: String?): Boolean {
         val text = line?.trim().orEmpty()
         if (text.isEmpty()) return false

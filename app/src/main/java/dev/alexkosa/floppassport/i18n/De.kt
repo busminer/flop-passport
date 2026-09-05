@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val DE_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  weitersagen",
+    "06  tell them  ·  last step" to "06  sag es weiter  ·  letzter Schritt",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "Noch ein paar Worte, dann gehört sie dir. Ein echter Satz genügt.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -40,6 +43,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Akzeptiert, aber noch nicht zurückgelesen",
     "Activity" to "Aktivität",
     "All five done" to "Alle fünf erledigt",
+    "All six done" to "Alle sechs erledigt",
     "Already checked in, found in the room" to "Eintrag bereits erstellt und im Raum gefunden",
     "Already published, read back just now" to
         "Bereits veröffentlicht und gerade zurückgelesen",
@@ -221,6 +225,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Das sieht nicht wie ein Link aus. Er sollte mit https:// beginnen",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Das war der letzte Schritt. Dein Passport ist aktiv. Eine Sache fehlt noch, und genau darum hat FLOP gebeten: Erzähle anderen, was du gemacht hast. Die App schreibt den Beitrag unten auf diesem Bildschirm für dich.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "Die fünf Schritte haben deine Identität gebaut. Außerhalb dieses Telefons weiß noch niemand, dass sie dir gehört. Schritt 06 unten: schreib eine Zeile, poste sie, komm zurück und füge den Link ein. Dieser letzte Teil stellt deinen Namen dauerhaft neben deinen Schlüssel, und genau dort hören die meisten auf.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Die Identität entsteht in Seed Vault und wird auf dem Telefon durch StrongBox versiegelt.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -248,6 +254,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Diese Zeile macht den Beitrag zu deinem. Alles darunter ist der Beleg.",
     "Three days left before it is deleted." to "Noch drei Tage, bevor sie gelöscht wird.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "Drei Dinge, in dieser Reihenfolge: schreib deine Zeile, poste sie, komm dann zurück und füge den Link ein. Das Letzte macht es dauerhaft, und genau das wird vergessen.",
     "Told only when your identity note is days away from being deleted." to
         "Du wirst nur benachrichtigt, wenn deine Identitätsnotiz kurz vor dem Löschen steht.",
     "Tomorrow is the last day." to "Morgen ist der letzte Tag.",
@@ -291,6 +299,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "Dein Passport ist aktiv, er gehört dir, und dein Name steht darauf.",
     "Your Passport is live." to "Ihr Passport ist aktiv.",
+    "Your Passport is live. One step left." to "Dein Passport ist aktiv. Ein Schritt fehlt noch.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Ihr Passport wird aus einer einzigen Wallet-Signatur wiederhergestellt — deshalb gibt es keine Seed-Phrase, die verloren gehen kann. Das gilt auch umgekehrt: jede App, die Ihre Wallet dazu bringt, genau diesen Satz zu signieren, kann diesen Passport wiederherstellen. Lesen Sie, was eine Wallet Sie signieren lässt, hier und überall sonst.",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to

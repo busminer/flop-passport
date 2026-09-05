@@ -17,6 +17,9 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val ZH_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  告诉大家",
+    "06  tell them  ·  last step" to "06  告诉大家  ·  最后一步",
+    "A few more words, and it is yours. One real sentence is all this needs." to
+        "再写几个字就成了。只需要一句真话。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
         "一条由 Passport 签名的消息，发布到安静的房间后再读回，以证明已送达。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
@@ -38,6 +41,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to "已接受，但暂时无法读回",
     "Activity" to "活动",
     "All five done" to "五步全部完成",
+    "All six done" to "六步全部完成",
     "Already checked in, found in the room" to "已留下签名记录，并在房间中找到",
     "Already published, read back just now" to "已发布，刚刚已读回",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
@@ -183,6 +187,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "That does not look like a link. It should start with https://" to "这看起来不像链接。链接应以 https:// 开头",
     "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "这是最后一步。你的 Passport 已启用。还剩一件事，也是 FLOP 真正要求的部分：告诉大家你做了什么。应用会在此屏幕底部为你写好帖子。",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
+        "五个步骤建好了你的身份。这台手机之外，还没有人知道它是你的。见下方第 06 步：写一句话，发出去，然后回来贴上链接。最后这一步会把你的名字永久地放在你的密钥旁边，而人们通常就停在这里。",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "身份生成于 Seed Vault，并由手机上的 StrongBox 封存。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
@@ -208,6 +214,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "这一句才让这条帖子属于你。下面的一切都是证据。",
     "Three days left before it is deleted." to "距离删除还剩三天.",
+    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
+        "三件事，按顺序：写下你的那句话，发出去，然后回来把链接贴上。最后一步才让这一切长久，而它正是最容易被忘掉的那一步。",
     "Told only when your identity note is days away from being deleted." to
         "只有当您的身份笔记再过几天就会被删除时，您才会收到通知.",
     "Tomorrow is the last day." to "明天是最后一天.",
@@ -247,6 +255,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live, it is yours, and your name is on it." to
         "你的 Passport 已生效，属于你，并且署上了你的名字。",
     "Your Passport is live." to "您的 Passport 已启用。",
+    "Your Passport is live. One step left." to "你的 Passport 已生效。还剩一步。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "您的 Passport 由一次钱包签名重建，因此没有会丢失的助记词。反过来也成立：任何能让您的钱包签署那句一模一样的话的应用，都能重建这个 Passport。请阅读钱包要求您签署的内容，在这里，也在任何地方。",
     "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
