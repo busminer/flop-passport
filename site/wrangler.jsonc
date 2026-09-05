@@ -23,9 +23,18 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
+  // Both names serve the same site. flop.alexkosa.dev is the canonical one - it is what
+  // the wallet shows on its approval screen, what the privacy policy in the store listing
+  // points at, and what is compiled into a signed APK, so it is the one that cannot move.
+  // The longer name exists because it says the product's name out loud; nothing depends
+  // on it, and it can be dropped without touching anything that is already published.
   "routes": [
     {
       "pattern": "flop.alexkosa.dev",
+      "custom_domain": true
+    },
+    {
+      "pattern": "floppassport.alexkosa.dev",
       "custom_domain": true
     }
   ]
