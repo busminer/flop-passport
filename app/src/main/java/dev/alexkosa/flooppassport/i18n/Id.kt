@@ -88,6 +88,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport untuk Seeker. Pencatatan bertanda tangan pertama.",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOP meminta para agen membuat kunci unik dan melakukan sesuatu yang berguna untuk menyebarkan kabar tentang Technocore. Kamu sudah punya kuncinya. Ini sisanya.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan yang ditandatangani secara kriptografis membuktikan bahwa Anda melakukannya, dan hari tanpa catatan tersebut tidak dapat diperiksa oleh siapa pun nanti.",
     "Identity derived from your wallet signature" to
@@ -112,8 +114,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Kunci dibuat di Seed Vault, disegel oleh StrongBox pada perangkat.",
     "Language" to "Bahasa",
+    "Leave it blank and the post still works. It just says less." to
+        "Biarkan kosong dan postingan tetap berfungsi. Isinya hanya lebih sedikit.",
     "Leave today's signed record on Technocore." to
         "Tinggalkan catatan hari ini yang ditandatangani secara kriptografis di Technocore.",
+    "Link to what you built, if there is one" to "Tautan ke hasil karyamu, jika ada",
+    "Link to your post" to "Tautan ke postinganmu",
     "Make your first signed check-in" to "Buat pencatatan bertanda tangan pertama Anda",
     "My FLOP Passport, created on a Solana Seeker." to
         "FLOP Passport saya, dibuat di Solana Seeker.",
@@ -142,6 +148,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "Membuka koneksi",
     "Opening your Solana wallet" to "Membuka dompet Solana Anda",
     "Passport at risk" to "Passport berisiko",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "Tempel tautan ke postinganmu. Tautan itu masuk ke catatan identitasmu, jadi catatan mengarah ke postingan dan postingan memuat kuncinya. Siapa pun kemudian dapat memeriksa keduanya dengan kunci yang sama.",
     "Press Create again. Nothing was sent anywhere." to
         "Tekan Buat lagi. Tidak ada yang dikirim ke mana pun.",
     "Protect" to "Lindungi",
@@ -174,6 +182,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Settings" to "Pengaturan",
     "Seven days without a record. Open the app to publish it again." to
         "Tujuh hari tanpa catatan. Buka aplikasi untuk menerbitkannya lagi.",
+    "Shipped a Technocore client for the Seeker" to "Merilis klien Technocore untuk Seeker",
     "Show your private key" to "Tampilkan kunci privat Anda",
     "Signed, accepted and found again in the room" to
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
@@ -183,6 +192,10 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Seseorang mengubah catatan ini setelah kunci Anda menjaminnya. Terbitkan lagi.",
     "Talking to the service" to "Berkomunikasi dengan layanan",
     "Thanks for building this" to "Terima kasih telah membuat ini",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "Itu sepertinya bukan tautan ke postingan. Bentuknya harus seperti https://x.com/you/status/123.",
+    "That does not look like a link. It should start with https://" to
+        "Itu sepertinya bukan tautan. Tautan harus diawali dengan https://",
     "That was the last step. Your Passport is live." to
         "Itu langkah terakhir. Passport Anda aktif.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
@@ -215,6 +228,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Jangan anggap ini sebagai kegagalan.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Mengirimnya sebagai pesan baru akan menerbitkannya dua kali secara publik.",
+    "What did you actually do?" to "Apa yang sebenarnya kamu lakukan?",
     "What is still provable" to "Yang masih dapat dibuktikan",
     "What recovery without a seed phrase costs" to "Harga pemulihan tanpa frasa seed",
     "Yes. Something is already visible to others." to
@@ -262,6 +276,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "connection" to "koneksi",
     "content" to "konten",
     "continue" to "lanjutkan",
+    "copy" to "salin",
     "copy key" to "salin kunci",
     "create passport" to "buat passport",
     "created this Passport rebuilds it on any device." to
@@ -279,6 +294,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "identity" to "identitas",
     "identity note" to "catatan identitas",
     "last connection" to "koneksi terakhir",
+    "linked" to "tertaut",
     "live" to "aktif",
     "live records" to "catatan aktif",
     "matched on our nonce, not just our key" to
@@ -292,9 +308,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "on" to "aktif",
     "our exact bytes, no wallet prefix" to "byte persis kami, tanpa prefiks dompet",
     "passport for seeker" to "passport untuk seeker",
+    "pin it to your identity" to "sematkan ke identitasmu",
+    "post it" to "posting",
     "private key, 32 bytes, hex" to "kunci privat, 32 byte, hex",
     "protect passport" to "lindungi passport",
     "publish identity" to "terbitkan identitas",
+    "publish these to my note" to "terbitkan ini ke catatan saya",
     "published" to "diterbitkan",
     "re-check with the server" to "periksa ulang dengan server",
     "re-checked when the app opened" to "diperiksa ulang saat aplikasi dibuka",
@@ -322,7 +341,9 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat menolak catatan",
     "technocore.chat refused the signed write" to
         "technocore.chat menolak penulisan bertanda tangan",
+    "tell them" to "beri tahu mereka",
     "text" to "teks",
+    "the post" to "postingan",
     "the same wallet rebuilds this identity anywhere" to
         "dompet yang sama membangun kembali identitas ini di mana pun",
     "unconfirmed" to "belum dikonfirmasi",

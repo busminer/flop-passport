@@ -79,6 +79,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker用FLOP Passport - 非公開バックアップ",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1によるSeeker用FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker用FLOP Passport。最初の署名済み記録。",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOPはエージェントに、固有のキーを作り、Technocoreを広めるために役立つことをするよう求めました. キーはあります. あとはこれだけです.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOPはエージェントに有用なことをするよう求めました。署名済み記録は実行したことの証明となり、記録のない日は後から誰も確認できません。",
     "Identity derived from your wallet signature" to "ウォレット署名から導出されたID",
@@ -98,7 +100,10 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Seed Vault内で生成され、端末のStrongBoxで封印された鍵。",
     "Language" to "言語",
+    "Leave it blank and the post still works. It just says less." to "空欄のままでも投稿できます. 内容が少なくなるだけです.",
     "Leave today's signed record on Technocore." to "今日の署名済み記録をTechnocoreに残します。",
+    "Link to what you built, if there is one" to "作ったものへのリンク（ある場合）",
+    "Link to your post" to "投稿へのリンク",
     "Make your first signed check-in" to "最初の署名済み記録を残す",
     "My FLOP Passport, created on a Solana Seeker." to "Solana Seekerで作成したFLOP Passport。",
     "Next: create your Passport from your wallet." to "次へ：ウォレットからPassportを作成します。",
@@ -120,6 +125,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "接続を開始しています",
     "Opening your Solana wallet" to "Solanaウォレットを開いています",
     "Passport at risk" to "Passportが失われるおそれがあります",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "投稿へのリンクを貼り付けてください. リンクはあなたのIDノートに入り、ノートが投稿を示し、投稿にはキーが含まれます. これで誰でも両方を同じキーで確認できます.",
     "Press Create again. Nothing was sent anywhere." to "もう一度「作成」を押してください。どこにも何も送信されていません。",
     "Protect" to "保護",
     "Protect it" to "保護する",
@@ -147,6 +154,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Settings" to "設定",
     "Seven days without a record. Open the app to publish it again." to
         "七日間、記録がありませんでした。アプリを開いて再公開してください。",
+    "Shipped a Technocore client for the Seeker" to "Seeker向けのTechnocoreクライアントをリリースした",
     "Show your private key" to "秘密鍵を表示",
     "Signed, accepted and found again in the room" to "署名、受理され、ルーム内で再確認されました",
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
@@ -154,6 +162,10 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "鍵が保証した後で、誰かがこのノートを書き換えました。もう一度公開してください。",
     "Talking to the service" to "サービスと通信中",
     "Thanks for building this" to "開発への謝意を送る",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "投稿へのリンクではないようです. https://x.com/you/status/123. のような形式にしてください.",
+    "That does not look like a link. It should start with https://" to
+        "リンクではないようです. https:// で始めてください",
     "That was the last step. Your Passport is live." to "これが最後のステップです。Passportは公開されています。",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "IDはSeed Vault内で生成され、端末のStrongBoxで封印されます。",
@@ -184,6 +196,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "少し待ってから、もう一度押して再確認してください。失敗として扱う必要はありません。",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "少し待ってから、もう一度押して再確認してください。新しいメッセージとして送ると、公開投稿が重複します。",
+    "What did you actually do?" to "実際に何をしましたか?",
     "What is still provable" to "現在も証明できること",
     "What recovery without a seed phrase costs" to "シードフレーズなしの復元が引き受けるもの",
     "Yes. Something is already visible to others." to "はい。すでに他の人から見える情報があります。",
@@ -230,6 +243,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "connection" to "接続",
     "content" to "内容",
     "continue" to "続行",
+    "copy" to "コピー",
     "copy key" to "鍵をコピー",
     "create passport" to "passportを作成",
     "created this Passport rebuilds it on any device." to
@@ -248,6 +262,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "identity" to "アイデンティティ",
     "identity note" to "IDノート",
     "last connection" to "前回の接続",
+    "linked" to "リンク済み",
     "live" to "有効",
     "live records" to "公開中の記録",
     "matched on our nonce, not just our key" to "鍵だけでなく、固有のnonceも一致",
@@ -260,9 +275,12 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "on" to "オン",
     "our exact bytes, no wallet prefix" to "ウォレット接頭辞なしの正確なバイト列",
     "passport for seeker" to "seeker用passport",
+    "pin it to your identity" to "自分のIDに固定",
+    "post it" to "投稿する",
     "private key, 32 bytes, hex" to "秘密鍵、32バイト、16進数",
     "protect passport" to "passportを保護",
     "publish identity" to "IDを公開",
+    "publish these to my note" to "ノートに公開",
     "published" to "公開済み",
     "re-check with the server" to "サーバーで再確認",
     "re-checked when the app opened" to "アプリ起動時に再確認",
@@ -288,7 +306,9 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "technocore.chatでは、七日間書き込みがないものは削除されます。今日署名するとノートが書き直され、七日間の期限が再び始まります。",
     "technocore.chat refused the note" to "technocore.chatがノートを拒否しました",
     "technocore.chat refused the signed write" to "technocore.chatが署名済み書き込みを拒否しました",
+    "tell them" to "みんなに伝える",
     "text" to "テキスト",
+    "the post" to "投稿",
     "the same wallet rebuilds this identity anywhere" to "同じウォレットから、どこでもこのIDを再構築できます",
     "unconfirmed" to "未確認",
     "unsigned" to "未署名",

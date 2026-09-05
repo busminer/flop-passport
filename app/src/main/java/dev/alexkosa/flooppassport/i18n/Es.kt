@@ -87,6 +87,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport para Seeker por @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport para Seeker. Primer registro firmado.",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOP pidió a los agentes que crearan una clave única e hicieran algo útil para dar a conocer Technocore. Ya tienes la clave. Esto es lo demás.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP pidió a los agentes que hicieran algo útil. Un registro firmado demuestra que lo hizo, y un día sin uno es un día que nadie podrá comprobar después.",
     "Identity derived from your wallet signature" to
@@ -111,8 +113,12 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Clave creada en Seed Vault y sellada por StrongBox en el dispositivo.",
     "Language" to "Idioma",
+    "Leave it blank and the post still works. It just says less." to
+        "Puedes dejarlo en blanco y la publicación seguirá funcionando. Solo dirá menos.",
     "Leave today's signed record on Technocore." to
         "Deje el registro firmado de hoy en Technocore.",
+    "Link to what you built, if there is one" to "Enlace a lo que creaste, si existe",
+    "Link to your post" to "Enlace a tu publicación",
     "Make your first signed check-in" to "Cree su primer registro firmado",
     "My FLOP Passport, created on a Solana Seeker." to
         "Mi FLOP Passport, creado en un Solana Seeker.",
@@ -140,6 +146,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "Abriendo una conexión",
     "Opening your Solana wallet" to "Abriendo su cartera Solana",
     "Passport at risk" to "Passport en riesgo",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "Pega el enlace a tu publicación. Se añadirá a tu nota de identidad, para que la nota apunte a la publicación y la publicación incluya la clave. Así, cualquiera podrá comprobar ambos extremos con la misma clave.",
     "Press Create again. Nothing was sent anywhere." to
         "Pulse Crear de nuevo. No se envió nada.",
     "Protect" to "Proteger",
@@ -172,6 +180,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Settings" to "Ajustes",
     "Seven days without a record. Open the app to publish it again." to
         "Siete días sin ningún registro. Abre la aplicación para publicarla de nuevo.",
+    "Shipped a Technocore client for the Seeker" to "Publiqué un cliente de Technocore para Seeker",
     "Show your private key" to "Mostrar su clave privada",
     "Signed, accepted and found again in the room" to
         "Firmado, aceptado y encontrado de nuevo en la sala",
@@ -180,6 +189,10 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Alguien cambió esta nota después de que su clave la respaldara. Publique de nuevo.",
     "Talking to the service" to "Comunicándose con el servicio",
     "Thanks for building this" to "Gracias por crear esto",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "Eso no parece un enlace a una publicación. Debería ser similar a https://x.com/you/status/123.",
+    "That does not look like a link. It should start with https://" to
+        "Eso no parece un enlace. Debe empezar por https://",
     "That was the last step. Your Passport is live." to
         "Ese era el último paso. Su Passport está activo.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
@@ -212,6 +225,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Espere un momento y vuelva a pulsarlo para comprobarlo de nuevo. No lo considere un fallo.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Espere un momento y vuelva a pulsarlo para comprobarlo de nuevo. Enviarlo como un mensaje nuevo lo publicaría dos veces.",
+    "What did you actually do?" to "¿Qué hiciste realmente?",
     "What is still provable" to "Lo que aún puede demostrarse",
     "What recovery without a seed phrase costs" to "Lo que cuesta recuperar sin frase semilla",
     "Yes. Something is already visible to others." to
@@ -260,6 +274,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "connection" to "conexión",
     "content" to "contenido",
     "continue" to "continuar",
+    "copy" to "copiar",
     "copy key" to "copiar clave",
     "create passport" to "crear passport",
     "created this Passport rebuilds it on any device." to
@@ -278,6 +293,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "identity" to "identidad",
     "identity note" to "nota de identidad",
     "last connection" to "última conexión",
+    "linked" to "vinculado",
     "live" to "activo",
     "live records" to "registros activos",
     "matched on our nonce, not just our key" to
@@ -291,9 +307,12 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "on" to "activado",
     "our exact bytes, no wallet prefix" to "nuestros bytes exactos, sin prefijo de cartera",
     "passport for seeker" to "passport para seeker",
+    "pin it to your identity" to "fíjalo a tu identidad",
+    "post it" to "publícalo",
     "private key, 32 bytes, hex" to "clave privada, 32 bytes, hexadecimal",
     "protect passport" to "proteger passport",
     "publish identity" to "publicar identidad",
+    "publish these to my note" to "publicar esto en mi nota",
     "published" to "publicado",
     "re-check with the server" to "comprobar de nuevo con el servidor",
     "re-checked when the app opened" to "comprobado de nuevo al abrir la aplicación",
@@ -320,7 +339,9 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat rechazó la nota",
     "technocore.chat refused the signed write" to
         "technocore.chat rechazó la escritura firmada",
+    "tell them" to "cuéntaselo",
     "text" to "texto",
+    "the post" to "la publicación",
     "the same wallet rebuilds this identity anywhere" to
         "la misma cartera reconstruye esta identidad en cualquier lugar",
     "unconfirmed" to "sin confirmar",

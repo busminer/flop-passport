@@ -88,6 +88,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport cho Seeker. Bản ghi đầu tiên đã được ký.",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOP đã đề nghị mọi người tạo một khóa riêng và làm điều gì đó hữu ích để nhiều người biết đến Technocore. Bạn đã có khóa. Đây là phần còn lại.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi đã ký là bằng chứng cho việc đó, và nếu một ngày không có bản ghi thì sau này không ai có thể kiểm tra ngày đó.",
     "Identity derived from your wallet signature" to "Danh tính được tạo từ chữ ký ví của bạn",
@@ -111,8 +113,12 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Khóa được tạo trong Seed Vault, rồi niêm phong bằng StrongBox trên thiết bị.",
     "Language" to "Ngôn ngữ",
+    "Leave it blank and the post still works. It just says less." to
+        "Để trống thì bài đăng vẫn dùng được. Chỉ là ít thông tin hơn.",
     "Leave today's signed record on Technocore." to
         "Để lại bản ghi đã ký hôm nay trên Technocore.",
+    "Link to what you built, if there is one" to "Liên kết đến thứ bạn đã tạo, nếu có",
+    "Link to your post" to "Liên kết đến bài đăng của bạn",
     "Make your first signed check-in" to "Tạo bản ghi có chữ ký đầu tiên",
     "My FLOP Passport, created on a Solana Seeker." to
         "FLOP Passport của tôi, được tạo trên Solana Seeker.",
@@ -139,6 +145,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "Đang mở kết nối",
     "Opening your Solana wallet" to "Đang mở ví Solana của bạn",
     "Passport at risk" to "Passport có nguy cơ",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "Dán liên kết đến bài đăng của bạn. Liên kết này sẽ được đưa vào ghi chú danh tính của bạn, để ghi chú trỏ đến bài đăng và bài đăng chứa khóa. Sau đó, bất kỳ ai cũng có thể đối chiếu cả hai bằng cùng một khóa.",
     "Press Create again. Nothing was sent anywhere." to
         "Nhấn Tạo lần nữa. Chưa có gì được gửi đi.",
     "Protect" to "Bảo vệ",
@@ -171,6 +179,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Settings" to "Cài đặt",
     "Seven days without a record. Open the app to publish it again." to
         "Bảy ngày không có bản ghi. Hãy mở ứng dụng để đăng lại.",
+    "Shipped a Technocore client for the Seeker" to
+        "Đã phát hành một ứng dụng Technocore cho Seeker",
     "Show your private key" to "Hiển thị khóa riêng của bạn",
     "Signed, accepted and found again in the room" to
         "Đã ký, được chấp nhận và tìm thấy lại trong phòng",
@@ -179,6 +189,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Ai đó đã sửa ghi chú này sau khi khóa của bạn bảo chứng cho nó. Hãy đăng lại.",
     "Talking to the service" to "Đang liên lạc với dịch vụ",
     "Thanks for building this" to "Cảm ơn vì đã xây dựng ứng dụng này",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "Đây có vẻ không phải là liên kết đến một bài đăng. Liên kết phải có dạng https://x.com/you/status/123.",
+    "That does not look like a link. It should start with https://" to
+        "Đây có vẻ không phải là một liên kết. Liên kết phải bắt đầu bằng https://",
     "That was the last step. Your Passport is live." to
         "Đó là bước cuối cùng. Passport của bạn đang hoạt động.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
@@ -211,6 +225,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Chờ một lát rồi nhấn lại để kiểm tra. Không nên xem đây là lỗi.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Chờ một lát rồi nhấn lại để kiểm tra. Gửi dưới dạng tin nhắn mới sẽ đăng công khai hai lần.",
+    "What did you actually do?" to "Bạn thực sự đã làm gì?",
     "What is still provable" to "Những gì vẫn có thể chứng minh",
     "What recovery without a seed phrase costs" to
         "Cái giá của việc khôi phục mà không cần cụm từ hạt giống",
@@ -259,6 +274,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "connection" to "kết nối",
     "content" to "nội dung",
     "continue" to "tiếp tục",
+    "copy" to "sao chép",
     "copy key" to "sao chép khóa",
     "create passport" to "tạo passport",
     "created this Passport rebuilds it on any device." to
@@ -277,6 +293,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "identity" to "danh tính",
     "identity note" to "ghi chú danh tính",
     "last connection" to "kết nối gần nhất",
+    "linked" to "đã liên kết",
     "live" to "đang hoạt động",
     "live records" to "bản ghi đang công khai",
     "matched on our nonce, not just our key" to
@@ -290,9 +307,12 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "on" to "bật",
     "our exact bytes, no wallet prefix" to "đúng các byte của chúng tôi, không có tiền tố ví",
     "passport for seeker" to "passport cho seeker",
+    "pin it to your identity" to "ghim vào danh tính của bạn",
+    "post it" to "đăng bài",
     "private key, 32 bytes, hex" to "khóa riêng, 32 byte, hex",
     "protect passport" to "bảo vệ passport",
     "publish identity" to "công bố danh tính",
+    "publish these to my note" to "đăng vào ghi chú của tôi",
     "published" to "đã công bố",
     "re-check with the server" to "kiểm tra lại với máy chủ",
     "re-checked when the app opened" to "đã kiểm tra lại khi mở ứng dụng",
@@ -319,7 +339,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat đã từ chối ghi chú",
     "technocore.chat refused the signed write" to
         "technocore.chat đã từ chối bản ghi có chữ ký",
+    "tell them" to "nói cho họ biết",
     "text" to "văn bản",
+    "the post" to "bài đăng",
     "the same wallet rebuilds this identity anywhere" to
         "cùng ví đó dựng lại danh tính này ở bất kỳ đâu",
     "unconfirmed" to "chưa xác nhận",

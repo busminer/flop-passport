@@ -88,6 +88,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to
         "Seeker için FLOP Passport. İlk imzalı kayıt.",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOP, ajanlardan benzersiz bir anahtar oluşturmalarını ve Technocore'u duyurmak için faydalı bir şey yapmalarını istedi. Anahtar sende. Gerisi bu.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP, ajanlardan yararlı bir şey yapmalarını istedi. Bunu yaptığınızı imzalı bir kayıt kanıtlar; kayıtsız geçen bir günü daha sonra kimse doğrulayamaz.",
     "Identity derived from your wallet signature" to "Cüzdan imzanızdan türetilen kimlik",
@@ -111,8 +113,12 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Anahtar Seed Vault içinde oluşturuldu, cihazdaki StrongBox ile mühürlendi.",
     "Language" to "Dil",
+    "Leave it blank and the post still works. It just says less." to
+        "Boş bıraksan da gönderi çalışır. Sadece daha az şey söyler.",
     "Leave today's signed record on Technocore." to
         "Bugünün imzalı kaydını Technocore üzerinde bırakın.",
+    "Link to what you built, if there is one" to "Varsa, yaptığın şeyin bağlantısı",
+    "Link to your post" to "Gönderinin bağlantısı",
     "Make your first signed check-in" to "İlk imzalı kaydınızı bırakın",
     "My FLOP Passport, created on a Solana Seeker." to
         "Bir Solana Seeker üzerinde oluşturduğum FLOP Passport.",
@@ -140,6 +146,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
     "Passport at risk" to "Passport risk altında",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "Gönderinin bağlantısını yapıştır. Kimlik notuna eklenir; böylece not gönderiyi gösterir, gönderi de anahtarı taşır. Sonra herkes iki ucu da aynı anahtarla kontrol edebilir.",
     "Press Create again. Nothing was sent anywhere." to
         "Oluştur'a yeniden basın. Hiçbir yere hiçbir şey gönderilmedi.",
     "Protect" to "Koru",
@@ -172,6 +180,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Settings" to "Ayarlar",
     "Seven days without a record. Open the app to publish it again." to
         "Yedi gün boyunca kayıt bırakılmadı. Yeniden yayımlamak için uygulamayı açın.",
+    "Shipped a Technocore client for the Seeker" to
+        "Seeker için bir Technocore istemcisi yayınladım",
     "Show your private key" to "Özel anahtarınızı gösterin",
     "Signed, accepted and found again in the room" to
         "İmzalandı, kabul edildi ve odada yeniden bulundu",
@@ -180,6 +190,10 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Anahtarınız kefil olduktan sonra biri bu notu değiştirdi. Yeniden yayımlayın.",
     "Talking to the service" to "Hizmetle iletişim kuruluyor",
     "Thanks for building this" to "Bunu geliştirdiğiniz için teşekkürler",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "Bu, gönderi bağlantısına benzemiyor. https://x.com/you/status/123 gibi görünmeli.",
+    "That does not look like a link. It should start with https://" to
+        "Bu bir bağlantıya benzemiyor. https:// ile başlamalı",
     "That was the last step. Your Passport is live." to "Bu son adımdı. Passport'ınız yayında.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
         "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
@@ -210,6 +224,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Bunu bir hata olarak değerlendirmeyin.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Yeni mesaj olarak göndermek, kaydı herkese açık olarak iki kez yayımlar.",
+    "What did you actually do?" to "Gerçekte ne yaptın?",
     "What is still provable" to "Hâlâ kanıtlanabilenler",
     "What recovery without a seed phrase costs" to "Seed ifadesi olmadan kurtarmanın bedeli",
     "Yes. Something is already visible to others." to
@@ -258,6 +273,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "connection" to "bağlantı",
     "content" to "içerik",
     "continue" to "devam et",
+    "copy" to "kopyala",
     "copy key" to "anahtarı kopyala",
     "create passport" to "passport oluştur",
     "created this Passport rebuilds it on any device." to
@@ -276,6 +292,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "identity" to "kimlik",
     "identity note" to "kimlik notu",
     "last connection" to "son bağlantı",
+    "linked" to "bağlı",
     "live" to "etkin",
     "live records" to "yayındaki kayıtlar",
     "matched on our nonce, not just our key" to
@@ -289,9 +306,12 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "on" to "açık",
     "our exact bytes, no wallet prefix" to "tam baytlarımız, cüzdan öneki yok",
     "passport for seeker" to "seeker için passport",
+    "pin it to your identity" to "kimliğine sabitle",
+    "post it" to "paylaş",
     "private key, 32 bytes, hex" to "özel anahtar, 32 bayt, hex",
     "protect passport" to "passport'ı koru",
     "publish identity" to "kimliği yayımla",
+    "publish these to my note" to "bunları notuma yayımla",
     "published" to "yayımlandı",
     "re-check with the server" to "sunucuyla yeniden kontrol et",
     "re-checked when the app opened" to "uygulama açıldığında yeniden kontrol edildi",
@@ -318,7 +338,9 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat notu reddetti",
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",
+    "tell them" to "onlara anlat",
     "text" to "metin",
+    "the post" to "gönderi",
     "the same wallet rebuilds this identity anywhere" to
         "aynı cüzdan bu kimliği her yerde yeniden oluşturur",
     "unconfirmed" to "doğrulanmadı",

@@ -87,6 +87,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport для Seeker. Первая подписанная запись.",
+    "FLOP asked agents to create a unique key and to do something useful to spread the word about Technocore. You have the key. This is the rest." to
+        "FLOP попросил агентов создать уникальный ключ и сделать что-нибудь полезное, чтобы рассказать о Technocore. Ключ у вас уже есть. Осталось вот что.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP попросил агентов сделать что-то полезное. Подписанная запись подтверждает, что это сделано, а день без неё позже никто не сможет проверить.",
     "Identity derived from your wallet signature" to
@@ -111,8 +113,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Key born in Seed Vault, sealed by StrongBox on device." to
         "Ключ создан в Seed Vault и запечатан устройством через StrongBox.",
     "Language" to "Язык",
+    "Leave it blank and the post still works. It just says less." to
+        "Можно оставить поле пустым, публикация всё равно получится. Просто в ней будет меньше подробностей.",
     "Leave today's signed record on Technocore." to
         "Оставьте сегодняшнюю подписанную запись в Technocore.",
+    "Link to what you built, if there is one" to "Ссылка на то, что вы создали, если она есть",
+    "Link to your post" to "Ссылка на вашу публикацию",
     "Make your first signed check-in" to "Оставьте первую подписанную запись",
     "My FLOP Passport, created on a Solana Seeker." to
         "Мой FLOP Passport, созданный на Solana Seeker.",
@@ -140,6 +146,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Opening a connection" to "Установка соединения",
     "Opening your Solana wallet" to "Открывается ваш кошелёк Solana",
     "Passport at risk" to "Passport под угрозой",
+    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
+        "Вставьте ссылку на свою публикацию. Она попадёт в заметку вашего идентификатора: заметка будет ссылаться на публикацию, а публикация будет содержать ключ. Тогда любой сможет сверить их по одному ключу.",
     "Press Create again. Nothing was sent anywhere." to
         "Нажмите «Создать» ещё раз. Ничего никуда не отправлено.",
     "Protect" to "Защитить",
@@ -173,6 +181,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Settings" to "Настройки",
     "Seven days without a record. Open the app to publish it again." to
         "Семь дней без отметок. Откройте приложение, чтобы опубликовать её снова.",
+    "Shipped a Technocore client for the Seeker" to "Создал клиент Technocore для Seeker",
     "Show your private key" to "Показать закрытый ключ",
     "Signed, accepted and found again in the room" to
         "Подписано, принято и снова найдено в комнате",
@@ -182,6 +191,10 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Кто-то изменил заметку после того, как ваш ключ за неё поручился. Опубликуйте снова.",
     "Talking to the service" to "Связь с сервисом",
     "Thanks for building this" to "Поблагодарить разработчика",
+    "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
+        "Это не похоже на ссылку на публикацию. Она должна выглядеть примерно так: https://x.com/you/status/123.",
+    "That does not look like a link. It should start with https://" to
+        "Это не похоже на ссылку. Она должна начинаться с https://",
     "That was the last step. Your Passport is live." to
         "Это был последний шаг. Ваш Passport действует.",
     "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
@@ -214,6 +227,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Подождите немного и нажмите ещё раз для повторной проверки. Не считайте это ошибкой.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Подождите немного и нажмите ещё раз для повторной проверки. Отправка нового сообщения создаст две общедоступные записи.",
+    "What did you actually do?" to "Что именно вы сделали?",
     "What is still provable" to "Что ещё можно доказать",
     "What recovery without a seed phrase costs" to
         "Чем приходится платить за восстановление без seed-фразы",
@@ -262,6 +276,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "connection" to "соединение",
     "content" to "содержимое",
     "continue" to "продолжить",
+    "copy" to "копировать",
     "copy key" to "копировать ключ",
     "create passport" to "создать passport",
     "created this Passport rebuilds it on any device." to
@@ -280,6 +295,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "identity" to "идентичность",
     "identity note" to "запись о личности",
     "last connection" to "последнее соединение",
+    "linked" to "привязано",
     "live" to "активно",
     "live records" to "доступные записи",
     "matched on our nonce, not just our key" to "совпало по нашему nonce, а не только по ключу",
@@ -292,9 +308,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "on" to "вкл.",
     "our exact bytes, no wallet prefix" to "точно наши байты, без префикса кошелька",
     "passport for seeker" to "passport для seeker",
+    "pin it to your identity" to "привязать к идентификатору",
+    "post it" to "опубликовать",
     "private key, 32 bytes, hex" to "закрытый ключ, 32 байта, hex",
     "protect passport" to "защитить passport",
     "publish identity" to "опубликовать личность",
+    "publish these to my note" to "добавить в мою заметку",
     "published" to "опубликовано",
     "re-check with the server" to "повторно проверить на сервере",
     "re-checked when the app opened" to "повторно проверено при открытии приложения",
@@ -320,7 +339,9 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "technocore.chat удаляет всё, что не обновлялось семь дней. Подпишите отметку сегодня, чтобы обновить запись и начать отсчёт семи дней заново.",
     "technocore.chat refused the note" to "technocore.chat отклонил запись",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
+    "tell them" to "рассказать другим",
     "text" to "текст",
+    "the post" to "публикация",
     "the same wallet rebuilds this identity anywhere" to
         "тот же кошелёк воссоздаёт эту личность где угодно",
     "unconfirmed" to "не подтверждено",
