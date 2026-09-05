@@ -7,6 +7,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -61,12 +63,17 @@ fun FlopSupportInvite(
     }
 
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+        // Scrolls, because a dialog window stops at the edge of the screen and anything
+        // past it is cut off rather than pushed. At the largest system font this card is
+        // taller than a short phone, and the half that goes missing is the half with
+        // "no thanks, continue" in it.
         Column(
             Modifier
                 .padding(FlopSpacing.lg)
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.Cyan.copy(alpha = 0.45f), FlopShapes.lg)
+                .verticalScroll(rememberScrollState())
                 .padding(FlopSpacing.lg),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {

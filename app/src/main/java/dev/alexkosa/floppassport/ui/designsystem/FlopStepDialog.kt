@@ -133,12 +133,16 @@ fun FlopProblemDialog(
     onDismiss: () -> Unit,
 ) {
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+        // Scrolls for the same reason as the success dialog, and it matters more here: this
+        // is the dialog that appears when something has already gone wrong, it carries the
+        // longest text in the app, and its way out is at the bottom.
         Column(
             Modifier
                 .padding(FlopSpacing.lg)
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.ErrorRed.copy(alpha = 0.45f), FlopShapes.lg)
+                .verticalScroll(rememberScrollState())
                 .padding(FlopSpacing.lg),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
