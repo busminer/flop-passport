@@ -23,8 +23,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "一条位于密钥派生地址的永久记录，之后任何人都能找到并验证您的身份。",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "一条发布在由您的密钥派生出的地址上的公开记录，任何人之后都能找到并验证您的身份。",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "签名记录必须手动留下，错过的日期之后无法补记。",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "签署的记录必须手动留下，错过的日期以后无法补上。此开关还会在您的身份笔记被删除前提醒您.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "打赏不会改变您的 Passport，也不会影响任何空投。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -61,6 +61,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Daily reminder" to "每日提醒",
     "Delete it?" to "删除？",
     "Delete the Passport and create it again from your wallet." to "删除 Passport，然后通过钱包重新创建。",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "连续七天没有记录后已被删除。现在签署一条记录，它就会恢复到同一地址.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "删除操作只会从此手机移除 Passport。已发布的内容可能仍会保持公开，使用同一钱包也会重建出同一身份，因此这无法撤销任何操作。",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -84,8 +86,11 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified on Technocore." to
         "身份记录已发布，首次记录已在 Technocore 上验证。",
     "Identity note published, first check in verified." to "身份记录已发布，首次记录已验证。",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "即使它被删除，您的 Passport 也没有消失：同一个钱包仍会生成相同的身份，签署一条记录即可将笔记重新发布到同一地址.",
     "It never asks for your wallet recovery phrase." to "它绝不会要求您提供钱包恢复助记词。",
     "It promises nothing about any airdrop, and never will." to "它不对任何空投作出承诺，以后也不会。",
+    "It will be deleted after seven days without a record." to "连续七天没有记录后，它将被删除.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "请离线保存此文件。绝不要发送给任何人，包括应用作者。",
     "Keep your record going" to "保持记录连续",
@@ -113,6 +118,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "仅列出已有实际翻译的语言。如果语言选择器列出的语言都显示为英文，它会声称支持您的语言，却在下一屏显示事实并非如此。",
     "Opening a connection" to "正在建立连接",
     "Opening your Solana wallet" to "正在打开您的 Solana 钱包",
+    "Passport at risk" to "Passport 有风险",
     "Press Create again. Nothing was sent anywhere." to "请再次按“创建”。没有向任何地方发送内容。",
     "Protect" to "保护",
     "Protect it" to "保护它",
@@ -128,6 +134,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "正在读取您的记录",
     "Ready" to "就绪",
     "Remind me once a day" to "每天提醒我一次",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "今天已续期。technocore.chat 会从最后一次写入起保留七天，并且您每次打开此应用时，应用都会重写它.",
     "Sealed by Android Keystore" to "由 Android Keystore 封存",
     "Sealed by StrongBox, this phone's separate security chip" to "由 StrongBox 封存，即此手机的独立安全芯片",
     "Sealed by this phone's trusted execution environment" to "由此手机的可信执行环境封存",
@@ -135,6 +143,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "正在发送您的签名记录",
     "Sent, but not confirmed in the room yet" to "已发送，但尚未在房间中确认",
     "Settings" to "设置",
+    "Seven days without a record. Open the app to publish it again." to "连续七天没有记录。打开应用即可重新发布.",
     "Show your private key" to "显示您的私钥",
     "Signed, accepted and found again in the room" to "已签名、接受并再次在房间中找到",
     "Signing your first check-in and sending it" to "正在签署并发送您的首条记录",
@@ -156,10 +165,17 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "这 32 字节就是您的 FLOP Passport。任何持有者都能在 Technocore 上以您的身份签名。请离线保存，绝不要发送给任何人，包括我们。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "本应用免费且开源，没有人为它付费。如果它为您节省了一个下午，可以选择打赏。",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "每次打开此应用或签署记录时，应用都会重写您的笔记，并重新开始计算七天。每周至少打开一次，就不会丢失任何内容.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "这不是您的 Solana 钱包密钥。钱包自身的密钥从未离开 Seed Vault，本应用也从未读取过它。您看到的是一把独立密钥，只用于在 Technocore 上签名。",
+    "Three days left before it is deleted." to "距离删除还剩三天.",
+    "Told only when your identity note is days away from being deleted." to
+        "只有当您的身份笔记再过几天就会被删除时，您才会收到通知.",
+    "Tomorrow is the last day." to "明天是最后一天.",
     "Try again. Nothing was posted." to "请重试。未发布任何内容。",
     "Try again. Nothing was published." to "请重试。未发布任何内容。",
+    "Two days left before it is deleted." to "距离删除还剩两天.",
     "Use the phone's language" to "使用手机的语言",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "请稍候片刻，再次按下以重新检查。不要将此视为失败。",
@@ -185,9 +201,14 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "您的 Passport 已启用。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "您的 Passport 由一次钱包签名重建，因此没有会丢失的助记词。反过来也成立：任何能让您的钱包签署那句一模一样的话的应用，都能重建这个 Passport。请阅读钱包要求您签署的内容，在这里，也在任何地方。",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "您的 Passport 并未丢失：同一个钱包仍会生成相同的身份，现在签署一条记录即可将笔记重新发布到同一地址.",
+    "Your identity note expires soon" to "您的身份笔记即将过期",
+    "Your identity note has been deleted" to "您的身份笔记已被删除",
     "Your key is never sent anywhere. Only you can export it." to "您的密钥不会发送到任何地方。只有您可以将其导出。",
     "Your key never leaves this phone." to "您的密钥绝不会离开此手机。",
     "Your key signed a line carrying this note's exact hash." to "您的密钥签署了一行，其中带有这条备注的确切哈希值。",
+    "Your note has to be kept alive" to "您的笔记需要保持有效",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "您的钱包只签署一项声明。这不是交易，也不会转移资金。同一钱包可在任何设备上重建相同的 Passport。",
     "active days" to "活跃天数",
@@ -255,6 +276,10 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "storage" to "存储",
     "support the builder" to "支持开发者",
     "technocore.chat answered" to "technocore.chat 已响应",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat 会删除连续七天无人写入的内容。这也包括您保存和分享的地址上的身份笔记.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat 会删除连续七天没有写入的内容。今天签署记录会重写您的笔记，并重新开始计算七天.",
     "technocore.chat refused the note" to "technocore.chat 拒绝了该记录",
     "technocore.chat refused the signed write" to "technocore.chat 拒绝了签名写入",
     "text" to "文本",

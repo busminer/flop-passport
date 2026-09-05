@@ -103,9 +103,21 @@ object NoteLife {
         LOST,
     }
 
+    /**
+     * How long to keep saying the note is gone before accepting the answer.
+     *
+     * A daily notification that never stops is how an app gets uninstalled, and it would
+     * be the same sentence every morning to somebody who has already decided. Two weeks is
+     * long enough to catch a holiday and short enough not to become furniture. After that
+     * the app goes quiet and waits to be opened, which is the only thing that would change
+     * the situation anyway.
+     */
+    private const val GIVE_UP_AFTER_DAYS = TTL_DAYS + 14
+
     fun urgency(daysSince: Int): Urgency = when {
         daysSince == UNKNOWN -> Urgency.NUDGE
         daysSince <= 0 -> Urgency.SILENT
+        daysSince > GIVE_UP_AFTER_DAYS -> Urgency.SILENT
         daysSince >= TTL_DAYS -> Urgency.LOST
         daysSince >= TTL_DAYS - 3 -> Urgency.WARNING
         else -> Urgency.NUDGE

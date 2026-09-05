@@ -57,7 +57,16 @@ class NoteLifeTest {
     fun `the seventh day is the day it is gone, not the day before`() {
         assertEquals(NoteLife.Urgency.WARNING, NoteLife.urgency(NoteLife.TTL_DAYS - 1))
         assertEquals(NoteLife.Urgency.LOST, NoteLife.urgency(NoteLife.TTL_DAYS))
-        assertEquals(NoteLife.Urgency.LOST, NoteLife.urgency(40))
+    }
+
+    @Test
+    fun `it stops saying it eventually, rather than notifying forever`() {
+        // Somebody who walked away has heard the answer. Repeating it every morning until
+        // they uninstall is not diligence, and the app cannot fix anything they are no
+        // longer opening.
+        assertEquals(NoteLife.Urgency.LOST, NoteLife.urgency(NoteLife.TTL_DAYS + 14))
+        assertEquals(NoteLife.Urgency.SILENT, NoteLife.urgency(NoteLife.TTL_DAYS + 15))
+        assertEquals(NoteLife.Urgency.SILENT, NoteLife.urgency(400))
     }
 
     @Test

@@ -24,8 +24,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Anahtarınızdan türetilen bir adreste kalıcı bir not; böylece daha sonra herkes sizi bulup doğrulayabilir.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Anahtarınızdan türetilen bir adreste yayımlanan herkese açık bir not; böylece daha sonra herkes sizi bulabilir ve doğrulayabilir.",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "İmzalı kayıt elle bırakılmalıdır ve kaçırılan bir gün daha sonra tamamlanamaz.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "İmzalı bir kaydı kendiniz bırakmanız gerekir ve kaçırılan bir gün daha sonra tamamlanamaz. Bu ayar ayrıca kimlik notunuz silinmeden önce sizi uyarır.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Bahşiş, Passport'ınız veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -68,6 +68,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Silinsin mi?",
     "Delete the Passport and create it again from your wallet." to
         "Passport'ı silin ve cüzdanınızdan yeniden oluşturun.",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "Yedi gün boyunca kayıt bırakılmadığı için silindi. Şimdi bir kayıt imzalarsanız aynı adrese geri gelir.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Silme işlemi Passport'ı yalnızca bu telefondan kaldırır. Daha önce yayımlanmış içerikler herkese açık kalabilir ve aynı cüzdan aynı kimliği yeniden oluşturur; dolayısıyla bu işlem hiçbir şeyi geri almaz.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -95,10 +97,14 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde doğrulandı.",
     "Identity note published, first check in verified." to
         "Kimlik notu yayımlandı, ilk kayıt doğrulandı.",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "Silinse bile Passport kaybolmaz: aynı cüzdan hâlâ aynı kimliği verir ve bir kayıt imzaladığınızda not aynı adreste yeniden yayımlanır.",
     "It never asks for your wallet recovery phrase." to
         "Cüzdan kurtarma ifadenizi hiçbir zaman istemez.",
     "It promises nothing about any airdrop, and never will." to
         "Herhangi bir airdrop hakkında hiçbir söz vermez ve vermeyecektir.",
+    "It will be deleted after seven days without a record." to
+        "Yedi gün boyunca kayıt bırakılmazsa silinecek.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Bu dosyayı çevrimdışı tutun. Uygulamanın yazarı dahil hiç kimseye göndermeyin.",
     "Keep your record going" to "Kaydınızı sürdürün",
@@ -133,6 +139,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
     "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
+    "Passport at risk" to "Passport risk altında",
     "Press Create again. Nothing was sent anywhere." to
         "Oluştur'a yeniden basın. Hiçbir yere hiçbir şey gönderilmedi.",
     "Protect" to "Koru",
@@ -151,6 +158,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "Kayıtlarınız okunuyor",
     "Ready" to "Hazır",
     "Remind me once a day" to "Bana günde bir kez hatırlat",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "Bugün yenilendi. technocore.chat, son yazma işleminden sonra onu yedi gün boyunca saklar ve bu uygulama her açtığınızda yeniden yazar.",
     "Sealed by Android Keystore" to "Android Keystore ile mühürlendi",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Bu telefonun ayrı güvenlik çipi StrongBox ile mühürlendi",
@@ -161,6 +170,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "İmzalı kaydınız gönderiliyor",
     "Sent, but not confirmed in the room yet" to "Gönderildi, ancak odada henüz doğrulanmadı",
     "Settings" to "Ayarlar",
+    "Seven days without a record. Open the app to publish it again." to
+        "Yedi gün boyunca kayıt bırakılmadı. Yeniden yayımlamak için uygulamayı açın.",
     "Show your private key" to "Özel anahtarınızı gösterin",
     "Signed, accepted and found again in the room" to
         "İmzalandı, kabul edildi ve odada yeniden bulundu",
@@ -183,10 +194,17 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu 32 bayt doğrudan FLOP Passport'ınızdır. Bunları elinde tutan kişi Technocore üzerinde sizin adınıza imzalayabilir. Çevrimdışı tutun ve biz dahil hiç kimseye göndermeyin.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Bu uygulama ücretsiz ve açık kaynaklıdır; geliştirilmesi için kimse ödeme yapmadı. Size bir öğleden sonra kazandırdıysa bahşiş bırakabilirsiniz.",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "Bu uygulama, her açtığınızda ve her kayıt imzaladığınızda notunuzu yeniden yazar, böylece yedi günlük süre yeniden başlar. Haftada en az bir kez açarsanız hiçbir şey kaybolmaz.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Bu, Solana cüzdan anahtarınız DEĞİLDİR. Cüzdanınızın kendi anahtarı Seed Vault dışına hiçbir zaman çıkmaz ve bu uygulama onu hiç görmemiştir. Gördüğünüz, yalnızca Technocore üzerinde imza atan ayrı bir anahtardır.",
+    "Three days left before it is deleted." to "Silinmesine üç gün kaldı.",
+    "Told only when your identity note is days away from being deleted." to
+        "Yalnızca kimlik notunuzun silinmesine birkaç gün kaldığında bildirim alırsınız.",
+    "Tomorrow is the last day." to "Yarın son gün.",
     "Try again. Nothing was posted." to "Yeniden deneyin. Hiçbir şey gönderilmedi.",
     "Try again. Nothing was published." to "Yeniden deneyin. Hiçbir şey yayımlanmadı.",
+    "Two days left before it is deleted." to "Silinmesine iki gün kaldı.",
     "Use the phone's language" to "Telefonun dilini kullan",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Bunu bir hata olarak değerlendirmeyin.",
@@ -213,11 +231,16 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Passport'ınız yayında.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport tek bir cüzdan imzasından yeniden oluşturulur; kaybedilecek bir seed ifadesi bu yüzden yoktur. Aynı gerçek tersine de işler: cüzdanınıza tam olarak o cümleyi imzalatan herhangi bir uygulama bu Passport'u yeniden oluşturabilir. Bir cüzdanın size imzalattığı şeyi burada ve her yerde okuyun.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Passport kaybolmadı: aynı cüzdan hâlâ aynı kimliği verir ve şimdi bir kayıt imzalarsanız not aynı adreste yeniden yayımlanır.",
+    "Your identity note expires soon" to "Kimlik notunuzun süresi yakında dolacak",
+    "Your identity note has been deleted" to "Kimlik notunuz silindi",
     "Your key is never sent anywhere. Only you can export it." to
         "Anahtarınız hiçbir yere gönderilmez. Yalnızca siz dışa aktarabilirsiniz.",
     "Your key never leaves this phone." to "Anahtarınız bu telefondan hiçbir zaman ayrılmaz.",
     "Your key signed a line carrying this note's exact hash." to
         "Anahtarınız bu notun tam karmasını taşıyan bir satırı imzaladı.",
+    "Your note has to be kept alive" to "Notunuz aktif tutulmalı",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Cüzdanınız tek bir beyanı imzalar. Bu bir işlem değildir ve hiçbir fonu taşımaz. Aynı cüzdan, aynı Passport'ı herhangi bir cihazda yeniden oluşturur.",
     "active days" to "etkin gün",
@@ -288,6 +311,10 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "storage" to "depolama",
     "support the builder" to "geliştiriciyi destekle",
     "technocore.chat answered" to "technocore.chat yanıtladı",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat, yedi gün boyunca kimsenin üzerine yazmadığı her şeyi siler. Kaydedip paylaştığınız adresteki kimlik notu da buna dahildir.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat, yedi gün boyunca üzerine hiçbir şey yazılmayan her şeyi siler. Bugün imza atmak notunuzu yeniden yazar ve yedi günlük süreyi yeniden başlatır.",
     "technocore.chat refused the note" to "technocore.chat notu reddetti",
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",

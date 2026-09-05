@@ -24,8 +24,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Catatan permanen di alamat yang berasal dari kunci Anda, agar siapa pun dapat menemukan dan memverifikasi Anda nanti.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Catatan publik di alamat yang diturunkan dari kunci Anda, sehingga siapa pun dapat menemukan dan memverifikasi Anda nanti.",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "Catatan yang ditandatangani secara kriptografis harus ditinggalkan secara manual, dan hari yang terlewat tidak dapat diisi nanti.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "Catatan bertanda tangan harus dibuat sendiri, dan hari yang terlewat tidak dapat diisi nanti. Ini juga merupakan pengaturan yang memperingatkan Anda sebelum catatan identitas Anda dihapus.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Tip tidak mengubah apa pun pada Passport Anda maupun airdrop apa pun.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -68,6 +68,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Hapus?",
     "Delete the Passport and create it again from your wallet." to
         "Hapus Passport lalu buat kembali dari dompet Anda.",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "Dihapus setelah tujuh hari tanpa catatan baru. Tandatangani satu sekarang dan catatan tersebut akan kembali ke alamat yang sama.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Menghapus hanya akan menghapus Passport dari ponsel ini. Apa pun yang sudah dipublikasikan mungkin tetap bersifat publik, dan dompet yang sama akan membangun kembali identitas yang sama - jadi ini bukan cara untuk mengurungkan apa pun.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -96,10 +98,14 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Catatan identitas diterbitkan, pencatatan pertama diverifikasi di Technocore.",
     "Identity note published, first check in verified." to
         "Catatan identitas diterbitkan, pencatatan pertama diverifikasi.",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "Jika catatan tersebut dihapus, Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani catatan akan menerbitkannya kembali ke alamat yang sama.",
     "It never asks for your wallet recovery phrase." to
         "Aplikasi ini tidak pernah meminta frasa pemulihan dompet Anda.",
     "It promises nothing about any airdrop, and never will." to
         "Aplikasi ini tidak menjanjikan apa pun tentang airdrop mana pun dan tidak akan pernah melakukannya.",
+    "It will be deleted after seven days without a record." to
+        "Catatan akan dihapus setelah tujuh hari tanpa catatan baru.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Simpan berkas ini secara offline. Jangan pernah mengirimkannya kepada siapa pun, termasuk pembuat aplikasi.",
     "Keep your record going" to "Pertahankan catatan Anda",
@@ -135,6 +141,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
     "Opening a connection" to "Membuka koneksi",
     "Opening your Solana wallet" to "Membuka dompet Solana Anda",
+    "Passport at risk" to "Passport berisiko",
     "Press Create again. Nothing was sent anywhere." to
         "Tekan Buat lagi. Tidak ada yang dikirim ke mana pun.",
     "Protect" to "Lindungi",
@@ -153,6 +160,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "Membaca rekaman Anda",
     "Ready" to "Siap",
     "Remind me once a day" to "Ingatkan saya sekali sehari",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "Diperbarui hari ini. technocore.chat menyimpannya selama tujuh hari setelah penulisan terakhir, dan aplikasi ini menulis ulang catatan tersebut setiap kali Anda membukanya.",
     "Sealed by Android Keystore" to "Disegel oleh Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Disegel oleh StrongBox, cip keamanan terpisah pada ponsel ini",
@@ -163,6 +172,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "Mengirim rekaman bertanda tangan Anda",
     "Sent, but not confirmed in the room yet" to "Terkirim, tetapi belum dikonfirmasi di ruang",
     "Settings" to "Pengaturan",
+    "Seven days without a record. Open the app to publish it again." to
+        "Tujuh hari tanpa catatan. Buka aplikasi untuk menerbitkannya lagi.",
     "Show your private key" to "Tampilkan kunci privat Anda",
     "Signed, accepted and found again in the room" to
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
@@ -188,10 +199,17 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "32 byte ini adalah FLOP Passport Anda sendiri. Siapa pun yang memegangnya dapat menandatangani sebagai Anda di Technocore. Simpan secara offline dan jangan pernah mengirimkannya kepada siapa pun, termasuk kami.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Aplikasi ini gratis dan bersumber terbuka, dan tidak ada yang membayarnya. Jika aplikasi ini menghemat waktu Anda, tip dapat diberikan.",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "Aplikasi ini menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani catatan, sehingga periode tujuh hari dimulai lagi. Buka aplikasi setidaknya sekali seminggu agar tidak ada yang hilang.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Ini BUKAN kunci dompet Solana Anda. Kunci dompet Anda tidak pernah meninggalkan Seed Vault dan tidak pernah dilihat aplikasi ini. Yang Anda lihat adalah kunci terpisah yang hanya menandatangani di Technocore.",
+    "Three days left before it is deleted." to "Tiga hari lagi sebelum dihapus.",
+    "Told only when your identity note is days away from being deleted." to
+        "Anda hanya diberi tahu saat catatan identitas Anda tinggal beberapa hari lagi sebelum dihapus.",
+    "Tomorrow is the last day." to "Besok adalah hari terakhir.",
     "Try again. Nothing was posted." to "Coba lagi. Tidak ada yang dikirim.",
     "Try again. Nothing was published." to "Coba lagi. Tidak ada yang diterbitkan.",
+    "Two days left before it is deleted." to "Dua hari lagi sebelum dihapus.",
     "Use the phone's language" to "Gunakan bahasa ponsel",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Tunggu sebentar lalu tekan lagi untuk memeriksa ulang. Jangan anggap ini sebagai kegagalan.",
@@ -218,11 +236,16 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Passport Anda aktif.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport Anda dibangun ulang dari satu tanda tangan dompet, itulah sebabnya tidak ada frasa seed yang bisa hilang. Hal yang sama berlaku sebaliknya: aplikasi mana pun yang membujuk dompet Anda menandatangani kalimat yang persis sama dapat membangun ulang Passport ini. Bacalah apa yang diminta dompet untuk Anda tanda tangani, di sini dan di mana pun.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani catatan sekarang akan menerbitkan kembali catatan tersebut ke alamat yang sama.",
+    "Your identity note expires soon" to "Catatan identitas Anda akan segera kedaluwarsa",
+    "Your identity note has been deleted" to "Catatan identitas Anda telah dihapus",
     "Your key is never sent anywhere. Only you can export it." to
         "Kunci Anda tidak pernah dikirim ke mana pun. Hanya Anda yang dapat mengekspornya.",
     "Your key never leaves this phone." to "Kunci Anda tidak pernah meninggalkan ponsel ini.",
     "Your key signed a line carrying this note's exact hash." to
         "Kunci Anda menandatangani baris yang memuat hash persis catatan ini.",
+    "Your note has to be kept alive" to "Catatan Anda harus tetap aktif",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Dompet Anda menandatangani satu pernyataan. Ini bukan transaksi dan tidak memindahkan dana. Dompet yang sama membangun kembali Passport yang sama di perangkat mana pun.",
     "active days" to "hari aktif",
@@ -292,6 +315,10 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "storage" to "penyimpanan",
     "support the builder" to "dukung pengembang",
     "technocore.chat answered" to "technocore.chat menjawab",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat menghapus apa pun yang tidak ditulisi siapa pun selama tujuh hari. Ini termasuk catatan identitas di alamat yang Anda simpan dan bagikan.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat menghapus apa pun yang tidak ditulisi selama tujuh hari. Menandatangani hari ini akan menulis ulang catatan Anda dan memulai kembali periode tujuh hari.",
     "technocore.chat refused the note" to "technocore.chat menolak catatan",
     "technocore.chat refused the signed write" to
         "technocore.chat menolak penulisan bertanda tangan",

@@ -24,8 +24,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Una nota permanente en una dirección derivada de su clave, para que cualquiera pueda encontrarla y verificar su identidad después.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Una nota pública en una dirección derivada de su clave, para que cualquiera pueda encontrar y verificar su identidad más adelante.",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "Un registro firmado debe dejarse manualmente, y un día omitido no puede añadirse después.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "Debes dejar un registro firmado manualmente, y no puedes recuperar más adelante un día perdido. Esta opción también activa el aviso antes de que se elimine tu nota de identidad.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Una propina no cambia nada de su Passport ni de ningún airdrop.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -67,6 +67,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "¿Eliminarlo?",
     "Delete the Passport and create it again from your wallet." to
         "Elimine el Passport y vuelva a crearlo desde su cartera.",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "Eliminada después de siete días sin ningún registro. Firma uno ahora y volverá a la misma dirección.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Eliminar solo borra el Passport de este teléfono. Lo que ya se haya publicado puede seguir siendo público, y la misma cartera reconstruye la misma identidad; por tanto, esto no permite deshacer nada.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -95,10 +97,14 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Nota de identidad publicada; primer registro verificado en Technocore.",
     "Identity note published, first check in verified." to
         "Nota de identidad publicada; primer registro verificado.",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "Si se elimina, tu Passport no desaparece: la misma cartera sigue generando la misma identidad, y firmar un registro vuelve a publicar la nota en la misma dirección.",
     "It never asks for your wallet recovery phrase." to
         "Nunca solicita la frase de recuperación de su cartera.",
     "It promises nothing about any airdrop, and never will." to
         "No promete nada sobre ningún airdrop ni lo hará nunca.",
+    "It will be deleted after seven days without a record." to
+        "Se eliminará después de siete días sin ningún registro.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Mantenga este archivo sin conexión. Nunca lo envíe a nadie, incluido el autor de la aplicación.",
     "Keep your record going" to "Mantenga activo su registro",
@@ -133,6 +139,7 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Solo se muestran idiomas con una traducción real. Un selector que ofreciera idiomas que se muestran todos en inglés indicaría que su idioma es compatible y demostraría lo contrario en la pantalla siguiente.",
     "Opening a connection" to "Abriendo una conexión",
     "Opening your Solana wallet" to "Abriendo su cartera Solana",
+    "Passport at risk" to "Passport en riesgo",
     "Press Create again. Nothing was sent anywhere." to
         "Pulse Crear de nuevo. No se envió nada.",
     "Protect" to "Proteger",
@@ -151,6 +158,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "Leyendo sus registros",
     "Ready" to "Listo",
     "Remind me once a day" to "Recordármelo una vez al día",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "Renovada hoy. technocore.chat la conserva durante siete días desde la última vez que se escribió en ella, y esta aplicación vuelve a escribirla cada vez que la abres.",
     "Sealed by Android Keystore" to "Sellado por Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Sellado por StrongBox, el chip de seguridad independiente de este teléfono",
@@ -161,6 +170,8 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "Enviando su registro firmado",
     "Sent, but not confirmed in the room yet" to "Enviado, pero aún no confirmado en la sala",
     "Settings" to "Ajustes",
+    "Seven days without a record. Open the app to publish it again." to
+        "Siete días sin ningún registro. Abre la aplicación para publicarla de nuevo.",
     "Show your private key" to "Mostrar su clave privada",
     "Signed, accepted and found again in the room" to
         "Firmado, aceptado y encontrado de nuevo en la sala",
@@ -185,10 +196,17 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "Estos 32 bytes son su propio FLOP Passport. Quien los tenga puede firmar como usted en Technocore. Manténgalos sin conexión y nunca se los envíe a nadie, tampoco a nosotros.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Esta aplicación es gratuita y de código abierto, y nadie pagó por crearla. Si le ahorró una tarde, puede dejar una propina.",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "Esta aplicación vuelve a escribir tu nota cada vez que la abres y cada vez que firmas un registro, por lo que el plazo de siete días comienza de nuevo. Ábrela al menos una vez por semana y nunca se perderá nada.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Esta NO es la clave de su cartera Solana. La clave de la cartera nunca sale de Seed Vault y esta aplicación nunca la ha visto. Lo que está viendo es una clave independiente que solo firma en Technocore.",
+    "Three days left before it is deleted." to "Quedan tres días para que se elimine.",
+    "Told only when your identity note is days away from being deleted." to
+        "Solo recibirás un aviso cuando falten pocos días para que se elimine tu nota de identidad.",
+    "Tomorrow is the last day." to "Mañana es el último día.",
     "Try again. Nothing was posted." to "Inténtelo de nuevo. No se publicó nada.",
     "Try again. Nothing was published." to "Inténtelo de nuevo. No se publicó nada.",
+    "Two days left before it is deleted." to "Quedan dos días para que se elimine.",
     "Use the phone's language" to "Usar el idioma del teléfono",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Espere un momento y vuelva a pulsarlo para comprobarlo de nuevo. No lo considere un fallo.",
@@ -215,11 +233,16 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Su Passport está activo.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Su Passport se reconstruye a partir de una sola firma de la billetera, por eso no hay ninguna frase semilla que perder. Lo mismo vale al revés: cualquier aplicación que convenza a su billetera de firmar esa frase exacta puede reconstruir este Passport. Lea lo que una billetera le pide firmar, aquí y en todas partes.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Tu Passport no se ha perdido: la misma cartera sigue generando la misma identidad, y firmar un registro ahora vuelve a publicar la nota en la misma dirección.",
+    "Your identity note expires soon" to "Tu nota de identidad caduca pronto",
+    "Your identity note has been deleted" to "Tu nota de identidad ha sido eliminada",
     "Your key is never sent anywhere. Only you can export it." to
         "Su clave nunca se envía a ningún sitio. Solo usted puede exportarla.",
     "Your key never leaves this phone." to "Su clave nunca sale de este teléfono.",
     "Your key signed a line carrying this note's exact hash." to
         "Su clave firmó una línea con el hash exacto de esta nota.",
+    "Your note has to be kept alive" to "Debes mantener activa tu nota",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Su cartera firma una declaración. No es una transacción ni mueve fondos. La misma cartera reconstruye el mismo Passport en cualquier dispositivo.",
     "active days" to "días activos",
@@ -290,6 +313,10 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
     "storage" to "almacenamiento",
     "support the builder" to "apoyar al desarrollador",
     "technocore.chat answered" to "technocore.chat respondió",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat elimina todo aquello en lo que nadie haya escrito durante siete días. Esto incluye la nota de identidad de la dirección que guardas y compartes.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat elimina todo aquello en lo que no se haya escrito durante siete días. Firmar hoy vuelve a escribir tu nota y reinicia el plazo de siete días.",
     "technocore.chat refused the note" to "technocore.chat rechazó la nota",
     "technocore.chat refused the signed write" to
         "technocore.chat rechazó la escritura firmada",

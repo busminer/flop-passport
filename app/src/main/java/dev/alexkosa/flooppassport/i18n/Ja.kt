@@ -23,8 +23,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "鍵から導出したアドレスに残る恒久的なノートです。後から誰でも見つけて検証できます。",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "鍵から導出されたアドレスに置かれる公開ノートです。後から誰でも見つけて検証できます。",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "署名済み記録は手動で残す必要があり、記録しなかった日を後から埋めることはできません。",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "署名付き記録は手動で残す必要があり、記録し忘れた日は後から埋められません。この設定は、身元情報のノートが削除される前に警告する機能も兼ねています。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "チップはPassportにも、いかなるエアドロップにも影響しません。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -62,6 +62,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "削除しますか？",
     "Delete the Passport and create it again from your wallet." to
         "Passportを削除し、ウォレットから再作成します。",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "七日間記録がなかったため削除されました。今署名すると、同じアドレスに戻ります。",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "削除しても、この端末からPassportが消えるだけです。公開済みの内容は公開されたまま残ることがあり、同じウォレットから同じアイデンティティが再構築されるため、取り消す手段にはなりません。",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -85,8 +87,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified on Technocore." to
         "IDノートを公開し、最初の記録をTechnocore上で検証しました。",
     "Identity note published, first check in verified." to "IDノートを公開し、最初の記録を検証しました。",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "削除されてもPassportは失われません。同じウォレットから同じ身元情報を取得でき、記録に署名すると、同じアドレスにノートが再公開されます。",
     "It never asks for your wallet recovery phrase." to "ウォレットのリカバリーフレーズを求めることはありません。",
     "It promises nothing about any airdrop, and never will." to "いかなるエアドロップも約束せず、今後も約束しません。",
+    "It will be deleted after seven days without a record." to "七日間記録がないと削除されます。",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "このファイルはオフラインで保管してください。アプリ作者を含め、誰にも送らないでください。",
     "Keep your record going" to "記録を継続する",
@@ -114,6 +119,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "実際の翻訳がある言語のみを表示しています。すべて英語で表示される言語を選択肢に含めると、対応言語と表示されても、次の画面では対応していないことになります。",
     "Opening a connection" to "接続を開始しています",
     "Opening your Solana wallet" to "Solanaウォレットを開いています",
+    "Passport at risk" to "Passportが失われるおそれがあります",
     "Press Create again. Nothing was sent anywhere." to "もう一度「作成」を押してください。どこにも何も送信されていません。",
     "Protect" to "保護",
     "Protect it" to "保護する",
@@ -129,6 +135,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "記録を読み込み中",
     "Ready" to "準備完了",
     "Remind me once a day" to "1日1回通知する",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "今日更新されました。technocore.chatでは最後の書き込みから七日間保持され、このアプリを開くたびに書き直されます。",
     "Sealed by Android Keystore" to "Android Keystoreで封印済み",
     "Sealed by StrongBox, this phone's separate security chip" to
         "この端末の独立したセキュリティチップ、StrongBoxで封印済み",
@@ -137,6 +145,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "署名済み記録を送信中",
     "Sent, but not confirmed in the room yet" to "送信済みですが、まだルーム内で確認できません",
     "Settings" to "設定",
+    "Seven days without a record. Open the app to publish it again." to
+        "七日間、記録がありませんでした。アプリを開いて再公開してください。",
     "Show your private key" to "秘密鍵を表示",
     "Signed, accepted and found again in the room" to "署名、受理され、ルーム内で再確認されました",
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
@@ -158,10 +168,17 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "この32バイトがFLOP Passportそのものです。これを持つ人はTechnocore上で本人として署名できます。オフラインで保管し、当方を含め誰にも送らないでください。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "このアプリは無料のオープンソースで、開発に対する報酬は受けていません。作業時間の節約になった場合は、チップを送ることができます。",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "このアプリは、開くたび、また記録に署名するたびにノートを書き直すため、七日間の期限が再び始まります。少なくとも週に一度開けば、何も失われません。",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "これはSolanaウォレットの鍵ではありません。ウォレット自体の鍵はSeed Vaultから出ず、このアプリが取得したこともありません。表示しているのは、Technocore上でのみ署名する別の鍵です。",
+    "Three days left before it is deleted." to "削除まであと三日です。",
+    "Told only when your identity note is days away from being deleted." to
+        "身元情報のノートが削除される数日前にのみ通知されます。",
+    "Tomorrow is the last day." to "明日が最後の日です。",
     "Try again. Nothing was posted." to "もう一度お試しください。何も投稿されていません。",
     "Try again. Nothing was published." to "もう一度お試しください。何も公開されていません。",
+    "Two days left before it is deleted." to "削除まであと二日です。",
     "Use the phone's language" to "端末の言語を使用",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "少し待ってから、もう一度押して再確認してください。失敗として扱う必要はありません。",
@@ -187,11 +204,16 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Passportは公開されています。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport はウォレットの署名ひとつから再構成されます。だから失うシードフレーズが ありません。同じことは逆にも働きます。まったく同じ文にウォレットで署名させられる アプリは、この Passport を再構成できます。ウォレットが何に署名を求めているかを、ここでも、ほかのどこでも読んでください。",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Passport自体は失われていません。同じウォレットから同じ身元情報を取得でき、今記録に署名すると、同じアドレスにノートが再公開されます。",
+    "Your identity note expires soon" to "身元情報のノートの有効期限が近づいています",
+    "Your identity note has been deleted" to "身元情報のノートが削除されました",
     "Your key is never sent anywhere. Only you can export it." to
         "鍵が外部に送信されることはありません。エクスポートできるのは本人だけです。",
     "Your key never leaves this phone." to "鍵がこの端末から出ることはありません。",
     "Your key signed a line carrying this note's exact hash." to
         "あなたの鍵が、このノートの正確なハッシュを含む行に署名しました。",
+    "Your note has to be kept alive" to "ノートを維持する必要があります",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "ウォレットは1つの文に署名します。トランザクションではなく、資金は移動しません。同じウォレットから、どの端末でも同じPassportを再構築できます。",
     "active days" to "活動日数",
@@ -260,6 +282,10 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "storage" to "ストレージ",
     "support the builder" to "開発者を支援",
     "technocore.chat answered" to "technocore.chat が応答しました",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chatでは、誰も七日間書き込まなかったものは削除されます。保存して共有するアドレスにある身元情報のノートも対象です。",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chatでは、七日間書き込みがないものは削除されます。今日署名するとノートが書き直され、七日間の期限が再び始まります。",
     "technocore.chat refused the note" to "technocore.chatがノートを拒否しました",
     "technocore.chat refused the signed write" to "technocore.chatが署名済み書き込みを拒否しました",
     "text" to "テキスト",

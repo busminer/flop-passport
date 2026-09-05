@@ -24,8 +24,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Постоянная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вашу личность.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "Публичная запись по адресу, полученному из вашего ключа, чтобы позже любой мог найти и проверить вас.",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "Подписанную запись нужно оставить вручную, а пропущенный день нельзя заполнить позже.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "Подписанную отметку нужно оставлять вручную, а пропущенный день нельзя добавить позже. Этот переключатель также включает предупреждения перед удалением записи о вашей личности.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Чаевые ничего не меняют в вашем Passport и не влияют ни на один аирдроп.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -67,6 +67,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Удалить?",
     "Delete the Passport and create it again from your wallet." to
         "Удалите Passport и создайте его заново из своего кошелька.",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "Удалена после семи дней без отметок. Подпишите отметку сейчас, и запись вернётся по тому же адресу.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Удаление убирает Passport только с этого телефона. Всё уже опубликованное может остаться публичным, а тот же кошелёк восстановит ту же идентичность — поэтому так нельзя отменить выполненные действия.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -95,10 +97,14 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Запись о личности опубликована, первая запись проверена в Technocore.",
     "Identity note published, first check in verified." to
         "Запись о личности опубликована, первая запись проверена.",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "Если запись всё же удалят, ваш Passport не исчезнет: тот же кошелёк по-прежнему создаёт ту же личность, а подписанная отметка вернёт запись по тому же адресу.",
     "It never asks for your wallet recovery phrase." to
         "Приложение никогда не запрашивает фразу восстановления кошелька.",
     "It promises nothing about any airdrop, and never will." to
         "Приложение ничего не обещает в отношении какого-либо аирдропа и никогда не будет.",
+    "It will be deleted after seven days without a record." to
+        "Она будет удалена, если семь дней не будет отметок.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Храните этот файл офлайн. Никому его не отправляйте, включая автора приложения.",
     "Keep your record going" to "Продолжайте вести записи",
@@ -133,6 +139,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
     "Opening a connection" to "Установка соединения",
     "Opening your Solana wallet" to "Открывается ваш кошелёк Solana",
+    "Passport at risk" to "Passport под угрозой",
     "Press Create again. Nothing was sent anywhere." to
         "Нажмите «Создать» ещё раз. Ничего никуда не отправлено.",
     "Protect" to "Защитить",
@@ -151,6 +158,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "Чтение записей",
     "Ready" to "Готово",
     "Remind me once a day" to "Напоминать раз в день",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "Обновлена сегодня. technocore.chat хранит её семь дней после последнего обновления, а приложение обновляет её при каждом открытии.",
     "Sealed by Android Keystore" to "Запечатано через Android Keystore",
     "Sealed by StrongBox, this phone's separate security chip" to
         "Запечатано через StrongBox, отдельный защитный чип телефона",
@@ -162,6 +171,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Sent, but not confirmed in the room yet" to
         "Отправлено, но пока не подтверждено в комнате",
     "Settings" to "Настройки",
+    "Seven days without a record. Open the app to publish it again." to
+        "Семь дней без отметок. Откройте приложение, чтобы опубликовать её снова.",
     "Show your private key" to "Показать закрытый ключ",
     "Signed, accepted and found again in the room" to
         "Подписано, принято и снова найдено в комнате",
@@ -187,10 +198,17 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Эти 32 байта и есть ваш FLOP Passport. Их владелец сможет подписывать от вашего имени в Technocore. Храните их офлайн и никому не отправляйте, включая нас.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Это бесплатное приложение с открытым исходным кодом, созданное без оплаты. Если оно сэкономило вам несколько часов, можно оставить чаевые.",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "Приложение обновляет запись при каждом открытии и при каждой подписанной отметке, поэтому отсчёт семи дней начинается заново. Открывайте его хотя бы раз в неделю, и ничего не потеряется.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Это НЕ ключ вашего кошелька Solana. Собственный ключ кошелька никогда не покидает Seed Vault, и приложение его не видело. Перед вами отдельный ключ, используемый для подписания только в Technocore.",
+    "Three days left before it is deleted." to "До удаления осталось три дня.",
+    "Told only when your identity note is days away from being deleted." to
+        "Вы получите уведомление, только когда до удаления записи о вашей личности останется несколько дней.",
+    "Tomorrow is the last day." to "Завтра последний день.",
     "Try again. Nothing was posted." to "Повторите попытку. Ничего не отправлено.",
     "Try again. Nothing was published." to "Повторите попытку. Ничего не опубликовано.",
+    "Two days left before it is deleted." to "До удаления осталось два дня.",
     "Use the phone's language" to "Использовать язык телефона",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "Подождите немного и нажмите ещё раз для повторной проверки. Не считайте это ошибкой.",
@@ -217,11 +235,16 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Ваш Passport действует.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport восстанавливается из одной подписи кошелька — поэтому и нет seed-фразы, которую можно потерять. У этого есть обратная сторона: любое приложение, уговорившее ваш кошелёк подписать ровно ту же фразу, восстановит этот Passport. Читайте, что кошелёк просит подписать, здесь и везде.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Сам Passport не потерян: тот же кошелёк по-прежнему создаёт ту же личность, а если подписать отметку сейчас, запись снова появится по тому же адресу.",
+    "Your identity note expires soon" to "Запись о вашей личности скоро исчезнет",
+    "Your identity note has been deleted" to "Запись о вашей личности удалена",
     "Your key is never sent anywhere. Only you can export it." to
         "Ваш ключ никуда не отправляется. Экспортировать его можете только вы.",
     "Your key never leaves this phone." to "Ваш ключ никогда не покидает этот телефон.",
     "Your key signed a line carrying this note's exact hash." to
         "Ваш ключ подписал строку с точным хэшем этой заметки.",
+    "Your note has to be kept alive" to "Запись нужно поддерживать",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Ваш кошелёк подписывает одно утверждение. Это не транзакция, и средства не перемещаются. Тот же кошелёк воссоздаёт тот же Passport на любом устройстве.",
     "active days" to "активных дней",
@@ -291,6 +314,10 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "storage" to "хранилище",
     "support the builder" to "поддержать разработчика",
     "technocore.chat answered" to "technocore.chat ответил",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat удаляет всё, что никто не обновлял семь дней. Это касается и записи о вашей личности по адресу, который вы сохраняете и публикуете.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat удаляет всё, что не обновлялось семь дней. Подпишите отметку сегодня, чтобы обновить запись и начать отсчёт семи дней заново.",
     "technocore.chat refused the note" to "technocore.chat отклонил запись",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
     "text" to "текст",

@@ -24,8 +24,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "키에서 파생된 주소에 남기는 영구 메모로, 나중에 누구나 신원을 찾아 검증할 수 있습니다.",
     "A public note at an address derived from your key, so anyone can find and verify you later." to
         "키에서 파생된 주소에 공개 메모를 남겨, 나중에 누구나 사용자를 찾고 검증할 수 있습니다.",
-    "A signed record has to be left by hand, and a missed day cannot be filled in later." to
-        "서명된 기록은 수동으로 남겨야 하며, 놓친 날은 나중에 채울 수 없습니다.",
+    "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
+        "서명된 기록은 직접 남겨야 하며, 놓친 날은 나중에 채울 수 없습니다. 이 설정을 켜면 신원 노트가 삭제되기 전에 알림도 받을 수 있습니다.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "후원금은 Passport나 에어드롭에 아무 영향도 주지 않습니다.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -63,6 +63,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "삭제하시겠습니까?",
     "Delete the Passport and create it again from your wallet." to
         "Passport를 삭제하고 지갑에서 다시 생성하세요.",
+    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
+        "기록 없이 일주일이 지나 삭제되었습니다. 지금 기록에 서명하면 같은 주소에 다시 게시됩니다.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "삭제하면 이 휴대전화에서만 Passport가 제거됩니다. 이미 게시된 내용은 계속 공개될 수 있으며, 같은 지갑으로 같은 신원을 다시 만들 수 있으므로 어떤 것도 되돌릴 수 없습니다.",
     "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
@@ -86,9 +88,12 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Identity note published, first check in verified on Technocore." to
         "신원 메모가 게시됐으며 첫 기록이 Technocore에서 검증됐습니다.",
     "Identity note published, first check in verified." to "신원 메모가 게시됐으며 첫 기록이 검증됐습니다.",
+    "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
+        "노트가 삭제되더라도 Passport는 사라지지 않습니다. 같은 지갑에서는 여전히 같은 신원이 생성되며, 기록에 서명하면 같은 주소에 노트가 다시 게시됩니다.",
     "It never asks for your wallet recovery phrase." to "지갑 복구 문구를 요청하지 않습니다.",
     "It promises nothing about any airdrop, and never will." to
         "어떠한 에어드롭도 약속하지 않으며 앞으로도 약속하지 않습니다.",
+    "It will be deleted after seven days without a record." to "기록 없이 일주일이 지나면 삭제됩니다.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "이 파일은 오프라인으로 보관하세요. 앱 제작자를 포함해 누구에게도 보내지 마세요.",
     "Keep your record going" to "기록을 이어 가세요",
@@ -116,6 +121,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "실제 번역이 있는 언어만 표시됩니다. 모든 언어를 영어로 표시하는 선택기는 해당 언어를 지원한다고 안내하지만 다음 화면에서는 그렇지 않음을 보여줍니다.",
     "Opening a connection" to "연결을 여는 중",
     "Opening your Solana wallet" to "Solana 지갑 여는 중",
+    "Passport at risk" to "Passport가 위험합니다",
     "Press Create again. Nothing was sent anywhere." to "생성을 다시 누르세요. 어디에도 전송된 내용은 없습니다.",
     "Protect" to "보호",
     "Protect it" to "보호하기",
@@ -131,6 +137,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Reading your records" to "기록을 읽는 중",
     "Ready" to "준비됨",
     "Remind me once a day" to "하루에 한 번 알림",
+    "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
+        "오늘 갱신되었습니다. technocore.chat은 마지막 작성 후 일주일 동안 노트를 보관하며, 이 앱은 열 때마다 노트를 다시 작성합니다.",
     "Sealed by Android Keystore" to "Android Keystore로 봉인됨",
     "Sealed by StrongBox, this phone's separate security chip" to
         "이 휴대전화의 별도 보안 칩인 StrongBox로 봉인됨",
@@ -139,6 +147,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "서명된 기록을 전송하는 중",
     "Sent, but not confirmed in the room yet" to "전송됐지만 아직 방에서 확인되지 않았습니다",
     "Settings" to "설정",
+    "Seven days without a record. Open the app to publish it again." to
+        "기록 없이 일주일이 지났습니다. 앱을 열어 다시 게시하세요.",
     "Show your private key" to "개인 키 보기",
     "Signed, accepted and found again in the room" to "서명되고 수락됐으며 방에서 다시 확인했습니다",
     "Signing your first check-in and sending it" to "첫 기록에 서명하고 전송하는 중",
@@ -160,10 +170,17 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "이 32바이트가 FLOP Passport 자체입니다. 이를 가진 사람은 누구나 Technocore에서 사용자의 신원으로 서명할 수 있습니다. 오프라인으로 보관하고 저희를 포함해 누구에게도 보내지 마세요.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "이 앱은 무료 오픈 소스이며 제작비를 지원한 곳은 없습니다. 이 앱으로 시간을 절약했다면 후원할 수 있습니다.",
+    "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
+        "이 앱은 열 때마다, 그리고 기록에 서명할 때마다 노트를 다시 작성하므로 일주일이 다시 시작됩니다. 적어도 일주일에 한 번 앱을 열면 아무것도 사라지지 않습니다.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "이것은 Solana 지갑 키가 아닙니다. 지갑의 키는 Seed Vault를 벗어나지 않으며 이 앱은 해당 키를 본 적이 없습니다. 지금 보고 있는 것은 Technocore에서만 서명하는 별도의 키입니다.",
+    "Three days left before it is deleted." to "삭제되기까지 사흘 남았습니다.",
+    "Told only when your identity note is days away from being deleted." to
+        "신원 노트가 삭제되기 며칠 전일 때만 알려드립니다.",
+    "Tomorrow is the last day." to "내일이 마지막 날입니다.",
     "Try again. Nothing was posted." to "다시 시도하세요. 게시된 내용은 없습니다.",
     "Try again. Nothing was published." to "다시 시도하세요. 공개된 내용은 없습니다.",
+    "Two days left before it is deleted." to "삭제되기까지 이틀 남았습니다.",
     "Use the phone's language" to "휴대전화의 언어 사용",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
         "잠시 기다린 뒤 다시 눌러 확인하세요. 실패로 간주하지 마세요.",
@@ -189,11 +206,16 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live." to "Passport가 활성화됐습니다.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport는 지갑 서명 하나로 다시 만들어집니다. 그래서 잃어버릴 시드 구문이 없습니다. 같은 사실이 반대로도 작용합니다. 지갑이 정확히 그 문장에 서명하도록 설득한 앱은 이 Passport를 다시 만들 수 있습니다. 지갑이 무엇에 서명하라고 요구하는지, 여기서도 다른 곳에서도 읽어 보세요.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
+        "Passport 자체는 사라지지 않았습니다. 같은 지갑에서는 여전히 같은 신원이 생성되며, 지금 기록에 서명하면 같은 주소에 노트가 다시 게시됩니다.",
+    "Your identity note expires soon" to "신원 노트가 곧 만료됩니다",
+    "Your identity note has been deleted" to "신원 노트가 삭제되었습니다",
     "Your key is never sent anywhere. Only you can export it." to
         "키는 어디에도 전송되지 않습니다. 내보낼 수 있는 사람은 사용자뿐입니다.",
     "Your key never leaves this phone." to "키는 이 휴대전화를 벗어나지 않습니다.",
     "Your key signed a line carrying this note's exact hash." to
         "키가 이 노트의 정확한 해시를 담은 줄에 서명했습니다.",
+    "Your note has to be kept alive" to "노트를 유지해야 합니다",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "지갑은 하나의 문장에 서명합니다. 이는 거래가 아니며 자금을 이동하지 않습니다. 동일한 지갑으로 어느 기기에서든 같은 Passport를 다시 만들 수 있습니다.",
     "active days" to "활동 일수",
@@ -261,6 +283,10 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "storage" to "저장소",
     "support the builder" to "개발자 후원",
     "technocore.chat answered" to "technocore.chat이 응답했습니다",
+    "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
+        "technocore.chat은 일주일 동안 아무도 작성하지 않은 항목을 삭제합니다. 여기에는 저장하고 공유하는 주소의 신원 노트도 포함됩니다.",
+    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
+        "technocore.chat은 일주일 동안 아무도 작성하지 않은 항목을 삭제합니다. 오늘 서명하면 노트가 다시 작성되고 일주일이 다시 시작됩니다.",
     "technocore.chat refused the note" to "technocore.chat에서 메모를 거부함",
     "technocore.chat refused the signed write" to "technocore.chat에서 서명된 쓰기를 거부함",
     "text" to "텍스트",
