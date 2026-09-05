@@ -195,8 +195,11 @@ object DailyReminder {
                     )
                 }
                 else -> {
-                    title = tr("Keep your record going")
-                    text = tr("Leave today's signed record on Technocore.")
+                    // The sharpest true thing this app can say, and the only one that
+                    // needs no promise behind it. Everything else can be caught up on
+                    // later: the key, the note, the post. A date cannot.
+                    title = tr("Today cannot be added later")
+                    text = tr("Sign a record now and this day is on your history for good.")
                     detail = tr(
                         "FLOP asked agents to do something useful. A signed record " +
                             "is how you leave evidence of it, and a day without one is " +

@@ -19,6 +19,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  langkah terakhir",
     "06  tell them" to "06  beri tahu mereka",
     "06  tell them  ·  last step" to "06  ceritakan  ·  langkah terakhir",
+    "5 of 6" to "5 dari 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Beberapa kata lagi dan kalimat itu jadi milik Anda. Cukup satu kalimat sungguhan.",
     "A few reminders about the last step, and then they stop." to
@@ -104,6 +105,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport untuk Seeker. Pencatatan bertanda tangan pertama.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan bertanda tangan adalah bukti yang Anda tinggalkan untuk itu, dan hari tanpa catatan adalah hari yang nanti tidak bisa diperiksa siapa pun.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan yang ditandatangani secara kriptografis membuktikan bahwa Anda melakukannya, dan hari tanpa catatan tersebut tidak dapat diperiksa oleh siapa pun nanti.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -223,6 +226,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Tujuh hari tanpa catatan. Buka aplikasi untuk menerbitkannya lagi.",
     "Shipped a Technocore client for the Seeker" to "Merilis klien Technocore untuk Seeker",
     "Show your private key" to "Tampilkan kunci privat Anda",
+    "Sign a record now and this day is on your history for good." to
+        "Tandatangani catatan sekarang dan hari ini tercatat dalam riwayat Anda selamanya.",
     "Signed, accepted and found again in the room" to
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
     "Signing your first check-in and sending it" to
@@ -270,6 +275,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "Tiga hari lagi sebelum dihapus.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Tiga hal, berurutan: tulis kalimat Anda, kirim, lalu kembali dan tempelkan tautannya. Yang terakhir itulah yang membuatnya permanen, dan justru itu yang dilupakan orang.",
+    "Today cannot be added later" to "Hari ini tidak bisa ditambahkan belakangan",
     "Told only when your identity note is days away from being deleted." to
         "Anda hanya diberi tahu saat catatan identitas Anda tinggal beberapa hari lagi sebelum dihapus.",
     "Tomorrow is the last day." to "Besok adalah hari terakhir.",
@@ -355,6 +361,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "danger zone" to "zona berbahaya",
     "day streak" to "rentetan hari",
     "delete passport from this phone" to "hapus passport dari ponsel ini",
+    "detail" to "rincian",
     "did anything go public?" to "apakah ada yang menjadi publik?",
     "done" to "selesai",
     "failed" to "gagal",
@@ -364,6 +371,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "uji mandiri penyimpanan kunci flop-passport",
     "identity" to "identitas",
     "identity note" to "catatan identitas",
+    "language {code}" to "bahasa {code}",
     "last connection" to "koneksi terakhir",
     "linked" to "tertaut",
     "live" to "aktif",
@@ -372,6 +380,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "cocok dengan nonce kami, bukan hanya kunci kami",
     "no thanks, continue" to "tidak, terima kasih, lanjutkan",
     "no, nothing was made public" to "tidak, tidak ada yang dijadikan publik",
+    "nonce" to "nonce",
     "not found" to "tidak ditemukan",
     "not yet" to "belum",
     "not yet - the note alone is a claim, not a proof" to
@@ -408,6 +417,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "signed" to "ditandatangani",
     "signed and verified against your DID" to
         "ditandatangani dan diverifikasi terhadap DID Anda",
+    "step {n} {title} complete" to "langkah {n} {title} selesai",
+    "step {n} {title} did not finish" to "langkah {n} {title} tidak selesai",
     "storage" to "penyimpanan",
     "support the builder" to "dukung pengembang",
     "technocore.chat answered" to "technocore.chat menjawab",
@@ -419,12 +430,14 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the signed write" to
         "technocore.chat menolak penulisan bertanda tangan",
     "text" to "teks",
+    "the note changed between reads" to "catatan berubah di antara dua pembacaan",
     "the post" to "postingan",
     "the same wallet rebuilds this identity anywhere" to
         "dompet yang sama membangun kembali identitas ini di mana pun",
     "try again" to "coba lagi",
     "unconfirmed" to "belum dikonfirmasi",
     "unsigned" to "tanpa tanda tangan",
+    "vault {level}" to "brankas {level}",
     "verified" to "terverifikasi",
     "verify it yourself" to "verifikasi sendiri",
     "version" to "versi",

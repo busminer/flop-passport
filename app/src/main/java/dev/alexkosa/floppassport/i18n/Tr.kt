@@ -19,6 +19,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  son adım",
     "06  tell them" to "06  onlara anlat",
     "06  tell them  ·  last step" to "06  anlat  ·  son adım",
+    "5 of 6" to "6 adımdan 5'i",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Birkaç kelime daha, ve satır senin olur. Tek bir gerçek cümle yeter.",
     "A few reminders about the last step, and then they stop." to
@@ -104,6 +105,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to
         "Seeker için FLOP Passport. İlk imzalı kayıt.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP ajanlardan faydalı bir şey yapmalarını istedi. İmzalı kayıt, bunu yaptığına dair bıraktığın izdir; kayıtsız bir gün ise sonradan kimsenin kontrol edemeyeceği bir gündür.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP, ajanlardan yararlı bir şey yapmalarını istedi. Bunu yaptığınızı imzalı bir kayıt kanıtlar; kayıtsız geçen bir günü daha sonra kimse doğrulayamaz.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -221,6 +224,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Shipped a Technocore client for the Seeker" to
         "Seeker için bir Technocore istemcisi yayınladım",
     "Show your private key" to "Özel anahtarınızı gösterin",
+    "Sign a record now and this day is on your history for good." to
+        "Şimdi bir kayıt imzala, bu gün geçmişinde kalıcı olarak kalsın.",
     "Signed, accepted and found again in the room" to
         "İmzalandı, kabul edildi ve odada yeniden bulundu",
     "Signing your first check-in and sending it" to "İlk kaydınız imzalanıp gönderiliyor",
@@ -266,6 +271,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "Silinmesine üç gün kaldı.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Sırayla üç şey: satırını yaz, paylaş, sonra geri gel ve bağlantıyı yapıştır. Kalıcı yapan sonuncusudur ve unutulan da tam olarak odur.",
+    "Today cannot be added later" to "Bugün sonradan eklenemez",
     "Told only when your identity note is days away from being deleted." to
         "Yalnızca kimlik notunuzun silinmesine birkaç gün kaldığında bildirim alırsınız.",
     "Tomorrow is the last day." to "Yarın son gün.",
@@ -362,6 +368,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "flop-passport güvenli depolama öz testi",
     "identity" to "kimlik",
     "identity note" to "kimlik notu",
+    "language {code}" to "dil {code}",
     "last connection" to "son bağlantı",
     "linked" to "bağlı",
     "live" to "etkin",
@@ -370,6 +377,7 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "yalnızca anahtarımızla değil, nonce değerimizle eşleşti",
     "no thanks, continue" to "hayır, teşekkürler; devam et",
     "no, nothing was made public" to "hayır, hiçbir şey herkese açılmadı",
+    "nonce" to "nonce",
     "not found" to "bulunamadı",
     "not yet" to "şimdi değil",
     "not yet - the note alone is a claim, not a proof" to
@@ -405,6 +413,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "bugünün kaydını imzala",
     "signed" to "imzalı",
     "signed and verified against your DID" to "imzalandı ve DID'nizle doğrulandı",
+    "step {n} {title} complete" to "{n}. adım {title} tamamlandı",
+    "step {n} {title} did not finish" to "{n}. adım {title} tamamlanmadı",
     "storage" to "depolama",
     "support the builder" to "geliştiriciyi destekle",
     "technocore.chat answered" to "technocore.chat yanıtladı",
@@ -416,12 +426,14 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",
     "text" to "metin",
+    "the note changed between reads" to "not iki okuma arasında değişti",
     "the post" to "gönderi",
     "the same wallet rebuilds this identity anywhere" to
         "aynı cüzdan bu kimliği her yerde yeniden oluşturur",
     "try again" to "yeniden dene",
     "unconfirmed" to "doğrulanmadı",
     "unsigned" to "imzasız",
+    "vault {level}" to "kasa {level}",
     "verified" to "doğrulandı",
     "verify it yourself" to "kendiniz doğrulayın",
     "version" to "sürüm",

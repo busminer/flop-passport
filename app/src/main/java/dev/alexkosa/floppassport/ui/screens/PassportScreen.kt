@@ -188,7 +188,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 FlopMonoData(identity)
                 Spacer(Modifier.height(FlopSpacing.sm))
                 Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
-                    FlopBadge("vault ${vm.securityLevel}", FlopState.Active)
+                    FlopBadge(t("vault {level}", "level" to vm.securityLevel.toString()), FlopState.Active)
                     if (vm.walletAddress != null) FlopBadge("wallet linked", FlopState.Verified)
                 }
             }
@@ -320,7 +320,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                     .padding(FlopSpacing.lg),
             ) {
                 Column {
-                    FlopLabel("5 of 6")
+                    FlopLabel(t("5 of 6"))
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Text(
                         t("Your Passport is live. One step left."),

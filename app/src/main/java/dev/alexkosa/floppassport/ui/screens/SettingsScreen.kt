@@ -339,8 +339,8 @@ fun SettingsScreen(
                 FlopMonoData(identity)
                 Spacer(Modifier.height(FlopSpacing.sm))
                 Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
-                    FlopBadge("vault ${vm.securityLevel}", FlopState.Active)
-                    FlopBadge("language ${effectiveLang.code}", FlopState.Neutral)
+                    FlopBadge(t("vault {level}", "level" to vm.securityLevel.toString()), FlopState.Active)
+                    FlopBadge(t("language {code}", "code" to effectiveLang.code), FlopState.Neutral)
                 }
             }
         }

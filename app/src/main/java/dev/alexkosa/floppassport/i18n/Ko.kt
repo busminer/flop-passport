@@ -19,6 +19,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  마지막 단계",
     "06  tell them" to "06  알려주기",
     "06  tell them  ·  last step" to "06  알리기  ·  마지막 단계",
+    "5 of 6" to "6단계 중 5단계",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "몇 마디만 더 쓰면 됩니다. 진짜 문장 하나면 충분합니다.",
     "A few reminders about the last step, and then they stop." to "마지막 단계에 대한 몇 번의 알림, 그 뒤에는 멈춥니다.",
@@ -94,6 +95,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker용 FLOP Passport - 비공개 백업",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1이 만든 Seeker용 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker용 FLOP Passport. 첫 번째 서명 기록.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP은 에이전트에게 쓸모 있는 일을 하라고 했습니다. 서명된 기록은 그 일을 했다는 흔적이고, 기록이 없는 하루는 나중에 아무도 확인할 수 없는 하루입니다.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP은 에이전트에게 유용한 일을 하도록 요청했습니다. 서명된 기록은 이를 수행했다는 증거이며, 기록이 없는 날은 나중에 누구도 확인할 수 없습니다.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -194,6 +197,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "기록 없이 일주일이 지났습니다. 앱을 열어 다시 게시하세요.",
     "Shipped a Technocore client for the Seeker" to "Seeker용 Technocore 클라이언트를 출시했습니다",
     "Show your private key" to "개인 키 보기",
+    "Sign a record now and this day is on your history for good." to
+        "지금 기록에 서명하면 오늘이 당신의 역사에 영구히 남습니다.",
     "Signed, accepted and found again in the room" to "서명되고 수락됐으며 방에서 다시 확인했습니다",
     "Signing your first check-in and sending it" to "첫 기록에 서명하고 전송하는 중",
     "Somebody changed this note after your key signed for it. Publish again." to
@@ -238,6 +243,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "삭제되기까지 사흘 남았습니다.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "순서대로 세 가지입니다. 당신의 한 줄을 쓰고, 올리고, 돌아와서 링크를 붙여 넣으세요. 마지막이 이것을 영구적으로 만들고, 사람들이 잊는 것도 바로 그것입니다.",
+    "Today cannot be added later" to "오늘은 나중에 채워 넣을 수 없습니다",
     "Told only when your identity note is days away from being deleted." to
         "신원 노트가 삭제되기 며칠 전일 때만 알려드립니다.",
     "Tomorrow is the last day." to "내일이 마지막 날입니다.",
@@ -331,6 +337,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "flop-passport 키 저장소 자체 테스트",
     "identity" to "신원",
     "identity note" to "신원 메모",
+    "language {code}" to "언어 {code}",
     "last connection" to "마지막 연결",
     "linked" to "연결됨",
     "live" to "활성",
@@ -338,6 +345,7 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "matched on our nonce, not just our key" to "키뿐 아니라 자체 nonce도 일치함",
     "no thanks, continue" to "후원하지 않고 계속",
     "no, nothing was made public" to "아니요, 공개된 내용 없음",
+    "nonce" to "논스",
     "not found" to "찾을 수 없음",
     "not yet" to "아직요",
     "not yet - the note alone is a claim, not a proof" to "아직 아님 - 메모만으로는 주장일 뿐 증명이 아님",
@@ -372,6 +380,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "오늘 기록에 서명",
     "signed" to "서명됨",
     "signed and verified against your DID" to "암호학적으로 서명되고 DID와 대조해 검증됨",
+    "step {n} {title} complete" to "{n}단계 {title} 완료",
+    "step {n} {title} did not finish" to "{n}단계 {title} 완료되지 않음",
     "storage" to "저장소",
     "support the builder" to "개발자 후원",
     "technocore.chat answered" to "technocore.chat이 응답했습니다",
@@ -382,11 +392,13 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat에서 메모를 거부함",
     "technocore.chat refused the signed write" to "technocore.chat에서 서명된 쓰기를 거부함",
     "text" to "텍스트",
+    "the note changed between reads" to "두 번 읽는 사이에 노트가 바뀌었습니다",
     "the post" to "게시물",
     "the same wallet rebuilds this identity anywhere" to "동일한 지갑으로 어디서든 이 신원을 다시 생성",
     "try again" to "다시 시도",
     "unconfirmed" to "미확인",
     "unsigned" to "서명 없음",
+    "vault {level}" to "보관소 {level}",
     "verified" to "검증됨",
     "verify it yourself" to "직접 검증",
     "version" to "버전",

@@ -19,6 +19,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  letzter Schritt",
     "06  tell them" to "06  weitersagen",
     "06  tell them  ·  last step" to "06  sag es weiter  ·  letzter Schritt",
+    "5 of 6" to "5 von 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Noch ein paar Worte, dann gehört sie dir. Ein echter Satz genügt.",
     "A few reminders about the last step, and then they stop." to
@@ -105,6 +106,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport für Seeker von @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport für Seeker. Erster signierter Eintrag.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP hat Agenten um nützliche Arbeit gebeten. Ein signierter Eintrag ist der Beleg, den du davon hinterlässt, und ein Tag ohne einen ist ein Tag, den später niemand prüfen kann.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP hat Agenten gebeten, etwas Nützliches zu tun. Ein signierter Eintrag belegt, dass Sie es getan haben, und ein Tag ohne Eintrag kann später von niemandem überprüft werden.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -225,6 +228,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Shipped a Technocore client for the Seeker" to
         "Einen Technocore-Client für den Seeker veröffentlicht",
     "Show your private key" to "Privaten Schlüssel anzeigen",
+    "Sign a record now and this day is on your history for good." to
+        "Signiere jetzt einen Eintrag, und dieser Tag steht dauerhaft in deiner Geschichte.",
     "Signed, accepted and found again in the room" to
         "Signiert, akzeptiert und erneut im Raum gefunden",
     "Signing your first check-in and sending it" to
@@ -273,6 +278,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "Noch drei Tage, bevor sie gelöscht wird.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Drei Dinge, in dieser Reihenfolge: schreib deine Zeile, poste sie, komm dann zurück und füge den Link ein. Das Letzte macht es dauerhaft, und genau das wird vergessen.",
+    "Today cannot be added later" to "Heute lässt sich nicht nachtragen",
     "Told only when your identity note is days away from being deleted." to
         "Du wirst nur benachrichtigt, wenn deine Identitätsnotiz kurz vor dem Löschen steht.",
     "Tomorrow is the last day." to "Morgen ist der letzte Tag.",
@@ -362,6 +368,7 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "danger zone" to "Gefahrenbereich",
     "day streak" to "Tagesserie",
     "delete passport from this phone" to "Passport von diesem Telefon löschen",
+    "detail" to "Detail",
     "did anything go public?" to "Wurde etwas öffentlich?",
     "done" to "fertig",
     "failed" to "fehlgeschlagen",
@@ -371,13 +378,16 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "flop-passport Schlüsselspeicher-Selbsttest",
     "identity" to "identität",
     "identity note" to "Identitätsnotiz",
+    "language {code}" to "Sprache {code}",
     "last connection" to "letzte verbindung",
     "linked" to "Verknüpft",
+    "live" to "aktiv",
     "live records" to "aktive Einträge",
     "matched on our nonce, not just our key" to
         "anhand unserer Nonce abgeglichen, nicht nur unseres Schlüssels",
     "no thanks, continue" to "nein danke, fortfahren",
     "no, nothing was made public" to "nein, nichts wurde öffentlich gemacht",
+    "nonce" to "Nonce",
     "not found" to "nicht gefunden",
     "not yet" to "noch nicht",
     "not yet - the note alone is a claim, not a proof" to
@@ -413,6 +423,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "heutigen Eintrag signieren",
     "signed" to "signiert",
     "signed and verified against your DID" to "signiert und anhand Ihrer DID verifiziert",
+    "step {n} {title} complete" to "Schritt {n} {title} abgeschlossen",
+    "step {n} {title} did not finish" to "Schritt {n} {title} nicht abgeschlossen",
     "storage" to "speicher",
     "support the builder" to "Entwickler unterstützen",
     "technocore.chat answered" to "technocore.chat hat geantwortet",
@@ -423,15 +435,20 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat hat die Notiz abgelehnt",
     "technocore.chat refused the signed write" to
         "technocore.chat hat den signierten Eintrag abgelehnt",
+    "text" to "Text",
+    "the note changed between reads" to "die Notiz hat sich zwischen zwei Abrufen geändert",
     "the post" to "Der Post",
     "the same wallet rebuilds this identity anywhere" to
         "dieselbe Wallet stellt diese Identität überall wieder her",
     "try again" to "noch einmal versuchen",
     "unconfirmed" to "unbestätigt",
     "unsigned" to "nicht signiert",
+    "vault {level}" to "Speicher {level}",
     "verified" to "verifiziert",
     "verify it yourself" to "selbst verifizieren",
+    "version" to "Version",
     "vouched for" to "bestätigt",
+    "wallet" to "Wallet",
     "wallet linked" to "Wallet verknüpft",
     "what this app never does" to "was diese App niemals tut",
     "what to do" to "was zu tun ist",

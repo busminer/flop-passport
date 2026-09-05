@@ -19,6 +19,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  最後の手順",
     "06  tell them" to "06  伝える",
     "06  tell them  ·  last step" to "06  伝える  ·  最後の手順",
+    "5 of 6" to "6 のうち 5",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "あと少し書けば、その一行はあなたのものです。本当の一文があれば十分です。",
     "A few reminders about the last step, and then they stop." to "最後の手順についての数回の通知。そのあとは止まります。",
@@ -93,6 +94,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker用FLOP Passport - 非公開バックアップ",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1によるSeeker用FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker用FLOP Passport。最初の署名済み記録。",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP はエージェントに役に立つことをするよう求めました。署名済みの記録はその証跡であり、記録のない一日は、あとから誰にも確かめられない一日です。",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOPはエージェントに有用なことをするよう求めました。署名済み記録は実行したことの証明となり、記録のない日は後から誰も確認できません。",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -191,6 +194,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "七日間、記録がありませんでした。アプリを開いて再公開してください。",
     "Shipped a Technocore client for the Seeker" to "Seeker向けのTechnocoreクライアントをリリースした",
     "Show your private key" to "秘密鍵を表示",
+    "Sign a record now and this day is on your history for good." to
+        "いま記録に署名すれば、この日はあなたの履歴に永久に残ります。",
     "Signed, accepted and found again in the room" to "署名、受理され、ルーム内で再確認されました",
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
     "Somebody changed this note after your key signed for it. Publish again." to
@@ -235,6 +240,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "削除まであと三日です。",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "順番に三つ。自分の一行を書き、投稿し、それから戻ってリンクを貼る。最後のひとつがこれを恒久的にし、そして忘れられるのもそれです。",
+    "Today cannot be added later" to "今日は、あとから足せません",
     "Told only when your identity note is days away from being deleted." to
         "身元情報のノートが削除される数日前にのみ通知されます。",
     "Tomorrow is the last day." to "明日が最後の日です。",
@@ -328,6 +334,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "flop-passport 鍵ストア自己テスト",
     "identity" to "アイデンティティ",
     "identity note" to "IDノート",
+    "language {code}" to "言語 {code}",
     "last connection" to "前回の接続",
     "linked" to "リンク済み",
     "live" to "有効",
@@ -370,6 +377,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "今日の記録に署名",
     "signed" to "署名済み",
     "signed and verified against your DID" to "署名済みで、DIDとの照合を完了",
+    "step {n} {title} complete" to "手順 {n} {title} 完了",
+    "step {n} {title} did not finish" to "手順 {n} {title} 未完了",
     "storage" to "ストレージ",
     "support the builder" to "開発者を支援",
     "technocore.chat answered" to "technocore.chat が応答しました",
@@ -380,11 +389,13 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chatがノートを拒否しました",
     "technocore.chat refused the signed write" to "technocore.chatが署名済み書き込みを拒否しました",
     "text" to "テキスト",
+    "the note changed between reads" to "二回の読み取りの間にノートが変わりました",
     "the post" to "投稿",
     "the same wallet rebuilds this identity anywhere" to "同じウォレットから、どこでもこのIDを再構築できます",
     "try again" to "もう一度試す",
     "unconfirmed" to "未確認",
     "unsigned" to "未署名",
+    "vault {level}" to "保管庫 {level}",
     "verified" to "検証済み",
     "verify it yourself" to "自身で検証",
     "version" to "バージョン",

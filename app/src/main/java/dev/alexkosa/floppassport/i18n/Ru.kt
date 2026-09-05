@@ -19,6 +19,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  последний шаг",
     "06  tell them" to "06  расскажите им",
     "06  tell them  ·  last step" to "06  расскажите  ·  последний шаг",
+    "5 of 6" to "5 из 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Ещё несколько слов, и строчка ваша. Нужно всего одно живое предложение.",
     "A few reminders about the last step, and then they stop." to
@@ -103,6 +104,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport для Seeker. Первая подписанная запись.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP попросил агентов делать что-то полезное. Подписанная запись это след, который вы оставляете, а день без неё это день, который потом никто не проверит.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP попросил агентов сделать что-то полезное. Подписанная запись подтверждает, что это сделано, а день без неё позже никто не сможет проверить.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -222,6 +225,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Семь дней без отметок. Откройте приложение, чтобы опубликовать её снова.",
     "Shipped a Technocore client for the Seeker" to "Создал клиент Technocore для Seeker",
     "Show your private key" to "Показать закрытый ключ",
+    "Sign a record now and this day is on your history for good." to
+        "Подпишите запись сейчас, и этот день останется в вашей истории навсегда.",
     "Signed, accepted and found again in the room" to
         "Подписано, принято и снова найдено в комнате",
     "Signing your first check-in and sending it" to
@@ -269,6 +274,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "До удаления осталось три дня.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Три вещи, по порядку: напишите свою строчку, опубликуйте пост, потом вернитесь и вставьте ссылку. Последнее и делает всё это постоянным, и именно про него забывают.",
+    "Today cannot be added later" to "Сегодняшний день потом не добавить",
     "Told only when your identity note is days away from being deleted." to
         "Вы получите уведомление, только когда до удаления записи о вашей личности останется несколько дней.",
     "Tomorrow is the last day." to "Завтра последний день.",
@@ -365,6 +371,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "самопроверка хранилища flop-passport",
     "identity" to "идентичность",
     "identity note" to "запись о личности",
+    "language {code}" to "язык {code}",
     "last connection" to "последнее соединение",
     "linked" to "привязано",
     "live" to "активно",
@@ -372,6 +379,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "matched on our nonce, not just our key" to "совпало по нашему nonce, а не только по ключу",
     "no thanks, continue" to "нет, продолжить",
     "no, nothing was made public" to "нет, ничего не стало общедоступным",
+    "nonce" to "разовый номер",
     "not found" to "не найдено",
     "not yet" to "пока нет",
     "not yet - the note alone is a claim, not a proof" to
@@ -407,6 +415,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "подписать сегодняшнюю запись",
     "signed" to "подписано",
     "signed and verified against your DID" to "подписано и проверено по вашему DID",
+    "step {n} {title} complete" to "шаг {n} {title} выполнен",
+    "step {n} {title} did not finish" to "шаг {n} {title} не завершён",
     "storage" to "хранилище",
     "support the builder" to "поддержать разработчика",
     "technocore.chat answered" to "technocore.chat ответил",
@@ -417,12 +427,14 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat отклонил запись",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
     "text" to "текст",
+    "the note changed between reads" to "заметка изменилась между чтениями",
     "the post" to "публикация",
     "the same wallet rebuilds this identity anywhere" to
         "тот же кошелёк воссоздаёт эту личность где угодно",
     "try again" to "попробовать снова",
     "unconfirmed" to "не подтверждено",
     "unsigned" to "без подписи",
+    "vault {level}" to "хранилище {level}",
     "verified" to "подтверждено",
     "verify it yourself" to "проверить самостоятельно",
     "version" to "версия",

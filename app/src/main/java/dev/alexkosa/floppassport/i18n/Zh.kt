@@ -19,6 +19,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  最后一步",
     "06  tell them" to "06  告诉大家",
     "06  tell them  ·  last step" to "06  告诉大家  ·  最后一步",
+    "5 of 6" to "6 步中的 5 步",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "再写几个字就成了。只需要一句真话。",
     "A few reminders about the last step, and then they stop." to "关于最后一步的几条提醒，之后就不再打扰。",
@@ -92,6 +93,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker 版 FLOP Passport - 私密备份",
     "FLOP Passport for Seeker by @AlexKosa1" to "由 @AlexKosa1 制作的 Seeker 版 FLOP Passport",
     "FLOP Passport for Seeker. First signed check-in." to "Seeker 版 FLOP Passport。首次签名记录。",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP 要求代理做些有用的事。签名记录就是你留下的凭据，而没有记录的一天，之后谁也无法核验。",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP 要求智能体做一些有用的事。签名记录可以证明您已完成，而缺少记录的日期之后将无法核验。",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -188,6 +191,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Seven days without a record. Open the app to publish it again." to "连续七天没有记录。打开应用即可重新发布.",
     "Shipped a Technocore client for the Seeker" to "为 Seeker 发布了 Technocore 客户端",
     "Show your private key" to "显示您的私钥",
+    "Sign a record now and this day is on your history for good." to "现在签一条记录，这一天就永久留在你的历史里。",
     "Signed, accepted and found again in the room" to "已签名、接受并再次在房间中找到",
     "Signing your first check-in and sending it" to "正在签署并发送您的首条记录",
     "Somebody changed this note after your key signed for it. Publish again." to
@@ -231,6 +235,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "距离删除还剩三天.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "三件事，按顺序：写下你的那句话，发出去，然后回来把链接贴上。最后一步才让这一切长久，而它正是最容易被忘掉的那一步。",
+    "Today cannot be added later" to "今天无法事后补上",
     "Told only when your identity note is days away from being deleted." to
         "只有当您的身份笔记再过几天就会被删除时，您才会收到通知.",
     "Tomorrow is the last day." to "明天是最后一天.",
@@ -321,6 +326,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "flop-passport 密钥库自检",
     "identity" to "身份",
     "identity note" to "身份记录",
+    "language {code}" to "语言 {code}",
     "last connection" to "上次连接",
     "linked" to "已关联",
     "live" to "实时",
@@ -363,6 +369,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "签署今天的记录",
     "signed" to "已签名",
     "signed and verified against your DID" to "已签名并根据您的 DID 验证",
+    "step {n} {title} complete" to "第 {n} 步 {title} 已完成",
+    "step {n} {title} did not finish" to "第 {n} 步 {title} 未完成",
     "storage" to "存储",
     "support the builder" to "支持开发者",
     "technocore.chat answered" to "technocore.chat 已响应",
@@ -373,11 +381,13 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat 拒绝了该记录",
     "technocore.chat refused the signed write" to "technocore.chat 拒绝了签名写入",
     "text" to "文本",
+    "the note changed between reads" to "两次读取之间备注发生了变化",
     "the post" to "帖子",
     "the same wallet rebuilds this identity anywhere" to "同一钱包可在任何地方重建此身份",
     "try again" to "再试一次",
     "unconfirmed" to "未确认",
     "unsigned" to "未签名",
+    "vault {level}" to "保管库 {level}",
     "verified" to "已验证",
     "verify it yourself" to "自行验证",
     "version" to "版本",

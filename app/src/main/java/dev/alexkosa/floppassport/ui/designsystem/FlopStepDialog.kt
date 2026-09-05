@@ -84,7 +84,13 @@ fun FlopStepDialog(
                     Text(t("✓"), style = FlopType.label, color = FlopColors.Base)
                 }
                 Spacer(Modifier.width(FlopSpacing.sm))
-                FlopLabel("step ${step.ordinal1} ${step.title} complete", FlopColors.Green)
+                // The step's own name is translated separately and then put in: it is a
+                // word the tables already carry, and pasting it in first is exactly what
+                // stopped this whole line from ever matching one.
+                FlopLabel(
+                    t("step {n} {title} complete", "n" to step.ordinal1, "title" to t(step.title)),
+                    FlopColors.Green,
+                )
             }
 
             Spacer(Modifier.height(FlopSpacing.md))
@@ -152,7 +158,14 @@ fun FlopProblemDialog(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(22.dp).background(FlopColors.ErrorRed, FlopShapes.sm))
                 Spacer(Modifier.width(FlopSpacing.sm))
-                FlopLabel("step ${step.ordinal1} ${step.title} did not finish", FlopColors.ErrorRed)
+                FlopLabel(
+                    t(
+                        "step {n} {title} did not finish",
+                        "n" to step.ordinal1,
+                        "title" to t(step.title),
+                    ),
+                    FlopColors.ErrorRed,
+                )
             }
             Spacer(Modifier.height(FlopSpacing.md))
             Text(t(headline), style = FlopType.h3, color = FlopColors.IceWhite)

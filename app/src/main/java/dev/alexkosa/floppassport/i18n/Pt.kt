@@ -19,6 +19,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  último passo",
     "06  tell them" to "06  conte a eles",
     "06  tell them  ·  last step" to "06  conte  ·  último passo",
+    "5 of 6" to "5 de 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Mais algumas palavras e ela é sua. Basta uma frase de verdade.",
     "A few reminders about the last step, and then they stop." to
@@ -102,6 +103,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport para Seeker por @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport para Seeker. Primeiro registro assinado.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "A FLOP pediu aos agentes que fizessem algo útil. Um registro assinado é a prova que você deixa disso, e um dia sem nenhum é um dia que ninguém poderá conferir depois.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP pediu aos agentes que fizessem algo útil. Um registro assinado comprova o que foi feito, e um dia sem registro não poderá ser verificado depois.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -220,6 +223,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Sete dias sem um registro. Abra o app para publicá-la novamente.",
     "Shipped a Technocore client for the Seeker" to "Lancei um cliente Technocore para o Seeker",
     "Show your private key" to "Mostrar sua chave privada",
+    "Sign a record now and this day is on your history for good." to
+        "Assine um registro agora e este dia fica no seu histórico para sempre.",
     "Signed, accepted and found again in the room" to
         "Assinado, aceito e encontrado novamente na sala",
     "Signing your first check-in and sending it" to
@@ -267,6 +272,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "Faltam três dias para ela ser excluída.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Três coisas, nesta ordem: escreva sua linha, publique e depois volte e cole o link. A última é o que torna isso permanente, e é justamente a que as pessoas esquecem.",
+    "Today cannot be added later" to "O dia de hoje não dá para acrescentar depois",
     "Told only when your identity note is days away from being deleted." to
         "Você só recebe um aviso quando faltam poucos dias para sua nota de identidade ser excluída.",
     "Tomorrow is the last day." to "Amanhã é o último dia.",
@@ -363,6 +369,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "autoteste do armazenamento de chaves flop-passport",
     "identity" to "identidade",
     "identity note" to "nota de identidade",
+    "language {code}" to "idioma {code}",
     "last connection" to "última conexão",
     "linked" to "vinculado",
     "live" to "ativo",
@@ -371,6 +378,7 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "correspondeu ao nosso nonce, não apenas à nossa chave",
     "no thanks, continue" to "não, obrigado, continuar",
     "no, nothing was made public" to "não, nada se tornou público",
+    "nonce" to "nonce",
     "not found" to "não encontrado",
     "not yet" to "agora não",
     "not yet - the note alone is a claim, not a proof" to
@@ -406,6 +414,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "assinar o registro de hoje",
     "signed" to "assinado",
     "signed and verified against your DID" to "assinado e verificado com seu DID",
+    "step {n} {title} complete" to "passo {n} {title} concluído",
+    "step {n} {title} did not finish" to "passo {n} {title} não terminou",
     "storage" to "armazenamento",
     "support the builder" to "apoiar o desenvolvedor",
     "technocore.chat answered" to "technocore.chat respondeu",
@@ -416,12 +426,14 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the note" to "technocore.chat recusou a nota",
     "technocore.chat refused the signed write" to "technocore.chat recusou a gravação assinada",
     "text" to "texto",
+    "the note changed between reads" to "a nota mudou entre as leituras",
     "the post" to "a publicação",
     "the same wallet rebuilds this identity anywhere" to
         "a mesma carteira recria esta identidade em qualquer lugar",
     "try again" to "tentar de novo",
     "unconfirmed" to "não confirmado",
     "unsigned" to "sem assinatura",
+    "vault {level}" to "cofre {level}",
     "verified" to "verificado",
     "verify it yourself" to "verifique por conta própria",
     "version" to "versão",

@@ -19,6 +19,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "06  last step" to "06  bước cuối",
     "06  tell them" to "06  kể cho mọi người",
     "06  tell them  ·  last step" to "06  kể cho mọi người  ·  bước cuối",
+    "5 of 6" to "5 trên 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Thêm vài chữ nữa là xong. Chỉ cần một câu thật.",
     "A few reminders about the last step, and then they stop." to
@@ -104,6 +105,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
     "FLOP Passport for Seeker. First signed check-in." to
         "FLOP Passport cho Seeker. Bản ghi đầu tiên đã được ký.",
+    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
+        "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi có ký là dấu vết bạn để lại cho việc đó, còn một ngày không có bản ghi là một ngày sau này không ai kiểm được.",
     "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
         "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi đã ký là bằng chứng cho việc đó, và nếu một ngày không có bản ghi thì sau này không ai có thể kiểm tra ngày đó.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
@@ -221,6 +224,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Shipped a Technocore client for the Seeker" to
         "Đã phát hành một ứng dụng Technocore cho Seeker",
     "Show your private key" to "Hiển thị khóa riêng của bạn",
+    "Sign a record now and this day is on your history for good." to
+        "Ký một bản ghi ngay, và ngày hôm nay sẽ nằm trong lịch sử của bạn mãi mãi.",
     "Signed, accepted and found again in the room" to
         "Đã ký, được chấp nhận và tìm thấy lại trong phòng",
     "Signing your first check-in and sending it" to "Đang ký và gửi bản ghi đầu tiên",
@@ -267,6 +272,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Three days left before it is deleted." to "Còn ba ngày trước khi ghi chú bị xóa.",
     "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
         "Ba việc, theo thứ tự: viết câu của bạn, đăng lên, rồi quay lại dán liên kết. Việc cuối mới làm cho nó bền lâu, và đó cũng là việc người ta hay quên.",
+    "Today cannot be added later" to "Hôm nay không thể thêm vào sau",
     "Told only when your identity note is days away from being deleted." to
         "Chỉ thông báo khi ghi chú danh tính của bạn sắp bị xóa trong vài ngày tới.",
     "Tomorrow is the last day." to "Ngày mai là ngày cuối cùng.",
@@ -363,6 +369,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "flop-passport vault self-test" to "tự kiểm tra kho khóa flop-passport",
     "identity" to "danh tính",
     "identity note" to "ghi chú danh tính",
+    "language {code}" to "ngôn ngữ {code}",
     "last connection" to "kết nối gần nhất",
     "linked" to "đã liên kết",
     "live" to "đang hoạt động",
@@ -371,6 +378,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "khớp với nonce của chúng tôi, không chỉ với khóa",
     "no thanks, continue" to "không, cảm ơn, tiếp tục",
     "no, nothing was made public" to "không, chưa có gì được công khai",
+    "nonce" to "nonce",
     "not found" to "không tìm thấy",
     "not yet" to "chưa đâu",
     "not yet - the note alone is a claim, not a proof" to
@@ -406,6 +414,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "sign today's record" to "ký bản ghi hôm nay",
     "signed" to "đã ký",
     "signed and verified against your DID" to "đã ký và xác minh theo DID của bạn",
+    "step {n} {title} complete" to "bước {n} {title} đã xong",
+    "step {n} {title} did not finish" to "bước {n} {title} chưa xong",
     "storage" to "lưu trữ",
     "support the builder" to "ủng hộ nhà phát triển",
     "technocore.chat answered" to "technocore.chat đã phản hồi",
@@ -417,12 +427,14 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "technocore.chat refused the signed write" to
         "technocore.chat đã từ chối bản ghi có chữ ký",
     "text" to "văn bản",
+    "the note changed between reads" to "ghi chú đã thay đổi giữa hai lần đọc",
     "the post" to "bài đăng",
     "the same wallet rebuilds this identity anywhere" to
         "cùng ví đó dựng lại danh tính này ở bất kỳ đâu",
     "try again" to "thử lại",
     "unconfirmed" to "chưa xác nhận",
     "unsigned" to "chưa ký",
+    "vault {level}" to "két {level}",
     "verified" to "đã xác minh",
     "verify it yourself" to "tự xác minh",
     "version" to "phiên bản",
