@@ -833,15 +833,20 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
           told to everybody who taps it. They stay visible, because they say what is
           coming, and stay inert, because they cannot yet do what they promise.
 
-          AFTER APPROVAL, swap data-store for the real listing link. Take it from the
-          published listing rather than composing it by hand: the dApp Store addresses an
-          app by its package name, dev.alexkosa.floppassport, and the deep link only
-          resolves on a device that has the store app, which in practice means a Seeker.
+          AFTER APPROVAL the data-store button becomes exactly this:
 
-          So the button needs to say that, or it is a dead link for every desktop visitor
-          who taps it. Wording that does not lie on a laptop: "Open in the Solana dApp
-          Store, on your Seeker". Whatever the copy, the href goes live and the
-          aria-disabled and btn-wait come off in the same edit, never separately.
+              solanadappstore://details?id=dev.alexkosa.floppassport
+
+          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
+          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
+          address for a listing: the store addresses an app by its package name.
+
+          Which means the link does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label has to
+          carry that, or the button lies to every visitor who is not holding a Seeker.
+          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
+          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
+          same edit, never separately.
         -->
         <span class="btn btn-wait" data-store aria-disabled="true">Solana dApp Store &middot; submitting</span>
         <span class="btn btn-wait" data-source aria-disabled="true">Source on GitHub &middot; at launch</span>
