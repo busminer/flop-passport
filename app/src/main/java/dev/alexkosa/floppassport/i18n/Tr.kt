@@ -213,6 +213,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu 32 bayt doğrudan FLOP Passport'ınızdır. Bunları elinde tutan kişi Technocore üzerinde sizin adınıza imzalayabilir. Çevrimdışı tutun ve biz dahil hiç kimseye göndermeyin.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Bu uygulama ücretsiz ve açık kaynaklıdır; geliştirilmesi için kimse ödeme yapmadı. Size bir öğleden sonra kazandırdıysa bahşiş bırakabilirsiniz.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "Bu uygulama ücretsiz ve açık kaynaklıdır. İşinize yaradıysa {name} adresine bahşiş gönderebilirsiniz. Cüzdanınız açılır ve tutarı orada siz seçersiniz.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "Bu uygulama ücretsizdir ve içinde satın alınacak hiçbir şey yoktur. İşinize yaradıysa, teşekkürünüzü kosa.skr adresine gönderebilirsiniz.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -332,6 +334,8 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "dosyaya kaydet",
     "self test" to "öz test",
     "send a tip" to "bahşiş gönder",
+    "send a tip in {token}" to "{token} ile bahşiş gönder",
+    "send a tip to {name}" to "{name} adresine bahşiş gönder",
     "sequence" to "sıra",
     "settings" to "ayarlar",
     "sign and check in" to "imzala ve kayıt bırak",
@@ -372,4 +376,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "evet, bir şey zaten herkese açık",
     "your identity" to "kimliğiniz",
     "your private key" to "özel anahtarınız",
+    "{token} is preselected and you can switch it." to
+        "{token} önceden seçili, isterseniz değiştirebilirsiniz.",
 )

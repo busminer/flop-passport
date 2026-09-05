@@ -217,6 +217,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "32 byte ini adalah FLOP Passport Anda sendiri. Siapa pun yang memegangnya dapat menandatangani sebagai Anda di Technocore. Simpan secara offline dan jangan pernah mengirimkannya kepada siapa pun, termasuk kami.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Aplikasi ini gratis dan bersumber terbuka, dan tidak ada yang membayarnya. Jika aplikasi ini menghemat waktu Anda, tip dapat diberikan.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "Aplikasi ini gratis dan bersumber terbuka. Jika bermanfaat, Anda dapat mengirim tip ke {name}. Dompet Anda akan terbuka dan Anda memilih jumlahnya di sana.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "Aplikasi ini gratis dan tidak ada yang bisa dibeli di dalamnya. Jika aplikasi ini berguna, ucapan terima kasih dapat dikirim ke kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -334,6 +336,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "simpan ke berkas",
     "self test" to "uji mandiri",
     "send a tip" to "kirim tip",
+    "send a tip in {token}" to "kirim tip dalam {token}",
+    "send a tip to {name}" to "kirim tip ke {name}",
     "sequence" to "urutan",
     "settings" to "pengaturan",
     "sign and check in" to "tandatangani dan catatkan",
@@ -375,4 +379,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "ya, sesuatu sudah publik",
     "your identity" to "identitas Anda",
     "your private key" to "kunci privat Anda",
+    "{token} is preselected and you can switch it." to
+        "{token} sudah dipilih dan Anda dapat menggantinya.",
 )

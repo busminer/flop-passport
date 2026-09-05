@@ -214,6 +214,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "Estes 32 bytes são o próprio FLOP Passport. Quem os possuir pode assinar em seu nome no Technocore. Mantenha-os offline e nunca os envie a ninguém, nem mesmo a nós.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Este app é gratuito e de código aberto, e ninguém pagou por ele. Se ele poupou uma tarde, uma contribuição é bem-vinda.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "Este app é gratuito e de código aberto. Se ele foi útil, você pode enviar uma contribuição para {name}. Sua carteira abre e você escolhe o valor lá.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "Este app é gratuito e não há nada para comprar. Se ele foi útil, envie seu agradecimento para kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -333,6 +335,8 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "salvar em um arquivo",
     "self test" to "autoteste",
     "send a tip" to "enviar uma contribuição",
+    "send a tip in {token}" to "enviar uma contribuição em {token}",
+    "send a tip to {name}" to "enviar uma contribuição para {name}",
     "sequence" to "sequência",
     "settings" to "configurações",
     "sign and check in" to "assinar e fazer registro",
@@ -372,4 +376,6 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "sim, algo já está público",
     "your identity" to "sua identidade",
     "your private key" to "sua chave privada",
+    "{token} is preselected and you can switch it." to
+        "{token} já vem selecionado e você pode trocar.",
 )

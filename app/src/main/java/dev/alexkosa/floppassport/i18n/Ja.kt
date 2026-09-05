@@ -185,6 +185,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "この32バイトがFLOP Passportそのものです。これを持つ人はTechnocore上で本人として署名できます。オフラインで保管し、当方を含め誰にも送らないでください。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "このアプリは無料のオープンソースで、開発に対する報酬は受けていません。作業時間の節約になった場合は、チップを送ることができます。",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "このアプリは無料のオープンソースです。役に立った場合は、{name} にチップを送れます。ウォレットが開き、金額はそこで選びます。",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "このアプリは無料で、購入するものはありません。役に立ったなら、kosa.skr にお礼を送れます。",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -301,6 +303,8 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "ファイルに保存",
     "self test" to "自己テスト",
     "send a tip" to "チップを送る",
+    "send a tip in {token}" to "{token} でチップを送る",
+    "send a tip to {name}" to "{name} にチップを送る",
     "sequence" to "シーケンス",
     "settings" to "設定",
     "sign and check in" to "署名して記録を残す",
@@ -337,4 +341,5 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "はい、すでに何かが公開されています",
     "your identity" to "ID",
     "your private key" to "秘密鍵",
+    "{token} is preselected and you can switch it." to "{token} が選択済みです。変更もできます。",
 )

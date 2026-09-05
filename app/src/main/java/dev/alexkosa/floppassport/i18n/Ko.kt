@@ -188,6 +188,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "이 32바이트가 FLOP Passport 자체입니다. 이를 가진 사람은 누구나 Technocore에서 사용자의 신원으로 서명할 수 있습니다. 오프라인으로 보관하고 저희를 포함해 누구에게도 보내지 마세요.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "이 앱은 무료 오픈 소스이며 제작비를 지원한 곳은 없습니다. 이 앱으로 시간을 절약했다면 후원할 수 있습니다.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "이 앱은 무료 오픈 소스입니다. 도움이 되었다면 {name}에게 후원금을 보낼 수 있습니다. 지갑이 열리고 금액은 거기에서 선택합니다.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "이 앱은 무료이며 구매할 항목도 없습니다. 도움이 되었다면 kosa.skr로 감사의 뜻을 전할 수 있습니다.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -303,6 +305,8 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "파일로 저장",
     "self test" to "자체 테스트",
     "send a tip" to "후원금 보내기",
+    "send a tip in {token}" to "{token}으로 후원금 보내기",
+    "send a tip to {name}" to "{name}에게 후원금 보내기",
     "sequence" to "순서",
     "settings" to "설정",
     "sign and check in" to "서명하고 기록 남기기",
@@ -339,4 +343,5 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "예, 이미 공개된 내용 있음",
     "your identity" to "사용자 신원",
     "your private key" to "사용자 개인 키",
+    "{token} is preselected and you can switch it." to "{token}이(가) 미리 선택되어 있으며 변경할 수 있습니다.",
 )

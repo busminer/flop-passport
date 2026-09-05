@@ -181,6 +181,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "这 32 字节就是您的 FLOP Passport。任何持有者都能在 Technocore 上以您的身份签名。请离线保存，绝不要发送给任何人，包括我们。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "本应用免费且开源，没有人为它付费。如果它为您节省了一个下午，可以选择打赏。",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "本应用免费且开源。如果它对您有用，可以向 {name} 发送打赏。您的钱包会打开，金额由您在钱包中选择。",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "本应用免费，也没有任何内容需要购买。如果它对你有帮助，可以向 kosa.skr 表示感谢。",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -294,6 +296,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "保存到文件",
     "self test" to "自检",
     "send a tip" to "发送打赏",
+    "send a tip in {token}" to "用 {token} 发送打赏",
+    "send a tip to {name}" to "向 {name} 发送打赏",
     "sequence" to "序号",
     "settings" to "设置",
     "sign and check in" to "签名并留下记录",
@@ -330,4 +334,5 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "是，已有内容公开",
     "your identity" to "您的身份",
     "your private key" to "您的私钥",
+    "{token} is preselected and you can switch it." to "已预选 {token}，您可以更换。",
 )

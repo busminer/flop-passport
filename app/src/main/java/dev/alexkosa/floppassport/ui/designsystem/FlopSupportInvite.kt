@@ -103,9 +103,10 @@ fun FlopSupportInvite(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     FlopLabel("built by a community builder")
                     Spacer(Modifier.height(FlopSpacing.sm))
-                    Text(t("Alex Kosa"), style = FlopType.h3, color = FlopColors.IceWhite)
+                    // A person's name and an address: not sentences, and not translated.
+                    Text("Alex Kosa", style = FlopType.h3, color = FlopColors.IceWhite)
                     Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(t(displayName), style = FlopType.code, color = FlopColors.Cyan)
+                    Text(displayName, style = FlopType.code, color = FlopColors.Cyan)
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Text(t(
                         "This app is free and open source, and nobody paid for it. " +
@@ -119,7 +120,8 @@ fun FlopSupportInvite(
 
             Spacer(Modifier.height(FlopSpacing.md))
             FlopButton(
-                if (tokenName != null) "send a tip in $tokenName" else "send a tip",
+                if (tokenName != null) t("send a tip in {token}", "token" to tokenName)
+                else t("send a tip"),
                 {
                     runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, uri.toUri())) }
                     onDismiss()

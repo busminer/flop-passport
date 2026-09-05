@@ -77,6 +77,21 @@ val LocalTranslator = compositionLocalOf { Translator(Lang.EN) }
 fun t(english: String): String = LocalTranslator.current(english)
 
 /**
+ * Translate a sentence that has a name or a token in it.
+ *
+ * The placeholder is written into the English key as `{name}` and filled in after the
+ * lookup. Pasting the value in first is what went wrong before: the key at runtime read
+ * "send a tip to alexkosa.skr", which is in no table, so the whole tip card stayed English
+ * in every language while every other string around it translated.
+ */
+@Composable
+fun t(english: String, vararg values: Pair<String, String>): String {
+    var out = LocalTranslator.current(english)
+    for ((name, value) in values) out = out.replace("{$name}", value)
+    return out
+}
+
+/**
  * Where the choice is kept.
  *
  * Deliberately separate from the vault: a language preference is not a secret, and putting

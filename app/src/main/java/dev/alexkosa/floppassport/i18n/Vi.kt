@@ -214,6 +214,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "32 byte này chính là FLOP Passport của bạn. Bất kỳ ai giữ chúng đều có thể ký dưới danh nghĩa của bạn trên Technocore. Hãy giữ chúng ngoại tuyến và không bao giờ gửi cho bất kỳ ai, kể cả chúng tôi.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Ứng dụng này miễn phí, mã nguồn mở và không ai trả tiền để làm nó. Nếu nó giúp bạn tiết kiệm một buổi chiều, bạn có thể gửi tiền ủng hộ.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "Ứng dụng này miễn phí và mã nguồn mở. Nếu nó hữu ích, bạn có thể gửi tiền ủng hộ tới {name}. Ví của bạn sẽ mở ra và bạn chọn số tiền ở đó.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "Ứng dụng này miễn phí và không có gì để mua. Nếu thấy hữu ích, bạn có thể gửi lời cảm ơn đến kosa.skr.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -333,6 +335,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "lưu vào tệp",
     "self test" to "tự kiểm tra",
     "send a tip" to "gửi tiền ủng hộ",
+    "send a tip in {token}" to "gửi tiền ủng hộ bằng {token}",
+    "send a tip to {name}" to "gửi tiền ủng hộ tới {name}",
     "sequence" to "trình tự",
     "settings" to "cài đặt",
     "sign and check in" to "ký và ghi bản ghi",
@@ -373,4 +377,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "có, một số nội dung đã công khai",
     "your identity" to "danh tính của bạn",
     "your private key" to "khóa riêng của bạn",
+    "{token} is preselected and you can switch it." to
+        "{token} đã được chọn sẵn và bạn có thể đổi.",
 )

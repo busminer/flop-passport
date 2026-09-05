@@ -70,13 +70,14 @@ fun FlopSupportCard(
         Spacer(Modifier.height(FlopSpacing.xs))
         Text(t(
             "This app is free and open source. If it was useful, you can send a tip to " +
-                "$displayName. Your wallet opens and you choose the amount there."),
+                "{name}. Your wallet opens and you choose the amount there.",
+            "name" to displayName),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
         )
 
         Spacer(Modifier.height(FlopSpacing.md))
-        FlopButton("send a tip to $displayName", {
+        FlopButton(t("send a tip to {name}", "name" to displayName), {
             problem = null
             // A plain view intent, so whichever app registered the solana: scheme takes it.
             // Nothing here assumes a particular wallet.
@@ -93,9 +94,13 @@ fun FlopSupportCard(
         }
 
         Spacer(Modifier.height(FlopSpacing.sm))
-        Text(t(
-            (if (tokenName != null) "$tokenName is preselected and you can switch it. " else "") +
-                "A tip changes nothing about your Passport, and nothing about any airdrop. " +
+        // Two sentences, translated separately. Joined before the lookup, the pair would be
+        // one key that only exists when a token is preselected, and neither half would match.
+        val preselected =
+            if (tokenName != null) t("{token} is preselected and you can switch it.", "token" to tokenName) + " "
+            else ""
+        Text(preselected + t(
+            "A tip changes nothing about your Passport, and nothing about any airdrop. " +
                 "It is a thank you, not a fee."),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,

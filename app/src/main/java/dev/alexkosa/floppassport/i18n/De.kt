@@ -220,6 +220,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Diese 32 Bytes sind Ihr FLOP Passport selbst. Wer sie besitzt, kann auf Technocore als Sie signieren. Bewahren Sie sie offline auf und senden Sie sie niemals an jemanden, auch nicht an uns.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Diese App ist kostenlos und quelloffen, und niemand hat dafür bezahlt. Wenn sie Ihnen einen Nachmittag erspart hat, ist ein Trinkgeld willkommen.",
+    "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
+        "Diese App ist kostenlos und quelloffen. Wenn sie nützlich war, können Sie {name} ein Trinkgeld senden. Ihre Wallet öffnet sich, und den Betrag wählen Sie dort.",
     "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
         "Diese App ist kostenlos und es gibt nichts zu kaufen. Wenn sie dir geholfen hat, kannst du dich bei kosa.skr bedanken.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
@@ -340,6 +342,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "save to a file" to "in Datei speichern",
     "self test" to "Selbsttest",
     "send a tip" to "Trinkgeld senden",
+    "send a tip in {token}" to "Trinkgeld in {token} senden",
+    "send a tip to {name}" to "Trinkgeld an {name} senden",
     "sequence" to "sequenz",
     "settings" to "einstellungen",
     "sign and check in" to "signieren und Eintrag erstellen",
@@ -377,4 +381,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "yes, something is already public" to "ja, etwas ist bereits öffentlich",
     "your identity" to "Ihre Identität",
     "your private key" to "Ihr privater Schlüssel",
+    "{token} is preselected and you can switch it." to
+        "{token} ist vorausgewählt und kann gewechselt werden.",
 )
