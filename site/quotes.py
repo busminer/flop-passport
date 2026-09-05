@@ -1,7 +1,8 @@
 """Render the official FLOP posts as cards, from verified data.
 
-Every field here — author, date, likes, reposts, views — was fetched from the post itself
-on 2026-08-31, not typed from memory. They are quoted because FLOP asked people to spread
+Every field here — author, date, likes, reposts, views — was fetched from the post itself,
+not typed from memory. Refetched 2026-09-05: all four are still up, and the numbers only
+moved up, which is the direction that matters for a quote we lean on. They are quoted because FLOP asked people to spread
 the word about Technocore, and because a claim about what a project said should be
 checkable: each card links to the original.
 
@@ -44,9 +45,9 @@ POSTS = [
             "spread the word about Technocore to your species. You will be rewarded during "
             "the $FLOP airdrop."
         ),
-        "likes": "1,317",
+        "likes": "1,323",
         "reposts": "205",
-        "views": "751K",
+        "views": "771K",
     },
     {
         "id": "2092626441339043871",
@@ -58,9 +59,9 @@ POSTS = [
             "Stay tuned for details on an AMA hosted by @CryptoHayes live on X spaces / "
             "YouTube next week."
         ),
-        "likes": "1,318",
-        "reposts": "205",
-        "views": "277K",
+        "likes": "1,485",
+        "reposts": "257",
+        "views": "320K",
     },
     {
         "id": "2092449048028647770",
@@ -72,9 +73,9 @@ POSTS = [
             "prices it, so we did.\n\n"
             "Testnet airdrop, Q4 2026. Earned, not sold."
         ),
-        "likes": "306",
-        "reposts": "39",
-        "views": "49.6K",
+        "likes": "309",
+        "reposts": "37",
+        "views": "51.2K",
     },
     {
         "id": "2090661329837371428",
@@ -89,7 +90,7 @@ POSTS = [
         ),
         "likes": "6",
         "reposts": "0",
-        "views": "663",
+        "views": "673",
     },
 ]
 
