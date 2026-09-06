@@ -431,4 +431,12 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
         "O texto guardado não corresponde ao que assinamos",
     "The stored record did not verify against this key" to
         "O registro guardado não confere com esta chave",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Você criou uma chave que só a sua carteira consegue reconstruir, selou-a neste telefone, publicou-a onde um desconhecido pode encontrá-la, assinou um registro e provou que ele chegou, e colocou sua publicação ao lado da sua chave. Não sobrou nada para configurar.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "De agora em diante, uma vez por dia: abra Atividade e assine o registro daquele dia. Essa mesma escrita é o que impede que sua nota de identidade seja apagada, e hoje é o único dia que não dá para acrescentar depois.",
+    "open Activity" to
+        "abrir Atividade",
+    "{n} more characters and the button below wakes up." to
+        "Mais {n} caracteres e o botão abaixo acorda.",
 )

@@ -202,16 +202,22 @@ fun TellThemCard(vm: PassportViewModel) {
         // obstacle; this one is the difference between a contributor and a bot, and the
         // person filling it in is the one it protects.
         val complaint = PostComposer.whyNotASentence(vm.contributionLine)
+        val short = PostComposer.charactersStillNeeded(vm.contributionLine)
         Text(
             t(
                 when {
                     ready -> "This line is what makes the post yours. Everything under it is the proof."
                     !draft.fits -> "A little too long. Trim it and the whole post fits, key included."
+                    // Counts down while the person types, so the disabled button below has
+                    // a reason on screen instead of a person having to stop, look away and
+                    // guess how much more it wants.
+                    short > 0 -> "{n} more characters and the button below wakes up."
                     complaint != null -> complaint
                     else -> "Write one line only you would write. Posts that differ from each " +
                         "other by nothing but a key get read as farming, and that lands on " +
                         "the people who did the work."
                 },
+                "n" to short.toString(),
             ),
             style = FlopType.bodySm,
             color = if (ready) FlopColors.TextMuted else FlopColors.Cyan,
@@ -290,40 +296,26 @@ fun TellThemCard(vm: PassportViewModel) {
             placeholder = "https://x.com/you/status/...",
         )
         Spacer(Modifier.height(FlopSpacing.sm))
-        FlopField(
-            value = contribField,
-            onValueChange = { contribField = it; problem = null },
-            label = t("Link to what you built, if there is one"),
-            placeholder = "https://github.com/...",
-        )
-        Spacer(Modifier.height(FlopSpacing.sm))
         FlopButton(
             "publish these to my note",
             {
                 val x = xField.trim()
-                val c = contribField.trim()
                 // Refused rather than written, because the note is public and a broken link
                 // in it is worse than an empty field: it looks like evidence and leads
                 // nowhere.
-                problem = when {
-                    x.isNotEmpty() && !looksLikeXPost(x) ->
-                        "That does not look like a link to a post. It should look like " +
-                            "https://x.com/you/status/123."
-                    c.isNotEmpty() && !looksLikeUrl(c) ->
-                        "That does not look like a link. It should start with https://"
-                    else -> null
+                problem = if (x.isNotEmpty() && !looksLikeXPost(x)) {
+                    "That does not look like a link to a post. It should look like " +
+                        "https://x.com/you/status/123."
+                } else {
+                    null
                 }
-                if (problem == null) vm.attachLinks(post = x, contribution = c)
+                if (problem == null) vm.attachLinks(post = x, contribution = "")
             },
             // Enabled while anything has changed, and again whenever the note does not yet
             // carry the link: the fields are saved locally before the write, so a refused
             // write left them equal to what was stored, the button grey, the badge stuck on
             // "publishing", and nothing at all to press.
-            enabled = !vm.linkPublishing && (
-                xField.trim() != vm.xPostUrl ||
-                    contribField.trim() != vm.contributionUrl ||
-                    (xField.trim().isNotEmpty() && !vm.nameLinked)
-                ),
+            enabled = !vm.linkPublishing && xField.trim().isNotEmpty() && !vm.nameLinked,
         )
         vm.linkPublishError?.let {
             Spacer(Modifier.height(FlopSpacing.sm))

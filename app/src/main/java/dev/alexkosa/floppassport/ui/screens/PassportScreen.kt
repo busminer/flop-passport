@@ -71,7 +71,11 @@ import dev.alexkosa.floppassport.util.confirmHaptic
  * than restarting it.
  */
 @Composable
-fun PassportScreen(vm: PassportViewModel = viewModel()) {
+fun PassportScreen(
+    vm: PassportViewModel = viewModel(),
+    /** Takes the person to the one thing left to do. */
+    onOpenActivity: () -> Unit = {},
+) {
     // Collected here rather than deeper: one subscription for the screen, and the
     // ladder stays a pure function of what it is given.
     val pulse by vm.pulse.collectAsState()
@@ -321,6 +325,32 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                         color = FlopColors.IceWhite,
                         textAlign = TextAlign.Center,
                     )
+                    Spacer(Modifier.height(FlopSpacing.md))
+                    Text(
+                        t(
+                            "You made a key only your wallet can rebuild, sealed it in this " +
+                                "phone, published it where a stranger can find it, signed a " +
+                                "record and proved it landed, and put your post beside your " +
+                                "key. There is nothing left to set up.",
+                        ),
+                        style = FlopType.bodySm,
+                        color = FlopColors.IceWhite,
+                        textAlign = TextAlign.Center,
+                    )
+                    Spacer(Modifier.height(FlopSpacing.md))
+                    Text(
+                        t(
+                            "From now on, once a day: open Activity and sign that day's " +
+                                "record. That write is also what keeps your identity note " +
+                                "from being deleted, and today is the one day that cannot " +
+                                "be added later.",
+                        ),
+                        style = FlopType.bodyMd,
+                        color = FlopColors.Cyan,
+                        textAlign = TextAlign.Center,
+                    )
+                    Spacer(Modifier.height(FlopSpacing.md))
+                    FlopButton("open Activity", onOpenActivity)
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Text(
                         t(
@@ -417,7 +447,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         // install on a second phone. The five steps are a guided sequence that explains
         // itself, and a box from step six sitting under step one undoes that guidance for
         // everybody who is not already sure what the app is.
-        if (flow[Step.Ready] is StepState.Verified) {
+        if (flow[Step.Ready] is StepState.Verified && !vm.nameLinked) {
             Spacer(Modifier.height(FlopSpacing.lg))
             TellThemCard(vm)
         }

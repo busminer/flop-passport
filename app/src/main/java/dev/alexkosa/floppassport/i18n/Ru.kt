@@ -431,4 +431,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Сохранённый текст не совпадает с тем, что мы подписали",
     "The stored record did not verify against this key" to
         "Сохранённая запись не проходит проверку этим ключом",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Вы завели ключ, который может воссоздать только ваш кошелёк, запечатали его в этом телефоне, опубликовали там, где его найдёт посторонний, подписали запись и доказали, что она дошла, и поставили свой пост рядом с ключом. Настраивать больше нечего.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "Дальше — раз в день: заходите во вкладку «Активность» и подписывайте запись за этот день. Та же запись не даёт удалить вашу заметку личности, а сегодняшний день потом уже не добавить.",
+    "open Activity" to
+        "открыть «Активность»",
+    "{n} more characters and the button below wakes up." to
+        "Ещё {n} знаков, и кнопка ниже оживёт.",
 )

@@ -431,4 +431,12 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "El texto guardado no coincide con el que firmamos",
     "The stored record did not verify against this key" to
         "El registro guardado no se verifica con esta clave",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Creaste una clave que solo tu cartera puede reconstruir, la sellaste en este teléfono, la publicaste donde un desconocido puede encontrarla, firmaste un registro y probaste que llegó, y pusiste tu publicación junto a tu clave. No queda nada por configurar.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "A partir de ahora, una vez al día: abre Actividad y firma el registro de ese día. Esa misma escritura es lo que impide que se borre tu nota de identidad, y hoy es el único día que no se puede añadir después.",
+    "open Activity" to
+        "abrir Actividad",
+    "{n} more characters and the button below wakes up." to
+        "{n} caracteres más y el botón de abajo se activa.",
 )

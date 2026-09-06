@@ -1,5 +1,8 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -71,7 +74,7 @@ fun AppShell(vm: PassportViewModel = viewModel()) {
             Column(Modifier.fillMaxSize().safeDrawingPadding()) {
                 Box(Modifier.weight(1f)) {
                     when (tab) {
-                        Tab.Passport -> PassportScreen(vm)
+                        Tab.Passport -> PassportScreen(vm, onOpenActivity = { tab = Tab.Activity })
                         Tab.Activity -> ActivityScreen(vm)
                         Tab.Settings -> SettingsScreen(
                             vm = vm,
@@ -88,7 +91,10 @@ fun AppShell(vm: PassportViewModel = viewModel()) {
                         )
                     }
                 }
-                FlopBottomNav(
+                // Hidden while the keyboard is up. The bar sits directly above the keys,
+                // so a finger reaching for the top row of letters landed on ACTIVITY and
+                // threw the person out of the sentence they were writing.
+                if (WindowInsets.ime.getBottom(LocalDensity.current) == 0) FlopBottomNav(
                     selected = tab,
                     onSelect = { tab = it },
                     badge = if (vm.activity.liveRecords > 0) {

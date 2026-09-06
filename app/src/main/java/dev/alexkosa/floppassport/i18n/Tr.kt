@@ -430,4 +430,12 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Kaydedilen metin, imzaladığımız metinle aynı değil",
     "The stored record did not verify against this key" to
         "Kaydedilen kayıt bu anahtarla doğrulanmadı",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Yalnızca kendi cüzdanının yeniden oluşturabileceği bir anahtar yarattın, onu bu telefona mühürledin, bir yabancının bulabileceği yerde yayımladın, bir kayıt imzalayıp yerine ulaştığını kanıtladın ve gönderini anahtarının yanına koydun. Kurulacak bir şey kalmadı.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "Bundan sonra günde bir kez: Etkinlik sekmesini aç ve o günün kaydını imzala. Aynı yazma işlemi kimlik notunun silinmesini de engelliyor; bugün ise sonradan eklenemeyecek tek gün.",
+    "open Activity" to
+        "Etkinlik'i aç",
+    "{n} more characters and the button below wakes up." to
+        "{n} karakter daha, aşağıdaki düğme uyanıyor.",
 )

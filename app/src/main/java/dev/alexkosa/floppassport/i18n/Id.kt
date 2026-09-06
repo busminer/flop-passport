@@ -434,4 +434,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Teks yang tersimpan berbeda dari teks yang kami tandatangani",
     "The stored record did not verify against this key" to
         "Rekaman yang tersimpan tidak lolos verifikasi dengan kunci ini",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Anda membuat kunci yang hanya bisa disusun ulang oleh dompet Anda sendiri, menyegelnya di ponsel ini, menerbitkannya di tempat yang bisa ditemukan orang asing, menandatangani sebuah rekaman dan membuktikan bahwa rekaman itu sampai, lalu meletakkan unggahan Anda di samping kunci Anda. Tidak ada lagi yang perlu disiapkan.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "Mulai sekarang, sekali sehari: buka tab Aktivitas dan tandatangani rekaman hari itu. Penulisan yang sama itulah yang menjaga catatan identitas Anda dari penghapusan, dan hari ini adalah satu-satunya hari yang tidak bisa ditambahkan belakangan.",
+    "open Activity" to
+        "buka Aktivitas",
+    "{n} more characters and the button below wakes up." to
+        "{n} karakter lagi dan tombol di bawah akan aktif.",
 )

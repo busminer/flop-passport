@@ -392,4 +392,12 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "存下来的文字和我们签名的文字不一致",
     "The stored record did not verify against this key" to
         "存下来的记录用这把密钥核对不通过",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "你建了一把只有你的钱包才能重建的密钥，把它封进这台手机，发布到陌生人也能找到的地方，签下一条记录并证明它确实落地，还把你的帖子放在了密钥旁边。没有什么要再设置的了。",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "从现在起，每天一次：打开「动态」这一栏，签下当天的记录。这一次写入同时也让你的身份备注不被删除，而今天这一天，过后是补不上的。",
+    "open Activity" to
+        "打开「动态」",
+    "{n} more characters and the button below wakes up." to
+        "再写 {n} 个字，下面的按钮就会亮起来。",
 )

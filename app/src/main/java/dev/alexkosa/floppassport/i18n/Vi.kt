@@ -430,4 +430,12 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Văn bản đã lưu khác với văn bản chúng tôi đã ký",
     "The stored record did not verify against this key" to
         "Bản ghi đã lưu không kiểm chứng được bằng khóa này",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Bạn đã tạo một khóa mà chỉ ví của bạn dựng lại được, niêm nó trong chiếc máy này, công bố ở nơi người lạ cũng tìm thấy, ký một bản ghi và chứng minh nó đã tới nơi, rồi đặt bài đăng của bạn bên cạnh khóa. Không còn gì phải thiết lập nữa.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "Từ giờ trở đi, mỗi ngày một lần: mở thẻ Hoạt động và ký bản ghi của ngày hôm đó. Chính lần ghi ấy cũng giữ cho ghi chú danh tính của bạn khỏi bị xóa, còn hôm nay là ngày duy nhất không thể bổ sung về sau.",
+    "open Activity" to
+        "mở Hoạt động",
+    "{n} more characters and the button below wakes up." to
+        "Thêm {n} ký tự nữa là nút bên dưới sẽ bật lên.",
 )

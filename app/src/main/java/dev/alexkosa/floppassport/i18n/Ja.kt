@@ -398,4 +398,12 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "保存されたテキストが、署名したテキストと一致しません",
     "The stored record did not verify against this key" to
         "保存された記録が、この鍵で検証できませんでした",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "あなたのウォレットだけが作り直せる鍵を作り、この端末に封じ、見知らぬ人でも見つけられる場所に公開し、記録に署名して届いたことを証明し、投稿を鍵のとなりに置きました。もう設定することはありません。",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "これからは一日に一度、アクティビティを開いてその日の記録に署名してください。その書き込みが、あなたの身元ノートを消させずにおく働きもします。そして今日という日は、あとから足せない唯一の日です。",
+    "open Activity" to
+        "アクティビティを開く",
+    "{n} more characters and the button below wakes up." to
+        "あと {n} 文字で、下のボタンが有効になります。",
 )

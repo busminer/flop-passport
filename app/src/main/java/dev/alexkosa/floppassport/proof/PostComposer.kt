@@ -296,6 +296,25 @@ object PostComposer {
         return "A few more words, and it is yours. One real sentence is all this needs."
     }
 
+    /**
+     * How many more characters the line needs before the button will take it.
+     *
+     * The button is disabled until the line is a real sentence, and until this existed the
+     * only way to find out how close you were was to stop typing and look. A number that
+     * counts down while you write answers the question without being asked.
+     *
+     * Zero means it is long enough; the word count is checked separately and is what the
+     * sentence under the field explains.
+     */
+    fun charactersStillNeeded(line: String?): Int {
+        val text = line?.trim().orEmpty()
+        val dense = text.any {
+            it in '\u4e00'..'\u9fff' || it in '\u3040'..'\u30ff' || it in '\uac00'..'\ud7af'
+        }
+        return if (dense) (8 - text.count { !it.isWhitespace() }).coerceAtLeast(0)
+        else (20 - text.length).coerceAtLeast(0)
+    }
+
     fun isRealSentence(line: String?): Boolean {
         val text = line?.trim().orEmpty()
         if (text.isEmpty()) return false

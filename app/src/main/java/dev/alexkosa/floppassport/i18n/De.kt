@@ -438,4 +438,12 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Der gespeicherte Text stimmt nicht mit dem überein, den wir signiert haben",
     "The stored record did not verify against this key" to
         "Der gespeicherte Eintrag lässt sich mit diesem Schlüssel nicht bestätigen",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "Du hast einen Schlüssel angelegt, den nur deine Wallet wieder herstellen kann, ihn in diesem Telefon versiegelt, ihn dort veröffentlicht, wo eine fremde Person ihn findet, einen Eintrag signiert und bewiesen, dass er angekommen ist, und deinen Beitrag neben deinen Schlüssel gestellt. Es ist nichts mehr einzurichten.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "Von jetzt an einmal am Tag: öffne Aktivität und signiere den Eintrag für diesen Tag. Derselbe Schreibzugriff hält auch deine Identitätsnotiz am Leben, und der heutige Tag ist der eine, der sich später nicht nachtragen lässt.",
+    "open Activity" to
+        "Aktivität öffnen",
+    "{n} more characters and the button below wakes up." to
+        "Noch {n} Zeichen, dann wird der Knopf darunter aktiv.",
 )

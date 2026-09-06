@@ -400,4 +400,12 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
         "저장된 텍스트가 서명한 텍스트와 다릅니다",
     "The stored record did not verify against this key" to
         "저장된 기록이 이 키로 검증되지 않았습니다",
+    "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
+        "지갑만이 다시 만들어 낼 수 있는 키를 만들었고, 이 휴대전화 안에 봉인했고, 낯선 사람도 찾을 수 있는 곳에 공개했고, 기록에 서명해 그것이 도착했음을 증명했고, 게시글을 키 옆에 놓았습니다. 더 설정할 것은 없습니다.",
+    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
+        "이제부터 하루에 한 번, 활동 탭을 열고 그날의 기록에 서명하세요. 그 쓰기가 신원 노트가 삭제되지 않게 지켜 주기도 합니다. 그리고 오늘은 나중에 채워 넣을 수 없는 유일한 날입니다.",
+    "open Activity" to
+        "활동 열기",
+    "{n} more characters and the button below wakes up." to
+        "{n}자만 더 쓰면 아래 버튼이 켜집니다.",
 )
