@@ -526,4 +526,20 @@
       );
     });
   }
+  // The language menu is a <details>, so it opens with scripts switched off. What a
+  // <details> will not do on its own is close when you click somewhere else, and a menu
+  // that stays open behind the page you are reading is indistinguishable from a stuck one.
+  var langs = document.querySelector("details.langs");
+  if (langs) {
+    document.addEventListener("click", function (event) {
+      if (langs.open && !langs.contains(event.target)) langs.open = false;
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && langs.open) {
+        langs.open = false;
+        var summary = langs.querySelector("summary");
+        if (summary) summary.focus();
+      }
+    });
+  }
 })();

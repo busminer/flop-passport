@@ -110,10 +110,25 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--surface-light);
 }
-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
-header .mark { display: flex; align-items: center; gap: 12px; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--lg); height: 62px; }
+header .mark { display: flex; align-items: center; gap: 12px; flex: none; }
 header .mark svg { height: 18px; width: auto; }
-header nav { display: flex; gap: var(--lg); }
+/*
+  The section links scroll rather than wrap, at every width and not only on a phone.
+  Ten labels fit across a desktop in English and in no other language here: in Japanese
+  and Russian the same row tore each label into three stacked lines and grew the header
+  to eighty pixels of rubble. One line that can be pushed sideways is worse than nothing
+  only if nothing was there.
+*/
+header nav {
+  display: flex;
+  gap: var(--lg);
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+header nav::-webkit-scrollbar { display: none; }
+header nav a { white-space: nowrap; }
 header nav a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
 header nav a:hover { color: var(--ice); }
 /*
@@ -127,12 +142,8 @@ header nav a:hover { color: var(--ice); }
     order: 3;
     width: 100%;
     gap: var(--md);
-    overflow-x: auto;
     padding-bottom: 2px;
-    scrollbar-width: none;
   }
-  header nav::-webkit-scrollbar { display: none; }
-  header nav a { white-space: nowrap; }
 }
 
 /* ---------------------------------------------------------------- hero */
@@ -602,44 +613,74 @@ ul.plain li::marker { color: var(--cyan); }
 
 /* ---------------------------------------------------------------- languages */
 /*
-  Eleven links, always open, never a dropdown.
+  A globe, the code of the language you are reading, and a chevron.
 
-  A menu that has to be opened hides the one fact a reader in Jakarta or Chongqing needs
-  before they decide to keep reading - that their language is here at all. So the whole set
-  is on the page, in each language's own script, as its own row under the header. It is a
-  scrolling strip when it does not fit, the same way the section nav above it behaves,
-  because a wrapped second line of eleven links pushes the page itself off the screen.
+  This was eleven links laid out in the open, so that nobody would have to click to find
+  out whether their language was here. It was honest and it was ugly: a second row across
+  the header, eleven scripts wide, that read as leftover markup rather than as a control.
+  The globe is the one icon the whole internet has agreed means this, so the set can sit
+  behind it without hiding.
+
+  `<details>`, not a script. The menu opens with JavaScript off and every link stays in the
+  document, so the page loses nothing it had when the links were laid out flat.
 */
-.langs {
-  order: 4;
-  width: 100%;
+.langs { position: relative; }
+.langs summary {
   display: flex;
   align-items: center;
-  gap: var(--md);
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding: 8px 0 2px;
-  border-top: 1px solid var(--surface-light);
+  gap: 6px;
+  padding: 5px 8px;
+  border: 1px solid var(--surface-light);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--ice);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
-.langs::-webkit-scrollbar { display: none; }
-.langs-label {
+.langs summary::-webkit-details-marker { display: none; }
+.langs summary:hover { border-color: var(--grey); }
+.langs summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.langs-globe { color: var(--cyan); flex: none; }
+.langs-code {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--grey);
-  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: 0.08em;
 }
-.langs a {
+.langs-chev { color: var(--grey); flex: none; transition: transform 120ms ease; }
+.langs[open] .langs-chev { transform: rotate(180deg); }
+
+/* Right-aligned because the button is the last thing in the header: a menu that opened
+   leftwards from there would hang off the edge of a narrow screen. */
+.langs-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  width: max-content;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--surface-light);
+  border-radius: var(--r-md);
+}
+.langs-menu a {
+  padding: 7px 10px;
+  border-radius: var(--r-sm);
   font-size: 13px;
   color: var(--text-2);
   white-space: nowrap;
 }
-.langs a:hover { color: var(--ice); }
+.langs-menu a:hover { color: var(--ice); background: var(--surface-light); }
 /* The page you are on, marked rather than removed: a missing link reads as a bug. */
-.langs a[aria-current="page"] { color: var(--cyan); font-weight: 500; }
-
-header .wrap { flex-wrap: wrap; }
+.langs-menu a[aria-current="page"] {
+  color: var(--cyan);
+  background: var(--surface-light);
+  font-weight: 500;
+}
 
 /* ---------------------------------------------------------------- quote translations */
 /*

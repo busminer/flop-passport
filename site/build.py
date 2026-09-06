@@ -34,6 +34,13 @@ ORIGIN = "https://flop.alexkosa.dev"
 
 # Each language named the way its own speakers write it: people scan for their own script,
 # not for the English name of their language. Same list and same order as the app's picker.
+# The short code shown on the header button, and the name shown inside the menu. The
+# button has no room for eleven native names; the menu has room for nothing else.
+CODES: dict[str, str] = {
+    "en": "EN", "ru": "RU", "zh": "ZH", "es": "ES", "pt": "PT", "de": "DE",
+    "tr": "TR", "vi": "VI", "id": "ID", "ko": "KO", "ja": "JA",
+}
+
 LANGS: list[tuple[str, str]] = [
     ("en", "English"),
     ("ru", "Русский"),
@@ -113,24 +120,48 @@ def home(lang: str) -> str:
     return "/" if lang == "en" else f"/{lang}/"
 
 
-def switcher(lang: str, page_name: str) -> str:
-    """Eleven plain links, open on the page.
+GLOBE = (
+    '<svg class="langs-globe" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" '
+    'fill="none" stroke="currentColor" stroke-width="1.3">'
+    '<circle cx="8" cy="8" r="6.2"/><path d="M1.8 8h12.4"/>'
+    '<path d="M8 1.8c1.7 1.7 2.6 3.9 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.3 5.4 8'
+    'S6.3 3.5 8 1.8z"/></svg>'
+)
 
-    Not a dropdown. A `<select>` needs JavaScript to go anywhere, and a menu that has to be
-    opened hides from a reader the one fact that matters to them - that their language is
-    here at all. The current one is marked so nobody has to guess which of eleven they are
-    reading.
+CHEVRON = (
+    '<svg class="langs-chev" viewBox="0 0 10 6" width="9" height="6" aria-hidden="true" '
+    'fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" '
+    'stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>'
+)
+
+
+def switcher(lang: str, page_name: str) -> str:
+    """A globe, the current language's code, and eleven names one click away.
+
+    It was eleven links, always open, on the theory that a reader in Jakarta should not
+    have to open anything to learn their language is here. On the page that theory cost a
+    whole second row of the header and read as debris rather than as a control, so the set
+    moved behind a button that every site on the internet has taught people to recognise.
+
+    A `<details>` element, not a script: it opens with the page's JavaScript switched off,
+    and all eleven links stay in the document, so a crawler sees the same set it saw when
+    they were laid out in the open. The names inside stay in their own scripts - a person
+    scanning for their language is scanning for the shape of their own writing, not for a
+    two-letter code they may never have seen applied to it.
     """
     items = []
     for code, label in LANGS:
         href = home(code) if page_name == "index" else f"{home(code)}privacy"
         current = ' aria-current="page"' if code == lang else ""
         items.append(f'<a href="{href}" hreflang="{code}" lang="{code}"{current}>{label}</a>')
+    label = meta(lang, "switcher_label")
     return (
-        '<div class="langs">'
-        f'<span class="langs-label">{meta(lang, "switcher_label")}</span>'
-        + "".join(items)
-        + "</div>"
+        '<details class="langs">'
+        f'<summary aria-label="{label}" title="{label}">'
+        f'{GLOBE}<span class="langs-code">{CODES[lang]}</span>{CHEVRON}'
+        "</summary>"
+        f'<div class="langs-menu">{"".join(items)}</div>'
+        "</details>"
     )
 
 
