@@ -282,14 +282,22 @@
     // so on the page instead of pretending the difference does not exist.
     var proved = [];
     var failed = 0;
+    var unsigned = 0;
     for (var i = 0; i < mine.length; i++) {
-      if (!checked) {
+      if (!mine[i].sig) {
+        // Not a failure. The signed lane is optional and was added later, so a record
+        // written before it exists carries no signature at all - it is not re-verifiable,
+        // which is a different thing from invalid, and the service's own documentation
+        // says to treat it that way. Counting it as a bad signature would put a red badge
+        // on every early adopter.
+        unsigned += 1;
+      } else if (!checked) {
         proved.push(mine[i]);
       } else if (await verifyRecord(room, mine[i])) {
         proved.push(mine[i]);
       } else {
-        // Dropped, and counted. A record that claims this key and does not survive the
-        // check is the most newsworthy thing this page can find; it used to disappear
+        // Dropped, and counted. A record that carries a signature which does not survive
+        // the check is the most newsworthy thing this page can find; it used to disappear
         // into the same silence as a key that never published at all.
         failed += 1;
       }
@@ -309,6 +317,7 @@
       room: room,
       selfChecked: checked,
       failed: failed,
+      unsigned: unsigned,
       signed: proved.length,
       newest: proved.length ? proved[0].ts : null,
     };
@@ -404,6 +413,13 @@
       }
       if (vouch.failed) {
         head.appendChild(el("span", "badge red", T("a signature did not check out")));
+      }
+      if (vouch.unsigned) {
+        head.appendChild(
+          el("span", "badge grey", vouch.unsigned === 1
+            ? T("{count} record predates signatures", { count: vouch.unsigned })
+            : T("{count} records predate signatures", { count: vouch.unsigned }))
+        );
       }
       if (vouch.signed) {
         head.appendChild(

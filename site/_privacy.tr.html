@@ -36,14 +36,13 @@
 <li>
 <strong>Herkese açık kimliğin</strong> — <code>did:key</code> ve parmak izi — ve türetildiği Solana cüzdan adresi.
         </li>
-<li>
-<strong>Dil tercihin</strong> ve açılış sesinin açık olup olmadığı.
-        </li>
+<li><strong>Gönderin için yazdığın satırı</strong>, geri yapıştırdığında gönderinin bağlantısını ve eklediysen bir katkı bağlantısını. Gönderi bağlantısı sosyal hesabının adını verir, yani uygulamanın sakladığı en tanımlayıcı şey odur.</li>
+<li><strong>Dil tercihini</strong>, açılış sesinin açık olup olmadığını, notuna en son ne zaman yazıldığını ve hangi hatırlatmaların zaten gösterildiğini.</li>
 </ul>
 <p>
         Bunların tamamı cihazındaki uygulamaya özel alanda durur. Android'in otomatik yedeklemesi ve cihazdan cihaza aktarım bu uygulama için bilerek kapatıldı, böylece hiçbiri bir bulut yedeğine kopyalanmaz.
       </p>
-<h3 style="margin-top:32px">Cihazından ne çıkar ve bu yalnızca bir düğmeye bastığında olur</h3>
+<h3 style="margin-top:32px">Cihazından ne çıkıyor</h3>
 <ul class="plain">
 <li>
 <strong>technocore.chat'e</strong>, kimliğini yayımladığında ya da bir kaydı imzaladığında: herkese açık <code>did:key</code>'in, imzaladığın metin, bir sayaç ve imza. Bu bilgi tasarım gereği herkese açıktır — herkese açık bir kimliğin bütün amacı budur — ve sonrasında herkes okuyabilir.
@@ -56,6 +55,7 @@
 <li>
 <strong>Seçtiğin bir dosyaya</strong>, anahtarını dışa aktardığında. Hedefi sistem dosya seçicisiyle sen belirlersin. Hiçbir yere yükleme yapılmaz.
         </li>
+<li><strong>technocore.chat'e, sen hiçbir şeye basmadan</strong>, Etkinlik sekmesini açtığında: uygulama notunu ve kayıtlarını geri okur ve notu yeniden yazar. Zaten bütün mesele bu: o servis yedi gün boyunca kimsenin yazmadığı her şeyi siliyor, yani uygulamayı açman kimliğinin silinmesini engelleyen şeyin ta kendisi. Gönderilen, orada zaten herkese açık duran notun aynısı.</li>
 </ul>
 <p>
 <strong>Geliştiriciye asla hiçbir şey gönderilmez.</strong> Gönderilecek bir arka uç yok zaten. Uygulama, FLOP Labs'in işlettiği technocore.chat ile ve senin kendi cüzdan uygulamanla konuşur — liste bundan ibaret.
@@ -71,7 +71,7 @@
 <p>Hiçbiri. Uygulamada analiz SDK'sı, çökme raporlama servisi ya da herhangi bir üçüncü taraf takibi yok. Bu site çerez koymaz, ziyaret saymaz ve sunucu tarafında kod çalıştırmaz. Dışarıya yaptığı tek istekler şunlar: Google Fonts'tan iki web yazı tipi — her yazı tipi sunucusu gibi o da IP adresini alır — ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan bir okuma; bu istek senin tarayıcından çıkar ve asla bizden geçmez. Sitenin kendisi statik dosyalardan ibaret, onları Cloudflare dağıtır ve isteği o karşılar; kendi kodumuzu çalıştırmıyor, günlük tutmuyoruz.</p>
 <h3 style="margin-top:32px">İzinler</h3>
 <ul class="plain">
-<li><strong>İnternet</strong> — bir şey yayımladığında ya da imzaladığında technocore.chat'e ulaşmak için.</li>
+<li><strong>İnternet</strong> — bir şey yayımladığında ya da imzaladığında technocore.chat'e ulaşmak için, ve Etkinlik sekmesini açtığında kayıtlarını geri okuyup notunun süresinin dolmasını engellemek için.</li>
 <li><strong>Titreşim</strong> — bir adım doğrulandığında kısa bir onay dokunuşu.</li>
 <li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için.</li>
 <li><strong>Bildirimler</strong> — günlük hatırlatma, bitirmediğin bir adım için dürtmeler ve notunun süresi dolmadan önceki uyarı.</li>

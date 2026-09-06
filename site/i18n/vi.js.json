@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count} bản ghi, theo technocore.chat",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat không trả lời cho phòng mà ghi chú này nêu tên, nên ở đây không kiểm tra được gì. Dịch vụ đó từ chối đọc khi đang bận; hãy thử lại sau một lát.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} bản ghi trong phòng đó nhận là của khóa này nhưng không qua được bước kiểm chữ ký. Nó không được tính.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} bản ghi trong phòng đó nhận là của khóa này nhưng không qua được bước kiểm chữ ký. Chúng không được tính."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} bản ghi trong phòng đó nhận là của khóa này nhưng không qua được bước kiểm chữ ký. Chúng không được tính.",
+  "{count} record predates signatures": "{count} bản ghi có trước khi có chữ ký",
+  "{count} records predate signatures": "{count} bản ghi có trước khi có chữ ký"
 }

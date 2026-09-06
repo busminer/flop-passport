@@ -36,14 +36,13 @@
 <li>
 <strong>Deine öffentliche Identität</strong> — den <code>did:key</code> und seinen Fingerabdruck — sowie die Solana-Wallet-Adresse, aus der sie abgeleitet wurde.
         </li>
-<li>
-<strong>Deine Sprachauswahl</strong> und ob der Startton eingeschaltet ist.
-        </li>
+<li><strong>Die Zeile, die du für deinen Beitrag geschrieben hast</strong>, den Link zum Beitrag, sobald du ihn zurück einfügst, und einen Link zu einem Beitrag zum Projekt, falls du einen angegeben hast. Der Link zum Beitrag nennt dein Social-Konto und ist damit das Identifizierendste, was die App behält.</li>
+<li><strong>Deine Sprache</strong>, ob der Startton an ist, wann zuletzt in deine Notiz geschrieben wurde und welche Erinnerungen schon gezeigt wurden.</li>
 </ul>
 <p>
         All das liegt im privaten Speicher der App auf deinem Gerät. Androids automatische Sicherung und die Geräteübertragung sind für diese App bewusst abgeschaltet, damit nichts davon in ein Cloud-Backup kopiert wird.
       </p>
-<h3 style="margin-top:32px">Was dein Gerät verlässt, und nur wenn du eine Taste drückst</h3>
+<h3 style="margin-top:32px">Was dein Gerät verlässt</h3>
 <ul class="plain">
 <li>
 <strong>An technocore.chat</strong>, wenn du deine Identität veröffentlichst oder einen Eintrag signierst: dein öffentlicher <code>did:key</code>, der Text, den du signierst, ein Zähler und die Signatur. Diese Angaben sind bewusst öffentlich — das ist der Sinn einer öffentlichen Identität — und jeder kann sie danach lesen.
@@ -56,6 +55,7 @@
 <li>
 <strong>In eine Datei, die du wählst</strong>, wenn du deinen Schlüssel exportierst. Das Ziel wählst du über die Dateiauswahl des Systems. Nichts wird hochgeladen.
         </li>
+<li><strong>An technocore.chat, ohne dass du etwas drückst</strong>, wenn du den Reiter Aktivität öffnest: Die App liest deine Notiz und deine Einträge zurück und schreibt die Notiz neu. Genau darum geht es: Dieser Dienst löscht alles, in das sieben Tage lang niemand geschrieben hat — die App zu öffnen ist also das, was deine Identität am Leben hält. Gesendet wird dieselbe Notiz, die dort ohnehin öffentlich steht.</li>
 </ul>
 <p>
 <strong>An den Entwickler geht nie etwas.</strong> Es gibt kein Backend, an das man es senden könnte. Die App spricht mit technocore.chat, betrieben von FLOP Labs, und mit deiner eigenen Wallet-App — und das ist die vollständige Liste.
@@ -71,7 +71,7 @@
 <p>Keine. Die App enthält kein Analyse-SDK, keinen Absturzbericht-Dienst und keinerlei Tracking von Dritten. Diese Website setzt keine Cookies, misst keine Zugriffe und hat keinen Code auf dem Server. Nach außen fragt sie nur zweierlei an: zwei Web-Schriften von Google Fonts, das dabei deine IP-Adresse erhält wie jeder Schriften-Host, und — wenn du den Prüfer benutzt — einen direkten Lesezugriff auf technocore.chat, der aus deinem Browser geht und nie über uns. Die Seite selbst sind statische Dateien, ausgeliefert von Cloudflare, das die Anfrage bearbeitet; eigenen Code führen wir nicht aus und Protokolle führen wir nicht.</p>
 <h3 style="margin-top:32px">Berechtigungen</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — um technocore.chat zu erreichen, wenn du etwas veröffentlichst oder signierst.</li>
+<li><strong>Internet</strong> — um technocore.chat zu erreichen, wenn du etwas veröffentlichst oder signierst, und um deine Einträge zurückzulesen und deine Notiz am Leben zu halten, wenn du den Reiter Aktivität öffnest.</li>
 <li><strong>Vibration</strong> — ein kurzes Signal, wenn ein Schritt bestätigt ist.</li>
 <li><strong>Biometrie</strong> — um den Bildschirm zu schützen, der deinen privaten Schlüssel zeigt.</li>
 <li><strong>Benachrichtigungen</strong> — die tägliche Erinnerung, die Hinweise auf einen Schritt, den du nicht beendet hast, und die Warnung, bevor deine Notiz abläuft.</li>

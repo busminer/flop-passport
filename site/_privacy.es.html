@@ -36,14 +36,13 @@
 <li>
 <strong>Tu identidad pública</strong>: el <code>did:key</code> y su huella, y la dirección de la cartera Solana de la que se derivó.
         </li>
-<li>
-<strong>Tu idioma preferido</strong> y si el sonido de arranque está activado.
-        </li>
+<li><strong>La línea que escribiste para tu publicación</strong>, el enlace a la publicación cuando lo pegas de vuelta, y un enlace de contribución si añadiste uno. El enlace a la publicación nombra tu cuenta social, así que es lo más identificable que la app guarda.</li>
+<li><strong>Tu idioma</strong>, si el sonido de arranque está activado, cuándo se escribió por última vez en tu nota y qué recordatorios ya se mostraron.</li>
 </ul>
 <p>
         Todo ello vive en el almacenamiento privado de la app en tu dispositivo. La copia de seguridad automática de Android y la transferencia entre dispositivos están desactivadas a propósito para esta app, así que nada de esto se copia a una copia en la nube.
       </p>
-<h3 style="margin-top:32px">Qué sale de tu dispositivo, y solo cuando pulsas un botón</h3>
+<h3 style="margin-top:32px">Qué sale de tu dispositivo</h3>
 <ul class="plain">
 <li>
 <strong>A technocore.chat</strong>, cuando publicas tu identidad o firmas un registro: tu <code>did:key</code> público, el texto que estás firmando, un contador y la firma. Esta información es pública por diseño, que es justo el sentido de una identidad pública, y cualquiera puede leerla después.
@@ -56,6 +55,7 @@
 <li>
 <strong>A un archivo que tú elijas</strong>, cuando exportas tu clave. El destino lo eliges tú con el selector de archivos del sistema. No se sube nada.
         </li>
+<li><strong>A technocore.chat, sin que pulses nada</strong>, cuando abres la pestaña Actividad: la app vuelve a leer tu nota y tus registros y reescribe la nota. Ese reescrito es justamente el objetivo: ese servicio borra todo aquello en lo que nadie ha escrito durante siete días, así que abrir la app es lo que impide que tu identidad se borre. Envía la misma nota que ya está pública allí.</li>
 </ul>
 <p>
 <strong>Al desarrollador nunca se le envía nada.</strong> No hay backend al que enviarlo. La app habla con technocore.chat, operado por FLOP Labs, y con tu propia app de cartera, y esa es la lista completa.
@@ -71,7 +71,7 @@
 <p>Ninguno. La app no lleva SDK de analítica, ni servicio de informes de fallos, ni rastreo de terceros de ningún tipo. Este sitio no pone cookies, no mide visitas y no tiene código en el servidor. Sus únicas peticiones hacia fuera son dos tipografías web de Google Fonts, que recibe tu dirección IP como la recibe cualquier servidor de tipografías, y —cuando usas el verificador— una lectura directa de technocore.chat que sale de tu navegador y nunca pasa por nosotros. El sitio son archivos estáticos servidos por Cloudflare, que atiende la petición; nosotros no ejecutamos código propio ni guardamos registros.</p>
 <h3 style="margin-top:32px">Permisos</h3>
 <ul class="plain">
-<li><strong>Internet</strong>: para llegar a technocore.chat cuando publicas o firmas algo.</li>
+<li><strong>Internet</strong> — para llegar a technocore.chat cuando publicas o firmas algo, y para volver a leer tus registros e impedir que tu nota caduque cuando abres la pestaña Actividad.</li>
 <li><strong>Vibración</strong>: un aviso breve cuando un paso queda verificado.</li>
 <li><strong>Biometría</strong>: para proteger la pantalla que muestra tu clave privada.</li>
 <li><strong>Notificaciones</strong> — el recordatorio diario, los avisos sobre un paso que no has terminado y la advertencia antes de que caduque tu nota.</li>

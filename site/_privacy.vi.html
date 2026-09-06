@@ -36,14 +36,13 @@
 <li>
 <strong>Danh tính công khai của bạn</strong> — <code>did:key</code> và dấu vân của nó — cùng địa chỉ ví Solana mà nó được dẫn xuất từ đó.
         </li>
-<li>
-<strong>Ngôn ngữ bạn chọn</strong> và việc âm thanh khởi động có bật hay không.
-        </li>
+<li><strong>Dòng bạn viết cho bài đăng</strong>, đường liên kết tới bài đăng khi bạn dán nó trở lại, và một đường liên kết đóng góp nếu bạn có thêm vào. Đường liên kết bài đăng nêu tên tài khoản mạng xã hội của bạn, nên đó là thứ dễ nhận dạng nhất mà ứng dụng giữ lại.</li>
+<li><strong>Ngôn ngữ bạn chọn</strong>, âm thanh khởi động có bật hay không, lần cuối ghi chú của bạn được ghi vào, và những lời nhắc nào đã hiện ra rồi.</li>
 </ul>
 <p>
         Tất cả nằm trong vùng lưu trữ riêng của ứng dụng trên máy bạn. Sao lưu tự động của Android và tính năng chuyển máy được tắt có chủ đích cho ứng dụng này, nên không thứ nào trong đó được sao lên bản sao lưu đám mây.
       </p>
-<h3 style="margin-top:32px">Cái gì rời khỏi máy bạn, và chỉ khi bạn bấm nút</h3>
+<h3 style="margin-top:32px">Những gì rời khỏi máy của bạn</h3>
 <ul class="plain">
 <li>
 <strong>Tới technocore.chat</strong>, khi bạn công bố danh tính hoặc ký một bản ghi: <code>did:key</code> công khai của bạn, đoạn văn bản bạn đang ký, một bộ đếm và chữ ký. Thông tin này công khai theo thiết kế — đó chính là ý nghĩa của một danh tính công khai — và sau đó ai cũng đọc được.
@@ -56,6 +55,7 @@
 <li>
 <strong>Tới một tệp do bạn chọn</strong>, khi bạn xuất khóa. Bạn chọn nơi lưu bằng trình chọn tệp của hệ thống. Không có gì được tải lên đâu cả.
         </li>
+<li><strong>Tới technocore.chat, mà bạn không bấm gì cả</strong>, khi bạn mở thẻ Hoạt động: ứng dụng đọc lại ghi chú và các bản ghi của bạn, rồi ghi lại ghi chú một lần nữa. Lần ghi lại ấy chính là mục đích: dịch vụ đó xóa mọi thứ mà bảy ngày không ai ghi vào, nên chính việc mở ứng dụng là thứ giữ cho danh tính của bạn không bị xóa. Nó gửi đúng ghi chú vốn đã công khai ở đó.</li>
 </ul>
 <p>
 <strong>Không bao giờ có gì được gửi cho người phát triển.</strong> Không có phần máy chủ nào để gửi tới. Ứng dụng chỉ trò chuyện với technocore.chat, do FLOP Labs vận hành, và với chính ứng dụng ví của bạn — đó là toàn bộ danh sách.
@@ -71,7 +71,7 @@
 <p>Không có gì cả. Ứng dụng không có SDK phân tích dữ liệu, không có dịch vụ báo lỗi, không có bất kỳ theo dõi nào của bên thứ ba. Trang web này không đặt cookie, không đo lượt truy cập và không chạy mã nào ở phía máy chủ. Nó chỉ gửi ra ngoài hai loại yêu cầu: lấy hai phông chữ web từ Google Fonts — nơi nhận địa chỉ IP của bạn như mọi dịch vụ phông chữ khác — và, khi bạn dùng công cụ xác minh, một lượt đọc thẳng từ technocore.chat, đi từ trình duyệt của bạn chứ không bao giờ qua chúng tôi. Bản thân trang này là các tệp tĩnh do Cloudflare phân phối và xử lý yêu cầu; chúng tôi không chạy mã của mình và không giữ nhật ký.</p>
 <h3 style="margin-top:32px">Quyền truy cập</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — để tới technocore.chat khi bạn công bố hoặc ký thứ gì đó.</li>
+<li><strong>Internet</strong> — để kết nối tới technocore.chat khi bạn công bố hoặc ký một thứ gì đó, và để đọc lại các bản ghi của bạn cũng như giữ cho ghi chú không hết hạn khi bạn mở thẻ Hoạt động.</li>
 <li><strong>Rung</strong> — một nhịp xác nhận ngắn khi một bước được kiểm chứng.</li>
 <li><strong>Sinh trắc học</strong> — để khóa màn hình hiển thị khóa riêng tư của bạn.</li>
 <li><strong>Thông báo</strong> — lời nhắc hằng ngày, những nhắc nhở về bước bạn chưa làm xong, và cảnh báo trước khi ghi chú của bạn hết hạn.</li>

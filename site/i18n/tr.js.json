@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count} kayıt, technocore.chat'e göre",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat bu notun adını verdiği oda için yanıt vermedi, bu yüzden burada hiçbir şey doğrulanamadı. Servis yoğunken okumaları geri çeviriyor; birazdan tekrar dene.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadı.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadılar."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadılar.",
+  "{count} record predates signatures": "{count} kayıt imzalardan eski",
+  "{count} records predate signatures": "{count} kayıt imzalardan eski"
 }

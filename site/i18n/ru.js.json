@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "записей: {count}, по данным technocore.chat",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat не ответил по комнате, которую называет эта заметка, поэтому проверить здесь ничего не удалось. Под нагрузкой сервис отказывает в чтении; попробуйте ещё раз через минуту.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "В той комнате {count} запись выдаёт себя за этот ключ и не проходит проверку подписи. Она не засчитана.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "В той комнате {count} записей выдают себя за этот ключ и не проходят проверку подписи. Они не засчитаны."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "В той комнате {count} записей выдают себя за этот ключ и не проходят проверку подписи. Они не засчитаны.",
+  "{count} record predates signatures": "записей без подписи: {count}",
+  "{count} records predate signatures": "записей без подписи: {count}"
 }

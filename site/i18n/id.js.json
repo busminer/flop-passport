@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count} rekaman, menurut technocore.chat",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat tidak menjawab untuk ruang yang disebut catatan ini, jadi tidak ada yang bisa diperiksa di sini. Layanan itu menolak permintaan baca saat sedang sibuk; coba lagi sebentar.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} rekaman di ruang itu mengaku berasal dari kunci ini tetapi gagal pemeriksaan tanda tangan. Rekaman itu tidak dihitung.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} rekaman di ruang itu mengaku berasal dari kunci ini tetapi gagal pemeriksaan tanda tangan. Rekaman-rekaman itu tidak dihitung."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} rekaman di ruang itu mengaku berasal dari kunci ini tetapi gagal pemeriksaan tanda tangan. Rekaman-rekaman itu tidak dihitung.",
+  "{count} record predates signatures": "{count} rekaman lebih tua dari tanda tangan",
+  "{count} records predate signatures": "{count} rekaman lebih tua dari tanda tangan"
 }

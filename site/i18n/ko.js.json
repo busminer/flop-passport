@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count}건, technocore.chat 기준",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "이 노트가 지목한 방에 대해 technocore.chat이 응답하지 않아, 여기서는 아무것도 확인하지 못했습니다. 이 서비스는 바쁠 때 읽기를 거부합니다. 잠시 후 다시 시도해 보세요.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다.",
+  "{count} record predates signatures": "서명 도입 이전 기록 {count}건",
+  "{count} records predate signatures": "서명 도입 이전 기록 {count}건"
 }

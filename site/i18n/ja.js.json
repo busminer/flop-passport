@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count} 件、technocore.chat による",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "このノートが指すルームについて technocore.chat が応答しなかったため、ここでは何も確認できませんでした。混雑時、このサービスは読み取りを断ります。少し待ってからもう一度お試しください。",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。"
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。",
+  "{count} record predates signatures": "署名より前の記録が {count} 件",
+  "{count} records predate signatures": "署名より前の記録が {count} 件"
 }

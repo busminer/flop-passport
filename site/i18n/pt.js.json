@@ -45,5 +45,7 @@
   "{count} records, per technocore.chat": "{count} registros, segundo a technocore.chat",
   "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "A technocore.chat não respondeu pela sala que esta nota indica, então nada aqui pôde ser conferido. Esse serviço recusa leituras quando está sobrecarregado; tente de novo daqui a pouco.",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} registro naquela sala diz vir desta chave e não passa na conferência da assinatura. Não foi contado.",
-  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} registros naquela sala dizem vir desta chave e não passam na conferência da assinatura. Não foram contados."
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} registros naquela sala dizem vir desta chave e não passam na conferência da assinatura. Não foram contados.",
+  "{count} record predates signatures": "{count} registro anterior às assinaturas",
+  "{count} records predate signatures": "{count} registros anteriores às assinaturas"
 }
