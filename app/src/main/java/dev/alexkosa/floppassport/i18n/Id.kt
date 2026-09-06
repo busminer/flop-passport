@@ -163,8 +163,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "Belum diperiksa.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "Belum dilakukan. Passport Anda belum terhubung ke nama publik mana pun, dan ini langkah yang tidak bisa dikerjakan orang lain untuk Anda.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "Belum selesai. Sampai kelimanya hijau, identitas Anda belum diterbitkan dan tidak ada yang bisa diverifikasi siapa pun. Lanjutkan.",
     "Nothing asked yet" to "Belum ada yang ditanyakan",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
@@ -460,4 +458,20 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "your private key" to "kunci privat Anda",
     "{token} is preselected and you can switch it." to
         "{token} sudah dipilih dan Anda dapat menggantinya.",
+    "Try again. Nothing was sent anywhere." to
+        "Coba lagi. Tidak ada yang dikirim ke mana pun.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Coba lagi. technocore.chat adalah layanan publik dan menolak permintaan tulis saat sedang sibuk; itu tidak ada hubungannya dengan aplikasi ini, ponsel Anda, atau kunci Anda. Dua tiga kali percobaan itu wajar. Tidak ada yang diterbitkan.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Coba lagi. technocore.chat adalah layanan publik dan menolak permintaan tulis saat sedang sibuk; itu tidak ada hubungannya dengan aplikasi ini, ponsel Anda, atau kunci Anda. Dua tiga kali percobaan itu wajar. Tidak ada yang dikirim.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "Tidak bisa menghubungi technocore.chat. Periksa koneksi Anda lalu coba lagi; tidak ada yang hilang.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "Layanan sudah menerima rekaman Anda tetapi belum menampilkannya kembali. Tekan periksa ulang sebentar lagi; tidak ada yang perlu ditandatangani lagi.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat menolak rekaman itu. Layanan ini menolak permintaan tulis saat sedang sibuk - coba lagi sebentar lagi.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat tidak menerima perubahan itu. Layanan ini menolak permintaan tulis saat sedang sibuk - tekan terbitkan lagi sebentar lagi. Tautan Anda tetap tersimpan di ponsel ini.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "Belum selesai. Passport Anda belum aktif sampai kelimanya hijau, dan belum ada yang lengkap untuk diverifikasi siapa pun. Lanjutkan.",
 )

@@ -161,8 +161,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "Ещё не проверено.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "Не сделано. Ваш Passport пока не привязан ни к какому публичному имени, и это тот шаг, который за вас не сделает никто.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "Ещё не готово. Пока все пять не зелёные, ваша личность не опубликована и проверить никто ничего не может. Продолжайте.",
     "Nothing asked yet" to "Запросов пока не было",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
@@ -457,4 +455,20 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "your private key" to "ваш закрытый ключ",
     "{token} is preselected and you can switch it." to
         "{token} выбран заранее, и его можно поменять.",
+    "Try again. Nothing was sent anywhere." to
+        "Попробуйте ещё раз. Никуда ничего не отправлялось.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Попробуйте ещё раз. technocore.chat это публичный сервис, и под нагрузкой он отказывает в записи — это не про приложение, не про ваш телефон и не про ваш ключ. Две-три попытки это нормально. Ничего не опубликовано.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Попробуйте ещё раз. technocore.chat это публичный сервис, и под нагрузкой он отказывает в записи — это не про приложение, не про ваш телефон и не про ваш ключ. Две-три попытки это нормально. Ничего не отправлено.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "Не удалось связаться с technocore.chat. Проверьте соединение и попробуйте ещё раз, ничего не потеряно.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "Сервис принял вашу запись, но пока не показывает её обратно. Через минуту нажмите «перепроверить»; подписывать заново ничего не нужно.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat отклонил запись. Под нагрузкой он отказывает — попробуйте ещё раз через минуту.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat не принял изменение. Под нагрузкой он отказывает — через минуту нажмите «опубликовать» ещё раз. Ваши ссылки в любом случае сохранены на телефоне.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "Ещё не готово. Ваш Passport не действует, пока все пять не станут зелёными, и проверить пока нечего. Продолжайте.",
 )

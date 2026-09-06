@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.designsystem
 
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.foundation.background
@@ -70,6 +72,11 @@ fun FlopBackupSheet(
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.Cyan.copy(alpha = 0.4f), FlopShapes.lg)
                 .padding(FlopSpacing.lg)
+                // A dialog is measured with no maximum height, and a scroll inside
+                // infinity is a crash rather than a scroll. Nine tenths of the screen
+                // is the ceiling: enough that nothing is cramped, bounded enough that
+                // the buttons at the bottom stay reachable at any font size.
+                .heightIn(max = (LocalConfiguration.current.screenHeightDp * 0.9f).dp)
                 .verticalScroll(rememberScrollState()),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {

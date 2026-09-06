@@ -136,8 +136,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "尚未检查。",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "尚未完成。你的 Passport 还没有绑定任何公开名字，而这一步没有人能替你做。",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "还没完成。五个都变绿之前，你的身份并未发布，谁也无从核验。继续。",
     "Nothing asked yet" to "尚未提出请求",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "未找到任何内容。如果您签署过内容但这里没有显示，说明房间已清理掉该记录。这是正常情况，也是此页面存在的原因。",
@@ -407,4 +405,20 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "your identity" to "您的身份",
     "your private key" to "您的私钥",
     "{token} is preselected and you can switch it." to "已预选 {token}，您可以更换。",
+    "Try again. Nothing was sent anywhere." to
+        "请再试一次。什么都没有发出去。",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "请再试一次。technocore.chat 是一个公共服务，繁忙时会拒绝写入，这和本应用、你的手机、你的密钥都没有关系。试上两三次是正常的。什么都没有发布出去。",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "请再试一次。technocore.chat 是一个公共服务，繁忙时会拒绝写入，这和本应用、你的手机、你的密钥都没有关系。试上两三次是正常的。什么都没有发出去。",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "无法连接 technocore.chat。检查一下网络再试一次，什么都没有丢。",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "服务已经收下你的记录，但还没有把它显示回来。稍后按「重新检查」；不需要再签一次。",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat 拒绝了这条记录。它繁忙时会拒绝写入，稍后再试一次。",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat 没有接受这次改动。它繁忙时会拒绝写入，稍后再按一次「发布」。无论如何，你的链接已经存在这台手机上。",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "还没有完成。五项全部变绿之前，你的 Passport 尚未生效，也没有完整的东西可供别人核对。继续。",
 )

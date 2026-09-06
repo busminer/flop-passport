@@ -56,6 +56,17 @@ object NoteLife {
     fun lastWrite(context: Context): Long = prefs(context).getLong(KEY_LAST_WRITE, 0L)
 
     /**
+     * Forget when the note was last written.
+     *
+     * A deleted Passport leaves a timestamp that belongs to a key that no longer exists.
+     * The next identity would inherit it, be told its brand-new note was "renewed today",
+     * and skip the renewal that would have written it for the first time.
+     */
+    fun forget(context: Context) {
+        prefs(context).edit().remove(KEY_LAST_WRITE).apply()
+    }
+
+    /**
      * Whole days elapsed between two instants, or [UNKNOWN] when there is no first one.
      *
      * Pure, and separate from the preference it usually reads, so the seven-day arithmetic

@@ -53,6 +53,10 @@ SKIP_IF_CONTAINS = (
 ALLOWED = {
     # The text that gets signed and posted. Translating it would change the bytes the
     # signature covers, which is the one thing in this app that must never move.
+    # The first signed line, for the same reason as the daily one: it is the text a
+    # signature covers, so translating it would change the bytes the key vouched for.
+    "FLOP Passport for Seeker. First signed check-in. ",
+    "FLOP Passport for Seeker. First signed check-in.",
     "FLOP Passport for Seeker. Signed record for $today.",
     # Data, shown as data: a status line, a measurement, a counter, a hex blob.
     "HTTP ${r.status}: ${r.message}",

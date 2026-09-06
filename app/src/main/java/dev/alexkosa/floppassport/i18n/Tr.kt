@@ -161,8 +161,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "Henüz kontrol edilmedi.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "Yapılmadı. Passport'un henüz herhangi bir kamuya açık isme bağlı değil ve bu, kimsenin senin yerine yapamayacağı adım.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "Henüz bitmedi. Beşi birden yeşile dönmeden kimliğin yayımlanmış olmaz ve kimsenin doğrulayabileceği bir şey yoktur. Devam et.",
     "Nothing asked yet" to "Henüz bir şey sorulmadı",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Hiçbir şey bulunamadı. Bir şey imzaladıysanız ve burada değilse oda onu artık içermeyecek şekilde kırpılmıştır; bu normaldir ve bu ekran tam olarak bu nedenle vardır.",
@@ -456,4 +454,20 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "your private key" to "özel anahtarınız",
     "{token} is preselected and you can switch it." to
         "{token} önceden seçili, isterseniz değiştirebilirsiniz.",
+    "Try again. Nothing was sent anywhere." to
+        "Yeniden dene. Hiçbir yere hiçbir şey gönderilmedi.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Yeniden dene. technocore.chat herkese açık bir servis ve yoğunken yazma isteklerini geri çeviriyor; bunun bu uygulamayla, telefonunla ya da anahtarınla ilgisi yok. İki üç deneme normaldir. Hiçbir şey yayımlanmadı.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Yeniden dene. technocore.chat herkese açık bir servis ve yoğunken yazma isteklerini geri çeviriyor; bunun bu uygulamayla, telefonunla ya da anahtarınla ilgisi yok. İki üç deneme normaldir. Hiçbir şey gönderilmedi.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "technocore.chat'e ulaşılamadı. Bağlantını kontrol edip yeniden dene; hiçbir şey kaybolmadı.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "Servis kaydını aldı ama henüz geri göstermiyor. Birazdan yeniden denetle'ye dokun; hiçbir şeyi tekrar imzalamana gerek yok.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat kaydı geri çevirdi. Yoğunken yazma isteklerini geri çeviriyor - birazdan yeniden dene.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat değişikliği almadı. Yoğunken yazma isteklerini geri çeviriyor - birazdan yayımla'ya yeniden dokun. Bağlantıların her hâlükârda bu telefonda kayıtlı.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "Henüz bitmedi. Beşi birden yeşil olmadan Passport'un etkin olmaz ve kimsenin doğrulayabileceği tamamlanmış bir şey olmaz. Devam et.",
 )

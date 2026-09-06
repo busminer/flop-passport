@@ -22,7 +22,20 @@ import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
 
 const val CHECK_IN_ROOM = "flop-passport"
-const val CHECK_IN_TEXT = "FLOP Passport for Seeker. First signed check-in."
+/**
+ * The first signed line, ending in the key's own fingerprint.
+ *
+ * The fingerprint is what makes it this person's sentence and not everybody's. The service
+ * documents a duplicate filter - copies of one text, counted across senders, refused with a
+ * 422 once five land inside two minutes - and every user of this app writes into one shared
+ * room. Measured today the filter is not enforced on this deployment, so this is insurance
+ * rather than a repair; but a launch that puts six people through step 04 in the same
+ * minute is exactly the traffic the app is built to attract, and the failure would look to
+ * each of them like a broken key. It also leaves a readable room instead of a thousand
+ * identical lines.
+ */
+fun checkInText(did: String): String =
+    "FLOP Passport for Seeker. First signed check-in. " + DidKey.fingerprint(did)
 
 /**
  * Holds the setup so it survives the screen being rebuilt.
@@ -173,7 +186,13 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 val ours = noteValue()
                 val renewable = note == null || note == ours ||
                     activity.noteVerdict == DidNote.Verdict.MATCHES
-                if (renewable && NoteLife.daysSinceWrite(getApplication()) != 0) {
+                // And only after the person has actually published. Opening this tab at
+                // step 02 used to publish the note and post a signed line into the public
+                // room - work the user had not asked for and had not been told about,
+                // while the ladder still showed 03 as pending and every failure dialog
+                // promised "Nothing was published."
+                val published = flow[Step.Publish] is StepState.Verified
+                if (published && renewable && NoteLife.daysSinceWrite(getApplication()) != 0) {
                     keepNoteAlive(identity, note)
                     activity = activity.copy(
                         daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
@@ -209,17 +228,42 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         activity = activity.copy(checking = true, error = null)
         viewModelScope.launch {
             runCatching {
+                // Read before writing, the way the first check-in does. Without it a write
+                // the server took but could not confirm left the button live and the
+                // screen saying nothing was signed today - and the next tap minted a new
+                // nonce and posted the same sentence a second time, in public, for good.
+                if (technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                        .any { it.signedText == text }
+                ) {
+                    return@runCatching
+                }
                 val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
-                technocore.saySigned(
+                val result = technocore.saySigned(
                     did = identity,
                     room = CHECK_IN_ROOM,
                     text = text,
                     nonce = nonce,
                     sign = { vault.sign(it) },
                 )
-                keepNoteAlive(identity, activity.noteValue)
+                // The result used to be thrown away, so a refusal was indistinguishable
+                // from a success that had not appeared yet.
+                when (result) {
+                    is Technocore.Result.Verified -> keepNoteAlive(identity, activity.noteValue)
+                    is Technocore.Result.Unconfirmed -> activity = activity.copy(
+                        error = "The service took your record but has not shown it back " +
+                            "yet. Press re-check in a moment; nothing needs signing again.",
+                    )
+                    is Technocore.Result.Refused -> activity = activity.copy(
+                        error = "technocore.chat refused the record. It refuses writes " +
+                            "when it is busy - try again in a moment.",
+                    )
+                }
             }.onFailure {
-                activity = activity.copy(checking = false, error = it.message)
+                activity = activity.copy(
+                    checking = false,
+                    error = "Could not reach technocore.chat. Check your connection and " +
+                        "try again; nothing was lost.",
+                )
             }
             refreshActivity(force = true)
         }
@@ -260,7 +304,16 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         // a cleared app or a second device all leave a Passport whose public records
         // already exist; showing those steps as pending would invite the user to publish
         // them again, and a room is append-only.
-        if (did != null) refreshFromServer()
+        if (did != null) {
+            refreshFromServer()
+            // And the note itself, on open, not only when somebody happens to visit the
+            // Activity tab. `nameLinked` reads `activity.noteValue`, so without this a
+            // person who finished everything was shown "5 of 6 - one step left" on every
+            // launch, the sixth row said "not done", and half an hour later the phone told
+            // them so again in a notification. The app disbelieving a finished user is the
+            // same defect as believing an unfinished one, pointed the other way.
+            refreshActivity()
+        }
     }
 
     /** Ask the server what it already holds for this identity, and reflect only that. */
@@ -269,7 +322,24 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             runCatching {
                 val note = technocore.readIdentityNote(identity)
-                if (!note.isNullOrBlank()) {
+                // Ours, not merely present. The address is world-writable: anybody can put
+                // a line at it, and this used to tick step 03 green for whatever was
+                // found - so a stranger overwriting the note repaired the ladder instead
+                // of raising the alarm, while the Activity tab said "changed" about the
+                // same bytes. A note is ours when it is the text we compose, or when a
+                // signed line of ours vouches for its hash, which is how a note written by
+                // an earlier release with different wording still counts.
+                val ourNote = note != null && (
+                    note == noteValue() ||
+                        DidNote.check(
+                            identity,
+                            note,
+                            technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                                .sortedByDescending { it.seq }
+                                .map { it.signedText },
+                        ) == DidNote.Verdict.MATCHES
+                    )
+                if (!note.isNullOrBlank() && ourNote) {
                     set(
                         Step.Publish,
                         StepState.Verified(
@@ -365,8 +435,8 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     StepState.Failed(
                         summary = "The wallet did not complete the signature",
                         publishedSomething = false,
-                        whatToDo = "Press Create again. Nothing was sent anywhere.",
-                        detail = t.message ?: t.javaClass.simpleName,
+                        whatToDo = "Try again. Nothing was sent anywhere.",
+                        detail = null,
                     ),
                 )
             } finally {
@@ -424,7 +494,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         "Could not read the key back from secure storage",
                         publishedSomething = false,
                         whatToDo = "Delete the Passport and create it again from your wallet.",
-                        detail = t.message ?: t.javaClass.simpleName,
+                        detail = null,
                     ),
                 )
             }
@@ -474,16 +544,43 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * and the signed line that vouches for the note is re-posted because the bytes changed.
      */
     fun attachContributionUrl(value: String) {
-        contributionUrl = value
-        share.contributionUrl = value
-        republishNote()
+        attachLinks(post = xPostUrl, contribution = value)
     }
 
     fun attachPostUrl(value: String) {
-        xPostUrl = value
-        share.xPostUrl = value
+        attachLinks(post = value, contribution = contributionUrl)
+    }
+
+    /**
+     * Save both links and write the note once.
+     *
+     * They used to be two calls, each republishing. On the main dispatcher the first
+     * coroutine composed the note before the second had saved its field, so two different
+     * values raced to the same address and two signed lines were posted for one change.
+     * One write, composed after both fields are in.
+     */
+    fun attachLinks(post: String, contribution: String) {
+        xPostUrl = post
+        share.xPostUrl = post
+        contributionUrl = contribution
+        share.contributionUrl = contribution
         republishNote()
     }
+
+    /**
+     * What happened to the last attempt to write those links into the note.
+     *
+     * The write used to be silent in both directions: the fields were saved locally first,
+     * so the button that would repeat it went grey, and the failure was swallowed by the
+     * keep-alive path, which is written to stay quiet beside somebody else's success. A
+     * person whose write was refused - and this service refuses roughly one write in three
+     * under load - was left looking at "publishing" with no error and nothing to press.
+     */
+    var linkPublishError by mutableStateOf<String?>(null)
+        private set
+
+    var linkPublishing by mutableStateOf(false)
+        private set
 
     /**
      * How far the user has stepped away from the wording their key was given.
@@ -565,8 +662,21 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun republishNote() {
         val identity = did ?: return
+        if (linkPublishing) return
+        linkPublishing = true
+        linkPublishError = null
         viewModelScope.launch {
-            runCatching { keepNoteAlive(identity, activity.noteValue) }
+            val ok = runCatching {
+                val written = renewNote(identity)
+                if (written) keepNoteAlive(identity, activity.noteValue)
+                written
+            }.getOrDefault(false)
+            linkPublishing = false
+            if (!ok) {
+                linkPublishError = "technocore.chat did not take the change. It refuses " +
+                    "writes when it is busy - press publish again in a moment. Your links " +
+                    "are saved on this phone either way."
+            }
             refreshActivity(force = true)
             // The one moment the app has earned the right to ask for anything: the link is
             // in the note, the note has been read back, and the person has just been told
@@ -665,7 +775,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         StepState.Failed(
                             "technocore.chat refused the note",
                             publishedSomething = false,
-                            whatToDo = "Press publish again. technocore.chat is a public " +
+                            whatToDo = "Try again. technocore.chat is a public " +
                                 "service and it refuses writes when it is busy, which has " +
                                 "nothing to do with this app, your phone or your key. Two " +
                                 "or three attempts is normal. Nothing was published.",
@@ -690,7 +800,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         "Could not reach technocore.chat",
                         publishedSomething = false,
                         whatToDo = "Check your connection and try again.",
-                        detail = t.message ?: t.javaClass.simpleName,
+                        detail = null,
                     ),
                 )
             }
@@ -745,7 +855,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     val r = technocore.saySigned(
                         did = identity,
                         room = CHECK_IN_ROOM,
-                        text = CHECK_IN_TEXT,
+                        text = checkInText(identity),
                         nonce = nonce,
                         sign = { vault.sign(it) },
                     )
@@ -785,7 +895,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         StepState.Failed(
                             "technocore.chat refused the signed write",
                             publishedSomething = false,
-                            whatToDo = "Press check in again. technocore.chat is a public " +
+                            whatToDo = "Try again. technocore.chat is a public " +
                                 "service and it refuses writes when it is busy, which has " +
                                 "nothing to do with this app, your phone or your key. Two " +
                                 "or three attempts is normal. Nothing was posted.",
@@ -810,7 +920,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         "Could not reach technocore.chat",
                         publishedSomething = false,
                         whatToDo = "Check your connection and try again.",
-                        detail = t.message ?: t.javaClass.simpleName,
+                        detail = null,
                     ),
                 )
             }
@@ -870,6 +980,20 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         // else's history is presented as theirs.
         activity = ActivityState()
         showSupportInvite = false
+        // Everything the previous holder of this phone left behind. Without this the next
+        // Passport inherits their post link and publishes a note pointing at a post that
+        // carries a different DID - and the app reads it back and calls the sixth step
+        // finished, for a key that never posted anything.
+        share.clear()
+        contributionLine = ""
+        contributionUrl = ""
+        xPostUrl = ""
+        wordingShift = 0
+        awaitingLink = false
+        linkPublishError = null
+        NoteLife.forget(getApplication())
+        NudgePrefs(getApplication()).pending = false
+        FinishNudge.cancel(getApplication())
     }
 
     /**

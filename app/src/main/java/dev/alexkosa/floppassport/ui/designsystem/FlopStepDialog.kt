@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.designsystem
 
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -65,13 +67,23 @@ fun FlopStepDialog(
         onDismissRequest = onDismiss,
         properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
+        // Scrolls, like the problem dialog already does. A dialog is clipped by the edge
+        // of the screen rather than moved, and this one carries a URL, a note body, a nonce
+        // and a timestamp: at the largest system font its "continue" button sat below the
+        // glass - on the windows whose whole job is to say a step succeeded.
         Column(
             Modifier
                 .padding(FlopSpacing.lg)
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.Green.copy(alpha = 0.45f), FlopShapes.lg)
-                .padding(FlopSpacing.lg),
+                .padding(FlopSpacing.lg)
+                // A dialog is measured with no maximum height, and a scroll inside
+                // infinity is a crash rather than a scroll. Nine tenths of the screen
+                // is the ceiling: enough that nothing is cramped, bounded enough that
+                // the buttons at the bottom stay reachable at any font size.
+                .heightIn(max = (LocalConfiguration.current.screenHeightDp * 0.9f).dp)
+                .verticalScroll(rememberScrollState()),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(
@@ -103,10 +115,8 @@ fun FlopStepDialog(
                 Column(
                     Modifier
                         .fillMaxWidth()
-                        .heightIn()
                         .background(FlopColors.Base, FlopShapes.md)
-                        .padding(FlopSpacing.sm)
-                        .verticalScroll(rememberScrollState()),
+                        .padding(FlopSpacing.sm),
                     verticalArrangement = Arrangement.spacedBy(FlopSpacing.xs),
                 ) {
                     evidence.lines.forEach { (k, v) ->
@@ -121,9 +131,6 @@ fun FlopStepDialog(
         }
     }
 }
-
-/** No max height constraint yet; kept as a seam so the evidence block can gain one. */
-private fun Modifier.heightIn(): Modifier = this
 
 /**
  * Shown when a step does not land. Same shape as the success dialog on purpose: the user
@@ -152,6 +159,11 @@ fun FlopProblemDialog(
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.ErrorRed.copy(alpha = 0.45f), FlopShapes.lg)
+                // A dialog is measured with no maximum height, and a scroll inside
+                // infinity is a crash rather than a scroll. Nine tenths of the screen
+                // is the ceiling: enough that nothing is cramped, bounded enough that
+                // the buttons at the bottom stay reachable at any font size.
+                .heightIn(max = (LocalConfiguration.current.screenHeightDp * 0.9f).dp)
                 .verticalScroll(rememberScrollState())
                 .padding(FlopSpacing.lg),
         ) {

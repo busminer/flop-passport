@@ -45,6 +45,18 @@ class SharePrefs(context: Context) {
         get() = prefs.getString(KEY_X, "").orEmpty()
         set(value) = prefs.edit().putString(KEY_X, value.trim()).apply()
 
+    /**
+     * Forget everything about the person who used to hold this phone's Passport.
+     *
+     * Deleting a Passport used to leave the link to their post behind, so the next
+     * identity - a different key, possibly a different wallet - published a note pointing
+     * at a post that carries somebody else's DID, and the app read that note back and
+     * called the sixth step finished. A new key with a stranger's receipt.
+     */
+    fun clear() {
+        prefs.edit().remove(KEY_LINE).remove(KEY_CONTRIBUTION).remove(KEY_X).apply()
+    }
+
     private companion object {
         const val KEY_LINE = "share_line"
         const val KEY_CONTRIBUTION = "share_contribution"

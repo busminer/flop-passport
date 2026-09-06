@@ -5,6 +5,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -59,7 +60,11 @@ fun FlopBottomNav(
                 Column(
                     Modifier
                         .clickable { onSelect(tab) }
+                        // 48dp is the floor below which people start missing and blaming
+                        // themselves. The bar itself is thinner than that.
+                        .defaultMinSize(minHeight = 48.dp)
                         .padding(horizontal = FlopSpacing.md, vertical = FlopSpacing.xs),
+                    verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(

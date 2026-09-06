@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import androidx.compose.ui.layout.positionInParent
+import androidx.compose.ui.layout.onGloballyPositioned
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -20,6 +22,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -103,8 +107,14 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
 
     // One tick each time a step actually settles, not on every recomposition.
     val verifiedCount = remember(flow) { Step.all.count { flow[it] is StepState.Verified } }
+    // Only when the number goes up while the screen is open. This screen is recreated
+    // every time the tab is selected, so keying the effect on the count alone made the
+    // phone tick on app open and on every switch back to Passport - a confirmation buzz
+    // for something that had happened days ago.
+    var lastCelebrated by rememberSaveable { mutableIntStateOf(-1) }
     LaunchedEffect(verifiedCount) {
-        if (verifiedCount > 0) confirmHaptic(context)
+        if (lastCelebrated >= 0 && verifiedCount > lastCelebrated) confirmHaptic(context)
+        lastCelebrated = verifiedCount
     }
 
     // The outcome of whatever the user just pressed, shown once and dismissed by them.
@@ -165,11 +175,21 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
         }
     }
 
+    // Every finished step adds a line to the ladder and pushes the next button further
+    // down, so the one thing a person is meant to press walks off the bottom of the screen
+    // exactly when they become ready to press it. The screen follows the work: whenever the
+    // step being asked for changes, the block carrying its button is brought back into view.
+    val scroll = rememberScrollState()
+    var actionTop by remember { mutableIntStateOf(-1) }
+    LaunchedEffect(flow.next, actionTop) {
+        if (actionTop >= 0) scroll.animateScrollTo((actionTop - 160).coerceAtLeast(0))
+    }
+
     Column(
         Modifier
             .fillMaxSize()
             .background(FlopColors.Base)
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(scroll)
             .padding(FlopSpacing.md),
     ) {
         Image(
@@ -214,8 +234,9 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                     Spacer(Modifier.height(FlopSpacing.xs))
                     Text(
                         t(
-                            "Not finished yet. Until all five are green your identity is not " +
-                                "published and there is nothing anyone can verify. Keep going.",
+                            "Not finished yet. Your Passport is not live until all five " +
+                                "are green, and there is nothing complete for anyone to " +
+                                "verify. Keep going.",
                         ),
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
@@ -349,6 +370,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 button = "create passport",
                 enabled = !flow.busy,
                 onClick = { vm.createPassport { walletLauncher.launch(it) } },
+                            onPositioned = { actionTop = it },
             )
 
             flow.next == Step.Protect -> ActionBlock(
@@ -358,6 +380,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 button = "protect passport",
                 enabled = !flow.busy,
                 onClick = { vm.protect() },
+                            onPositioned = { actionTop = it },
             )
 
             flow.next == Step.Publish -> ActionBlock(
@@ -370,6 +393,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 button = "publish identity",
                 enabled = !flow.busy,
                 onClick = { vm.publish() },
+                            onPositioned = { actionTop = it },
             )
 
             else -> ActionBlock(
@@ -380,6 +404,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 button = "sign and check in",
                 enabled = !flow.busy,
                 onClick = { vm.checkIn() },
+                            onPositioned = { actionTop = it },
             )
         }
 
@@ -448,8 +473,10 @@ private fun ActionBlock(
     button: String,
     enabled: Boolean,
     onClick: () -> Unit,
+    /** Where this block sits in the scrolling column, so the screen can scroll to it. */
+    onPositioned: (Int) -> Unit = {},
 ) {
-    Column {
+    Column(Modifier.onGloballyPositioned { onPositioned(it.positionInParent().y.toInt()) }) {
         Text(t(title), style = FlopType.h3, color = FlopColors.IceWhite)
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(t(body), style = FlopType.bodyMd, color = FlopColors.TextMuted)

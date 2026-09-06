@@ -161,8 +161,6 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "Ainda não verificado.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "Não feito. Seu Passport ainda não está ligado a nenhum nome público, e este é o passo que ninguém dá por você.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "Ainda não terminou. Enquanto os cinco não estiverem verdes, sua identidade não está publicada e não há nada que alguém possa verificar. Continue.",
     "Nothing asked yet" to "Nada foi solicitado ainda",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Nada encontrado. Se você assinou algo e ele não está aqui, a sala já removeu essa parte, o que é normal e é exatamente por isso que esta tela existe.",
@@ -456,4 +454,20 @@ internal val PT_STRINGS: Map<String, String> = mapOf(
     "your private key" to "sua chave privada",
     "{token} is preselected and you can switch it." to
         "{token} já vem selecionado e você pode trocar.",
+    "Try again. Nothing was sent anywhere." to
+        "Tente de novo. Nada foi enviado para lugar nenhum.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Tente de novo. A technocore.chat é um serviço público e recusa escritas quando está sobrecarregada, o que não tem nada a ver com este app, seu telefone ou sua chave. Duas ou três tentativas é o normal. Nada foi publicado.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Tente de novo. A technocore.chat é um serviço público e recusa escritas quando está sobrecarregada, o que não tem nada a ver com este app, seu telefone ou sua chave. Duas ou três tentativas é o normal. Nada foi enviado.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "Não foi possível alcançar a technocore.chat. Verifique sua conexão e tente de novo; nada foi perdido.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "O serviço aceitou seu registro mas ainda não o mostrou de volta. Toque em verificar de novo daqui a pouco; não é preciso assinar nada outra vez.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "A technocore.chat recusou o registro. Ela recusa escritas quando está sobrecarregada; tente de novo daqui a pouco.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "A technocore.chat não aceitou a mudança. Ela recusa escritas quando está sobrecarregada; toque em publicar de novo daqui a pouco. Seus links ficam salvos neste telefone de qualquer forma.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "Ainda não terminou. Seu Passport não fica ativo até que os cinco estejam verdes, e não há nada completo para ninguém verificar. Continue.",
 )

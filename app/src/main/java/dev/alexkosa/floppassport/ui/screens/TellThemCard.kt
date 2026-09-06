@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.foundation.layout.heightIn
 import android.content.Intent
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -110,16 +112,29 @@ fun TellThemCard(vm: PassportViewModel) {
     if (askForLink) {
         FlopLinkPrompt(
             value = xField,
-            onValueChange = { xField = it },
+            onValueChange = { xField = it; problem = null },
             onDismiss = {
                 askForLink = false
+                problem = null
                 vm.stopAwaitingLink()
             },
+            error = problem,
             onSave = {
                 val x = xField.trim()
-                if (x.isNotEmpty()) vm.attachPostUrl(x)
-                askForLink = false
-                vm.stopAwaitingLink()
+                // The same check the card's own button makes. Without it this dialog took
+                // any string at all - the word "yes" was enough - wrote it into the public
+                // note as `x: yes`, read it back, lit the sixth tick and announced that
+                // everything was done. The one control in the app that handed out a green
+                // tick for nothing.
+                if (!looksLikeXPost(x)) {
+                    problem = "That does not look like a link to a post. It should look " +
+                        "like https://x.com/you/status/123."
+                } else {
+                    vm.attachPostUrl(x)
+                    problem = null
+                    askForLink = false
+                    vm.stopAwaitingLink()
+                }
             },
         )
     }
@@ -297,13 +312,22 @@ fun TellThemCard(vm: PassportViewModel) {
                         "That does not look like a link. It should start with https://"
                     else -> null
                 }
-                if (problem == null) {
-                    if (x != vm.xPostUrl) vm.attachPostUrl(x)
-                    if (c != vm.contributionUrl) vm.attachContributionUrl(c)
-                }
+                if (problem == null) vm.attachLinks(post = x, contribution = c)
             },
-            enabled = xField.trim() != vm.xPostUrl || contribField.trim() != vm.contributionUrl,
+            // Enabled while anything has changed, and again whenever the note does not yet
+            // carry the link: the fields are saved locally before the write, so a refused
+            // write left them equal to what was stored, the button grey, the badge stuck on
+            // "publishing", and nothing at all to press.
+            enabled = !vm.linkPublishing && (
+                xField.trim() != vm.xPostUrl ||
+                    contribField.trim() != vm.contributionUrl ||
+                    (xField.trim().isNotEmpty() && !vm.nameLinked)
+                ),
         )
+        vm.linkPublishError?.let {
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
+        }
         problem?.let {
             Spacer(Modifier.height(FlopSpacing.sm))
             Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
@@ -365,6 +389,7 @@ private fun FlopLinkPrompt(
     onValueChange: (String) -> Unit,
     onDismiss: () -> Unit,
     onSave: () -> Unit,
+    error: String? = null,
 ) {
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         Column(
@@ -373,6 +398,11 @@ private fun FlopLinkPrompt(
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
                 .border(1.dp, FlopColors.Cyan.copy(alpha = 0.45f), FlopShapes.lg)
+                // A dialog is measured with no maximum height, and a scroll inside
+                // infinity is a crash rather than a scroll. Nine tenths of the screen
+                // is the ceiling: enough that nothing is cramped, bounded enough that
+                // the buttons at the bottom stay reachable at any font size.
+                .heightIn(max = (LocalConfiguration.current.screenHeightDp * 0.9f).dp)
                 .verticalScroll(rememberScrollState())
                 .padding(FlopSpacing.lg),
         ) {
@@ -400,6 +430,10 @@ private fun FlopLinkPrompt(
                 placeholder = "https://x.com/you/status/...",
             )
             Spacer(Modifier.height(FlopSpacing.md))
+            error?.let {
+                Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
+                Spacer(Modifier.height(FlopSpacing.sm))
+            }
             FlopButton(t("attach it"), onSave, enabled = value.trim().isNotEmpty())
             Spacer(Modifier.height(FlopSpacing.sm))
             // Equal weight, and it says what it does. Nobody is trapped in this dialog.

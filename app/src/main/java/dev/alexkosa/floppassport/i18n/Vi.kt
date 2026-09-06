@@ -160,8 +160,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "Chưa kiểm tra.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "Chưa xong. Passport của bạn vẫn chưa gắn với tên công khai nào, và đây là bước không ai làm thay bạn được.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "Vẫn chưa xong. Chừng nào cả năm chưa xanh thì danh tính của bạn chưa được công bố và không ai kiểm chứng được gì cả. Cứ tiếp tục.",
     "Nothing asked yet" to "Chưa có câu hỏi nào",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "Không tìm thấy gì. Nếu bạn đã ký nội dung nhưng không thấy ở đây, phòng đã lược bỏ phần chứa nội dung đó - đây là điều bình thường và chính là lý do màn hình này tồn tại.",
@@ -457,4 +455,20 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "your private key" to "khóa riêng của bạn",
     "{token} is preselected and you can switch it." to
         "{token} đã được chọn sẵn và bạn có thể đổi.",
+    "Try again. Nothing was sent anywhere." to
+        "Hãy thử lại. Không có gì được gửi đi đâu cả.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "Hãy thử lại. technocore.chat là một dịch vụ công cộng và nó từ chối ghi khi đang bận, chuyện đó không liên quan gì tới ứng dụng này, tới máy của bạn hay tới khóa của bạn. Hai ba lần thử là bình thường. Không có gì được công bố.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "Hãy thử lại. technocore.chat là một dịch vụ công cộng và nó từ chối ghi khi đang bận, chuyện đó không liên quan gì tới ứng dụng này, tới máy của bạn hay tới khóa của bạn. Hai ba lần thử là bình thường. Không có gì được gửi đi.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "Không kết nối được tới technocore.chat. Hãy kiểm tra kết nối rồi thử lại; không mất gì cả.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "Dịch vụ đã nhận bản ghi của bạn nhưng chưa hiển thị lại. Lát nữa hãy bấm kiểm tra lại; không cần ký lại gì cả.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat đã từ chối bản ghi. Nó từ chối ghi khi đang bận - lát nữa hãy thử lại.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat chưa nhận thay đổi này. Nó từ chối ghi khi đang bận - lát nữa hãy bấm công bố lần nữa. Dù sao các đường liên kết của bạn cũng đã được lưu trên máy này.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "Vẫn chưa xong. Passport của bạn chưa hoạt động cho tới khi cả năm bước đều xanh, và chưa có gì hoàn chỉnh để ai đó kiểm chứng. Cứ tiếp tục.",
 )

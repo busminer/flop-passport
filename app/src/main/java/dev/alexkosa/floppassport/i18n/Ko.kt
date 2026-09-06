@@ -140,8 +140,6 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "아직 확인하지 않았습니다.",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "아직입니다. 당신의 Passport는 아직 어떤 공개된 이름에도 연결되어 있지 않고, 이것은 아무도 대신해 줄 수 없는 단계입니다.",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "아직 끝나지 않았습니다. 다섯 개가 모두 초록이 되기 전에는 신원이 공개되지 않았고, 누구도 확인할 수 있는 것이 없습니다. 계속하세요.",
     "Nothing asked yet" to "아직 요청한 내용이 없습니다",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "찾은 내용이 없습니다. 서명한 항목이 여기에 없다면 방에서 오래된 기록이 정리된 것입니다. 이는 정상이며 바로 이 화면이 필요한 이유입니다.",
@@ -418,4 +416,20 @@ internal val KO_STRINGS: Map<String, String> = mapOf(
     "your identity" to "사용자 신원",
     "your private key" to "사용자 개인 키",
     "{token} is preselected and you can switch it." to "{token}이(가) 미리 선택되어 있으며 변경할 수 있습니다.",
+    "Try again. Nothing was sent anywhere." to
+        "다시 시도하세요. 아무 데도 아무것도 보내지 않았습니다.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "다시 시도하세요. technocore.chat은 공개 서비스이고 바쁠 때는 쓰기를 거부합니다. 이 앱이나 당신의 휴대전화, 키와는 상관없는 일입니다. 두세 번 시도하는 것은 정상입니다. 공개된 것은 없습니다.",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "다시 시도하세요. technocore.chat은 공개 서비스이고 바쁠 때는 쓰기를 거부합니다. 이 앱이나 당신의 휴대전화, 키와는 상관없는 일입니다. 두세 번 시도하는 것은 정상입니다. 보낸 것은 없습니다.",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "technocore.chat에 연결하지 못했습니다. 연결을 확인하고 다시 시도하세요. 잃어버린 것은 없습니다.",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "서비스가 기록을 받았지만 아직 되돌려 보여 주지 않았습니다. 잠시 후 다시 확인을 누르세요. 다시 서명할 필요는 없습니다.",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat이 기록을 거부했습니다. 바쁠 때는 쓰기를 거부합니다. 잠시 후 다시 시도하세요.",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat이 변경을 받아들이지 않았습니다. 바쁠 때는 쓰기를 거부합니다. 잠시 후 게시를 다시 누르세요. 링크는 어느 쪽이든 이 휴대전화에 저장되어 있습니다.",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "아직 끝나지 않았습니다. 다섯 가지가 모두 초록이 되기 전까지 Passport는 활성화되지 않고, 누군가 검증할 만한 완성된 것도 없습니다. 계속하세요.",
 )

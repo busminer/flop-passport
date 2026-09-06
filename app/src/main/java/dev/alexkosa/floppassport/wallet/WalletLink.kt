@@ -37,7 +37,10 @@ object WalletLink {
      * naming a domain nobody can open would be the app failing its own instruction.
      */
     val IDENTITY_URI: Uri = Uri.parse("https://flop.alexkosa.dev")
-    val ICON_URI: Uri = Uri.parse("favicon.ico")
+    // Relative to IDENTITY_URI, and it has to exist: this used to point at favicon.ico,
+    // which the site does not serve, so every wallet honouring the icon showed a blank
+    // square at the exact moment the app tells the user to read what they are signing.
+    val ICON_URI: Uri = Uri.parse("assets/flop-chip-favicon.svg")
     const val IDENTITY_NAME = "FLOP Passport"
     /**
      * The four-argument authorize takes a CLUSTER, whose only legal values are

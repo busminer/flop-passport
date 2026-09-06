@@ -137,8 +137,6 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Not checked yet." to "まだ確認していません。",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
         "まだです。あなたの Passport はどの公開名にも結び付いていません。そしてこれは、誰も代わりにできない手順です。",
-    "Not finished yet. Until all five are green your identity is not published and there is nothing anyone can verify. Keep going." to
-        "まだ終わっていません。五つすべてが緑になるまで、あなたの身元は公開されておらず、誰にも検証できるものがありません。続けてください。",
     "Nothing asked yet" to "まだ質問はありません",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "何も見つかりませんでした。署名したものがここにない場合、ルームの整理によって削除されています。これは通常の動作であり、その確認のためにこの画面があります。",
@@ -415,4 +413,20 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "your identity" to "ID",
     "your private key" to "秘密鍵",
     "{token} is preselected and you can switch it." to "{token} が選択済みです。変更もできます。",
+    "Try again. Nothing was sent anywhere." to
+        "もう一度お試しください。どこにも何も送られていません。",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
+        "もう一度お試しください。technocore.chat は公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も公開されていません。",
+    "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
+        "もう一度お試しください。technocore.chat は公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も送られていません。",
+    "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
+        "technocore.chat に接続できませんでした。通信を確認してもう一度お試しください。失われたものはありません。",
+    "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
+        "サービスは記録を受け取りましたが、まだ返して表示していません。少し待って「再確認」を押してください。署名し直す必要はありません。",
+    "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
+        "technocore.chat が記録を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度お試しください。",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
+        "technocore.chat が変更を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度「公開」を押してください。リンクはいずれにせよこの端末に保存されています。",
+    "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
+        "まだ終わっていません。五つすべてが緑になるまで Passport は有効になりませんし、誰かが検証できる完成したものもありません。続けてください。",
 )
