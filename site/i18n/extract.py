@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 
 # The partials that carry prose. `_quotes.html` is deliberately absent: the quotes are
 # what FLOP said, in the language they said it in, and the page promises them in full.
-SOURCES = ["_body.html", "_privacy.html", "_platform.html", "_tip.html"]
+SOURCES = ["_body.html", "_privacy.html", "_terms.html", "_platform.html", "_tip.html"]
 
 # A leaf block is one of these with no other block inside it.
 BLOCKS = {"h1", "h2", "h3", "h4", "p", "li", "blockquote", "figcaption", "summary", "dt", "dd"}

@@ -6,7 +6,9 @@
     "privacy_description": "У FLOP Passport нет аккаунта, аналитики и собственного сервера. Что приложение хранит, что покидает телефон и как всё удалить.",
     "switcher_label": "Язык",
     "verify_input_label": "Личность did:key для проверки",
-    "avatar_alt": "Фото профиля Flop Labs"
+    "avatar_alt": "Фото профиля Flop Labs",
+    "terms_title": "Условия — FLOP Passport для Seeker",
+    "terms_description": "Приложение бесплатное, не хранит ни денег, ни seed-фразы и ничего не обещает про аирдроп. Что оно публикует, за что отвечаете вы и чем оно не является."
   },
   "zh": {
     "index_title": "FLOP Passport for Seeker",
@@ -15,7 +17,9 @@
     "privacy_description": "FLOP Passport 没有账号、没有分析统计，也没有自己的服务器。应用保存什么、什么会离开你的手机，以及如何删除一切。",
     "switcher_label": "语言",
     "verify_input_label": "要验证的 did:key 身份",
-    "avatar_alt": "Flop Labs 的头像"
+    "avatar_alt": "Flop Labs 的头像",
+    "terms_title": "条款 — FLOP Passport for Seeker",
+    "terms_description": "应用免费，不保管资金和助记词，也不承诺任何空投。它发布什么、你要负责什么，以及它不是什么。"
   },
   "es": {
     "index_title": "FLOP Passport para Seeker",
@@ -24,7 +28,9 @@
     "privacy_description": "FLOP Passport no tiene cuenta, ni analítica, ni servidor propio. Qué guarda la app, qué sale de tu teléfono y cómo borrarlo todo.",
     "switcher_label": "Idioma",
     "verify_input_label": "Una identidad did:key para verificar",
-    "avatar_alt": "Foto de perfil de Flop Labs"
+    "avatar_alt": "Foto de perfil de Flop Labs",
+    "terms_title": "Términos — FLOP Passport for Seeker",
+    "terms_description": "La aplicación es gratuita, no guarda dinero ni frase semilla y no promete nada sobre ningún airdrop. Qué publica, de qué eres responsable y qué no es."
   },
   "pt": {
     "index_title": "FLOP Passport para Seeker",
@@ -33,7 +39,9 @@
     "privacy_description": "O FLOP Passport não tem conta, nem analytics, nem servidor próprio. O que o app guarda, o que sai do seu telefone e como apagar tudo.",
     "switcher_label": "Idioma",
     "verify_input_label": "Uma identidade did:key para verificar",
-    "avatar_alt": "Foto de perfil da Flop Labs"
+    "avatar_alt": "Foto de perfil da Flop Labs",
+    "terms_title": "Termos — FLOP Passport for Seeker",
+    "terms_description": "O aplicativo é gratuito, não guarda dinheiro nem frase semente e não promete nada sobre airdrop. O que ele publica, pelo que você responde e o que ele não é."
   },
   "de": {
     "index_title": "FLOP Passport für Seeker",
@@ -42,7 +50,9 @@
     "privacy_description": "FLOP Passport hat kein Konto, keine Analytik und keinen eigenen Server. Was die App speichert, was dein Telefon verlässt und wie du alles löschst.",
     "switcher_label": "Sprache",
     "verify_input_label": "Eine did:key-Identität zum Überprüfen",
-    "avatar_alt": "Profilbild von Flop Labs"
+    "avatar_alt": "Profilbild von Flop Labs",
+    "terms_title": "Nutzungsbedingungen — FLOP Passport for Seeker",
+    "terms_description": "Die App ist kostenlos, verwahrt kein Geld und keine Seed-Phrase und verspricht nichts über einen Airdrop. Was sie veröffentlicht, wofür du haftest und was sie nicht ist."
   },
   "tr": {
     "index_title": "Seeker için FLOP Passport",
@@ -51,7 +61,9 @@
     "privacy_description": "FLOP Passport'un hesabı, analitiği ve kendine ait sunucusu yok. Uygulamanın ne sakladığı, telefonundan ne çıktığı ve her şeyi nasıl sileceğin.",
     "switcher_label": "Dil",
     "verify_input_label": "Doğrulanacak bir did:key kimliği",
-    "avatar_alt": "Flop Labs profil fotoğrafı"
+    "avatar_alt": "Flop Labs profil fotoğrafı",
+    "terms_title": "Koşullar — FLOP Passport for Seeker",
+    "terms_description": "Uygulama ücretsizdir, para ve kurtarma ifadesi tutmaz, airdrop hakkında söz vermez. Ne yayımladığı, neyden sorumlu olduğunuz ve ne olmadığı."
   },
   "vi": {
     "index_title": "FLOP Passport cho Seeker",
@@ -60,7 +72,9 @@
     "privacy_description": "FLOP Passport không có tài khoản, không đo lường và không máy chủ riêng. Ứng dụng lưu gì, cái gì rời khỏi máy bạn, và cách xóa sạch mọi thứ.",
     "switcher_label": "Ngôn ngữ",
     "verify_input_label": "Danh tính did:key cần xác minh",
-    "avatar_alt": "Ảnh đại diện của Flop Labs"
+    "avatar_alt": "Ảnh đại diện của Flop Labs",
+    "terms_title": "Điều khoản — FLOP Passport for Seeker",
+    "terms_description": "Ứng dụng miễn phí, không giữ tiền và cụm từ khôi phục, không hứa gì về airdrop. Nó công bố gì, bạn chịu trách nhiệm gì và nó không phải là gì."
   },
   "id": {
     "index_title": "FLOP Passport untuk Seeker",
@@ -69,7 +83,9 @@
     "privacy_description": "FLOP Passport tidak punya akun, analitik, maupun server sendiri. Apa yang disimpan aplikasi, apa yang meninggalkan ponsel Anda, dan cara menghapus semuanya.",
     "switcher_label": "Bahasa",
     "verify_input_label": "Identitas did:key untuk diverifikasi",
-    "avatar_alt": "Foto profil Flop Labs"
+    "avatar_alt": "Foto profil Flop Labs",
+    "terms_title": "Ketentuan — FLOP Passport for Seeker",
+    "terms_description": "Aplikasi ini gratis, tidak menyimpan uang maupun frasa pemulihan, dan tidak menjanjikan airdrop. Apa yang diterbitkan, apa tanggung jawab Anda, dan apa yang bukan."
   },
   "ko": {
     "index_title": "Seeker를 위한 FLOP Passport",
@@ -78,7 +94,9 @@
     "privacy_description": "FLOP Passport에는 계정도, 분석도, 자체 서버도 없습니다. 앱이 무엇을 저장하는지, 무엇이 휴대폰을 떠나는지, 그리고 전부 지우는 방법.",
     "switcher_label": "언어",
     "verify_input_label": "확인할 did:key 신원",
-    "avatar_alt": "Flop Labs 프로필 사진"
+    "avatar_alt": "Flop Labs 프로필 사진",
+    "terms_title": "약관 — FLOP Passport for Seeker",
+    "terms_description": "앱은 무료이며 돈도 시드 문구도 보관하지 않고 에어드랍을 약속하지 않습니다. 무엇을 게시하는지, 무엇이 당신 책임인지, 그리고 무엇이 아닌지."
   },
   "ja": {
     "index_title": "FLOP Passport for Seeker",
@@ -87,6 +105,8 @@
     "privacy_description": "FLOP Passport にはアカウントも解析もサーバーもありません。アプリが何を保存し、何が端末を出ていき、どうすればすべて消せるか。",
     "switcher_label": "言語",
     "verify_input_label": "検証する did:key 識別子",
-    "avatar_alt": "Flop Labs のプロフィール画像"
+    "avatar_alt": "Flop Labs のプロフィール画像",
+    "terms_title": "利用規約 — FLOP Passport for Seeker",
+    "terms_description": "アプリは無料で、資金もシードフレーズも預からず、エアドロップについて何も約束しません。何を公開するか、あなたの責任は何か、そして何ではないか。"
   }
 }

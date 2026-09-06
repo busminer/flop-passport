@@ -76,6 +76,11 @@ EN_META = {
         "FLOP Passport has no account, no analytics and no server of its own. What the app "
         "stores, what leaves your phone, and how to delete everything."
     ),
+    "terms_title": "Terms — FLOP Passport for Seeker",
+    "terms_description": (
+        "The app is free, holds no money and no seed phrase, and promises nothing about "
+        "any airdrop. What it publishes, what you are responsible for, and what it is not."
+    ),
     "switcher_label": "Language",
     # Attributes, not sentences, so `extract.py` never saw them and ten translated pages
     # spoke English to anyone using a screen reader. The field's label and the picture's
@@ -84,6 +89,16 @@ EN_META = {
     "verify_input_label": "A did:key identity to verify",
     "avatar_alt": "Flop Labs profile picture",
 }
+
+
+def slug(page_name: str) -> str:
+    """The part of a page's address after the language.
+
+    The site had two pages for so long that "index or privacy" was written into four
+    different helpers as an if. Terms of use made that a lie in four places at once, so
+    the question is asked here and nowhere else.
+    """
+    return "" if page_name == "index" else page_name
 
 
 def meta(lang: str, key: str) -> str:
@@ -158,7 +173,7 @@ def switcher(lang: str, page_name: str) -> str:
     """
     items = []
     for code, label in LANGS:
-        href = home(code) if page_name == "index" else f"{home(code)}privacy"
+        href = f"{home(code)}{slug(page_name)}"
         current = ' aria-current="page"' if code == lang else ""
         items.append(f'<a href="{href}" hreflang="{code}" lang="{code}"{current}>{label}</a>')
     label = meta(lang, "switcher_label")
@@ -193,8 +208,10 @@ def localize_attributes(body: str, lang: str) -> str:
 def localize_links(body: str, lang: str) -> str:
     """Point the site's own links at the same language the reader is already in."""
     if lang == "en":
-        return body.replace('href="/privacy.html"', 'href="/privacy"')
+        body = body.replace('href="/privacy.html"', 'href="/privacy"')
+        return body.replace('href="/terms.html"', 'href="/terms"')
     body = body.replace('href="/privacy.html"', f'href="/{lang}/privacy"')
+    body = body.replace('href="/terms.html"', f'href="/{lang}/terms"')
     body = body.replace('href="/#', f'href="/{lang}/#')
     body = body.replace('href="/"', f'href="/{lang}/"')
     return body
@@ -209,9 +226,9 @@ def alternates(page_name: str) -> str:
     """
     lines = []
     for code, _ in LANGS:
-        href = ORIGIN + (home(code) if page_name == "index" else f"{home(code)}privacy")
+        href = ORIGIN + home(code) + slug(page_name)
         lines.append(f'<link rel="alternate" hreflang="{code}" href="{href}" />')
-    default = ORIGIN + ("/" if page_name == "index" else "/privacy")
+    default = ORIGIN + "/" + slug(page_name)
     lines.append(f'<link rel="alternate" hreflang="x-default" href="{default}" />')
     return "\n".join(lines)
 
@@ -312,7 +329,7 @@ def page(
     *, lang: str, page_name: str, title: str, description: str, body: str,
     strings: str, extra_head: str = "",
 ) -> str:
-    canonical = ORIGIN + (home(lang) if page_name == "index" else f"{home(lang)}privacy")
+    canonical = ORIGIN + home(lang) + slug(page_name)
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -433,6 +450,27 @@ def build_privacy(lang: str) -> Path:
     return target
 
 
+def build_terms(lang: str) -> Path:
+    body = part("_terms.html", lang)
+    small = svg("flop-lockup-reverse.svg", class_prefix="fl").replace(
+        "<svg ", '<svg style="height:20px;width:auto" ', 1
+    )
+    body = body.replace("<!--LOCKUP_SMALL-->", small)
+    body = localize_attributes(body, lang)
+    body = localize_links(body, lang)
+    body = body.replace("<!--LANGS-->", switcher(lang, "terms"))
+    out = page(
+        lang=lang, page_name="terms",
+        title=meta(lang, "terms_title"),
+        description=meta(lang, "terms_description"),
+        body=body, strings=js_strings(lang),
+    )
+    target = SITE / "terms.html" if lang == "en" else SITE / lang / "terms.html"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(out, encoding="utf-8")
+    return target
+
+
 def build_sitemap() -> None:
     """Every page in every language, each one naming the other ten.
 
@@ -440,17 +478,17 @@ def build_sitemap() -> None:
     are translations of each other, and it usually gets that wrong.
     """
     rows = []
-    for page_name in ("index", "privacy"):
+    for page_name in ("index", "privacy", "terms"):
         for code, _ in LANGS:
-            loc = ORIGIN + (home(code) if page_name == "index" else f"{home(code)}privacy")
+            loc = ORIGIN + home(code) + slug(page_name)
             links = "".join(
                 '<xhtml:link rel="alternate" hreflang="{c}" href="{h}"/>'.format(
                     c=other,
-                    h=ORIGIN + (home(other) if page_name == "index" else f"{home(other)}privacy"),
+                    h=ORIGIN + home(other) + slug(page_name),
                 )
                 for other, _ in LANGS
             )
-            default = ORIGIN + ("/" if page_name == "index" else "/privacy")
+            default = ORIGIN + "/" + slug(page_name)
             links += f'<xhtml:link rel="alternate" hreflang="x-default" href="{default}"/>'
             priority = (
                 "1.0" if page_name == "index" and code == "en"
@@ -488,7 +526,9 @@ if __name__ == "__main__":
     for code, _ in LANGS:
         a = build_index(code)
         b = build_privacy(code)
-        size = (a.stat().st_size + b.stat().st_size) // 1024
-        print(f"{code}: {a.relative_to(SITE)}, {b.relative_to(SITE)} — {size} KB")
+        c = build_terms(code)
+        size = (a.stat().st_size + b.stat().st_size + c.stat().st_size) // 1024
+        print(f"{code}: {a.relative_to(SITE)}, {b.relative_to(SITE)}, "
+              f"{c.relative_to(SITE)} — {size} KB")
     build_sitemap()
     build_robots()
