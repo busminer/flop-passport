@@ -117,18 +117,27 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 header .mark { display: flex; align-items: center; gap: 12px; flex: none; }
 header .mark svg { height: 18px; width: auto; }
 /*
-  The section links scroll rather than wrap, at every width and not only on a phone.
-  Ten labels fit across a desktop in English and in no other language here: in Japanese
-  and Russian the same row tore each label into three stacked lines and grew the header
-  to eighty pixels of rubble. One line that can be pushed sideways is worse than nothing
-  only if nothing was there.
+  The section links scroll rather than wrap, at every width and not only on a phone. The
+  comment above this rule already said so; the rule underneath it said `flex-wrap: wrap`
+  and did the opposite, so in English the last label sat alone on a second row and the
+  header carried a ragged stump under itself. In Japanese and Russian the same row tore
+  each label into stacked lines and grew the header to eighty pixels of rubble.
+
+  Two things keep it to one line now. It never wraps, at any width or in any language: an
+  overlong row is pushed sideways instead, which is the behaviour the comment always
+  claimed. And the gap is `md`, not `lg` - the header is capped at 1080px, so widening the
+  window never buys the nav a single pixel, and at `lg` the English row needed the width
+  it had plus about seventy more. The cap is why this looked like it fitted on a big
+  monitor and never did.
 */
 header nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px var(--lg);
+  flex-wrap: nowrap;
+  gap: var(--md);
   justify-content: flex-end;
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 header nav::-webkit-scrollbar { display: none; }
 header nav a { white-space: nowrap; }
