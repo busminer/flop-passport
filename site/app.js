@@ -379,6 +379,10 @@
       var response = await fetch("https://technocore.chat" + path, {
         headers: { Accept: "text/plain" },
       });
+      // Only a 404 means "no note". Anything else - 429, 503, a proxy page - is a failure to
+      // ask, and telling somebody nothing is published at their address during a service
+      // hiccup is a falsehood about their identity.
+      var unreadable = !response.ok && response.status !== 404;
       var text = response.ok ? stripBanner(await response.text()) : null;
 
       var nodes = [];
@@ -390,7 +394,7 @@
       head.appendChild(el("span", "badge cyan", T("key is real")));
       head.appendChild(
         el("span", text ? "badge cyan" : "badge grey",
-          text ? T("note published") : T("no note found"))
+          text ? T("note published") : unreadable ? T("could not read the note") : T("no note found"))
       );
 
       // The badge that actually means something. A published note is a claim; a note the
@@ -460,7 +464,10 @@
       }
 
       var note = el("p", null, T(
-        !text
+        unreadable
+          ? "technocore.chat did not answer for this note address. That says nothing about " +
+            "whether a note exists; try again in a moment."
+          : !text
           ? "This key is well formed, but nothing is published at its note address yet. " +
             "That is what step 03 in the app does."
           : vouch.state === "matches"
@@ -548,8 +555,11 @@
    * is never trusted — it is validated like anything typed by hand, and it only ever
    * travels to technocore.chat, because this page has nowhere else to send it.
    */
-  var shared = new URLSearchParams(location.search).get("did") ||
-    (location.hash.indexOf("#did=") === 0 ? decodeURIComponent(location.hash.slice(5)) : "");
+  var shared = new URLSearchParams(location.search).get("did") || "";
+  if (!shared && location.hash.indexOf("#did=") === 0) {
+    // A mangled percent-escape must not take the rest of this script down with it.
+    try { shared = decodeURIComponent(location.hash.slice(5)); } catch (e) { shared = ""; }
+  }
   if (shared && input) {
     input.value = shared.trim();
     var box = document.getElementById("verify");

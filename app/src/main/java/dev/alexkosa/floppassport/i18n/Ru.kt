@@ -29,7 +29,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "Публичная заметка по адресу, вычисленному из вашего ключа, чтобы вас потом нашли и проверили. Этот шаг идёт в technocore.chat, а это чужой публичный сервис: когда он загружен, он отказывает, и ответ на это — нажать ещё раз. Две-три попытки это нормально и значит, что с телефоном всё в порядке.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
-        "Подписанную отметку нужно оставлять вручную, а пропущенный день нельзя добавить позже. Этот переключатель также включает предупреждения перед удалением записи о вашей личности.",
+        "Подписанную запись нужно оставлять вручную, а пропущенный день нельзя добавить позже. Этот же переключатель включает предупреждение перед удалением вашей заметки личности.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Чаевые ничего не меняют в вашем Passport и не влияют ни на один аирдроп.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -44,7 +44,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Android is blocking notifications for this app. Turn them on in the system settings." to
         "Android блокирует уведомления этого приложения. Включите их в настройках системы.",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
-        "Любой может проверить это по адресу из шага 03. Приложение ничего не обещает в отношении какого-либо распределения и никогда не будет.",
+        "Любой может проверить это по адресу из шага 03. Приложение ничего не обещает ни о какой доле и никогда не будет.",
     "Anyone holding it can sign as you" to "Любой владелец сможет подписывать от вашего имени",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "Любой владелец seed_hex сможет подписывать от имени этой личности в Technocore.",
@@ -81,14 +81,12 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to
         "FLOP Passport для Seeker — закрытая резервная копия",
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport для Seeker от @AlexKosa1",
-    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
-        "FLOP попросил агентов делать что-то полезное. Подписанная запись это след, который вы оставляете, а день без неё это день, который потом никто не проверит.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
         "FLOP попросил агентов сделать две вещи: создать уникальный ключ и помочь рассказать о Technocore. Пять шагов выше сделали первое. Второе никто не сделает за вас, поэтому приложение напишет пост, а вы решите, публиковать ли его.",
     "Identity derived from your wallet signature" to
         "Личность, полученная из подписи вашего кошелька",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
-        "Если запись всё же удалят, ваш Passport не исчезнет: тот же кошелёк по-прежнему создаёт ту же личность, а подписанная отметка вернёт запись по тому же адресу.",
+        "Если заметку всё же удалят, ваш Passport не исчезнет: тот же кошелёк по-прежнему даёт ту же личность, а подписанная запись вернёт заметку по тому же адресу.",
     "In one line: what you did, or why you set this up" to
         "Одной строкой: что вы сделали или зачем это завели",
     "It never asks for your wallet recovery phrase." to
@@ -98,9 +96,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Храните этот файл офлайн. Никому его не отправляйте, включая автора приложения.",
     "Language" to "Язык",
-    "Last reminder about this one." to "Про это напоминаю в последний раз.",
-    "Link to what you built, if there is one" to "Ссылка на то, что вы создали, если она есть",
-    "Link to your post" to "Ссылка на вашу публикацию",
+    "Last reminder about this one." to "Последнее напоминание об этом.",
     "Make your first signed check-in" to "Оставьте первую подписанную запись",
     "Next: create your Passport from your wallet." to
         "Далее: создайте Passport из своего кошелька.",
@@ -119,7 +115,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Не сделано. Ваш Passport пока не привязан ни к какому публичному имени, и это тот шаг, который за вас не сделает никто.",
     "Nothing asked yet" to "Запросов пока не было",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
-        "Ничего не найдено. Если вы что-то подписали, но этого здесь нет, старая часть комнаты уже удалена, что нормально и является причиной существования этого экрана.",
+        "Ничего не найдено. Если вы что-то подписали, а здесь этого нет, комнату уже подчистили дальше этого места — это нормально, и именно для этого этот экран и существует.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "За этот текст пока никто не поручился. Опубликуйте снова, чтобы подписать его.",
     "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
@@ -127,13 +123,9 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Nothing signed today yet." to "Сегодня пока ничего не подписано.",
     "One step left" to "Остался один шаг",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
-        "Указаны только языки, для которых есть настоящий перевод. Если бы все доступные языки отображались на английском, этот список сообщал бы о поддержке вашего языка, а следующий экран показывал бы обратное.",
+        "Указаны только языки, для которых есть настоящий перевод. Список, предлагающий языки, которые на деле показывают английский, сообщал бы, что ваш язык поддерживается, а следующий экран доказывал бы обратное.",
     "Opening a connection" to "Установка соединения",
     "Opening your Solana wallet" to "Открывается ваш кошелёк Solana",
-    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
-        "Вставьте сюда ссылку, и ваше имя привяжется к ключу навсегда. Это то, что люди собираются сделать потом и не делают.",
-    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
-        "Вставьте ссылку на свою публикацию. Она попадёт в заметку вашего идентификатора: заметка будет ссылаться на публикацию, а публикация будет содержать ключ. Тогда любой сможет сверить их по одному ключу.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
         "Опубликуйте свою строчку, потом вернитесь и вставьте ссылку. Именно это привязывает ваше имя к вашему ключу, и это та половина, о которой FLOP просил агентов.",
     "Protect" to "Защитить",
@@ -142,9 +134,9 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Publish your identity" to "Опубликуйте свою личность",
     "Published and read back from the server" to "Опубликовано и считано обратно с сервера",
     "Published, read back, and vouched for by your key" to
-        "Опубликовано, считано обратно и подтверждено вашим ключом",
+        "Опубликовано, считано обратно и заверено вашим ключом",
     "Publishing your identity note to technocore.chat" to
-        "Запись о вашей личности публикуется в technocore.chat",
+        "Заметка личности публикуется в technocore.chat",
     "Publishing your note" to "Публикация заметки",
     "Questions, answered in full" to "Полные ответы на вопросы",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
@@ -167,8 +159,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Отправлено, но пока не подтверждено в комнате",
     "Settings" to "Настройки",
     "Show your private key" to "Показать закрытый ключ",
-    "Sign a record now and this day is on your history for good." to
-        "Подпишите запись сейчас, и этот день останется в вашей истории навсегда.",
     "Signed, accepted and found again in the room" to
         "Подписано, принято и снова найдено в комнате",
     "Signing your first check-in and sending it" to
@@ -180,10 +170,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Thanks for building this" to "Поблагодарить разработчика",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
         "Это не похоже на ссылку на публикацию. Она должна выглядеть примерно так: https://x.com/you/status/123.",
-    "That does not look like a link. It should start with https://" to
-        "Это не похоже на ссылку. Она должна начинаться с https://",
-    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
-        "Пять шагов построили вашу личность. За пределами этого телефона пока никто не знает, что она ваша. Шаг 06 ниже: напишите строчку, опубликуйте, потом вернитесь и вставьте ссылку. Именно это ставит ваше имя рядом с вашим ключом навсегда, и именно здесь люди останавливаются.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Ключ запечатывается в защищённом хранилище телефона, затем считывается обратно и сверяется с вашей личностью.",
     "The manual" to "Инструкция",
@@ -192,7 +178,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Сохранённый ключ не соответствует вашей личности",
     "The wallet did not complete the signature" to "Кошелёк не завершил подписание",
     "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
-        "Здесь нет баллов и счёта. FLOP предложил агентам сделать что-то полезное, поэтому имеет значение запись, которую человек всё ещё может открыть. Число, придуманное этим приложением, относилось бы к другой игре.",
+        "Здесь нет баллов и счёта. FLOP попросил агентов сделать что-то полезное, поэтому имеет значение запись, которую человек всё ещё может открыть. Число, придуманное этим приложением, было бы уже другой игрой.",
     "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign as you on Technocore. Keep them offline and never send them to anyone, including us." to
         "Эти 32 байта и есть ваш FLOP Passport. Их владелец сможет подписывать от вашего имени в Technocore. Храните их офлайн и никому не отправляйте, включая нас.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
@@ -200,17 +186,15 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
         "Это бесплатное приложение с открытым исходным кодом. Если оно оказалось полезным, вы можете отправить чаевые {name}. Откроется ваш кошелёк, и сумму вы выберете там.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
-        "Приложение обновляет запись при каждом открытии и при каждой подписанной отметке, поэтому отсчёт семи дней начинается заново. Открывайте его хотя бы раз в неделю, и ничего не потеряется.",
+        "Приложение переписывает заметку при каждом открытии и при каждой подписанной записи, поэтому отсчёт семи дней начинается заново. Открывайте его хотя бы раз в неделю, и ничего не потеряется.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Это НЕ ключ вашего кошелька Solana. Собственный ключ кошелька никогда не покидает Seed Vault, и приложение его не видело. Перед вами отдельный ключ, используемый для подписания только в Technocore.",
     "This line is what makes the post yours. Everything under it is the proof." to
         "Эта строчка и делает пост вашим. Всё под ней это доказательство.",
     "Three days left before it is deleted." to "До удаления осталось три дня.",
-    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
-        "Три вещи, по порядку: напишите свою строчку, опубликуйте пост, потом вернитесь и вставьте ссылку. Последнее и делает всё это постоянным, и именно про него забывают.",
     "Today cannot be added later" to "Сегодняшний день потом не добавить",
     "Told only when your identity note is days away from being deleted." to
-        "Вы получите уведомление, только когда до удаления записи о вашей личности останется несколько дней.",
+        "Вы получите уведомление, только когда до удаления вашей заметки личности останется несколько дней.",
     "Tomorrow is the last day." to "Завтра последний день.",
     "Two days left before it is deleted." to "До удаления осталось два дня.",
     "Unfinished setup" to "Незаконченная настройка",
@@ -242,20 +226,16 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live" to "Ваш Passport действует",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ваш Passport действует, а первая подписанная запись находится в Technocore. Любой может её проверить, и она остаётся вашей.",
-    "Your Passport is live, it is yours, and your name is on it." to
-        "Ваш Passport живой, он ваш, и на нём стоит ваше имя.",
-    "Your Passport is live. One step left." to "Ваш Passport живой. Остался один шаг.",
+    "Your Passport is live. One step left." to "Ваш Passport действует. Остался один шаг.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport восстанавливается из одной подписи кошелька — поэтому и нет seed-фразы, которую можно потерять. У этого есть обратная сторона: любое приложение, уговорившее ваш кошелёк подписать ровно ту же фразу, восстановит этот Passport. Читайте, что кошелёк просит подписать, здесь и везде.",
-    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
-        "Сам Passport не потерян: тот же кошелёк по-прежнему создаёт ту же личность, а если подписать отметку сейчас, запись снова появится по тому же адресу.",
-    "Your identity note expires soon" to "Запись о вашей личности скоро исчезнет",
-    "Your identity note has been deleted" to "Запись о вашей личности удалена",
+    "Your identity note expires soon" to "Заметка личности скоро исчезнет",
+    "Your identity note has been deleted" to "Заметка личности удалена",
     "Your key is never sent anywhere. Only you can export it." to
         "Ваш ключ никуда не отправляется. Экспортировать его можете только вы.",
     "Your key signed a line carrying this note's exact hash." to
-        "Ваш ключ подписал строку с точным хэшем этой заметки.",
-    "Your note has to be kept alive" to "Запись нужно поддерживать",
+        "Ваш ключ подписал строку с точным хешем этой заметки.",
+    "Your note has to be kept alive" to "Заметку нужно поддерживать живой",
     "Your post is in your identity note, at your key's own address." to
         "Ваш пост лежит в вашей заметке личности, по адресу вашего же ключа.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
@@ -263,7 +243,6 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "active days" to "активных дней",
     "activity" to "активность",
     "address" to "адрес",
-    "agent: FLOP Passport for Seeker" to "агент: FLOP Passport для Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to
         "алгоритм: Ed25519, did:key, 32-байтовый seed",
     "attach it" to "привязать",
@@ -293,8 +272,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "fetched from the server on opening" to "получено с сервера при открытии",
     "fingerprint" to "отпечаток",
     "flop-passport vault self-test" to "самопроверка хранилища flop-passport",
-    "identity" to "идентичность",
-    "identity note" to "запись о личности",
+    "identity" to "личность",
+    "identity note" to "заметка личности",
     "language {code}" to "язык {code}",
     "last connection" to "последнее соединение",
     "linked" to "привязано",
@@ -302,22 +281,20 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "matched on our nonce, not just our key" to "совпало по нашему nonce, а не только по ключу",
     "no thanks, continue" to "нет, продолжить",
     "no, nothing was made public" to "нет, ничего не стало общедоступным",
-    "nonce" to "разовый номер",
+    "nonce" to "nonce",
     "not found" to "не найдено",
     "not yet" to "пока нет",
     "not yet - the note alone is a claim, not a proof" to
-        "ещё нет — сама запись является утверждением, а не доказательством",
+        "ещё нет — сама по себе заметка это заявление, а не доказательство",
     "off" to "выкл.",
     "on" to "вкл.",
     "open" to "открыть",
     "our exact bytes, no wallet prefix" to "точно наши байты, без префикса кошелька",
     "passport for seeker" to "passport для seeker",
-    "pin it to your identity" to "привязать к идентификатору",
-    "post it" to "опубликовать",
+    "pin it to your identity" to "закрепить в личности",
     "private key, 32 bytes, hex" to "закрытый ключ, 32 байта, hex",
     "protect passport" to "защитить passport",
     "publish identity" to "опубликовать личность",
-    "publish these to my note" to "добавить в мою заметку",
     "published" to "опубликовано",
     "publishing" to "публикуется",
     "re-check with the server" to "повторно проверить на сервере",
@@ -331,7 +308,7 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "send a tip" to "отправить чаевые",
     "send a tip in {token}" to "отправить чаевые в {token}",
     "send a tip to {name}" to "отправить чаевые {name}",
-    "sequence" to "последовательность",
+    "sequence" to "порядковый номер",
     "settings" to "настройки",
     "sign and check in" to "подписать и оставить запись",
     "sign today's record" to "подписать сегодняшнюю запись",
@@ -343,8 +320,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "support the builder" to "поддержать разработчика",
     "technocore.chat answered" to "technocore.chat ответил",
     "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
-        "technocore.chat удаляет всё, что никто не обновлял семь дней. Это касается и записи о вашей личности по адресу, который вы сохраняете и публикуете.",
-    "technocore.chat refused the note" to "technocore.chat отклонил запись",
+        "technocore.chat удаляет всё, что никто не обновлял семь дней. Это касается и заметки личности по адресу, который вы сохраняете и которым делитесь.",
+    "technocore.chat refused the note" to "technocore.chat отклонил заметку",
     "technocore.chat refused the signed write" to "technocore.chat отклонил подписанную запись",
     "text" to "текст",
     "the note changed between reads" to "заметка изменилась между чтениями",
@@ -354,18 +331,15 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "try again" to "попробовать снова",
     "unconfirmed" to "не подтверждено",
     "unsigned" to "без подписи",
-    "vault {level}" to "хранилище {level}",
     "verified" to "подтверждено",
     "verify it yourself" to "проверить самостоятельно",
     "version" to "версия",
-    "vouched for" to "подтверждено",
+    "vouched for" to "заверено ключом",
     "wallet" to "кошелёк",
     "wallet linked" to "кошелёк связан",
     "what this app never does" to "чего это приложение никогда не делает",
     "what to do" to "что делать",
     "when" to "когда",
-    "with a wallet prefix, which is fine and pinned" to
-        "с префиксом кошелька, что допустимо и закреплено",
     "working" to "обработка",
     "yes, a signed did-note line carries its hash" to
         "да, подписанная строка did-note содержит свой хеш",
@@ -384,11 +358,9 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
         "Не удалось связаться с technocore.chat. Проверьте соединение и попробуйте ещё раз, ничего не потеряно.",
     "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
-        "Сервис принял вашу запись, но пока не показывает её обратно. Через минуту нажмите «перепроверить»; подписывать заново ничего не нужно.",
+        "Сервис принял вашу запись, но пока не показывает её обратно. Через минуту нажмите «проверить ещё раз»; подписывать заново ничего не нужно.",
     "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
         "technocore.chat отклонил запись. Под нагрузкой он отказывает — попробуйте ещё раз через минуту.",
-    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
-        "technocore.chat не принял изменение. Под нагрузкой он отказывает — через минуту нажмите «опубликовать» ещё раз. Ваши ссылки в любом случае сохранены на телефоне.",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "Ещё не готово. Ваш Passport не действует, пока все пять не станут зелёными, и проверить пока нечего. Продолжайте.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
@@ -403,12 +375,8 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Она удаляется через семь дней, если в неё ничего не писали. Само открытие приложения в неё пишет.",
     "Maybe. The service accepted it, and this app could not read it back to be sure." to
         "Возможно. Сервис принял это, но приложение пока не смогло перечитать и убедиться.",
-    "Seven days without opening the app. Open it now and the note goes back up." to
-        "Семь дней приложение не открывали. Откройте сейчас, и заметка вернётся.",
     "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Это был последний из пяти. Ваш Passport действует. Осталось одно, и это как раз то, о чём FLOP и просил: расскажите людям, что вы сделали. Пост приложение напишет за вас, внизу этого экрана.",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
-        "Ссылка, которую вы вставите, ляжет в вашу заметку личности, по адресу, вычисленному из вашего собственного ключа. Комнаты чистятся в течение суток. Заметка живёт, пока вы открываете приложение.",
     "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
         "Приложение бесплатное, и покупать в нём нечего. Если оно оказалось полезным, спасибо можно отправить на kosa.skr.",
     "checking" to
@@ -433,10 +401,84 @@ internal val RU_STRINGS: Map<String, String> = mapOf(
         "Сохранённая запись не проходит проверку этим ключом",
     "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
         "Вы завели ключ, который может воссоздать только ваш кошелёк, запечатали его в этом телефоне, опубликовали там, где его найдёт посторонний, подписали запись и доказали, что она дошла, и поставили свой пост рядом с ключом. Настраивать больше нечего.",
-    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
-        "Дальше — раз в день: заходите во вкладку «Активность» и подписывайте запись за этот день. Та же запись не даёт удалить вашу заметку личности, а сегодняшний день потом уже не добавить.",
     "open Activity" to
         "открыть «Активность»",
     "{n} more characters and the button below wakes up." to
         "Ещё {n} знаков, и кнопка ниже оживёт.",
+    "A signed record is dated evidence that you were here. A day without one cannot be added later, and signing also keeps your identity note alive. Nothing here promises anything about any allocation." to
+        "Подписанная запись — датированное свидетельство, что вы были здесь. День без неё нельзя добавить позже, а подпись заодно поддерживает жизнь вашей заметки. Ничто здесь не обещает никакого распределения.",
+    "Could not check technocore.chat for your published steps. This says nothing about them, only about the connection. Re-check when you are back online." to
+        "Не удалось спросить technocore.chat о ваших опубликованных шагах. Это ничего не говорит о них, только о соединении. Проверьте снова, когда появится сеть.",
+    "Could not reach technocore.chat. Check your connection and press publish again. Your link is saved on this phone either way." to
+        "Не удалось связаться с technocore.chat. Проверьте соединение и нажмите «опубликовать» ещё раз. Ссылка в любом случае сохранена на этом телефоне.",
+    "Could not read the key from secure storage. Restart the phone and try again." to
+        "Не удалось прочитать ключ из защищённого хранилища. Перезагрузите телефон и попробуйте снова.",
+    "FLOP Passport is an independent community project. It is not made, endorsed or reviewed by FLOP Labs or by Solana Mobile." to
+        "FLOP Passport — независимый проект сообщества. Он не создан, не одобрен и не проверен ни FLOP Labs, ни Solana Mobile.",
+    "Finish the steps on the Passport tab first. Daily records start once your Passport is live." to
+        "Сначала пройдите шаги на вкладке «Паспорт». Ежедневные записи начинаются, когда ваш Passport заработает.",
+    "From now on: open the app at least once a week, so your identity note is not deleted. On the days you do something, open Activity and sign that day's record - a day cannot be added later." to
+        "Дальше так: открывайте приложение хотя бы раз в неделю, чтобы заметку не удалили. В дни, когда вы что-то сделали, откройте «Активность» и подпишите запись за этот день — день нельзя добавить позже.",
+    "If you did something today, sign a record for it now." to
+        "Если вы сегодня что-то сделали, подпишите запись об этом сейчас.",
+    "Link to your post on X" to
+        "Ссылка на ваш пост в X",
+    "Nothing was saved. Open your private key again and save it from there." to
+        "Ничего не сохранено. Откройте приватный ключ ещё раз и сохраните его оттуда.",
+    "Paste the link here and your name goes beside your key, in your identity note. This is the part people mean to do later and then do not." to
+        "Вставьте ссылку сюда, и ваше имя встанет рядом с ключом в вашей заметке. Это тот шаг, который люди собираются сделать позже и не делают.",
+    "Paste the link to your post on X. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key. The app does not open the link or check the post; anyone reading your note can." to
+        "Вставьте ссылку на ваш пост в X. Она попадёт в вашу заметку: заметка укажет на пост, а пост несёт ключ. Тогда любой сможет сверить оба конца с одним ключом. Приложение не открывает ссылку и не проверяет пост — это может сделать любой, кто читает вашу заметку.",
+    "Read from technocore.chat, not from this phone. Rooms are trimmed as they grow, so this shows what anyone would find today." to
+        "Читается с technocore.chat, а не с этого телефона. Комнаты подрезаются по мере роста, так что здесь то, что нашёл бы любой сегодня.",
+    "Seeker and Solana Mobile are trademarks of Solana Mobile, used only to say what this app is built for. FLOP and Technocore are names of the project whose public service this app writes to." to
+        "Seeker и Solana Mobile — товарные знаки Solana Mobile; они используются только чтобы сказать, для чего сделано это приложение. FLOP и Technocore — названия проекта, в чей публичный сервис пишет это приложение.",
+    "Seven days without opening the app. Open it and press publish; the note goes back to the same address." to
+        "Семь дней без открытия приложения. Откройте его и нажмите «опубликовать» — заметка вернётся на тот же адрес.",
+    "The file could not be written. Try another location." to
+        "Файл не удалось записать. Попробуйте другое место.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key, and it is where people stop." to
+        "Пять шагов построили вашу личность. Никто за пределами этого телефона пока не знает, что она ваша. Шаг 06 ниже: напишите одну строку, опубликуйте её, потом вернитесь и вставьте ссылку. Именно это ставит ваше имя рядом с ключом, и именно здесь люди останавливаются.",
+    "The key could not be sealed in this phone's secure storage" to
+        "Не удалось запечатать ключ в защищённом хранилище этого телефона",
+    "The link you paste goes into your identity note, at an address derived from your own key. The note stays as long as you keep opening the app; seven days without a write and it is deleted." to
+        "Вставленная ссылка попадает в вашу заметку по адресу, выведенному из вашего ключа. Заметка живёт, пока вы открываете приложение; семь дней без записи — и она удаляется.",
+    "The note was accepted, but it could not be read back yet." to
+        "Заметка принята, но прочитать её обратно пока не удалось.",
+    "The record was sent but no answer came back in time. Do not resend: read the room again first." to
+        "Запись отправлена, но ответ не пришёл вовремя. Не отправляйте повторно: сначала перечитайте комнату.",
+    "Three things, in this order: write your line, post it on X, then come back and paste the link. The last one is what puts your name beside your key, and it is the one people forget." to
+        "Три вещи, по порядку: напишите свою строку, опубликуйте её в X, потом вернитесь и вставьте ссылку. Последнее ставит ваше имя рядом с ключом, и именно о нём забывают.",
+    "Today is the last day. It is deleted within 24 hours unless you open the app." to
+        "Сегодня последний день. Заметку удалят в ближайшие 24 часа, если вы не откроете приложение.",
+    "Try again. If it keeps failing, restart the phone and try once more. Nothing was sent anywhere." to
+        "Попробуйте ещё раз. Если не помогает, перезагрузите телефон и повторите. Никуда ничего не отправлялось.",
+    "Your Passport is live, it is yours, and your post link is on it." to
+        "Ваш Passport работает, он ваш, и ссылка на пост стоит в нём.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and publishing again puts the note back at the same address." to
+        "Сам Passport не потерян: тот же кошелёк по-прежнему даёт ту же личность, а повторная публикация возвращает заметку на тот же адрес.",
+    "checking with the server" to
+        "проверяю на сервере",
+    "independent project" to
+        "независимый проект",
+    "not in your note yet" to
+        "ещё не в заметке",
+    "post it on X" to
+        "опубликовать в X",
+    "put it in my note" to
+        "добавить в мою заметку",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your link is saved on this phone either way." to
+        "technocore.chat не принял изменение. Когда он занят, он отказывает в записи — нажмите «опубликовать» ещё раз чуть позже. Ссылка в любом случае сохранена на этом телефоне.",
+    "vault: not sealed yet" to
+        "хранилище: ещё не запечатано",
+    "vault: secure area" to
+        "хранилище: защищённая зона",
+    "vault: security chip" to
+        "хранилище: чип безопасности",
+    "vault: software" to
+        "хранилище: программное",
+    "with a wallet prefix - this Passport rebuilds only through this same wallet app" to
+        "с префиксом кошелька — этот Passport восстанавливается только через это же приложение-кошелёк",
+    "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
+        "Запрос от этого приложения начинается со слов FLOP Passport key derivation v1 и называет приложение dev.alexkosa.floppassport; кошелёк показывает, что его запросил flop.alexkosa.dev.",
 )

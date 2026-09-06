@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "В той комнате {count} запись выдаёт себя за этот ключ и не проходит проверку подписи. Она не засчитана.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "В той комнате {count} записей выдают себя за этот ключ и не проходят проверку подписи. Они не засчитаны.",
   "{count} record predates signatures": "записей без подписи: {count}",
-  "{count} records predate signatures": "записей без подписи: {count}"
+  "{count} records predate signatures": "записей без подписи: {count}",
+  "could not read the note": "не удалось прочитать заметку",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat не ответил по этому адресу заметки. Это ничего не говорит о том, есть ли заметка; попробуйте снова через минуту."
 }

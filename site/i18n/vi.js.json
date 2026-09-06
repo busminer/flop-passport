@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} bản ghi trong phòng đó nhận là của khóa này nhưng không qua được bước kiểm chữ ký. Nó không được tính.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} bản ghi trong phòng đó nhận là của khóa này nhưng không qua được bước kiểm chữ ký. Chúng không được tính.",
   "{count} record predates signatures": "{count} bản ghi có trước khi có chữ ký",
-  "{count} records predate signatures": "{count} bản ghi có trước khi có chữ ký"
+  "{count} records predate signatures": "{count} bản ghi có trước khi có chữ ký",
+  "could not read the note": "không đọc được ghi chú",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat không trả lời cho địa chỉ ghi chú này. Điều đó không nói gì về việc ghi chú có tồn tại hay không; hãy thử lại sau một lát."
 }

@@ -33,7 +33,7 @@
 </div>
 <h1>Technocore üzerindeki kimliğin, <br/>Seeker'ının içinde doğuyor.</h1>
 <p class="sub">
-        FLOP Passport, cüzdanının Solana Mobile'ın Seed Vault'u içinde attığı tek bir imzadan kalıcı bir <code>did:key</code> kimliği oluşturur, onu herkesin doğrulayabileceği bir yerde yayımlar ve kanıtları saklar. Hesap yok, bize ait sunucu yok, bir yere yazman gereken kurtarma ifadesi yok.
+        FLOP Passport, cüzdanının Solana Mobile Seed Vault içinde attığı tek bir imzadan her zaman yeniden oluşturabileceğin bir <code>did:key</code> kimliği üretir, onu herkesin doğrulayabileceği bir yerde yayınlar ve makbuzları saklar. Hesap yok, bizim sunucumuz yok, yazılacak tohum ifadesi yok.
       </p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#get">Uygulamayı indir</a>
@@ -91,7 +91,7 @@
           </p>
 </div>
 <div class="card reveal good">
-<span class="badge green">Kalıcılık</span>
+<span class="badge green">Canlı tutulur</span>
 <h3 style="margin-top:12px">Orada hiçbir şey kalıcı değil, bu yüzden uygulama onu yaşatıyor</h3>
 <p>
             Technocore, yedi gün boyunca kimsenin yazmadığı her şeyi siler — odaları da kimlik notlarını da. Bu yüzden uygulama, her açılışında ve her imzalı kayıtta notunu yeniden yazar; uzun süre uğramadıysan süre dolmadan seni uyarır. Bir gün silinse bile, aynı cüzdan yine aynı kimliği verir ve tek bir kayıt imzalamak notu aynı adrese geri koyar.
@@ -111,7 +111,7 @@
 <div class="cards">
 <div class="card reveal accent">
 <span class="badge cyan">Solana Mobile</span>
-<h3 style="margin-top:12px">Seed Vault: doğduğu yer</h3>
+<h3 style="margin-top:12px">Seed Vault: nereden geliyor</h3>
 <p>
             Seeker'ında, Solana cüzdan anahtarını tutan ayrı bir güvenlik yongası var. O anahtarı kimse çıkaramaz; biz de, sen de. Yonga yalnızca tek tür soruya yanıt verir: işte bir metin, bana bir imza ver.
           </p>
@@ -144,7 +144,7 @@
 </div>
 <div class="card reveal">
 <h3>Uygulamayı sildin</h3>
-<p>Yayımladığın şey herkese açık ve doğrulanabilir kalır. Kimse kaldıramaz, biz de.</p>
+<p>Yayınladığın şey, Technocore'un kendi yedi gün kuralı onu kaldırana kadar yerinde kalır. Onu ne biz kaldırabiliriz ne de sen.</p>
 </div>
 </div>
 <div class="notice reveal" style="margin-top:24px">
@@ -227,7 +227,7 @@
 <div class="step">
 <div class="n">04</div>
 <div>
-<h3>Giriş yap</h3>
+<h3>Kayıt bırak</h3>
 <p>Passport'unla imzalanmış bir mesaj sessiz bir odaya gönderilir, sonra kendi nonce'uyla yeniden bulunur; herhangi bir şey yeşile dönmeden önce.</p>
 </div>
 </div>
@@ -260,7 +260,7 @@
 </div>
 <div class="faq">
 <div class="reveal">
-<h3>Her gün giriş yapmak airdrop kazandırır mı?</h3>
+<h3>Her gün kayıt bırakmak airdrop kazandırır mı?</h3>
 <p>
 <strong>Böyle diyen bir kural kimse yayımlamadı ve öyleymiş gibi davranmayacağız.</strong> Yayımlanan şu: FLOP hesabından, 24 Ağustos 2026:
           </p>
@@ -321,7 +321,7 @@
             Bir tane var ve uygulama, sen fark edene kadar beklemek yerine bunu kendi Hakkında ekranında söylüyor. Kurtarma ifadesi olmadan geri getirebilmek ile “bu imzayı elde edebilen her şey bu kimliğin sahibidir” aynı özelliğin iki yüzü. Cüzdanını tam olarak o cümleyi imzalamaya ikna edebilen herhangi bir uygulama Passport'unu yeniden kurabilir.
           </p>
 <p>
-            O yüzden bir cüzdanın sana neyi imzalattığını oku. Burada da, başka her yerde de. Bu uygulamanın istemi <code>FLOP Passport key derivation v1</code> yazar ve <code>flop.alexkosa.dev</code> adını verir; şu anda açıp kontrol edebileceğin bir adres.
+            Bu yüzden cüzdanın imzalamanı istediği şeyi oku. Burada ve her yerde. Bu uygulamanın istemi <code>FLOP Passport key derivation v1</code> ile başlar ve <code>dev.alexkosa.floppassport</code> uygulamasını adlandırır; cüzdanın, isteğin <code>flop.alexkosa.dev</code> tarafından yapıldığını gösterir — hemen şimdi açıp kontrol edebileceğin bir adres.
           </p>
 </div>
 <div class="reveal">
@@ -373,7 +373,7 @@
 <span class="badge cyan">Kimse duyurmadı</span>
 <h3 style="margin-top:12px">Kaynağından oku</h3>
 <p>
-            Duyuru olmadı. Değişiklik, hizmetin kendi el kitabında görünüyor; o da tek bir istek ve hiç hız sınırına takılmıyor: <code>sig</code> alanı ve neyi kapsadığı burada değil, orada anlatılıyor.
+            Duyuru yapılmadı. Hizmetin kendi kılavuzu — tek bir istek, hız sınırı yok — <code>sig</code> alanını ve neyi kapsadığını açıklar. Yukarıdaki zaman, bu projenin imzaların saklandığını ilk gördüğü andır.
           </p>
 <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
             technocore.chat/llms.txt oku →
@@ -388,7 +388,9 @@
 <div class="section-head reveal">
 <span class="label cyan">Doğrula</span>
 <h2>Herhangi bir Passport'u kontrol et, seninki olmasa bile</h2>
-<p>Bir <code>did:key</code> yapıştır; bu sayfa onun notunu bulur, o kimliğin notunda adı geçen odada imzaladığı bütün kayıtları çeker ve her imzayı kendi tarayıcının kriptografisiyle doğrular. Verileri technocore.chat sunar ve ondan asla kefil olması istenmez. Bize hiçbir şey gönderilmez: bu sitenin arka ucu hiç yok.</p>
+<p>
+          Bir <code>did:key</code> yapıştır; bu sayfa onun notunu bulur, o kimliğin notunda adı geçen odada imzaladığı bütün kayıtları çeker ve her imzayı kendi tarayıcının kriptografisiyle doğrular. Verileri technocore.chat sunar ve ondan asla kefil olması istenmez. Bize hiçbir şey gönderilmez: bu sitenin arka ucu hiç yok.
+        </p>
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
@@ -396,9 +398,10 @@
 <button class="btn btn-primary" id="verifyBtn" type="button">Doğrula</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">
-          Elinde DID yok mu? <a href="#" id="tryExample">Yazarınkini dene</a>.
+          Elinde DID yok mu? <a href="/?did=did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs" id="tryExample">Yazarınkini dene</a>.
         </p>
 <div class="verify-out" id="verifyOut"></div>
+<noscript><p style="margin:12px 0 0;font-size:14px">Burada doğrulamak için JavaScript gerekir. Onsuz, not adresini technocore.chat'te elle aç.</p></noscript>
 </div>
 </div>
 </section>

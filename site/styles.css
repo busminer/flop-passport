@@ -20,6 +20,9 @@
   --green: #32d74b;
   --ice: #f5f7fa;
   --text-2: #a1a7ae;
+  /* Named by the rules that use it, never defined: the inert buttons rendered bright
+     white and read as live. */
+  --muted: var(--text-2);
   --red: #ff453a;
 
   --xs: 4px;
@@ -110,7 +113,7 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--surface-light);
 }
-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--lg); height: 62px; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--lg); min-height: 62px; padding-top: 8px; padding-bottom: 8px; }
 header .mark { display: flex; align-items: center; gap: 12px; flex: none; }
 header .mark svg { height: 18px; width: auto; }
 /*
@@ -122,10 +125,10 @@ header .mark svg { height: 18px; width: auto; }
 */
 header nav {
   display: flex;
-  gap: var(--lg);
+  flex-wrap: wrap;
+  gap: 6px var(--lg);
+  justify-content: flex-end;
   min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
 header nav::-webkit-scrollbar { display: none; }
 header nav a { white-space: nowrap; }
@@ -141,9 +144,14 @@ header nav a:hover { color: var(--ice); }
   header nav {
     order: 3;
     width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: var(--md);
     padding-bottom: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
+  header nav::-webkit-scrollbar { display: none; }
 }
 
 /* ---------------------------------------------------------------- hero */
@@ -314,7 +322,7 @@ footer { border-top: 1px solid var(--surface-light); padding: var(--xl) 0; }
 footer .wrap { display: flex; justify-content: space-between; gap: var(--md); flex-wrap: wrap; align-items: center; }
 footer .links { display: flex; gap: var(--lg); flex-wrap: wrap; }
 footer a, footer span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; }
-footer span { color: var(--grey); }
+footer span { color: var(--text-2); }
 
 .notice {
   background: rgba(0, 180, 216, 0.06);
@@ -362,7 +370,9 @@ ul.plain li::marker { color: var(--cyan); }
    start missing and blaming themselves. */
 @media (hover: none) {
   header nav a { padding: 10px 0; }
-  footer a { padding: 6px 0; }
+  footer a { padding: 12px 0; display: inline-block; }
+  .langs summary { padding: 11px 10px; }
+  .langs-menu a { padding: 11px 12px; }
 }
 
 /* ---------------------------------------------------------------- quotes */
@@ -382,7 +392,7 @@ ul.plain li::marker { color: var(--cyan); }
 }
 .quote .who { display: flex; align-items: center; gap: var(--sm); flex-wrap: wrap; }
 .quote .who a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; }
-.quote .meta { font-family: var(--mono); font-size: 11px; color: var(--grey); letter-spacing: 0.06em; }
+.quote .meta { font-family: var(--mono); font-size: 11px; color: var(--text-2); letter-spacing: 0.06em; }
 
 /* ---------------------------------------------------------------- tip */
 .tip-box {
@@ -478,7 +488,7 @@ ul.plain li::marker { color: var(--cyan); }
   letter-spacing: 0.06em;
 }
 
-.tweet-grid { display: grid; gap: var(--md); grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.tweet-grid { display: grid; gap: var(--md); grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
 @media (max-width: 760px) {
   .tweet { padding: var(--md); }
   .tweet-body { font-size: 15px; }

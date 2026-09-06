@@ -23,13 +23,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "A few reminders about the last step, and then they stop." to
         "Beberapa pengingat tentang langkah terakhir, lalu berhenti.",
     "A little too long. Trim it and the whole post fits, key included." to
-        "Agak kepanjangan. Persingkat sedikit dan seluruh kiriman muat, termasuk kuncinya.",
+        "Agak kepanjangan. Persingkat sedikit dan seluruh unggahan muat, termasuk kuncinya.",
     "A once-a-day reminder to leave today's signed record." to
-        "Pengingat sekali sehari untuk meninggalkan catatan hari ini yang ditandatangani secara kriptografis.",
+        "Pengingat sekali sehari untuk meninggalkan rekaman bertanda tangan hari ini.",
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "Sebuah catatan publik di alamat yang dihitung dari kunci Anda, supaya orang bisa menemukan dan memverifikasi Anda nanti. Langkah ini menuju technocore.chat, layanan publik milik orang lain: saat sibuk ia menolak, dan jawabannya adalah menekan lagi. Dua atau tiga percobaan itu wajar dan berarti ponsel Anda baik-baik saja.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
-        "Catatan bertanda tangan harus dibuat sendiri, dan hari yang terlewat tidak dapat diisi nanti. Ini juga merupakan pengaturan yang memperingatkan Anda sebelum catatan identitas Anda dihapus.",
+        "Rekaman bertanda tangan harus dibuat sendiri, dan hari yang terlewat tidak dapat diisi belakangan. Sakelar ini juga yang memperingatkan Anda sebelum catatan identitas Anda dihapus.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "Tip tidak mengubah apa pun pada Passport Anda maupun airdrop apa pun.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -39,7 +39,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Diterima, tetapi belum dapat dibaca kembali",
     "Activity" to "Aktivitas",
     "All six done" to "Keenamnya selesai",
-    "Already checked in, found in the room" to "Sudah mencatatkan, ditemukan di ruang",
+    "Already checked in, found in the room" to "Sudah mencatatkan diri, ditemukan di ruang",
     "Already published, read back just now" to "Sudah diterbitkan, baru saja dibaca kembali",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
         "Android memblokir notifikasi untuk aplikasi ini. Aktifkan di pengaturan sistem.",
@@ -54,13 +54,13 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Anyone with this can be you" to "Siapa pun yang memilikinya dapat menjadi Anda",
     "Apply" to "Terapkan",
     "Cancel" to "Batal",
-    "Check in" to "Catatkan",
+    "Check in" to "Catatkan diri",
     "Check your connection and try again." to "Periksa koneksi Anda dan coba lagi.",
     "Could not open the security prompt on this screen." to
         "Tidak dapat membuka permintaan keamanan di layar ini.",
     "Could not reach technocore.chat" to "Tidak dapat menghubungi technocore.chat",
     "Could not reach technocore.chat. This says nothing about your records, only about the connection." to
-        "Tidak dapat menghubungi technocore.chat. Ini tidak menunjukkan apa pun tentang catatan Anda, hanya tentang koneksi.",
+        "Tidak dapat menghubungi technocore.chat. Ini tidak menunjukkan apa pun tentang rekaman Anda, hanya tentang koneksi.",
     "Could not reach the server." to "Tidak dapat menghubungi server.",
     "Could not read the key back from secure storage" to
         "Tidak dapat membaca kembali kunci dari penyimpanan aman",
@@ -73,23 +73,21 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Delete it?" to "Hapus?",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Menghapus hanya akan menghapus Passport dari ponsel ini. Apa pun yang sudah dipublikasikan mungkin tetap bersifat publik, dan dompet yang sama akan membangun kembali identitas yang sama - jadi ini bukan cara untuk mengurungkan apa pun.",
-    "Did you post it?" to "Sudah Anda kirim?",
+    "Did you post it?" to "Sudah Anda unggah?",
     "Every language listed here has a full translation." to
         "Setiap bahasa yang tercantum di sini memiliki terjemahan lengkap.",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
-        "FLOP Passport membuat identitas Technocore dari dompet Solana Anda dan menyimpan bukti penerimaannya.",
+        "FLOP Passport membuat identitas Technocore dari dompet Solana Anda dan menyimpan buktinya.",
     "FLOP Passport for Seeker" to "FLOP Passport untuk Seeker",
     "FLOP Passport for Seeker - private backup" to
         "FLOP Passport untuk Seeker - cadangan privat",
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport untuk Seeker oleh @AlexKosa1",
-    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
-        "FLOP meminta para agen melakukan sesuatu yang berguna. Catatan bertanda tangan adalah bukti yang Anda tinggalkan untuk itu, dan hari tanpa catatan adalah hari yang nanti tidak bisa diperiksa siapa pun.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
-        "FLOP meminta agen melakukan dua hal: membuat kunci unik, dan melakukan sesuatu yang berguna untuk menyebarkan kabar tentang Technocore. Lima langkah di atas menyelesaikan yang pertama. Tidak ada yang bisa melakukan yang kedua untuk Anda, jadi aplikasi ini menulis postingannya dan Anda memutuskan apakah akan mengirimnya.",
+        "FLOP meminta agen melakukan dua hal: membuat kunci unik, dan melakukan sesuatu yang berguna untuk menyebarkan kabar tentang Technocore. Lima langkah di atas menyelesaikan yang pertama. Tidak ada yang bisa melakukan yang kedua untuk Anda, jadi aplikasi ini menulis unggahannya dan Anda memutuskan apakah akan mengunggahnya.",
     "Identity derived from your wallet signature" to
         "Identitas yang berasal dari tanda tangan dompet Anda",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
-        "Jika catatan tersebut dihapus, Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani catatan akan menerbitkannya kembali ke alamat yang sama.",
+        "Jika catatan tersebut dihapus, Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani sebuah rekaman akan menerbitkan catatan itu kembali ke alamat yang sama.",
     "In one line: what you did, or why you set this up" to
         "Dalam satu baris: apa yang Anda lakukan, atau kenapa Anda membuatnya",
     "It never asks for your wallet recovery phrase." to
@@ -100,8 +98,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Simpan berkas ini secara offline. Jangan pernah mengirimkannya kepada siapa pun, termasuk pembuat aplikasi.",
     "Language" to "Bahasa",
     "Last reminder about this one." to "Pengingat terakhir soal ini.",
-    "Link to what you built, if there is one" to "Tautan ke hasil karyamu, jika ada",
-    "Link to your post" to "Tautan ke postinganmu",
     "Make your first signed check-in" to "Buat pencatatan bertanda tangan pertama Anda",
     "Next: create your Passport from your wallet." to
         "Berikutnya: buat Passport Anda dari dompet.",
@@ -121,7 +117,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Belum dilakukan. Passport Anda belum terhubung ke nama publik mana pun, dan ini langkah yang tidak bisa dikerjakan orang lain untuk Anda.",
     "Nothing asked yet" to "Belum ada yang ditanyakan",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
-        "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruang telah dipangkas melewatinya - ini normal dan merupakan alasan layar ini tersedia.",
+        "Tidak ditemukan apa pun. Jika Anda menandatangani sesuatu dan tidak ada di sini, ruangnya sudah dipangkas sampai melewati bagian itu - itu wajar, dan justru itulah alasan layar ini ada.",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "Belum ada yang menjamin teks ini. Terbitkan lagi untuk menandatanganinya.",
     "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
@@ -132,12 +128,8 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Hanya bahasa dengan terjemahan nyata yang dicantumkan. Pemilih yang menawarkan bahasa tetapi semuanya menampilkan bahasa Inggris akan menyatakan bahwa bahasa Anda didukung, lalu membuktikan sebaliknya di layar berikutnya.",
     "Opening a connection" to "Membuka koneksi",
     "Opening your Solana wallet" to "Membuka dompet Solana Anda",
-    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
-        "Tempelkan tautannya di sini dan nama Anda terikat pada kunci Anda selamanya. Ini bagian yang orang niat kerjakan nanti lalu tidak jadi.",
-    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
-        "Tempel tautan ke postinganmu. Tautan itu masuk ke catatan identitasmu, jadi catatan mengarah ke postingan dan postingan memuat kuncinya. Siapa pun kemudian dapat memeriksa keduanya dengan kunci yang sama.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
-        "Kirim kalimat Anda, lalu kembali dan tempelkan tautannya. Itulah yang mengikat nama Anda ke kunci Anda, dan itu bagian yang diminta FLOP dari para agen.",
+        "Unggah kalimat Anda, lalu kembali dan tempelkan tautannya. Itulah yang mengikat nama Anda ke kunci Anda, dan itu bagian yang diminta FLOP dari para agen.",
     "Protect" to "Lindungi",
     "Protect it" to "Lindungi",
     "Publish" to "Terbitkan",
@@ -168,8 +160,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Sent, but not confirmed in the room yet" to "Terkirim, tetapi belum dikonfirmasi di ruang",
     "Settings" to "Pengaturan",
     "Show your private key" to "Tampilkan kunci privat Anda",
-    "Sign a record now and this day is on your history for good." to
-        "Tandatangani catatan sekarang dan hari ini tercatat dalam riwayat Anda selamanya.",
     "Signed, accepted and found again in the room" to
         "Ditandatangani, diterima, dan ditemukan kembali di ruang",
     "Signing your first check-in and sending it" to
@@ -180,11 +170,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "Talking to the service" to "Berkomunikasi dengan layanan",
     "Thanks for building this" to "Terima kasih telah membuat ini",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
-        "Itu sepertinya bukan tautan ke postingan. Bentuknya harus seperti https://x.com/you/status/123.",
-    "That does not look like a link. It should start with https://" to
-        "Itu sepertinya bukan tautan. Tautan harus diawali dengan https://",
-    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
-        "Lima langkah membangun identitas Anda. Di luar ponsel ini belum ada yang tahu bahwa itu milik Anda. Langkah 06 di bawah: tulis satu kalimat, kirim, lalu kembali dan tempelkan tautannya. Bagian terakhir itulah yang menaruh nama Anda di samping kunci Anda untuk seterusnya, dan di situlah orang berhenti.",
+        "Itu sepertinya bukan tautan ke unggahan. Bentuknya harus seperti https://x.com/you/status/123.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Kunci disegel di penyimpanan aman ponsel ini, lalu dibaca kembali dan dicocokkan dengan identitas Anda.",
     "The manual" to "Panduan",
@@ -193,22 +179,20 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Kunci yang tersimpan tidak cocok dengan identitas Anda",
     "The wallet did not complete the signature" to "Dompet tidak menyelesaikan tanda tangan",
     "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
-        "Tidak ada poin atau skor di sini. FLOP meminta agen melakukan sesuatu yang berguna, jadi yang berarti adalah catatan yang masih dapat dibuka seseorang. Angka buatan aplikasi ini akan menjadi permainan lain.",
+        "Tidak ada poin atau skor di sini. FLOP meminta agen melakukan sesuatu yang berguna, jadi yang berarti adalah rekaman yang masih dapat dibuka seseorang. Angka buatan aplikasi ini akan menjadi permainan lain.",
     "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign as you on Technocore. Keep them offline and never send them to anyone, including us." to
         "32 byte ini adalah FLOP Passport Anda sendiri. Siapa pun yang memegangnya dapat menandatangani sebagai Anda di Technocore. Simpan secara offline dan jangan pernah mengirimkannya kepada siapa pun, termasuk kami.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
-        "Aplikasi ini gratis dan bersumber terbuka, dan tidak ada yang membayarnya. Jika aplikasi ini menghemat waktu Anda, tip dapat diberikan.",
+        "Aplikasi ini gratis dan bersumber terbuka, dan tidak ada yang membayarnya. Jika aplikasi ini menghemat setengah hari Anda, tip diterima dengan senang hati.",
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
         "Aplikasi ini gratis dan bersumber terbuka. Jika bermanfaat, Anda dapat mengirim tip ke {name}. Dompet Anda akan terbuka dan Anda memilih jumlahnya di sana.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
-        "Aplikasi ini menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani catatan, sehingga periode tujuh hari dimulai lagi. Buka aplikasi setidaknya sekali seminggu agar tidak ada yang hilang.",
+        "Aplikasi ini menulis ulang catatan Anda setiap kali Anda membukanya dan setiap kali Anda menandatangani rekaman, sehingga periode tujuh hari dimulai lagi. Buka aplikasi setidaknya sekali seminggu agar tidak ada yang hilang.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "Ini BUKAN kunci dompet Solana Anda. Kunci dompet Anda tidak pernah meninggalkan Seed Vault dan tidak pernah dilihat aplikasi ini. Yang Anda lihat adalah kunci terpisah yang hanya menandatangani di Technocore.",
     "This line is what makes the post yours. Everything under it is the proof." to
-        "Kalimat inilah yang membuat kiriman ini milik Anda. Semua di bawahnya adalah buktinya.",
+        "Kalimat inilah yang membuat unggahan ini milik Anda. Semua di bawahnya adalah buktinya.",
     "Three days left before it is deleted." to "Tiga hari lagi sebelum dihapus.",
-    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
-        "Tiga hal, berurutan: tulis kalimat Anda, kirim, lalu kembali dan tempelkan tautannya. Yang terakhir itulah yang membuatnya permanen, dan justru itu yang dilupakan orang.",
     "Today cannot be added later" to "Hari ini tidak bisa ditambahkan belakangan",
     "Told only when your identity note is days away from being deleted." to
         "Anda hanya diberi tahu saat catatan identitas Anda tinggal beberapa hari lagi sebelum dihapus.",
@@ -225,7 +209,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Apa yang harus dilakukan dan seberapa sering, mengapa identitas ini kedaluwarsa, mengapa ini berfungsi di Seeker, dan apa kekurangannya. Dibuka di browser Anda.",
     "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
-        "Tulis satu baris yang hanya Anda yang akan menulisnya. Kiriman yang satu sama lain hanya berbeda kuncinya akan dibaca sebagai farming, dan itu menimpa orang-orang yang benar-benar bekerja.",
+        "Tulis satu baris yang hanya Anda yang akan menulisnya. Unggahan yang satu sama lain hanya berbeda kuncinya akan dibaca sebagai farming, dan itu menimpa orang-orang yang benar-benar bekerja.",
     "Yes. Something is already visible to others." to
         "Ya. Sesuatu sudah terlihat oleh orang lain.",
     "You do not need this file to recover. The same Solana wallet that" to
@@ -234,22 +218,18 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Anda tidak memerlukan ini untuk memulihkan. Dompet Solana yang sama membangun kembali Passport yang sama di ponsel mana pun. Salinan ini untuk menggunakan kunci di tempat lain sesuai pilihan Anda.",
     "You finished the five. The last one takes a minute." to
         "Anda sudah menyelesaikan yang lima. Yang terakhir cuma semenit.",
-    "You have already checked in" to "Anda sudah mencatatkan",
-    "You have already left a record today." to "Anda sudah meninggalkan catatan hari ini.",
+    "You have already checked in" to "Anda sudah mencatatkan diri",
+    "You have already left a record today." to "Anda sudah meninggalkan rekaman hari ini.",
     "You're all set" to "Semua sudah siap",
     "Your Passport has no name on it" to "Passport Anda belum bernama",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Passport Anda diturunkan dari satu tanda tangan yang dibuat dompet Anda di dalam Seed Vault, penyimpanan kunci perangkat keras Seeker. Kunci dompet tidak pernah keluar dari perangkat keras tersebut. Kunci Passport dihitung dari tanda tangan itu di aplikasi ini, lalu disegel oleh penyimpanan aman Android - disegel, bukan ditandatangani, di perangkat keras, karena Android Keystore tidak dapat menyimpan jenis kunci ini.",
     "Your Passport is live" to "Passport Anda aktif",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
-        "Passport Anda aktif dan catatan bertanda tangan pertama Anda ada di Technocore. Siapa pun dapat memverifikasinya, dan catatan itu tetap milik Anda.",
-    "Your Passport is live, it is yours, and your name is on it." to
-        "Passport Anda aktif, milik Anda, dan nama Anda ada padanya.",
+        "Passport Anda aktif dan rekaman bertanda tangan pertama Anda ada di Technocore. Siapa pun dapat memverifikasinya, dan rekaman itu tetap milik Anda.",
     "Your Passport is live. One step left." to "Passport Anda aktif. Tersisa satu langkah.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport Anda dibangun ulang dari satu tanda tangan dompet, itulah sebabnya tidak ada frasa seed yang bisa hilang. Hal yang sama berlaku sebaliknya: aplikasi mana pun yang membujuk dompet Anda menandatangani kalimat yang persis sama dapat membangun ulang Passport ini. Bacalah apa yang diminta dompet untuk Anda tanda tangani, di sini dan di mana pun.",
-    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
-        "Passport Anda tidak hilang: dompet yang sama tetap memberikan identitas yang sama, dan menandatangani catatan sekarang akan menerbitkan kembali catatan tersebut ke alamat yang sama.",
     "Your identity note expires soon" to "Catatan identitas Anda akan segera kedaluwarsa",
     "Your identity note has been deleted" to "Catatan identitas Anda telah dihapus",
     "Your key is never sent anywhere. Only you can export it." to
@@ -258,13 +238,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Kunci Anda menandatangani baris yang memuat hash persis catatan ini.",
     "Your note has to be kept alive" to "Catatan Anda harus tetap aktif",
     "Your post is in your identity note, at your key's own address." to
-        "Kiriman Anda sudah ada di catatan identitas Anda, di alamat milik kunci Anda sendiri.",
+        "Unggahan Anda sudah ada di catatan identitas Anda, di alamat milik kunci Anda sendiri.",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "Dompet Anda menandatangani satu pernyataan. Ini bukan transaksi dan tidak memindahkan dana. Dompet yang sama membangun kembali Passport yang sama di perangkat mana pun.",
     "active days" to "hari aktif",
     "activity" to "aktivitas",
     "address" to "alamat",
-    "agent: FLOP Passport for Seeker" to "agen: FLOP Passport untuk Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to "algoritma: Ed25519, did:key, seed 32 byte",
     "attach it" to "tautkan",
     "built by a community builder" to "dibuat oleh pengembang komunitas",
@@ -281,7 +260,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "copy key" to "salin kunci",
     "create passport" to "buat passport",
     "created this Passport rebuilds it on any device." to
-        "yang membuat Passport ini akan membangunnya kembali di perangkat mana pun.",
+        "membuat Passport ini akan membangunnya kembali di perangkat mana pun.",
     "danger zone" to "zona berbahaya",
     "day streak" to "rentetan hari",
     "delete passport from this phone" to "hapus passport dari ponsel ini",
@@ -298,7 +277,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "language {code}" to "bahasa {code}",
     "last connection" to "koneksi terakhir",
     "linked" to "tertaut",
-    "live records" to "catatan aktif",
+    "live records" to "rekaman aktif",
     "matched on our nonce, not just our key" to
         "cocok dengan nonce kami, bukan hanya kunci kami",
     "no thanks, continue" to "tidak, terima kasih, lanjutkan",
@@ -313,29 +292,27 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "open" to "buka",
     "our exact bytes, no wallet prefix" to "byte persis kami, tanpa prefiks dompet",
     "passport for seeker" to "passport untuk seeker",
-    "pin it to your identity" to "sematkan ke identitasmu",
-    "post it" to "posting",
+    "pin it to your identity" to "sematkan ke identitas Anda",
     "private key, 32 bytes, hex" to "kunci privat, 32 byte, hex",
     "protect passport" to "lindungi passport",
     "publish identity" to "terbitkan identitas",
-    "publish these to my note" to "terbitkan ini ke catatan saya",
     "published" to "diterbitkan",
     "publishing" to "menerbitkan",
     "re-check with the server" to "periksa ulang dengan server",
     "re-checked when the app opened" to "diperiksa ulang saat aplikasi dibuka",
-    "records the server still holds" to "catatan yang masih disimpan server",
+    "records the server still holds" to "rekaman yang masih disimpan server",
     "recovery" to "pemulihan",
     "room" to "ruang",
     "save to a file" to "simpan ke berkas",
-    "say it another way" to "ucapkan dengan cara lain",
+    "say it another way" to "katakan dengan cara lain",
     "self test" to "uji mandiri",
     "send a tip" to "kirim tip",
     "send a tip in {token}" to "kirim tip dalam {token}",
     "send a tip to {name}" to "kirim tip ke {name}",
     "sequence" to "urutan",
     "settings" to "pengaturan",
-    "sign and check in" to "tandatangani dan catatkan",
-    "sign today's record" to "tandatangani catatan hari ini",
+    "sign and check in" to "tandatangani dan catatkan diri",
+    "sign today's record" to "tandatangani rekaman hari ini",
     "signed" to "ditandatangani",
     "signed and verified against your DID" to
         "ditandatangani dan diverifikasi terhadap DID Anda",
@@ -351,13 +328,12 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "technocore.chat menolak penulisan bertanda tangan",
     "text" to "teks",
     "the note changed between reads" to "catatan berubah di antara dua pembacaan",
-    "the post" to "postingan",
+    "the post" to "unggahan",
     "the same wallet rebuilds this identity anywhere" to
         "dompet yang sama membangun kembali identitas ini di mana pun",
     "try again" to "coba lagi",
     "unconfirmed" to "belum dikonfirmasi",
     "unsigned" to "tanpa tanda tangan",
-    "vault {level}" to "brankas {level}",
     "verified" to "terverifikasi",
     "verify it yourself" to "verifikasi sendiri",
     "version" to "versi",
@@ -367,8 +343,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "what this app never does" to "yang tidak pernah dilakukan aplikasi ini",
     "what to do" to "yang perlu dilakukan",
     "when" to "kapan",
-    "with a wallet prefix, which is fine and pinned" to
-        "dengan prefiks dompet, yang dapat diterima dan telah ditetapkan",
     "working" to "memproses",
     "yes, a signed did-note line carries its hash" to
         "ya, baris did-note bertanda tangan memuat hash-nya",
@@ -390,8 +364,6 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Layanan sudah menerima rekaman Anda tetapi belum menampilkannya kembali. Tekan periksa ulang sebentar lagi; tidak ada yang perlu ditandatangani lagi.",
     "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
         "technocore.chat menolak rekaman itu. Layanan ini menolak permintaan tulis saat sedang sibuk - coba lagi sebentar lagi.",
-    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
-        "technocore.chat tidak menerima perubahan itu. Layanan ini menolak permintaan tulis saat sedang sibuk - tekan terbitkan lagi sebentar lagi. Tautan Anda tetap tersimpan di ponsel ini.",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "Belum selesai. Passport Anda belum aktif sampai kelimanya hijau, dan belum ada yang lengkap untuk diverifikasi siapa pun. Lanjutkan.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
@@ -403,15 +375,11 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "In Settings, delete the Passport from this phone, then create it again from your wallet." to
         "Di Pengaturan, hapus Passport dari ponsel ini, lalu buat lagi dari dompet Anda.",
     "It is deleted after seven days with nothing written to it. Opening this app writes it." to
-        "Catatan ini dihapus setelah tujuh hari tanpa ada tulisan masuk. Membuka aplikasi ini sudah menghitung sebagai menulis ke dalamnya.",
+        "Catatan ini dihapus setelah tujuh hari tanpa ada tulisan masuk. Membuka aplikasi ini saja sudah menulisinya.",
     "Maybe. The service accepted it, and this app could not read it back to be sure." to
         "Mungkin. Layanan sudah menerimanya, tetapi aplikasi ini belum bisa membacanya kembali untuk memastikan.",
-    "Seven days without opening the app. Open it now and the note goes back up." to
-        "Tujuh hari tanpa membuka aplikasi. Buka sekarang dan catatannya terbit lagi.",
     "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Itu yang terakhir dari lima langkah. Passport Anda sudah aktif. Tinggal satu hal, dan justru itulah yang diminta FLOP: beri tahu orang apa yang Anda kerjakan. Unggahannya ditulis aplikasi untuk Anda, di bagian bawah layar ini.",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
-        "Tautan yang Anda tempelkan masuk ke catatan identitas Anda, di alamat yang dihitung dari kunci Anda sendiri. Ruang dibersihkan dalam sehari. Catatannya bertahan selama Anda terus membuka aplikasi ini.",
     "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
         "Aplikasi ini gratis dan tidak ada yang bisa dibeli di dalamnya. Kalau bermanfaat, ucapan terima kasih bisa dikirim ke kosa.skr.",
     "checking" to
@@ -421,7 +389,7 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
     "send a tip to kosa.skr" to
         "kirim tip ke kosa.skr",
     "show my private key" to
-        "tampilkan kunci pribadi saya",
+        "tampilkan kunci privat saya",
     "step {n} {title} not confirmed yet" to
         "langkah {n} {title} belum dikonfirmasi",
     "technocore.chat deletes anything with no write for seven days. Opening this app rewrites your note, and so does signing a record. Either one starts the seven days again." to
@@ -436,10 +404,84 @@ internal val ID_STRINGS: Map<String, String> = mapOf(
         "Rekaman yang tersimpan tidak lolos verifikasi dengan kunci ini",
     "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
         "Anda membuat kunci yang hanya bisa disusun ulang oleh dompet Anda sendiri, menyegelnya di ponsel ini, menerbitkannya di tempat yang bisa ditemukan orang asing, menandatangani sebuah rekaman dan membuktikan bahwa rekaman itu sampai, lalu meletakkan unggahan Anda di samping kunci Anda. Tidak ada lagi yang perlu disiapkan.",
-    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
-        "Mulai sekarang, sekali sehari: buka tab Aktivitas dan tandatangani rekaman hari itu. Penulisan yang sama itulah yang menjaga catatan identitas Anda dari penghapusan, dan hari ini adalah satu-satunya hari yang tidak bisa ditambahkan belakangan.",
     "open Activity" to
         "buka Aktivitas",
     "{n} more characters and the button below wakes up." to
         "{n} karakter lagi dan tombol di bawah akan aktif.",
+    "A signed record is dated evidence that you were here. A day without one cannot be added later, and signing also keeps your identity note alive. Nothing here promises anything about any allocation." to
+        "Rekaman bertanda tangan adalah bukti bertanggal bahwa Anda ada di sini. Hari tanpa rekaman tidak bisa ditambahkan belakangan, dan menandatangani juga menjaga catatan identitas Anda tetap hidup. Tidak ada apa pun di sini yang menjanjikan alokasi apa pun.",
+    "Could not check technocore.chat for your published steps. This says nothing about them, only about the connection. Re-check when you are back online." to
+        "Tidak dapat memeriksa technocore.chat untuk langkah-langkah yang Anda publikasikan. Ini tidak mengatakan apa pun tentang langkah itu, hanya tentang koneksi. Periksa ulang saat Anda kembali online.",
+    "Could not reach technocore.chat. Check your connection and press publish again. Your link is saved on this phone either way." to
+        "Tidak dapat menghubungi technocore.chat. Periksa koneksi Anda dan tekan publikasikan lagi. Tautan Anda tetap tersimpan di ponsel ini.",
+    "Could not read the key from secure storage. Restart the phone and try again." to
+        "Tidak dapat membaca kunci dari penyimpanan aman. Mulai ulang ponsel dan coba lagi.",
+    "FLOP Passport is an independent community project. It is not made, endorsed or reviewed by FLOP Labs or by Solana Mobile." to
+        "FLOP Passport adalah proyek komunitas independen. Aplikasi ini tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile.",
+    "Finish the steps on the Passport tab first. Daily records start once your Passport is live." to
+        "Selesaikan dulu langkah-langkah di tab Passport. Rekaman harian dimulai setelah Passport Anda aktif.",
+    "From now on: open the app at least once a week, so your identity note is not deleted. On the days you do something, open Activity and sign that day's record - a day cannot be added later." to
+        "Mulai sekarang: buka aplikasi setidaknya sekali seminggu agar catatan identitas Anda tidak dihapus. Pada hari Anda melakukan sesuatu, buka Aktivitas dan tandatangani rekaman hari itu; sebuah hari tidak bisa ditambahkan belakangan.",
+    "If you did something today, sign a record for it now." to
+        "Jika Anda melakukan sesuatu hari ini, tandatangani rekamannya sekarang.",
+    "Link to your post on X" to
+        "Tautan ke postingan Anda di X",
+    "Nothing was saved. Open your private key again and save it from there." to
+        "Tidak ada yang disimpan. Buka kunci privat Anda lagi dan simpan dari sana.",
+    "Paste the link here and your name goes beside your key, in your identity note. This is the part people mean to do later and then do not." to
+        "Tempel tautannya di sini, dan nama Anda akan berada di samping kunci Anda, di catatan identitas Anda. Inilah bagian yang orang berniat lakukan nanti dan lalu tidak dilakukan.",
+    "Paste the link to your post on X. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key. The app does not open the link or check the post; anyone reading your note can." to
+        "Tempel tautan ke postingan Anda di X. Tautan itu masuk ke catatan identitas Anda, sehingga catatan menunjuk ke postingan dan postingan membawa kunci. Siapa pun lalu bisa memeriksa kedua ujungnya terhadap satu kunci. Aplikasi tidak membuka tautan atau memeriksa postingan; siapa pun yang membaca catatan Anda bisa melakukannya.",
+    "Read from technocore.chat, not from this phone. Rooms are trimmed as they grow, so this shows what anyone would find today." to
+        "Dibaca dari technocore.chat, bukan dari ponsel ini. Ruang dipangkas seiring bertambah besar, jadi ini menunjukkan apa yang akan ditemukan siapa pun hari ini.",
+    "Seeker and Solana Mobile are trademarks of Solana Mobile, used only to say what this app is built for. FLOP and Technocore are names of the project whose public service this app writes to." to
+        "Seeker dan Solana Mobile adalah merek dagang Solana Mobile, digunakan hanya untuk menyatakan untuk apa aplikasi ini dibuat. FLOP dan Technocore adalah nama proyek yang layanan publiknya ditulisi oleh aplikasi ini.",
+    "Seven days without opening the app. Open it and press publish; the note goes back to the same address." to
+        "Tujuh hari tanpa membuka aplikasi. Buka dan tekan publikasikan; catatan kembali ke alamat yang sama.",
+    "The file could not be written. Try another location." to
+        "Berkas tidak dapat ditulis. Coba lokasi lain.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key, and it is where people stop." to
+        "Lima langkah itu membangun identitas Anda. Di luar ponsel ini belum ada yang tahu bahwa itu milik Anda. Langkah 06 di bawah: tulis satu baris, posting, lalu kembali dan tempel tautannya. Bagian terakhir itulah yang menaruh nama Anda di samping kunci Anda, dan di sanalah orang berhenti.",
+    "The key could not be sealed in this phone's secure storage" to
+        "Kunci tidak dapat disegel di penyimpanan aman ponsel ini",
+    "The link you paste goes into your identity note, at an address derived from your own key. The note stays as long as you keep opening the app; seven days without a write and it is deleted." to
+        "Tautan yang Anda tempel masuk ke catatan identitas Anda, di alamat yang diturunkan dari kunci Anda sendiri. Catatan tetap ada selama Anda terus membuka aplikasi; tujuh hari tanpa penulisan, catatan dihapus.",
+    "The note was accepted, but it could not be read back yet." to
+        "Catatan diterima, tetapi belum bisa dibaca kembali.",
+    "The record was sent but no answer came back in time. Do not resend: read the room again first." to
+        "Rekaman terkirim tetapi tidak ada jawaban yang datang tepat waktu. Jangan kirim ulang: baca ruang itu lagi dulu.",
+    "Three things, in this order: write your line, post it on X, then come back and paste the link. The last one is what puts your name beside your key, and it is the one people forget." to
+        "Tiga hal, dengan urutan ini: tulis baris Anda, posting di X, lalu kembali dan tempel tautannya. Yang terakhir itulah yang menaruh nama Anda di samping kunci Anda, dan itulah yang orang lupakan.",
+    "Today is the last day. It is deleted within 24 hours unless you open the app." to
+        "Hari ini hari terakhir. Catatan dihapus dalam 24 jam kecuali Anda membuka aplikasi.",
+    "Try again. If it keeps failing, restart the phone and try once more. Nothing was sent anywhere." to
+        "Coba lagi. Jika terus gagal, mulai ulang ponsel dan coba sekali lagi. Tidak ada yang terkirim ke mana pun.",
+    "Your Passport is live, it is yours, and your post link is on it." to
+        "Passport Anda aktif, milik Anda, dan tautan postingan Anda ada di dalamnya.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and publishing again puts the note back at the same address." to
+        "Passport Anda sendiri tidak hilang: dompet yang sama masih memberi identitas yang sama, dan mempublikasikan lagi mengembalikan catatan ke alamat yang sama.",
+    "checking with the server" to
+        "memeriksa dengan server",
+    "independent project" to
+        "proyek independen",
+    "not in your note yet" to
+        "belum ada di catatan Anda",
+    "post it on X" to
+        "posting di X",
+    "put it in my note" to
+        "masukkan ke catatan saya",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your link is saved on this phone either way." to
+        "technocore.chat tidak menerima perubahan itu. Layanan ini menolak penulisan saat sibuk; tekan publikasikan lagi sebentar lagi. Tautan Anda tetap tersimpan di ponsel ini.",
+    "vault: not sealed yet" to
+        "brankas: belum disegel",
+    "vault: secure area" to
+        "brankas: area aman",
+    "vault: security chip" to
+        "brankas: chip keamanan",
+    "vault: software" to
+        "brankas: perangkat lunak",
+    "with a wallet prefix - this Passport rebuilds only through this same wallet app" to
+        "dengan prefiks dompet — Passport ini hanya bisa dibangun ulang lewat aplikasi dompet yang sama",
+    "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
+        "Permintaan dari aplikasi ini dimulai dengan FLOP Passport key derivation v1 dan menyebut aplikasi dev.alexkosa.floppassport; dompet Anda menunjukkan bahwa permintaan itu datang dari flop.alexkosa.dev.",
 )

@@ -43,9 +43,11 @@
   "a signature did not check out": "有一条签名没有通过",
   "{count} record, per technocore.chat": "{count} 条记录，依据 technocore.chat",
   "{count} records, per technocore.chat": "{count} 条记录，依据 technocore.chat",
-  "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat 没有响应这条笔记指定的房间，所以这里什么也无法核对。该服务繁忙时会拒绝读取，请稍后再试一次。",
+  "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat 没有响应这条备注指定的房间，所以这里什么也无法核对。该服务繁忙时会拒绝读取，请稍后再试一次。",
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它没有被计入。",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它们没有被计入。",
   "{count} record predates signatures": "{count} 条记录早于签名机制",
-  "{count} records predate signatures": "{count} 条记录早于签名机制"
+  "{count} records predate signatures": "{count} 条记录早于签名机制",
+  "could not read the note": "无法读取便签",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat 没有对这个便签地址作出回应。这不能说明便签是否存在；请稍后再试。"
 }

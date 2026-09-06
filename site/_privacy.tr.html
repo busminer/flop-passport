@@ -27,7 +27,9 @@
         </p>
 </div>
 <h3 style="margin-top:48px">Kim sorumlu</h3>
-<p>FLOP Passport for Seeker, tek başına çalışan bir geliştirici olan Alex Kosa'nın bağımsız açık kaynak projesidir. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı, incelenmedi. İletişim: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a> ya da X üzerinde <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, veya açık depoda bir issue açarak.</p>
+<p>
+        FLOP Passport for Seeker, tek başına çalışan bir geliştirici olan Alex Kosa'nın bağımsız açık kaynak projesidir. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı, incelenmedi. İletişim: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a> ya da X üzerinde <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, veya açık depoda bir issue açarak.
+      </p>
 <h3 style="margin-top:32px">Uygulamanın cihazında sakladıkları</h3>
 <ul class="plain">
 <li>
@@ -36,8 +38,12 @@
 <li>
 <strong>Herkese açık kimliğin</strong> — <code>did:key</code> ve parmak izi — ve türetildiği Solana cüzdan adresi.
         </li>
-<li><strong>Gönderin için yazdığın satırı</strong>, geri yapıştırdığında gönderinin bağlantısını ve eklediysen bir katkı bağlantısını. Gönderi bağlantısı sosyal hesabının adını verir, yani uygulamanın sakladığı en tanımlayıcı şey odur.</li>
-<li><strong>Dil tercihini</strong>, açılış sesinin açık olup olmadığını, notuna en son ne zaman yazıldığını ve hangi hatırlatmaların zaten gösterildiğini.</li>
+<li>
+<strong>Gönderin için yazdığın satır</strong> ve geri yapıştırdığında gönderinin bağlantısı. Gönderi bağlantısı sosyal hesabını adlandırır; bu yüzden uygulamanın sakladığı en tanımlayıcı şeydir.
+        </li>
+<li>
+<strong>Dil tercihin</strong>, Passport'unun ne zaman oluşturulduğu ve hangi güvenlik seviyesinin onu mühürlediği, notuna en son ne zaman yazıldığı ve hangi hatırlatmaların zaten gösterildiği.
+        </li>
 </ul>
 <p>
         Bunların tamamı cihazındaki uygulamaya özel alanda durur. Android'in otomatik yedeklemesi ve cihazdan cihaza aktarım bu uygulama için bilerek kapatıldı, böylece hiçbiri bir bulut yedeğine kopyalanmaz.
@@ -47,15 +53,21 @@
 <li>
 <strong>technocore.chat'e</strong>, kimliğini yayımladığında ya da bir kaydı imzaladığında: herkese açık <code>did:key</code>'in, imzaladığın metin, bir sayaç ve imza. Bu bilgi tasarım gereği herkese açıktır — herkese açık bir kimliğin bütün amacı budur — ve sonrasında herkes okuyabilir.
         </li>
-<li><strong>technocore.chat'e, herkese açık kimlik notunun içine</strong>, yayımladığın gönderinin bağlantısını yapıştırırsan: o bağlantı. Sosyal hesabının adını verir, anahtarından hesaplanan kalıcı ve herkese açık bir adreste durur, ve anahtarını herkesin önünde adına bağlayan şey odur. Yapıştırmak senin seçimin; notu onsuz yeniden yazmak onu kaldırır.</li>
-<li><strong>Gönderini paylaşırken seçtiğin uygulamaya</strong>, örneğin X'e: gönderinin metni. Uygulama metni sistemin paylaşım penceresine verir, hiçbir şeyi kendisi yayımlamaz.</li>
+<li>
+<strong>technocore.chat'e, herkese açık kimlik notunun içine</strong>, yayımladığın gönderinin bağlantısını yapıştırırsan: o bağlantı. Sosyal hesabının adını verir, anahtarından hesaplanan kalıcı ve herkese açık bir adreste durur, ve anahtarını herkesin önünde adına bağlayan şey odur. Yapıştırmak senin seçimin; notu onsuz yeniden yazmak onu kaldırır.
+        </li>
+<li>
+<strong>Gönderini paylaşırken seçtiğin uygulamaya</strong>, örneğin X'e: gönderinin metni. Uygulama metni sistemin paylaşım penceresine verir, hiçbir şeyi kendisi yayımlamaz.
+        </li>
 <li>
 <strong>Cüzdan uygulamana</strong>, Passport'u oluştururken: imzalanacak bir cümle. Cüzdan bunu cihazında işler; bizim tarafımızdan ağ üzerinden hiçbir şey gönderilmez.
         </li>
 <li>
 <strong>Seçtiğin bir dosyaya</strong>, anahtarını dışa aktardığında. Hedefi sistem dosya seçicisiyle sen belirlersin. Hiçbir yere yükleme yapılmaz.
         </li>
-<li><strong>technocore.chat'e, sen hiçbir şeye basmadan</strong>, Etkinlik sekmesini açtığında: uygulama notunu ve kayıtlarını geri okur ve notu yeniden yazar. Zaten bütün mesele bu: o servis yedi gün boyunca kimsenin yazmadığı her şeyi siliyor, yani uygulamayı açman kimliğinin silinmesini engelleyen şeyin ta kendisi. Gönderilen, orada zaten herkese açık duran notun aynısı.</li>
+<li>
+<strong>technocore.chat'e, sen hiçbir şeye basmadan</strong>, uygulamayı her açtığında ve Etkinlik sekmesinde bir kez daha: uygulama notunu ve kayıtlarını geri okur ve notu yeniden yazar. Bu yeniden yazma işin özüdür — o hizmet yedi gün boyunca hiçbir şeyin yazılmadığı her şeyi siler, bu yüzden uygulamayı açmak kimliğinin silinmesini engelleyen şeydir. Orada zaten herkese açık olan aynı not gönderilir.
+        </li>
 </ul>
 <p>
 <strong>Geliştiriciye asla hiçbir şey gönderilmez.</strong> Gönderilecek bir arka uç yok zaten. Uygulama, FLOP Labs'in işlettiği technocore.chat ile ve senin kendi cüzdan uygulamanla konuşur — liste bundan ibaret.
@@ -68,12 +80,15 @@
 <li>Reklam kimlikleri. Reklam yok, reklam SDK'sı yok.</li>
 </ul>
 <h3 style="margin-top:32px">Analitik ve izleme</h3>
-<p>Hiçbiri. Uygulamada analiz SDK'sı, çökme raporlama servisi ya da herhangi bir üçüncü taraf takibi yok. Bu site çerez koymaz, ziyaret saymaz ve sunucu tarafında kod çalıştırmaz. Dışarıya yaptığı tek istekler şunlar: Google Fonts'tan iki web yazı tipi — her yazı tipi sunucusu gibi o da IP adresini alır — ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan bir okuma; bu istek senin tarayıcından çıkar ve asla bizden geçmez. Sitenin kendisi statik dosyalardan ibaret, onları Cloudflare dağıtır ve isteği o karşılar; kendi kodumuzu çalıştırmıyor, günlük tutmuyoruz.</p>
+<p>
+        Hiçbiri. Uygulamada analiz SDK'sı, çökme raporlama servisi ya da herhangi bir üçüncü taraf takibi yok. Bu site çerez koymaz, ziyaret saymaz ve sunucu tarafında kod çalıştırmaz. Dışarıya yaptığı tek istekler şunlar: Google Fonts'tan iki web yazı tipi — her yazı tipi sunucusu gibi o da IP adresini alır — ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan bir okuma; bu istek senin tarayıcından çıkar ve asla bizden geçmez. Sitenin kendisi statik dosyalardan ibaret, onları Cloudflare dağıtır ve isteği o karşılar; kendi kodumuzu çalıştırmıyor, günlük tutmuyoruz.
+      </p>
 <h3 style="margin-top:32px">İzinler</h3>
 <ul class="plain">
-<li><strong>İnternet</strong> — bir şey yayımladığında ya da imzaladığında technocore.chat'e ulaşmak için, ve Etkinlik sekmesini açtığında kayıtlarını geri okuyup notunun süresinin dolmasını engellemek için.</li>
+<li><strong>İnternet</strong> — bir şey yayınladığında veya imzaladığında technocore.chat'e ulaşmak, uygulamayı açtığında kayıtlarını geri okumak ve notunun süresinin dolmasını önlemek için.</li>
 <li><strong>Titreşim</strong> — bir adım doğrulandığında kısa bir onay dokunuşu.</li>
-<li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için.</li>
+<li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için. Daha eski <strong>Parmak izi</strong> izni, aynı amaçla Android biyometri kütüphanesi tarafından eklenir.</li>
+<li><strong>Ağ durumu</strong> — cüzdanını açmadan önce telefonun çevrimiçi olup olmadığını anlamak için cüzdan adaptörü kütüphanesi tarafından kullanılır. Uygulamanın kendisi bunu hiç okumaz.</li>
 <li><strong>Bildirimler</strong> — günlük hatırlatma, bitirmediğin bir adım için dürtmeler ve notunun süresi dolmadan önceki uyarı.</li>
 <li><strong>Açılışta çalışma</strong> — yalnızca telefon yeniden başladıktan sonra o hatırlatmaları yeniden kurmak için. Uygulama açılışta başka hiçbir şey yapmaz.</li>
 </ul>
@@ -81,9 +96,11 @@
 <h3 style="margin-top:32px">Verilerini silmek</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>Cihazında.</strong> Ayarlar → Tehlikeli bölge → Passport'u sil, ya da uygulamayı kaldır. İkisi de şifreli anahtarı, kimliğini ve tercihlerini telefondan tamamen kaldırır. Başka hiçbir yerde kopyası yok ve senin adına silebileceğimiz bir şey yok.
+<strong>Cihazında.</strong> Ayarlar → Tehlike bölgesi → Passport'u sil; şifreli anahtarı, kimliğini, gönderi bağlantını ve hatırlatma durumunu kaldırır; uygulamayı kaldırmak dil ve hatırlatma ayarlarını da kaldırır. Başka hiçbir yerde kopya yok ve senin adına silebileceğimiz bir şey de yok.
         </p>
-<p style="margin:0"><strong>Yayımlanmış olan şeyler.</strong> Technocore'da yayımlamayı seçtiğin her şey herkese açıktır ve bizim denetimimizde değildir — onu biz barındırmıyoruz ve kaldıramayız. Açık odalardaki kayıtları, odalar sıkıştırıldıkça o servis atar; kimlik notu ise içine hiçbir şey yazılmadan yedi gün geçince silinir — yani yayımladığın şey, yeniden yazılmazsa kendiliğinden kaybolur. technocore.chat'teki içerikle ilgili talepler, servisi işleten FLOP Labs'e gider.</p>
+<p style="margin:0">
+<strong>Yayımlanmış olan şeyler.</strong> Technocore'da yayımlamayı seçtiğin her şey herkese açıktır ve bizim denetimimizde değildir — onu biz barındırmıyoruz ve kaldıramayız. Açık odalardaki kayıtları, odalar sıkıştırıldıkça o servis atar; kimlik notu ise içine hiçbir şey yazılmadan yedi gün geçince silinir — yani yayımladığın şey, yeniden yazılmazsa kendiliğinden kaybolur. technocore.chat'teki içerikle ilgili talepler, servisi işleten FLOP Labs'e gider.
+        </p>
 </div>
 <h3 style="margin-top:32px">Çocuklar</h3>
 <p>
@@ -93,7 +110,7 @@
 <p>
         Bu politika değişirse üstteki tarih de onunla birlikte değişir ve önceki sürüm herkese açık deponun geçmişinde kalır; isteyen karşılaştırabilir.
       </p>
-<h3 style="margin-top:32px">Haklarını</h3>
+<h3 style="margin-top:32px">Hakların</h3>
 <p>
         Erişim, düzeltme, taşınabilirlik ve silme hakları, başkasının senin hakkında tuttuğu veriler üzerinde sana denetim vermek için vardır. Bizde hiç yok: erişilecek, dışa aktarılacak ya da silinecek bir şey yok, çünkü seninle ilgili hiçbir şey bize ulaşmıyor. Anahtarını istediğin zaman uygulamadan dışa aktarabilirsin ve uygulamayı silmek, sakladığı her şeyi kaldırır.
       </p>

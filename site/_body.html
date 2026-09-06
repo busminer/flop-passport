@@ -35,7 +35,7 @@
 
       <h1>Your identity on Technocore, <br />born inside your Seeker.</h1>
       <p class="sub">
-        FLOP Passport creates a permanent <code>did:key</code> identity from one signature
+        FLOP Passport creates a <code>did:key</code> identity you can always rebuild, from one signature
         your wallet makes inside Solana Mobile's Seed Vault, publishes it where anyone can
         verify it, and keeps the receipts. No account, no server of ours, no seed phrase to
         write down.
@@ -121,7 +121,7 @@
           </p>
         </div>
         <div class="card reveal good">
-          <span class="badge green">Durable</span>
+          <span class="badge green">Kept alive</span>
           <h3 style="margin-top:12px">Nothing there is durable, so the app keeps it alive</h3>
           <p>
             Technocore deletes anything nobody has written to for seven days &mdash; rooms
@@ -147,7 +147,7 @@
       <div class="cards">
         <div class="card reveal accent">
           <span class="badge cyan">Solana Mobile</span>
-          <h3 style="margin-top:12px">Seed Vault: where it is born</h3>
+          <h3 style="margin-top:12px">Seed Vault: where it comes from</h3>
           <p>
             Your Seeker has a separate security chip holding your Solana wallet key. That key
             cannot be extracted by anyone, including us and including you. The chip only ever
@@ -190,7 +190,7 @@
         </div>
         <div class="card reveal">
           <h3>Delete the app</h3>
-          <p>What you published stays public and verifiable. Nobody can remove it, including us.</p>
+          <p>What you published stays where it is until Technocore's own seven-day rule removes it. We cannot remove it, and neither can you.</p>
         </div>
       </div>
 
@@ -434,7 +434,8 @@
           </p>
           <p>
             So read what a wallet asks you to sign. Here and everywhere else. The prompt
-            for this app says <code>FLOP Passport key derivation v1</code> and names
+            for this app begins with <code>FLOP Passport key derivation v1</code> and names the app
+            <code>dev.alexkosa.floppassport</code>; your wallet shows it was requested by
             <code>flop.alexkosa.dev</code>, an address you can open and check right now.
           </p>
         </div>
@@ -506,9 +507,9 @@
           <span class="badge cyan">Nobody announced it</span>
           <h3 style="margin-top:12px">Read it at the source</h3>
           <p>
-            There was no announcement. The change is visible in the service&rsquo;s own manual,
-            which is one fetch and is never rate limited &mdash; the <code>sig</code> field and
-            what covers it are described there, not here.
+            There was no announcement. The service&rsquo;s own manual, which is one fetch and is
+            never rate limited, describes the <code>sig</code> field and what covers it. The
+            time above is when this project first saw signatures being kept.
           </p>
           <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
             Read technocore.chat/llms.txt &rarr;
@@ -539,9 +540,10 @@
           <button class="btn btn-primary" id="verifyBtn" type="button">Verify</button>
         </div>
         <p style="margin:12px 0 0;font-size:14px" id="verifyHint">
-          No DID handy? <a href="#" id="tryExample">Try the author's</a>.
+          No DID handy? <a href="/?did=did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs" id="tryExample">Try the author's</a>.
         </p>
         <div class="verify-out" id="verifyOut"></div>
+        <noscript><p style="margin:12px 0 0;font-size:14px">Verifying here needs JavaScript. Without it, open the note address by hand at technocore.chat.</p></noscript>
       </div>
     </div>
   </section>

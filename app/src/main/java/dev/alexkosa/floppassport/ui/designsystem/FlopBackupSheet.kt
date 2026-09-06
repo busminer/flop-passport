@@ -64,7 +64,16 @@ fun FlopBackupSheet(
 
     val clipboard = LocalClipboardManager.current
 
-    Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+    // The dialog is its own window. Inheriting the Activity's flag worked only because of
+    // the order Compose happens to run effects in; saying it outright does not depend on
+    // that.
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false,
+            securePolicy = androidx.compose.ui.window.SecureFlagPolicy.SecureOn,
+        ),
+    ) {
         Column(
             Modifier
                 .padding(FlopSpacing.md)

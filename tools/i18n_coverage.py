@@ -58,6 +58,11 @@ ALLOWED = {
     # reach a crash log and a developer, never a screen. The app shows a written sentence
     # for every one of these situations instead.
     "A Solana account key is 32 bytes, got ",
+    # A substring test on an exception message, never shown.
+    "connect",
+    "no connection",
+    "no stream",
+    "The wallet signed with a different account than the one it authorized",
     "A nonce is 1-19 digits",
     "An Ed25519 signature is 64 bytes, got ",
     "No Passport stored on this device",
@@ -177,7 +182,7 @@ def main() -> int:
               "languages and not others:\n")
         for lang, keys in sorted(gaps.items()):
             print(f"  {lang} is missing {len(keys)}:")
-            for k in sorted(keys)[:12]:
+            for k in sorted(keys):
                 print(f"    {k[:110]}")
     return 1
 

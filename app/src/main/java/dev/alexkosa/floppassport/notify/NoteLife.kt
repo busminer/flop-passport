@@ -87,12 +87,26 @@ object NoteLife {
     fun daysSinceWrite(context: Context, now: Long = System.currentTimeMillis()): Int =
         daysSince(lastWrite(context), now)
 
-    /** Whole days before the note is deleted, floored at zero, or [UNKNOWN]. */
-    fun daysLeft(context: Context, now: Long = System.currentTimeMillis()): Int {
-        val since = daysSinceWrite(context, now)
-        if (since == UNKNOWN) return UNKNOWN
-        return (TTL_DAYS - since).coerceAtLeast(0)
+    /**
+     * Whole days of life the note still has, floored at zero, or [UNKNOWN].
+     *
+     * Counted from the time remaining, not from the days elapsed. The server deletes at
+     * exactly seven times 86 400 seconds after the last write; at six days and twenty-three
+     * hours the elapsed count says "six" and the remaining time says "one hour". The old
+     * arithmetic took the first and told a person "tomorrow is the last day" on the
+     * morning their note was deleted at noon - the exact sentence the tests were written
+     * to prevent.
+     */
+    fun daysLeft(last: Long, now: Long): Int {
+        if (last <= 0L) return UNKNOWN
+        val remaining = TTL_DAYS * DAY_MILLIS - (now - last).coerceAtLeast(0L)
+        if (remaining <= 0L) return 0
+        return (remaining / DAY_MILLIS).toInt()
     }
+
+    /** Whole days of life the note still has, from this phone's last confirmed write. */
+    fun daysLeft(context: Context, now: Long = System.currentTimeMillis()): Int =
+        daysLeft(lastWrite(context), now)
 
     /**
      * How loudly to speak today.
@@ -142,10 +156,11 @@ object NoteLife {
      * translated once is wrong in Russian on the second day and wrong in Arabic on most of
      * them. Whole sentences are more strings to carry and exactly right in every one.
      */
-    fun countdown(daysSince: Int): String = when (TTL_DAYS - daysSince) {
+    fun countdown(daysLeft: Int): String = when (daysLeft) {
         3 -> "Three days left before it is deleted."
         2 -> "Two days left before it is deleted."
         1 -> "Tomorrow is the last day."
+        0 -> "Today is the last day. It is deleted within 24 hours unless you open the app."
         else -> "It is deleted after seven days with nothing written to it. Opening this app writes it."
     }
 

@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import androidx.compose.ui.unit.dp
 
 /** The three places this app has. Named as nouns, because a tab is a place, not an action. */
@@ -76,7 +77,7 @@ fun FlopBottomNav(
                     Spacer(Modifier.height(FlopSpacing.sm))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            t(tab.label).uppercase(),
+                            tu(tab.label),
                             style = FlopType.label.copy(fontSize = navLabelSize()),
                             color = if (active) FlopColors.IceWhite else FlopColors.Grey,
                             maxLines = 1,

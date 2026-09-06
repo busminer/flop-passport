@@ -27,7 +27,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "一条公开备注，地址由你的密钥算出，方便别人以后找到并核验你。这一步要发往 technocore.chat，那是别人的公共服务：繁忙时它会拒绝，办法就是再按一次。尝试两三次很正常，说明你的手机没有问题。",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
-        "签署的记录必须手动留下，错过的日期以后无法补上。此开关还会在你的身份笔记被删除前提醒你.",
+        "签署的记录必须手动留下，错过的日期以后无法补上。此开关还会在你的身份备注被删除前提醒你。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "打赏不会改变你的 Passport，也不会影响任何空投。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -73,13 +73,11 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker" to "Seeker 版 FLOP Passport",
     "FLOP Passport for Seeker - private backup" to "Seeker 版 FLOP Passport - 私密备份",
     "FLOP Passport for Seeker by @AlexKosa1" to "由 @AlexKosa1 制作的 Seeker 版 FLOP Passport",
-    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
-        "FLOP 要求代理做些有用的事。签名记录就是你留下的凭据，而没有记录的一天，之后谁也无法核验。",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
         "FLOP 要求代理完成两件事：创建一个唯一密钥，并做些有用的事来宣传 Technocore。上面的五个步骤完成了第一件事。第二件事没人能替你做，所以这里会写好帖子，由你决定是否发布。",
     "Identity derived from your wallet signature" to "由你的钱包签名派生的身份",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
-        "即使它被删除，你的 Passport 也没有消失：同一个钱包仍会生成相同的身份，签署一条记录即可将笔记重新发布到同一地址.",
+        "即使它被删除，你的 Passport 也没有消失：同一个钱包仍会生成相同的身份，签署一条记录即可将备注重新发布到同一地址。",
     "In one line: what you did, or why you set this up" to "用一句话说：你做了什么，或者为什么建立它",
     "It never asks for your wallet recovery phrase." to "它绝不会要求你提供钱包恢复助记词。",
     "It promises nothing about any airdrop, and never will." to "它不对任何空投作出承诺，以后也不会。",
@@ -87,14 +85,12 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "请离线保存此文件。绝不要发送给任何人，包括应用作者。",
     "Language" to "语言",
     "Last reminder about this one." to "关于这件事，这是最后一次提醒。",
-    "Link to what you built, if there is one" to "你所构建内容的链接（如果有）",
-    "Link to your post" to "你的帖子链接",
     "Make your first signed check-in" to "留下首条签名记录",
     "Next: create your Passport from your wallet." to "下一步：通过钱包创建 Passport。",
     "Next: make your first signed check-in." to "下一步：留下首条签名记录。",
     "Next: publish your identity so anyone can verify you." to "下一步：发布身份，让任何人都能验证你。",
     "Next: seal the key in this phone's secure storage." to "下一步：将密钥封存在此手机的安全存储中。",
-    "No account, no server of ours, no analytics." to "无需账户，不使用我们的服务器，也不进行数据分析。",
+    "No account, no server of ours, no analytics." to "无需账号，没有我们的服务器，也没有数据分析。",
     "No wallet on this phone opened the payment link." to "此手机上没有钱包打开付款链接。",
     "No. Nothing was published." to "没有。未发布任何内容。",
     "Not checked yet." to "尚未检查。",
@@ -113,10 +109,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "仅列出已有实际翻译的语言。如果语言选择器列出的语言都显示为英文，它会声称支持你的语言，却在下一屏显示事实并非如此。",
     "Opening a connection" to "正在建立连接",
     "Opening your Solana wallet" to "正在打开你的 Solana 钱包",
-    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
-        "把链接贴在这里，你的名字就永久系在你的密钥上了。这一步大家都打算稍后再做，然后就没有再做。",
-    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
-        "粘贴你的帖子链接。它会加入你的身份备注，让备注指向帖子，同时帖子带有密钥。任何人都能用同一个密钥核验两边.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
         "发出你的那句话，然后回来贴上链接。正是这一步把你的名字系到你的密钥上，也正是 FLOP 要求代理去做的那一半。",
     "Protect" to "保护",
@@ -125,7 +117,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Publish your identity" to "发布你的身份",
     "Published and read back from the server" to "已发布并从服务器读回",
     "Published, read back, and vouched for by your key" to "已发布、读回并由你的密钥背书",
-    "Publishing your identity note to technocore.chat" to "正在将身份记录发布到 technocore.chat",
+    "Publishing your identity note to technocore.chat" to "正在将身份备注发布到 technocore.chat",
     "Publishing your note" to "正在发布你的备注",
     "Questions, answered in full" to "问题详解",
     "Read from technocore.chat just now, not from this phone. Rooms are trimmed as they grow, so this is what anyone would find today." to
@@ -135,7 +127,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Ready" to "就绪",
     "Remind me once a day" to "每天提醒我一次",
     "Renewed today. technocore.chat keeps it for seven days after the last write, and this app rewrites it every time you open it." to
-        "今天已续期。technocore.chat 会从最后一次写入起保留七天，并且你每次打开此应用时，应用都会重写它.",
+        "今天已续期。technocore.chat 会从最后一次写入起保留七天，并且你每次打开此应用时，应用都会重写它。",
     "Sealed by Android Keystore" to "由 Android Keystore 封存",
     "Sealed by StrongBox, this phone's separate security chip" to "由 StrongBox 封存，即此手机的独立安全芯片",
     "Sealed by this phone's trusted execution environment" to "由此手机的可信执行环境封存",
@@ -144,7 +136,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Sent, but not confirmed in the room yet" to "已发送，但尚未在房间中确认",
     "Settings" to "设置",
     "Show your private key" to "显示你的私钥",
-    "Sign a record now and this day is on your history for good." to "现在签一条记录，这一天就永久留在你的历史里。",
     "Signed, accepted and found again in the room" to "已签名、接受并再次在房间中找到",
     "Signing your first check-in and sending it" to "正在签署并发送你的首条记录",
     "Somebody changed this note after your key signed for it. Publish again." to
@@ -153,10 +144,7 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Talking to the service" to "正在与服务通信",
     "Thanks for building this" to "感谢开发此应用",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
-        "这看起来不像帖子链接。格式应该类似 https://x.com/you/status/123.",
-    "That does not look like a link. It should start with https://" to "这看起来不像链接。链接应以 https:// 开头",
-    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
-        "五个步骤建好了你的身份。这台手机之外，还没有人知道它是你的。见下方第 06 步：写一句话，发出去，然后回来贴上链接。最后这一步会把你的名字永久地放在你的密钥旁边，而人们通常就停在这里。",
+        "这看起来不像帖子链接。格式应该类似 https://x.com/you/status/123。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "密钥封存在此手机的安全存储中，随后读回并与你的身份核对。",
     "The manual" to "手册",
@@ -172,19 +160,17 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
         "本应用免费且开源。如果它对你有用，可以向 {name} 发送打赏。你的钱包会打开，金额由你在钱包中选择。",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
-        "每次打开此应用或签署记录时，应用都会重写你的笔记，并重新开始计算七天。每周至少打开一次，就不会丢失任何内容.",
+        "每次打开此应用或签署记录时，应用都会重写你的备注，并重新开始计算七天。每周至少打开一次，就不会丢失任何内容。",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
         "这不是你的 Solana 钱包密钥。钱包自身的密钥从未离开 Seed Vault，本应用也从未读取过它。你看到的是一把独立密钥，只用于在 Technocore 上签名。",
     "This line is what makes the post yours. Everything under it is the proof." to
         "这一句才让这条帖子属于你。下面的一切都是证据。",
-    "Three days left before it is deleted." to "距离删除还剩三天.",
-    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
-        "三件事，按顺序：写下你的那句话，发出去，然后回来把链接贴上。最后一步才让这一切长久，而它正是最容易被忘掉的那一步。",
+    "Three days left before it is deleted." to "距离删除还剩三天。",
     "Today cannot be added later" to "今天无法事后补上",
     "Told only when your identity note is days away from being deleted." to
-        "只有当你的身份笔记再过几天就会被删除时，你才会收到通知.",
-    "Tomorrow is the last day." to "明天是最后一天.",
-    "Two days left before it is deleted." to "距离删除还剩两天.",
+        "只有当你的身份备注再过几天就会被删除时，你才会收到通知。",
+    "Tomorrow is the last day." to "明天是最后一天。",
+    "Two days left before it is deleted." to "距离删除还剩两天。",
     "Unfinished setup" to "未完成的设置",
     "Use the phone's language" to "使用手机的语言",
     "Wait a moment and press it again to re-check. Do not treat this as a failure." to
@@ -208,22 +194,18 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "You're all set" to "已完成设置",
     "Your Passport has no name on it" to "你的 Passport 上没有名字",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
-        "你的 Passport 派生自钱包在 Seeker 的硬件密钥存储区 Seed Vault 中生成的一次签名。钱包密钥始终留在该硬件中。此应用根据该签名计算出 Passport 密钥，再由 Android 的安全存储在硬件中封存，而非签名，因为 Android 密钥库无法保存此类密钥。",
-    "Your Passport is live" to "你的 Passport 已启用",
+        "你的 Passport 派生自钱包在 Seeker 的硬件密钥存储区 Seed Vault 中生成的一次签名。钱包密钥始终留在该硬件中。此应用根据该签名计算出 Passport 密钥，再由 Android 的安全存储在硬件中封存，而非签名，因为 Android Keystore 无法保存此类密钥。",
+    "Your Passport is live" to "你的 Passport 已生效",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
-        "你的 Passport 已启用，首条签名记录已发布到 Technocore。任何人都能验证，它始终属于你。",
-    "Your Passport is live, it is yours, and your name is on it." to
-        "你的 Passport 已生效，属于你，并且署上了你的名字。",
+        "你的 Passport 已生效，首条签名记录已发布到 Technocore。任何人都能验证，它始终属于你。",
     "Your Passport is live. One step left." to "你的 Passport 已生效。还剩一步。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "你的 Passport 由一次钱包签名重建，因此没有会丢失的助记词。反过来也成立：任何能让你的钱包签署那句一模一样的话的应用，都能重建这个 Passport。请阅读钱包要求你签署的内容，在这里，也在任何地方。",
-    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
-        "你的 Passport 并未丢失：同一个钱包仍会生成相同的身份，现在签署一条记录即可将笔记重新发布到同一地址.",
-    "Your identity note expires soon" to "你的身份笔记即将过期",
-    "Your identity note has been deleted" to "你的身份笔记已被删除",
+    "Your identity note expires soon" to "你的身份备注即将过期",
+    "Your identity note has been deleted" to "你的身份备注已被删除",
     "Your key is never sent anywhere. Only you can export it." to "你的密钥不会发送到任何地方。只有你可以将其导出。",
     "Your key signed a line carrying this note's exact hash." to "你的密钥签署了一行，其中带有这条备注的确切哈希值。",
-    "Your note has to be kept alive" to "你的笔记需要保持有效",
+    "Your note has to be kept alive" to "你的备注需要保持有效",
     "Your post is in your identity note, at your key's own address." to
         "你的帖子已在你的身份备注里，就在你密钥自己的地址上。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
@@ -231,7 +213,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "active days" to "活跃天数",
     "activity" to "活动",
     "address" to "地址",
-    "agent: FLOP Passport for Seeker" to "代理：Seeker 版 FLOP Passport",
     "algorithm: Ed25519, did:key, 32-byte seed" to "算法：Ed25519、did:key、32 字节种子",
     "attach it" to "绑定",
     "built by a community builder" to "由社区开发者构建",
@@ -260,32 +241,30 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "fingerprint" to "指纹",
     "flop-passport vault self-test" to "flop-passport 密钥库自检",
     "identity" to "身份",
-    "identity note" to "身份记录",
+    "identity note" to "身份备注",
     "language {code}" to "语言 {code}",
     "last connection" to "上次连接",
     "linked" to "已关联",
     "live records" to "现存记录",
-    "matched on our nonce, not just our key" to "与我们的 nonce 匹配，而不只是密钥",
-    "no thanks, continue" to "不用，谢谢，继续",
+    "matched on our nonce, not just our key" to "与我们的随机数匹配，而不只是密钥",
+    "no thanks, continue" to "不用了，继续",
     "no, nothing was made public" to "没有，未公开任何内容",
     "nonce" to "随机数",
     "not found" to "未找到",
     "not yet" to "暂时不",
-    "not yet - the note alone is a claim, not a proof" to "尚未，单独的记录只是声明，不是证明",
+    "not yet - the note alone is a claim, not a proof" to "尚未：单独的备注只是声明，不是证明",
     "off" to "关",
     "on" to "开",
     "open" to "打开",
     "our exact bytes, no wallet prefix" to "与我们的字节完全一致，无钱包前缀",
     "passport for seeker" to "Seeker 版 Passport",
     "pin it to your identity" to "固定到你的身份",
-    "post it" to "发布",
     "private key, 32 bytes, hex" to "私钥，32 字节，十六进制",
     "protect passport" to "保护 Passport",
     "publish identity" to "发布身份",
-    "publish these to my note" to "将这些发布到我的备注",
     "published" to "已发布",
     "publishing" to "发布中",
-    "re-check with the server" to "通过服务器重新检查",
+    "re-check with the server" to "向服务器重新检查",
     "re-checked when the app opened" to "应用打开时已重新检查",
     "records the server still holds" to "服务器仍保留的记录",
     "recovery" to "恢复",
@@ -308,8 +287,8 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "support the builder" to "支持开发者",
     "technocore.chat answered" to "technocore.chat 已响应",
     "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
-        "technocore.chat 会删除连续七天无人写入的内容。这也包括你保存和分享的地址上的身份笔记.",
-    "technocore.chat refused the note" to "technocore.chat 拒绝了该记录",
+        "technocore.chat 会删除连续七天无人写入的内容。这也包括你保存和分享的地址上的身份备注。",
+    "technocore.chat refused the note" to "technocore.chat 拒绝了该备注",
     "technocore.chat refused the signed write" to "technocore.chat 拒绝了签名写入",
     "text" to "文本",
     "the note changed between reads" to "两次读取之间备注发生了变化",
@@ -318,7 +297,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "try again" to "再试一次",
     "unconfirmed" to "未确认",
     "unsigned" to "未签名",
-    "vault {level}" to "保管库 {level}",
     "verified" to "已验证",
     "verify it yourself" to "自行验证",
     "version" to "版本",
@@ -328,7 +306,6 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "what this app never does" to "本应用绝不会做的事",
     "what to do" to "操作方法",
     "when" to "时间",
-    "with a wallet prefix, which is fine and pinned" to "带有钱包前缀，符合要求且已固定",
     "working" to "正在处理",
     "yes, a signed did-note line carries its hash" to "是，签名的 did-note 行包含其哈希值",
     "yes, delete" to "是，删除",
@@ -345,11 +322,11 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
         "无法连接 technocore.chat。检查一下网络再试一次，什么都没有丢。",
     "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
-        "服务已经收下你的记录，但还没有把它显示回来。稍后按「重新检查」；不需要再签一次。",
+        "服务已经收下你的记录，但还没有把它显示回来。稍后按“重新检查”；不需要再签一次。",
     "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
         "technocore.chat 拒绝了这条记录。它繁忙时会拒绝写入，稍后再试一次。",
-    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
-        "technocore.chat 没有接受这次改动。它繁忙时会拒绝写入，稍后再按一次「发布」。无论如何，你的链接已经存在这台手机上。",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your link is saved on this phone either way." to
+        "technocore.chat 没有接受这次改动。它繁忙时会拒绝写入，稍后再按一次“发布”。无论如何，你的链接已经存在这台手机上。",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "还没有完成。五项全部变绿之前，你的 Passport 尚未生效，也没有完整的东西可供别人核对。继续。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
@@ -357,19 +334,15 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
     "Deleted after seven days with nothing written to it. Publish it now and it goes back to the same address." to
         "七天之内没有任何写入就会被删除。现在发布一次，它就会回到同一个地址。",
     "Identity note at risk" to
-        "身份备注有风险",
+        "身份备注面临删除风险",
     "In Settings, delete the Passport from this phone, then create it again from your wallet." to
-        "到「设置」里把 Passport 从这台手机上删除，然后用钱包重新建一个。",
+        "到“设置”里把 Passport 从这台手机上删除，然后用钱包重新建一个。",
     "It is deleted after seven days with nothing written to it. Opening this app writes it." to
         "七天之内没有任何写入，它就会被删除。打开这个应用本身就是一次写入。",
     "Maybe. The service accepted it, and this app could not read it back to be sure." to
         "也许。服务已经接受了，但这个应用还没能把它读回来加以确认。",
-    "Seven days without opening the app. Open it now and the note goes back up." to
-        "已经七天没有打开过这个应用了。现在打开，备注就会重新发布上去。",
     "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "这是五步里的最后一步。你的 Passport 已经生效。还剩一件事，而它正是 FLOP 真正要求的：告诉别人你做了什么。帖子由应用替你写好，就在这个页面的下方。",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
-        "你贴回来的链接会写进你的身份备注，地址由你自己的密钥算出。房间一天之内就会被清空。只要你还在打开这个应用，备注就一直在。",
     "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
         "这个应用是免费的，里面也没有任何东西可买。如果它对你有用，可以给 kosa.skr 一点心意。",
     "checking" to
@@ -394,10 +367,72 @@ internal val ZH_STRINGS: Map<String, String> = mapOf(
         "存下来的记录用这把密钥核对不通过",
     "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
         "你建了一把只有你的钱包才能重建的密钥，把它封进这台手机，发布到陌生人也能找到的地方，签下一条记录并证明它确实落地，还把你的帖子放在了密钥旁边。没有什么要再设置的了。",
-    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
-        "从现在起，每天一次：打开「动态」这一栏，签下当天的记录。这一次写入同时也让你的身份备注不被删除，而今天这一天，过后是补不上的。",
     "open Activity" to
-        "打开「动态」",
+        "打开“活动”",
     "{n} more characters and the button below wakes up." to
         "再写 {n} 个字，下面的按钮就会亮起来。",
+    "Could not check technocore.chat for your published steps. This says nothing about them, only about the connection. Re-check when you are back online." to
+        "无法向 technocore.chat 核对你已发布的步骤。这只说明连接有问题，与那些步骤本身无关。恢复联网后再重新检查。",
+    "The key could not be sealed in this phone's secure storage" to
+        "无法将密钥封存在此手机的安全存储中",
+    "Try again. If it keeps failing, restart the phone and try once more. Nothing was sent anywhere." to
+        "请再试一次。如果一直失败，重启手机后再试一次。什么都没有发出去。",
+    "with a wallet prefix - this Passport rebuilds only through this same wallet app" to
+        "带有钱包前缀，此 Passport 只能通过同一个钱包应用重建",
+    "Could not reach technocore.chat. Check your connection and press publish again. Your link is saved on this phone either way." to
+        "无法连接 technocore.chat。检查一下网络，再按一次“发布”。无论如何，你的链接已经存在这台手机上。",
+    "The note was accepted, but it could not be read back yet." to
+        "备注已被接受，但暂时还无法读回。",
+    "The record was sent but no answer came back in time. Do not resend: read the room again first." to
+        "记录已发出，但没有及时收到回应。不要重发：先把房间再读一遍。",
+    "The link you paste goes into your identity note, at an address derived from your own key. The note stays as long as you keep opening the app; seven days without a write and it is deleted." to
+        "你贴回来的链接会写进你的身份备注，地址由你自己的密钥算出。只要你还在打开这个应用，备注就一直在；七天没有任何写入，它就会被删除。",
+    "vault: security chip" to "保管库：安全芯片",
+    "vault: secure area" to "保管库：安全区域",
+    "vault: software" to "保管库：软件",
+    "vault: not sealed yet" to "保管库：尚未封存",
+    "Could not read the key from secure storage. Restart the phone and try again." to
+        "无法从安全存储中读取密钥。请重启手机后再试。",
+    "FLOP Passport is an independent community project. It is not made, endorsed or reviewed by FLOP Labs or by Solana Mobile." to
+        "FLOP Passport 是一个独立的社区项目，并非由 FLOP Labs 或 Solana Mobile 制作、认可或审核。",
+    "From now on: open the app at least once a week, so your identity note is not deleted. On the days you do something, open Activity and sign that day's record - a day cannot be added later." to
+        "从现在起：每周至少打开一次应用，这样你的身份备注就不会被删除。在你做了事情的那天，打开“活动”标签页，签下当天的记录。过去的日子是补不上的。",
+    "Link to your post on X" to "你在 X 上的帖子链接",
+    "Nothing was saved. Open your private key again and save it from there." to
+        "没有保存任何内容。请重新打开你的私钥，从那里保存。",
+    "Paste the link here and your name goes beside your key, in your identity note. This is the part people mean to do later and then do not." to
+        "把链接贴在这里，你的名字就会出现在你的密钥旁边，写在你的身份备注里。这一步大家都打算稍后再做，然后就没有再做。",
+    "Paste the link to your post on X. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key. The app does not open the link or check the post; anyone reading your note can." to
+        "粘贴你在 X 上的帖子链接。它会加入你的身份备注，让备注指向帖子，同时帖子带有密钥。任何人都能用同一个密钥核验两边。应用不会打开链接，也不会检查帖子；读到你备注的任何人都可以自己核对。",
+    "Seeker and Solana Mobile are trademarks of Solana Mobile, used only to say what this app is built for. FLOP and Technocore are names of the project whose public service this app writes to." to
+        "Seeker 与 Solana Mobile 是 Solana Mobile 的商标，在此仅用于说明本应用是为什么设备而做。FLOP 与 Technocore 是本应用所写入的那个公共服务所属项目的名称。",
+    "The file could not be written. Try another location." to
+        "无法写入文件。请换一个位置。",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key, and it is where people stop." to
+        "五个步骤建好了你的身份。这台手机之外，还没有人知道它是你的。见下方第 06 步：写一句话，发出去，然后回来贴上链接。最后这一步会把你的名字放在你的密钥旁边，而人们通常就停在这里。",
+    "Three things, in this order: write your line, post it on X, then come back and paste the link. The last one is what puts your name beside your key, and it is the one people forget." to
+        "三件事，按顺序：写下你的那句话，发到 X 上，然后回来把链接贴上。最后一步才把你的名字放在你的密钥旁边，而它正是最容易被忘掉的那一步。",
+    "Your Passport is live, it is yours, and your post link is on it." to
+        "你的 Passport 已生效，属于你，并且带上了你的帖子链接。",
+    "checking with the server" to "正在向服务器核对",
+    "independent project" to "独立项目",
+    "not in your note yet" to "尚未写入你的备注",
+    "post it on X" to "发到 X 上",
+    "put it in my note" to "写进我的备注",
+    "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
+        "本应用的签名提示以 FLOP Passport key derivation v1 开头，并写明应用 dev.alexkosa.floppassport；你的钱包会显示该请求来自 flop.alexkosa.dev。",
+    "A signed record is dated evidence that you were here. A day without one cannot be added later, and signing also keeps your identity note alive. Nothing here promises anything about any allocation." to
+        "签名记录是带日期的凭据，证明你来过。没有记录的一天事后补不上，而签名同时也让你的身份备注保持有效。这里没有任何内容对任何分配作出承诺。",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and publishing again puts the note back at the same address." to
+        "你的 Passport 并未丢失：同一个钱包仍会生成相同的身份，再发布一次即可将备注放回同一地址。",
+    "Read from technocore.chat, not from this phone. Rooms are trimmed as they grow, so this shows what anyone would find today." to
+        "从 technocore.chat 读取，并非来自此手机。房间会随内容增加而清理，因此这里显示的是任何人今天能找到的内容。",
+    "Seven days without opening the app. Open it and press publish; the note goes back to the same address." to
+        "已经七天没有打开过这个应用了。打开它并按“发布”，备注就会回到同一个地址。",
+    "Finish the steps on the Passport tab first. Daily records start once your Passport is live." to
+        "请先完成 Passport 标签页里的步骤。你的 Passport 生效后，才开始每日记录。",
+    "Today is the last day. It is deleted within 24 hours unless you open the app." to
+        "今天是最后一天。除非你打开应用，它将在 24 小时内被删除。",
+    "If you did something today, sign a record for it now." to
+        "如果你今天做了事，现在就为它签一条记录。",
 )

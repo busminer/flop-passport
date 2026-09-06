@@ -79,15 +79,47 @@ class NoteLifeTest {
 
     @Test
     fun `the countdown names the right number of days`() {
-        assertEquals("Three days left before it is deleted.", NoteLife.countdown(4))
-        assertEquals("Two days left before it is deleted.", NoteLife.countdown(5))
-        assertEquals("Tomorrow is the last day.", NoteLife.countdown(6))
+        assertEquals("Three days left before it is deleted.", NoteLife.countdown(3))
+        assertEquals("Two days left before it is deleted.", NoteLife.countdown(2))
+        assertEquals("Tomorrow is the last day.", NoteLife.countdown(1))
+        assertEquals(
+            "Today is the last day. It is deleted within 24 hours unless you open the app.",
+            NoteLife.countdown(0),
+        )
     }
 
     @Test
     fun `every countdown sentence is distinct, so a translator cannot collapse them`() {
-        val sentences = (4..6).map { NoteLife.countdown(it) }
+        val sentences = (0..3).map { NoteLife.countdown(it) }
         assertEquals(sentences.size, sentences.distinct().size)
-        assertNotEquals(NoteLife.countdown(6), NoteLife.countdown(1))
+        assertNotEquals(NoteLife.countdown(1), NoteLife.countdown(6))
+    }
+
+    @Test
+    fun `days left counts the time remaining, not the days elapsed`() {
+        val hour = 60L * 60 * 1000
+        // Six days and twenty-three hours in: one hour of life left, which is "today",
+        // never "tomorrow".
+        assertEquals(0, NoteLife.daysLeft(now - 6 * day - 23 * hour, now))
+        // Exactly six days in: a full day left, so tomorrow really is the last day.
+        assertEquals(1, NoteLife.daysLeft(now - 6 * day, now))
+        assertEquals(3, NoteLife.daysLeft(now - 4 * day, now))
+        assertEquals(7, NoteLife.daysLeft(now, now))
+        // Past the deadline the note is gone; the floor is zero, never negative.
+        assertEquals(0, NoteLife.daysLeft(now - 9 * day, now))
+        assertEquals(NoteLife.UNKNOWN, NoteLife.daysLeft(0L, now))
+    }
+
+    @Test
+    fun `the morning-of-deletion case is told the truth`() {
+        // Written at noon on day 0; the reminder fires at 11:00 on day 7.
+        val written = now
+        val reminder = now + 7 * day - 60L * 60 * 1000
+        assertEquals(6, NoteLife.daysSince(written, reminder))
+        assertEquals(NoteLife.Urgency.WARNING, NoteLife.urgency(NoteLife.daysSince(written, reminder)))
+        assertEquals(
+            "Today is the last day. It is deleted within 24 hours unless you open the app.",
+            NoteLife.countdown(NoteLife.daysLeft(written, reminder)),
+        )
     }
 }

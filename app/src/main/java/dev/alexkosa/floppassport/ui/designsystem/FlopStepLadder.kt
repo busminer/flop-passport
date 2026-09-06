@@ -31,6 +31,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import dev.alexkosa.floppassport.ui.Evidence
 import dev.alexkosa.floppassport.ui.FlowState
 import dev.alexkosa.floppassport.technocore.Technocore
@@ -88,7 +89,7 @@ private fun StepRow(
                     )
                     Spacer(Modifier.width(FlopSpacing.sm))
                     Text(
-                        t(step.title).uppercase(),
+                        tu(step.title),
                         style = FlopType.label,
                         color = when (state) {
                             is StepState.Pending -> FlopColors.Grey
@@ -162,7 +163,7 @@ private fun StepRow(
 @Composable
 private fun EvidenceLine(key: String, value: String) {
     Row(Modifier.fillMaxWidth().padding(vertical = 3.dp)) {
-        Text(t(key).uppercase(),
+        Text(tu(key),
             style = FlopType.label,
             color = FlopColors.TextMuted,
             modifier = Modifier.width(96.dp),

@@ -45,6 +45,7 @@ import dev.alexkosa.floppassport.ui.designsystem.FlopBadge
 import dev.alexkosa.floppassport.ui.designsystem.FlopButton
 import dev.alexkosa.floppassport.ui.designsystem.FlopButtonSecondary
 import dev.alexkosa.floppassport.ui.designsystem.FlopCard
+import dev.alexkosa.floppassport.vault.PassportVault
 import dev.alexkosa.floppassport.ui.designsystem.FlopColors
 import dev.alexkosa.floppassport.ui.designsystem.FlopLabel
 import dev.alexkosa.floppassport.ui.designsystem.FlopMonoData
@@ -94,10 +95,19 @@ fun PassportScreen(
         ActivityResultContracts.CreateDocument("text/plain"),
     ) { uri ->
         if (uri != null) {
-            runCatching {
-                context.contentResolver.openOutputStream(uri)?.use { out ->
-                    out.write(vm.backupDocument().toByteArray(Charsets.UTF_8))
-                }
+            val document = vm.backupDocument()
+            // An empty document means the key is no longer in memory - the sheet closed,
+            // or the process was recreated while the picker was open. Writing it would
+            // leave a file that looks like a backup and holds nothing.
+            if (document.isEmpty()) {
+                gateMessage = "Nothing was saved. Open your private key again and save it from there."
+            } else {
+                val written = runCatching {
+                    context.contentResolver.openOutputStream(uri)?.use { out ->
+                        out.write(document.toByteArray(Charsets.UTF_8))
+                    } ?: error("no stream")
+                }.isSuccess
+                if (!written) gateMessage = "The file could not be written. Try another location."
             }
         }
     }
@@ -213,7 +223,19 @@ fun PassportScreen(
                 FlopMonoData(identity)
                 Spacer(Modifier.height(FlopSpacing.sm))
                 Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
-                    FlopBadge(t("vault {level}", "level" to vm.securityLevel.toString()), FlopState.Active)
+                    // Words a person can read, not the enum: "TEE" means nothing outside
+                    // Android documentation.
+                    FlopBadge(
+                        t(
+                            when (vm.securityLevel) {
+                                PassportVault.SecurityLevel.STRONGBOX -> "vault: security chip"
+                                PassportVault.SecurityLevel.TEE -> "vault: secure area"
+                                PassportVault.SecurityLevel.SOFTWARE -> "vault: software"
+                                else -> "vault: not sealed yet"
+                            },
+                        ),
+                        FlopState.Active,
+                    )
                     if (vm.walletAddress != null) FlopBadge("wallet linked", FlopState.Verified)
                 }
             }
@@ -296,6 +318,30 @@ fun PassportScreen(
         }
         Spacer(Modifier.height(FlopSpacing.lg))
 
+        // The launch-time question to the server failed. Said here, beside the next button,
+        // where the eye lands: the grey steps above are then not a fact about the Passport
+        // but about the connection - and a finished person offline used to be shown "not live"
+        // with no explanation and nothing to press.
+        vm.restoreError?.let { message ->
+            Box(
+                Modifier
+                    .fillMaxWidth()
+                    .background(FlopColors.Surface, FlopShapes.md)
+                    .border(1.dp, FlopColors.ErrorRed.copy(alpha = 0.5f), FlopShapes.md)
+                    .padding(FlopSpacing.md),
+            ) {
+                Column {
+                    Text(t(message), style = FlopType.bodySm, color = FlopColors.ErrorRed)
+                    Spacer(Modifier.height(FlopSpacing.sm))
+                    FlopButtonSecondary("re-check with the server", {
+                        vm.refreshFromServer()
+                        vm.refreshActivity(force = true)
+                    })
+                }
+            }
+            Spacer(Modifier.height(FlopSpacing.md))
+        }
+
         when {
             flow.complete && vm.nameLinked -> Box(
                 Modifier
@@ -320,7 +366,7 @@ fun PassportScreen(
                     )
                     Spacer(Modifier.height(FlopSpacing.xs))
                     Text(
-                        t("Your Passport is live, it is yours, and your name is on it."),
+                        t("Your Passport is live, it is yours, and your post link is on it."),
                         style = FlopType.bodyMd,
                         color = FlopColors.IceWhite,
                         textAlign = TextAlign.Center,
@@ -340,10 +386,10 @@ fun PassportScreen(
                     Spacer(Modifier.height(FlopSpacing.md))
                     Text(
                         t(
-                            "From now on, once a day: open Activity and sign that day's " +
-                                "record. That write is also what keeps your identity note " +
-                                "from being deleted, and today is the one day that cannot " +
-                                "be added later.",
+                            "From now on: open the app at least once a week, so your " +
+                                "identity note is not deleted. On the days you do " +
+                                "something, open Activity and sign that day's record - " +
+                                "a day cannot be added later.",
                         ),
                         style = FlopType.bodyMd,
                         color = FlopColors.Cyan,
@@ -385,8 +431,8 @@ fun PassportScreen(
                             "The five steps built your identity. Nobody outside this phone " +
                                 "knows it is yours yet. Step 06 below: write one line, post " +
                                 "it, then come back and paste the link. That last part is " +
-                                "what puts your name beside your key for good, and it is " +
-                                "where people stop.",
+                                "what puts your name beside your key, and it is where " +
+                                "people stop.",
                         ),
                         style = FlopType.bodySm,
                         color = FlopColors.TextMuted,
@@ -421,8 +467,8 @@ fun PassportScreen(
                     "someone else's public service: when it is busy it refuses, and pressing " +
                     "again is the answer. Two or three attempts is normal and means nothing " +
                     "is wrong with your phone.",
-                button = "publish identity",
-                enabled = !flow.busy,
+                button = if (vm.restoring) "checking with the server" else "publish identity",
+                enabled = !flow.busy && !vm.restoring,
                 onClick = { vm.publish() },
                             onPositioned = { actionTop = it },
             )
@@ -432,8 +478,8 @@ fun PassportScreen(
                 body = "A message signed by your Passport, posted to a quiet room and then " +
                     "read back to prove it landed. Same service as step 03, same rule: if it " +
                     "refuses, press again. That is the service being busy, not a problem with your key.",
-                button = "sign and check in",
-                enabled = !flow.busy,
+                button = if (vm.restoring) "checking with the server" else "sign and check in",
+                enabled = !flow.busy && !vm.restoring,
                 onClick = { vm.checkIn() },
                             onPositioned = { actionTop = it },
             )
@@ -463,7 +509,13 @@ fun PassportScreen(
                         activity = activity,
                         title = "Show your private key",
                         subtitle = "Anyone holding it can sign as you",
-                        onSuccess = { vm.revealSeed() },
+                        onSuccess = {
+                            vm.revealSeed()
+                            if (vm.revealedSeedHex == null) {
+                                gateMessage = "Could not read the key from secure storage. " +
+                                    "Restart the phone and try again."
+                            }
+                        },
                         onFailure = { gateMessage = it },
                     )
                 }

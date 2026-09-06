@@ -86,15 +86,19 @@ object FinishNudge {
     }
 
     /**
-     * Stop, for good.
+     * Stop.
      *
-     * Called the moment the link is found in the note. The counter resets too, so somebody
-     * who deletes their Passport and starts again gets the same help the second time.
+     * Called the moment the link is found in the note, and when the Passport is deleted;
+     * in both cases the counter resets, so somebody who starts again gets the same help
+     * the second time. It is also called while the ladder is still being restored from
+     * the server at launch, and there the counter must be kept: resetting it on every
+     * slow launch handed a person who had already heard all three reminders all three
+     * again.
      */
-    fun cancel(context: Context) {
+    fun cancel(context: Context, resetCount: Boolean = true) {
         context.getSystemService(AlarmManager::class.java)?.cancel(pendingIntent(context))
         NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
-        NudgePrefs(context).attempt = 0
+        if (resetCount) NudgePrefs(context).attempt = 0
     }
 
     private fun pendingIntent(context: Context): PendingIntent = PendingIntent.getBroadcast(
@@ -148,8 +152,9 @@ object FinishNudge {
                     text = tr("Anyone who looks it up sees a key and nothing else.")
                     detail = tr(
                         "The link you paste goes into your identity note, at an address " +
-                            "derived from your own key. Rooms are cleared within a day. " +
-                            "The note stays as long as you keep opening the app.",
+                            "derived from your own key. The note stays as long as you " +
+                            "keep opening the app; seven days without a write and it is " +
+                            "deleted.",
                     )
                 }
                 else -> {
@@ -164,7 +169,7 @@ object FinishNudge {
             }
 
             val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.flop_chip)
                 .setContentTitle(title)
                 .setContentText(text)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(text + "\n\n" + detail))

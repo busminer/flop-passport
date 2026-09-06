@@ -122,7 +122,10 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
             requestMethod = "GET"
             connectTimeout = TIMEOUT_MS
             readTimeout = TIMEOUT_MS
-            setRequestProperty("User-Agent", "FLOP-Passport-for-Seeker/0.1")
+            setRequestProperty(
+                "User-Agent",
+                "FLOP-Passport-for-Seeker/" + dev.alexkosa.floppassport.BuildConfig.VERSION_NAME,
+            )
         }
         try {
             val code = conn.responseCode
@@ -216,12 +219,27 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
         // failure on this call reported the whole step as "could not reach
         // technocore.chat" - a dropped connection presented to the user as a dead end.
         val w = retrying(path)
+        // Status 0 is not an answer from the service, it is the absence of one: no
+        // network, no DNS, a timeout. Reporting it as "refused" told a person with Wi-Fi
+        // off to wait for a busy server, and printed the raw exception under DETAIL.
+        if (w.status == 0) throw java.io.IOException(w.body.ifBlank { "no connection" })
         if (!w.ok) return Result.Refused(w.status, w.body.take(300))
 
-        val readBack = readIdentityNote(did)
-        return if (readBack == value) {
+        // The write returned 200, so from here on the honest answer to "did anything go
+        // public?" is "probably" - a read-back that cannot be made is Unconfirmed, never
+        // Failed, and the caller's retry is a fixed-value set, so re-checking is free.
+        val readBack = runCatching { readIdentityNote(did) }.getOrElse {
+            return Result.Unconfirmed(
+                "The note was accepted, but it could not be read back yet.",
+            )
+        }
+        // The server stores the swept form of what it was sent, so that is the form to
+        // compare against. Sending an invisible character and comparing against the
+        // unswept value would leave the step Unconfirmed forever.
+        val expected = Canonical.sweep(value)
+        return if (readBack == expected) {
             Result.Verified(
-                Proof(did, "", "", value, "", 0, System.currentTimeMillis().toString()),
+                Proof(did, "", "", expected, "", 0, System.currentTimeMillis().toString()),
             )
         } else {
             Result.Unconfirmed("The note was accepted but read back as: ${readBack ?: "nothing"}")
@@ -254,7 +272,20 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
         )
         check(Canonical.isCanonicalSignature(sig)) { "Produced a non-canonical signature" }
 
-        val w = get("/r/${enc(room)}/say-signed/$did/$sig/$nonce/${enc(text)}")
+        // Single-shot on purpose: a retry here could post the same line twice in public.
+        // A reply that never arrives is not the same as a write that never left: once the
+        // request was sent, the record may well be in the room, and the only honest state
+        // is Unconfirmed, which makes the caller read the room before offering to resend.
+        // A failure to connect at all is still a plain failure - nothing was sent.
+        val w = try {
+            get("/r/${enc(room)}/say-signed/$did/$sig/$nonce/${enc(text)}")
+        } catch (t: java.net.SocketTimeoutException) {
+            if (t.message?.contains("connect", ignoreCase = true) == true) throw t
+            return Result.Unconfirmed(
+                "The record was sent but no answer came back in time. " +
+                    "Do not resend: read the room again first.",
+            )
+        }
         if (!w.ok) return Result.Refused(w.status, w.body.take(300))
 
         val rec = findMessage(room, did, nonce)
@@ -310,7 +341,11 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * the reason a client can look permanently unverified while working perfectly.
      */
     private suspend fun findMessage(room: String, did: String, nonce: String): JSONObject? {
-        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
+        // The newest window is exactly right for a record written a moment ago. The
+        // throwaway parameter is the service's own advice for re-polling an unchanged URL:
+        // the edge caches this read for a few seconds, and a cached list from before the
+        // write would call a landed record "not in the room yet".
+        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json&n=${System.currentTimeMillis()}")
         if (!r.ok) return null
         return runCatching {
             val messages = JSONObject(r.body).getJSONArray("messages")
@@ -328,35 +363,96 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * existing record instead of being invited to post a second identical one. Rooms are
      * public and append-only; a duplicate cannot be taken back.
      */
-    suspend fun findLatestMessage(room: String, did: String): Proof? {
-        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
-        // Same reason, with a sharper edge: a null here means "you have never checked in",
-        // and the caller acts on that by posting one. A 503 read as "never" would put a
-        // second identical line in a public append-only room.
+    /**
+     * Everything the room still holds, as the service's own export: raw JSONL, one record
+     * per line, the whole retained ring.
+     *
+     * `?limit=200` returns the newest two hundred lines and nothing else, and every user of
+     * this app writes into one shared room. Past a couple of hundred lines the earliest
+     * users' records fell out of that window, so the app told them their history was gone,
+     * showed step 04 as pending, and offered to post a second "first check-in" - in
+     * public, for good. The export has no window. A line that fails to parse is skipped
+     * rather than failing the whole read: the manual says a write landing mid-export is
+     * cut back to the last complete line, and a torn tail is not a reason to call a
+     * person's records missing.
+     *
+     * Throws on anything but a 200 with a body that parses as records, because the callers
+     * act on "nothing found" by writing, and an unreachable server must never read as an
+     * empty history.
+     */
+    private suspend fun readRoom(room: String): List<JSONObject> {
+        val r = retrying("/r/${enc(room)}/export")
         if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
+        val records = ArrayList<JSONObject>()
+        var seen = 0
+        for (line in r.body.lineSequence()) {
+            val trimmed = line.trim()
+            if (trimmed.isEmpty()) continue
+            seen++
+            runCatching { JSONObject(trimmed) }.getOrNull()
+                ?.takeIf { it.has("seq") && it.has("text") }
+                ?.let { records.add(it) }
+        }
+        // A body with lines and not one of them a record is not a room - an HTML error
+        // page from a proxy, a captive portal - and must not read as "no history".
+        if (seen > 0 && records.isEmpty()) {
+            throw java.io.IOException("technocore.chat sent something that is not a room")
+        }
+        return records
+    }
+
+    /** A stored signature checked the way a stranger would check it; true when none is stored. */
+    private fun signatureHolds(room: String, did: String, rec: JSONObject): Boolean {
+        val stored = rec.optString("sig")
+        if (stored.isEmpty()) return true
         return runCatching {
-            val messages = JSONObject(r.body).getJSONArray("messages")
-            (0 until messages.length())
-                .map { messages.getJSONObject(it) }
-                .filter { it.optString("from") == did }
-                // A did-note line is this identity's own plumbing, not a check-in. Counting
-                // it meant that publishing - which posts one - made the very next step
-                // announce "you have already checked in", and a brand new Passport reached
-                // the end having never posted the record the whole app exists to post.
-                .filterNot { DidNote.parse(it.optString("text")) != null }
-                .maxByOrNull { it.optInt("seq") }
-                ?.let {
-                    Proof(
-                        did = did,
-                        room = room,
-                        nonce = it.optString("nonce"),
-                        signedText = it.optString("text"),
-                        signature = "",
-                        seq = it.optInt("seq"),
-                        timestamp = it.optString("ts"),
-                    )
-                }
-        }.getOrNull()
+            dev.alexkosa.floppassport.crypto.Ed25519.verify(
+                publicKey = DidKey.publicKey(did),
+                message = Canonical.messagePayload(room, rec.optString("nonce"), rec.optString("text"))
+                    .toByteArray(Charsets.UTF_8),
+                signature = dev.alexkosa.floppassport.crypto.Ed25519.decodeSignature(stored),
+            )
+        }.getOrDefault(false)
+    }
+
+    /**
+     * Our most recent verified message in a room, if the server still has one.
+     *
+     * Used on open so the app can re-establish what is true rather than trusting local
+     * state, and used before posting so a user who already checked in is shown their
+     * existing record instead of being invited to post a second identical one. Rooms are
+     * public and append-only; a duplicate cannot be taken back.
+     */
+    suspend fun findLatestMessage(room: String, did: String): Proof? {
+        // A null here means "you have never checked in", and the caller acts on that by
+        // posting one. So anything that is not a readable room throws rather than
+        // returning null: a 503, or a 200 carrying something other than records, read as
+        // "never" would put a second identical line in a public append-only room.
+        val records = readRoom(room)
+        return records
+            .filter { it.optString("from") == did }
+            // A did-note line is this identity's own plumbing, not a check-in. Counting
+            // it meant that publishing - which posts one - made the very next step
+            // announce "you have already checked in", and a brand new Passport reached
+            // the end having never posted the record the whole app exists to post.
+            .filterNot { DidNote.parse(it.optString("text")) != null }
+            // Since 31 August the signature is stored beside the record. The fresh-write
+            // path checks it; a record found on restore is checked the same way, so a
+            // line the server attributed to us but that our key never signed is not
+            // presented as our check-in.
+            .filter { signatureHolds(room, did, it) }
+            .maxByOrNull { it.optInt("seq") }
+            ?.let {
+                Proof(
+                    did = did,
+                    room = room,
+                    nonce = it.optString("nonce"),
+                    signedText = it.optString("text"),
+                    signature = it.optString("sig"),
+                    seq = it.optInt("seq"),
+                    timestamp = it.optString("ts"),
+                )
+            }
     }
 
     /**
@@ -368,33 +464,24 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * past the service has already forgotten.
      */
     suspend fun findAllMessages(room: String, did: String): List<Proof> {
-        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
-        // Throw rather than return nothing. An unreachable server and an identity with no
-        // records are opposite facts, and returning the same empty list for both told the
-        // user their history was gone when it was only unreachable.
-        if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
-        // A 200 whose body is not a room - an HTML error page from a proxy, an empty body,
-        // JSON without `messages` - is a failure to ask, not an identity with no history.
-        // Swallowing it here is what let a captive portal tell somebody their records were
-        // gone.
-        return runCatching {
-            val messages = JSONObject(r.body).getJSONArray("messages")
-            (0 until messages.length())
-                .map { messages.getJSONObject(it) }
-                .filter { it.optString("from") == did }
-                .map {
-                    Proof(
-                        did = did,
-                        room = room,
-                        nonce = it.optString("nonce"),
-                        signedText = it.optString("text"),
-                        signature = it.optString("sig"),
-                        seq = it.optInt("seq"),
-                        timestamp = it.optString("ts"),
-                    )
-                }
-                .sortedBy { it.seq }
-        }.getOrElse { throw java.io.IOException("technocore.chat sent something that is not a room") }
+        // Throws rather than returning nothing. An unreachable server and an identity with
+        // no records are opposite facts, and returning the same empty list for both told
+        // the user their history was gone when it was only unreachable. The same goes for
+        // a 200 whose body is not a room, which is what a captive portal answers.
+        return readRoom(room)
+            .filter { it.optString("from") == did }
+            .map {
+                Proof(
+                    did = did,
+                    room = room,
+                    nonce = it.optString("nonce"),
+                    signedText = it.optString("text"),
+                    signature = it.optString("sig"),
+                    seq = it.optInt("seq"),
+                    timestamp = it.optString("ts"),
+                )
+            }
+            .sortedBy { it.seq }
     }
 
     /**
@@ -405,18 +492,13 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      */
     suspend fun nextNonce(room: String, did: String): String {
         val now = System.currentTimeMillis()
-        val r = retrying("/r/${enc(room)}?since=0&limit=200&format=json")
-        // Without this, an unreachable server made the highest known nonce zero. A phone
-        // whose clock had once run ahead would then sign a nonce below its own last one and
-        // be refused, with nothing on screen explaining why.
-        if (!r.ok) throw java.io.IOException("technocore.chat answered ${r.status}")
-        val highest = runCatching {
-            val messages = JSONObject(r.body).getJSONArray("messages")
-            (0 until messages.length())
-                .map { messages.getJSONObject(it) }
-                .filter { it.optString("from") == did }
-                .maxOfOrNull { it.optString("nonce").toLongOrNull() ?: 0L } ?: 0L
-        }.getOrDefault(0L)
+        // Throws when the room cannot be read. Without that, an unreachable server made the
+        // highest known nonce zero; a phone whose clock had once run ahead would then sign
+        // a nonce below its own last one and be refused, with nothing on screen explaining
+        // why.
+        val highest = readRoom(room)
+            .filter { it.optString("from") == did }
+            .maxOfOrNull { it.optString("nonce").toLongOrNull() ?: 0L } ?: 0L
         return maxOf(now, highest + 1).toString()
     }
 

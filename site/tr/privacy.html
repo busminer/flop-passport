@@ -40,8 +40,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=d3814be2" />
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="/styles.css?v=999f1200" />
+<noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
 <body>
@@ -134,7 +134,9 @@
         </p>
 </div>
 <h3 style="margin-top:48px">Kim sorumlu</h3>
-<p>FLOP Passport for Seeker, tek başına çalışan bir geliştirici olan Alex Kosa'nın bağımsız açık kaynak projesidir. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı, incelenmedi. İletişim: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a> ya da X üzerinde <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, veya açık depoda bir issue açarak.</p>
+<p>
+        FLOP Passport for Seeker, tek başına çalışan bir geliştirici olan Alex Kosa'nın bağımsız açık kaynak projesidir. FLOP Labs ya da Solana Mobile tarafından yapılmadı, onaylanmadı, incelenmedi. İletişim: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a> ya da X üzerinde <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, veya açık depoda bir issue açarak.
+      </p>
 <h3 style="margin-top:32px">Uygulamanın cihazında sakladıkları</h3>
 <ul class="plain">
 <li>
@@ -143,8 +145,12 @@
 <li>
 <strong>Herkese açık kimliğin</strong> — <code>did:key</code> ve parmak izi — ve türetildiği Solana cüzdan adresi.
         </li>
-<li><strong>Gönderin için yazdığın satırı</strong>, geri yapıştırdığında gönderinin bağlantısını ve eklediysen bir katkı bağlantısını. Gönderi bağlantısı sosyal hesabının adını verir, yani uygulamanın sakladığı en tanımlayıcı şey odur.</li>
-<li><strong>Dil tercihini</strong>, açılış sesinin açık olup olmadığını, notuna en son ne zaman yazıldığını ve hangi hatırlatmaların zaten gösterildiğini.</li>
+<li>
+<strong>Gönderin için yazdığın satır</strong> ve geri yapıştırdığında gönderinin bağlantısı. Gönderi bağlantısı sosyal hesabını adlandırır; bu yüzden uygulamanın sakladığı en tanımlayıcı şeydir.
+        </li>
+<li>
+<strong>Dil tercihin</strong>, Passport'unun ne zaman oluşturulduğu ve hangi güvenlik seviyesinin onu mühürlediği, notuna en son ne zaman yazıldığı ve hangi hatırlatmaların zaten gösterildiği.
+        </li>
 </ul>
 <p>
         Bunların tamamı cihazındaki uygulamaya özel alanda durur. Android'in otomatik yedeklemesi ve cihazdan cihaza aktarım bu uygulama için bilerek kapatıldı, böylece hiçbiri bir bulut yedeğine kopyalanmaz.
@@ -154,15 +160,21 @@
 <li>
 <strong>technocore.chat'e</strong>, kimliğini yayımladığında ya da bir kaydı imzaladığında: herkese açık <code>did:key</code>'in, imzaladığın metin, bir sayaç ve imza. Bu bilgi tasarım gereği herkese açıktır — herkese açık bir kimliğin bütün amacı budur — ve sonrasında herkes okuyabilir.
         </li>
-<li><strong>technocore.chat'e, herkese açık kimlik notunun içine</strong>, yayımladığın gönderinin bağlantısını yapıştırırsan: o bağlantı. Sosyal hesabının adını verir, anahtarından hesaplanan kalıcı ve herkese açık bir adreste durur, ve anahtarını herkesin önünde adına bağlayan şey odur. Yapıştırmak senin seçimin; notu onsuz yeniden yazmak onu kaldırır.</li>
-<li><strong>Gönderini paylaşırken seçtiğin uygulamaya</strong>, örneğin X'e: gönderinin metni. Uygulama metni sistemin paylaşım penceresine verir, hiçbir şeyi kendisi yayımlamaz.</li>
+<li>
+<strong>technocore.chat'e, herkese açık kimlik notunun içine</strong>, yayımladığın gönderinin bağlantısını yapıştırırsan: o bağlantı. Sosyal hesabının adını verir, anahtarından hesaplanan kalıcı ve herkese açık bir adreste durur, ve anahtarını herkesin önünde adına bağlayan şey odur. Yapıştırmak senin seçimin; notu onsuz yeniden yazmak onu kaldırır.
+        </li>
+<li>
+<strong>Gönderini paylaşırken seçtiğin uygulamaya</strong>, örneğin X'e: gönderinin metni. Uygulama metni sistemin paylaşım penceresine verir, hiçbir şeyi kendisi yayımlamaz.
+        </li>
 <li>
 <strong>Cüzdan uygulamana</strong>, Passport'u oluştururken: imzalanacak bir cümle. Cüzdan bunu cihazında işler; bizim tarafımızdan ağ üzerinden hiçbir şey gönderilmez.
         </li>
 <li>
 <strong>Seçtiğin bir dosyaya</strong>, anahtarını dışa aktardığında. Hedefi sistem dosya seçicisiyle sen belirlersin. Hiçbir yere yükleme yapılmaz.
         </li>
-<li><strong>technocore.chat'e, sen hiçbir şeye basmadan</strong>, Etkinlik sekmesini açtığında: uygulama notunu ve kayıtlarını geri okur ve notu yeniden yazar. Zaten bütün mesele bu: o servis yedi gün boyunca kimsenin yazmadığı her şeyi siliyor, yani uygulamayı açman kimliğinin silinmesini engelleyen şeyin ta kendisi. Gönderilen, orada zaten herkese açık duran notun aynısı.</li>
+<li>
+<strong>technocore.chat'e, sen hiçbir şeye basmadan</strong>, uygulamayı her açtığında ve Etkinlik sekmesinde bir kez daha: uygulama notunu ve kayıtlarını geri okur ve notu yeniden yazar. Bu yeniden yazma işin özüdür — o hizmet yedi gün boyunca hiçbir şeyin yazılmadığı her şeyi siler, bu yüzden uygulamayı açmak kimliğinin silinmesini engelleyen şeydir. Orada zaten herkese açık olan aynı not gönderilir.
+        </li>
 </ul>
 <p>
 <strong>Geliştiriciye asla hiçbir şey gönderilmez.</strong> Gönderilecek bir arka uç yok zaten. Uygulama, FLOP Labs'in işlettiği technocore.chat ile ve senin kendi cüzdan uygulamanla konuşur — liste bundan ibaret.
@@ -175,12 +187,15 @@
 <li>Reklam kimlikleri. Reklam yok, reklam SDK'sı yok.</li>
 </ul>
 <h3 style="margin-top:32px">Analitik ve izleme</h3>
-<p>Hiçbiri. Uygulamada analiz SDK'sı, çökme raporlama servisi ya da herhangi bir üçüncü taraf takibi yok. Bu site çerez koymaz, ziyaret saymaz ve sunucu tarafında kod çalıştırmaz. Dışarıya yaptığı tek istekler şunlar: Google Fonts'tan iki web yazı tipi — her yazı tipi sunucusu gibi o da IP adresini alır — ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan bir okuma; bu istek senin tarayıcından çıkar ve asla bizden geçmez. Sitenin kendisi statik dosyalardan ibaret, onları Cloudflare dağıtır ve isteği o karşılar; kendi kodumuzu çalıştırmıyor, günlük tutmuyoruz.</p>
+<p>
+        Hiçbiri. Uygulamada analiz SDK'sı, çökme raporlama servisi ya da herhangi bir üçüncü taraf takibi yok. Bu site çerez koymaz, ziyaret saymaz ve sunucu tarafında kod çalıştırmaz. Dışarıya yaptığı tek istekler şunlar: Google Fonts'tan iki web yazı tipi — her yazı tipi sunucusu gibi o da IP adresini alır — ve doğrulayıcıyı kullandığında technocore.chat'ten doğrudan bir okuma; bu istek senin tarayıcından çıkar ve asla bizden geçmez. Sitenin kendisi statik dosyalardan ibaret, onları Cloudflare dağıtır ve isteği o karşılar; kendi kodumuzu çalıştırmıyor, günlük tutmuyoruz.
+      </p>
 <h3 style="margin-top:32px">İzinler</h3>
 <ul class="plain">
-<li><strong>İnternet</strong> — bir şey yayımladığında ya da imzaladığında technocore.chat'e ulaşmak için, ve Etkinlik sekmesini açtığında kayıtlarını geri okuyup notunun süresinin dolmasını engellemek için.</li>
+<li><strong>İnternet</strong> — bir şey yayınladığında veya imzaladığında technocore.chat'e ulaşmak, uygulamayı açtığında kayıtlarını geri okumak ve notunun süresinin dolmasını önlemek için.</li>
 <li><strong>Titreşim</strong> — bir adım doğrulandığında kısa bir onay dokunuşu.</li>
-<li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için.</li>
+<li><strong>Biyometri</strong> — özel anahtarını gösteren ekranı korumak için. Daha eski <strong>Parmak izi</strong> izni, aynı amaçla Android biyometri kütüphanesi tarafından eklenir.</li>
+<li><strong>Ağ durumu</strong> — cüzdanını açmadan önce telefonun çevrimiçi olup olmadığını anlamak için cüzdan adaptörü kütüphanesi tarafından kullanılır. Uygulamanın kendisi bunu hiç okumaz.</li>
 <li><strong>Bildirimler</strong> — günlük hatırlatma, bitirmediğin bir adım için dürtmeler ve notunun süresi dolmadan önceki uyarı.</li>
 <li><strong>Açılışta çalışma</strong> — yalnızca telefon yeniden başladıktan sonra o hatırlatmaları yeniden kurmak için. Uygulama açılışta başka hiçbir şey yapmaz.</li>
 </ul>
@@ -188,9 +203,11 @@
 <h3 style="margin-top:32px">Verilerini silmek</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>Cihazında.</strong> Ayarlar → Tehlikeli bölge → Passport'u sil, ya da uygulamayı kaldır. İkisi de şifreli anahtarı, kimliğini ve tercihlerini telefondan tamamen kaldırır. Başka hiçbir yerde kopyası yok ve senin adına silebileceğimiz bir şey yok.
+<strong>Cihazında.</strong> Ayarlar → Tehlike bölgesi → Passport'u sil; şifreli anahtarı, kimliğini, gönderi bağlantını ve hatırlatma durumunu kaldırır; uygulamayı kaldırmak dil ve hatırlatma ayarlarını da kaldırır. Başka hiçbir yerde kopya yok ve senin adına silebileceğimiz bir şey de yok.
         </p>
-<p style="margin:0"><strong>Yayımlanmış olan şeyler.</strong> Technocore'da yayımlamayı seçtiğin her şey herkese açıktır ve bizim denetimimizde değildir — onu biz barındırmıyoruz ve kaldıramayız. Açık odalardaki kayıtları, odalar sıkıştırıldıkça o servis atar; kimlik notu ise içine hiçbir şey yazılmadan yedi gün geçince silinir — yani yayımladığın şey, yeniden yazılmazsa kendiliğinden kaybolur. technocore.chat'teki içerikle ilgili talepler, servisi işleten FLOP Labs'e gider.</p>
+<p style="margin:0">
+<strong>Yayımlanmış olan şeyler.</strong> Technocore'da yayımlamayı seçtiğin her şey herkese açıktır ve bizim denetimimizde değildir — onu biz barındırmıyoruz ve kaldıramayız. Açık odalardaki kayıtları, odalar sıkıştırıldıkça o servis atar; kimlik notu ise içine hiçbir şey yazılmadan yedi gün geçince silinir — yani yayımladığın şey, yeniden yazılmazsa kendiliğinden kaybolur. technocore.chat'teki içerikle ilgili talepler, servisi işleten FLOP Labs'e gider.
+        </p>
 </div>
 <h3 style="margin-top:32px">Çocuklar</h3>
 <p>
@@ -200,7 +217,7 @@
 <p>
         Bu politika değişirse üstteki tarih de onunla birlikte değişir ve önceki sürüm herkese açık deponun geçmişinde kalır; isteyen karşılaştırabilir.
       </p>
-<h3 style="margin-top:32px">Haklarını</h3>
+<h3 style="margin-top:32px">Hakların</h3>
 <p>
         Erişim, düzeltme, taşınabilirlik ve silme hakları, başkasının senin hakkında tuttuğu veriler üzerinde sana denetim vermek için vardır. Bizde hiç yok: erişilecek, dışa aktarılacak ya da silinecek bir şey yok, çünkü seninle ilgili hiçbir şey bize ulaşmıyor. Anahtarını istediğin zaman uygulamadan dışa aktarabilirsin ve uygulamayı silmek, sakladığı her şeyi kaldırır.
       </p>
@@ -219,7 +236,7 @@
 </div>
 </footer>
 
-<script>window.FLOP_I18N={"Not valid base58: {character}":"Geçerli base58 değil: {character}","A did:key starts with did:key:z6Mk":"Bir did:key, did:key:z6Mk ile başlar","Expected 48 characters starting with z, got {count}":"z ile başlayan 48 karakter bekleniyordu, {count} geldi","Only Ed25519 keys (z6Mk…) are accepted":"Yalnızca Ed25519 anahtarları (z6Mk…) kabul edilir","Paste a did:key first.":"Önce bir did:key yapıştır.","That is not a usable did:key.":"Bu kullanılabilir bir did:key değil.","Checking…":"Kontrol ediliyor…","Asking technocore.chat…":"technocore.chat'e soruluyor…","key is real":"anahtar gerçek","note published":"not yayımlandı","no note found":"not bulunamadı","vouched for by the key":"anahtar kefil oluyor","note changed since signing":"not imzadan sonra değişmiş","{count} record checked here":"burada {count} kayıt kontrol edildi","{count} records checked here":"burada {count} kayıt kontrol edildi","identity":"kimlik","public key":"açık anahtar","fingerprint":"parmak izi","note address":"notun adresi","note content":"notun içeriği","vouched by":"kefil","did-note in /r/{room}, entry {seq}":"/r/{room} içinde did-note, {seq}. kayıt","signed hash":"imzalanan özet","actual hash":"gerçek özet","signatures":"imzalar","{count} verified in this browser, from /r/{room}":"bu tarayıcıda {count} tanesi doğrulandı, /r/{room} kaynağından","most recent":"en yenisi","Open the note yourself →":"Notu kendin aç →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"Tarayıcından technocore.chat'e ulaşılamadı. Bu, bu kimlik hakkında hiçbir şey söylemez, yalnızca bağlantı hakkında.","Verify":"Doğrula","Copied":"Kopyalandı","Copy address":"Adresi kopyala","Copy blocked - select it below":"Kopyalama engellendi, aşağıdan seç","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"Bu anahtarın biçimi doğru, ama not adresinde henüz hiçbir şey yayımlanmamış. Uygulamadaki 03. adım tam olarak bunu yapar.","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"Bu anahtarın sahibi, bu notun tam özetini taşıyan bir satırı imzalamış ve özetler uyuşuyor. Bir not en fazla bu kadar sağlam olabilir: not adreslerine herkes yazabilir, dolayısıyla o satır olmadan bir not yalnızca birinin onu yazdığını kanıtlar.","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"Uyarı: bu anahtar, bu notun başka bir sürümü için bir satır imzalamış, yani o zamandan beri biri onu değiştirmiş. FLOP'un kendi tavsiyesi, özeti artık uyuşmayan bir notu dikkate almamaktır.","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"Bu not bir iddia, kanıt değil: not adreslerine herkes yazabilir ve bu metne kefil olan imzalı bir did-note satırı bulunamadı.","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"Yukarıdakilerin hiçbiri güvene dayanarak kabul edilmedi. Bu sayfa saklanan kayıtları çekti, her imzanın kapsadığı tam baytları yeniden kurdu ve tarayıcının kendi kriptografisiyle bu anahtara karşı kontrol etti. technocore.chat veriyi sundu ve ona kefil olması istenmedi.","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"Tarayıcın Ed25519 imzalarını kontrol edemiyor, bu yüzden yukarıdaki sahiplik burada kanıtlanmış bir şey değil, technocore.chat'in sözü. Güncel bir Chrome, Edge, Firefox ya da Safari bunu kendisi kontrol eder.","vouched for by the key, per technocore.chat":"anahtar kefil, technocore.chat'e göre","could not read the room":"oda okunamadı","a signature did not check out":"bir imza tutmadı","{count} record, per technocore.chat":"{count} kayıt, technocore.chat'e göre","{count} records, per technocore.chat":"{count} kayıt, technocore.chat'e göre","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"technocore.chat bu notun adını verdiği oda için yanıt vermedi, bu yüzden burada hiçbir şey doğrulanamadı. Servis yoğunken okumaları geri çeviriyor; birazdan tekrar dene.","{count} record in that room claims this key and fails the signature check. It was not counted.":"O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadı.","{count} records in that room claim this key and fail the signature check. They were not counted.":"O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadılar.","{count} record predates signatures":"{count} kayıt imzalardan eski","{count} records predate signatures":"{count} kayıt imzalardan eski"};</script>
-<script src="/app.js?v=8a74f893" defer></script>
+<script>window.FLOP_I18N={"Not valid base58: {character}":"Geçerli base58 değil: {character}","A did:key starts with did:key:z6Mk":"Bir did:key, did:key:z6Mk ile başlar","Expected 48 characters starting with z, got {count}":"z ile başlayan 48 karakter bekleniyordu, {count} geldi","Only Ed25519 keys (z6Mk…) are accepted":"Yalnızca Ed25519 anahtarları (z6Mk…) kabul edilir","Paste a did:key first.":"Önce bir did:key yapıştır.","That is not a usable did:key.":"Bu kullanılabilir bir did:key değil.","Checking…":"Kontrol ediliyor…","Asking technocore.chat…":"technocore.chat'e soruluyor…","key is real":"anahtar gerçek","note published":"not yayımlandı","no note found":"not bulunamadı","vouched for by the key":"anahtar kefil oluyor","note changed since signing":"not imzadan sonra değişmiş","{count} record checked here":"burada {count} kayıt kontrol edildi","{count} records checked here":"burada {count} kayıt kontrol edildi","identity":"kimlik","public key":"açık anahtar","fingerprint":"parmak izi","note address":"notun adresi","note content":"notun içeriği","vouched by":"kefil","did-note in /r/{room}, entry {seq}":"/r/{room} içinde did-note, {seq}. kayıt","signed hash":"imzalanan özet","actual hash":"gerçek özet","signatures":"imzalar","{count} verified in this browser, from /r/{room}":"bu tarayıcıda {count} tanesi doğrulandı, /r/{room} kaynağından","most recent":"en yenisi","Open the note yourself →":"Notu kendin aç →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"Tarayıcından technocore.chat'e ulaşılamadı. Bu, bu kimlik hakkında hiçbir şey söylemez, yalnızca bağlantı hakkında.","Verify":"Doğrula","Copied":"Kopyalandı","Copy address":"Adresi kopyala","Copy blocked - select it below":"Kopyalama engellendi, aşağıdan seç","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"Bu anahtarın biçimi doğru, ama not adresinde henüz hiçbir şey yayımlanmamış. Uygulamadaki 03. adım tam olarak bunu yapar.","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"Bu anahtarın sahibi, bu notun tam özetini taşıyan bir satırı imzalamış ve özetler uyuşuyor. Bir not en fazla bu kadar sağlam olabilir: not adreslerine herkes yazabilir, dolayısıyla o satır olmadan bir not yalnızca birinin onu yazdığını kanıtlar.","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"Uyarı: bu anahtar, bu notun başka bir sürümü için bir satır imzalamış, yani o zamandan beri biri onu değiştirmiş. FLOP'un kendi tavsiyesi, özeti artık uyuşmayan bir notu dikkate almamaktır.","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"Bu not bir iddia, kanıt değil: not adreslerine herkes yazabilir ve bu metne kefil olan imzalı bir did-note satırı bulunamadı.","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"Yukarıdakilerin hiçbiri güvene dayanarak kabul edilmedi. Bu sayfa saklanan kayıtları çekti, her imzanın kapsadığı tam baytları yeniden kurdu ve tarayıcının kendi kriptografisiyle bu anahtara karşı kontrol etti. technocore.chat veriyi sundu ve ona kefil olması istenmedi.","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"Tarayıcın Ed25519 imzalarını kontrol edemiyor, bu yüzden yukarıdaki sahiplik burada kanıtlanmış bir şey değil, technocore.chat'in sözü. Güncel bir Chrome, Edge, Firefox ya da Safari bunu kendisi kontrol eder.","vouched for by the key, per technocore.chat":"anahtar kefil, technocore.chat'e göre","could not read the room":"oda okunamadı","a signature did not check out":"bir imza tutmadı","{count} record, per technocore.chat":"{count} kayıt, technocore.chat'e göre","{count} records, per technocore.chat":"{count} kayıt, technocore.chat'e göre","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"technocore.chat bu notun adını verdiği oda için yanıt vermedi, bu yüzden burada hiçbir şey doğrulanamadı. Servis yoğunken okumaları geri çeviriyor; birazdan tekrar dene.","{count} record in that room claims this key and fails the signature check. It was not counted.":"O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadı.","{count} records in that room claim this key and fail the signature check. They were not counted.":"O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadılar.","{count} record predates signatures":"{count} kayıt imzalardan eski","{count} records predate signatures":"{count} kayıt imzalardan eski","could not read the note":"not okunamadı","technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.":"technocore.chat bu not adresi için yanıt vermedi. Bu, bir notun var olup olmadığı hakkında bir şey söylemez; biraz sonra tekrar dene."};</script>
+<script src="/app.js?v=375c96b8" defer></script>
 </body>
 </html>

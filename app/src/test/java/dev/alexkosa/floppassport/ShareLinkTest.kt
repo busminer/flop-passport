@@ -44,6 +44,27 @@ class ShareLinkTest {
     }
 
     @Test
+    fun `the forms X itself hands out are accepted`() {
+        assertTrue(looksLikeXPost("https://mobile.twitter.com/AlexKosa1/status/1"))
+        assertTrue(looksLikeXPost("https://x.com/i/web/status/2091830155270672521"))
+        assertTrue(looksLikeXPost("HTTPS://X.COM/AlexKosa1/status/1"))
+        assertTrue(looksLikeXPost("https://x.com/AlexKosa1/status/1/"))
+        assertTrue(looksLikeXPost("https://x.com/AlexKosa1/status/1#m"))
+    }
+
+    @Test
+    fun `nothing may trail the status id into the public note`() {
+        // The link is written verbatim into a world-readable note as `x: <value>`, and a
+        // machine reader splits that note on spaces. Whatever follows the id would become
+        // part of the field.
+        assertFalse(looksLikeXPost("https://x.com/a/status/123 and some words"))
+        assertFalse(looksLikeXPost("https://x.com/a/status/123abc"))
+        assertFalse(looksLikeXPost("https://x.com/a/status/1 https://evil.example"))
+        assertFalse(looksLikeXPost("https://x.com/a/status/1 room: other"))
+        assertFalse(looksLikeXPost("x.com/a/status/123"))
+    }
+
+    @Test
     fun `a lookalike host does not pass`() {
         // The check exists to catch a bad paste, but it must not wave through the one
         // paste that is actively hostile: a host that merely contains the real one.

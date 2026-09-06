@@ -33,6 +33,39 @@ class PostComposerTest {
     }
 
     @Test
+    fun `CJK and emoji weigh two, the way X counts them`() {
+        // Latin, Cyrillic and ordinary punctuation weigh one.
+        assertEquals(5, PostComposer.weightedLength("hello"))
+        assertEquals(6, PostComposer.weightedLength("привет"))
+        // Chinese, Japanese, Korean and emoji weigh two each.
+        assertEquals(4, PostComposer.weightedLength("你好"))
+        assertEquals(6, PostComposer.weightedLength("こんに"))
+        assertEquals(4, PostComposer.weightedLength("안녕"))
+        assertEquals(2, PostComposer.weightedLength("😀"))
+        // A Chinese line that would have read 57/280 by character count.
+        val line = "我用一个签名建立了身份，没有助记词，任何人都能验证。这是给未来的自己留的一把钥匙。"
+        assertEquals(line.length * 2, PostComposer.weightedLength(line))
+        // And a draft built on such a line still fits X's real limit.
+        val draft = PostComposer.compose(
+            "did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs",
+            line,
+        )
+        assertTrue(draft.fits)
+        assertTrue(PostComposer.weightedLength(draft.text) <= PostComposer.LIMIT)
+    }
+
+    @Test
+    fun `the post link is read back out of a published note`() {
+        val url = "https://x.com/AlexKosa1/status/2096529959099507013"
+        val note = PostComposer.identityNoteValue(url, "flop-passport")
+        assertEquals(url, PostComposer.xPostFromNote(note))
+        assertNull(PostComposer.xPostFromNote(PostComposer.identityNoteValue(null, "flop-passport")))
+        // A stranger's note shaped differently yields nothing rather than something wrong.
+        assertNull(PostComposer.xPostFromNote("agent: somebody else entirely"))
+        assertNull(PostComposer.xPostFromNote("prefix: https://x.com/a/status/1"))
+    }
+
+    @Test
     fun `the DID is never abbreviated`() {
         // An abbreviated key cannot be verified by anyone, which is the whole point of
         // publishing it, so every variant must carry it in full.

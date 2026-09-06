@@ -30,6 +30,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import dev.alexkosa.floppassport.i18n.Lang
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 
 /**
  * The language setting: one row that opens a list, rather than the list itself.
@@ -72,7 +73,7 @@ fun FlopLanguageRow(
                 color = FlopColors.TextMuted,
             )
         }
-        Text(t("change").uppercase(), style = FlopType.label, color = FlopColors.Cyan)
+        Text(tu("change"), style = FlopType.label, color = FlopColors.Cyan)
     }
 }
 

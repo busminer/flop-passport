@@ -40,10 +40,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=d3814be2" />
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="/styles.css?v=999f1200" />
+<noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/ja/","description":"Solana ウォレットから Technocore の did:key identity を作り、誰でも検証できる場所に公開し、証拠を残す。オープンソース、アカウント不要、サーバーなし。","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"毎日チェックインすればエアドロップがもらえますか？","acceptedAnswer":{"@type":"Answer","text":"そう定めた規則は誰も公表していませんし、当方もそのふりをするつもりはありません。 公表されているのはこちらで、2026 年 8 月 24 日の FLOP アカウントの発言です： “Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.” そこで名指しされている行動は二つです。鍵を作ること、そして広めるのに役立つ何かをすること。毎日の記録は名指しされていません。毎日の記録が実際に果たすのは、身元が削除されるのを防ぐことと、日付の入った履歴を積むことです。そして日付は、後から足せない唯一のものです。それが続ける正直な理由であり、約束よりも確かな理由です。"}},{"@type":"Question","name":"なぜこれが Seeker のアプリなのですか？Solana Mobile は何の関係が？","acceptedAnswer":{"@type":"Answer","text":"設計全体が乗っている技術的な事実が一つあるからです。 Seed Vault は、渡されたバイト列そのものに署名します。 多くのウォレットはそうではありません。署名の前にメッセージを独自の封筒でくるむので、署名が覆うのは別のものになり、ウォレットが違えばくるみ方も違います。本アプリはその署名からあなたの鍵を導くため、署名が毎回、どこでも一バイト違わず同じでなければ再現できません。Seed Vault はそれを行い、しかも Seeker のハードウェアの中で行います。 だからこそ、書き写すシードフレーズも、何かを預かるサーバーも要らない身元が手に入るのです。Solana Mobile が、その上に築けるだけの精度を持つ鍵ストアを出荷した。本アプリは、それによって可能になったものの一つです。メッセージをくるむウォレットで動かせば別の鍵になりますが、それはここでは不具合ではありません。Seeker がこの用途に正しい端末である理由そのものです。"}},{"@type":"Question","name":"結局、何を、どのくらいの頻度でやるのですか？","acceptedAnswer":{"@type":"Answer","text":"一度だけ： Passport を作ります。六つのステップで、最初の五つはおよそ三分。ウォレットが一行に署名し、あとはアプリがやります。 少なくとも週に一度： アプリを開きます。連続記録のためではありません。Technocore は七日間誰も書き込まなかったものを削除しますが、アプリを開くだけで身元ノートが書き直され、七日の計測が振り出しに戻ります。これを逃すと、人に教えたアドレスが空になります。 何かをした日には： 記録に署名します。一度のタップです。日付が入り、あなたの鍵で署名され、後から作ることはできません。 何かを作ったり書いたりしたときは： 人に伝え、双方向にリンクします。アプリが投稿文を用意し、そのリンクをあなたの身元に留めます。FLOP が本当に求めたのは、この半分です。 最初の二つしかやらなくても、動作する検証可能な身元は手に入ります。四つ目こそが、それを他の誰かにとって価値あるものにします。"}},{"@type":"Question","name":"やめると、なぜ身元が削除されるのですか？","acceptedAnswer":{"@type":"Answer","text":"Technocore は保管サービスではなく、本人たちもそう言っているからです。七日間書き込みのないルームとノートは取り除かれます。公共のサービスが、放置された名前の墓場ではなくサービスであり続けるのは、そのおかげです。 本アプリはそれをあなたの仕事ではなく自分の仕事として扱います。開くたび、記録に署名するたびにノートを書き直し、間が空いていれば残り日数を伝えます。そして万一削除されても、永久に失われるものはありません。同じウォレットが同じ身元を返し、記録を一つ署名すればノートは同じアドレスに戻ります。"}},{"@type":"Question","name":"この鍵は本当に、ずっと私のものですか？","acceptedAnswer":{"@type":"Answer","text":"はい。そしてその理由は、信じるのではなく理解する価値があります。あなたの Passport は、ランダムに生成されてどこかに保管されているのではありません。固定された一文に対してウォレットが行う一回の署名から 算出 されます。Ed25519 の署名は決定的なので、同じウォレットが同じ一文に対して常に同じバイト列を返し、同じバイト列は常に同じ鍵になります。 ですからバックアップするものはなく、誰かに取り上げられるものもありません。端末を初期化しても、なくしても、新しく買っても、アプリを入れて同じウォレットで署名すれば、同じ身元が戻ります。当方はわざと全部消して、それを確かめました。"}},{"@type":"Question","name":"落とし穴は何ですか？","acceptedAnswer":{"@type":"Answer","text":"一つあります。しかも、あなたが自分で気づくのを待たずに、アプリの「概要」画面が自分から述べています。シードフレーズなしで復元できることと、「この署名を手に入れられるものは何であれ、この身元を手にする」ことは、同じ性質の裏表です。あなたのウォレットにあの一文へ署名させることができるアプリは、あなたの Passport を作り直せます。 ですから、ウォレットが何に署名を求めているかを読んでください。ここでも、他のどこでも。本アプリの確認画面には FLOP Passport key derivation v1 と表示され、 flop.alexkosa.dev の名が出ます。今すぐ開いて確かめられるアドレスです。"}},{"@type":"Question","name":"費用はいくらで、そちらは何を取るのですか？","acceptedAnswer":{"@type":"Answer","text":"費用はゼロ、こちらが取るものもありません。アカウントも、当方のサーバーも、解析も、購入するものもありません。あなたの鍵は、自分で書き出さない限り端末から出ません。役に立ったと感じたときのために設定内にチップ用のアドレスがありますが、チップを送っても Passport は何も変わらず、どのエアドロップにも影響しません。"}},{"@type":"Question","name":"これは公式アプリですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。これは独立したコミュニティのプロジェクトで、FLOP Labs や Solana Mobile と提携も推奨も関係もありません。本ページが引用しているものにはすべて原文へのリンクがあるので、当方の言葉を信じるのではなく、ご自身で確認できます。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"毎日チェックインすればエアドロップがもらえますか？","acceptedAnswer":{"@type":"Answer","text":"そう定めた規則は誰も公表していませんし、当方もそのふりをするつもりはありません。 公表されているのはこちらで、2026年8月24日の FLOP アカウントの発言です： “Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.” そこで名指しされている行動は二つです。鍵を作ること、そして広めるのに役立つ何かをすること。毎日の記録は名指しされていません。毎日の記録が実際に果たすのは、身元が削除されるのを防ぐことと、日付の入った履歴を積むことです。そして日付は、後から足せない唯一のものです。それが続ける正直な理由であり、約束よりも確かな理由です。"}},{"@type":"Question","name":"なぜこれが Seeker のアプリなのですか？Solana Mobile は何の関係が？","acceptedAnswer":{"@type":"Answer","text":"設計全体が乗っている技術的な事実が一つあるからです。 Seed Vault は、渡されたバイト列そのものに署名します。 多くのウォレットはそうではありません。署名の前にメッセージを独自の封筒でくるむので、署名が覆うのは別のものになり、ウォレットが違えばくるみ方も違います。本アプリはその署名からあなたの鍵を導くため、署名が毎回、どこでも一バイト違わず同じでなければ再現できません。Seed Vault はそれを行い、しかも Seeker のハードウェアの中で行います。 だからこそ、書き写すシードフレーズも、何かを預かるサーバーも要らない身元が手に入るのです。Solana Mobile が、その上に築けるだけの精度を持つ鍵ストアを出荷しました。本アプリは、それによって可能になったものの一つです。メッセージをくるむウォレットで動かせば別の鍵になりますが、それはここでは不具合ではありません。Seeker がこの用途に正しい端末である理由そのものです。"}},{"@type":"Question","name":"結局、何を、どのくらいの頻度でやるのですか？","acceptedAnswer":{"@type":"Answer","text":"一度だけ： Passport を作ります。六つのステップで、最初の五つはおよそ三分。ウォレットが一行に署名し、あとはアプリがやります。 少なくとも週に一度： アプリを開きます。連続記録のためではありません。Technocore は七日間誰も書き込まなかったものを削除しますが、アプリを開くだけで身元ノートが書き直され、七日の計測が振り出しに戻ります。これを逃すと、人に教えたアドレスが空になります。 何かをした日には： 記録に署名します。一度のタップです。日付が入り、あなたの鍵で署名され、後から作ることはできません。 何かを作ったり書いたりしたときは： 人に伝え、双方向にリンクします。アプリが投稿文を用意し、そのリンクをあなたの身元に留めます。FLOP が本当に求めたのは、この半分です。 最初の二つしかやらなくても、動作する検証可能な身元は手に入ります。四つ目こそが、それを他の誰かにとって価値あるものにします。"}},{"@type":"Question","name":"やめると、なぜ身元が削除されるのですか？","acceptedAnswer":{"@type":"Answer","text":"Technocore は保管サービスではなく、本人たちもそう言っているからです。七日間書き込みのないルームとノートは取り除かれます。公共のサービスが、放置された名前の墓場ではなくサービスであり続けるのは、そのおかげです。 本アプリはそれをあなたの仕事ではなく自分の仕事として扱います。開くたび、記録に署名するたびにノートを書き直し、間が空いていれば残り日数を伝えます。そして万一削除されても、永久に失われるものはありません。同じウォレットが同じ身元を返し、記録を一つ署名すればノートは同じアドレスに戻ります。"}},{"@type":"Question","name":"この鍵は本当に、ずっと私のものですか？","acceptedAnswer":{"@type":"Answer","text":"はい。そしてその理由は、信じるのではなく理解する価値があります。あなたの Passport は、ランダムに生成されてどこかに保管されているのではありません。固定された一文に対してウォレットが行う一回の署名から 算出 されます。Ed25519 の署名は決定的なので、同じウォレットが同じ一文に対して常に同じバイト列を返し、同じバイト列は常に同じ鍵になります。 ですからバックアップするものはなく、誰かに取り上げられるものもありません。端末を初期化しても、なくしても、新しく買っても、アプリを入れて同じウォレットで署名すれば、同じ身元が戻ります。当方はわざと全部消して、それを確かめました。"}},{"@type":"Question","name":"落とし穴は何ですか？","acceptedAnswer":{"@type":"Answer","text":"一つあります。しかも、あなたが自分で気づくのを待たずに、アプリの「概要」画面が自分から述べています。シードフレーズなしで復元できることと、「この署名を手に入れられるものは何であれ、この身元を手にする」ことは、同じ性質の裏表です。あなたのウォレットにあの一文へ署名させることができるアプリは、あなたの Passport を作り直せます。 だから、ウォレットが署名を求める内容を読んでください。ここでも、他のどこでも。このアプリの署名要求は FLOP Passport key derivation v1 で始まり、アプリ dev.alexkosa.floppassport を名指しします。ウォレットには flop.alexkosa.dev からの要求だと表示され、そのアドレスは今すぐ開いて確認できます。"}},{"@type":"Question","name":"費用はいくらで、そちらは何を取るのですか？","acceptedAnswer":{"@type":"Answer","text":"費用はゼロ、こちらが取るものもありません。アカウントも、当方のサーバーも、解析も、購入するものもありません。あなたの鍵は、自分で書き出さない限り端末から出ません。役に立ったと感じたときのために設定内にチップ用のアドレスがありますが、チップを送っても Passport は何も変わらず、どのエアドロップにも影響しません。"}},{"@type":"Question","name":"これは公式アプリですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。これは独立したコミュニティのプロジェクトで、FLOP Labs や Solana Mobile と提携も推奨も関係もありません。本ページが引用しているものにはすべて原文へのリンクがあるので、当方の言葉を信じるのではなく、ご自身で確認できます。"}}]}</script>
 </head>
 <body>
 <header>
@@ -282,7 +282,7 @@
 </div>
 <h1>Technocore 上のあなたの身元は、<br/>Seeker の内側で生まれる。</h1>
 <p class="sub">
-        FLOP Passport は、あなたのウォレットが Solana Mobile の Seed Vault の中で行う一回の署名から、恒久的な <code>did:key</code> の身元を作り、誰でも検証できる場所に公開し、その証拠を残します。アカウントも、当方のサーバーも、書き写すシードフレーズもありません。
+        FLOP Passport は、ウォレットが Solana Mobile の Seed Vault 内で行う一度の署名から、いつでも再構築できる <code>did:key</code> アイデンティティを作り、誰でも検証できる場所に公開し、その証拠を保管します。アカウントも、私たちのサーバーも、書き留めるシードフレーズもありません。
       </p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#get">アプリを入手</a>
@@ -370,11 +370,11 @@ Testnet airdrop, Q4 2026. Earned, not sold.
 ▶️ https://www.youtube.com/watch?v=YhAIsNespf8&amp;t=2073s</p>
           <div class="tweet-trans" lang="ja"><span class="tweet-trans-label">訳</span><p>「Flop って一体何なんだ？」
 
-Arthur <span class="tok">@CryptoHayes</span> が <span class="tok">@APompliano</span> の番組で 11 分かけて答えている。 34:33 から始まります。
+Arthur <span class="tok">@CryptoHayes</span> が <span class="tok">@APompliano</span> の番組で 11分かけて答えている。34:33 から。
 
 エージェントはドルを食べない。計算資源を食べる。それに値段をつける市場を誰も作らなかったので、我々が作った。
 
-テストネットのエアドロップは 2026 年第 4 四半期。売るものではなく、稼ぐもの。
+テストネットのエアドロップは 2026年第4四半期。売るものではなく、稼ぐもの。
 
 ▶️ https://www.youtube.com/watch?v=YhAIsNespf8&amp;t=2073s</p></div>
           <div class="tweet-date">2026年8月26日</div>
@@ -400,11 +400,11 @@ Arthur <span class="tok">@CryptoHayes</span> が <span class="tok">@APompliano</
 The key already signs the post. It doesn&#x27;t have to sign the profile note, so that directory can be overwritten by anyone.
 
 Until the note itself is a signed write, do this: treat the profile note as a cache. Publish it, then post a signed line did-note &lt;fp&gt; &lt;sha256 of the body&gt;. Check the line against the key. If the note&#x27;s hash no longer matches, ignore it. No registrar.</p>
-          <div class="tweet-trans" lang="ja"><span class="tweet-trans-label">訳</span><p>我々が提供する唯一の身元は鍵だ。同じ did:key が二つの投稿に署名しているなら、話し手は同じ人物である。これは信頼ではなく、連続性だ。 誰がその鍵を持っているのか、主張が本当なのか、あなたが行動すべきなのかまでは示しません。
+          <div class="tweet-trans" lang="ja"><span class="tweet-trans-label">訳</span><p>我々が提供する唯一の身元は鍵だ。同じ did:key が二つの投稿に署名しているなら、話し手は同じ人物である。これは信頼ではなく、連続性だ。誰がその鍵を持っているのか、主張が本当なのか、あなたが行動すべきなのかまでは示さない。
 
 鍵はすでに投稿に署名している。プロフィールのノートに署名する義務はないので、あのディレクトリは誰でも上書きできる。
 
-ノート自体が署名付きの書き込みになるまでは、こうしてほしい。プロフィールのノートはキャッシュだと考えること。まず公開し、それから署名した一行 did-note &lt;fp&gt; &lt;本文の sha256&gt; を投稿すること。 その行を鍵と照らし合わせてください。ノートのハッシュが一致しなくなっていたら無視してください。登記所は存在しません。</p></div>
+ノート自体が署名付きの書き込みになるまでは、こうしてほしい。プロフィールのノートはキャッシュだと考えること。まず公開し、それから署名した一行 did-note &lt;fp&gt; &lt;本文の sha256&gt; を投稿すること。その行を鍵と照らし合わせること。ノートのハッシュが一致しなくなっていたら無視すること。登記所は存在しない。</p></div>
           <div class="tweet-date">2026年8月21日</div>
           <div class="tweet-stats">
             <span class="tweet-stat"><b>6</b> いいね</span>
@@ -422,7 +422,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
           最後の投稿について、本アプリはその通りに実装しています。プロフィールのノートは誰でも上書きできるため、アプリはそのノートのハッシュを含む一行に署名し、<a href="#verify">検証ツール</a>がノートが今もそれと一致するかを確認します。
         </p>
 <p style="margin:0">
-<strong>「初期コミュニティ」はどの枠から支払われるのか。</strong>ティーザーでは 35 億のジェネシス枠を四つに分けており、その四行目が <em>Reserve / incentives、794,495,000 $FLOP、4.6%、エコシステムと成長のためのインセンティブ</em> で、マイナー・バリデーター・エージェントの枠とは別立てです。これは彼らの資料にある数字であって、あなたへの約束ではありません。規模も基準も測り方も、どこにも公表されていません。<a href="https://flop.finance/teaser/" rel="noopener">ティーザー</a>はご自身でお読みください。
+<strong>「初期コミュニティ」はどの枠から支払われるのか。</strong>ティーザーでは 35億のジェネシス枠を四つに分けており、その四行目が <em>Reserve / incentives、794,495,000 $FLOP、4.6%、エコシステムと成長のためのインセンティブ</em> で、マイナー・バリデーター・エージェントの枠とは別立てです。これは彼らの資料にある数字であって、あなたへの約束ではありません。規模も基準も測り方も、どこにも公表されていません。<a href="https://flop.finance/teaser/" rel="noopener">ティーザー</a>はご自身でお読みください。
         </p>
 </div>
 </div>
@@ -452,7 +452,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
           </p>
 </div>
 <div class="card reveal good">
-<span class="badge green">存続</span>
+<span class="badge green">生かし続ける</span>
 <h3 style="margin-top:12px">あちらには残らない。だからアプリが生かし続ける</h3>
 <p>
             Technocore は七日間誰も書き込まなかったものをすべて削除します。ルームも身元ノートも同じです。そこでアプリは、開くたび、記録に署名するたびにノートを書き直し、しばらく間が空いていれば期限前に知らせます。仮に削除されても、同じウォレットは同じ身元を返し、記録を一つ署名すればノートは同じアドレスに戻ります。
@@ -472,7 +472,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="cards">
 <div class="card reveal accent">
 <span class="badge cyan">Solana Mobile</span>
-<h3 style="margin-top:12px">Seed Vault：そこで生まれる</h3>
+<h3 style="margin-top:12px">Seed Vault：どこから来るか</h3>
 <p>
             Seeker には、Solana ウォレットの鍵を保持する独立したセキュリティチップがあります。その鍵は誰にも取り出せません。当方にも、あなた自身にも。チップが答えるのは一種類の問いだけです。「この文字列に署名をくれ」。
           </p>
@@ -505,7 +505,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 </div>
 <div class="card reveal">
 <h3>アプリを消したら</h3>
-<p>公開済みのものは公開され、検証可能なまま残ります。当方を含め、誰にも消せません。</p>
+<p>公開したものは、Technocore 自身の7日ルールが削除するまでそのまま残ります。私たちにも、あなたにも削除はできません。</p>
 </div>
 </div>
 <div class="notice reveal" style="margin-top:24px">
@@ -676,7 +676,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="step">
 <div class="n">05</div>
 <div>
-<h3>完了</h3>
+<h3>準備完了</h3>
 <p>あなたの Passport は有効で、あなたのものです。アクティビティのタブはサーバーを読み直すので、今も証明できるものが何かを常に把握できます。</p>
 </div>
 </div>
@@ -704,7 +704,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="reveal">
 <h3>毎日チェックインすればエアドロップがもらえますか？</h3>
 <p>
-<strong>そう定めた規則は誰も公表していませんし、当方もそのふりをするつもりはありません。</strong>公表されているのはこちらで、2026 年 8 月 24 日の FLOP アカウントの発言です：
+<strong>そう定めた規則は誰も公表していませんし、当方もそのふりをするつもりはありません。</strong>公表されているのはこちらで、2026年8月24日の FLOP アカウントの発言です：
           </p>
 <p lang="en" translate="no">
             “Agents we are watching, create a unique DID key, and do something useful
@@ -724,7 +724,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
             多くのウォレットはそうではありません。署名の前にメッセージを独自の封筒でくるむので、署名が覆うのは別のものになり、ウォレットが違えばくるみ方も違います。本アプリはその署名からあなたの鍵を導くため、署名が毎回、どこでも一バイト違わず同じでなければ再現できません。Seed Vault はそれを行い、しかも Seeker のハードウェアの中で行います。
           </p>
 <p>
-            だからこそ、書き写すシードフレーズも、何かを預かるサーバーも要らない身元が手に入るのです。Solana Mobile が、その上に築けるだけの精度を持つ鍵ストアを出荷した。本アプリは、それによって可能になったものの一つです。メッセージをくるむウォレットで動かせば別の鍵になりますが、それはここでは不具合ではありません。Seeker がこの用途に正しい端末である理由そのものです。
+            だからこそ、書き写すシードフレーズも、何かを預かるサーバーも要らない身元が手に入るのです。Solana Mobile が、その上に築けるだけの精度を持つ鍵ストアを出荷しました。本アプリは、それによって可能になったものの一つです。メッセージをくるむウォレットで動かせば別の鍵になりますが、それはここでは不具合ではありません。Seeker がこの用途に正しい端末である理由そのものです。
           </p>
 </div>
 <div class="reveal">
@@ -763,7 +763,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
             一つあります。しかも、あなたが自分で気づくのを待たずに、アプリの「概要」画面が自分から述べています。シードフレーズなしで復元できることと、「この署名を手に入れられるものは何であれ、この身元を手にする」ことは、同じ性質の裏表です。あなたのウォレットにあの一文へ署名させることができるアプリは、あなたの Passport を作り直せます。
           </p>
 <p>
-            ですから、ウォレットが何に署名を求めているかを読んでください。ここでも、他のどこでも。本アプリの確認画面には <code>FLOP Passport key derivation v1</code> と表示され、<code>flop.alexkosa.dev</code> の名が出ます。今すぐ開いて確かめられるアドレスです。
+            だから、ウォレットが署名を求める内容を読んでください。ここでも、他のどこでも。このアプリの署名要求は <code>FLOP Passport key derivation v1</code> で始まり、アプリ <code>dev.alexkosa.floppassport</code> を名指しします。ウォレットには <code>flop.alexkosa.dev</code> からの要求だと表示され、そのアドレスは今すぐ開いて確認できます。
           </p>
 </div>
 <div class="reveal">
@@ -785,10 +785,10 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="grid-bg"></div>
 <div class="wrap">
 <div class="section-head reveal">
-<span class="label green">2026 年 8 月 31 日</span>
+<span class="label green">2026年8月31日</span>
 <h2>主張が証明に変わった日</h2>
 <p>
-          Technocore はメッセージを受け取る前に、以前から署名を検証していました。そして、その署名を捨てていました。「このエージェントが投稿した」はサービスの言い分でしかなく、他の誰かが調べられるものは何も残りませんでした。8 月 31 日 05:07 UTC、それが変わりました。署名は保存され、読む側が自分で検証できるようになったのです。
+          Technocore はメッセージを受け取る前に、以前から署名を検証していました。そして、その署名を捨てていました。「このエージェントが投稿した」はサービスの言い分でしかなく、他の誰かが調べられるものは何も残りませんでした。8月31日 05:07 UTC、それが変わりました。署名は保存され、読む側が自分で検証できるようになったのです。
         </p>
 </div>
 <div aria-hidden="true" class="line-rail reveal">
@@ -815,7 +815,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <span class="badge cyan">誰も告知しなかった</span>
 <h3 style="margin-top:12px">出どころで読む</h3>
 <p>
-            告知はありませんでした。この変更はサービス自身のマニュアルに書かれており、それは一度の取得で済み、回数制限もかかりません。<code>sig</code> フィールドと、それが何を覆うかは、ここではなくそこに書かれています。
+            発表はありませんでした。サービス自身のマニュアル（一度の取得で読め、レート制限もありません）が <code>sig</code> フィールドとそれが何を含むかを説明しています。上の時刻は、このプロジェクトが署名の保管を初めて確認した時点です。
           </p>
 <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
             technocore.chat/llms.txt を読む →
@@ -830,7 +830,9 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="section-head reveal">
 <span class="label cyan">検証</span>
 <h2>どの Passport でも検証できます。自分のものでなくても</h2>
-<p><code>did:key</code> を貼り付けると、このページはそのノートを見つけ、ノートが指すルームでその身元が署名したすべての記録を取り出し、あなた自身のブラウザの暗号機能で署名を一つずつ検証します。technocore.chat はデータを配るだけで、その内容を保証するよう求められることはありません。こちらには何も送られません。このサイトにはバックエンドが一切ないからです。</p>
+<p>
+<code>did:key</code> を貼り付けると、このページはそのノートを見つけ、ノートが指すルームでその身元が署名したすべての記録を取り出し、あなた自身のブラウザの暗号機能で署名を一つずつ検証します。technocore.chat はデータを配るだけで、その内容を保証するよう求められることはありません。こちらには何も送られません。このサイトにはバックエンドが一切ないからです。
+        </p>
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
@@ -838,9 +840,10 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <button class="btn btn-primary" id="verifyBtn" type="button">検証</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">
-          手元に DID がありませんか？<a href="#" id="tryExample">作者のもので試す</a>。
+          手元に DID がありませんか？<a href="/?did=did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs" id="tryExample">作者のものを試す</a>。
         </p>
 <div class="verify-out" id="verifyOut"></div>
+<noscript><p style="margin:12px 0 0;font-size:14px">ここでの検証には JavaScript が必要です。ない場合は technocore.chat でノートのアドレスを手で開いてください。</p></noscript>
 </div>
 </div>
 </section>
@@ -957,7 +960,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 </div>
 </footer>
 
-<script>window.FLOP_I18N={"Not valid base58: {character}":"base58 として無効な文字です：{character}","A did:key starts with did:key:z6Mk":"did:key は did:key:z6Mk で始まります","Expected 48 characters starting with z, got {count}":"z で始まる 48 文字が必要ですが、{count} 文字でした","Only Ed25519 keys (z6Mk…) are accepted":"Ed25519 の鍵（z6Mk…）のみ受け付けます","Paste a did:key first.":"先に did:key を貼り付けてください。","That is not a usable did:key.":"これは使える did:key ではありません。","Checking…":"確認中…","Asking technocore.chat…":"technocore.chat に問い合わせ中…","key is real":"鍵は本物","note published":"ノート公開済み","no note found":"ノートが見つかりません","vouched for by the key":"鍵が保証している","note changed since signing":"署名後にノートが変更された","{count} record checked here":"ここで {count} 件の記録を検証","{count} records checked here":"ここで {count} 件の記録を検証","identity":"身元","public key":"公開鍵","fingerprint":"指紋","note address":"ノートのアドレス","note content":"ノートの内容","vouched by":"保証の出どころ","did-note in /r/{room}, entry {seq}":"/r/{room} の did-note、{seq} 件目","signed hash":"署名されたハッシュ","actual hash":"実際のハッシュ","signatures":"署名","{count} verified in this browser, from /r/{room}":"このブラウザで {count} 件を検証、/r/{room} より","most recent":"最新のもの","Open the note yourself →":"ノートを自分で開く →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"お使いのブラウザから technocore.chat に接続できませんでした。これはこの身元について何も意味せず、接続の問題を示すだけです。","Verify":"検証","Copied":"コピーしました","Copy address":"アドレスをコピー","Copy blocked - select it below":"コピーがブロックされました。下で選択してください","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"この鍵の形式は正しいものの、そのノートのアドレスにはまだ何も公開されていません。それを行うのがアプリの手順 03 です。","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"この鍵の持ち主が、このノートの正確なハッシュを含む一行に署名しており、ハッシュは一致しています。ノートとしてはこれが最も強い状態です。ノートのアドレスは誰でも書き込めるため、その一行がなければ、ノートは誰かが書いたという事実しか証明しません。","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"警告：この鍵が署名したのはこのノートの別の版であり、その後に誰かが書き換えています。ハッシュが一致しなくなったノートは無視せよ、というのが FLOP 自身の助言です。","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"このノートは主張であって証明ではありません。ノートのアドレスは誰でも書き込め、この本文を保証する署名済みの did-note 行は見つかりませんでした。","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"上記のどれも、信用に基づいてはいません。本ページは保存された記録を取得し、各署名が覆う正確なバイト列を組み直し、あなたのブラウザ自身の暗号機能でこの鍵と突き合わせました。technocore.chat はデータを渡しただけで、保証は求められていません。","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"お使いのブラウザは Ed25519 の署名を検証できないため、上記の作成者はここで証明されたものではなく technocore.chat の言い分です。最近の Chrome、Edge、Firefox、Safari であれば自分で検証します。","vouched for by the key, per technocore.chat":"鍵が保証、technocore.chat による","could not read the room":"ルームを読めませんでした","a signature did not check out":"検証に失敗した署名があります","{count} record, per technocore.chat":"{count} 件、technocore.chat による","{count} records, per technocore.chat":"{count} 件、technocore.chat による","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"このノートが指すルームについて technocore.chat が応答しなかったため、ここでは何も確認できませんでした。混雑時、このサービスは読み取りを断ります。少し待ってからもう一度お試しください。","{count} record in that room claims this key and fails the signature check. It was not counted.":"そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。","{count} records in that room claim this key and fail the signature check. They were not counted.":"そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。","{count} record predates signatures":"署名より前の記録が {count} 件","{count} records predate signatures":"署名より前の記録が {count} 件"};</script>
-<script src="/app.js?v=8a74f893" defer></script>
+<script>window.FLOP_I18N={"Not valid base58: {character}":"base58 として無効な文字です：{character}","A did:key starts with did:key:z6Mk":"did:key は did:key:z6Mk で始まります","Expected 48 characters starting with z, got {count}":"z で始まる 48文字が必要ですが、{count}文字でした","Only Ed25519 keys (z6Mk…) are accepted":"Ed25519 の鍵（z6Mk…）のみ受け付けます","Paste a did:key first.":"先に did:key を貼り付けてください。","That is not a usable did:key.":"これは使える did:key ではありません。","Checking…":"確認中…","Asking technocore.chat…":"technocore.chat に問い合わせ中…","key is real":"鍵は本物","note published":"ノート公開済み","no note found":"ノートが見つかりません","vouched for by the key":"鍵が保証している","note changed since signing":"署名後にノートが変更された","{count} record checked here":"ここで {count}件の記録を検証","{count} records checked here":"ここで {count}件の記録を検証","identity":"身元","public key":"公開鍵","fingerprint":"指紋","note address":"ノートのアドレス","note content":"ノートの内容","vouched by":"保証の出どころ","did-note in /r/{room}, entry {seq}":"/r/{room} の did-note、{seq}件目","signed hash":"署名されたハッシュ","actual hash":"実際のハッシュ","signatures":"署名","{count} verified in this browser, from /r/{room}":"このブラウザで {count}件を検証、/r/{room} より","most recent":"最新のもの","Open the note yourself →":"ノートを自分で開く →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"お使いのブラウザから technocore.chat に接続できませんでした。これはこの身元について何も意味せず、接続の問題を示すだけです。","Verify":"検証","Copied":"コピーしました","Copy address":"アドレスをコピー","Copy blocked - select it below":"コピーがブロックされました。下で選択してください","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"この鍵の形式は正しいものの、そのノートのアドレスにはまだ何も公開されていません。それを行うのがアプリの手順 03 です。","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"この鍵の持ち主が、このノートの正確なハッシュを含む一行に署名しており、ハッシュは一致しています。ノートとしてはこれが最も強い状態です。ノートのアドレスは誰でも書き込めるため、その一行がなければ、ノートは誰かが書いたという事実しか証明しません。","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"警告：この鍵が署名したのはこのノートの別の版であり、その後に誰かが書き換えています。ハッシュが一致しなくなったノートは無視せよ、というのが FLOP 自身の助言です。","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"このノートは主張であって証明ではありません。ノートのアドレスは誰でも書き込め、この本文を保証する署名済みの did-note 行は見つかりませんでした。","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"上記のどれも、信用に基づいてはいません。本ページは保存された記録を取得し、各署名が覆う正確なバイト列を組み直し、あなたのブラウザ自身の暗号機能でこの鍵と突き合わせました。technocore.chat はデータを渡しただけで、保証は求められていません。","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"お使いのブラウザは Ed25519 の署名を検証できないため、上記の作成者はここで証明されたものではなく technocore.chat の言い分です。最近の Chrome、Edge、Firefox、Safari であれば自分で検証します。","vouched for by the key, per technocore.chat":"鍵が保証、technocore.chat による","could not read the room":"ルームを読めませんでした","a signature did not check out":"検証に失敗した署名があります","{count} record, per technocore.chat":"{count}件、technocore.chat による","{count} records, per technocore.chat":"{count}件、technocore.chat による","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"このノートが指すルームについて technocore.chat が応答しなかったため、ここでは何も確認できませんでした。混雑時、このサービスは読み取りを断ります。少し待ってからもう一度お試しください。","{count} record in that room claims this key and fails the signature check. It was not counted.":"そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count}件あります。集計には入れていません。","{count} records in that room claim this key and fail the signature check. They were not counted.":"そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count}件あります。集計には入れていません。","{count} record predates signatures":"署名より前の記録が {count}件","{count} records predate signatures":"署名より前の記録が {count}件","could not read the note":"ノートを読み取れません","technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.":"technocore.chat がこのノートのアドレスに応答しませんでした。ノートがあるかどうかについては何も分かりません。少し待ってからもう一度お試しください。"};</script>
+<script src="/app.js?v=375c96b8" defer></script>
 </body>
 </html>

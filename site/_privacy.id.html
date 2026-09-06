@@ -27,7 +27,9 @@
         </p>
 </div>
 <h3 style="margin-top:48px">Siapa yang bertanggung jawab</h3>
-<p>FLOP Passport for Seeker adalah proyek sumber terbuka independen dari Alex Kosa, seorang pengembang perorangan. Aplikasi ini tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile. Kontak: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, atau <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> di X, atau dengan membuka issue di repositori publik.</p>
+<p>
+        FLOP Passport for Seeker adalah proyek sumber terbuka independen dari Alex Kosa, seorang pengembang perorangan. Aplikasi ini tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile. Kontak: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, atau <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> di X, atau dengan membuka issue di repositori publik.
+      </p>
 <h3 style="margin-top:32px">Apa yang disimpan aplikasi di perangkat Anda</h3>
 <ul class="plain">
 <li>
@@ -36,8 +38,12 @@
 <li>
 <strong>Identitas publik Anda</strong> — <code>did:key</code> dan sidik jarinya — serta alamat dompet Solana asal penurunannya.
         </li>
-<li><strong>Kalimat yang Anda tulis untuk unggahan Anda</strong>, tautan unggahan setelah Anda menempelkannya kembali, dan tautan kontribusi jika Anda menambahkannya. Tautan unggahan menyebut akun media sosial Anda, jadi itulah hal paling mengidentifikasi yang disimpan aplikasi ini.</li>
-<li><strong>Pilihan bahasa Anda</strong>, apakah suara pembuka dinyalakan, kapan catatan Anda terakhir ditulisi, dan pengingat mana saja yang sudah ditampilkan.</li>
+<li>
+<strong>Baris yang Anda tulis untuk postingan Anda</strong> dan tautan ke postingan setelah Anda menempelkannya kembali. Tautan postingan menyebut akun sosial Anda, jadi itu hal paling mengidentifikasi yang disimpan aplikasi.
+        </li>
+<li>
+<strong>Preferensi bahasa Anda</strong>, kapan Passport Anda dibuat dan tingkat keamanan mana yang menyegelnya, kapan catatan Anda terakhir ditulis, dan pengingat mana yang sudah ditampilkan.
+        </li>
 </ul>
 <p>
         Semuanya berada di penyimpanan privat aplikasi pada perangkat Anda. Pencadangan otomatis Android dan pemindahan antarperangkat sengaja dimatikan untuk aplikasi ini, sehingga tidak ada satu pun darinya yang disalin ke cadangan awan.
@@ -47,15 +53,21 @@
 <li>
 <strong>Ke technocore.chat</strong>, saat Anda menerbitkan identitas atau menandatangani catatan: <code>did:key</code> publik Anda, teks yang sedang Anda tanda tangani, sebuah penghitung, dan tanda tangannya. Informasi ini memang publik menurut rancangannya — itulah inti sebuah identitas publik — dan setelahnya siapa pun bisa membacanya.
         </li>
-<li><strong>Ke technocore.chat, masuk ke catatan identitas publik Anda</strong>, kalau Anda menempelkan tautan unggahan yang sudah Anda terbitkan: tautan itu sendiri. Tautan itu menyebut akun media sosial Anda, tersimpan di alamat publik permanen yang dihitung dari kunci Anda, dan itulah yang mengikat kunci Anda dengan nama Anda di depan umum. Menempelkannya adalah pilihan Anda, dan menulis ulang catatan tanpa tautan itu akan menghapusnya.</li>
-<li><strong>Ke aplikasi yang Anda pilih saat membagikan unggahan Anda</strong>, misalnya X: teks unggahannya. Aplikasi menyerahkannya ke lembar berbagi sistem dan tidak pernah mengunggah apa pun sendiri.</li>
+<li>
+<strong>Ke technocore.chat, masuk ke catatan identitas publik Anda</strong>, kalau Anda menempelkan tautan unggahan yang sudah Anda terbitkan: tautan itu sendiri. Tautan itu menyebut akun media sosial Anda, tersimpan di alamat publik permanen yang dihitung dari kunci Anda, dan itulah yang mengikat kunci Anda dengan nama Anda di depan umum. Menempelkannya adalah pilihan Anda, dan menulis ulang catatan tanpa tautan itu akan menghapusnya.
+        </li>
+<li>
+<strong>Ke aplikasi yang Anda pilih saat membagikan unggahan Anda</strong>, misalnya X: teks unggahannya. Aplikasi menyerahkannya ke lembar berbagi sistem dan tidak pernah mengunggah apa pun sendiri.
+        </li>
 <li>
 <strong>Ke aplikasi dompet Anda</strong>, saat Anda membuat Passport: sebuah kalimat untuk ditandatangani. Dompet menanganinya di perangkat Anda; tidak ada yang kami kirim lewat jaringan.
         </li>
 <li>
 <strong>Ke berkas yang Anda pilih</strong>, saat Anda mengekspor kunci. Tujuannya Anda tentukan lewat pemilih berkas sistem. Tidak ada yang diunggah.
         </li>
-<li><strong>Ke technocore.chat, tanpa Anda menekan apa pun</strong>, saat Anda membuka tab Aktivitas: aplikasi membaca ulang catatan dan rekaman Anda, lalu menulis ulang catatannya. Penulisan ulang itulah intinya: layanan tersebut menghapus apa pun yang tidak ditulisi selama tujuh hari, jadi membuka aplikasi inilah yang menjaga identitas Anda dari penghapusan. Yang dikirim adalah catatan yang sama, yang memang sudah publik di sana.</li>
+<li>
+<strong>Ke technocore.chat, tanpa Anda menekan apa pun</strong>, setiap kali Anda membuka aplikasi dan lagi di tab Aktivitas: aplikasi membaca kembali catatan dan rekaman Anda, lalu menulis ulang catatan itu. Penulisan ulang itulah intinya — layanan itu menghapus apa pun yang tidak ditulisi selama tujuh hari, sehingga membuka aplikasi adalah yang menjaga identitas Anda dari penghapusan. Yang dikirim adalah catatan yang sama yang sudah publik di sana.
+        </li>
 </ul>
 <p>
 <strong>Tidak pernah ada yang dikirim ke pengembang.</strong> Tidak ada backend untuk menerimanya. Aplikasi berbicara dengan technocore.chat, yang dioperasikan FLOP Labs, dan dengan aplikasi dompet Anda sendiri — dan itulah daftar lengkapnya.
@@ -68,12 +80,15 @@
 <li>Pengenal iklan. Tidak ada iklan dan tidak ada SDK iklan.</li>
 </ul>
 <h3 style="margin-top:32px">Analitik dan pelacakan</h3>
-<p>Tidak ada. Aplikasi ini tidak memuat SDK analitik, tidak ada layanan pelaporan crash, dan tidak ada pelacakan pihak ketiga dalam bentuk apa pun. Situs ini tidak memasang cookie, tidak menghitung kunjungan, dan tidak menjalankan kode di sisi server. Permintaan keluarnya hanya dua: dua font web dari Google Fonts, yang menerima alamat IP Anda sebagaimana penyedia font mana pun, dan — saat Anda memakai alat verifikasi — satu pembacaan langsung ke technocore.chat yang berangkat dari peramban Anda dan tidak pernah lewat kami. Situsnya sendiri adalah berkas statis yang disajikan Cloudflare, yang juga menangani permintaannya; kami tidak menjalankan kode sendiri dan tidak menyimpan log.</p>
+<p>
+        Tidak ada. Aplikasi ini tidak memuat SDK analitik, tidak ada layanan pelaporan crash, dan tidak ada pelacakan pihak ketiga dalam bentuk apa pun. Situs ini tidak memasang cookie, tidak menghitung kunjungan, dan tidak menjalankan kode di sisi server. Permintaan keluarnya hanya dua: dua font web dari Google Fonts, yang menerima alamat IP Anda sebagaimana penyedia font mana pun, dan — saat Anda memakai alat verifikasi — satu pembacaan langsung ke technocore.chat yang berangkat dari peramban Anda dan tidak pernah lewat kami. Situsnya sendiri adalah berkas statis yang disajikan Cloudflare, yang juga menangani permintaannya; kami tidak menjalankan kode sendiri dan tidak menyimpan log.
+      </p>
 <h3 style="margin-top:32px">Izin</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — untuk menghubungi technocore.chat saat Anda menerbitkan atau menandatangani sesuatu, dan untuk membaca ulang rekaman Anda serta menjaga catatan Anda tidak kedaluwarsa saat Anda membuka tab Aktivitas.</li>
+<li><strong>Internet</strong> — untuk menghubungi technocore.chat saat Anda mempublikasikan atau menandatangani sesuatu, dan untuk membaca kembali rekaman Anda serta menjaga catatan Anda agar tidak kedaluwarsa saat Anda membuka aplikasi.</li>
 <li><strong>Getar</strong> — satu getaran singkat saat sebuah langkah terverifikasi.</li>
-<li><strong>Biometrik</strong> — untuk mengunci layar yang menampilkan kunci privat Anda.</li>
+<li><strong>Biometrik</strong> — untuk melindungi layar yang menampilkan kunci privat Anda. Izin lama <strong>Sidik jari</strong> disertakan oleh pustaka biometrik Android untuk tujuan yang sama.</li>
+<li><strong>Status jaringan</strong> — digunakan oleh pustaka adaptor dompet untuk mengetahui apakah ponsel online sebelum membuka dompet Anda. Aplikasi itu sendiri tidak pernah membacanya.</li>
 <li><strong>Notifikasi</strong> — pengingat harian, dorongan tentang langkah yang belum Anda selesaikan, dan peringatan sebelum catatan Anda kedaluwarsa.</li>
 <li><strong>Jalan saat menyala</strong> — hanya untuk memasang lagi pengingat-pengingat itu setelah ponsel dinyalakan ulang. Selain itu aplikasi tidak melakukan apa pun saat boot.</li>
 </ul>
@@ -81,9 +96,11 @@
 <h3 style="margin-top:32px">Menghapus data Anda</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>Di perangkat Anda.</strong> Pengaturan → Zona berbahaya → hapus Passport, atau copot aplikasinya. Keduanya menghapus kunci terenkripsi, identitas, dan preferensi Anda sepenuhnya dari ponsel. Tidak ada salinan di tempat lain, dan tidak ada yang perlu kami hapus atas nama Anda.
+<strong>Di perangkat Anda.</strong> Pengaturan → Zona bahaya → hapus Passport menghapus kunci terenkripsi, identitas Anda, tautan postingan Anda, dan status pengingat; mencopot aplikasi juga menghapus pengaturan bahasa dan pengingat Anda. Tidak ada salinan di tempat lain, dan tidak ada yang bisa kami hapus atas nama Anda.
         </p>
-<p style="margin:0"><strong>Yang sudah diterbitkan.</strong> Semua yang Anda pilih untuk diterbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menyimpannya dan tidak bisa menghapusnya. Rekaman di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan, dan catatan identitas dihapus setelah tujuh hari tanpa ada tulisan masuk ke dalamnya — jadi apa yang Anda terbitkan hilang dengan sendirinya kalau tidak ditulis ulang. Permintaan soal konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.</p>
+<p style="margin:0">
+<strong>Yang sudah diterbitkan.</strong> Semua yang Anda pilih untuk diterbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menyimpannya dan tidak bisa menghapusnya. Rekaman di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan, dan catatan identitas dihapus setelah tujuh hari tanpa ada tulisan masuk ke dalamnya — jadi apa yang Anda terbitkan hilang dengan sendirinya kalau tidak ditulis ulang. Permintaan soal konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.
+        </p>
 </div>
 <h3 style="margin-top:32px">Anak-anak</h3>
 <p>

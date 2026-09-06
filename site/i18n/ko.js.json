@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다.",
   "{count} record predates signatures": "서명 도입 이전 기록 {count}건",
-  "{count} records predate signatures": "서명 도입 이전 기록 {count}건"
+  "{count} records predate signatures": "서명 도입 이전 기록 {count}건",
+  "could not read the note": "노트를 읽을 수 없음",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat이 이 노트 주소에 대해 답하지 않았습니다. 노트가 있는지 없는지에 대해서는 아무것도 말해 주지 않습니다. 잠시 후 다시 시도하십시오."
 }

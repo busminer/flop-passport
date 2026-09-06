@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import dev.alexkosa.floppassport.notify.NoteLife
 import dev.alexkosa.floppassport.technocore.DidNote
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import dev.alexkosa.floppassport.ui.ActivityState
 import dev.alexkosa.floppassport.ui.PassportViewModel
 import dev.alexkosa.floppassport.ui.designsystem.FlopWire
@@ -61,6 +62,9 @@ fun ActivityScreen(vm: PassportViewModel) {
     val context = LocalContext.current
     val activity = vm.activity
     val today = ActivityState.todayUtc()
+    // A failed first read: nothing below is known, and zeros drawn in grey still read as
+    // "no activity" to a person whose Wi-Fi is off.
+    val nothingKnown = activity.error != null && activity.lastChecked == null
 
     LaunchedEffect(vm.did) {
         if (vm.did != null && activity.lastChecked == null) vm.refreshActivity()
@@ -78,8 +82,13 @@ fun ActivityScreen(vm: PassportViewModel) {
         Text(t("What is still provable"), style = FlopType.h2, color = FlopColors.IceWhite)
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(t(
-            "Read from technocore.chat just now, not from this phone. Rooms are trimmed as " +
-                "they grow, so this is what anyone would find today."),
+            if (vm.did == null || nothingKnown) {
+                "Read from technocore.chat, not from this phone. Rooms are trimmed as " +
+                    "they grow, so this shows what anyone would find today."
+            } else {
+                "Read from technocore.chat just now, not from this phone. Rooms are trimmed as " +
+                    "they grow, so this is what anyone would find today."
+            }),
             style = FlopType.bodyMd,
             color = FlopColors.TextMuted,
         )
@@ -103,6 +112,20 @@ fun ActivityScreen(vm: PassportViewModel) {
                     color = FlopColors.TextMuted,
                 )
             }
+            return@Column
+        }
+
+        if (nothingKnown) {
+            Text(
+                t(activity.error ?: ""),
+                style = FlopType.bodyMd,
+                color = FlopColors.ErrorRed,
+            )
+            Spacer(Modifier.height(FlopSpacing.md))
+            FlopButtonSecondary(
+                if (activity.checking) "checking" else "re-check with the server",
+                { vm.refreshActivity() },
+            )
             return@Column
         }
 
@@ -211,7 +234,7 @@ fun ActivityScreen(vm: PassportViewModel) {
                                 "the last write, and this app rewrites it every time you " +
                                 "open it.",
                         )
-                        left <= 3 -> t(NoteLife.countdown(activity.daysSinceNoteWrite))
+                        left <= 3 -> t(NoteLife.countdown(left))
                         else -> t(
                             "It is deleted after seven days with nothing written to it. " +
                                 "Opening this app writes it.",
@@ -225,21 +248,28 @@ fun ActivityScreen(vm: PassportViewModel) {
 
         Spacer(Modifier.height(FlopSpacing.md))
 
+        // The daily record is for a finished Passport. Offered at step 01 it signed a
+        // public line and published the note as a side effect, while the Passport tab
+        // still showed both as pending.
+        val ladderDone = vm.flow.complete
         Text(t(
-            if (activity.checkedInToday) {
-                "You have already left a record today."
-            } else {
-                "Nothing signed today yet."
+            when {
+                !ladderDone -> "Finish the steps on the Passport tab first. Daily records " +
+                    "start once your Passport is live."
+                activity.checkedInToday -> "You have already left a record today."
+                else -> "Nothing signed today yet."
             }),
             style = FlopType.bodyMd,
-            color = if (activity.checkedInToday) FlopColors.Green else FlopColors.TextMuted,
+            color = if (ladderDone && activity.checkedInToday) FlopColors.Green else FlopColors.TextMuted,
         )
         Spacer(Modifier.height(FlopSpacing.sm))
 
-        if (!activity.checkedInToday) {
+        if (ladderDone && !activity.checkedInToday) {
             FlopButton(
                 "sign today's record",
-                { vm.checkInAgain(dailyText(today)) },
+                // Today is read at the tap, not when the screen was drawn: a screen left
+                // open across midnight UTC would otherwise sign yesterday's date.
+                { vm.checkInAgain(dailyText(ActivityState.todayUtc())) },
                 enabled = !activity.checking,
             )
             Spacer(Modifier.height(FlopSpacing.sm))
@@ -368,7 +398,7 @@ private fun Stat(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                t(label).uppercase(),
+                tu(label),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
                 modifier = Modifier.weight(1f),
@@ -397,7 +427,7 @@ private fun Stat(
         )
         Spacer(Modifier.height(FlopSpacing.xs))
         Text(
-            t(label).uppercase(),
+            tu(label),
             style = FlopType.label,
             color = FlopColors.TextMuted,
             textAlign = TextAlign.Center,

@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import dev.alexkosa.floppassport.notify.ReminderPrefs
 import dev.alexkosa.floppassport.notify.DailyReminder
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import dev.alexkosa.floppassport.i18n.Lang
 import dev.alexkosa.floppassport.ui.PassportViewModel
 import dev.alexkosa.floppassport.ui.designsystem.FlopLanguageDialog
@@ -279,7 +280,7 @@ fun SettingsScreen(
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopCard {
             Text(
-                t("Your note has to be kept alive").uppercase(),
+                tu("Your note has to be kept alive"),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
             )
@@ -323,7 +324,7 @@ fun SettingsScreen(
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopCard {
             Text(
-                t("What recovery without a seed phrase costs").uppercase(),
+                tu("What recovery without a seed phrase costs"),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
             )
@@ -338,6 +339,45 @@ fun SettingsScreen(
                 ),
                 style = FlopType.bodySm,
                 color = FlopColors.TextSecondary,
+            )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            // The same sentence the site gives, so a person can recognise the one
+            // legitimate prompt: what it says, and which app asks.
+            Text(
+                t(
+                    "The prompt for this app begins with FLOP Passport key derivation v1 " +
+                        "and names the app dev.alexkosa.floppassport; your wallet shows " +
+                        "it was requested by flop.alexkosa.dev.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextSecondary,
+            )
+        }
+
+        // The store forbids implying affiliation, and the app shows both lockups at
+        // launch. The site, the privacy page and the store card all carry this line; the
+        // app itself - the thing the reviewer installs - did not.
+        Spacer(Modifier.height(FlopSpacing.sm))
+        FlopCard {
+            FlopLabel("independent project")
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(
+                t(
+                    "FLOP Passport is an independent community project. It is not made, " +
+                        "endorsed or reviewed by FLOP Labs or by Solana Mobile.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextSecondary,
+            )
+            Spacer(Modifier.height(FlopSpacing.xs))
+            Text(
+                t(
+                    "Seeker and Solana Mobile are trademarks of Solana Mobile, used " +
+                        "only to say what this app is built for. FLOP and Technocore are " +
+                        "names of the project whose public service this app writes to.",
+                ),
+                style = FlopType.bodySm,
+                color = FlopColors.TextMuted,
             )
         }
 
@@ -368,7 +408,17 @@ fun SettingsScreen(
                 FlopMonoData(identity)
                 Spacer(Modifier.height(FlopSpacing.sm))
                 Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
-                    FlopBadge(t("vault {level}", "level" to vm.securityLevel.toString()), FlopState.Active)
+                    FlopBadge(
+                        t(
+                            when (vm.securityLevel) {
+                                dev.alexkosa.floppassport.vault.PassportVault.SecurityLevel.STRONGBOX -> "vault: security chip"
+                                dev.alexkosa.floppassport.vault.PassportVault.SecurityLevel.TEE -> "vault: secure area"
+                                dev.alexkosa.floppassport.vault.PassportVault.SecurityLevel.SOFTWARE -> "vault: software"
+                                else -> "vault: not sealed yet"
+                            },
+                        ),
+                        FlopState.Active,
+                    )
                     FlopBadge(t("language {code}", "code" to effectiveLang.code), FlopState.Neutral)
                 }
             }

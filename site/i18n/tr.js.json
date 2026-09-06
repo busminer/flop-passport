@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadı.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "O odadaki {count} kayıt bu anahtardan geldiğini söylüyor ama imza kontrolünden geçmiyor. Sayılmadılar.",
   "{count} record predates signatures": "{count} kayıt imzalardan eski",
-  "{count} records predate signatures": "{count} kayıt imzalardan eski"
+  "{count} records predate signatures": "{count} kayıt imzalardan eski",
+  "could not read the note": "not okunamadı",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat bu not adresi için yanıt vermedi. Bu, bir notun var olup olmadığı hakkında bir şey söylemez; biraz sonra tekrar dene."
 }

@@ -154,14 +154,15 @@ fun TellThemCard(vm: PassportViewModel) {
             // Green only once the note came back from the server carrying the link. A URL
             // typed into a field on this phone is not evidence of anything to anyone else.
             if (vm.nameLinked) FlopBadge("linked", FlopState.Verified)
-            else if (vm.xPostUrl.isNotBlank()) FlopBadge("publishing", FlopState.Active)
+            else if (vm.linkPublishing) FlopBadge("publishing", FlopState.Active)
+            else if (vm.xPostUrl.isNotBlank()) FlopBadge("not in your note yet", FlopState.Active)
         }
         Spacer(Modifier.height(FlopSpacing.sm))
         Text(
             t(
-                "Three things, in this order: write your line, post it, then come back and " +
-                    "paste the link. The last one is what makes it permanent, and it is the " +
-                    "one people forget.",
+                "Three things, in this order: write your line, post it on X, then come back " +
+                    "and paste the link. The last one is what puts your name beside your " +
+                    "key, and it is the one people forget.",
             ),
             style = FlopType.h3,
             color = FlopColors.IceWhite,
@@ -253,7 +254,7 @@ fun TellThemCard(vm: PassportViewModel) {
         Spacer(Modifier.height(FlopSpacing.sm))
         Row(horizontalArrangement = Arrangement.spacedBy(FlopSpacing.sm)) {
             FlopButton(
-                "post it",
+                "post it on X",
                 enabled = ready,
                 onClick = {
                     vm.postHandedOff()
@@ -269,9 +270,12 @@ fun TellThemCard(vm: PassportViewModel) {
                 },
                 modifier = Modifier.weight(1f),
             )
+            // Same rule as the post button: a copy of the canned opener with no line of
+            // the person's own is exactly the identical-post pattern the card warns about.
             FlopButtonSecondary(
                 "copy",
                 { clipboard.setText(AnnotatedString(draft.text)) },
+                enabled = ready,
                 modifier = Modifier.weight(1f),
             )
         }
@@ -281,9 +285,10 @@ fun TellThemCard(vm: PassportViewModel) {
         Spacer(Modifier.height(FlopSpacing.xs))
         Text(
             t(
-                "Paste the link to your post. It goes into your identity note, so the note " +
-                    "points at the post and the post carries the key. Anyone can then check " +
-                    "both ends against one key.",
+                "Paste the link to your post on X. It goes into your identity note, so " +
+                    "the note points at the post and the post carries the key. Anyone can " +
+                    "then check both ends against one key. The app does not open the link " +
+                    "or check the post; anyone reading your note can.",
             ),
             style = FlopType.bodySm,
             color = FlopColors.TextMuted,
@@ -292,12 +297,12 @@ fun TellThemCard(vm: PassportViewModel) {
         FlopField(
             value = xField,
             onValueChange = { xField = it; problem = null },
-            label = t("Link to your post"),
+            label = t("Link to your post on X"),
             placeholder = "https://x.com/you/status/...",
         )
         Spacer(Modifier.height(FlopSpacing.sm))
         FlopButton(
-            "publish these to my note",
+            "put it in my note",
             {
                 val x = xField.trim()
                 // Refused rather than written, because the note is public and a broken link
@@ -409,8 +414,9 @@ private fun FlopLinkPrompt(
             Spacer(Modifier.height(FlopSpacing.xs))
             Text(
                 t(
-                    "Paste the link here and your name is attached to your key for good. " +
-                        "This is the part people mean to do later and then do not.",
+                    "Paste the link here and your name goes beside your key, in your " +
+                        "identity note. This is the part people mean to do later and " +
+                        "then do not.",
                 ),
                 style = FlopType.bodySm,
                 color = FlopColors.TextMuted,
@@ -419,7 +425,7 @@ private fun FlopLinkPrompt(
             FlopField(
                 value = value,
                 onValueChange = onValueChange,
-                label = t("Link to your post"),
+                label = t("Link to your post on X"),
                 placeholder = "https://x.com/you/status/...",
             )
             Spacer(Modifier.height(FlopSpacing.md))

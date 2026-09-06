@@ -76,8 +76,16 @@ class SharePrefs(context: Context) {
 fun looksLikeXPost(url: String): Boolean {
     val u = url.trim()
     if (u.isEmpty()) return false
-    val m = Regex("""^https://(?:www\.)?(?:x|twitter)\.com/[^/\s]+/status/\d+""")
-    return m.containsMatchIn(u)
+    // Anchored at both ends. Without the end anchor, anything typed after the status id -
+    // a second URL, a stray "room: other" - passed the check and was written verbatim into
+    // the public note as part of the `x:` field. `mobile.` and `/i/web/status/` are the
+    // forms X puts in its own emails and notifications; a genuine paste must not be
+    // refused for arriving in one of them.
+    val m = Regex(
+        """^https://(?:www\.|mobile\.)?(?:x|twitter)\.com/(?:[^/\s?#]+|i/web)/status/\d+(?:[/?#][^\s]*)?$""",
+        RegexOption.IGNORE_CASE,
+    )
+    return m.matches(u)
 }
 
 /** The same shallow shape check for any link the person offers as their contribution. */

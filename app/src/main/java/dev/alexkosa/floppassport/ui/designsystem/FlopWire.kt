@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import dev.alexkosa.floppassport.technocore.Technocore
 
 /**
@@ -70,7 +71,7 @@ fun FlopWire(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                t(if (active) "connection" else "last connection").uppercase(),
+                tu(if (active) "connection" else "last connection"),
                 style = FlopType.label,
                 color = FlopColors.TextMuted,
                 maxLines = 1,

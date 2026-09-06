@@ -40,8 +40,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=d3814be2" />
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="/styles.css?v=999f1200" />
+<noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
 <body>
@@ -134,7 +134,9 @@
         </p>
 </div>
 <h3 style="margin-top:48px">谁来负责</h3>
-<p>FLOP Passport for Seeker 是独立开发者 Alex Kosa 的开源个人项目。它不是 FLOP Labs 或 Solana Mobile 制作的，也未获得它们的认可或审核。联系方式:<a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>,或在 X 上找 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>,也可以在公开仓库里提一个 issue。</p>
+<p>
+        FLOP Passport for Seeker 是独立开发者 Alex Kosa 的开源个人项目。它不是 FLOP Labs 或 Solana Mobile 制作的，也未获得它们的认可或审核。联系方式：<a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>，或在 X 上找 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>，也可以在公开仓库里提一个 issue。
+      </p>
 <h3 style="margin-top:32px">应用在你设备上保存什么</h3>
 <ul class="plain">
 <li>
@@ -143,8 +145,12 @@
 <li>
 <strong>你的公开身份</strong>，即 <code>did:key</code> 及其指纹，以及推导它所用的 Solana 钱包地址。
         </li>
-<li><strong>你为帖子写的那句话</strong>、你贴回来的帖子链接，以及你另外填写的贡献链接。帖子链接点出你的社交账号，因此它是应用保存的最具身份指向性的东西。</li>
-<li><strong>你选择的语言</strong>、启动音是否开启、你的笔记最后一次被写入的时间，以及哪些提醒已经显示过。</li>
+<li>
+<strong>你为帖子写的那一行</strong>，以及你粘贴回来后的帖子链接。帖子链接会指明你的社交账号，所以它是应用保存的最能识别你的内容。
+        </li>
+<li>
+<strong>你的语言偏好</strong>、Passport 的创建时间和封存它的安全级别、便签最后一次写入的时间，以及哪些提醒已经显示过。
+        </li>
 </ul>
 <p>
         这些全都存放在你设备上应用的私有存储中。本应用刻意关闭了 Android 的自动备份与设备迁移，因此其中任何内容都不会被复制到云备份。
@@ -154,15 +160,21 @@
 <li>
 <strong>发往 technocore.chat</strong>，当你发布身份或签署记录时：你的公开 <code>did:key</code>、你正在签署的文本、一个计数器和签名。这些信息按设计就是公开的，这正是公开身份的意义，之后任何人都能读到。
         </li>
-<li><strong>发往 technocore.chat,写进你公开的身份备注</strong>,前提是你把已发布帖子的链接贴了回来：就是这条链接。它点出你的社交账号，存放在由你的密钥算出的固定公开地址上，也正是它把你的密钥和你的名字公开绑在一起。贴不贴由你决定，重写一次不带它的笔记就能去掉它。</li>
-<li><strong>发往你在分享时选定的那个应用</strong>,比如 X:帖子的文字。应用把文字交给系统的分享面板，自己从不发布任何东西。</li>
+<li>
+<strong>发往 technocore.chat，写进你公开的身份备注</strong>，前提是你把已发布帖子的链接贴了回来：就是这条链接。它点出你的社交账号，存放在由你的密钥算出的固定公开地址上，也正是它把你的密钥和你的名字公开绑在一起。贴不贴由你决定，重写一次不带它的备注就能去掉它。
+        </li>
+<li>
+<strong>发往你在分享时选定的那个应用</strong>，比如 X：帖子的文字。应用把文字交给系统的分享面板，自己从不发布任何东西。
+        </li>
 <li>
 <strong>发往你的钱包应用</strong>，当你创建 Passport 时：一句待签的文本。钱包在你的设备上处理它，我们不会通过网络发送任何东西。
         </li>
 <li>
 <strong>发往你选择的文件</strong>，当你导出密钥时。保存位置由你通过系统文件选择器指定。不会上传到任何地方。
         </li>
-<li><strong>发往 technocore.chat，你什么都不用按</strong>，只要你打开「动态」这一栏：应用会把你的笔记和你的记录重新读回来，并把笔记重写一遍。这正是重点——那个服务会删掉七天内无人写入的一切，所以打开应用本身就是让你的身份不被删除的动作。发送的就是那条已经公开躺在那里的笔记。</li>
+<li>
+<strong>发送到 technocore.chat，无需你按任何按钮</strong>：每次打开应用，以及在「活动」标签页再一次，应用都会读回你的便签和记录，并重写便签。这次重写正是目的所在——该服务会删除七天内无人写入的任何内容，所以打开应用就是让你的身份不被删除的方式。它发送的是那里已经公开的同一份便签。
+        </li>
 </ul>
 <p>
 <strong>任何东西都不会发给开发者。</strong>根本没有后端可发。应用只与 FLOP Labs 运营的 technocore.chat 以及你自己的钱包应用通信，这就是完整的清单。
@@ -175,22 +187,27 @@
 <li>广告标识符。这里没有广告，也没有广告 SDK。</li>
 </ul>
 <h3 style="margin-top:32px">分析与追踪</h3>
-<p>没有。应用里没有分析 SDK,没有崩溃上报服务，也没有任何第三方追踪。本网站不设置 cookie,不做访问统计，服务器上没有任何代码。它对外只发出两类请求：从 Google Fonts 取两款网页字体——就像任何字体托管一样，对方会拿到你的 IP 地址；以及在你使用校验工具时，直接从 technocore.chat 读取数据，这个请求从你的浏览器发出，永远不经过我们。网站本身是一堆静态文件，由 Cloudflare 分发并处理请求；我们不运行自己的代码，也不保留日志。</p>
+<p>
+        没有。应用里没有分析 SDK，没有崩溃上报服务，也没有任何第三方追踪。本网站不设置 cookie，不做访问统计，服务器上没有任何代码。它对外只发出两类请求：从 Google Fonts 取两款网页字体——就像任何字体托管一样，对方会拿到你的 IP 地址；以及在你使用校验工具时，直接从 technocore.chat 读取数据，这个请求从你的浏览器发出，永远不经过我们。网站本身是一堆静态文件，由 Cloudflare 分发并处理请求；我们不运行自己的代码，也不保留日志。
+      </p>
 <h3 style="margin-top:32px">权限</h3>
 <ul class="plain">
-<li><strong>网络</strong> — 用于在你发布或签名时连接 technocore.chat，以及在你打开「动态」这一栏时读回你的记录并让笔记不至于过期。</li>
+<li><strong>网络</strong>——在你发布或签名时连接 technocore.chat，并在你打开应用时读回记录、防止便签过期。</li>
 <li><strong>振动</strong> — 步骤通过验证时的一次短促提示。</li>
-<li><strong>生物识别</strong> — 用来守住显示你私钥的那个页面。</li>
-<li><strong>通知</strong> — 每日提醒、关于未完成步骤的提示，以及笔记到期前的预警。</li>
+<li><strong>生物识别</strong>——用于保护显示私钥的界面。较旧的<strong>指纹</strong>权限由 Android 生物识别库为同一目的引入。</li>
+<li><strong>网络状态</strong>——由钱包适配器库使用，在打开你的钱包前判断手机是否在线。应用本身从不读取它。</li>
+<li><strong>通知</strong> — 每日提醒、关于未完成步骤的提示，以及备注到期前的预警。</li>
 <li><strong>开机启动</strong> — 仅用于手机重启后重新设定上述提醒。开机时应用不做别的任何事。</li>
 </ul>
 <p>不申请存储权限；保存文件走系统选择器。</p>
 <h3 style="margin-top:32px">删除你的数据</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport，或者卸载应用。两者都会把加密密钥、你的身份和你的偏好从手机上彻底移除。别处没有副本，我们这边也没有什么可以替你删除。
+<strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport 会移除加密密钥、你的身份、帖子链接和提醒状态；卸载应用还会移除你的语言和提醒设置。别处没有任何副本，我们也没有什么可以代你删除的。
         </p>
-<p style="margin:0"><strong>已经发布出去的东西。</strong>你选择发布到 Technocore 上的一切都是公开的，也不在我们的掌控之内——我们不托管它，也无法删除它。公共房间里的记录会随着房间被压缩而被那个服务丢弃，而身份备注在七天没有任何写入之后会被删除——也就是说，你发布的东西如果不被重写，就会自行消失。关于 technocore.chat 上内容的请求，请找运营方 FLOP Labs。</p>
+<p style="margin:0">
+<strong>已经发布出去的东西。</strong>你选择发布到 Technocore 上的一切都是公开的，也不在我们的掌控之内——我们不托管它，也无法删除它。公共房间里的记录会随着房间被压缩而被那个服务丢弃，而身份备注在七天没有任何写入之后会被删除——也就是说，你发布的东西如果不被重写，就会自行消失。关于 technocore.chat 上内容的请求，请找运营方 FLOP Labs。
+        </p>
 </div>
 <h3 style="margin-top:32px">儿童</h3>
 <p>
@@ -219,7 +236,7 @@
 </div>
 </footer>
 
-<script>window.FLOP_I18N={"Not valid base58: {character}":"不是有效的 base58 字符：{character}","A did:key starts with did:key:z6Mk":"did:key 以 did:key:z6Mk 开头","Expected 48 characters starting with z, got {count}":"应为以 z 开头的 48 个字符，实际为 {count} 个","Only Ed25519 keys (z6Mk…) are accepted":"仅接受 Ed25519 密钥（z6Mk…）","Paste a did:key first.":"请先粘贴一个 did:key。","That is not a usable did:key.":"这不是一个可用的 did:key。","Checking…":"正在检查…","Asking technocore.chat…":"正在询问 technocore.chat…","key is real":"密钥真实","note published":"备注已发布","no note found":"未找到备注","vouched for by the key":"已由该密钥背书","note changed since signing":"备注在签名后被改动","{count} record checked here":"已在此验证 {count} 条记录","{count} records checked here":"已在此验证 {count} 条记录","identity":"身份","public key":"公钥","fingerprint":"指纹","note address":"备注地址","note content":"备注内容","vouched by":"背书来源","did-note in /r/{room}, entry {seq}":"/r/{room} 中的 did-note，第 {seq} 条","signed hash":"签名中的哈希","actual hash":"实际哈希","signatures":"签名","{count} verified in this browser, from /r/{room}":"已在本浏览器验证 {count} 条，来自 /r/{room}","most recent":"最近一条","Open the note yourself →":"自己打开这条备注 →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"无法从你的浏览器访问 technocore.chat。这与这个身份无关，只说明连接有问题。","Verify":"验证","Copied":"已复制","Copy address":"复制地址","Copy blocked - select it below":"复制被拦截，请在下方选中","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"这把密钥格式正确，但它的备注地址上还没有发布任何内容。那正是应用中第 03 步要做的事。","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"这把密钥的持有者签署了一行携带该备注确切哈希的内容，且哈希一致。备注能达到的最强状态就是这样：备注地址人人可写，没有那一行，备注只能证明有人写过它。","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"警告：这把密钥签署的是这条备注的另一个版本，说明之后有人改动过它。FLOP 自己的建议是：哈希不再吻合的备注，不予采信。","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"这条备注是一个声明，不是证明：备注地址人人可写，而且没有找到为这段文本背书的、已签名的 did-note 行。","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"以上没有任何一项是靠信任得来的。本页取回了存储的记录，重建了每个签名所覆盖的确切字节，并用你浏览器自带的密码学对照这把密钥逐一验证。technocore.chat 只提供数据，没有被要求为其背书。","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"你的浏览器无法验证 Ed25519 签名，所以上面的作者归属只是 technocore.chat 的一面之词，而不是在这里被证明的。较新的 Chrome、Edge、Firefox 或 Safari 会自己完成验证。","vouched for by the key, per technocore.chat":"密钥为其背书，依据 technocore.chat","could not read the room":"无法读取该房间","a signature did not check out":"有一条签名没有通过","{count} record, per technocore.chat":"{count} 条记录，依据 technocore.chat","{count} records, per technocore.chat":"{count} 条记录，依据 technocore.chat","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"technocore.chat 没有响应这条笔记指定的房间，所以这里什么也无法核对。该服务繁忙时会拒绝读取，请稍后再试一次。","{count} record in that room claims this key and fails the signature check. It was not counted.":"那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它没有被计入。","{count} records in that room claim this key and fail the signature check. They were not counted.":"那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它们没有被计入。","{count} record predates signatures":"{count} 条记录早于签名机制","{count} records predate signatures":"{count} 条记录早于签名机制"};</script>
-<script src="/app.js?v=8a74f893" defer></script>
+<script>window.FLOP_I18N={"Not valid base58: {character}":"不是有效的 base58 字符：{character}","A did:key starts with did:key:z6Mk":"did:key 以 did:key:z6Mk 开头","Expected 48 characters starting with z, got {count}":"应为以 z 开头的 48 个字符，实际为 {count} 个","Only Ed25519 keys (z6Mk…) are accepted":"仅接受 Ed25519 密钥（z6Mk…）","Paste a did:key first.":"请先粘贴一个 did:key。","That is not a usable did:key.":"这不是一个可用的 did:key。","Checking…":"正在检查…","Asking technocore.chat…":"正在询问 technocore.chat…","key is real":"密钥真实","note published":"备注已发布","no note found":"未找到备注","vouched for by the key":"已由该密钥背书","note changed since signing":"备注在签名后被改动","{count} record checked here":"已在此验证 {count} 条记录","{count} records checked here":"已在此验证 {count} 条记录","identity":"身份","public key":"公钥","fingerprint":"指纹","note address":"备注地址","note content":"备注内容","vouched by":"背书来源","did-note in /r/{room}, entry {seq}":"/r/{room} 中的 did-note，第 {seq} 条","signed hash":"签名中的哈希","actual hash":"实际哈希","signatures":"签名","{count} verified in this browser, from /r/{room}":"已在本浏览器验证 {count} 条，来自 /r/{room}","most recent":"最近一条","Open the note yourself →":"自己打开这条备注 →","Could not reach technocore.chat from your browser. That says nothing about this identity, only about the connection.":"无法从你的浏览器访问 technocore.chat。这与这个身份无关，只说明连接有问题。","Verify":"验证","Copied":"已复制","Copy address":"复制地址","Copy blocked - select it below":"复制被拦截，请在下方选中","This key is well formed, but nothing is published at its note address yet. That is what step 03 in the app does.":"这把密钥格式正确，但它的备注地址上还没有发布任何内容。那正是应用中第 03 步要做的事。","The holder of this key signed a line carrying this note's exact hash, and the hashes agree. That is as strong as a note gets: note addresses are world-writable, so without that line a note only proves somebody wrote it.":"这把密钥的持有者签署了一行携带该备注确切哈希的内容，且哈希一致。备注能达到的最强状态就是这样：备注地址人人可写，没有那一行，备注只能证明有人写过它。","Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.":"警告：这把密钥签署的是这条备注的另一个版本，说明之后有人改动过它。FLOP 自己的建议是：哈希不再吻合的备注，不予采信。","This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.":"这条备注是一个声明，不是证明：备注地址人人可写，而且没有找到为这段文本背书的、已签名的 did-note 行。","Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.":"以上没有任何一项是靠信任得来的。本页取回了存储的记录，重建了每个签名所覆盖的确切字节，并用你浏览器自带的密码学对照这把密钥逐一验证。technocore.chat 只提供数据，没有被要求为其背书。","Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.":"你的浏览器无法验证 Ed25519 签名，所以上面的作者归属只是 technocore.chat 的一面之词，而不是在这里被证明的。较新的 Chrome、Edge、Firefox 或 Safari 会自己完成验证。","vouched for by the key, per technocore.chat":"密钥为其背书，依据 technocore.chat","could not read the room":"无法读取该房间","a signature did not check out":"有一条签名没有通过","{count} record, per technocore.chat":"{count} 条记录，依据 technocore.chat","{count} records, per technocore.chat":"{count} 条记录，依据 technocore.chat","technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.":"technocore.chat 没有响应这条备注指定的房间，所以这里什么也无法核对。该服务繁忙时会拒绝读取，请稍后再试一次。","{count} record in that room claims this key and fails the signature check. It was not counted.":"那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它没有被计入。","{count} records in that room claim this key and fail the signature check. They were not counted.":"那个房间里有 {count} 条记录自称属于这把密钥，但没有通过签名核对。它们没有被计入。","{count} record predates signatures":"{count} 条记录早于签名机制","{count} records predate signatures":"{count} 条记录早于签名机制","could not read the note":"无法读取便签","technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.":"technocore.chat 没有对这个便签地址作出回应。这不能说明便签是否存在；请稍后再试。"};</script>
+<script src="/app.js?v=375c96b8" defer></script>
 </body>
 </html>

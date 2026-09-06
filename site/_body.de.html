@@ -33,7 +33,7 @@
 </div>
 <h1>Deine Identität auf Technocore, <br/>geboren in deinem Seeker.</h1>
 <p class="sub">
-        FLOP Passport erzeugt eine dauerhafte <code>did:key</code>-Identität aus einer einzigen Signatur, die deine Wallet im Seed Vault von Solana Mobile leistet, veröffentlicht sie dort, wo jeder sie prüfen kann, und bewahrt die Belege auf. Kein Konto, kein Server von uns, keine Seed-Phrase zum Aufschreiben.
+        FLOP Passport erzeugt eine <code>did:key</code>-Identität, die du jederzeit wiederherstellen kannst, aus einer einzigen Signatur, die deine Wallet im Seed Vault von Solana Mobile erstellt, veröffentlicht sie dort, wo jeder sie prüfen kann, und bewahrt die Belege auf. Kein Konto, kein Server von uns, keine Seed-Phrase zum Aufschreiben.
       </p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#get">App holen</a>
@@ -91,7 +91,7 @@
           </p>
 </div>
 <div class="card reveal good">
-<span class="badge green">Dauerhaft</span>
+<span class="badge green">Am Leben gehalten</span>
 <h3 style="margin-top:12px">Dort ist nichts dauerhaft, also hält die App es am Leben</h3>
 <p>
             Technocore löscht alles, in das sieben Tage lang niemand geschrieben hat — Räume wie Identitätsnotizen. Deshalb schreibt die App deine Notiz bei jedem Öffnen und bei jedem signierten Eintrag neu und warnt dich vor Ablauf der Frist, wenn du länger weg warst. Sollte sie doch gelöscht werden, ergibt dieselbe Wallet dieselbe Identität, und ein signierter Eintrag stellt die Notiz an derselben Adresse wieder her.
@@ -111,7 +111,7 @@
 <div class="cards">
 <div class="card reveal accent">
 <span class="badge cyan">Solana Mobile</span>
-<h3 style="margin-top:12px">Seed Vault: wo er entsteht</h3>
+<h3 style="margin-top:12px">Seed Vault: woher er kommt</h3>
 <p>
             Dein Seeker hat einen eigenen Sicherheitschip, in dem der Schlüssel deiner Solana-Wallet liegt. Diesen Schlüssel kann niemand herausholen, wir nicht und du auch nicht. Der Chip beantwortet nur eine Art Frage: hier ist ein Text, gib mir eine Signatur.
           </p>
@@ -144,7 +144,7 @@
 </div>
 <div class="card reveal">
 <h3>App gelöscht</h3>
-<p>Was du veröffentlicht hast, bleibt öffentlich und prüfbar. Niemand kann es entfernen, wir auch nicht.</p>
+<p>Was du veröffentlicht hast, bleibt, wo es ist, bis Technocores eigene Sieben-Tage-Regel es entfernt. Wir können es nicht entfernen, und du auch nicht.</p>
 </div>
 </div>
 <div class="notice reveal" style="margin-top:24px">
@@ -321,7 +321,7 @@
             Es gibt einen, und die App sagt ihn auf ihrem eigenen Info-Bildschirm, statt zu warten, bis du ihn selbst merkst. Wiederherstellung ohne Seed-Phrase und „alles, was diese Signatur bekommt, besitzt diese Identität“ sind dieselbe Eigenschaft von zwei Seiten. Jede App, die deine Wallet dazu bringt, genau diesen Satz zu signieren, kann deinen Passport nachbauen.
           </p>
 <p>
-            Lies also, was eine Wallet dich signieren lässt. Hier und überall sonst. Die Abfrage dieser App nennt <code>FLOP Passport key derivation v1</code> und nennt <code>flop.alexkosa.dev</code>, eine Adresse, die du sofort öffnen und prüfen kannst.
+            Also lies, was eine Wallet dich zu signieren bittet. Hier und überall sonst. Die Anfrage dieser App beginnt mit <code>FLOP Passport key derivation v1</code> und nennt die App <code>dev.alexkosa.floppassport</code>; deine Wallet zeigt, dass sie von <code>flop.alexkosa.dev</code> angefordert wurde, einer Adresse, die du sofort öffnen und prüfen kannst.
           </p>
 </div>
 <div class="reveal">
@@ -373,7 +373,7 @@
 <span class="badge cyan">Niemand hat es angekündigt</span>
 <h3 style="margin-top:12px">Lies es an der Quelle</h3>
 <p>
-            Es gab keine Ankündigung. Die Änderung ist im Handbuch des Dienstes selbst zu sehen, das eine einzige Abfrage ist und nie gedrosselt wird: das Feld <code>sig</code> und was es abdeckt, stehen dort beschrieben, nicht hier.
+            Es gab keine Ankündigung. Das eigene Handbuch des Dienstes, ein einziger Abruf ohne Ratenbegrenzung, beschreibt das Feld <code>sig</code> und was es abdeckt. Die Zeit oben ist der Moment, in dem dieses Projekt zum ersten Mal sah, dass Signaturen aufbewahrt werden.
           </p>
 <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
             technocore.chat/llms.txt lesen →
@@ -388,7 +388,9 @@
 <div class="section-head reveal">
 <span class="label cyan">Prüfen</span>
 <h2>Prüfe jeden Passport, auch einen, der nicht deiner ist</h2>
-<p>Füge einen <code>did:key</code> ein, und diese Seite findet seine Notiz, holt jeden Eintrag, den diese Identität in dem Raum signiert hat, den ihre Notiz nennt, und prüft jede Signatur mit der Kryptografie deines eigenen Browsers. technocore.chat liefert die Daten und wird nie gebeten, für sie zu bürgen. An uns geht nichts: Diese Seite hat überhaupt kein Backend.</p>
+<p>
+          Füge einen <code>did:key</code> ein, und diese Seite findet seine Notiz, holt jeden Eintrag, den diese Identität in dem Raum signiert hat, den ihre Notiz nennt, und prüft jede Signatur mit der Kryptografie deines eigenen Browsers. technocore.chat liefert die Daten und wird nie gebeten, für sie zu bürgen. An uns geht nichts: Diese Seite hat überhaupt kein Backend.
+        </p>
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
@@ -396,9 +398,10 @@
 <button class="btn btn-primary" id="verifyBtn" type="button">Prüfen</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">
-          Keine DID zur Hand? <a href="#" id="tryExample">Nimm die des Autors</a>.
+          Kein DID zur Hand? <a href="/?did=did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs" id="tryExample">Probiere den des Autors</a>.
         </p>
 <div class="verify-out" id="verifyOut"></div>
+<noscript><p style="margin:12px 0 0;font-size:14px">Die Prüfung hier braucht JavaScript. Ohne es öffne die Notizadresse von Hand auf technocore.chat.</p></noscript>
 </div>
 </div>
 </section>

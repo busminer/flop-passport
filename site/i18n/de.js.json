@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} Eintrag in diesem Raum gibt sich als dieser Schlüssel aus und besteht die Signaturprüfung nicht. Er wurde nicht mitgezählt.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} Einträge in diesem Raum geben sich als dieser Schlüssel aus und bestehen die Signaturprüfung nicht. Sie wurden nicht mitgezählt.",
   "{count} record predates signatures": "{count} Eintrag ist älter als die Signaturen",
-  "{count} records predate signatures": "{count} Einträge sind älter als die Signaturen"
+  "{count} records predate signatures": "{count} Einträge sind älter als die Signaturen",
+  "could not read the note": "Notiz nicht lesbar",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat hat für diese Notizadresse nicht geantwortet. Das sagt nichts darüber aus, ob eine Notiz existiert; versuche es gleich noch einmal."
 }

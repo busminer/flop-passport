@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} rekaman di ruang itu mengaku berasal dari kunci ini tetapi gagal pemeriksaan tanda tangan. Rekaman itu tidak dihitung.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} rekaman di ruang itu mengaku berasal dari kunci ini tetapi gagal pemeriksaan tanda tangan. Rekaman-rekaman itu tidak dihitung.",
   "{count} record predates signatures": "{count} rekaman lebih tua dari tanda tangan",
-  "{count} records predate signatures": "{count} rekaman lebih tua dari tanda tangan"
+  "{count} records predate signatures": "{count} rekaman lebih tua dari tanda tangan",
+  "could not read the note": "catatan tidak dapat dibaca",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat tidak menjawab untuk alamat catatan ini. Itu tidak mengatakan apa pun tentang apakah catatan ada; coba lagi sebentar lagi."
 }

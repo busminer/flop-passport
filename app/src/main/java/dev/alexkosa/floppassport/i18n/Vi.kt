@@ -25,7 +25,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "A little too long. Trim it and the whole post fits, key included." to
         "Hơi dài. Rút ngắn lại là cả bài vừa đủ, kể cả khóa.",
     "A once-a-day reminder to leave today's signed record." to
-        "Lời nhắc mỗi ngày một lần để để lại bản ghi đã ký hôm nay.",
+        "Mỗi ngày một lời nhắc để lưu lại bản ghi đã ký của hôm nay.",
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "Một ghi chú công khai ở địa chỉ tính ra từ khóa của bạn, để sau này ai cũng tìm được và kiểm chứng được bạn. Bước này đi tới technocore.chat, dịch vụ công cộng của người khác: khi bận nó sẽ từ chối, và cách xử lý là bấm lại. Hai ba lần thử là bình thường và có nghĩa là máy của bạn không sao cả.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
@@ -39,7 +39,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Đã được chấp nhận, nhưng chưa thể đọc lại",
     "Activity" to "Hoạt động",
     "All six done" to "Xong cả sáu bước",
-    "Already checked in, found in the room" to "Đã ghi bản ghi, đã tìm thấy trong phòng",
+    "Already checked in, found in the room" to "Đã điểm danh, đã tìm thấy trong phòng",
     "Already published, read back just now" to "Đã công bố, vừa đọc lại",
     "Android is blocking notifications for this app. Turn them on in the system settings." to
         "Android đang chặn thông báo của ứng dụng này. Hãy bật thông báo trong phần cài đặt hệ thống.",
@@ -54,7 +54,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Anyone with this can be you" to "Bất kỳ ai có thứ này đều có thể mạo danh bạn",
     "Apply" to "Áp dụng",
     "Cancel" to "Hủy",
-    "Check in" to "Ghi bản ghi",
+    "Check in" to "Điểm danh",
     "Check your connection and try again." to "Kiểm tra kết nối rồi thử lại.",
     "Could not open the security prompt on this screen." to
         "Không thể mở yêu cầu bảo mật trên màn hình này.",
@@ -70,7 +70,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Trước tiên, hãy tạo Passport. Chưa có gì để hiển thị cho đến khi một nội dung được ký.",
     "Daily activity" to "Hoạt động hằng ngày",
     "Daily reminder" to "Lời nhắc hằng ngày",
-    "Delete it?" to "Xóa mục này?",
+    "Delete it?" to "Xóa chứ?",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Việc xóa chỉ gỡ Passport khỏi điện thoại này. Mọi nội dung đã công bố có thể vẫn công khai, và cùng một ví sẽ tạo lại cùng một danh tính - vì vậy đây không phải là cách hoàn tác bất kỳ điều gì.",
     "Did you post it?" to "Bạn đã đăng chưa?",
@@ -82,10 +82,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to
         "FLOP Passport cho Seeker - bản sao lưu riêng tư",
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport cho Seeker, bởi @AlexKosa1",
-    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
-        "FLOP yêu cầu các tác nhân làm điều gì đó hữu ích. Bản ghi có ký là dấu vết bạn để lại cho việc đó, còn một ngày không có bản ghi là một ngày sau này không ai kiểm được.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
-        "FLOP yêu cầu các trợ lý làm hai việc: tạo một khóa duy nhất và làm điều gì đó hữu ích để lan truyền thông tin về Technocore. Năm bước trên đã hoàn thành việc đầu tiên. Không ai có thể làm việc thứ hai thay bạn, nên ứng dụng sẽ viết bài đăng và bạn quyết định có gửi hay không.",
+        "FLOP yêu cầu các tác nhân làm hai việc: tạo một khóa duy nhất và làm điều gì đó hữu ích để lan truyền thông tin về Technocore. Năm bước trên đã hoàn thành việc đầu tiên. Không ai có thể làm việc thứ hai thay bạn, nên ứng dụng sẽ viết bài đăng và bạn quyết định có gửi hay không.",
     "Identity derived from your wallet signature" to "Danh tính được tạo từ chữ ký ví của bạn",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Nếu ghi chú bị xóa, Passport của bạn vẫn không mất: cùng một ví vẫn tạo ra cùng một danh tính, và việc ký một bản ghi sẽ đăng lại ghi chú tại cùng một địa chỉ.",
@@ -99,8 +97,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Giữ tệp này ngoại tuyến. Không bao giờ gửi cho bất kỳ ai, kể cả tác giả ứng dụng.",
     "Language" to "Ngôn ngữ",
     "Last reminder about this one." to "Đây là lời nhắc cuối về việc này.",
-    "Link to what you built, if there is one" to "Liên kết đến thứ bạn đã tạo, nếu có",
-    "Link to your post" to "Liên kết đến bài đăng của bạn",
     "Make your first signed check-in" to "Tạo bản ghi có chữ ký đầu tiên",
     "Next: create your Passport from your wallet." to "Tiếp theo: tạo Passport từ ví của bạn.",
     "Next: make your first signed check-in." to "Tiếp theo: tạo bản ghi có chữ ký đầu tiên.",
@@ -129,14 +125,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Chỉ những ngôn ngữ có bản dịch thực sự mới được liệt kê. Một bộ chọn cung cấp các ngôn ngữ nhưng đều hiển thị bằng tiếng Anh sẽ báo rằng ngôn ngữ của bạn được hỗ trợ, rồi cho thấy điều ngược lại ở màn hình tiếp theo.",
     "Opening a connection" to "Đang mở kết nối",
     "Opening your Solana wallet" to "Đang mở ví Solana của bạn",
-    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
-        "Dán liên kết vào đây và tên bạn gắn với khóa của bạn vĩnh viễn. Đây là phần người ta định để lát nữa làm rồi không làm.",
-    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
-        "Dán liên kết đến bài đăng của bạn. Liên kết này sẽ được đưa vào ghi chú danh tính của bạn, để ghi chú trỏ đến bài đăng và bài đăng chứa khóa. Sau đó, bất kỳ ai cũng có thể đối chiếu cả hai bằng cùng một khóa.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
         "Hãy đăng dòng của bạn, rồi quay lại dán liên kết. Chính điều đó gắn tên bạn với khóa của bạn, và đó là nửa phần FLOP đã yêu cầu các tác nhân làm.",
     "Protect" to "Bảo vệ",
-    "Protect it" to "Bảo vệ mục này",
+    "Protect it" to "Bảo vệ khóa",
     "Publish" to "Công bố",
     "Publish your identity" to "Công bố danh tính của bạn",
     "Published and read back from the server" to "Đã công bố và đọc lại từ máy chủ",
@@ -165,8 +157,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Sent, but not confirmed in the room yet" to "Đã gửi nhưng chưa được xác nhận trong phòng",
     "Settings" to "Cài đặt",
     "Show your private key" to "Hiển thị khóa riêng của bạn",
-    "Sign a record now and this day is on your history for good." to
-        "Ký một bản ghi ngay, và ngày hôm nay sẽ nằm trong lịch sử của bạn mãi mãi.",
     "Signed, accepted and found again in the room" to
         "Đã ký, được chấp nhận và tìm thấy lại trong phòng",
     "Signing your first check-in and sending it" to "Đang ký và gửi bản ghi đầu tiên",
@@ -177,10 +167,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Thanks for building this" to "Cảm ơn vì đã xây dựng ứng dụng này",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
         "Đây có vẻ không phải là liên kết đến một bài đăng. Liên kết phải có dạng https://x.com/you/status/123.",
-    "That does not look like a link. It should start with https://" to
-        "Đây có vẻ không phải là một liên kết. Liên kết phải bắt đầu bằng https://",
-    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
-        "Năm bước đã dựng nên danh tính của bạn. Ngoài chiếc máy này ra, chưa ai biết nó là của bạn. Bước 06 ở dưới: viết một dòng, đăng lên, rồi quay lại dán liên kết. Chính phần cuối đó đặt tên bạn cạnh khóa của bạn mãi mãi, và đó cũng là chỗ người ta dừng lại.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Khóa được niêm phong trong bộ nhớ bảo mật của điện thoại này, sau đó được đọc lại và đối chiếu với danh tính của bạn.",
     "The manual" to "Hướng dẫn",
@@ -203,8 +189,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "Chính câu này khiến bài đăng là của bạn. Mọi thứ bên dưới là bằng chứng.",
     "Three days left before it is deleted." to "Còn ba ngày trước khi ghi chú bị xóa.",
-    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
-        "Ba việc, theo thứ tự: viết câu của bạn, đăng lên, rồi quay lại dán liên kết. Việc cuối mới làm cho nó bền lâu, và đó cũng là việc người ta hay quên.",
     "Today cannot be added later" to "Hôm nay không thể thêm vào sau",
     "Told only when your identity note is days away from being deleted." to
         "Chỉ thông báo khi ghi chú danh tính của bạn sắp bị xóa trong vài ngày tới.",
@@ -218,7 +202,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Chờ một lát rồi nhấn lại để kiểm tra. Gửi dưới dạng tin nhắn mới sẽ đăng công khai hai lần.",
     "What is still provable" to "Những gì vẫn có thể chứng minh",
     "What recovery without a seed phrase costs" to
-        "Cái giá của việc khôi phục mà không cần cụm từ hạt giống",
+        "Khôi phục không cần cụm từ khôi phục có cái giá của nó",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
         "Cần làm gì và bao lâu một lần, vì sao danh tính hết hạn, vì sao cách này hoạt động trên Seeker và có điều gì cần lưu ý. Mở trong trình duyệt của bạn.",
     "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
@@ -228,10 +212,10 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "You do not need this file to recover. The same Solana wallet that" to
         "Bạn không cần tệp này để khôi phục. Chính ví Solana đã",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
-        "Bạn không cần mục này để khôi phục. Cùng một ví Solana sẽ dựng lại cùng một Passport trên bất kỳ điện thoại nào. Bản sao này dùng để sử dụng khóa ở nơi khác theo quyết định của bạn.",
+        "Bạn không cần thứ này để khôi phục. Cùng một ví Solana sẽ dựng lại cùng một Passport trên bất kỳ điện thoại nào. Bản sao này dùng để sử dụng khóa ở nơi khác theo quyết định của bạn.",
     "You finished the five. The last one takes a minute." to
         "Bạn đã xong năm bước. Bước cuối chỉ mất một phút.",
-    "You have already checked in" to "Bạn đã ghi bản ghi",
+    "You have already checked in" to "Bạn đã điểm danh rồi",
     "You have already left a record today." to "Hôm nay bạn đã để lại một bản ghi.",
     "You're all set" to "Đã hoàn tất",
     "Your Passport has no name on it" to "Passport của bạn chưa có tên",
@@ -240,13 +224,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "Your Passport is live" to "Passport của bạn đang hoạt động",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Passport của bạn đang hoạt động và bản ghi có chữ ký đầu tiên đã có trên Technocore. Bất kỳ ai cũng có thể xác minh và nó vẫn thuộc về bạn.",
-    "Your Passport is live, it is yours, and your name is on it." to
-        "Passport của bạn đã hoạt động, là của bạn, và mang tên bạn.",
-    "Your Passport is live. One step left." to "Passport của bạn đã hoạt động. Còn một bước.",
+    "Your Passport is live. One step left." to "Passport của bạn đang hoạt động. Còn một bước.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
-        "Passport của bạn được dựng lại từ một chữ ký ví duy nhất, nên không có cụm từ hạt giống nào để mất. Điều đó cũng đúng theo chiều ngược lại: bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport này. Hãy đọc kỹ những gì một ví yêu cầu bạn ký, ở đây và ở mọi nơi.",
-    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
-        "Passport của bạn không bị mất: cùng một ví vẫn tạo ra cùng một danh tính, và việc ký một bản ghi lúc này sẽ đăng lại ghi chú tại cùng một địa chỉ.",
+        "Passport của bạn được dựng lại từ một chữ ký ví duy nhất, nên không có cụm từ khôi phục nào để mất. Điều đó cũng đúng theo chiều ngược lại: bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport này. Hãy đọc kỹ những gì một ví yêu cầu bạn ký, ở đây và ở mọi nơi.",
     "Your identity note expires soon" to "Ghi chú danh tính của bạn sắp hết hạn",
     "Your identity note has been deleted" to "Ghi chú danh tính của bạn đã bị xóa",
     "Your key is never sent anywhere. Only you can export it." to
@@ -261,7 +241,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "active days" to "ngày hoạt động",
     "activity" to "hoạt động",
     "address" to "địa chỉ",
-    "agent: FLOP Passport for Seeker" to "tác nhân: FLOP Passport cho Seeker",
     "algorithm: Ed25519, did:key, 32-byte seed" to "thuật toán: Ed25519, did:key, seed 32 byte",
     "attach it" to "gắn vào",
     "built by a community builder" to "do một nhà phát triển cộng đồng xây dựng",
@@ -279,7 +258,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "create passport" to "tạo passport",
     "created this Passport rebuilds it on any device." to
         "tạo Passport này sẽ dựng lại nó trên bất kỳ thiết bị nào.",
-    "danger zone" to "khu vực nguy hiểm",
+    "danger zone" to "vùng nguy hiểm",
     "day streak" to "chuỗi ngày liên tiếp",
     "delete passport from this phone" to "xóa passport khỏi điện thoại này",
     "detail" to "chi tiết",
@@ -288,8 +267,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "failed" to "thất bại",
     "fetched again and matched exactly" to "đã tải lại và khớp hoàn toàn",
     "fetched from the server on opening" to "được tải từ máy chủ khi mở",
-    "fingerprint" to "dấu vân tay",
-    "flop-passport vault self-test" to "tự kiểm tra kho khóa flop-passport",
+    "fingerprint" to "dấu vân",
+    "flop-passport vault self-test" to "tự kiểm tra két flop-passport",
     "identity" to "danh tính",
     "identity note" to "ghi chú danh tính",
     "language {code}" to "ngôn ngữ {code}",
@@ -302,7 +281,7 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "no, nothing was made public" to "không, chưa có gì được công khai",
     "nonce" to "nonce",
     "not found" to "không tìm thấy",
-    "not yet" to "chưa đâu",
+    "not yet" to "chưa",
     "not yet - the note alone is a claim, not a proof" to
         "chưa - riêng ghi chú chỉ là một tuyên bố, không phải bằng chứng",
     "off" to "tắt",
@@ -311,11 +290,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "our exact bytes, no wallet prefix" to "đúng các byte của chúng tôi, không có tiền tố ví",
     "passport for seeker" to "passport cho seeker",
     "pin it to your identity" to "ghim vào danh tính của bạn",
-    "post it" to "đăng bài",
     "private key, 32 bytes, hex" to "khóa riêng, 32 byte, hex",
     "protect passport" to "bảo vệ passport",
     "publish identity" to "công bố danh tính",
-    "publish these to my note" to "đăng vào ghi chú của tôi",
     "published" to "đã công bố",
     "publishing" to "đang công bố",
     "re-check with the server" to "kiểm tra lại với máy chủ",
@@ -329,9 +306,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "send a tip" to "gửi tiền ủng hộ",
     "send a tip in {token}" to "gửi tiền ủng hộ bằng {token}",
     "send a tip to {name}" to "gửi tiền ủng hộ tới {name}",
-    "sequence" to "trình tự",
+    "sequence" to "số thứ tự",
     "settings" to "cài đặt",
-    "sign and check in" to "ký và ghi bản ghi",
+    "sign and check in" to "ký và điểm danh",
     "sign today's record" to "ký bản ghi hôm nay",
     "signed" to "đã ký",
     "signed and verified against your DID" to "đã ký và xác minh theo DID của bạn",
@@ -353,7 +330,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "try again" to "thử lại",
     "unconfirmed" to "chưa xác nhận",
     "unsigned" to "chưa ký",
-    "vault {level}" to "két {level}",
     "verified" to "đã xác minh",
     "verify it yourself" to "tự xác minh",
     "version" to "phiên bản",
@@ -363,11 +339,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "what this app never does" to "những điều ứng dụng này không bao giờ làm",
     "what to do" to "cần làm gì",
     "when" to "thời điểm",
-    "with a wallet prefix, which is fine and pinned" to
-        "có tiền tố ví, điều này hợp lệ và đã được cố định",
     "working" to "đang xử lý",
     "yes, a signed did-note line carries its hash" to
-        "có, một dòng did-note có chữ ký chứa hash của nó",
+        "có, một dòng did-note có chữ ký chứa mã băm của nó",
     "yes, delete" to "có, xóa",
     "yes, something is already public" to "có, một số nội dung đã công khai",
     "your identity" to "danh tính của bạn",
@@ -386,8 +360,6 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Dịch vụ đã nhận bản ghi của bạn nhưng chưa hiển thị lại. Lát nữa hãy bấm kiểm tra lại; không cần ký lại gì cả.",
     "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
         "technocore.chat đã từ chối bản ghi. Nó từ chối ghi khi đang bận - lát nữa hãy thử lại.",
-    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
-        "technocore.chat chưa nhận thay đổi này. Nó từ chối ghi khi đang bận - lát nữa hãy bấm công bố lần nữa. Dù sao các đường liên kết của bạn cũng đã được lưu trên máy này.",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "Vẫn chưa xong. Passport của bạn chưa hoạt động cho tới khi cả năm bước đều xanh, và chưa có gì hoàn chỉnh để ai đó kiểm chứng. Cứ tiếp tục.",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
@@ -402,12 +374,8 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "Nó bị xóa sau bảy ngày không có gì được ghi vào. Chỉ cần mở ứng dụng này là đã ghi vào nó.",
     "Maybe. The service accepted it, and this app could not read it back to be sure." to
         "Có thể. Dịch vụ đã nhận, nhưng ứng dụng này chưa đọc lại được để chắc chắn.",
-    "Seven days without opening the app. Open it now and the note goes back up." to
-        "Bảy ngày không mở ứng dụng. Hãy mở ngay bây giờ và ghi chú sẽ được đăng lại.",
     "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
         "Đó là bước cuối trong năm bước. Passport của bạn đã hoạt động. Còn lại một việc, và đó đúng là điều FLOP đã đề nghị: kể cho mọi người biết bạn đã làm gì. Bài đăng thì ứng dụng viết sẵn cho bạn, ở cuối màn hình này.",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
-        "Đường liên kết bạn dán sẽ đi vào ghi chú danh tính của bạn, tại một địa chỉ tính ra từ chính khóa của bạn. Các phòng bị dọn trong vòng một ngày. Ghi chú thì còn đó chừng nào bạn còn mở ứng dụng.",
     "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
         "Ứng dụng này miễn phí và bên trong không có gì để mua. Nếu nó có ích, một lời cảm ơn có thể gửi tới kosa.skr.",
     "checking" to
@@ -415,9 +383,9 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "open notification settings" to
         "mở cài đặt thông báo",
     "send a tip to kosa.skr" to
-        "gửi tiền cảm ơn tới kosa.skr",
+        "gửi tiền ủng hộ tới kosa.skr",
     "show my private key" to
-        "hiện khóa bí mật của tôi",
+        "hiện khóa riêng của tôi",
     "step {n} {title} not confirmed yet" to
         "bước {n} {title} chưa được xác nhận",
     "technocore.chat deletes anything with no write for seven days. Opening this app rewrites your note, and so does signing a record. Either one starts the seven days again." to
@@ -431,11 +399,85 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
     "The stored record did not verify against this key" to
         "Bản ghi đã lưu không kiểm chứng được bằng khóa này",
     "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
-        "Bạn đã tạo một khóa mà chỉ ví của bạn dựng lại được, niêm nó trong chiếc máy này, công bố ở nơi người lạ cũng tìm thấy, ký một bản ghi và chứng minh nó đã tới nơi, rồi đặt bài đăng của bạn bên cạnh khóa. Không còn gì phải thiết lập nữa.",
-    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
-        "Từ giờ trở đi, mỗi ngày một lần: mở thẻ Hoạt động và ký bản ghi của ngày hôm đó. Chính lần ghi ấy cũng giữ cho ghi chú danh tính của bạn khỏi bị xóa, còn hôm nay là ngày duy nhất không thể bổ sung về sau.",
+        "Bạn đã tạo một khóa mà chỉ ví của bạn dựng lại được, niêm phong nó trong chiếc máy này, công bố ở nơi người lạ cũng tìm thấy, ký một bản ghi và chứng minh nó đã tới nơi, rồi đặt bài đăng của bạn bên cạnh khóa. Không còn gì phải thiết lập nữa.",
     "open Activity" to
         "mở Hoạt động",
     "{n} more characters and the button below wakes up." to
         "Thêm {n} ký tự nữa là nút bên dưới sẽ bật lên.",
+    "A signed record is dated evidence that you were here. A day without one cannot be added later, and signing also keeps your identity note alive. Nothing here promises anything about any allocation." to
+        "Một bản ghi đã ký là bằng chứng có ngày tháng rằng bạn đã ở đây. Một ngày không có bản ghi không thể thêm vào sau, và việc ký cũng giữ cho ghi chú danh tính của bạn còn sống. Không có gì ở đây hứa hẹn bất kỳ phân bổ nào.",
+    "Could not check technocore.chat for your published steps. This says nothing about them, only about the connection. Re-check when you are back online." to
+        "Không thể hỏi technocore.chat về các bước bạn đã công bố. Điều này không nói gì về chúng, chỉ về kết nối. Kiểm tra lại khi bạn có mạng.",
+    "Could not reach technocore.chat. Check your connection and press publish again. Your link is saved on this phone either way." to
+        "Không kết nối được với technocore.chat. Kiểm tra kết nối và nhấn công bố lại. Liên kết của bạn vẫn được lưu trên điện thoại này.",
+    "Could not read the key from secure storage. Restart the phone and try again." to
+        "Không đọc được khóa từ bộ lưu trữ an toàn. Khởi động lại điện thoại và thử lại.",
+    "FLOP Passport is an independent community project. It is not made, endorsed or reviewed by FLOP Labs or by Solana Mobile." to
+        "FLOP Passport là một dự án cộng đồng độc lập. Nó không do FLOP Labs hay Solana Mobile tạo ra, xác nhận hay xem xét.",
+    "Finish the steps on the Passport tab first. Daily records start once your Passport is live." to
+        "Hãy hoàn thành các bước ở thẻ Passport trước. Bản ghi hằng ngày bắt đầu khi Passport của bạn hoạt động.",
+    "From now on: open the app at least once a week, so your identity note is not deleted. On the days you do something, open Activity and sign that day's record - a day cannot be added later." to
+        "Từ giờ: mở ứng dụng ít nhất một lần mỗi tuần để ghi chú danh tính không bị xóa. Vào những ngày bạn làm được gì đó, mở Hoạt động và ký bản ghi của ngày đó; một ngày không thể thêm vào sau.",
+    "If you did something today, sign a record for it now." to
+        "Nếu hôm nay bạn đã làm được gì, hãy ký một bản ghi cho việc đó ngay.",
+    "Link to your post on X" to
+        "Liên kết đến bài đăng của bạn trên X",
+    "Nothing was saved. Open your private key again and save it from there." to
+        "Chưa lưu gì cả. Mở khóa riêng của bạn lại và lưu từ đó.",
+    "Paste the link here and your name goes beside your key, in your identity note. This is the part people mean to do later and then do not." to
+        "Dán liên kết vào đây và tên bạn sẽ đứng cạnh khóa của bạn, trong ghi chú danh tính. Đây là phần mọi người định làm sau rồi không làm.",
+    "Paste the link to your post on X. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key. The app does not open the link or check the post; anyone reading your note can." to
+        "Dán liên kết đến bài đăng của bạn trên X. Nó sẽ vào ghi chú danh tính, để ghi chú trỏ đến bài đăng và bài đăng mang khóa. Khi đó bất kỳ ai cũng có thể đối chiếu hai đầu với một khóa. Ứng dụng không mở liên kết hay kiểm tra bài đăng; ai đọc ghi chú của bạn cũng có thể làm việc đó.",
+    "Read from technocore.chat, not from this phone. Rooms are trimmed as they grow, so this shows what anyone would find today." to
+        "Đọc từ technocore.chat, không phải từ điện thoại này. Các phòng bị cắt gọn khi lớn dần, nên đây là những gì bất kỳ ai cũng sẽ thấy hôm nay.",
+    "Seeker and Solana Mobile are trademarks of Solana Mobile, used only to say what this app is built for. FLOP and Technocore are names of the project whose public service this app writes to." to
+        "Seeker và Solana Mobile là nhãn hiệu của Solana Mobile, chỉ dùng để nói ứng dụng này được xây cho thiết bị nào. FLOP và Technocore là tên của dự án mà ứng dụng này ghi vào dịch vụ công khai của họ.",
+    "Seven days without opening the app. Open it and press publish; the note goes back to the same address." to
+        "Bảy ngày không mở ứng dụng. Mở nó và nhấn công bố; ghi chú sẽ trở lại đúng địa chỉ cũ.",
+    "The file could not be written. Try another location." to
+        "Không ghi được tập tin. Hãy thử một vị trí khác.",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key, and it is where people stop." to
+        "Năm bước đã xây nên danh tính của bạn. Ngoài chiếc điện thoại này chưa ai biết nó là của bạn. Bước 06 bên dưới: viết một dòng, đăng lên, rồi quay lại dán liên kết. Phần cuối đó là điều đặt tên bạn cạnh khóa của bạn, và cũng là nơi mọi người dừng lại.",
+    "The key could not be sealed in this phone's secure storage" to
+        "Không niêm phong được khóa trong bộ lưu trữ an toàn của điện thoại này",
+    "The link you paste goes into your identity note, at an address derived from your own key. The note stays as long as you keep opening the app; seven days without a write and it is deleted." to
+        "Liên kết bạn dán sẽ vào ghi chú danh tính, tại một địa chỉ suy ra từ chính khóa của bạn. Ghi chú còn đó chừng nào bạn còn mở ứng dụng; bảy ngày không ghi là nó bị xóa.",
+    "The note was accepted, but it could not be read back yet." to
+        "Ghi chú đã được chấp nhận nhưng chưa đọc lại được.",
+    "The record was sent but no answer came back in time. Do not resend: read the room again first." to
+        "Bản ghi đã gửi nhưng không nhận được trả lời kịp. Đừng gửi lại: hãy đọc lại phòng trước.",
+    "Three things, in this order: write your line, post it on X, then come back and paste the link. The last one is what puts your name beside your key, and it is the one people forget." to
+        "Ba việc, theo thứ tự này: viết dòng của bạn, đăng lên X, rồi quay lại dán liên kết. Việc cuối là điều đặt tên bạn cạnh khóa của bạn, và cũng là việc mọi người hay quên.",
+    "Today is the last day. It is deleted within 24 hours unless you open the app." to
+        "Hôm nay là ngày cuối. Nó sẽ bị xóa trong 24 giờ nữa trừ khi bạn mở ứng dụng.",
+    "Try again. If it keeps failing, restart the phone and try once more. Nothing was sent anywhere." to
+        "Thử lại. Nếu vẫn thất bại, khởi động lại điện thoại và thử thêm lần nữa. Không có gì được gửi đi đâu cả.",
+    "Your Passport is live, it is yours, and your post link is on it." to
+        "Passport của bạn đang hoạt động, là của bạn, và liên kết bài đăng đã nằm trên đó.",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and publishing again puts the note back at the same address." to
+        "Bản thân Passport không mất: cùng chiếc ví vẫn cho ra cùng danh tính, và công bố lại sẽ đưa ghi chú trở về đúng địa chỉ cũ.",
+    "checking with the server" to
+        "đang kiểm tra với máy chủ",
+    "independent project" to
+        "dự án độc lập",
+    "not in your note yet" to
+        "chưa có trong ghi chú",
+    "post it on X" to
+        "đăng lên X",
+    "put it in my note" to
+        "đưa vào ghi chú của tôi",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your link is saved on this phone either way." to
+        "technocore.chat không nhận thay đổi. Khi bận, nó từ chối ghi; hãy nhấn công bố lại sau một lát. Liên kết của bạn vẫn được lưu trên điện thoại này.",
+    "vault: not sealed yet" to
+        "két: chưa niêm phong",
+    "vault: secure area" to
+        "két: vùng an toàn",
+    "vault: security chip" to
+        "két: chip bảo mật",
+    "vault: software" to
+        "két: phần mềm",
+    "with a wallet prefix - this Passport rebuilds only through this same wallet app" to
+        "có tiền tố của ví — Passport này chỉ dựng lại được qua đúng ứng dụng ví này",
+    "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
+        "Lời nhắc của ứng dụng này bắt đầu bằng FLOP Passport key derivation v1 và nêu tên ứng dụng dev.alexkosa.floppassport; ví của bạn cho thấy nó được yêu cầu bởi flop.alexkosa.dev.",
 )

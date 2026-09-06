@@ -47,5 +47,7 @@
   "{count} record in that room claims this key and fails the signature check. It was not counted.": "{count} registro de esa sala dice venir de esta clave y no pasa la comprobación de firma. No se ha contado.",
   "{count} records in that room claim this key and fail the signature check. They were not counted.": "{count} registros de esa sala dicen venir de esta clave y no pasan la comprobación de firma. No se han contado.",
   "{count} record predates signatures": "{count} registro anterior a las firmas",
-  "{count} records predate signatures": "{count} registros anteriores a las firmas"
+  "{count} records predate signatures": "{count} registros anteriores a las firmas",
+  "could not read the note": "no se pudo leer la nota",
+  "technocore.chat did not answer for this note address. That says nothing about whether a note exists; try again in a moment.": "technocore.chat no respondió para esta dirección de nota. Eso no dice nada sobre si existe una nota; inténtalo de nuevo en un momento."
 }

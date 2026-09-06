@@ -46,6 +46,12 @@ data class ActivityState(
      * is the honest answer rather than a wrong number.
      */
     val daysSinceNoteWrite: Int = NoteLife.UNKNOWN,
+
+    /**
+     * Whole days of life the note has left, from the time remaining rather than the days
+     * elapsed, or [NoteLife.UNKNOWN]. See [NoteLife.daysLeft] for why the two differ.
+     */
+    val noteDaysLeft: Int = NoteLife.UNKNOWN,
 ) {
     data class Record(
         val seq: Int,
@@ -59,14 +65,6 @@ data class ActivityState(
     }
 
     val liveRecords: Int get() = records.size
-
-    /** Days before the note is deleted, or [NoteLife.UNKNOWN] when nothing is known. */
-    val noteDaysLeft: Int
-        get() = if (daysSinceNoteWrite == NoteLife.UNKNOWN) {
-            NoteLife.UNKNOWN
-        } else {
-            (NoteLife.TTL_DAYS - daysSinceNoteWrite).coerceAtLeast(0)
-        }
 
     /** Distinct days on which this identity left something still readable. */
     val activeDays: Int get() = records.map { it.day }.distinct().size

@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import dev.alexkosa.floppassport.i18n.t
+import dev.alexkosa.floppassport.i18n.tu
 import androidx.compose.ui.unit.dp
 
 /**
@@ -29,7 +30,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FlopLabel(text: String, color: Color = FlopColors.TextMuted, modifier: Modifier = Modifier) {
-    Text(t(text).uppercase(), style = FlopType.label, color = color, modifier = modifier)
+    Text(tu(text), style = FlopType.label, color = color, modifier = modifier)
 }
 
 @Composable
@@ -74,7 +75,7 @@ fun FlopButton(
             .padding(vertical = 15.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(t(text).uppercase(),
+        Text(tu(text),
             style = FlopType.label,
             color = if (enabled) FlopColors.Base else FlopColors.TextMuted,
             textAlign = TextAlign.Center,
@@ -83,17 +84,26 @@ fun FlopButton(
 }
 
 @Composable
-fun FlopButtonSecondary(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun FlopButtonSecondary(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+) {
     Box(
         modifier = modifier
             .fillMaxWidth()
             .background(FlopColors.Surface, FlopShapes.md)
             .border(1.dp, FlopColors.Border, FlopShapes.md)
-            .clickable { onClick() }
+            .clickable(enabled = enabled) { onClick() }
             .padding(vertical = 14.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(t(text).uppercase(), style = FlopType.label, color = FlopColors.IceWhite)
+        Text(
+            tu(text),
+            style = FlopType.label,
+            color = if (enabled) FlopColors.IceWhite else FlopColors.TextMuted,
+        )
     }
 }
 
@@ -116,7 +126,7 @@ fun FlopBadge(text: String, state: FlopState, modifier: Modifier = Modifier) {
             .background(fg.copy(alpha = 0.13f), FlopShapes.pill)
             .padding(horizontal = 10.dp, vertical = 4.dp),
     ) {
-        Text(t(text).uppercase(), style = FlopType.label, color = fg)
+        Text(tu(text), style = FlopType.label, color = fg)
     }
 }
 

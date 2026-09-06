@@ -17,7 +17,7 @@ package dev.alexkosa.floppassport.i18n
  */
 internal val JA_STRINGS: Map<String, String> = mapOf(
     "06  tell them" to "06  伝える",
-    "5 of 6" to "6 のうち 5",
+    "5 of 6" to "6のうち5",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "あと少し書けば、その一行はあなたのものです。本当の一文があれば十分です。",
     "A few reminders about the last step, and then they stop." to "最後の手順についての数回の通知。そのあとは止まります。",
@@ -25,9 +25,9 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "少し長すぎます。短くすれば、鍵も含めて投稿全体が収まります。",
     "A once-a-day reminder to leave today's signed record." to "今日の署名済み記録を残すための、1日1回のリマインダー。",
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
-        "あなたの鍵から算出したアドレスに置く公開ノートです。あとから誰でもあなたを見つけ、検証できるようになります。この手順は technocore.chat に送られます。他者が運営する公開サービスなので、混んでいるときは拒否され、その答えはもう一度押すことです。二、三回試すのはふつうで、端末に問題がないという意味です。",
+        "あなたの鍵から算出したアドレスに置く公開ノートです。あとから誰でもあなたを見つけ、検証できるようになります。この手順はtechnocore.chatに送られます。他者が運営する公開サービスなので、混んでいるときは拒否され、その答えはもう一度押すことです。二、三回試すのはふつうで、端末に問題がないという意味です。",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
-        "署名付き記録は手動で残す必要があり、記録し忘れた日は後から埋められません。この設定は、身元情報のノートが削除される前に警告する機能も兼ねています。",
+        "署名付き記録は手動で残す必要があり、記録し忘れた日は後から埋められません。この設定は、IDノートが削除される前に警告する機能も兼ねています。",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
         "チップはPassportにも、いかなるエアドロップにも影響しません。",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
@@ -42,11 +42,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "Androidがこのアプリの通知をブロックしています。システム設定で通知をオンにしてください。",
     "Anyone can check it at the address in step 03. This app promises nothing about any allocation, and never will." to
         "ステップ03のアドレスで誰でも確認できます。このアプリは、いかなる割り当ても約束せず、今後も約束しません。",
-    "Anyone holding it can sign as you" to "これを持つ人は本人として署名できます",
+    "Anyone holding it can sign as you" to "これを持つ人はあなたとして署名できます",
     "Anyone holding seed_hex can sign as this identity on Technocore." to
         "seed_hexを持つ人は、Technocore上でこのIDとして署名できます。",
     "Anyone who looks it up sees a key and nothing else." to "調べた人に見えるのは鍵だけで、ほかには何もありません。",
-    "Anyone with this can be you" to "これを持つ人は本人になれます",
+    "Anyone with this can be you" to "これを持つ人はあなたになれます",
     "Apply" to "適用",
     "Cancel" to "キャンセル",
     "Check in" to "記録を残す",
@@ -65,7 +65,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Daily reminder" to "毎日のリマインダー",
     "Delete it?" to "削除しますか？",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
-        "削除しても、この端末からPassportが消えるだけです。公開済みの内容は公開されたまま残ることがあり、同じウォレットから同じアイデンティティが再構築されるため、取り消す手段にはなりません。",
+        "削除しても、この端末からPassportが消えるだけです。公開済みの内容は公開されたまま残ることがあり、同じウォレットから同じIDが再構築されるため、取り消す手段にはなりません。",
     "Did you post it?" to "投稿しましたか？",
     "Every language listed here has a full translation." to "ここに記載されているすべての言語には、完全な翻訳があります。",
     "FLOP Passport creates a Technocore identity from your Solana wallet and keeps the receipts." to
@@ -73,13 +73,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker" to "Seeker用FLOP Passport",
     "FLOP Passport for Seeker - private backup" to "Seeker用FLOP Passport - 非公開バックアップ",
     "FLOP Passport for Seeker by @AlexKosa1" to "@AlexKosa1によるSeeker用FLOP Passport",
-    "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
-        "FLOP はエージェントに役に立つことをするよう求めました。署名済みの記録はその証跡であり、記録のない一日は、あとから誰にも確かめられない一日です。",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
-        "FLOP はエージェントに2つのことを求めました: 固有の鍵を作ること、そして Technocore を広めるために役立つことをすること。上の5つのステップで1つ目は完了しました。2つ目は誰にも代わりにできないので、このアプリが投稿文を作り、送るかどうかはあなたが決めます。",
+        "FLOPはエージェントに2つのことを求めました。固有の鍵を作ること、そしてTechnocoreを広めるために役立つことをすることです。上の5つのステップで1つ目は完了しました。2つ目は誰にも代わりにできないので、このアプリが投稿文を作り、送るかどうかはあなたが決めます。",
     "Identity derived from your wallet signature" to "ウォレット署名から導出されたID",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
-        "削除されてもPassportは失われません。同じウォレットから同じ身元情報を取得でき、記録に署名すると、同じアドレスにノートが再公開されます。",
+        "削除されてもPassportは失われません。同じウォレットから同じIDが得られ、記録に署名すると、同じアドレスにノートが再公開されます。",
     "In one line: what you did, or why you set this up" to "一行で。何をしたか、あるいはなぜ作ったか",
     "It never asks for your wallet recovery phrase." to "ウォレットのリカバリーフレーズを求めることはありません。",
     "It promises nothing about any airdrop, and never will." to "いかなるエアドロップも約束せず、今後も約束しません。",
@@ -87,8 +85,6 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "このファイルはオフラインで保管してください。アプリ作者を含め、誰にも送らないでください。",
     "Language" to "言語",
     "Last reminder about this one." to "この件の通知はこれで最後です。",
-    "Link to what you built, if there is one" to "作ったものへのリンク（ある場合）",
-    "Link to your post" to "投稿へのリンク",
     "Make your first signed check-in" to "最初の署名済み記録を残す",
     "Next: create your Passport from your wallet." to "次へ：ウォレットからPassportを作成します。",
     "Next: make your first signed check-in." to "次へ：最初の署名済み記録を残します。",
@@ -99,26 +95,22 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "No. Nothing was published." to "いいえ。何も公開されていません。",
     "Not checked yet." to "まだ確認していません。",
     "Not done. Your Passport is not attached to any public name yet, and this is the one step nobody can do for you." to
-        "まだです。あなたの Passport はどの公開名にも結び付いていません。そしてこれは、誰も代わりにできない手順です。",
-    "Nothing asked yet" to "まだ質問はありません",
+        "まだです。あなたのPassportはどの公開名にも結び付いていません。そしてこれは、誰も代わりにできない手順です。",
+    "Nothing asked yet" to "まだ何も問い合わせていません",
     "Nothing found. If you signed something and it is not here, the room has been trimmed past it - which is normal, and exactly why this screen exists." to
         "何も見つかりませんでした。署名したものがここにない場合、ルームの整理によって削除されています。これは通常の動作であり、その確認のためにこの画面があります。",
     "Nothing has vouched for this text yet. Publish again to sign for it." to
         "このテキストを保証するものはまだありません。署名するにはもう一度公開してください。",
     "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
-        "壊れたものも、失われたものもありません。あなたの Passport は動いています。公開される側の半分が必要になったら、手順 06 は置いてきた場所で待っています。",
+        "壊れたものも、失われたものもありません。あなたのPassportは動いています。公開される側の半分が必要になったら、手順06は置いてきた場所で待っています。",
     "Nothing signed today yet." to "今日はまだ何も署名していません。",
     "One step left" to "あと一手順です",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "実際の翻訳がある言語のみを表示しています。すべて英語で表示される言語を選択肢に含めると、対応言語と表示されても、次の画面では対応していないことになります。",
     "Opening a connection" to "接続を開始しています",
     "Opening your Solana wallet" to "Solanaウォレットを開いています",
-    "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
-        "ここにリンクを貼れば、あなたの名前は鍵に恒久的に結び付きます。あとでやろうと思って、そのままになるのがこの部分です。",
-    "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
-        "投稿へのリンクを貼り付けてください. リンクはあなたのIDノートに入り、ノートが投稿を示し、投稿にはキーが含まれます. これで誰でも両方を同じキーで確認できます.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
-        "自分の一行を投稿し、戻ってリンクを貼ってください。それがあなたの名前を鍵に結び付けます。FLOP がエージェントに求めた半分は、これです。",
+        "自分の一行を投稿し、戻ってリンクを貼ってください。それがあなたの名前を鍵に結び付けます。FLOPがエージェントに求めた半分は、これです。",
     "Protect" to "保護",
     "Protect it" to "保護する",
     "Publish" to "公開",
@@ -145,8 +137,6 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Sent, but not confirmed in the room yet" to "送信済みですが、まだルーム内で確認できません",
     "Settings" to "設定",
     "Show your private key" to "秘密鍵を表示",
-    "Sign a record now and this day is on your history for good." to
-        "いま記録に署名すれば、この日はあなたの履歴に永久に残ります。",
     "Signed, accepted and found again in the room" to "署名、受理され、ルーム内で再確認されました",
     "Signing your first check-in and sending it" to "最初の記録に署名して送信しています",
     "Somebody changed this note after your key signed for it. Publish again." to
@@ -155,11 +145,7 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Talking to the service" to "サービスと通信中",
     "Thanks for building this" to "開発への謝意を送る",
     "That does not look like a link to a post. It should look like https://x.com/you/status/123." to
-        "投稿へのリンクではないようです. https://x.com/you/status/123. のような形式にしてください.",
-    "That does not look like a link. It should start with https://" to
-        "リンクではないようです. https:// で始めてください",
-    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
-        "五つの手順があなたの身元を作りました。この端末の外では、それがあなたのものだとまだ誰も知りません。下の手順 06 です。一行書き、投稿し、戻ってリンクを貼ってください。その最後の部分が、あなたの名前を鍵の隣に恒久的に置きます。そして人が止まるのも、まさにそこです。",
+        "投稿へのリンクではないようです。https://x.com/you/status/123 のような形式にしてください。",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "鍵をこの端末のセキュアストレージに封印し、読み戻してIDと照合します。",
     "The manual" to "マニュアル",
@@ -169,11 +155,11 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
         "ここにポイントやスコアはありません。FLOPがエージェントに求めたのは有用な行為であり、意味を持つのは人が後から開ける記録です。このアプリが作った数字では、別のゲームになります。",
     "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign as you on Technocore. Keep them offline and never send them to anyone, including us." to
-        "この32バイトがFLOP Passportそのものです。これを持つ人はTechnocore上で本人として署名できます。オフラインで保管し、当方を含め誰にも送らないでください。",
+        "この32バイトがFLOP Passportそのものです。これを持つ人はTechnocore上であなたとして署名できます。オフラインで保管し、当方を含め誰にも送らないでください。",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "このアプリは無料のオープンソースで、開発に対する報酬は受けていません。作業時間の節約になった場合は、チップを送ることができます。",
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
-        "このアプリは無料のオープンソースです。役に立った場合は、{name} にチップを送れます。ウォレットが開き、金額はそこで選びます。",
+        "このアプリは無料のオープンソースです。役に立った場合は、{name}にチップを送れます。ウォレットが開き、金額はそこで選びます。",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "このアプリは、開くたび、また記録に署名するたびにノートを書き直すため、七日間の期限が再び始まります。少なくとも週に一度開けば、何も失われません。",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -181,11 +167,9 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "This line is what makes the post yours. Everything under it is the proof." to
         "この一文が、この投稿をあなたのものにします。その下はすべて証拠です。",
     "Three days left before it is deleted." to "削除まであと三日です。",
-    "Three things, in this order: write your line, post it, then come back and paste the link. The last one is what makes it permanent, and it is the one people forget." to
-        "順番に三つ。自分の一行を書き、投稿し、それから戻ってリンクを貼る。最後のひとつがこれを恒久的にし、そして忘れられるのもそれです。",
     "Today cannot be added later" to "今日は、あとから足せません",
     "Told only when your identity note is days away from being deleted." to
-        "身元情報のノートが削除される数日前にのみ通知されます。",
+        "IDノートが削除される数日前にのみ通知されます。",
     "Tomorrow is the last day." to "明日が最後の日です。",
     "Two days left before it is deleted." to "削除まであと二日です。",
     "Unfinished setup" to "未完了の設定",
@@ -195,48 +179,43 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "少し待ってから、もう一度押して再確認してください。新しいメッセージとして送ると、公開投稿が重複します。",
     "What is still provable" to "現在も証明できること",
-    "What recovery without a seed phrase costs" to "シードフレーズなしの復元が引き受けるもの",
+    "What recovery without a seed phrase costs" to "シードフレーズなしで復元できることの代償",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
-        "何をどのくらいの頻度でするのか、なぜIDに有効期限があるのか、なぜ Seeker で使えるのか、注意点は何か。ブラウザで開きます。",
+        "何をどのくらいの頻度でするのか、なぜIDに有効期限があるのか、なぜSeekerで使えるのか、注意点は何か。ブラウザで開きます。",
     "Write one line only you would write. Posts that differ from each other by nothing but a key get read as farming, and that lands on the people who did the work." to
         "あなたにしか書けない一行を書いてください。互いに鍵しか違わない投稿はファーミングとして読まれ、割を食うのは実際に手を動かした人です。",
     "Yes. Something is already visible to others." to "はい。すでに他の人から見える情報があります。",
     "You do not need this file to recover. The same Solana wallet that" to
-        "復元にこのファイルは不要です。同じSolanaウォレットで",
+        "復元にこのファイルは不要です。このPassportを作成した同じSolanaウォレットが",
     "You do not need this to recover. The same Solana wallet rebuilds the same Passport on any phone. This copy is for using the key somewhere else, on your own terms." to
         "復元にこれは不要です。同じSolanaウォレットから、どの端末でも同じPassportを再構築できます。このコピーは、自身の判断で別の場所から鍵を使用するためのものです。",
     "You finished the five. The last one takes a minute." to "五つは終わりました。最後は一分で済みます。",
     "You have already checked in" to "すでに記録を残しています",
     "You have already left a record today." to "今日はすでに記録を残しています。",
     "You're all set" to "設定が完了しました",
-    "Your Passport has no name on it" to "あなたの Passport に名前がありません",
+    "Your Passport has no name on it" to "あなたのPassportに名前がありません",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Passportは、SeekerのハードウェアキーストアであるSeed Vault内でウォレットが生成する1つの署名から導出されます。ウォレットの鍵がそのハードウェアの外に出ることはありません。Passportの鍵は、このアプリ内でその署名から計算され、Androidのセキュアストレージで封印されます。Android Keystoreはこの種類の鍵を保持できないため、ハードウェア内で署名されるのではなく、封印されます。",
-    "Your Passport is live" to "Passportは公開されています",
+    "Your Passport is live" to "Passportは有効です",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
-        "Passportは公開され、最初の署名済み記録がTechnocore上にあります。誰でも検証でき、所有者は変わりません。",
-    "Your Passport is live, it is yours, and your name is on it." to
-        "あなたの Passport は有効で、あなたのもので、あなたの名前が付いています。",
-    "Your Passport is live. One step left." to "あなたの Passport は有効です。あと一手順です。",
+        "Passportは有効になり、最初の署名済み記録がTechnocore上にあります。誰でも検証でき、所有者は変わりません。",
+    "Your Passport is live. One step left." to "あなたのPassportは有効です。あと一手順です。",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
-        "Passport はウォレットの署名ひとつから再構成されます。だから失うシードフレーズが ありません。同じことは逆にも働きます。まったく同じ文にウォレットで署名させられる アプリは、この Passport を再構成できます。ウォレットが何に署名を求めているかを、ここでも、ほかのどこでも読んでください。",
-    "Your Passport itself is not lost: the same wallet still gives the same identity, and signing a record now publishes the note back to the same address." to
-        "Passport自体は失われていません。同じウォレットから同じ身元情報を取得でき、今記録に署名すると、同じアドレスにノートが再公開されます。",
-    "Your identity note expires soon" to "身元情報のノートの有効期限が近づいています",
-    "Your identity note has been deleted" to "身元情報のノートが削除されました",
+        "Passportはウォレットの署名ひとつから再構成されます。だから失うシードフレーズがありません。同じことは逆にも働きます。まったく同じ文にウォレットで署名させられるアプリは、このPassportを再構成できます。ウォレットが何に署名を求めているかを、ここでも、ほかのどこでも読んでください。",
+    "Your identity note expires soon" to "IDノートの有効期限が近づいています",
+    "Your identity note has been deleted" to "IDノートが削除されました",
     "Your key is never sent anywhere. Only you can export it." to
-        "鍵が外部に送信されることはありません。エクスポートできるのは本人だけです。",
+        "鍵が外部に送信されることはありません。エクスポートできるのはあなただけです。",
     "Your key signed a line carrying this note's exact hash." to
         "あなたの鍵が、このノートの正確なハッシュを含む行に署名しました。",
     "Your note has to be kept alive" to "ノートを維持する必要があります",
     "Your post is in your identity note, at your key's own address." to
-        "あなたの投稿は、あなたの鍵自身のアドレスにある身元ノートの中にあります。",
+        "あなたの投稿は、あなたの鍵自身のアドレスにあるIDノートの中にあります。",
     "Your wallet signs one statement. It is not a transaction and moves no funds. The same wallet rebuilds the same Passport on any device." to
         "ウォレットは1つの文に署名します。トランザクションではなく、資金は移動しません。同じウォレットから、どの端末でも同じPassportを再構築できます。",
     "active days" to "活動日数",
     "activity" to "アクティビティ",
     "address" to "アドレス",
-    "agent: FLOP Passport for Seeker" to "エージェント：Seeker用FLOP Passport",
     "algorithm: Ed25519, did:key, 32-byte seed" to "アルゴリズム：Ed25519、did:key、32バイトシード",
     "attach it" to "結び付ける",
     "built by a community builder" to "コミュニティ開発者による制作",
@@ -251,12 +230,12 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "continue" to "続行",
     "copy" to "コピー",
     "copy key" to "鍵をコピー",
-    "create passport" to "passportを作成",
+    "create passport" to "Passportを作成",
     "created this Passport rebuilds it on any device." to
-        "このPassportを作成したウォレットから、どの端末でも再構築できます。",
+        "どの端末でも同じPassportを再構築します。",
     "danger zone" to "危険な操作",
     "day streak" to "連続日数",
-    "delete passport from this phone" to "この端末からpassportを削除",
+    "delete passport from this phone" to "この端末からPassportを削除",
     "detail" to "詳細",
     "did anything go public?" to "何か公開されましたか？",
     "done" to "完了",
@@ -264,44 +243,42 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "fetched again and matched exactly" to "再取得し、完全一致を確認",
     "fetched from the server on opening" to "起動時にサーバーから取得",
     "fingerprint" to "フィンガープリント",
-    "flop-passport vault self-test" to "flop-passport 鍵ストア自己テスト",
-    "identity" to "アイデンティティ",
+    "flop-passport vault self-test" to "flop-passport鍵ストア自己テスト",
+    "identity" to "ID",
     "identity note" to "IDノート",
     "language {code}" to "言語 {code}",
     "last connection" to "前回の接続",
     "linked" to "リンク済み",
     "live records" to "公開中の記録",
-    "matched on our nonce, not just our key" to "鍵だけでなく、固有のnonceも一致",
+    "matched on our nonce, not just our key" to "鍵だけでなく、こちらのノンスも一致",
     "no thanks, continue" to "送らずに続行",
     "no, nothing was made public" to "いいえ、何も公開されていません",
     "nonce" to "ノンス",
     "not found" to "見つかりません",
     "not yet" to "まだです",
-    "not yet - the note alone is a claim, not a proof" to "まだです - ノートだけでは主張であり、証明ではありません",
+    "not yet - the note alone is a claim, not a proof" to "まだです。ノートだけでは主張であり、証明ではありません",
     "off" to "オフ",
     "on" to "オン",
     "open" to "開く",
     "our exact bytes, no wallet prefix" to "ウォレット接頭辞なしの正確なバイト列",
-    "passport for seeker" to "seeker用passport",
+    "passport for seeker" to "Seeker用Passport",
     "pin it to your identity" to "自分のIDに固定",
-    "post it" to "投稿する",
     "private key, 32 bytes, hex" to "秘密鍵、32バイト、16進数",
-    "protect passport" to "passportを保護",
+    "protect passport" to "Passportを保護",
     "publish identity" to "IDを公開",
-    "publish these to my note" to "ノートに公開",
     "published" to "公開済み",
     "publishing" to "公開中",
     "re-check with the server" to "サーバーで再確認",
     "re-checked when the app opened" to "アプリ起動時に再確認",
     "records the server still holds" to "サーバーに現在も残る記録",
-    "recovery" to "復旧",
+    "recovery" to "復元",
     "room" to "ルーム",
     "save to a file" to "ファイルに保存",
     "say it another way" to "別の言い方にする",
     "self test" to "自己テスト",
     "send a tip" to "チップを送る",
-    "send a tip in {token}" to "{token} でチップを送る",
-    "send a tip to {name}" to "{name} にチップを送る",
+    "send a tip in {token}" to "{token}でチップを送る",
+    "send a tip to {name}" to "{name}にチップを送る",
     "sequence" to "シーケンス",
     "settings" to "設定",
     "sign and check in" to "署名して記録を残す",
@@ -312,9 +289,9 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "step {n} {title} did not finish" to "手順 {n} {title} 未完了",
     "storage" to "ストレージ",
     "support the builder" to "開発者を支援",
-    "technocore.chat answered" to "technocore.chat が応答しました",
+    "technocore.chat answered" to "technocore.chatが応答しました",
     "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
-        "technocore.chatでは、誰も七日間書き込まなかったものは削除されます。保存して共有するアドレスにある身元情報のノートも対象です。",
+        "technocore.chatでは、誰も七日間書き込まなかったものは削除されます。保存して共有するアドレスにあるIDノートも対象です。",
     "technocore.chat refused the note" to "technocore.chatがノートを拒否しました",
     "technocore.chat refused the signed write" to "technocore.chatが署名済み書き込みを拒否しました",
     "text" to "テキスト",
@@ -324,7 +301,6 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "try again" to "もう一度試す",
     "unconfirmed" to "未確認",
     "unsigned" to "未署名",
-    "vault {level}" to "保管庫 {level}",
     "verified" to "検証済み",
     "verify it yourself" to "自身で検証",
     "version" to "バージョン",
@@ -334,64 +310,59 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
     "what this app never does" to "このアプリが行わないこと",
     "what to do" to "操作方法",
     "when" to "日時",
-    "with a wallet prefix, which is fine and pinned" to "ウォレット接頭辞付きで、正常かつ固定済み",
     "working" to "処理中",
     "yes, a signed did-note line carries its hash" to "はい、署名済みdid-note行にハッシュが含まれます",
     "yes, delete" to "はい、削除",
     "yes, something is already public" to "はい、すでに何かが公開されています",
     "your identity" to "ID",
     "your private key" to "秘密鍵",
-    "{token} is preselected and you can switch it." to "{token} が選択済みです。変更もできます。",
+    "{token} is preselected and you can switch it." to "{token}が選択済みです。変更もできます。",
     "Try again. Nothing was sent anywhere." to
         "もう一度お試しください。どこにも何も送られていません。",
     "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
-        "もう一度お試しください。technocore.chat は公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も公開されていません。",
+        "もう一度お試しください。technocore.chatは公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も公開されていません。",
     "Try again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
-        "もう一度お試しください。technocore.chat は公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も送られていません。",
+        "もう一度お試しください。technocore.chatは公開サービスで、混雑時には書き込みを断ります。このアプリにも、あなたの端末にも、鍵にも関係ありません。二、三回試すのは普通のことです。何も送られていません。",
     "Could not reach technocore.chat. Check your connection and try again; nothing was lost." to
-        "technocore.chat に接続できませんでした。通信を確認してもう一度お試しください。失われたものはありません。",
+        "technocore.chatに接続できませんでした。通信を確認してもう一度お試しください。失われたものはありません。",
     "The service took your record but has not shown it back yet. Press re-check in a moment; nothing needs signing again." to
         "サービスは記録を受け取りましたが、まだ返して表示していません。少し待って「再確認」を押してください。署名し直す必要はありません。",
     "technocore.chat refused the record. It refuses writes when it is busy - try again in a moment." to
-        "technocore.chat が記録を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度お試しください。",
-    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your links are saved on this phone either way." to
-        "technocore.chat が変更を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度「公開」を押してください。リンクはいずれにせよこの端末に保存されています。",
+        "technocore.chatが記録を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度お試しください。",
+    "technocore.chat did not take the change. It refuses writes when it is busy - press publish again in a moment. Your link is saved on this phone either way." to
+        "technocore.chatが変更を受け付けませんでした。混雑時には書き込みを断ります。少し待ってからもう一度「公開」を押してください。リンクはいずれにせよこの端末に保存されています。",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
-        "まだ終わっていません。五つすべてが緑になるまで Passport は有効になりませんし、誰かが検証できる完成したものもありません。続けてください。",
+        "まだ終わっていません。五つすべてが緑になるまでPassportは有効になりませんし、誰かが検証できる完成したものもありません。続けてください。",
     "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
-        "Passport で署名したメッセージを静かなルームに書き込み、そのあと読み直して、確かに届いたことを確かめます。ステップ 03 と同じサービス、同じ決まりです。断られたらもう一度押してください。サービスが混んでいるだけで、鍵に問題があるわけではありません。",
+        "Passportで署名したメッセージを静かなルームに書き込み、そのあと読み直して、確かに届いたことを確かめます。ステップ03と同じサービス、同じ決まりです。断られたらもう一度押してください。サービスが混んでいるだけで、鍵に問題があるわけではありません。",
     "Deleted after seven days with nothing written to it. Publish it now and it goes back to the same address." to
         "何も書き込まれないまま七日が過ぎると削除されます。いま公開すれば、同じアドレスに戻ります。",
     "Identity note at risk" to
         "IDノートが失われるおそれがあります",
     "In Settings, delete the Passport from this phone, then create it again from your wallet." to
-        "設定から、この端末の Passport を削除し、ウォレットで作り直してください。",
+        "設定から、この端末のPassportを削除し、ウォレットで作り直してください。",
     "It is deleted after seven days with nothing written to it. Opening this app writes it." to
         "何も書き込まれないまま七日が過ぎると削除されます。このアプリを開くこと自体が書き込みになります。",
     "Maybe. The service accepted it, and this app could not read it back to be sure." to
         "その可能性があります。サービスは受け取りましたが、このアプリはそれを読み直して確かめられていません。",
-    "Seven days without opening the app. Open it now and the note goes back up." to
-        "七日間アプリが開かれていません。いま開けば、ノートはまた公開されます。",
     "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
-        "五つのうちの最後でした。あなたの Passport は有効です。残りはひとつ、そしてそれこそ FLOP が実際に求めたことです。何をしたのかを人に伝えてください。投稿はこの画面の下でアプリが書きます。",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
-        "貼り付けたリンクは、あなた自身の鍵から計算されるアドレスにある身元ノートに入ります。ルームは一日のうちに片づけられます。ノートのほうは、アプリを開き続けているかぎり残ります。",
+        "五つのうちの最後でした。あなたのPassportは有効です。残りはひとつ、そしてそれこそFLOPが実際に求めたことです。何をしたのかを人に伝えてください。投稿はこの画面の下でアプリが書きます。",
     "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
-        "このアプリは無料で、中に買うものは何もありません。役に立ったなら、お礼は kosa.skr に送れます。",
+        "このアプリは無料で、中に買うものは何もありません。役に立ったなら、お礼はkosa.skrに送れます。",
     "checking" to
         "確認中",
     "open notification settings" to
         "通知設定を開く",
     "send a tip to kosa.skr" to
-        "kosa.skr にチップを送る",
+        "kosa.skrにチップを送る",
     "show my private key" to
         "自分の秘密鍵を表示",
     "step {n} {title} not confirmed yet" to
         "手順 {n} {title} はまだ確認できていません",
     "technocore.chat deletes anything with no write for seven days. Opening this app rewrites your note, and so does signing a record. Either one starts the seven days again." to
-        "technocore.chat は、七日間だれも書き込まなかったものをすべて削除します。このアプリを開けばノートは書き直され、記録に署名しても同じです。どちらか一方で、七日間は最初から数え直しになります。",
+        "technocore.chatは、七日間だれも書き込まなかったものをすべて削除します。このアプリを開けばノートは書き直され、記録に署名しても同じです。どちらか一方で、七日間は最初から数え直しになります。",
     "This phone has no screen lock set up. Add a PIN or a fingerprint first." to
-        "この端末には画面ロックが設定されていません。まず PIN か指紋を登録してください。",
+        "この端末には画面ロックが設定されていません。まずPINか指紋を登録してください。",
     "The server accepted the write but the message is not in the room yet. Do not resend: read the room again first." to
         "サーバーは書き込みを受け付けましたが、メッセージはまだルームにありません。送り直さないでください。まずルームを読み直してください。",
     "The stored text differs from the text we signed" to
@@ -400,10 +371,72 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "保存された記録が、この鍵で検証できませんでした",
     "You made a key only your wallet can rebuild, sealed it in this phone, published it where a stranger can find it, signed a record and proved it landed, and put your post beside your key. There is nothing left to set up." to
         "あなたのウォレットだけが作り直せる鍵を作り、この端末に封じ、見知らぬ人でも見つけられる場所に公開し、記録に署名して届いたことを証明し、投稿を鍵のとなりに置きました。もう設定することはありません。",
-    "From now on, once a day: open Activity and sign that day's record. That write is also what keeps your identity note from being deleted, and today is the one day that cannot be added later." to
-        "これからは一日に一度、アクティビティを開いてその日の記録に署名してください。その書き込みが、あなたの身元ノートを消させずにおく働きもします。そして今日という日は、あとから足せない唯一の日です。",
     "open Activity" to
         "アクティビティを開く",
     "{n} more characters and the button below wakes up." to
-        "あと {n} 文字で、下のボタンが有効になります。",
+        "あと{n}文字で、下のボタンが有効になります。",
+    "Could not check technocore.chat for your published steps. This says nothing about them, only about the connection. Re-check when you are back online." to
+        "technocore.chatで公開済みの手順を確認できませんでした。これは手順そのものではなく、接続に関する状態です。オンラインに戻ったら再確認してください。",
+    "The key could not be sealed in this phone's secure storage" to
+        "この端末のセキュアストレージに鍵を封印できませんでした",
+    "Try again. If it keeps failing, restart the phone and try once more. Nothing was sent anywhere." to
+        "もう一度お試しください。それでも失敗が続く場合は、端末を再起動してもう一度お試しください。どこにも何も送られていません。",
+    "with a wallet prefix - this Passport rebuilds only through this same wallet app" to
+        "ウォレット接頭辞付き。このPassportは同じウォレットアプリからのみ再構築できます",
+    "Could not reach technocore.chat. Check your connection and press publish again. Your link is saved on this phone either way." to
+        "technocore.chatに接続できませんでした。通信を確認して、もう一度「公開」を押してください。リンクはいずれにせよこの端末に保存されています。",
+    "The note was accepted, but it could not be read back yet." to
+        "ノートは受理されましたが、まだ読み戻せていません。",
+    "The record was sent but no answer came back in time. Do not resend: read the room again first." to
+        "記録は送信しましたが、時間内に応答がありませんでした。送り直さないでください。まずルームを読み直してください。",
+    "The link you paste goes into your identity note, at an address derived from your own key. The note stays as long as you keep opening the app; seven days without a write and it is deleted." to
+        "貼り付けたリンクは、あなた自身の鍵から計算されるアドレスにあるIDノートに入ります。ノートはアプリを開き続けているかぎり残り、七日間書き込みがなければ削除されます。",
+    "vault: security chip" to "保管庫：セキュリティチップ",
+    "vault: secure area" to "保管庫：セキュア領域",
+    "vault: software" to "保管庫：ソフトウェア",
+    "vault: not sealed yet" to "保管庫：未封印",
+    "Could not read the key from secure storage. Restart the phone and try again." to
+        "セキュアストレージから鍵を読み取れませんでした。端末を再起動してからもう一度お試しください。",
+    "FLOP Passport is an independent community project. It is not made, endorsed or reviewed by FLOP Labs or by Solana Mobile." to
+        "FLOP Passportは独立したコミュニティのプロジェクトです。FLOP LabsやSolana Mobileが制作・推奨・審査したものではありません。",
+    "From now on: open the app at least once a week, so your identity note is not deleted. On the days you do something, open Activity and sign that day's record - a day cannot be added later." to
+        "これからは、IDノートが削除されないように、少なくとも週に一度アプリを開いてください。何かをした日にはアクティビティを開き、その日の記録に署名してください。過ぎた日はあとから足せません。",
+    "Link to your post on X" to "Xの投稿へのリンク",
+    "Nothing was saved. Open your private key again and save it from there." to
+        "何も保存されていません。秘密鍵をもう一度開き、そこから保存してください。",
+    "Paste the link here and your name goes beside your key, in your identity note. This is the part people mean to do later and then do not." to
+        "ここにリンクを貼れば、あなたの名前はIDノートの中で鍵のとなりに置かれます。あとでやろうと思って、そのままになるのがこの部分です。",
+    "Paste the link to your post on X. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key. The app does not open the link or check the post; anyone reading your note can." to
+        "Xの投稿へのリンクを貼り付けてください。リンクはあなたのIDノートに入り、ノートが投稿を示し、投稿には鍵が含まれます。これで誰でも両方を同じ鍵で確認できます。アプリはリンクを開かず、投稿の確認もしません。あなたのノートを読む人なら誰でも確認できます。",
+    "Seeker and Solana Mobile are trademarks of Solana Mobile, used only to say what this app is built for. FLOP and Technocore are names of the project whose public service this app writes to." to
+        "SeekerおよびSolana MobileはSolana Mobileの商標で、本アプリがどの端末向けかを示すためだけに使用しています。FLOPとTechnocoreは、本アプリが書き込む公開サービスを運営するプロジェクトの名称です。",
+    "The file could not be written. Try another location." to
+        "ファイルを書き込めませんでした。別の保存先をお試しください。",
+    "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key, and it is where people stop." to
+        "五つの手順があなたのIDを作りました。この端末の外では、それがあなたのものだとまだ誰も知りません。下の手順06です。一行書き、投稿し、戻ってリンクを貼ってください。その最後の部分が、あなたの名前を鍵の隣に置きます。そして人が止まるのも、まさにそこです。",
+    "Three things, in this order: write your line, post it on X, then come back and paste the link. The last one is what puts your name beside your key, and it is the one people forget." to
+        "順番に三つ。自分の一行を書き、Xに投稿し、それから戻ってリンクを貼ります。最後のひとつがあなたの名前を鍵のとなりに置き、そして忘れられるのもそれです。",
+    "Your Passport is live, it is yours, and your post link is on it." to
+        "あなたのPassportは有効で、あなたのもので、あなたの投稿リンクが付いています。",
+    "checking with the server" to "サーバーで確認中",
+    "independent project" to "独立プロジェクト",
+    "not in your note yet" to "まだノートに入っていません",
+    "post it on X" to "Xに投稿する",
+    "put it in my note" to "ノートに入れる",
+    "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
+        "本アプリの署名リクエストはFLOP Passport key derivation v1で始まり、アプリdev.alexkosa.floppassportを名指しします。ウォレットには、flop.alexkosa.devからの要求であると表示されます。",
+    "A signed record is dated evidence that you were here. A day without one cannot be added later, and signing also keeps your identity note alive. Nothing here promises anything about any allocation." to
+        "署名済みの記録は、あなたがここにいたことを示す日付入りの証拠です。記録のない一日はあとから足せず、署名はIDノートを維持する働きもします。ここにあるものは、いかなる割り当ても約束しません。",
+    "Your Passport itself is not lost: the same wallet still gives the same identity, and publishing again puts the note back at the same address." to
+        "Passport自体は失われていません。同じウォレットから同じIDが得られ、もう一度公開すれば、ノートは同じアドレスに戻ります。",
+    "Read from technocore.chat, not from this phone. Rooms are trimmed as they grow, so this shows what anyone would find today." to
+        "この端末ではなく、technocore.chatから読み取りました。ルームは増加に伴って整理されるため、ここに表示されるのは、今日誰でも見つけられる内容です。",
+    "Seven days without opening the app. Open it and press publish; the note goes back to the same address." to
+        "七日間アプリが開かれていません。開いて「公開」を押せば、ノートは同じアドレスに戻ります。",
+    "Finish the steps on the Passport tab first. Daily records start once your Passport is live." to
+        "先にPassportタブの手順を終えてください。毎日の記録は、Passportが有効になってから始まります。",
+    "Today is the last day. It is deleted within 24 hours unless you open the app." to
+        "今日が最後の日です。アプリを開かなければ、24時間以内に削除されます。",
+    "If you did something today, sign a record for it now." to
+        "今日何かをしたなら、いまその記録に署名してください。",
 )

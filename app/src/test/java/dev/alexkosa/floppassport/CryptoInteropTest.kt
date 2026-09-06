@@ -181,4 +181,22 @@ class CryptoInteropTest {
         assertTrue("the user must be told it moves no funds", s.contains("moves no funds"))
         assertTrue(s.contains("So11111111111111111111111111111111111111112"))
     }
+
+    @Test
+    fun `the derivation statement is pinned byte for byte`() {
+        // One changed byte here is a different key for every user. `contains` checks
+        // above would let a stray space or a reworded line through; this one does not.
+        val expected = "FLOP Passport key derivation v1\n" +
+            "\n" +
+            "Signing this creates your FLOP Passport identity.\n" +
+            "It is not a transaction and moves no funds.\n" +
+            "\n" +
+            "wallet: So11111111111111111111111111111111111111112\n" +
+            "app: dev.alexkosa.floppassport\n"
+        assertEquals(expected, PassportDerivation.statement("So11111111111111111111111111111111111111112"))
+        assertEquals(
+            "FLOP Passport for Seeker. First signed check-in. 2543c207ef95a95a",
+            dev.alexkosa.floppassport.ui.checkInText("did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs"),
+        )
+    }
 }

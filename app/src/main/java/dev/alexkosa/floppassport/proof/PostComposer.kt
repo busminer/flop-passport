@@ -163,9 +163,45 @@ object PostComposer {
      */
     fun weightedLength(text: String): Int {
         val urls = Regex("""https?://\S+""").findAll(text).toList()
-        val urlChars = urls.sumOf { it.value.length }
-        return text.length - urlChars + urls.size * URL_WEIGHT
+        val withoutUrls = urls.fold(text) { acc, m -> acc.replace(m.value, "") }
+        return weightedTextLength(withoutUrls) + urls.size * URL_WEIGHT
     }
+
+    /**
+     * Count the way X counts.
+     *
+     * X weighs a code point in Latin, Cyrillic, general punctuation and a few symbol
+     * ranges as one, and everything else - CJK, kana, Hangul, emoji, most symbols - as
+     * two. Counting characters instead told a Chinese writer their post fit at 280 when X
+     * counted it at 428 and greyed out the Post button with no explanation on this side.
+     * The ranges are the ones twitter-text publishes.
+     */
+    fun weightedTextLength(text: String): Int {
+        var total = 0
+        var i = 0
+        while (i < text.length) {
+            val cp = text.codePointAt(i)
+            total += if (cp in 0x0000..0x10FF || cp in 0x2000..0x200D ||
+                cp in 0x2010..0x201F || cp in 0x2032..0x2037
+            ) {
+                1
+            } else {
+                2
+            }
+            i += Character.charCount(cp)
+        }
+        return total
+    }
+
+    /**
+     * The post link a published note carries, or null.
+     *
+     * Read back from a note our key vouched for, after a reinstall, so the phone learns
+     * the link again instead of writing the note without it. The shape is the one
+     * [identityNoteValue] writes: space-separated `key: value` fields.
+     */
+    fun xPostFromNote(note: String): String? =
+        Regex("""(?:^|\s)x:\s*(\S+)""").find(note)?.groupValues?.get(1)
 
     /**
      * The verification link is the identity note, not a room message.

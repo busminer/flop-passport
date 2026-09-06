@@ -99,8 +99,8 @@ object WalletLink {
          * True when the wallet signed the exact bytes we handed it, with no prefix of its
          * own. Informational, not a gate: derivation works either way because the
          * signature is deterministic regardless. But a wallet that prefixes produces a
-         * different Passport than one that does not, which is precisely why the derived
-         * DID is pinned on first use and compared on every later derivation.
+         * different Passport than one that does not, and that Passport comes back only
+         * through the same wallet app - which the step-01 evidence says in so many words.
          */
         val walletSignedRawBytes: Boolean
             get() = Ed25519.verify(
@@ -142,6 +142,14 @@ object WalletLink {
             ?: error("The wallet returned no signature")
         require(signature.size == 64) {
             "An Ed25519 signature is 64 bytes, got ${signature.size}"
+        }
+        // The statement names one account and asks that account to sign it. A wallet
+        // holding several that answered with a different one would derive a Passport
+        // bound to a statement about the wrong address, and the same account would not
+        // rebuild it later. Wallets that omit the field are taken at their word.
+        val signer = first.addresses.firstOrNull()
+        require(signer == null || signer.contentEquals(walletPublicKey)) {
+            "The wallet signed with a different account than the one it authorized"
         }
 
         val seed = PassportDerivation.seedFromWalletSignature(signature, address)

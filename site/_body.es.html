@@ -33,7 +33,7 @@
 </div>
 <h1>Tu identidad en Technocore, <br/>nacida dentro de tu Seeker.</h1>
 <p class="sub">
-        FLOP Passport crea una identidad <code>did:key</code> permanente a partir de una sola firma que tu cartera hace dentro del Seed Vault de Solana Mobile, la publica donde cualquiera puede verificarla y guarda los comprobantes. Sin cuenta, sin ningún servidor nuestro y sin frase semilla que apuntar.
+        FLOP Passport crea una identidad <code>did:key</code> que siempre puedes reconstruir, a partir de una firma que tu monedero hace dentro del Seed Vault de Solana Mobile, la publica donde cualquiera puede verificarla y guarda los recibos. Sin cuenta, sin servidor nuestro, sin frase semilla que apuntar.
       </p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#get">Descargar la app</a>
@@ -91,7 +91,7 @@
           </p>
 </div>
 <div class="card reveal good">
-<span class="badge green">Duradero</span>
+<span class="badge green">Se mantiene viva</span>
 <h3 style="margin-top:12px">Allí nada es duradero, así que la app lo mantiene vivo</h3>
 <p>
             Technocore borra todo aquello en lo que nadie ha escrito durante siete días, tanto salas como notas de identidad. Por eso la app reescribe tu nota cada vez que la abres y cada vez que firmas un registro, y te avisa antes del plazo si has estado ausente. Si alguna vez se borra, la misma cartera sigue dando la misma identidad y firmar un registro devuelve la nota a la misma dirección.
@@ -111,7 +111,7 @@
 <div class="cards">
 <div class="card reveal accent">
 <span class="badge cyan">Solana Mobile</span>
-<h3 style="margin-top:12px">Seed Vault: donde nace</h3>
+<h3 style="margin-top:12px">Seed Vault: de dónde sale</h3>
 <p>
             Tu Seeker tiene un chip de seguridad aparte que guarda la clave de tu cartera Solana. Esa clave no la puede extraer nadie, ni nosotros ni tú. El chip solo responde a un tipo de pregunta: aquí tienes un texto, dame una firma.
           </p>
@@ -144,7 +144,7 @@
 </div>
 <div class="card reveal">
 <h3>Borras la app</h3>
-<p>Lo que publicaste sigue siendo público y verificable. Nadie puede quitarlo, nosotros tampoco.</p>
+<p>Lo que publicaste se queda donde está hasta que la propia regla de siete días de Technocore lo elimine. Ni nosotros ni tú podemos eliminarlo.</p>
 </div>
 </div>
 <div class="notice reveal" style="margin-top:24px">
@@ -227,7 +227,7 @@
 <div class="step">
 <div class="n">04</div>
 <div>
-<h3>Registrarte</h3>
+<h3>Dejar un registro</h3>
 <p>Un mensaje firmado por tu Passport, publicado en una sala tranquila y luego reencontrado por su propio nonce antes de que nada se ponga verde.</p>
 </div>
 </div>
@@ -260,7 +260,7 @@
 </div>
 <div class="faq">
 <div class="reveal">
-<h3>¿Registrarme cada día me da derecho al airdrop?</h3>
+<h3>¿Dejar un registro cada día me da derecho al airdrop?</h3>
 <p>
 <strong>Nadie ha publicado una regla que diga eso, y no vamos a fingir lo contrario.</strong> Lo que sí se publicó es esto, desde la cuenta de FLOP el 24 de agosto de 2026:
           </p>
@@ -321,7 +321,7 @@
             La hay, y la app lo dice en su propia pantalla de información en vez de esperar a que lo descubras. Recuperar sin frase semilla y “cualquier cosa que consiga esta firma es dueña de esta identidad” son la misma propiedad vista desde dos lados. Cualquier app que convenza a tu cartera de firmar esa frase exacta puede reconstruir tu Passport.
           </p>
 <p>
-            Así que lee lo que una cartera te pide firmar. Aquí y en todas partes. El aviso de esta app dice <code>FLOP Passport key derivation v1</code> y nombra <code>flop.alexkosa.dev</code>, una dirección que puedes abrir y comprobar ahora mismo.
+            Así que lee lo que un monedero te pide firmar. Aquí y en todas partes. La solicitud de esta app empieza con <code>FLOP Passport key derivation v1</code> y nombra la app <code>dev.alexkosa.floppassport</code>; tu monedero muestra que la pidió <code>flop.alexkosa.dev</code>, una dirección que puedes abrir y comprobar ahora mismo.
           </p>
 </div>
 <div class="reveal">
@@ -373,7 +373,7 @@
 <span class="badge cyan">Nadie lo anunció</span>
 <h3 style="margin-top:12px">Léelo en la fuente</h3>
 <p>
-            No hubo anuncio. El cambio se ve en el propio manual del servicio, que es una sola petición y nunca está limitado: el campo <code>sig</code> y lo que cubre están descritos allí, no aquí.
+            No hubo anuncio. El propio manual del servicio, que es una sola petición y nunca tiene límite de frecuencia, describe el campo <code>sig</code> y lo que cubre. La hora de arriba es cuando este proyecto vio por primera vez que las firmas se conservaban.
           </p>
 <a class="tweet-link" href="https://technocore.chat/llms.txt" rel="noopener">
             Leer technocore.chat/llms.txt →
@@ -388,7 +388,9 @@
 <div class="section-head reveal">
 <span class="label cyan">Verificar</span>
 <h2>Comprueba cualquier Passport, incluso uno que no sea tuyo</h2>
-<p>Pega un <code>did:key</code> y esta página encuentra su nota, saca todos los registros que esa identidad firmó en la sala que su nota nombra y comprueba cada firma con la criptografía de tu propio navegador. technocore.chat sirve los datos y nunca se le pide que responda por ellos. No se nos envía nada: este sitio no tiene backend.</p>
+<p>
+          Pega un <code>did:key</code> y esta página encuentra su nota, saca todos los registros que esa identidad firmó en la sala que su nota nombra y comprueba cada firma con la criptografía de tu propio navegador. technocore.chat sirve los datos y nunca se le pide que responda por ellos. No se nos envía nada: este sitio no tiene backend.
+        </p>
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
@@ -396,9 +398,10 @@
 <button class="btn btn-primary" id="verifyBtn" type="button">Verificar</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">
-          ¿No tienes un DID a mano? <a href="#" id="tryExample">Prueba con el del autor</a>.
+          ¿No tienes un DID a mano? <a href="/?did=did:key:z6Mkq2w8fJHnRES8sLV8ZC9YeiRG2eBJnLsqbvhyvg3zU1qs" id="tryExample">Prueba el del autor</a>.
         </p>
 <div class="verify-out" id="verifyOut"></div>
+<noscript><p style="margin:12px 0 0;font-size:14px">Verificar aquí requiere JavaScript. Sin él, abre la dirección de la nota a mano en technocore.chat.</p></noscript>
 </div>
 </div>
 </section>
@@ -464,7 +467,7 @@
           Seeker". The href goes live and the aria-disabled and btn-wait come off in the
           same edit, never separately.
         -->
-<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · en revisión</span>
+<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · enviando</span>
 <span aria-disabled="true" class="btn btn-wait" data-source="">Código en GitHub · al lanzamiento</span>
 </div>
 <p style="margin-top:16px;font-size:14px">

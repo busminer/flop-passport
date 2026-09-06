@@ -22,8 +22,9 @@ import org.bouncycastle.crypto.params.HKDFParameters
  * happens inside Seed Vault.
  *
  * The statement deliberately contains the wallet address. A wallet that refuses to show
- * the user what it is signing, or that mangles the text, changes the derived key — which
- * is why the derived DID is stored and compared on every later derivation.
+ * the user what it is signing, or that mangles the text, changes the derived key — so a
+ * Passport made through a wallet that wraps its messages comes back only through that
+ * same wallet app, and the step-01 evidence tells the person so.
  */
 object PassportDerivation {
 
@@ -46,8 +47,9 @@ object PassportDerivation {
      * Turn the wallet's 64-byte signature into the 32-byte Ed25519 Passport seed.
      *
      * HKDF rather than a bare hash so the wallet signature and the identity seed are
-     * cleanly domain-separated: the signature is public once shown to anyone, and this
-     * makes explicit that it is input key material, not the key.
+     * cleanly domain-separated. The signature is input key material and must be treated
+     * as a secret: the salt and the info are both public, so whoever holds these 64 bytes
+     * holds the Passport. It is zeroed as soon as the seed is stored.
      */
     fun seedFromWalletSignature(walletSignature: ByteArray, walletAddress: String): ByteArray {
         require(walletSignature.size == 64) {

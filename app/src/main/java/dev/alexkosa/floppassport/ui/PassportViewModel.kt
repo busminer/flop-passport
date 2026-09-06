@@ -10,6 +10,8 @@ import dev.alexkosa.floppassport.notify.FinishNudge
 import dev.alexkosa.floppassport.notify.NudgePrefs
 import dev.alexkosa.floppassport.proof.PostComposer
 import dev.alexkosa.floppassport.proof.SharePrefs
+import dev.alexkosa.floppassport.proof.looksLikeXPost
+import dev.alexkosa.floppassport.technocore.Canonical
 import dev.alexkosa.floppassport.technocore.DidNote
 import dev.alexkosa.floppassport.technocore.Technocore
 import dev.alexkosa.floppassport.notify.NoteLife
@@ -19,6 +21,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CompletableJob
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
 const val CHECK_IN_ROOM = "flop-passport"
@@ -53,6 +58,34 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     private val vault = PassportVault(app)
     private val technocore = Technocore()
+
+    /**
+     * Every coroutine this class starts hangs off this job, so deleting the Passport can
+     * cancel all of them at once.
+     *
+     * Without it, a publish still in flight when the person pressed delete finished a few
+     * seconds later and wrote its Verified into the empty ladder of whatever identity came
+     * next - a brand-new key with step 03 already green, on the strength of another key's
+     * note. Every step also re-checks that the identity it worked for is still the one on
+     * the phone before it writes anything, because a cancelled coroutine can be one
+     * statement away from its write.
+     */
+    private var work: CompletableJob = SupervisorJob()
+
+    /**
+     * The launch-time question to the server has not been answered yet.
+     *
+     * While it is open the buttons for steps 03 and 04 wait: pressing publish while the
+     * server was about to say "already published" posted a second vouch line, and a
+     * refusal arriving after the restore had lit the step flipped it back to Failed for a
+     * note that was sitting on the server the whole time.
+     */
+    var restoring by mutableStateOf(false)
+        private set
+
+    /** Why the launch-time question could not be answered, in words for the screen. */
+    var restoreError by mutableStateOf<String?>(null)
+        private set
 
     /**
      * The last measured round trip to technocore.chat, for the screens that claim to be
@@ -130,44 +163,57 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * record that existed last week may simply be gone. The screen shows what a stranger
      * would find today, not what this phone remembers doing.
      */
-    fun refreshActivity(force: Boolean = false) {
+    fun refreshActivity(force: Boolean = false, carryError: String? = null) {
         val identity = did ?: return
         // The guard stops two taps racing each other. It must not stop the refresh that
         // follows a write, which sets `checking` itself: that combination left the flag on
         // forever, so the screen said CHECKING for the rest of its life and the record the
         // user had just signed never appeared.
         if (activity.checking && !force) return
-        activity = activity.copy(checking = true, error = null)
-        viewModelScope.launch {
+        // `carryError` is the outcome of the write this refresh follows. It used to be set
+        // and then wiped by this very line before a frame was drawn, so a refused daily
+        // record looked like a button that did nothing.
+        activity = activity.copy(checking = true, error = carryError)
+        viewModelScope.launch(work) {
             runCatching {
                 val note = technocore.readIdentityNote(identity)
-                val records = technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                // One read of the room serves both halves: the records a person left, and
+                // every line this key signed, which is what vouches for the note. Two
+                // reads could disagree if a line landed between them.
+                val all = technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                val records = all
                     // A did-note line is machinery: it vouches for the profile note and
                     // says nothing about what this person did. Listing it as activity put
                     // a wall of hex in front of the user and inflated their own count.
                     .filterNot { DidNote.parse(it.signedText) != null }
                     .map {
-                    ActivityState.Record(
-                        seq = it.seq,
-                        nonce = it.nonce,
-                        text = it.signedText,
-                        timestamp = it.timestamp,
-                        room = it.room,
-                    )
-                }.sortedByDescending { it.seq }
-                // Both halves are already here, so the check costs nothing: the note that
-                // is published, and every line this key signed. Newest first, as the
-                // convention expects.
-                val signedLines = technocore.findAllMessages(CHECK_IN_ROOM, identity)
-                    .sortedByDescending { it.seq }
-                    .map { it.signedText }
+                        ActivityState.Record(
+                            seq = it.seq,
+                            nonce = it.nonce,
+                            text = it.signedText,
+                            timestamp = it.timestamp,
+                            room = it.room,
+                        )
+                    }.sortedByDescending { it.seq }
+                // Newest first, as the convention expects.
+                val signedLines = all.sortedByDescending { it.seq }.map { it.signedText }
+                val verdict = DidNote.check(identity, note, signedLines)
+                if (did != identity) return@runCatching
+                // A note our key vouched for is ours whatever this phone remembers. After a
+                // reinstall it remembers nothing, and the post link the person pasted lives
+                // only in that note - so it is read back from there before anything here
+                // could overwrite it.
+                if (verdict == DidNote.Verdict.MATCHES) adoptLinksFrom(note)
+                val ours = noteValue()
                 activity = ActivityState(
                     checking = false,
                     lastChecked = System.currentTimeMillis(),
+                    error = carryError,
                     noteValue = note,
-                    noteVerdict = DidNote.check(identity, note, signedLines),
+                    noteVerdict = verdict,
                     records = records,
                     daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
+                    noteDaysLeft = NoteLife.daysLeft(getApplication()),
                 )
                 // Turning up counts. Somebody who opens the app to look at their history
                 // has proved they are still here, and one idempotent write buys them
@@ -183,29 +229,61 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 // notes written by an earlier release, with a different wording, are kept
                 // alive rather than abandoned. A note that is present, is not our text and
                 // nothing vouches for is somebody else's, and is left alone.
-                val ours = noteValue()
                 val renewable = note == null || note == ours ||
-                    activity.noteVerdict == DidNote.Verdict.MATCHES
+                    verdict == DidNote.Verdict.MATCHES
                 // And only after the person has actually published. Opening this tab at
                 // step 02 used to publish the note and post a signed line into the public
                 // room - work the user had not asked for and had not been told about,
                 // while the ladder still showed 03 as pending and every failure dialog
-                // promised "Nothing was published."
-                val published = flow[Step.Publish] is StepState.Verified
+                // promised "Nothing was published." Decided from what was just read, not
+                // only from the ladder: on a cold start the ladder is still being restored
+                // and could lose the race, which silently skipped the renewal the
+                // notifications promise.
+                val published = flow[Step.Publish] is StepState.Verified ||
+                    (note != null && (note == ours || verdict == DidNote.Verdict.MATCHES))
+                // The server answered, so the ladder can be asked again too: a person who
+                // launched offline and pressed re-check on the Activity tab used to see
+                // their records come back while the Passport tab kept saying "not live".
+                if (restoreError != null ||
+                    (published && flow[Step.Publish] !is StepState.Verified)
+                ) {
+                    if (!restoring) refreshFromServer()
+                }
                 if (published && renewable && NoteLife.daysSinceWrite(getApplication()) != 0) {
                     keepNoteAlive(identity, note)
+                    if (did != identity) return@runCatching
                     activity = activity.copy(
                         daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
+                        noteDaysLeft = NoteLife.daysLeft(getApplication()),
                     )
                 }
             }.onFailure {
+                if (it is CancellationException || did != identity) return@onFailure
                 activity = activity.copy(
                     checking = false,
-                    error = "Could not reach technocore.chat. This says nothing about your " +
-                        "records, only about the connection.",
+                    error = carryError ?: ("Could not reach technocore.chat. This says nothing about your " +
+                        "records, only about the connection."),
                 )
             }
         }
+    }
+
+    /**
+     * Take the post link out of a note our key vouched for, when this phone has none.
+     *
+     * The link is the one thing a finished Passport publishes that cannot be rebuilt from
+     * the wallet. A reinstall, or a second device, arrives with an empty field and would
+     * otherwise write the note again without it - deleting the person's own proof from
+     * the public address, and re-signing for the shorter text. Only a vouched note is
+     * trusted here: the address is world-writable, and a stranger's `x:` must not become
+     * this person's finished sixth step.
+     */
+    private fun adoptLinksFrom(note: String?) {
+        if (note == null || share.xPostUrl.isNotBlank()) return
+        val url = PostComposer.xPostFromNote(note) ?: return
+        if (!looksLikeXPost(url)) return
+        share.xPostUrl = url
+        xPostUrl = url
     }
 
     /**
@@ -225,8 +303,18 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     fun checkInAgain(text: String) {
         val identity = did ?: return
         if (flow.busy || activity.checking) return
+        // Only once the ladder is finished. This button used to be live at step 01: it
+        // signed a public line and then published the identity note as a side effect,
+        // while the Passport tab still showed 03 and 04 as pending and every failure
+        // dialog there promised "Nothing was published."
+        if (flow[Step.Publish] !is StepState.Verified ||
+            flow[Step.CheckIn] !is StepState.Verified
+        ) {
+            return
+        }
         activity = activity.copy(checking = true, error = null)
-        viewModelScope.launch {
+        viewModelScope.launch(work) {
+            var outcome: String? = null
             runCatching {
                 // Read before writing, the way the first check-in does. Without it a write
                 // the server took but could not confirm left the button live and the
@@ -245,27 +333,28 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     nonce = nonce,
                     sign = { vault.sign(it) },
                 )
+                if (did != identity) return@runCatching
                 // The result used to be thrown away, so a refusal was indistinguishable
                 // from a success that had not appeared yet.
                 when (result) {
                     is Technocore.Result.Verified -> keepNoteAlive(identity, activity.noteValue)
-                    is Technocore.Result.Unconfirmed -> activity = activity.copy(
-                        error = "The service took your record but has not shown it back " +
-                            "yet. Press re-check in a moment; nothing needs signing again.",
-                    )
-                    is Technocore.Result.Refused -> activity = activity.copy(
-                        error = "technocore.chat refused the record. It refuses writes " +
-                            "when it is busy - try again in a moment.",
-                    )
+                    is Technocore.Result.Unconfirmed -> outcome =
+                        "The service took your record but has not shown it back " +
+                            "yet. Press re-check in a moment; nothing needs signing again."
+                    is Technocore.Result.Refused -> outcome =
+                        "technocore.chat refused the record. It refuses writes " +
+                            "when it is busy - try again in a moment."
                 }
             }.onFailure {
-                activity = activity.copy(
-                    checking = false,
-                    error = "Could not reach technocore.chat. Check your connection and " +
-                        "try again; nothing was lost.",
-                )
+                if (it is CancellationException) return@onFailure
+                outcome = "Could not reach technocore.chat. Check your connection and " +
+                    "try again; nothing was lost."
             }
-            refreshActivity(force = true)
+            if (did != identity) return@launch
+            // The refresh carries the outcome across, so the sentence survives long enough
+            // to be read. Setting it and then refreshing used to erase it in the same
+            // frame.
+            refreshActivity(force = true, carryError = outcome)
         }
     }
 
@@ -319,7 +408,9 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     /** Ask the server what it already holds for this identity, and reflect only that. */
     fun refreshFromServer() {
         val identity = did ?: return
-        viewModelScope.launch {
+        restoring = true
+        restoreError = null
+        viewModelScope.launch(work) {
             runCatching {
                 val note = technocore.readIdentityNote(identity)
                 // Ours, not merely present. The address is world-writable: anybody can put
@@ -329,16 +420,18 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                 // same bytes. A note is ours when it is the text we compose, or when a
                 // signed line of ours vouches for its hash, which is how a note written by
                 // an earlier release with different wording still counts.
-                val ourNote = note != null && (
-                    note == noteValue() ||
-                        DidNote.check(
-                            identity,
-                            note,
-                            technocore.findAllMessages(CHECK_IN_ROOM, identity)
-                                .sortedByDescending { it.seq }
-                                .map { it.signedText },
-                        ) == DidNote.Verdict.MATCHES
-                    )
+                val vouched = note != null && DidNote.check(
+                    identity,
+                    note,
+                    technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                        .sortedByDescending { it.seq }
+                        .map { it.signedText },
+                ) == DidNote.Verdict.MATCHES
+                if (did != identity) return@runCatching
+                // Before comparing texts: a vouched note may carry the post link this
+                // phone has forgotten, and the comparison below has to see the same link.
+                if (vouched) adoptLinksFrom(note)
+                val ourNote = note != null && (note == noteValue() || vouched)
                 if (!note.isNullOrBlank() && ourNote) {
                     set(
                         Step.Publish,
@@ -352,7 +445,9 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         ),
                     )
                 }
-                technocore.findLatestMessage(CHECK_IN_ROOM, identity)?.let { p ->
+                val latest = technocore.findLatestMessage(CHECK_IN_ROOM, identity)
+                if (did != identity) return@runCatching
+                latest?.let { p ->
                     set(
                         Step.CheckIn,
                         StepState.Verified(
@@ -382,7 +477,16 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         offerSupportInvite()
                     }
                 }
+            }.onFailure {
+                if (it is CancellationException || did != identity) return@onFailure
+                // Said out loud rather than left as a grey ladder. A finished person whose
+                // phone was offline at launch used to see "not finished, your Passport is
+                // not live" with no explanation and no way to ask again.
+                restoreError = "Could not check technocore.chat for your published steps. " +
+                    "This says nothing about them, only about the connection. Re-check " +
+                    "when you are back online."
             }
+            if (did == identity) restoring = false
         }
     }
 
@@ -392,6 +496,31 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun set(step: Step, state: StepState) {
         flow = flow.with(step, state)
+    }
+
+    /**
+     * Step 05 is not an action; it settles when 02, 03 and 04 are all Verified, whichever
+     * of them landed last. Every path that can light one of the three calls this.
+     */
+    private fun settleReadyIfDue(identity: String) {
+        if (flow[Step.Ready] is StepState.Verified) return
+        if (flow[Step.Protect] !is StepState.Verified ||
+            flow[Step.Publish] !is StepState.Verified ||
+            flow[Step.CheckIn] !is StepState.Verified
+        ) {
+            return
+        }
+        set(
+            Step.Ready,
+            StepState.Verified(
+                "Your Passport is live",
+                Evidence(
+                    "identity" to identity,
+                    "verify it yourself" to PostComposer.noteUrl(identity),
+                ),
+            ),
+        )
+        offerSupportInvite()
     }
 
     /** Set a step and tell the user about it, for outcomes they asked for by pressing something. */
@@ -404,13 +533,35 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     fun createPassport(launchIntent: (Intent) -> Unit) {
         if (flow.busy) return
         set(Step.Create, StepState.Running("Opening your Solana wallet"))
-        viewModelScope.launch {
+        viewModelScope.launch(work) {
             val session = WalletLink.newSession()
             try {
                 launchIntent(session.intent)
                 val derived = WalletLink.authorizeAndDerive(session)
-                vault.store(derived.passportSeed, derived.did, derived.walletAddress)
-                derived.passportSeed.fill(0)
+                val signedRaw = derived.walletSignedRawBytes
+                // Sealing is a different failure from signing, and blaming the wallet for
+                // a Keystore fault sent people back to the wallet indefinitely.
+                try {
+                    vault.store(derived.passportSeed, derived.did, derived.walletAddress)
+                } catch (t: Throwable) {
+                    if (t is CancellationException) throw t
+                    settle(
+                        Step.Create,
+                        StepState.Failed(
+                            summary = "The key could not be sealed in this phone's secure storage",
+                            publishedSomething = false,
+                            whatToDo = "Try again. If it keeps failing, restart the phone " +
+                                "and try once more. Nothing was sent anywhere.",
+                            detail = null,
+                        ),
+                    )
+                    return@launch
+                } finally {
+                    // Both are key material: the seed directly, and the signature it is
+                    // derived from, since everything else in the derivation is public.
+                    derived.passportSeed.fill(0)
+                    derived.walletSignature.fill(0)
+                }
                 did = derived.did
                 walletAddress = derived.walletAddress
                 settle(
@@ -421,15 +572,22 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                             "did" to derived.did,
                             "fingerprint" to DidKey.fingerprint(derived.did),
                             "wallet" to derived.walletAddress,
-                            "signed" to if (derived.walletSignedRawBytes) {
+                            "signed" to if (signedRaw) {
                                 "our exact bytes, no wallet prefix"
                             } else {
-                                "with a wallet prefix, which is fine and pinned"
+                                "with a wallet prefix - this Passport rebuilds only through this same wallet app"
                             },
                         ),
                     ),
                 )
+                // The same wallet gives the same key, so this may be a Passport that already
+                // exists in public: a reinstall, a second phone. Ask the server now, so the
+                // steps it already holds light up and the person is not invited to publish
+                // over their own note.
+                refreshFromServer()
+                refreshActivity(force = true)
             } catch (t: Throwable) {
+                if (t is CancellationException) throw t
                 settle(
                     Step.Create,
                     StepState.Failed(
@@ -450,7 +608,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         val identity = did ?: return
         if (flow.busy) return
         set(Step.Protect, StepState.Running("Sealing the key in this device's secure storage"))
-        viewModelScope.launch {
+        viewModelScope.launch(work) {
             try {
                 // A real check, not a claim: sign a throwaway string with the stored key and
                 // verify it against the DID. That proves the ciphertext decrypts, the
@@ -487,7 +645,13 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         ),
                     ),
                 )
+                // A restored Passport can reach this step with 03 and 04 already lit from
+                // the server; sealing the key was the last thing missing, so the ladder is
+                // done - it must not stop at 4/5 and offer a "first check-in".
+                settleReadyIfDue(identity)
             } catch (t: Throwable) {
+                if (t is CancellationException) throw t
+                if (did != identity) return@launch
                 settle(
                     Step.Protect,
                     StepState.Failed(
@@ -516,10 +680,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * stop renewing it. Exactly the failure this whole path exists to prevent, arrived at
      * from the other side.
      */
-    private fun noteValue(): String = PostComposer.identityNoteValue(
-        xPostUrl = share.xPostUrl.ifBlank { null },
-        room = CHECK_IN_ROOM,
-        contributionUrl = share.contributionUrl.ifBlank { null },
+    private fun noteValue(): String = Canonical.sweep(
+        PostComposer.identityNoteValue(
+            xPostUrl = share.xPostUrl.ifBlank { null },
+            room = CHECK_IN_ROOM,
+            contributionUrl = share.contributionUrl.ifBlank { null },
+        ),
     )
 
     /** What the person wrote about themselves, and where they put it. */
@@ -645,7 +811,17 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     fun syncFinishNudge(context: android.content.Context) {
         val unfinished = flow.complete && !nameLinked
         NudgePrefs(context).pending = unfinished
-        if (unfinished) FinishNudge.start(context) else FinishNudge.cancel(context)
+        when {
+            unfinished -> FinishNudge.start(context)
+            // Finished: stop, and forget how many were sent, so a Passport made again later
+            // gets the same help.
+            nameLinked -> FinishNudge.cancel(context, resetCount = true)
+            // Not finished, not linked - the ladder is still being restored from the
+            // server. Stop the alarm but keep the count: resetting it here, on every
+            // slow launch, gave a person who had heard all three reminders all three
+            // again.
+            else -> FinishNudge.cancel(context, resetCount = false)
+        }
     }
 
     val nameLinked: Boolean
@@ -665,17 +841,24 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         if (linkPublishing) return
         linkPublishing = true
         linkPublishError = null
-        viewModelScope.launch {
-            val ok = runCatching {
+        viewModelScope.launch(work) {
+            val outcome = runCatching {
                 val written = renewNote(identity)
                 if (written) keepNoteAlive(identity, activity.noteValue)
                 written
-            }.getOrDefault(false)
+            }
+            if (outcome.exceptionOrNull() is CancellationException || did != identity) return@launch
             linkPublishing = false
-            if (!ok) {
-                linkPublishError = "technocore.chat did not take the change. It refuses " +
-                    "writes when it is busy - press publish again in a moment. Your links " +
-                    "are saved on this phone either way."
+            // Two different failures, two different sentences: the service said no, or the
+            // phone could not reach it at all. Telling somebody with Wi-Fi off to wait for
+            // a busy server sends them looking in the wrong place.
+            when {
+                outcome.isFailure -> linkPublishError = "Could not reach technocore.chat. " +
+                    "Check your connection and press publish again. Your link is saved on " +
+                    "this phone either way."
+                outcome.getOrNull() == false -> linkPublishError = "technocore.chat did not " +
+                    "take the change. It refuses writes when it is busy - press publish " +
+                    "again in a moment. Your link is saved on this phone either way."
             }
             refreshActivity(force = true)
             // The one moment the app has earned the right to ask for anything: the link is
@@ -738,15 +921,32 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     // ---------------------------------------------------------------- 03 publish
     fun publish() {
         val identity = did ?: return
-        if (flow.busy) return
+        if (flow.busy || restoring) return
         set(Step.Publish, StepState.Running("Publishing your identity note to technocore.chat"))
-        viewModelScope.launch {
+        viewModelScope.launch(work) {
             try {
+                // Look before writing. The address may already hold this person's own note
+                // from before a reinstall, carrying the post link this phone has forgotten;
+                // writing without looking deleted that link from the public address. And
+                // if a valid signed line already vouches for exactly what is about to be
+                // written, another one is noise in a shared room.
+                val existing = technocore.readIdentityNote(identity)
+                val lines = technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                    .sortedByDescending { it.seq }
+                    .map { it.signedText }
+                if (did != identity) return@launch
+                if (DidNote.check(identity, existing, lines) == DidNote.Verdict.MATCHES) {
+                    adoptLinksFrom(existing)
+                }
                 val value = noteValue()
                 when (val r = technocore.publishIdentityNote(identity, value)) {
                     is Technocore.Result.Verified -> {
+                        if (did != identity) return@launch
                         NoteLife.recordWrite(getApplication())
-                        val vouched = vouchForNote(identity, value)
+                        val alreadyVouched =
+                            DidNote.check(identity, value, lines) == DidNote.Verdict.MATCHES
+                        val vouched = alreadyVouched || vouchForNote(identity, value)
+                        if (did != identity) return@launch
 
                         settle(
                             Step.Publish,
@@ -768,6 +968,23 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                                 ),
                             ),
                         )
+                        // A person re-publishing an expired note already has a check-in
+                        // behind them; without this the ladder asked them for a "first"
+                        // check-in they made weeks ago.
+                        if (flow[Step.CheckIn] is StepState.Verified &&
+                            flow[Step.Protect] is StepState.Verified
+                        ) {
+                            set(
+                                Step.Ready,
+                                StepState.Verified(
+                                    "Your Passport is live",
+                                    Evidence(
+                                        "identity" to identity,
+                                        "verify it yourself" to PostComposer.noteUrl(identity),
+                                    ),
+                                ),
+                            )
+                        }
                     }
 
                     is Technocore.Result.Refused -> settle(
@@ -794,6 +1011,8 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 }
             } catch (t: Throwable) {
+                if (t is CancellationException) throw t
+                if (did != identity) return@launch
                 settle(
                     Step.Publish,
                     StepState.Failed(
@@ -810,15 +1029,17 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     // ---------------------------------------------------------------- 04 check in
     fun checkIn() {
         val identity = did ?: return
-        if (flow.busy) return
+        if (flow.busy || restoring) return
         set(Step.CheckIn, StepState.Running("Signing your first check-in and sending it"))
-        viewModelScope.launch {
+        viewModelScope.launch(work) {
             try {
                 // A room is append-only and public. If this identity already has a message
                 // there, show that one rather than adding a second identical line - the
                 // duplicate cannot be taken back, and it is exactly what the lobby is full
                 // of.
-                technocore.findLatestMessage(CHECK_IN_ROOM, identity)?.let { existing ->
+                val existing = technocore.findLatestMessage(CHECK_IN_ROOM, identity)
+                if (did != identity) return@launch
+                existing?.let { existing ->
                     settle(
                         Step.CheckIn,
                         StepState.Verified(
@@ -858,7 +1079,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         text = checkInText(identity),
                         nonce = nonce,
                         sign = { vault.sign(it) },
-                    )
+                    ).also { if (did != identity) return@launch }
                 ) {
                     is Technocore.Result.Verified -> {
                         settle(
@@ -914,6 +1135,8 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 }
             } catch (t: Throwable) {
+                if (t is CancellationException) throw t
+                if (did != identity) return@launch
                 settle(
                     Step.CheckIn,
                     StepState.Failed(
@@ -971,6 +1194,13 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun deletePassport() {
+        // First, before anything else: whatever is in flight for the old identity must not
+        // finish into the new one.
+        work.cancel()
+        work = SupervisorJob()
+        restoring = false
+        restoreError = null
+        announce = null
         vault.delete()
         did = null
         walletAddress = null
@@ -993,7 +1223,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
         linkPublishError = null
         NoteLife.forget(getApplication())
         NudgePrefs(getApplication()).pending = false
-        FinishNudge.cancel(getApplication())
+        FinishNudge.cancel(getApplication(), resetCount = true)
     }
 
     /**

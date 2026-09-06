@@ -158,6 +158,11 @@ object DailyReminder {
             if (!PassportVault(context).hasPassport) return
 
             val daysSince = NoteLife.daysSinceWrite(context)
+            // No note has ever been written from this phone: the person is still at the
+            // early steps. "Sign a record now" would send them to a button that publishes
+            // the note behind their back, and the unfinished-setup reminders are the
+            // ones that cover this case.
+            if (daysSince == NoteLife.UNKNOWN) return
             val urgency = NoteLife.urgency(daysSince)
             if (urgency == NoteLife.Urgency.SILENT) return
 
@@ -178,16 +183,16 @@ object DailyReminder {
             when (urgency) {
                 NoteLife.Urgency.LOST -> {
                     title = tr("Your identity note has been deleted")
-                    text = tr("Seven days without opening the app. Open it now and the note goes back up.")
+                    text = tr("Seven days without opening the app. Open it and press publish; the note goes back to the same address.")
                     detail = tr(
                         "Your Passport itself is not lost: the same wallet still gives the " +
-                            "same identity, and signing a record now publishes the note " +
-                            "back to the same address.",
+                            "same identity, and publishing again puts the note back at " +
+                            "the same address.",
                     )
                 }
                 NoteLife.Urgency.WARNING -> {
                     title = tr("Your identity note expires soon")
-                    text = tr(NoteLife.countdown(daysSince))
+                    text = tr(NoteLife.countdown(NoteLife.daysLeft(context)))
                     detail = tr(
                         "technocore.chat deletes anything with no write for seven days. " +
                             "Opening this app rewrites your note, and so does signing a " +
@@ -199,11 +204,12 @@ object DailyReminder {
                     // needs no promise behind it. Everything else can be caught up on
                     // later: the key, the note, the post. A date cannot.
                     title = tr("Today cannot be added later")
-                    text = tr("Sign a record now and this day is on your history for good.")
+                    text = tr("If you did something today, sign a record for it now.")
                     detail = tr(
-                        "FLOP asked agents to do something useful. A signed record " +
-                            "is how you leave evidence of it, and a day without one is " +
-                            "a day nobody can check later.",
+                        "A signed record is dated evidence that you were here. A day " +
+                            "without one cannot be added later, and signing also keeps " +
+                            "your identity note alive. Nothing here promises anything " +
+                            "about any allocation.",
                     )
                 }
             }

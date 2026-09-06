@@ -58,6 +58,9 @@ private val TABLES: Map<Lang, Map<String, String>> = mapOf(
 class Translator(val lang: Lang) {
     private val table = TABLES[lang].orEmpty()
 
+    /** The language's own casing rules, for labels drawn in capitals. */
+    val locale: Locale = if (lang == Lang.EN) Locale.ROOT else Locale.forLanguageTag(lang.code)
+
     /** Translate, falling back to the English sentence that was passed in. */
     operator fun invoke(english: String): String = table[english] ?: english
 }
@@ -75,6 +78,19 @@ val LocalTranslator = compositionLocalOf { Translator(Lang.EN) }
  */
 @Composable
 fun t(english: String): String = LocalTranslator.current(english)
+
+/**
+ * Translate and capitalise for a label, by the language's own rules.
+ *
+ * `uppercase()` alone follows the invariant locale, which turns Turkish "için" into "IÇIN"
+ * with a dotless I where the language writes "İÇİN". Every label, badge and tab in the app
+ * is drawn in capitals, so a Turkish reader met the mistake on every screen.
+ */
+@Composable
+fun tu(english: String): String {
+    val translator = LocalTranslator.current
+    return translator(english).uppercase(translator.locale)
+}
 
 /**
  * Translate a sentence that has a name or a token in it.
