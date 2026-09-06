@@ -215,6 +215,23 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     daysSinceNoteWrite = NoteLife.daysSinceWrite(getApplication()),
                     noteDaysLeft = NoteLife.daysLeft(getApplication()),
                 )
+                // The note is back from the server, so `nameLinked` can finally answer
+                // truthfully - and this is the only place in the app where that is so.
+                //
+                // Every other caller asks a moment too early: it starts this read and then
+                // judges the finish against the note this phone was holding beforehand,
+                // which on the one run that matters is the note from before the link went
+                // into it. The invitation was refused there by its own guard, silently, and
+                // nothing asked again once the answer landed - so the one moment this app
+                // earns the right to ask for anything, it never did. Reported from the
+                // phone: not seen once, through a whole finished setup.
+                //
+                // Asking here asks after the answer exists. Both halves of a launch now ask
+                // when their own half lands - the ladder where the server describes it, the
+                // note here - so whichever finishes last finds the other already in place.
+                // The guard inside still decides whether it is due, and the once-per-install
+                // flag still means once.
+                offerSupportInvite()
                 // Turning up counts. Somebody who opens the app to look at their history
                 // has proved they are still here, and one idempotent write buys them
                 // another seven days - so the note outlives every user who keeps the app
