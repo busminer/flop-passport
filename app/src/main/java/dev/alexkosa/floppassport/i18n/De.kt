@@ -16,9 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val DE_STRINGS: Map<String, String> = mapOf(
-    "06  last step" to "06  letzter Schritt",
     "06  tell them" to "06  weitersagen",
-    "06  tell them  ·  last step" to "06  sag es weiter  ·  letzter Schritt",
     "5 of 6" to "5 von 6",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Noch ein paar Worte, dann gehört sie dir. Ein echter Satz genügt.",
@@ -26,16 +24,8 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Ein paar Erinnerungen an den letzten Schritt, dann hören sie auf.",
     "A little too long. Trim it and the whole post fits, key included." to
         "Etwas zu lang. Kürze es, dann passt der ganze Beitrag, Schlüssel inklusive.",
-    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
-        "Eine von Ihrem Passport signierte Nachricht, die in einem ruhigen Raum veröffentlicht und anschließend zurückgelesen wird, um ihre Ankunft zu belegen.",
-    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
-        "Eine mit deinem Passport signierte Nachricht, in einen stillen Raum gestellt und danach zurückgelesen, um zu beweisen, dass sie angekommen ist. Derselbe Dienst wie in Schritt 03, dieselbe Regel: lehnt er ab, drücke noch einmal. Es ist ihre Last, nicht dein Schlüssel.",
     "A once-a-day reminder to leave today's signed record." to
         "Eine tägliche Erinnerung, den heutigen signierten Eintrag zu hinterlassen.",
-    "A permanent note at an address derived from your key, so anyone can find and verify you later." to
-        "Eine dauerhafte Notiz unter einer von Ihrem Schlüssel abgeleiteten Adresse, damit Sie später jeder finden und verifizieren kann.",
-    "A public note at an address derived from your key, so anyone can find and verify you later." to
-        "Eine öffentliche Notiz unter einer aus Ihrem Schlüssel abgeleiteten Adresse, damit jeder Sie später finden und verifizieren kann.",
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "Eine öffentliche Notiz an einer aus deinem Schlüssel berechneten Adresse, damit man dich später finden und prüfen kann. Dieser Schritt geht an technocore.chat, den öffentlichen Dienst von jemand anderem: wenn er ausgelastet ist, lehnt er ab, und die Antwort darauf ist, noch einmal zu drücken. Zwei oder drei Versuche sind normal und heißen, dass mit deinem Telefon alles in Ordnung ist.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
@@ -48,7 +38,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Accepted, but we could not read it back yet" to
         "Akzeptiert, aber noch nicht zurückgelesen",
     "Activity" to "Aktivität",
-    "All five done" to "Alle fünf erledigt",
     "All six done" to "Alle sechs erledigt",
     "Already checked in, found in the room" to "Eintrag bereits erstellt und im Raum gefunden",
     "Already published, read back just now" to
@@ -80,23 +69,11 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Create your Passport" to "Erstellen Sie Ihren Passport",
     "Create your Passport first. There is nothing to show until something has been signed." to
         "Erstellen Sie zuerst Ihren Passport. Solange nichts signiert wurde, gibt es nichts anzuzeigen.",
-    "Created my FLOP Passport on a Solana Seeker." to
-        "Meinen FLOP Passport auf einem Solana Seeker erstellt.",
     "Daily activity" to "Tägliche Aktivität",
     "Daily reminder" to "Tägliche Erinnerung",
     "Delete it?" to "Löschen?",
-    "Delete the Passport and create it again from your wallet." to
-        "Löschen Sie den Passport und erstellen Sie ihn erneut aus Ihrer Wallet.",
-    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
-        "Nach sieben Tagen ohne Eintrag gelöscht. Signiere jetzt einen und sie erscheint wieder unter derselben Adresse.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Beim Löschen wird der Passport nur von diesem Telefon entfernt. Bereits veröffentlichte Inhalte können öffentlich bleiben, und dieselbe Wallet stellt dieselbe Identität wieder her - dies macht also nichts rückgängig.",
-    "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
-        "Beim Löschen wird der Passport nur von diesem Telefon entfernt. Bereits Veröffentliches bleibt öffentlich, und dieselbe Wallet stellt dieselbe Identität wieder her - damit lässt sich nichts rückgängig machen.",
-    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
-        "Aus einer Seed Vault-Signatur abgeleitet und auf dem Gerät durch StrongBox versiegelt.",
-    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
-        "Aus einer Signatur abgeleitet, die meine Wallet in Seed Vault erstellt hat, dann durch StrongBox versiegelt.",
     "Did you post it?" to "Hast du es gepostet?",
     "Every language listed here has a full translation." to
         "Jede hier aufgeführte Sprache ist vollständig übersetzt.",
@@ -106,22 +83,12 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to
         "FLOP Passport für Seeker - private Sicherung",
     "FLOP Passport for Seeker by @AlexKosa1" to "FLOP Passport für Seeker von @AlexKosa1",
-    "FLOP Passport for Seeker. First signed check-in." to
-        "FLOP Passport für Seeker. Erster signierter Eintrag.",
     "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
         "FLOP hat Agenten um nützliche Arbeit gebeten. Ein signierter Eintrag ist der Beleg, den du davon hinterlässt, und ein Tag ohne einen ist ein Tag, den später niemand prüfen kann.",
-    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
-        "FLOP hat Agenten gebeten, etwas Nützliches zu tun. Ein signierter Eintrag belegt, dass Sie es getan haben, und ein Tag ohne Eintrag kann später von niemandem überprüft werden.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
         "FLOP hat Agenten um zwei Dinge gebeten: einen einzigartigen Schlüssel zu erstellen und etwas Sinnvolles zu tun, um Technocore bekannter zu machen. Die fünf Schritte oben haben das Erste erledigt. Das Zweite kann dir niemand abnehmen, deshalb schreibt die App den Beitrag und du entscheidest, ob du ihn veröffentlichst.",
     "Identity derived from your wallet signature" to
         "Aus Ihrer Wallet-Signatur abgeleitete Identität",
-    "Identity note published, first check in signed and verified on Technocore." to
-        "Identitätsnotiz veröffentlicht, erster Eintrag signiert und auf Technocore verifiziert.",
-    "Identity note published, first check in verified on Technocore." to
-        "Identitätsnotiz veröffentlicht, erster Eintrag auf Technocore verifiziert.",
-    "Identity note published, first check in verified." to
-        "Identitätsnotiz veröffentlicht, erster Eintrag verifiziert.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Falls sie doch gelöscht wird, ist dein Passport nicht weg: Dieselbe Wallet erzeugt weiterhin dieselbe Identität. Wenn du einen Eintrag signierst, wird die Notiz wieder unter derselben Adresse veröffentlicht.",
     "In one line: what you did, or why you set this up" to
@@ -130,24 +97,13 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Die App fragt niemals nach der Wiederherstellungsphrase Ihrer Wallet.",
     "It promises nothing about any airdrop, and never will." to
         "Sie verspricht nichts in Bezug auf einen Airdrop und wird dies niemals tun.",
-    "It will be deleted after seven days without a record." to
-        "Sie wird nach sieben Tagen ohne Eintrag gelöscht.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Bewahren Sie diese Datei offline auf. Senden Sie sie niemals an jemanden, auch nicht an den App-Autor.",
-    "Keep your record going" to "Setzen Sie Ihre Aufzeichnung fort",
-    "Key born in Seed Vault, sealed by StrongBox on device." to
-        "Schlüssel in Seed Vault erzeugt und auf dem Gerät durch StrongBox versiegelt.",
     "Language" to "Sprache",
     "Last reminder about this one." to "Letzte Erinnerung dazu.",
-    "Leave it blank and the post still works. It just says less." to
-        "Lass das Feld leer, und der Post funktioniert trotzdem. Er sagt dann nur weniger.",
-    "Leave today's signed record on Technocore." to
-        "Hinterlassen Sie den heutigen signierten Eintrag auf Technocore.",
     "Link to what you built, if there is one" to "Link zu deinem Projekt, falls vorhanden",
     "Link to your post" to "Link zu deinem Post",
     "Make your first signed check-in" to "Erstellen Sie Ihren ersten signierten Eintrag",
-    "My FLOP Passport, created on a Solana Seeker." to
-        "Mein FLOP Passport, erstellt auf einem Solana Seeker.",
     "Next: create your Passport from your wallet." to
         "Als Nächstes: Erstellen Sie Ihren Passport aus Ihrer Wallet.",
     "Next: make your first signed check-in." to
@@ -172,28 +128,17 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
         "Nichts ist kaputt und nichts ist verloren. Dein Passport funktioniert. Wenn du seine öffentliche Hälfte willst, wartet Schritt 06 dort, wo du ihn gelassen hast.",
     "Nothing signed today yet." to "Heute wurde noch nichts signiert.",
-    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
-        "Ein Satz in deinen eigenen Worten. Tausende Beiträge, die sich nur durch einen Schlüssel unterscheiden, werden als Farming gelesen, und das trifft die, die die Arbeit gemacht haben.",
     "One step left" to "Ein Schritt fehlt",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Es werden nur Sprachen mit einer echten Übersetzung aufgeführt. Eine Auswahl, deren Sprachen alle auf Englisch angezeigt werden, würde Ihre Sprache als unterstützt angeben und auf dem nächsten Bildschirm das Gegenteil zeigen.",
     "Opening a connection" to "Verbindung wird hergestellt",
     "Opening your Solana wallet" to "Ihre Solana-Wallet wird geöffnet",
-    "Optional, and the part that actually counts." to
-        "Optional, aber der Teil, der wirklich zählt.",
-    "Passport at risk" to "Passport gefährdet",
     "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
         "Füge den Link hier ein, und dein Name hängt dauerhaft an deinem Schlüssel. Das ist der Teil, den man später machen will und dann nicht macht.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Füge den Link zu deinem Post ein. Er kommt in deine Identitätsnotiz, sodass die Notiz auf den Post verweist und der Post den Schlüssel enthält. Dann kann jeder beide Seiten mit demselben Schlüssel prüfen.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
         "Poste deine Zeile und komm zurück, um den Link einzufügen. Das ist es, was deinen Namen an deinen Schlüssel heftet, und es ist die Hälfte, um die FLOP Agenten gebeten hat.",
-    "Press Create again. Nothing was sent anywhere." to
-        "Drücken Sie erneut auf Erstellen. Es wurde nichts versendet.",
-    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
-        "Drücke noch einmal auf eintragen. technocore.chat ist ein öffentlicher Dienst und lehnt Schreibvorgänge ab, wenn er ausgelastet ist. Mit dieser App, deinem Telefon oder deinem Schlüssel hat das nichts zu tun. Zwei oder drei Versuche sind normal. Es wurde nichts gepostet.",
-    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
-        "Drücke noch einmal auf veröffentlichen. technocore.chat ist ein öffentlicher Dienst und lehnt Schreibvorgänge ab, wenn er ausgelastet ist. Mit dieser App, deinem Telefon oder deinem Schlüssel hat das nichts zu tun. Zwei oder drei Versuche sind normal. Es wurde nichts veröffentlicht.",
     "Protect" to "Schützen",
     "Protect it" to "Schützen",
     "Publish" to "Veröffentlichen",
@@ -223,10 +168,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "Ihr signierter Datensatz wird gesendet",
     "Sent, but not confirmed in the room yet" to "Gesendet, aber im Raum noch nicht bestätigt",
     "Settings" to "Einstellungen",
-    "Seven days without a record. Open the app to publish it again." to
-        "Sieben Tage ohne Eintrag. Öffne die App, um sie erneut zu veröffentlichen.",
-    "Shipped a Technocore client for the Seeker" to
-        "Einen Technocore-Client für den Seeker veröffentlicht",
     "Show your private key" to "Privaten Schlüssel anzeigen",
     "Sign a record now and this day is on your history for good." to
         "Signiere jetzt einen Eintrag, und dieser Tag steht dauerhaft in deiner Geschichte.",
@@ -243,16 +184,10 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Das sieht nicht wie ein Link zu einem Post aus. Er sollte so aussehen: https://x.com/you/status/123.",
     "That does not look like a link. It should start with https://" to
         "Das sieht nicht wie ein Link aus. Er sollte mit https:// beginnen",
-    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
-        "Das war der letzte Schritt. Dein Passport ist aktiv. Eine Sache fehlt noch, und genau darum hat FLOP gebeten: Erzähle anderen, was du gemacht hast. Die App schreibt den Beitrag unten auf diesem Bildschirm für dich.",
     "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
         "Die fünf Schritte haben deine Identität gebaut. Außerhalb dieses Telefons weiß noch niemand, dass sie dir gehört. Schritt 06 unten: schreib eine Zeile, poste sie, komm zurück und füge den Link ein. Dieser letzte Teil stellt deinen Namen dauerhaft neben deinen Schlüssel, und genau dort hören die meisten auf.",
-    "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
-        "Die Identität entsteht in Seed Vault und wird auf dem Telefon durch StrongBox versiegelt.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Der Schlüssel wird im sicheren Speicher dieses Telefons versiegelt, dann zurückgelesen und mit Ihrer Identität abgeglichen.",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
-        "Der Link, den du einfügst, geht in deine Identitätsnotiz, an eine aus deinem eigenen Schlüssel abgeleitete Adresse. Räume werden binnen eines Tages geleert, die Notiz nicht.",
     "The manual" to "Das Handbuch",
     "The server is busy. Trying again." to "Der Server ist beschäftigt. Neuer Versuch.",
     "The stored key does not match your identity" to
@@ -267,8 +202,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Diese App ist kostenlos und quelloffen, und niemand hat dafür bezahlt. Wenn sie Ihnen einen Nachmittag erspart hat, ist ein Trinkgeld willkommen.",
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
         "Diese App ist kostenlos und quelloffen. Wenn sie nützlich war, können Sie {name} ein Trinkgeld senden. Ihre Wallet öffnet sich, und den Betrag wählen Sie dort.",
-    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
-        "Diese App ist kostenlos und es gibt nichts zu kaufen. Wenn sie dir geholfen hat, kannst du dich bei kosa.skr bedanken.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Diese App schreibt deine Notiz jedes Mal neu, wenn du sie öffnest oder einen Eintrag signierst. Dadurch beginnen die sieben Tage erneut. Öffne sie mindestens einmal pro Woche, dann geht nichts verloren.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -282,9 +215,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Told only when your identity note is days away from being deleted." to
         "Du wirst nur benachrichtigt, wenn deine Identitätsnotiz kurz vor dem Löschen steht.",
     "Tomorrow is the last day." to "Morgen ist der letzte Tag.",
-    "Try again. Nothing was posted." to "Versuchen Sie es erneut. Es wurde nichts eingestellt.",
-    "Try again. Nothing was published." to
-        "Versuchen Sie es erneut. Es wurde nichts veröffentlicht.",
     "Two days left before it is deleted." to "Noch zwei Tage, bevor sie gelöscht wird.",
     "Unfinished setup" to "Unfertige Einrichtung",
     "Use the phone's language" to "Sprache des Telefons verwenden",
@@ -292,7 +222,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Betrachten Sie dies nicht als Fehler.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Warten Sie einen Moment und drücken Sie erneut, um nochmals zu prüfen. Als neue Nachricht gesendet, würde der Eintrag zweimal öffentlich erscheinen.",
-    "What did you actually do?" to "Was hast du tatsächlich gemacht?",
     "What is still provable" to "Was weiterhin nachweisbar ist",
     "What recovery without a seed phrase costs" to
         "Was die Wiederherstellung ohne Seed-Phrase kostet",
@@ -313,19 +242,13 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "Sie haben heute bereits einen Eintrag hinterlassen.",
     "You're all set" to "Alles ist bereit",
     "Your Passport has no name on it" to "Auf deinem Passport steht kein Name",
-    "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
-        "Ihr Passport entsteht in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, aus dem kein Schlüssel extrahiert werden kann. Auf diesem Telefon wird er anschließend durch den sicheren Speicher von Android versiegelt. Das Signieren selbst erfolgt in der App, nicht in der Hardware, da Android Keystore diesen Schlüsseltyp nicht speichern kann - daher sagen wir in Hardware versiegelt, nicht signiert.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
         "Ihr Passport wird aus einer Signatur abgeleitet, die Ihre Wallet in Seed Vault, dem Hardware-Schlüsselspeicher des Seeker, erstellt. Der Wallet-Schlüssel verlässt diese Hardware nie. Der Passport-Schlüssel wird in dieser App aus der Signatur berechnet und dann durch den sicheren Speicher von Android versiegelt - in Hardware versiegelt, nicht signiert, da Android Keystore diese Art von Schlüssel nicht speichern kann.",
     "Your Passport is live" to "Ihr Passport ist aktiv",
-    "Your Passport is live and it is yours." to "Dein Passport ist aktiv und gehört dir.",
-    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
-        "Dein Passport ist aktiv und gehört dir. Eines fehlt noch, und es ist genau das, worum FLOP gebeten hat: sag es öffentlich und verlinke es zurück. Schritt 06 unten.",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
         "Ihr Passport ist aktiv und Ihr erster signierter Eintrag befindet sich auf Technocore. Jeder kann ihn verifizieren, und er bleibt Ihrer.",
     "Your Passport is live, it is yours, and your name is on it." to
         "Dein Passport ist aktiv, er gehört dir, und dein Name steht darauf.",
-    "Your Passport is live." to "Ihr Passport ist aktiv.",
     "Your Passport is live. One step left." to "Dein Passport ist aktiv. Ein Schritt fehlt noch.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Ihr Passport wird aus einer einzigen Wallet-Signatur wiederhergestellt — deshalb gibt es keine Seed-Phrase, die verloren gehen kann. Das gilt auch umgekehrt: jede App, die Ihre Wallet dazu bringt, genau diesen Satz zu signieren, kann diesen Passport wiederherstellen. Lesen Sie, was eine Wallet Sie signieren lässt, hier und überall sonst.",
@@ -335,7 +258,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "Your identity note has been deleted" to "Deine Identitätsnotiz wurde gelöscht",
     "Your key is never sent anywhere. Only you can export it." to
         "Ihr Schlüssel wird niemals übertragen. Nur Sie können ihn exportieren.",
-    "Your key never leaves this phone." to "Ihr Schlüssel verlässt dieses Telefon nie.",
     "Your key signed a line carrying this note's exact hash." to
         "Ihr Schlüssel hat eine Zeile mit dem exakten Hash dieser Notiz signiert.",
     "Your note has to be kept alive" to "Deine Notiz muss aktiv bleiben",
@@ -381,7 +303,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "language {code}" to "Sprache {code}",
     "last connection" to "letzte verbindung",
     "linked" to "Verknüpft",
-    "live" to "aktiv",
     "live records" to "aktive Einträge",
     "matched on our nonce, not just our key" to
         "anhand unserer Nonce abgeglichen, nicht nur unseres Schlüssels",
@@ -410,7 +331,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "records the server still holds" to "Einträge, die der Server noch vorhält",
     "recovery" to "wiederherstellung",
     "room" to "raum",
-    "save my key" to "meinen Schlüssel speichern",
     "save to a file" to "in Datei speichern",
     "say it another way" to "anders formulieren",
     "self test" to "Selbsttest",
@@ -430,8 +350,6 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
     "technocore.chat answered" to "technocore.chat hat geantwortet",
     "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
         "technocore.chat löscht alles, worauf sieben Tage lang niemand geschrieben hat. Das gilt auch für die Identitätsnotiz unter der Adresse, die du speicherst und teilst.",
-    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
-        "technocore.chat löscht alles, worauf sieben Tage lang nichts geschrieben wurde. Wenn du heute signierst, wird deine Notiz neu geschrieben und die sieben Tage beginnen erneut.",
     "technocore.chat refused the note" to "technocore.chat hat die Notiz abgelehnt",
     "technocore.chat refused the signed write" to
         "technocore.chat hat den signierten Eintrag abgelehnt",
@@ -480,4 +398,44 @@ internal val DE_STRINGS: Map<String, String> = mapOf(
         "technocore.chat hat die Änderung nicht angenommen. Der Dienst weist Schreibzugriffe ab, wenn er ausgelastet ist - tippe gleich noch einmal auf veröffentlichen. Deine Links sind ohnehin auf diesem Telefon gespeichert.",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "Noch nicht fertig. Dein Passport ist erst aktiv, wenn alle fünf grün sind, und es gibt nichts Vollständiges, das jemand prüfen könnte. Mach weiter.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
+        "Eine von deinem Passport signierte Nachricht, in einen stillen Raum geschrieben und danach zurückgelesen, um zu beweisen, dass sie angekommen ist. Derselbe Dienst wie in Schritt 03 und dieselbe Regel: wenn er ablehnt, drück noch einmal. Das ist der Dienst, der ausgelastet ist, kein Problem mit deinem Schlüssel.",
+    "Deleted after seven days with nothing written to it. Publish it now and it goes back to the same address." to
+        "Wird nach sieben Tagen ohne einen Schreibzugriff gelöscht. Veröffentliche sie jetzt, und sie steht wieder an derselben Adresse.",
+    "Identity note at risk" to
+        "Identitätsnotiz in Gefahr",
+    "In Settings, delete the Passport from this phone, then create it again from your wallet." to
+        "Lösche den Passport in den Einstellungen von diesem Telefon und leg ihn aus deiner Wallet neu an.",
+    "It is deleted after seven days with nothing written to it. Opening this app writes it." to
+        "Sie wird nach sieben Tagen ohne einen Schreibzugriff gelöscht. Diese App zu öffnen ist ein solcher Schreibzugriff.",
+    "Maybe. The service accepted it, and this app could not read it back to be sure." to
+        "Vielleicht. Der Dienst hat es angenommen, aber diese App konnte es nicht zurücklesen, um sicher zu sein.",
+    "Seven days without opening the app. Open it now and the note goes back up." to
+        "Sieben Tage, ohne dass die App geöffnet wurde. Öffne sie jetzt, und die Notiz steht wieder oben.",
+    "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Das war der letzte der fünf. Dein Passport ist aktiv. Eines fehlt noch, und es ist genau das, worum FLOP gebeten hat: erzähl den Leuten, was du gemacht hast. Den Beitrag schreibt die App für dich, unten auf diesem Bildschirm.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
+        "Der Link, den du einfügst, kommt in deine Identitätsnotiz, an einer Adresse, die aus deinem eigenen Schlüssel berechnet wird. Räume werden binnen eines Tages geleert. Die Notiz bleibt, solange du die App weiter öffnest.",
+    "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
+        "Diese App ist kostenlos, und es gibt nichts darin zu kaufen. Wenn sie nützlich war, kann ein Dankeschön an kosa.skr gehen.",
+    "checking" to
+        "wird geprüft",
+    "open notification settings" to
+        "Benachrichtigungseinstellungen öffnen",
+    "send a tip to kosa.skr" to
+        "Trinkgeld an kosa.skr senden",
+    "show my private key" to
+        "meinen privaten Schlüssel anzeigen",
+    "step {n} {title} not confirmed yet" to
+        "Schritt {n} {title} noch nicht bestätigt",
+    "technocore.chat deletes anything with no write for seven days. Opening this app rewrites your note, and so does signing a record. Either one starts the seven days again." to
+        "technocore.chat löscht alles, in das sieben Tage lang niemand geschrieben hat. Diese App zu öffnen schreibt deine Notiz neu, und einen Eintrag zu signieren ebenfalls. Beides startet die sieben Tage von vorn.",
+    "This phone has no screen lock set up. Add a PIN or a fingerprint first." to
+        "Auf diesem Telefon ist keine Bildschirmsperre eingerichtet. Richte zuerst eine PIN oder einen Fingerabdruck ein.",
+    "The server accepted the write but the message is not in the room yet. Do not resend: read the room again first." to
+        "Der Server hat den Schreibzugriff angenommen, aber die Nachricht ist noch nicht im Raum. Nicht erneut senden: lies zuerst den Raum noch einmal.",
+    "The stored text differs from the text we signed" to
+        "Der gespeicherte Text stimmt nicht mit dem überein, den wir signiert haben",
+    "The stored record did not verify against this key" to
+        "Der gespeicherte Eintrag lässt sich mit diesem Schlüssel nicht bestätigen",
 )

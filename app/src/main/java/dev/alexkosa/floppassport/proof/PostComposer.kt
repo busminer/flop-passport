@@ -101,23 +101,23 @@ object PostComposer {
      */
     val VOICES: List<Voice> = listOf(
         Voice(
-            opener = "My identity on Technocore. Stored nowhere, written down nowhere.",
+            opener = "My identity on Technocore. Nothing to back up, nothing to write down.",
             mechanism = "No seed phrase. My wallet signed one line in Seed Vault, Solana Mobile's key store.",
             brief = "One Seed Vault signature on a Solana Mobile Seeker. No seed phrase.",
-            closer = "It works only because Seed Vault signs the exact bytes it is handed.",
+            closer = "It works because Seed Vault signs the exact bytes it is handed.",
             example = "I want what I post on Technocore to be provably mine.",
         ),
         Voice(
             opener = "Wipe this phone and the same identity comes back.",
-            mechanism = "Not stored anywhere. Computed from one signature inside Solana Mobile's Seed Vault.",
-            brief = "Computed inside Solana Mobile's Seed Vault, stored nowhere.",
+            mechanism = "Nothing to back up. Recomputed from one signature my wallet makes inside Solana Mobile's Seed Vault.",
+            brief = "Recomputed from one Solana Mobile Seed Vault signature. Nothing to back up.",
             closer = "Same wallet, same sentence, same key. Every time, on any device.",
             example = "Set this up to see whether an identity really survives losing the phone.",
         ),
         Voice(
             opener = "Nothing here to back up, and nothing anyone can take away.",
             mechanism = "This key was not generated. Solana Mobile's Seed Vault signed it into existence.",
-            brief = "Not generated. Derived inside Solana Mobile's Seed Vault.",
+            brief = "Not generated. Derived from a Solana Mobile Seed Vault signature.",
             closer = "Only possible because Seed Vault signs the exact bytes it is handed.",
             example = "I got tired of proving I am me with screenshots.",
         ),
@@ -125,12 +125,12 @@ object PostComposer {
             opener = "Anyone can check this key against what it signed. You included.",
             mechanism = "One line signed inside Seed Vault, the key store Solana Mobile ships on the Seeker.",
             brief = "Signed inside Seed Vault on a Solana Mobile Seeker.",
-            closer = "Most wallets wrap a message first. Seed Vault signs it exactly as given.",
+            closer = "Seed Vault signs the exact bytes it is handed, so the same line always gives the same key.",
             example = "My key is my name here now, and anyone can check it.",
         ),
         Voice(
             opener = "A key that still proves I am the same person tomorrow.",
-            mechanism = "Derived from one Seed Vault signature on my Solana Mobile Seeker. Nothing saved.",
+            mechanism = "Derived from one Seed Vault signature on my Solana Mobile Seeker. Nothing written down.",
             brief = "One Solana Mobile Seed Vault signature. Nothing written down.",
             closer = "Change one byte of that sentence and the key changes. That is the point.",
             example = "I translate FLOP threads for my community and wanted a key behind that.",

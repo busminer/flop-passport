@@ -1,5 +1,6 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.foundation.layout.heightIn
 import android.content.Intent
@@ -89,8 +90,8 @@ fun TellThemCard(vm: PassportViewModel) {
     // the limit, and X does not refuse those - it cuts them, most likely through the middle
     // of the key, which is the one thing in the post that has to survive whole.
     val ready = PostComposer.isRealSentence(vm.contributionLine) && draft.fits
-    var xField by remember { mutableStateOf(vm.xPostUrl) }
-    var contribField by remember { mutableStateOf(vm.contributionUrl) }
+    var xField by rememberSaveable { mutableStateOf(vm.xPostUrl) }
+    var contribField by rememberSaveable { mutableStateOf(vm.contributionUrl) }
     var problem by remember { mutableStateOf<String?>(null) }
     var askForLink by remember { mutableStateOf(false) }
 
@@ -149,7 +150,7 @@ fun TellThemCard(vm: PassportViewModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            FlopLabel("06  tell them  ·  last step")
+            FlopLabel("06  tell them")
             // Green only once the note came back from the server carrying the link. A URL
             // typed into a field on this phone is not evidence of anything to anyone else.
             if (vm.nameLinked) FlopBadge("linked", FlopState.Verified)
@@ -406,7 +407,7 @@ private fun FlopLinkPrompt(
                 .verticalScroll(rememberScrollState())
                 .padding(FlopSpacing.lg),
         ) {
-            FlopLabel("06  last step")
+            FlopLabel("06  tell them")
             Spacer(Modifier.height(FlopSpacing.sm))
             Text(
                 t("Did you post it?"),

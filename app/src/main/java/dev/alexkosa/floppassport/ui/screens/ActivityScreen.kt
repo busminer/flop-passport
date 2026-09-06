@@ -203,8 +203,8 @@ fun ActivityScreen(vm: PassportViewModel) {
                 Text(
                     when {
                         activity.noteValue == null && left == 0 -> t(
-                            "Deleted after seven days without a record. Sign one now and " +
-                                "it goes back to the same address.",
+                            "Deleted after seven days with nothing written to it. Publish it " +
+                                "now and it goes back to the same address.",
                         )
                         activity.daysSinceNoteWrite == 0 -> t(
                             "Renewed today. technocore.chat keeps it for seven days after " +
@@ -213,7 +213,8 @@ fun ActivityScreen(vm: PassportViewModel) {
                         )
                         left <= 3 -> t(NoteLife.countdown(activity.daysSinceNoteWrite))
                         else -> t(
-                            "It will be deleted after seven days without a record.",
+                            "It is deleted after seven days with nothing written to it. " +
+                                "Opening this app writes it.",
                         )
                     },
                     style = FlopType.bodySm,
@@ -244,7 +245,7 @@ fun ActivityScreen(vm: PassportViewModel) {
             Spacer(Modifier.height(FlopSpacing.sm))
         }
         FlopButtonSecondary(
-            if (activity.checking) "checking..." else "re-check with the server",
+            if (activity.checking) "checking" else "re-check with the server",
             { vm.refreshActivity() },
         )
 
@@ -321,15 +322,18 @@ fun ActivityScreen(vm: PassportViewModel) {
             val tipUri = remember { Qr.solanaPay(SUPPORT_WALLET, "FLOP Passport for Seeker", "Thanks for building this", SKR_MINT) }
             Text(
                 t("This app is free and there is nothing in it to buy. If it has been " +
-                    "useful, kosa.skr is where a thank you goes."),
+                    "useful, a thank you can go to kosa.skr."),
                 style = FlopType.bodySm,
-                color = FlopColors.Grey,
-                modifier = Modifier.clickable {
-                    runCatching {
-                        context.startActivity(Intent(Intent.ACTION_VIEW, tipUri.toUri()))
-                    }
-                },
+                color = FlopColors.TextMuted,
             )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            // It was a line of grey text that happened to open a payment. Anything that
+            // moves money looks like a button before it is pressed.
+            FlopButtonSecondary(t("send a tip to kosa.skr"), {
+                runCatching {
+                    context.startActivity(Intent(Intent.ACTION_VIEW, tipUri.toUri()))
+                }
+            })
         }
 
         Spacer(Modifier.height(FlopSpacing.xl))

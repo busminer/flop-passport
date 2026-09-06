@@ -172,6 +172,21 @@ fun SettingsScreen(
                 style = FlopType.bodySm,
                 color = FlopColors.TextSecondary,
             )
+            Spacer(Modifier.height(FlopSpacing.sm))
+            // Naming a setting and leaving somebody to hunt for it is half a sentence. The
+            // row opens the page it is talking about.
+            FlopButtonSecondary(t("open notification settings"), {
+                runCatching {
+                    context.startActivity(
+                        Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                            .putExtra(
+                                android.provider.Settings.EXTRA_APP_PACKAGE,
+                                context.packageName,
+                            )
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                    )
+                }
+            })
         }
 
         // --- the manual ---------------------------------------------------------------

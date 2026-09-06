@@ -1,5 +1,7 @@
 package dev.alexkosa.floppassport.ui.screens
 
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -58,7 +60,11 @@ fun AppShell(vm: PassportViewModel = viewModel()) {
     var chosen by remember { mutableStateOf(store.chosen) }
     val effective = chosen ?: Lang.fromSystem()
 
-    var tab by remember { mutableStateOf(Tab.Passport) }
+    var tab by rememberSaveable { mutableStateOf(Tab.Passport) }
+
+    // Back goes to the Passport tab before it leaves the app. Somebody who wandered into
+    // Settings and pressed Back expects the app, not the launcher.
+    BackHandler(tab != Tab.Passport) { tab = Tab.Passport }
 
     CompositionLocalProvider(LocalTranslator provides Translator(effective)) {
         Box(Modifier.fillMaxSize().background(FlopColors.Base)) {

@@ -104,7 +104,11 @@ private fun StepRow(
                 }
                 // While a step is talking to the service, show what the wire is actually
                 // doing. Naming the host is a claim; the milliseconds are the evidence.
-                if (state is StepState.Running) {
+                // Only for the steps that really are talking to a server. Create hands off
+                // to the wallet and Protect never leaves the phone; showing a CONNECTION
+                // panel with a stale ping under either one is the app narrating something
+                // that is not happening.
+                if (state is StepState.Running && step != Step.Create && step != Step.Protect) {
                     Spacer(Modifier.height(FlopSpacing.sm))
                     FlopWire(pulse = pulse, active = true)
                 }

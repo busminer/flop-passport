@@ -16,9 +16,7 @@ package dev.alexkosa.floppassport.i18n
  * spaces and entries left in English; the wording was then read through.
  */
 internal val TR_STRINGS: Map<String, String> = mapOf(
-    "06  last step" to "06  son adım",
     "06  tell them" to "06  onlara anlat",
-    "06  tell them  ·  last step" to "06  anlat  ·  son adım",
     "5 of 6" to "6 adımdan 5'i",
     "A few more words, and it is yours. One real sentence is all this needs." to
         "Birkaç kelime daha, ve satır senin olur. Tek bir gerçek cümle yeter.",
@@ -26,29 +24,20 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Son adım için birkaç hatırlatma, sonra kesiliyor.",
     "A little too long. Trim it and the whole post fits, key included." to
         "Biraz uzun oldu. Kısalt, o zaman anahtar dahil tüm gönderi sığar.",
-    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed." to
-        "Passport'ınız tarafından imzalanan, sakin bir odaya gönderilip ulaştığını kanıtlamak için geri okunan bir mesaj.",
-    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. It is their load, not your key." to
-        "Passport'unla imzalanmış bir mesaj sessiz bir odaya gönderilir, sonra ulaştığını kanıtlamak için geri okunur. 03. adımdaki hizmetin aynısı, kuralın da aynısı: reddederse tekrar bas. Bu onların yükü, senin anahtarın değil.",
     "A once-a-day reminder to leave today's signed record." to
         "Bugünün imzalı kaydını bırakmak için günde bir kez hatırlatma.",
-    "A permanent note at an address derived from your key, so anyone can find and verify you later." to
-        "Anahtarınızdan türetilen bir adreste kalıcı bir not; böylece daha sonra herkes sizi bulup doğrulayabilir.",
-    "A public note at an address derived from your key, so anyone can find and verify you later." to
-        "Anahtarınızdan türetilen bir adreste yayımlanan herkese açık bir not; böylece daha sonra herkes sizi bulabilir ve doğrulayabilir.",
     "A public note at an address derived from your key, so anyone can find and verify you later. This one goes to technocore.chat, which is someone else's public service: when it is busy it refuses, and pressing again is the answer. Two or three attempts is normal and means nothing is wrong with your phone." to
         "Anahtarından hesaplanan bir adreste kamuya açık bir not; böylece sonradan seni bulup doğrulayabilirler. Bu adım technocore.chat'e gider, yani başkasının kamuya açık hizmetine: yoğunken reddeder ve cevabı tekrar basmaktır. İki üç deneme normaldir ve telefonunda bir sorun olmadığı anlamına gelir.",
     "A signed record has to be left by hand, and a missed day cannot be filled in later. This is also the switch that warns you before your identity note is deleted." to
         "İmzalı bir kaydı kendiniz bırakmanız gerekir ve kaçırılan bir gün daha sonra tamamlanamaz. Bu ayar ayrıca kimlik notunuz silinmeden önce sizi uyarır.",
     "A tip changes nothing about your Passport and nothing about any airdrop." to
-        "Bahşiş, Passport'ınız veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez.",
+        "Bahşiş, Passport'unuz veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez.",
     "A tip changes nothing about your Passport, and nothing about any airdrop. It is a thank you, not a fee." to
-        "Bahşiş, Passport'ınız veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez. Bu bir teşekkürdür, ücret değildir.",
+        "Bahşiş, Passport'unuz veya herhangi bir airdrop hakkında hiçbir şeyi değiştirmez. Bu bir teşekkürdür, ücret değildir.",
     "About" to "Hakkında",
     "Accepted, but we could not read it back yet" to
         "Kabul edildi, ancak henüz geri okuyamadık",
     "Activity" to "Etkinlik",
-    "All five done" to "Beşi de tamam",
     "All six done" to "Altısı da tamam",
     "Already checked in, found in the room" to "Kayıt zaten bırakılmış, odada bulundu",
     "Already published, read back just now" to "Zaten yayımlanmış, az önce geri okundu",
@@ -76,26 +65,14 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Could not read the key back from secure storage" to
         "Anahtar güvenli depolamadan geri okunamadı",
     "Create" to "Oluştur",
-    "Create your Passport" to "Passport'ınızı oluşturun",
+    "Create your Passport" to "Passport'unuzı oluşturun",
     "Create your Passport first. There is nothing to show until something has been signed." to
-        "Önce Passport'ınızı oluşturun. Bir şey imzalanana kadar gösterilecek bir şey yok.",
-    "Created my FLOP Passport on a Solana Seeker." to
-        "FLOP Passport'ımı bir Solana Seeker üzerinde oluşturdum.",
+        "Önce Passport'unuzı oluşturun. Bir şey imzalanana kadar gösterilecek bir şey yok.",
     "Daily activity" to "Günlük etkinlik",
     "Daily reminder" to "Günlük hatırlatma",
     "Delete it?" to "Silinsin mi?",
-    "Delete the Passport and create it again from your wallet." to
-        "Passport'ı silin ve cüzdanınızdan yeniden oluşturun.",
-    "Deleted after seven days without a record. Sign one now and it goes back to the same address." to
-        "Yedi gün boyunca kayıt bırakılmadığı için silindi. Şimdi bir kayıt imzalarsanız aynı adrese geri gelir.",
     "Deleting removes the Passport from this phone only. Anything already published may stay public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
         "Silme işlemi Passport'ı yalnızca bu telefondan kaldırır. Daha önce yayımlanmış içerikler herkese açık kalabilir ve aynı cüzdan aynı kimliği yeniden oluşturur; dolayısıyla bu işlem hiçbir şeyi geri almaz.",
-    "Deleting removes the Passport from this phone only. Anything already published stays public, and the same wallet rebuilds the same identity - so this is not a way to undo anything." to
-        "Silme işlemi Passport'ı yalnızca bu telefondan kaldırır. Daha önce yayımlanan her şey herkese açık kalır ve aynı cüzdan aynı kimliği yeniden oluşturur; dolayısıyla bu, herhangi bir şeyi geri alma yolu değildir.",
-    "Derived from a Seed Vault signature, sealed by StrongBox on device." to
-        "Bir Seed Vault imzasından türetildi, cihazda StrongBox ile mühürlendi.",
-    "Derived from a signature my wallet made inside Seed Vault, then sealed by StrongBox." to
-        "Cüzdanımın Seed Vault içinde oluşturduğu bir imzadan türetildi, ardından StrongBox ile mühürlendi.",
     "Did you post it?" to "Paylaştın mı?",
     "Every language listed here has a full translation." to
         "Burada listelenen her dilin tam çevirisi vardır.",
@@ -105,21 +82,11 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "FLOP Passport for Seeker - private backup" to "Seeker için FLOP Passport - özel yedek",
     "FLOP Passport for Seeker by @AlexKosa1" to
         "@AlexKosa1 tarafından Seeker için FLOP Passport",
-    "FLOP Passport for Seeker. First signed check-in." to
-        "Seeker için FLOP Passport. İlk imzalı kayıt.",
     "FLOP asked agents to do something useful. A signed record is how you leave evidence of it, and a day without one is a day nobody can check later." to
         "FLOP ajanlardan faydalı bir şey yapmalarını istedi. İmzalı kayıt, bunu yaptığına dair bıraktığın izdir; kayıtsız bir gün ise sonradan kimsenin kontrol edemeyeceği bir gündür.",
-    "FLOP asked agents to do something useful. A signed record is what proves you did, and a day without one is a day nobody can check later." to
-        "FLOP, ajanlardan yararlı bir şey yapmalarını istedi. Bunu yaptığınızı imzalı bir kayıt kanıtlar; kayıtsız geçen bir günü daha sonra kimse doğrulayamaz.",
     "FLOP asked agents to do two things: create a unique key, and do something useful to spread the word about Technocore. The five steps above did the first. Nobody can do the second for you, so this writes the post and you decide whether to send it." to
         "FLOP aracılardan iki şey istedi: benzersiz bir anahtar oluşturmak ve Technocore’u duyurmak için faydalı bir şey yapmak. Yukarıdaki beş adım ilkini yaptı. İkincisini sizin yerinize kimse yapamaz, bu yüzden uygulama gönderiyi yazar ve gönderip göndermemeye siz karar verirsiniz.",
     "Identity derived from your wallet signature" to "Cüzdan imzanızdan türetilen kimlik",
-    "Identity note published, first check in signed and verified on Technocore." to
-        "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde imzalandı ve doğrulandı.",
-    "Identity note published, first check in verified on Technocore." to
-        "Kimlik notu yayımlandı, ilk kayıt Technocore üzerinde doğrulandı.",
-    "Identity note published, first check in verified." to
-        "Kimlik notu yayımlandı, ilk kayıt doğrulandı.",
     "If it does get deleted, your Passport is not gone: the same wallet still gives the same identity, and signing a record publishes the note back to the same address." to
         "Silinse bile Passport kaybolmaz: aynı cüzdan hâlâ aynı kimliği verir ve bir kayıt imzaladığınızda not aynı adreste yeniden yayımlanır.",
     "In one line: what you did, or why you set this up" to
@@ -128,26 +95,15 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Cüzdan kurtarma ifadenizi hiçbir zaman istemez.",
     "It promises nothing about any airdrop, and never will." to
         "Herhangi bir airdrop hakkında hiçbir söz vermez ve vermeyecektir.",
-    "It will be deleted after seven days without a record." to
-        "Yedi gün boyunca kayıt bırakılmazsa silinecek.",
     "Keep this file offline. Never send it to anyone, including the app author." to
         "Bu dosyayı çevrimdışı tutun. Uygulamanın yazarı dahil hiç kimseye göndermeyin.",
-    "Keep your record going" to "Kaydınızı sürdürün",
-    "Key born in Seed Vault, sealed by StrongBox on device." to
-        "Anahtar Seed Vault içinde oluşturuldu, cihazdaki StrongBox ile mühürlendi.",
     "Language" to "Dil",
     "Last reminder about this one." to "Bu konuda son hatırlatma.",
-    "Leave it blank and the post still works. It just says less." to
-        "Boş bıraksan da gönderi çalışır. Sadece daha az şey söyler.",
-    "Leave today's signed record on Technocore." to
-        "Bugünün imzalı kaydını Technocore üzerinde bırakın.",
     "Link to what you built, if there is one" to "Varsa, yaptığın şeyin bağlantısı",
     "Link to your post" to "Gönderinin bağlantısı",
     "Make your first signed check-in" to "İlk imzalı kaydınızı bırakın",
-    "My FLOP Passport, created on a Solana Seeker." to
-        "Bir Solana Seeker üzerinde oluşturduğum FLOP Passport.",
     "Next: create your Passport from your wallet." to
-        "Sırada: Passport'ınızı cüzdanınızdan oluşturun.",
+        "Sırada: Passport'unuzı cüzdanınızdan oluşturun.",
     "Next: make your first signed check-in." to "Sırada: İlk imzalı kaydınızı bırakın.",
     "Next: publish your identity so anyone can verify you." to
         "Sırada: Herkesin sizi doğrulayabilmesi için kimliğinizi yayımlayın.",
@@ -169,27 +125,17 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Nothing is broken and nothing is lost. Your Passport works. When you want the public half of it, step 06 is waiting where you left it." to
         "Bozulan bir şey yok, kaybolan bir şey de. Passport'un çalışıyor. Onun kamuya açık yarısını istediğinde, 06. adım bıraktığın yerde duruyor.",
     "Nothing signed today yet." to "Bugün henüz hiçbir şey imzalanmadı.",
-    "One sentence in your own words, please. Thousands of posts that differ only by a key get read as farming, and that lands on the people who did the work." to
-        "Lütfen kendi cümlenle bir satır yaz. Yalnızca anahtarı farklı olan binlerce gönderi çiftlik gibi okunur ve bunun bedelini işi gerçekten yapanlar öder.",
     "One step left" to "Bir adım kaldı",
     "Only languages with a real translation are listed. A picker offering languages that all render English would say your language is supported and then prove otherwise on the next screen." to
         "Yalnızca gerçek çevirisi olan diller listelenir. Tüm seçenekleri İngilizce gösteren bir dil seçici, dilinizin desteklendiğini söyler ancak sonraki ekranda bunun doğru olmadığını gösterir.",
     "Opening a connection" to "Bağlantı açılıyor",
     "Opening your Solana wallet" to "Solana cüzdanınız açılıyor",
-    "Optional, and the part that actually counts." to "İsteğe bağlı, ama asıl önemli olan bu.",
-    "Passport at risk" to "Passport risk altında",
     "Paste the link here and your name is attached to your key for good. This is the part people mean to do later and then do not." to
         "Bağlantıyı buraya yapıştır, adın anahtarına kalıcı olarak bağlansın. Bu, insanların sonra yaparım deyip yapmadığı kısım.",
     "Paste the link to your post. It goes into your identity note, so the note points at the post and the post carries the key. Anyone can then check both ends against one key." to
         "Gönderinin bağlantısını yapıştır. Kimlik notuna eklenir; böylece not gönderiyi gösterir, gönderi de anahtarı taşır. Sonra herkes iki ucu da aynı anahtarla kontrol edebilir.",
     "Post your line, then come back and paste the link. That is what attaches your name to your key, and it is the half FLOP asked agents for." to
         "Satırını paylaş, sonra geri gelip bağlantıyı yapıştır. Adını anahtarına bağlayan şey budur ve FLOP'un ajanlardan istediği yarı da budur.",
-    "Press Create again. Nothing was sent anywhere." to
-        "Oluştur'a yeniden basın. Hiçbir yere hiçbir şey gönderilmedi.",
-    "Press check in again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was posted." to
-        "Giriş yap'a tekrar bas. technocore.chat kamuya açık bir hizmettir ve yoğunken yazma isteklerini reddeder; bunun bu uygulamayla, telefonunla ya da anahtarınla ilgisi yoktur. İki üç deneme normaldir. Hiçbir şey gönderilmedi.",
-    "Press publish again. technocore.chat is a public service and it refuses writes when it is busy, which has nothing to do with this app, your phone or your key. Two or three attempts is normal. Nothing was published." to
-        "Yayımla'ya tekrar bas. technocore.chat kamuya açık bir hizmettir ve yoğunken yazma isteklerini reddeder; bunun bu uygulamayla, telefonunla ya da anahtarınla ilgisi yoktur. İki üç deneme normaldir. Hiçbir şey yayımlanmadı.",
     "Protect" to "Koru",
     "Protect it" to "Onu koruyun",
     "Publish" to "Yayımla",
@@ -219,10 +165,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Sending your signed record" to "İmzalı kaydınız gönderiliyor",
     "Sent, but not confirmed in the room yet" to "Gönderildi, ancak odada henüz doğrulanmadı",
     "Settings" to "Ayarlar",
-    "Seven days without a record. Open the app to publish it again." to
-        "Yedi gün boyunca kayıt bırakılmadı. Yeniden yayımlamak için uygulamayı açın.",
-    "Shipped a Technocore client for the Seeker" to
-        "Seeker için bir Technocore istemcisi yayınladım",
     "Show your private key" to "Özel anahtarınızı gösterin",
     "Sign a record now and this day is on your history for good." to
         "Şimdi bir kayıt imzala, bu gün geçmişinde kalıcı olarak kalsın.",
@@ -238,16 +180,10 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Bu, gönderi bağlantısına benzemiyor. https://x.com/you/status/123 gibi görünmeli.",
     "That does not look like a link. It should start with https://" to
         "Bu bir bağlantıya benzemiyor. https:// ile başlamalı",
-    "That was the last step. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
-        "Bu son adımdı. Passport’ınız aktif. Geriye bir şey kaldı ve FLOP’un asıl istediği de bu: insanlara ne yaptığınızı anlatın. Uygulama gönderiyi bu ekranın altında sizin için yazar.",
     "The five steps built your identity. Nobody outside this phone knows it is yours yet. Step 06 below: write one line, post it, then come back and paste the link. That last part is what puts your name beside your key for good, and it is where people stop." to
         "Beş adım kimliğini kurdu. Bu telefonun dışında onun senin olduğunu henüz kimse bilmiyor. Aşağıda 06. adım: bir satır yaz, paylaş, sonra geri gelip bağlantıyı yapıştır. Adını anahtarının yanına kalıcı olarak koyan tam da bu son kısımdır ve insanlar tam burada duruyor.",
-    "The identity is born inside Seed Vault and sealed by StrongBox on the phone." to
-        "Kimlik Seed Vault içinde oluşturulur ve telefondaki StrongBox ile mühürlenir.",
     "The key is sealed in this phone's secure storage, then read back and checked against your identity." to
         "Anahtar bu telefonun güvenli depolamasında mühürlenir, ardından geri okunur ve kimliğinizle karşılaştırılır.",
-    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day; the note is not." to
-        "Yapıştıracağın bağlantı, kendi anahtarından türetilmiş bir adresteki kimlik notuna girer. Odalar bir gün içinde temizlenir, not temizlenmez.",
     "The manual" to "Kılavuz",
     "The server is busy. Trying again." to "Sunucu meşgul. Yeniden deneniyor.",
     "The stored key does not match your identity" to "Saklanan anahtar kimliğinizle eşleşmiyor",
@@ -255,13 +191,11 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "There are no points here and no score. FLOP asked agents to do something useful, so what counts is a record a person can still open. A number invented by this app would be a different game." to
         "Burada puan veya skor yoktur. FLOP, aracılardan yararlı bir şey yapmalarını istedi; bu nedenle önemli olan, bir kişinin hâlâ açabildiği kayıttır. Bu uygulamanın ürettiği bir sayı farklı bir oyun olurdu.",
     "These 32 bytes are your FLOP Passport itself. Whoever holds them can sign as you on Technocore. Keep them offline and never send them to anyone, including us." to
-        "Bu 32 bayt doğrudan FLOP Passport'ınızdır. Bunları elinde tutan kişi Technocore üzerinde sizin adınıza imzalayabilir. Çevrimdışı tutun ve biz dahil hiç kimseye göndermeyin.",
+        "Bu 32 bayt doğrudan FLOP Passport'unuzdır. Bunları elinde tutan kişi Technocore üzerinde sizin adınıza imzalayabilir. Çevrimdışı tutun ve biz dahil hiç kimseye göndermeyin.",
     "This app is free and open source, and nobody paid for it. If it saved you an afternoon, a tip is welcome." to
         "Bu uygulama ücretsiz ve açık kaynaklıdır; geliştirilmesi için kimse ödeme yapmadı. Size bir öğleden sonra kazandırdıysa bahşiş bırakabilirsiniz.",
     "This app is free and open source. If it was useful, you can send a tip to {name}. Your wallet opens and you choose the amount there." to
         "Bu uygulama ücretsiz ve açık kaynaklıdır. İşinize yaradıysa {name} adresine bahşiş gönderebilirsiniz. Cüzdanınız açılır ve tutarı orada siz seçersiniz.",
-    "This app is free and there is nothing in it to buy. If it has been useful, kosa.skr is where a thank you goes." to
-        "Bu uygulama ücretsizdir ve içinde satın alınacak hiçbir şey yoktur. İşinize yaradıysa, teşekkürünüzü kosa.skr adresine gönderebilirsiniz.",
     "This app rewrites your note every time you open it and every time you sign a record, so the seven days start again. Open it at least once a week and nothing is ever lost." to
         "Bu uygulama, her açtığınızda ve her kayıt imzaladığınızda notunuzu yeniden yazar, böylece yedi günlük süre yeniden başlar. Haftada en az bir kez açarsanız hiçbir şey kaybolmaz.",
     "This is NOT your Solana wallet key. Your wallet's own key never leaves Seed Vault and this app has never seen it. What you are looking at is a separate key that signs only on Technocore." to
@@ -275,8 +209,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Told only when your identity note is days away from being deleted." to
         "Yalnızca kimlik notunuzun silinmesine birkaç gün kaldığında bildirim alırsınız.",
     "Tomorrow is the last day." to "Yarın son gün.",
-    "Try again. Nothing was posted." to "Yeniden deneyin. Hiçbir şey gönderilmedi.",
-    "Try again. Nothing was published." to "Yeniden deneyin. Hiçbir şey yayımlanmadı.",
     "Two days left before it is deleted." to "Silinmesine iki gün kaldı.",
     "Unfinished setup" to "Tamamlanmamış kurulum",
     "Use the phone's language" to "Telefonun dilini kullan",
@@ -284,7 +216,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Bunu bir hata olarak değerlendirmeyin.",
     "Wait a moment and press it again to re-check. Sending it as a new message would post twice in public." to
         "Biraz bekleyip yeniden kontrol etmek için tekrar basın. Yeni mesaj olarak göndermek, kaydı herkese açık olarak iki kez yayımlar.",
-    "What did you actually do?" to "Gerçekte ne yaptın?",
     "What is still provable" to "Hâlâ kanıtlanabilenler",
     "What recovery without a seed phrase costs" to "Seed ifadesi olmadan kurtarmanın bedeli",
     "What to do and how often, why the identity expires, why this works on a Seeker, and what the catch is. Opens in your browser." to
@@ -303,19 +234,13 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "You have already left a record today." to "Bugün zaten bir kayıt bıraktınız.",
     "You're all set" to "Her şey hazır",
     "Your Passport has no name on it" to "Passport'unda hiç isim yok",
-    "Your Passport is born inside Seed Vault, the Seeker's hardware key store, from which a key cannot be extracted. On this phone it is then sealed by Android's secure storage. Signing itself happens in the app, not in hardware, because Android Keystore cannot hold this kind of key - so we say sealed, not signed, in hardware." to
-        "Passport'ınız, Seeker donanım anahtar deposu olan ve içinden anahtar çıkarılamayan Seed Vault içinde oluşturulur. Ardından bu telefonda Android'in güvenli depolamasıyla mühürlenir. Android Keystore bu tür bir anahtarı tutamadığı için imzalama donanımda değil, uygulamada gerçekleşir; bu nedenle donanımda imzalandı değil, mühürlendi deriz.",
     "Your Passport is derived from one signature your wallet makes inside Seed Vault, the Seeker's hardware key store. The wallet key never leaves that hardware. The Passport key is computed from its signature in this app and then sealed by Android's secure storage - sealed, not signed, in hardware, because Android Keystore cannot hold this kind of key." to
-        "Passport'ınız, cüzdanınızın Seeker'ın donanım anahtar deposu olan Seed Vault içinde oluşturduğu tek bir imzadan türetilir. Cüzdan anahtarı bu donanımdan hiç çıkmaz. Passport anahtarı, bu uygulamada söz konusu imzadan hesaplanır ve ardından Android'in güvenli depolama alanı tarafından mühürlenir; Android Keystore bu tür bir anahtarı tutamadığı için donanımda imzalanmaz, mühürlenir.",
-    "Your Passport is live" to "Passport'ınız yayında",
-    "Your Passport is live and it is yours." to "Passport'un yayında ve senin.",
-    "Your Passport is live and it is yours. One thing is left, and it is the one FLOP actually asked for: say so publicly, and link it back. Step 06 below." to
-        "Passport'un yayında ve senin. Bir şey kaldı, o da FLOP'un asıl istediği şey: bunu herkese söyle ve geri bağla. Aşağıda 06. adım.",
+        "Passport'unuz, cüzdanınızın Seeker'ın donanım anahtar deposu olan Seed Vault içinde oluşturduğu tek bir imzadan türetilir. Cüzdan anahtarı bu donanımdan hiç çıkmaz. Passport anahtarı, bu uygulamada söz konusu imzadan hesaplanır ve ardından Android'in güvenli depolama alanı tarafından mühürlenir; Android Keystore bu tür bir anahtarı tutamadığı için donanımda imzalanmaz, mühürlenir.",
+    "Your Passport is live" to "Passport'unuz yayında",
     "Your Passport is live and your first signed record is on Technocore. Anyone can verify it, and it stays yours." to
-        "Passport'ınız yayında ve ilk imzalı kaydınız Technocore üzerinde. Herkes bunu doğrulayabilir ve kayıt size ait kalır.",
+        "Passport'unuz yayında ve ilk imzalı kaydınız Technocore üzerinde. Herkes bunu doğrulayabilir ve kayıt size ait kalır.",
     "Your Passport is live, it is yours, and your name is on it." to
         "Passport'un yayında, senin ve üzerinde adın var.",
-    "Your Passport is live." to "Passport'ınız yayında.",
     "Your Passport is live. One step left." to "Passport'un yayında. Bir adım kaldı.",
     "Your Passport is rebuilt from one wallet signature, which is why no seed phrase exists to lose. The same fact cuts the other way: any app that persuades your wallet to sign that exact sentence can rebuild this Passport. Read what a wallet asks you to sign, here and everywhere else." to
         "Passport tek bir cüzdan imzasından yeniden oluşturulur; kaybedilecek bir seed ifadesi bu yüzden yoktur. Aynı gerçek tersine de işler: cüzdanınıza tam olarak o cümleyi imzalatan herhangi bir uygulama bu Passport'u yeniden oluşturabilir. Bir cüzdanın size imzalattığı şeyi burada ve her yerde okuyun.",
@@ -325,7 +250,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "Your identity note has been deleted" to "Kimlik notunuz silindi",
     "Your key is never sent anywhere. Only you can export it." to
         "Anahtarınız hiçbir yere gönderilmez. Yalnızca siz dışa aktarabilirsiniz.",
-    "Your key never leaves this phone." to "Anahtarınız bu telefondan hiçbir zaman ayrılmaz.",
     "Your key signed a line carrying this note's exact hash." to
         "Anahtarınız bu notun tam karmasını taşıyan bir satırı imzaladı.",
     "Your note has to be kept alive" to "Notunuz aktif tutulmalı",
@@ -371,7 +295,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "language {code}" to "dil {code}",
     "last connection" to "son bağlantı",
     "linked" to "bağlı",
-    "live" to "etkin",
     "live records" to "yayındaki kayıtlar",
     "matched on our nonce, not just our key" to
         "yalnızca anahtarımızla değil, nonce değerimizle eşleşti",
@@ -400,7 +323,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "records the server still holds" to "sunucunun hâlâ tuttuğu kayıtlar",
     "recovery" to "kurtarma",
     "room" to "oda",
-    "save my key" to "anahtarımı kaydet",
     "save to a file" to "dosyaya kaydet",
     "say it another way" to "başka türlü söyle",
     "self test" to "öz test",
@@ -420,8 +342,6 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
     "technocore.chat answered" to "technocore.chat yanıtladı",
     "technocore.chat deletes anything nobody has written to for seven days. That includes the identity note at the address you save and share." to
         "technocore.chat, yedi gün boyunca kimsenin üzerine yazmadığı her şeyi siler. Kaydedip paylaştığınız adresteki kimlik notu da buna dahildir.",
-    "technocore.chat deletes anything with no write for seven days. Signing today rewrites your note and starts the seven days again." to
-        "technocore.chat, yedi gün boyunca üzerine hiçbir şey yazılmayan her şeyi siler. Bugün imza atmak notunuzu yeniden yazar ve yedi günlük süreyi yeniden başlatır.",
     "technocore.chat refused the note" to "technocore.chat notu reddetti",
     "technocore.chat refused the signed write" to
         "technocore.chat imzalı yazma işlemini reddetti",
@@ -470,4 +390,44 @@ internal val TR_STRINGS: Map<String, String> = mapOf(
         "technocore.chat değişikliği almadı. Yoğunken yazma isteklerini geri çeviriyor - birazdan yayımla'ya yeniden dokun. Bağlantıların her hâlükârda bu telefonda kayıtlı.",
     "Not finished yet. Your Passport is not live until all five are green, and there is nothing complete for anyone to verify. Keep going." to
         "Henüz bitmedi. Beşi birden yeşil olmadan Passport'un etkin olmaz ve kimsenin doğrulayabileceği tamamlanmış bir şey olmaz. Devam et.",
+    "A message signed by your Passport, posted to a quiet room and then read back to prove it landed. Same service as step 03, same rule: if it refuses, press again. That is the service being busy, not a problem with your key." to
+        "Passport'unun imzaladığı bir mesaj, sessiz bir odaya yazılır ve ardından geri okunarak yerine ulaştığı kanıtlanır. 03. adımdaki servisin aynısı, kuralı da aynı: geri çevirirse yeniden bas. Bu, servisin yoğun olması demek, anahtarınla ilgili bir sorun değil.",
+    "Deleted after seven days with nothing written to it. Publish it now and it goes back to the same address." to
+        "İçine hiçbir şey yazılmadan yedi gün geçerse siliniyor. Şimdi yayımla, aynı adrese geri döner.",
+    "Identity note at risk" to
+        "Kimlik notu tehlikede",
+    "In Settings, delete the Passport from this phone, then create it again from your wallet." to
+        "Ayarlar'dan Passport'u bu telefondan sil, sonra cüzdanından yeniden oluştur.",
+    "It is deleted after seven days with nothing written to it. Opening this app writes it." to
+        "İçine hiçbir şey yazılmadan yedi gün geçerse siliniyor. Bu uygulamayı açman zaten ona bir yazma sayılır.",
+    "Maybe. The service accepted it, and this app could not read it back to be sure." to
+        "Belki. Servis kabul etti ama bu uygulama emin olmak için geri okuyamadı.",
+    "Seven days without opening the app. Open it now and the note goes back up." to
+        "Yedi gündür uygulama açılmadı. Şimdi aç, not yeniden yayımlanır.",
+    "That was the last of the five. Your Passport is live. One thing left, and it is the part FLOP actually asked for: tell people what you did. The app writes the post for you at the bottom of this screen." to
+        "Beşin sonuncusuydu. Passport'un etkin. Geriye bir şey kaldı ve o da tam olarak FLOP'un istediği şey: ne yaptığını insanlara anlat. Gönderiyi bu ekranın altında uygulama senin için yazıyor.",
+    "The link you paste goes into your identity note, at an address derived from your own key. Rooms are cleared within a day. The note stays as long as you keep opening the app." to
+        "Yapıştırdığın bağlantı, kendi anahtarından hesaplanan bir adresteki kimlik notuna işlenir. Odalar bir gün içinde temizleniyor. Not ise sen uygulamayı açmayı sürdürdüğün sürece duruyor.",
+    "This app is free and there is nothing in it to buy. If it has been useful, a thank you can go to kosa.skr." to
+        "Bu uygulama ücretsiz ve içinde satın alınacak hiçbir şey yok. İşine yaradıysa, bir teşekkür kosa.skr'ye gidebilir.",
+    "checking" to
+        "denetleniyor",
+    "open notification settings" to
+        "bildirim ayarlarını aç",
+    "send a tip to kosa.skr" to
+        "kosa.skr'ye bahşiş gönder",
+    "show my private key" to
+        "özel anahtarımı göster",
+    "step {n} {title} not confirmed yet" to
+        "{n}. adım {title} henüz doğrulanmadı",
+    "technocore.chat deletes anything with no write for seven days. Opening this app rewrites your note, and so does signing a record. Either one starts the seven days again." to
+        "technocore.chat, yedi gün boyunca kimsenin yazmadığı her şeyi siliyor. Bu uygulamayı açmak notunu yeniden yazıyor, bir kayıt imzalamak da öyle. İkisinden biri yedi günü baştan başlatıyor.",
+    "This phone has no screen lock set up. Add a PIN or a fingerprint first." to
+        "Bu telefonda ekran kilidi kurulu değil. Önce bir PIN ya da parmak izi ekle.",
+    "The server accepted the write but the message is not in the room yet. Do not resend: read the room again first." to
+        "Sunucu yazmayı kabul etti ama mesaj henüz odada değil. Yeniden gönderme: önce odayı bir daha oku.",
+    "The stored text differs from the text we signed" to
+        "Kaydedilen metin, imzaladığımız metinle aynı değil",
+    "The stored record did not verify against this key" to
+        "Kaydedilen kayıt bu anahtarla doğrulanmadı",
 )

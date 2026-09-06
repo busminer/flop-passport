@@ -148,8 +148,8 @@ object FinishNudge {
                     text = tr("Anyone who looks it up sees a key and nothing else.")
                     detail = tr(
                         "The link you paste goes into your identity note, at an address " +
-                            "derived from your own key. Rooms are cleared within a day; " +
-                            "the note is not.",
+                            "derived from your own key. Rooms are cleared within a day. " +
+                            "The note stays as long as you keep opening the app.",
                     )
                 }
                 else -> {

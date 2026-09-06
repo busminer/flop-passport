@@ -32,7 +32,10 @@ I18N = SRC / "i18n"
 # Where user-facing sentences are written.
 # `proof` is left out on purpose: the post goes out in English because that is the language
 # this audience reads, and the voices and examples in PostComposer are that post.
-LOOKED_AT = ["ui", "notify"]
+# Sentences reach the screen from four more folders: a biometric refusal, a wallet error,
+# a vault message, and every "detail" line the network layer produces. They were invisible
+# to this tool, so they were English in all ten languages and nobody could tell.
+LOOKED_AT = ["ui", "notify", "util", "technocore", "wallet", "vault"]
 
 STRING = re.compile(r'"((?:[^"\\\n]|\\.)*)"')
 ENTRY = re.compile(r'"((?:[^"\\]|\\.)*)"\s+to\s+"((?:[^"\\]|\\.)*)"', re.S)
@@ -51,6 +54,36 @@ SKIP_IF_CONTAINS = (
 
 # Deliberately English, each for a reason worth writing down.
 ALLOWED = {
+    # Exception text. These are the messages of thrown errors and failed `require`s: they
+    # reach a crash log and a developer, never a screen. The app shows a written sentence
+    # for every one of these situations instead.
+    "A Solana account key is 32 bytes, got ",
+    "A nonce is 1-19 digits",
+    "An Ed25519 signature is 64 bytes, got ",
+    "No Passport stored on this device",
+    "Nothing visible survives the sweep",
+    "Passport ciphertext has no IV",
+    "Passport seed must be 32 bytes, got ",
+    "Produced a non-canonical signature",
+    "Refusing to store a seed that does not produce the expected DID",
+    "The Passport wrapping key is missing from the Keystore",
+    "The note was accepted but read back as: ",
+    "The wallet returned no signature",
+    "The wallet returned no signed message",
+    "!! UNTRUSTED CONTENT",
+    "$PREFIX ${DidKey.fingerprint(did)} ${hashOf(noteBody)}",
+    "A Solana account key is 32 bytes, got ${walletPublicKey.size}",
+    "An Ed25519 signature is 64 bytes, got ${signature.size}",
+    "Passport seed must be 32 bytes, got ${seed.size}",
+    "The note was accepted but read back as: ${readBack ?: ",
+    "technocore.chat answered ${r.status}",
+    "technocore.chat answered ${r.status} for the note",
+    "technocore.chat sent something that is not a room",
+    # JSON field names and a clipboard label, not sentences.
+    "FLOP Passport",
+    "from",
+    "messages",
+
     # The text that gets signed and posted. Translating it would change the bytes the
     # signature covers, which is the one thing in this app that must never move.
     # The first signed line, for the same reason as the daily one: it is the text a
@@ -81,6 +114,11 @@ def looks_like_prose(s: str) -> bool:
     if len(t) < 4 or t in SKIP_EXACT or t in ALLOWED:
         return False
     if any(bit in t for bit in SKIP_IF_CONTAINS):
+        return False
+    # A Kotlin template is not a sentence a translator can be given: the hole is filled at
+    # runtime with a status code, a byte count or a hash. The sentences that legitimately
+    # carry a hole use {braces} instead, which this app's own `t()` fills after lookup.
+    if re.search(r"\$\{|\$[A-Za-z_]", t):
         return False
     if not re.search(r"[A-Za-z]", t):
         return False

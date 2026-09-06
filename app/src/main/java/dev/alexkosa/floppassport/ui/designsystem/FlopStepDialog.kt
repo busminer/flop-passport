@@ -143,12 +143,21 @@ fun FlopProblemDialog(
     whatToDo: String,
     publishedSomething: Boolean,
     detail: String?,
+    /**
+     * True when the write may well have landed and only our confirmation of it failed.
+     *
+     * It gets the cyan frame and its own words. Dressing it as a failure told people to
+     * treat "we could not check" as "it did not happen", and the safe action for the two is
+     * not the same one.
+     */
+    unconfirmed: Boolean = false,
     onDismiss: () -> Unit,
     /** Runs the step again. The way out of a failure belongs in the window that reports it. */
     onRetry: (() -> Unit)? = null,
     /** "try again" when nothing was sent, "check again" when something might already be there. */
     retryLabel: String = "try again",
 ) {
+    val accent = if (unconfirmed) FlopColors.Cyan else FlopColors.ErrorRed
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         // Scrolls for the same reason as the success dialog, and it matters more here: this
         // is the dialog that appears when something has already gone wrong, it carries the
@@ -158,7 +167,7 @@ fun FlopProblemDialog(
                 .padding(FlopSpacing.lg)
                 .fillMaxWidth()
                 .background(FlopColors.Surface, FlopShapes.lg)
-                .border(1.dp, FlopColors.ErrorRed.copy(alpha = 0.45f), FlopShapes.lg)
+                .border(1.dp, accent.copy(alpha = 0.45f), FlopShapes.lg)
                 // A dialog is measured with no maximum height, and a scroll inside
                 // infinity is a crash rather than a scroll. Nine tenths of the screen
                 // is the ceiling: enough that nothing is cramped, bounded enough that
@@ -168,15 +177,16 @@ fun FlopProblemDialog(
                 .padding(FlopSpacing.lg),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Box(Modifier.size(22.dp).background(FlopColors.ErrorRed, FlopShapes.sm))
+                Box(Modifier.size(22.dp).background(accent, FlopShapes.sm))
                 Spacer(Modifier.width(FlopSpacing.sm))
                 FlopLabel(
                     t(
-                        "step {n} {title} did not finish",
+                        if (unconfirmed) "step {n} {title} not confirmed yet"
+                        else "step {n} {title} did not finish",
                         "n" to step.ordinal1,
                         "title" to t(step.title),
                     ),
-                    FlopColors.ErrorRed,
+                    accent,
                 )
             }
             Spacer(Modifier.height(FlopSpacing.md))
@@ -195,13 +205,16 @@ fun FlopProblemDialog(
                     FlopLabel("did anything go public?")
                     Spacer(Modifier.height(FlopSpacing.xs))
                     Text(t(
-                        if (publishedSomething) {
-                            "Yes. Something is already visible to others."
-                        } else {
-                            "No. Nothing was published."
+                        when {
+                            unconfirmed ->
+                                "Maybe. The service accepted it, and this app could not " +
+                                    "read it back to be sure."
+                            publishedSomething -> "Yes. Something is already visible to others."
+                            else -> "No. Nothing was published."
                         }),
                         style = FlopType.code,
-                        color = if (publishedSomething) FlopColors.Cyan else FlopColors.Green,
+                        color = if (publishedSomething || unconfirmed) FlopColors.Cyan
+                        else FlopColors.Green,
                     )
                     if (detail != null) {
                         Spacer(Modifier.height(FlopSpacing.sm))

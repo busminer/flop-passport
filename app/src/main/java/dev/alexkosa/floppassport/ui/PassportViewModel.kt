@@ -465,7 +465,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                         StepState.Failed(
                             "The stored key does not match your identity",
                             publishedSomething = false,
-                            whatToDo = "Delete the Passport and create it again from your wallet.",
+                            whatToDo = "In Settings, delete the Passport from this phone, then create it again from your wallet.",
                         ),
                     )
                     return@launch
@@ -493,7 +493,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
                     StepState.Failed(
                         "Could not read the key back from secure storage",
                         publishedSomething = false,
-                        whatToDo = "Delete the Passport and create it again from your wallet.",
+                        whatToDo = "In Settings, delete the Passport from this phone, then create it again from your wallet.",
                         detail = null,
                     ),
                 )

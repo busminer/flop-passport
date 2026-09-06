@@ -75,7 +75,7 @@ object DailyReminder {
         manager.createNotificationChannel(
             NotificationChannel(
                 EXPIRY_CHANNEL_ID,
-                tr("Passport at risk"),
+                tr("Identity note at risk"),
                 NotificationManager.IMPORTANCE_HIGH,
             ).apply {
                 description = tr(
@@ -178,7 +178,7 @@ object DailyReminder {
             when (urgency) {
                 NoteLife.Urgency.LOST -> {
                     title = tr("Your identity note has been deleted")
-                    text = tr("Seven days without a record. Open the app to publish it again.")
+                    text = tr("Seven days without opening the app. Open it now and the note goes back up.")
                     detail = tr(
                         "Your Passport itself is not lost: the same wallet still gives the " +
                             "same identity, and signing a record now publishes the note " +
@@ -190,8 +190,8 @@ object DailyReminder {
                     text = tr(NoteLife.countdown(daysSince))
                     detail = tr(
                         "technocore.chat deletes anything with no write for seven days. " +
-                            "Signing today rewrites your note and starts the seven days " +
-                            "again.",
+                            "Opening this app rewrites your note, and so does signing a " +
+                            "record. Either one starts the seven days again.",
                     )
                 }
                 else -> {

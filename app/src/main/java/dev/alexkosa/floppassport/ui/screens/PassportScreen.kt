@@ -125,7 +125,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 headline = state.summary,
                 body = nextHint(flow.next),
                 evidence = state.evidence,
-                nextLabel = if (flow.complete) "done" else "continue",
+                nextLabel = "continue",
                 onDismiss = { vm.dismissAnnouncement() },
             )
 
@@ -147,6 +147,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 headline = state.summary,
                 whatToDo = state.whatToDo,
                 publishedSomething = true,
+                unconfirmed = true,
                 detail = state.detail,
                 onDismiss = { vm.dismissAnnouncement() },
                 // Not "send again". The write may already be in the room, and the step
@@ -400,7 +401,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
                 title = "Make your first signed check-in",
                 body = "A message signed by your Passport, posted to a quiet room and then " +
                     "read back to prove it landed. Same service as step 03, same rule: if it " +
-                    "refuses, press again. It is their load, not your key.",
+                    "refuses, press again. That is the service being busy, not a problem with your key.",
                 button = "sign and check in",
                 enabled = !flow.busy,
                 onClick = { vm.checkIn() },
@@ -423,7 +424,7 @@ fun PassportScreen(vm: PassportViewModel = viewModel()) {
 
         if (vm.did != null) {
             Spacer(Modifier.height(FlopSpacing.lg))
-            FlopButtonSecondary("save my key", {
+            FlopButtonSecondary("show my private key", {
                 val activity = context as? FragmentActivity
                 if (activity == null) {
                     gateMessage = "Could not open the security prompt on this screen."
@@ -461,7 +462,8 @@ private fun nextHint(next: Step?): String = when (next) {
     // The ladder ends, the app does not. Saying so here is what stops the last dialog
     // from feeling like a door closing on somebody who still has the useful half to do.
     Step.Ready, null ->
-        "That was the last step. Your Passport is live. One thing left, and it is the " +
+        "That was the last of the five. Your Passport is live. One thing left, and it " +
+        "is the " +
             "part FLOP actually asked for: tell people what you did. The app writes the " +
             "post for you at the bottom of this screen."
 }

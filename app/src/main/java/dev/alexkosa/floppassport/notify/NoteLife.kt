@@ -146,7 +146,7 @@ object NoteLife {
         3 -> "Three days left before it is deleted."
         2 -> "Two days left before it is deleted."
         1 -> "Tomorrow is the last day."
-        else -> "It will be deleted after seven days without a record."
+        else -> "It is deleted after seven days with nothing written to it. Opening this app writes it."
     }
 
     private fun prefs(context: Context) =
