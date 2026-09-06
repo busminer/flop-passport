@@ -126,7 +126,7 @@
 <div class="section-head">
 <span class="label cyan">개인정보 처리방침</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>최종 수정 2026년 8월 31일. 이 방침은 Android 애플리케이션 <code>dev.alexkosa.floppassport</code>과 이 웹사이트에 적용됩니다.</p>
+<p>최종 수정 2026년 9월 6일. 이 정책은 안드로이드 앱 <code>dev.alexkosa.floppassport</code>과 이 웹사이트에 적용됩니다.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
@@ -134,9 +134,7 @@
         </p>
 </div>
 <h3 style="margin-top:48px">책임 소재</h3>
-<p>
-        FLOP Passport for Seeker는 개인 개발자 Alex Kosa의 독립적인 오픈 소스 프로젝트입니다. FLOP Labs나 Solana Mobile이 만들거나 보증하거나 심사하지 않았습니다. 연락처: X의 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, 또는 공개 저장소에 이슈를 남기는 방법.
-      </p>
+<p>FLOP Passport for Seeker는 1인 개발자 Alex Kosa가 만든 독립 오픈소스 프로젝트입니다. FLOP Labs나 Solana Mobile이 만들지 않았고, 승인하거나 검토하지도 않았습니다. 연락처: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, X에서는 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>, 또는 공개 저장소에 이슈를 남겨 주세요.</p>
 <h3 style="margin-top:32px">앱이 기기에 저장하는 것</h3>
 <ul class="plain">
 <li>
@@ -157,6 +155,8 @@
 <li>
 <strong>technocore.chat으로</strong>, 신원을 공개하거나 기록에 서명할 때: 당신의 공개 <code>did:key</code>, 서명하는 텍스트, 카운터, 그리고 서명. 이 정보는 설계상 공개되는 것이며, 그것이 공개 신원의 요점입니다. 이후 누구나 읽을 수 있습니다.
         </li>
+<li><strong>technocore.chat으로, 공개된 신원 노트 안으로</strong> — 게시한 글의 링크를 붙여 넣는 경우 그 링크가 갑니다. 그 링크는 당신의 소셜 계정을 가리키고, 키에서 계산된 영구 공개 주소에 놓이며, 당신의 키를 공개적으로 당신의 이름과 묶는 것이 바로 그것입니다. 붙여 넣을지는 당신이 정하고, 링크 없이 노트를 다시 쓰면 지워집니다.</li>
+<li><strong>게시글을 공유할 때 당신이 고른 앱으로</strong>, 예를 들어 X로: 게시글의 본문. 앱은 그 글을 시스템 공유 창에 넘길 뿐, 스스로 무언가를 올리는 일은 없습니다.</li>
 <li>
 <strong>당신의 지갑 앱으로</strong>, Passport를 만들 때: 서명할 문장 하나. 지갑은 이것을 기기에서 처리하며, 우리가 네트워크로 보내는 것은 없습니다.
         </li>
@@ -175,14 +175,14 @@
 <li>광고 식별자. 광고도 광고 SDK도 없습니다.</li>
 </ul>
 <h3 style="margin-top:32px">분석과 추적</h3>
-<p>
-        없습니다. 앱에는 분석 SDK도, 오류 보고 서비스도, 어떤 제3자 추적도 들어 있지 않습니다. 이 웹사이트는 쿠키를 설정하지 않고, 분석도 하지 않으며, 서버 측 코드도 없습니다. 바깥으로 나가는 요청은 웹 폰트 두 개, 그리고 검증기를 쓸 때 당신의 브라우저에서 technocore.chat을 직접 읽는 것뿐이며, 후자는 결코 우리를 거치지 않습니다.
-      </p>
+<p>없습니다. 앱에는 분석 SDK도, 크래시 보고 서비스도, 어떤 종류의 제3자 추적도 들어 있지 않습니다. 이 웹사이트는 쿠키를 심지 않고, 방문을 집계하지 않으며, 서버 쪽 코드가 없습니다. 바깥으로 나가는 요청은 둘뿐입니다. 하나는 Google Fonts에서 웹 글꼴 두 개를 받아 오는 것으로, 어느 글꼴 호스트나 그렇듯 그쪽이 당신의 IP 주소를 받게 됩니다. 다른 하나는 검증 도구를 쓸 때 technocore.chat에서 곧바로 읽어 오는 것인데, 이 요청은 당신의 브라우저에서 출발하며 우리를 거치지 않습니다. 사이트 자체는 정적 파일이고 Cloudflare가 배포하며 요청도 그쪽이 처리합니다. 우리는 우리 코드를 돌리지 않고 로그도 남기지 않습니다.</p>
 <h3 style="margin-top:32px">권한</h3>
 <ul class="plain">
 <li><strong>인터넷</strong> — 무언가를 공개하거나 서명할 때 technocore.chat에 닿기 위해.</li>
 <li><strong>진동</strong> — 단계가 확인되었을 때의 짧은 신호.</li>
 <li><strong>생체 인식</strong> — 개인 키를 보여 주는 화면을 지키기 위해.</li>
+<li><strong>알림</strong> — 매일의 알림, 아직 끝내지 않은 단계에 대한 알림, 그리고 노트가 사라지기 전의 경고.</li>
+<li><strong>부팅 시 실행</strong> — 휴대전화가 다시 켜진 뒤 그 알림들을 다시 설정하기 위해서만 씁니다. 부팅 시 앱이 하는 일은 그것뿐입니다.</li>
 </ul>
 <p>저장소 권한은 요청하지 않습니다. 파일 저장은 시스템 선택기를 씁니다.</p>
 <h3 style="margin-top:32px">데이터 삭제</h3>
@@ -190,9 +190,7 @@
 <p style="margin:0 0 12px">
 <strong>당신의 기기에서.</strong> 설정 → 위험 구역 → Passport 삭제, 또는 앱을 제거하세요. 둘 다 암호화된 키, 당신의 신원, 당신의 설정을 휴대폰에서 완전히 지웁니다. 다른 어디에도 사본은 없으며, 우리가 대신 지울 것도 없습니다.
         </p>
-<p style="margin:0">
-<strong>이미 공개된 것.</strong> 당신이 Technocore에 공개하기로 한 것은 공개된 상태이며 우리 통제 밖입니다. 우리가 보관하지도 않고 제거할 수도 없습니다. 공개 방의 기록은 방이 정리되면서 그 서비스가 버리고, 노트는 남습니다. technocore.chat의 내용에 관한 요청은 이를 운영하는 FLOP Labs로 가야 합니다.
-        </p>
+<p style="margin:0"><strong>이미 공개된 것.</strong> Technocore에 올리기로 한 것은 모두 공개이며 우리 손을 벗어나 있습니다. 우리가 보관하지 않고, 지울 수도 없습니다. 공개된 방의 기록은 방이 압축되면서 그 서비스가 버리고, 신원 노트는 아무것도 쓰이지 않은 채 7일이 지나면 삭제됩니다. 즉 공개한 것은 다시 쓰지 않으면 저절로 사라집니다. technocore.chat의 내용에 대한 요청은 이를 운영하는 FLOP Labs로 보내 주세요.</p>
 </div>
 <h3 style="margin-top:32px">어린이</h3>
 <p>

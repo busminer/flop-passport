@@ -127,7 +127,7 @@
       <div class="section-head">
         <span class="label cyan">Privacy policy</span>
         <h2>FLOP Passport for Seeker</h2>
-        <p>Last updated 31 August 2026. This policy covers the Android application
+        <p>Last updated 6 September 2026. This policy covers the Android application
           <code>dev.alexkosa.floppassport</code> and this website.</p>
       </div>
 
@@ -143,7 +143,9 @@
       <p>
         FLOP Passport for Seeker is an independent open-source project by Alex Kosa, an
         individual developer. It is not made, endorsed or reviewed by FLOP Labs or Solana
-        Mobile. Contact: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> on X,
+        Mobile. Contact:
+        <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, or
+        <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> on X,
         or by opening an issue in the public repository.
       </p>
 
@@ -177,6 +179,18 @@
           identity — and anyone can read it afterwards.
         </li>
         <li>
+          <strong>To technocore.chat, into your public identity note</strong>, if you paste
+          the link to the post you published: that link. It names your social account, it
+          sits at a permanent public address derived from your key, and it is what ties your
+          key to your name in public. Pasting it is your choice, and rewriting the note
+          without it removes it.
+        </li>
+        <li>
+          <strong>To the app you pick when you share your post</strong>, such as X: the text
+          of the post. The app hands it to the system share sheet and never posts anything
+          itself.
+        </li>
+        <li>
           <strong>To your wallet app</strong>, when you create the Passport: a statement to
           sign. The wallet handles this on your device; nothing is sent over the network by
           us.
@@ -204,9 +218,11 @@
       <p>
         None. The app contains no analytics SDK, no crash-reporting service and no
         third-party tracking of any kind. This website sets no cookies, runs no analytics
-        and has no server-side code; the only outbound request it makes is for the two web
-        fonts and, when you use the verifier, a direct read from technocore.chat that goes
-        from your browser and never through us.
+        and has no server-side code. Its only outbound requests are for two web fonts from
+        Google Fonts, which receives your IP address the way any font host does, and — when
+        you use the verifier — a direct read from technocore.chat that goes from your browser
+        and never through us. The site itself is static files served by Cloudflare, which
+        handles the request; we run no code of our own and keep no logs.
       </p>
 
       <h3 style="margin-top:32px">Permissions</h3>
@@ -214,6 +230,10 @@
         <li><strong>Internet</strong> — to reach technocore.chat when you publish or sign something.</li>
         <li><strong>Vibrate</strong> — a short confirmation tick when a step is verified.</li>
         <li><strong>Biometric</strong> — to gate the screen that shows your private key.</li>
+        <li><strong>Notifications</strong> — the daily reminder, the nudges about a step you
+          have not finished, and the warning before your note expires.</li>
+        <li><strong>Run at startup</strong> — only to set those reminders again after the
+          phone reboots. The app does nothing else on boot.</li>
       </ul>
       <p>No storage permission is requested; saving a file uses the system picker instead.</p>
 
@@ -228,7 +248,9 @@
         <p style="margin:0">
           <strong>What was published.</strong> Anything you chose to publish on Technocore is
           public and outside our control — we do not host it and cannot remove it. Records in
-          public rooms are dropped by that service as rooms are compacted; notes persist.
+          public rooms are dropped by that service as rooms are compacted, and an identity
+          note is deleted after seven days with nothing written to it — so what you published
+          disappears on its own unless it is rewritten.
           Requests about content on technocore.chat go to FLOP Labs, who operate it.
         </p>
       </div>

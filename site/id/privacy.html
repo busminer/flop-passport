@@ -126,7 +126,7 @@
 <div class="section-head">
 <span class="label cyan">Kebijakan privasi</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>Terakhir diperbarui 31 Agustus 2026. Kebijakan ini mencakup aplikasi Android <code>dev.alexkosa.floppassport</code> dan situs web ini.</p>
+<p>Terakhir diperbarui 6 September 2026. Kebijakan ini mencakup aplikasi Android <code>dev.alexkosa.floppassport</code> dan situs ini.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
@@ -134,9 +134,7 @@
         </p>
 </div>
 <h3 style="margin-top:48px">Siapa yang bertanggung jawab</h3>
-<p>
-        FLOP Passport for Seeker adalah proyek sumber terbuka independen oleh Alex Kosa, seorang pengembang perorangan. Tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile. Kontak: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> di X, atau dengan membuka issue di repositori publik.
-      </p>
+<p>FLOP Passport for Seeker adalah proyek sumber terbuka independen dari Alex Kosa, seorang pengembang perorangan. Aplikasi ini tidak dibuat, didukung, atau ditinjau oleh FLOP Labs maupun Solana Mobile. Kontak: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, atau <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> di X, atau dengan membuka issue di repositori publik.</p>
 <h3 style="margin-top:32px">Apa yang disimpan aplikasi di perangkat Anda</h3>
 <ul class="plain">
 <li>
@@ -157,6 +155,8 @@
 <li>
 <strong>Ke technocore.chat</strong>, saat Anda menerbitkan identitas atau menandatangani catatan: <code>did:key</code> publik Anda, teks yang sedang Anda tanda tangani, sebuah penghitung, dan tanda tangannya. Informasi ini memang publik menurut rancangannya — itulah inti sebuah identitas publik — dan setelahnya siapa pun bisa membacanya.
         </li>
+<li><strong>Ke technocore.chat, masuk ke catatan identitas publikmu</strong>, kalau kamu menempelkan tautan unggahan yang sudah kamu terbitkan: tautan itu sendiri. Tautan itu menyebut akun media sosialmu, tersimpan di alamat publik permanen yang dihitung dari kuncimu, dan itulah yang mengikat kuncimu dengan namamu di depan umum. Menempelkannya adalah pilihanmu, dan menulis ulang catatan tanpa tautan itu akan menghapusnya.</li>
+<li><strong>Ke aplikasi yang kamu pilih saat membagikan unggahanmu</strong>, misalnya X: teks unggahannya. Aplikasi menyerahkannya ke lembar berbagi sistem dan tidak pernah mengunggah apa pun sendiri.</li>
 <li>
 <strong>Ke aplikasi dompet Anda</strong>, saat Anda membuat Passport: sebuah kalimat untuk ditandatangani. Dompet menanganinya di perangkat Anda; tidak ada yang kami kirim lewat jaringan.
         </li>
@@ -175,14 +175,14 @@
 <li>Pengenal iklan. Tidak ada iklan dan tidak ada SDK iklan.</li>
 </ul>
 <h3 style="margin-top:32px">Analitik dan pelacakan</h3>
-<p>
-        Tidak ada. Aplikasi tidak memuat SDK analitik, layanan pelaporan crash, maupun pelacakan pihak ketiga dalam bentuk apa pun. Situs ini tidak memasang cookie, tidak menjalankan analitik, dan tidak punya kode sisi server; satu-satunya permintaan keluarnya adalah dua fonta web dan, saat Anda memakai pemverifikasi, pembacaan langsung dari technocore.chat yang berangkat dari peramban Anda dan tidak pernah melewati kami.
-      </p>
+<p>Tidak ada. Aplikasi ini tidak memuat SDK analitik, tidak ada layanan pelaporan crash, dan tidak ada pelacakan pihak ketiga dalam bentuk apa pun. Situs ini tidak memasang cookie, tidak menghitung kunjungan, dan tidak menjalankan kode di sisi server. Permintaan keluarnya hanya dua: dua font web dari Google Fonts, yang menerima alamat IP kamu sebagaimana penyedia font mana pun, dan — saat kamu memakai alat verifikasi — satu pembacaan langsung ke technocore.chat yang berangkat dari perambanmu dan tidak pernah lewat kami. Situsnya sendiri adalah berkas statis yang disajikan Cloudflare, yang juga menangani permintaannya; kami tidak menjalankan kode sendiri dan tidak menyimpan log.</p>
 <h3 style="margin-top:32px">Izin</h3>
 <ul class="plain">
 <li><strong>Internet</strong> — untuk menjangkau technocore.chat saat Anda menerbitkan atau menandatangani sesuatu.</li>
 <li><strong>Getar</strong> — satu getaran singkat saat sebuah langkah terverifikasi.</li>
 <li><strong>Biometrik</strong> — untuk mengunci layar yang menampilkan kunci privat Anda.</li>
+<li><strong>Notifikasi</strong> — pengingat harian, dorongan tentang langkah yang belum kamu selesaikan, dan peringatan sebelum catatanmu kedaluwarsa.</li>
+<li><strong>Jalan saat menyala</strong> — hanya untuk memasang lagi pengingat-pengingat itu setelah ponsel dinyalakan ulang. Selain itu aplikasi tidak melakukan apa pun saat boot.</li>
 </ul>
 <p>Izin penyimpanan tidak diminta; menyimpan berkas memakai pemilih sistem.</p>
 <h3 style="margin-top:32px">Menghapus data Anda</h3>
@@ -190,9 +190,7 @@
 <p style="margin:0 0 12px">
 <strong>Di perangkat Anda.</strong> Pengaturan → Zona berbahaya → hapus Passport, atau copot aplikasinya. Keduanya menghapus kunci terenkripsi, identitas, dan preferensi Anda sepenuhnya dari ponsel. Tidak ada salinan di tempat lain, dan tidak ada yang perlu kami hapus atas nama Anda.
         </p>
-<p style="margin:0">
-<strong>Apa yang sudah diterbitkan.</strong> Apa pun yang Anda pilih terbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menampungnya dan tidak bisa menghapusnya. Catatan di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan; catatan identitas tetap ada. Permintaan mengenai konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.
-        </p>
+<p style="margin:0"><strong>Yang sudah diterbitkan.</strong> Semua yang kamu pilih untuk diterbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menyimpannya dan tidak bisa menghapusnya. Rekaman di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan, dan catatan identitas dihapus setelah tujuh hari tanpa ada tulisan masuk ke dalamnya — jadi apa yang kamu terbitkan hilang dengan sendirinya kalau tidak ditulis ulang. Permintaan soal konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.</p>
 </div>
 <h3 style="margin-top:32px">Anak-anak</h3>
 <p>

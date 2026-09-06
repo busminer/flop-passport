@@ -19,7 +19,7 @@
 <div class="section-head">
 <span class="label cyan">Datenschutzerklärung</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>Zuletzt aktualisiert am 31. August 2026. Diese Erklärung gilt für die Android-Anwendung <code>dev.alexkosa.floppassport</code> und für diese Website.</p>
+<p>Zuletzt aktualisiert am 6. September 2026. Diese Erklärung gilt für die Android-App <code>dev.alexkosa.floppassport</code> und für diese Website.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
@@ -27,9 +27,7 @@
         </p>
 </div>
 <h3 style="margin-top:48px">Wer verantwortlich ist</h3>
-<p>
-        FLOP Passport for Seeker ist ein unabhängiges Open-Source-Projekt von Alex Kosa, einem einzelnen Entwickler. Es wird von FLOP Labs oder Solana Mobile weder hergestellt noch unterstützt noch geprüft. Kontakt: <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> auf X, oder über ein Issue im öffentlichen Repository.
-      </p>
+<p>FLOP Passport for Seeker ist ein unabhängiges Open-Source-Projekt von Alex Kosa, einem einzelnen Entwickler. Es wird weder von FLOP Labs noch von Solana Mobile hergestellt, unterstützt oder geprüft. Kontakt: <a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>, oder <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a> auf X, oder über ein Issue im öffentlichen Repository.</p>
 <h3 style="margin-top:32px">Was die App auf deinem Gerät speichert</h3>
 <ul class="plain">
 <li>
@@ -50,6 +48,8 @@
 <li>
 <strong>An technocore.chat</strong>, wenn du deine Identität veröffentlichst oder einen Eintrag signierst: dein öffentlicher <code>did:key</code>, der Text, den du signierst, ein Zähler und die Signatur. Diese Angaben sind bewusst öffentlich — das ist der Sinn einer öffentlichen Identität — und jeder kann sie danach lesen.
         </li>
+<li><strong>An technocore.chat, in deine öffentliche Identitätsnotiz</strong>, wenn du den Link zum veröffentlichten Beitrag einfügst: dieser Link. Er nennt dein Social-Konto, steht an einer dauerhaften öffentlichen Adresse, die aus deinem Schlüssel berechnet wird, und er ist es, was deinen Schlüssel öffentlich an deinen Namen bindet. Ob du ihn einfügst, entscheidest du, und wer die Notiz ohne ihn neu schreibt, entfernt ihn.</li>
+<li><strong>An die App, die du beim Teilen aussuchst</strong>, etwa X: der Text des Beitrags. Die App reicht ihn an das Teilen-Menü des Systems weiter und veröffentlicht selbst nie etwas.</li>
 <li>
 <strong>An deine Wallet-App</strong>, wenn du den Passport anlegst: ein Satz zum Signieren. Die Wallet verarbeitet das auf deinem Gerät; über das Netz senden wir nichts.
         </li>
@@ -68,14 +68,14 @@
 <li>Werbe-IDs. Es gibt keine Werbung und keine Werbe-SDKs.</li>
 </ul>
 <h3 style="margin-top:32px">Analytik und Tracking</h3>
-<p>
-        Keine. Die App enthält kein Analytik-SDK, keinen Absturzbericht-Dienst und kein Tracking Dritter irgendeiner Art. Diese Website setzt keine Cookies, betreibt keine Analytik und hat keinen serverseitigen Code; ihre einzigen ausgehenden Anfragen sind die zwei Webschriften und, wenn du den Prüfer nutzt, ein direkter Lesezugriff auf technocore.chat, der von deinem Browser ausgeht und nie über uns läuft.
-      </p>
+<p>Keine. Die App enthält kein Analyse-SDK, keinen Absturzbericht-Dienst und keinerlei Tracking von Dritten. Diese Website setzt keine Cookies, misst keine Zugriffe und hat keinen Code auf dem Server. Nach außen fragt sie nur zweierlei an: zwei Web-Schriften von Google Fonts, das dabei deine IP-Adresse erhält wie jeder Schriften-Host, und — wenn du den Prüfer benutzt — einen direkten Lesezugriff auf technocore.chat, der aus deinem Browser geht und nie über uns. Die Seite selbst sind statische Dateien, ausgeliefert von Cloudflare, das die Anfrage bearbeitet; eigenen Code führen wir nicht aus und Protokolle führen wir nicht.</p>
 <h3 style="margin-top:32px">Berechtigungen</h3>
 <ul class="plain">
 <li><strong>Internet</strong> — um technocore.chat zu erreichen, wenn du etwas veröffentlichst oder signierst.</li>
 <li><strong>Vibration</strong> — ein kurzes Signal, wenn ein Schritt bestätigt ist.</li>
 <li><strong>Biometrie</strong> — um den Bildschirm zu schützen, der deinen privaten Schlüssel zeigt.</li>
+<li><strong>Benachrichtigungen</strong> — die tägliche Erinnerung, die Hinweise auf einen Schritt, den du nicht beendet hast, und die Warnung, bevor deine Notiz abläuft.</li>
+<li><strong>Start beim Hochfahren</strong> — nur, um diese Erinnerungen nach einem Neustart des Telefons wieder zu setzen. Sonst tut die App beim Start nichts.</li>
 </ul>
 <p>Eine Speicherberechtigung wird nicht angefordert; zum Speichern einer Datei dient die Systemauswahl.</p>
 <h3 style="margin-top:32px">Deine Daten löschen</h3>
@@ -83,9 +83,7 @@
 <p style="margin:0 0 12px">
 <strong>Auf deinem Gerät.</strong> Einstellungen → Gefahrenzone → Passport löschen, oder deinstalliere die App. Beides entfernt den verschlüsselten Schlüssel, deine Identität und deine Einstellungen vollständig vom Telefon. Anderswo gibt es keine Kopie, und für uns gibt es nichts, was wir für dich löschen könnten.
         </p>
-<p style="margin:0">
-<strong>Was veröffentlicht wurde.</strong> Alles, was du auf Technocore veröffentlicht hast, ist öffentlich und außerhalb unserer Kontrolle — wir hosten es nicht und können es nicht entfernen. Einträge in öffentlichen Räumen verwirft dieser Dienst, wenn Räume verdichtet werden; Notizen bleiben. Anfragen zu Inhalten auf technocore.chat gehen an FLOP Labs, die den Dienst betreiben.
-        </p>
+<p style="margin:0"><strong>Was veröffentlicht wurde.</strong> Alles, was du auf Technocore veröffentlicht hast, ist öffentlich und außerhalb unserer Kontrolle — wir hosten es nicht und können es nicht entfernen. Einträge in öffentlichen Räumen wirft dieser Dienst weg, während die Räume verdichtet werden, und eine Identitätsnotiz wird nach sieben Tagen ohne einen Schreibzugriff gelöscht — was du veröffentlicht hast, verschwindet also von selbst, wenn es nicht neu geschrieben wird. Anfragen zu Inhalten auf technocore.chat gehen an FLOP Labs, die den Dienst betreiben.</p>
 </div>
 <h3 style="margin-top:32px">Kinder</h3>
 <p>

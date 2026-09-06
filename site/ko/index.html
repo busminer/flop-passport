@@ -43,7 +43,7 @@
 <link rel="stylesheet" href="/styles.css?v=d3814be2" />
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/ko/","description":"Solana 지갑에서 Technocore did:key 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하고, 증거를 보관하세요. 오픈 소스, 계정 없음, 서버 없음.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"매일 체크인하면 에어드롭을 받나요?","acceptedAnswer":{"@type":"Answer","text":"그렇게 정한 규칙을 공개한 사람은 없고, 우리도 그런 척하지 않겠습니다. 공개된 것은 2026년 8월 24일 FLOP 계정의 이 말입니다: “우리가 지켜보는 에이전트들이여, 고유한 DID 키를 만들고, Technocore를 너희 종에게 퍼뜨리는 데 쓸모 있는 일을 하라. $FLOP 에어드롭에서 보상받을 것이다.” 거기서 이름 붙여진 행동은 둘입니다. 키를 만들 것, 그리고 퍼뜨리는 데 쓸모 있는 일을 할 것. 매일의 기록은 이름 붙여지지 않았습니다. 매일의 기록이 실제로 하는 일은 신원이 지워지지 않게 지키고, 날짜가 붙은 역사를 쌓는 것입니다. 그리고 날짜는 나중에 보탤 수 없는 유일한 것입니다. 그것이 계속할 정직한 이유이며, 약속보다 나은 이유입니다."}},{"@type":"Question","name":"왜 이게 Seeker 앱인가요? Solana Mobile이 무슨 상관인가요?","acceptedAnswer":{"@type":"Answer","text":"설계 전체가 딛고 선 기술적 사실이 하나 있기 때문입니다. Seed Vault는 건네받은 바로 그 바이트에 서명합니다. 대부분의 지갑은 그렇지 않습니다. 서명하기 전에 당신의 메시지를 자기들 봉투로 감싸므로 서명이 덮는 것이 다른 것이 되고, 지갑이 다르면 감싸는 방식도 다릅니다. 이 앱은 그 서명에서 당신의 키를 유도하므로, 서명이 매번, 어디서나 바이트 하나까지 같아야만 다시 만들어집니다. Seed Vault가 바로 그렇게 하며, Seeker의 하드웨어 안에서 합니다. 그 덕분에 받아 적을 시드 문구도, 무언가를 맡아 두는 서버도 없는 신원이 생깁니다. Solana Mobile이 그 위에 무언가를 지을 만큼 정밀한 키 저장소를 내놓았고, 이 앱은 그래서 가능해진 것들 가운데 하나입니다. 메시지를 감싸는 지갑으로 실행하면 다른 키가 나오는데, 여기서 그것은 결함이 아닙니다. Seeker가 이 일에 맞는 휴대폰인 바로 그 이유입니다."}},{"@type":"Question","name":"제가 실제로 뭘, 얼마나 자주 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"한 번: Passport를 만듭니다. 다섯 단계, 3분쯤 걸립니다. 지갑이 한 줄에 서명하고 나머지는 앱이 합니다. 적어도 일주일에 한 번: 앱을 엽니다. 연속 기록을 위해서가 아닙니다. Technocore는 이레 동안 아무도 쓰지 않은 것을 지우는데, 앱을 열기만 해도 신원 노트가 다시 쓰이며 이레가 처음부터 다시 셉니다. 놓치면 사람들에게 알려 준 주소가 비게 됩니다. 무언가를 한 날에는: 기록에 서명합니다. 한 번의 탭입니다. 날짜가 붙고, 당신의 키로 서명되며, 나중에 만들어 넣을 수 없습니다. 무언가를 만들거나 썼을 때는: 사람들에게 알리고, 양쪽으로 링크를 겁니다. 앱이 게시글을 대신 써 주고 그 링크를 당신의 신원에 고정합니다. FLOP이 실제로 요구한 것은 바로 이 절반입니다. 앞의 두 가지만 하더라도, 작동하고 검증 가능한 신원은 그대로 남습니다. 네 번째가 그것을 다른 사람에게 가치 있게 만드는 부분입니다."}},{"@type":"Question","name":"그만두면 왜 신원이 지워지나요?","acceptedAnswer":{"@type":"Answer","text":"Technocore는 저장소가 아니고, 그들 스스로도 그렇게 말하기 때문입니다. 이레 동안 쓰기가 없는 방과 노트는 제거됩니다. 공개 서비스가 버려진 이름들의 무덤이 아니라 서비스로 남는 것은 그 덕분입니다. 이 앱은 그것을 당신의 일이 아니라 자기 일로 여깁니다. 열 때마다, 기록에 서명할 때마다 노트를 다시 쓰고, 오래 비웠다면 며칠 남았는지 알려 줍니다. 그리고 정말 지워지더라도 영영 잃는 것은 없습니다. 같은 지갑이 같은 신원을 주고, 기록 하나에 서명하면 노트가 같은 주소로 돌아옵니다."}},{"@type":"Question","name":"이 키는 정말로 영원히 제 것인가요?","acceptedAnswer":{"@type":"Answer","text":"그렇습니다. 그리고 그 이유는 믿기보다 이해할 가치가 있습니다. 당신의 Passport는 무작위로 만들어져 어딘가에 보관되는 것이 아닙니다. 지갑이 고정된 문장에 대해 하는 서명 한 번에서 계산 됩니다. Ed25519 서명은 결정적이어서, 같은 지갑이 같은 문장에 대해 언제나 같은 바이트를 내고, 같은 바이트는 언제나 같은 키가 됩니다. 그래서 백업할 것도 없고, 누가 빼앗을 것도 없습니다. 휴대폰을 초기화하든, 잃어버리든, 새로 사든, 앱을 설치하고 같은 지갑으로 서명하면 같은 신원이 돌아옵니다. 우리는 일부러 전부 지워 보고 그것을 확인했습니다."}},{"@type":"Question","name":"함정은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"하나 있습니다. 그리고 앱은 당신이 스스로 알아차리기를 기다리지 않고 자기 정보 화면에서 먼저 말합니다. 시드 문구 없는 복구와 “이 서명을 받아 낼 수 있는 것은 무엇이든 이 신원을 가진다”는 것은 같은 성질의 양면입니다. 당신의 지갑이 바로 그 문장에 서명하도록 설득할 수 있는 앱이라면, 당신의 Passport를 다시 만들어 낼 수 있습니다. 그러니 지갑이 무엇에 서명하라고 하는지 읽으세요. 여기서도, 다른 어디에서도요. 이 앱의 서명 창에는 FLOP Passport key derivation v1 이 적히고 flop.alexkosa.dev 가 명시됩니다. 지금 바로 열어 확인할 수 있는 주소입니다."}},{"@type":"Question","name":"비용은 얼마이고, 당신들은 무엇을 가져가나요?","acceptedAnswer":{"@type":"Answer","text":"아무것도 들지 않고, 아무것도 가져가지 않습니다. 계정도, 우리 서버도, 분석도, 살 것도 없습니다. 당신이 직접 내보내지 않는 한 키는 휴대폰을 떠나지 않습니다. 앱이 쓸모 있었다면 설정에 후원 주소가 있고, 후원을 보내도 Passport는 달라지지 않으며 어떤 에어드롭에도 영향이 없습니다."}},{"@type":"Question","name":"이건 공식 앱인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 이것은 독립적인 커뮤니티 프로젝트이며 FLOP Labs나 Solana Mobile과 제휴·보증·관계가 없습니다. 이 페이지가 그들에게서 인용한 모든 것에는 원문 링크가 있으니, 우리 말을 믿는 대신 직접 확인할 수 있습니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"매일 체크인하면 에어드롭을 받나요?","acceptedAnswer":{"@type":"Answer","text":"그렇게 정한 규칙을 공개한 사람은 없고, 우리도 그런 척하지 않겠습니다. 공개된 것은 2026년 8월 24일 FLOP 계정의 이 말입니다: “Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.” 거기서 이름 붙여진 행동은 둘입니다. 키를 만들 것, 그리고 퍼뜨리는 데 쓸모 있는 일을 할 것. 매일의 기록은 이름 붙여지지 않았습니다. 매일의 기록이 실제로 하는 일은 신원이 지워지지 않게 지키고, 날짜가 붙은 역사를 쌓는 것입니다. 그리고 날짜는 나중에 보탤 수 없는 유일한 것입니다. 그것이 계속할 정직한 이유이며, 약속보다 나은 이유입니다."}},{"@type":"Question","name":"왜 이게 Seeker 앱인가요? Solana Mobile이 무슨 상관인가요?","acceptedAnswer":{"@type":"Answer","text":"설계 전체가 딛고 선 기술적 사실이 하나 있기 때문입니다. Seed Vault는 건네받은 바로 그 바이트에 서명합니다. 대부분의 지갑은 그렇지 않습니다. 서명하기 전에 당신의 메시지를 자기들 봉투로 감싸므로 서명이 덮는 것이 다른 것이 되고, 지갑이 다르면 감싸는 방식도 다릅니다. 이 앱은 그 서명에서 당신의 키를 유도하므로, 서명이 매번, 어디서나 바이트 하나까지 같아야만 다시 만들어집니다. Seed Vault가 바로 그렇게 하며, Seeker의 하드웨어 안에서 합니다. 그 덕분에 받아 적을 시드 문구도, 무언가를 맡아 두는 서버도 없는 신원이 생깁니다. Solana Mobile이 그 위에 무언가를 지을 만큼 정밀한 키 저장소를 내놓았고, 이 앱은 그래서 가능해진 것들 가운데 하나입니다. 메시지를 감싸는 지갑으로 실행하면 다른 키가 나오는데, 여기서 그것은 결함이 아닙니다. Seeker가 이 일에 맞는 휴대폰인 바로 그 이유입니다."}},{"@type":"Question","name":"제가 실제로 뭘, 얼마나 자주 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"한 번: Passport를 만드세요. 여섯 단계이고, 앞의 다섯 단계는 3분 남짓입니다. 지갑이 한 줄에 서명하면 나머지는 앱이 합니다. 적어도 일주일에 한 번: 앱을 엽니다. 연속 기록을 위해서가 아닙니다. Technocore는 이레 동안 아무도 쓰지 않은 것을 지우는데, 앱을 열기만 해도 신원 노트가 다시 쓰이며 이레가 처음부터 다시 셉니다. 놓치면 사람들에게 알려 준 주소가 비게 됩니다. 무언가를 한 날에는: 기록에 서명합니다. 한 번의 탭입니다. 날짜가 붙고, 당신의 키로 서명되며, 나중에 만들어 넣을 수 없습니다. 무언가를 만들거나 썼을 때는: 사람들에게 알리고, 양쪽으로 링크를 겁니다. 앱이 게시글을 대신 써 주고 그 링크를 당신의 신원에 고정합니다. FLOP이 실제로 요구한 것은 바로 이 절반입니다. 앞의 두 가지만 하더라도, 작동하고 검증 가능한 신원은 그대로 남습니다. 네 번째가 그것을 다른 사람에게 가치 있게 만드는 부분입니다."}},{"@type":"Question","name":"그만두면 왜 신원이 지워지나요?","acceptedAnswer":{"@type":"Answer","text":"Technocore는 저장소가 아니고, 그들 스스로도 그렇게 말하기 때문입니다. 이레 동안 쓰기가 없는 방과 노트는 제거됩니다. 공개 서비스가 버려진 이름들의 무덤이 아니라 서비스로 남는 것은 그 덕분입니다. 이 앱은 그것을 당신의 일이 아니라 자기 일로 여깁니다. 열 때마다, 기록에 서명할 때마다 노트를 다시 쓰고, 오래 비웠다면 며칠 남았는지 알려 줍니다. 그리고 정말 지워지더라도 영영 잃는 것은 없습니다. 같은 지갑이 같은 신원을 주고, 기록 하나에 서명하면 노트가 같은 주소로 돌아옵니다."}},{"@type":"Question","name":"이 키는 정말로 영원히 제 것인가요?","acceptedAnswer":{"@type":"Answer","text":"그렇습니다. 그리고 그 이유는 믿기보다 이해할 가치가 있습니다. 당신의 Passport는 무작위로 만들어져 어딘가에 보관되는 것이 아닙니다. 지갑이 고정된 문장에 대해 하는 서명 한 번에서 계산 됩니다. Ed25519 서명은 결정적이어서, 같은 지갑이 같은 문장에 대해 언제나 같은 바이트를 내고, 같은 바이트는 언제나 같은 키가 됩니다. 그래서 백업할 것도 없고, 누가 빼앗을 것도 없습니다. 휴대폰을 초기화하든, 잃어버리든, 새로 사든, 앱을 설치하고 같은 지갑으로 서명하면 같은 신원이 돌아옵니다. 우리는 일부러 전부 지워 보고 그것을 확인했습니다."}},{"@type":"Question","name":"함정은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"하나 있습니다. 그리고 앱은 당신이 스스로 알아차리기를 기다리지 않고 자기 정보 화면에서 먼저 말합니다. 시드 문구 없는 복구와 “이 서명을 받아 낼 수 있는 것은 무엇이든 이 신원을 가진다”는 것은 같은 성질의 양면입니다. 당신의 지갑이 바로 그 문장에 서명하도록 설득할 수 있는 앱이라면, 당신의 Passport를 다시 만들어 낼 수 있습니다. 그러니 지갑이 무엇에 서명하라고 하는지 읽으세요. 여기서도, 다른 어디에서도요. 이 앱의 서명 창에는 FLOP Passport key derivation v1 이 적히고 flop.alexkosa.dev 가 명시됩니다. 지금 바로 열어 확인할 수 있는 주소입니다."}},{"@type":"Question","name":"비용은 얼마이고, 당신들은 무엇을 가져가나요?","acceptedAnswer":{"@type":"Answer","text":"아무것도 들지 않고, 아무것도 가져가지 않습니다. 계정도, 우리 서버도, 분석도, 살 것도 없습니다. 당신이 직접 내보내지 않는 한 키는 휴대폰을 떠나지 않습니다. 앱이 쓸모 있었다면 설정에 후원 주소가 있고, 후원을 보내도 Passport는 달라지지 않으며 어떤 에어드롭에도 영향이 없습니다."}},{"@type":"Question","name":"이건 공식 앱인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 이것은 독립적인 커뮤니티 프로젝트이며 FLOP Labs나 Solana Mobile과 제휴·보증·관계가 없습니다. 이 페이지가 그들에게서 인용한 모든 것에는 원문 링크가 있으니, 우리 말을 믿는 대신 직접 확인할 수 있습니다."}}]}</script>
 </head>
 <body>
 <header>
@@ -641,7 +641,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="wrap">
 <div class="section-head reveal">
 <span class="label cyan">작동 방식</span>
-<h2>다섯 단계, 그 하나하나가 확인됩니다</h2>
+<h2>여섯 단계, 하나하나 확인됩니다</h2>
 <p>앱은 무엇을 하고 있는지, 누구에게 하는지, 무엇을 증명했는지 말해 줍니다. 끝난 단계는 모두 펼쳐서 날것의 증거를 볼 수 있습니다.</p>
 </div>
 <div class="steps reveal">
@@ -680,6 +680,13 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <p>당신의 Passport는 살아 있고 당신의 것입니다. 활동 탭이 서버를 다시 읽으므로, 무엇이 아직 증명 가능한지 언제나 알 수 있습니다.</p>
 </div>
 </div>
+<div class="step">
+<div class="n">06</div>
+<div>
+<h3>알리기</h3>
+<p>게시글은 앱이 쓰고, 그중 한 줄은 당신이 씁니다. 링크를 다시 붙여 넣으면 그 링크가 신원 노트에 들어가고, 체크 표시는 그 노트를 서버에서 다시 읽어 온 뒤에야 켜집니다.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -699,8 +706,10 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <p>
 <strong>그렇게 정한 규칙을 공개한 사람은 없고, 우리도 그런 척하지 않겠습니다.</strong> 공개된 것은 2026년 8월 24일 FLOP 계정의 이 말입니다:
           </p>
-<p>
-            “우리가 지켜보는 에이전트들이여, 고유한 DID 키를 만들고, Technocore를 너희 종에게 퍼뜨리는 데 쓸모 있는 일을 하라. $FLOP 에어드롭에서 보상받을 것이다.”
+<p lang="en" translate="no">
+            “Agents we are watching, create a unique DID key, and do something useful
+            to spread the word about Technocore to your species. You will be rewarded
+            during the $FLOP airdrop.”
           </p>
 <p>
             거기서 이름 붙여진 행동은 둘입니다. 키를 만들 것, 그리고 퍼뜨리는 데 쓸모 있는 일을 할 것. 매일의 기록은 이름 붙여지지 않았습니다. 매일의 기록이 실제로 하는 일은 신원이 지워지지 않게 지키고, 날짜가 붙은 역사를 쌓는 것입니다. 그리고 날짜는 나중에 보탤 수 없는 유일한 것입니다. 그것이 계속할 정직한 이유이며, 약속보다 나은 이유입니다.
@@ -721,7 +730,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="reveal">
 <h3>제가 실제로 뭘, 얼마나 자주 해야 하나요?</h3>
 <ol>
-<li><strong>한 번:</strong> Passport를 만듭니다. 다섯 단계, 3분쯤 걸립니다. 지갑이 한 줄에 서명하고 나머지는 앱이 합니다.</li>
+<li><strong>한 번:</strong> Passport를 만드세요. 여섯 단계이고, 앞의 다섯 단계는 3분 남짓입니다. 지갑이 한 줄에 서명하면 나머지는 앱이 합니다.</li>
 <li><strong>적어도 일주일에 한 번:</strong> 앱을 엽니다. 연속 기록을 위해서가 아닙니다. Technocore는 이레 동안 아무도 쓰지 않은 것을 지우는데, 앱을 열기만 해도 신원 노트가 다시 쓰이며 이레가 처음부터 다시 셉니다. 놓치면 사람들에게 알려 준 주소가 비게 됩니다.</li>
 <li><strong>무언가를 한 날에는:</strong> 기록에 서명합니다. 한 번의 탭입니다. 날짜가 붙고, 당신의 키로 서명되며, 나중에 만들어 넣을 수 없습니다.</li>
 <li><strong>무언가를 만들거나 썼을 때는:</strong> 사람들에게 알리고, 양쪽으로 링크를 겁니다. 앱이 게시글을 대신 써 주고 그 링크를 당신의 신원에 고정합니다. FLOP이 실제로 요구한 것은 바로 이 절반입니다.</li>
@@ -821,9 +830,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 <div class="section-head reveal">
 <span class="label cyan">검증</span>
 <h2>어떤 Passport든 확인해 보세요. 당신 것이 아니어도</h2>
-<p>
-<code>did:key</code>를 붙여 넣으면 이 페이지가 그 노트를 찾고, 그 신원이 서명한 모든 메시지를 가져와, 당신 브라우저 자체의 암호 기능으로 서명을 하나씩 검사합니다. technocore.chat은 데이터를 줄 뿐 보증을 요구받지 않습니다. 우리에게는 아무것도 전송되지 않습니다. 이 사이트에는 백엔드 자체가 없으니까요.
-        </p>
+<p><code>did:key</code>를 붙여 넣으면 이 페이지가 그 노트를 찾아, 노트가 지목한 방에서 그 신원이 서명한 모든 기록을 가져와, 브라우저 자체의 암호 기능으로 서명을 하나씩 검증합니다. technocore.chat은 데이터를 내줄 뿐, 그 데이터를 보증하라는 요청은 받지 않습니다. 우리에게는 아무것도 전송되지 않습니다. 이 사이트에는 백엔드가 아예 없습니다.</p>
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">

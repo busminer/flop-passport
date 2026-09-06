@@ -126,7 +126,7 @@
 <div class="section-head">
 <span class="label cyan">隐私政策</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>最后更新于 2026 年 8 月 31 日。本政策适用于 Android 应用 <code>dev.alexkosa.floppassport</code> 及本网站。</p>
+<p>最后更新于 2026 年 9 月 6 日。本政策适用于 Android 应用 <code>dev.alexkosa.floppassport</code> 和本网站。</p>
 </div>
 <div class="notice">
 <p style="margin:0">
@@ -134,9 +134,7 @@
         </p>
 </div>
 <h3 style="margin-top:48px">谁来负责</h3>
-<p>
-        FLOP Passport for Seeker 是由个人开发者 Alex Kosa 开发的独立开源项目。它并非由 FLOP Labs 或 Solana Mobile 制作、认可或审核。联系方式：X 上的 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>，或在公开仓库中提交 issue。
-      </p>
+<p>FLOP Passport for Seeker 是独立开发者 Alex Kosa 的开源个人项目。它不是 FLOP Labs 或 Solana Mobile 制作的,也未获得它们的认可或审核。联系方式:<a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>,或在 X 上找 <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>,也可以在公开仓库里提一个 issue。</p>
 <h3 style="margin-top:32px">应用在你设备上保存什么</h3>
 <ul class="plain">
 <li>
@@ -157,6 +155,8 @@
 <li>
 <strong>发往 technocore.chat</strong>，当你发布身份或签署记录时：你的公开 <code>did:key</code>、你正在签署的文本、一个计数器和签名。这些信息按设计就是公开的，这正是公开身份的意义，之后任何人都能读到。
         </li>
+<li><strong>发往 technocore.chat,写进你公开的身份笔记</strong>,前提是你把已发布帖子的链接贴了回来:就是这条链接。它点出你的社交账号,存放在由你的密钥算出的固定公开地址上,也正是它把你的密钥和你的名字公开绑在一起。贴不贴由你决定,重写一次不带它的笔记就能去掉它。</li>
+<li><strong>发往你在分享时选定的那个应用</strong>,比如 X:帖子的文字。应用把文字交给系统的分享面板,自己从不发布任何东西。</li>
 <li>
 <strong>发往你的钱包应用</strong>，当你创建 Passport 时：一句待签的文本。钱包在你的设备上处理它，我们不会通过网络发送任何东西。
         </li>
@@ -175,14 +175,14 @@
 <li>广告标识符。这里没有广告，也没有广告 SDK。</li>
 </ul>
 <h3 style="margin-top:32px">分析与追踪</h3>
-<p>
-        没有。应用中不含任何分析 SDK、崩溃上报服务或任何第三方追踪。本网站不设置 cookie，不做分析统计，也没有服务端代码；它唯一的对外请求是两个网页字体，以及当你使用验证器时，从你的浏览器直接读取 technocore.chat，而这从不经过我们。
-      </p>
+<p>没有。应用里没有分析 SDK,没有崩溃上报服务,也没有任何第三方追踪。本网站不设置 cookie,不做访问统计,服务器上没有任何代码。它对外只发出两类请求:从 Google Fonts 取两款网页字体——就像任何字体托管一样,对方会拿到你的 IP 地址;以及在你使用校验工具时,直接从 technocore.chat 读取数据,这个请求从你的浏览器发出,永远不经过我们。网站本身是一堆静态文件,由 Cloudflare 分发并处理请求;我们不运行自己的代码,也不保留日志。</p>
 <h3 style="margin-top:32px">权限</h3>
 <ul class="plain">
 <li><strong>网络</strong> — 当你发布或签署内容时，用来访问 technocore.chat。</li>
 <li><strong>振动</strong> — 步骤通过验证时的一次短促提示。</li>
 <li><strong>生物识别</strong> — 用来守住显示你私钥的那个页面。</li>
+<li><strong>通知</strong> — 每日提醒、关于未完成步骤的提示,以及笔记到期前的预警。</li>
+<li><strong>开机启动</strong> — 仅用于手机重启后重新设定上述提醒。开机时应用不做别的任何事。</li>
 </ul>
 <p>不申请存储权限；保存文件走系统选择器。</p>
 <h3 style="margin-top:32px">删除你的数据</h3>
@@ -190,9 +190,7 @@
 <p style="margin:0 0 12px">
 <strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport，或者卸载应用。两者都会把加密密钥、你的身份和你的偏好从手机上彻底移除。别处没有副本，我们这边也没有什么可以替你删除。
         </p>
-<p style="margin:0">
-<strong>已经发布的内容。</strong>你选择发布到 Technocore 上的内容是公开的，且不在我们控制之内，我们既不托管也无法移除。公共房间中的记录会随着房间压缩被该服务丢弃，备注则会保留。关于 technocore.chat 上内容的请求，应当提交给运营它的 FLOP Labs。
-        </p>
+<p style="margin:0"><strong>已经发布出去的东西。</strong>你选择发布到 Technocore 上的一切都是公开的,也不在我们的掌控之内——我们不托管它,也无法删除它。公共房间里的记录会随着房间被压缩而被那个服务丢弃,而身份笔记在七天没有任何写入之后会被删除——也就是说,你发布的东西如果不被重写,就会自行消失。关于 technocore.chat 上内容的请求,请找运营方 FLOP Labs。</p>
 </div>
 <h3 style="margin-top:32px">儿童</h3>
 <p>

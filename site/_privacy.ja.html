@@ -19,7 +19,7 @@
 <div class="section-head">
 <span class="label cyan">プライバシーポリシー</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>最終更新日 2026 年 8 月 31 日。本ポリシーは Android アプリ <code>dev.alexkosa.floppassport</code> および本ウェブサイトを対象とします。</p>
+<p>最終更新 2026年9月6日。このポリシーは Android アプリ <code>dev.alexkosa.floppassport</code> とこのウェブサイトを対象とします。</p>
 </div>
 <div class="notice">
 <p style="margin:0">
@@ -27,9 +27,7 @@
         </p>
 </div>
 <h3 style="margin-top:48px">責任の所在</h3>
-<p>
-        FLOP Passport for Seeker は、個人開発者 Alex Kosa による独立したオープンソースプロジェクトです。FLOP Labs や Solana Mobile が制作・推奨・審査したものではありません。連絡先：X の <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>、または公開リポジトリの issue から。
-      </p>
+<p>FLOP Passport for Seeker は、個人開発者 Alex Kosa による独立したオープンソースのプロジェクトです。FLOP Labs や Solana Mobile が作ったものではなく、承認も審査もされていません。連絡先：<a href="mailto:flop-passport@alexkosa.dev">flop-passport@alexkosa.dev</a>、X では <a href="https://x.com/AlexKosa1" rel="noopener">@AlexKosa1</a>、または公開リポジトリに issue を立ててください。</p>
 <h3 style="margin-top:32px">アプリが端末に保存するもの</h3>
 <ul class="plain">
 <li>
@@ -50,6 +48,8 @@
 <li>
 <strong>technocore.chat へ</strong>。身元を公開するとき、また記録に署名するとき：あなたの公開 <code>did:key</code>、署名対象のテキスト、カウンター、そして署名。この情報は設計上公開されるものであり、それこそが公開された身元の意義です。後から誰でも読めます。
         </li>
+<li><strong>technocore.chat へ、あなたの公開された身元ノートの中に</strong>。公開した投稿のリンクを貼り戻した場合、そのリンクが入ります。リンクはあなたのソーシャルアカウントを名指しし、鍵から計算される恒久的な公開アドレスに置かれ、鍵とあなたの名前を人前で結びつけるのはこれです。貼るかどうかはあなたが決めますし、リンクなしでノートを書き直せば消えます。</li>
+<li><strong>投稿を共有するときにあなたが選んだアプリへ</strong>（X など）：投稿の本文。アプリはそれを OS の共有シートに渡すだけで、自分から投稿することはありません。</li>
 <li>
 <strong>あなたのウォレットアプリへ</strong>。Passport を作成するとき：署名すべき一文。ウォレットは端末上でそれを処理し、当方がネットワーク経由で何かを送ることはありません。
         </li>
@@ -68,14 +68,14 @@
 <li>広告 ID。広告はなく、広告 SDK もありません。</li>
 </ul>
 <h3 style="margin-top:32px">解析と追跡</h3>
-<p>
-        ありません。アプリには解析 SDK も、クラッシュ報告サービスも、いかなる第三者の追跡も含まれていません。本サイトは cookie を設定せず、解析も行わず、サーバー側のコードもありません。外部への通信は、二つのウェブフォントと、検証ツールを使うときにあなたのブラウザから technocore.chat を直接読みに行くものだけで、後者が当方を経由することはありません。
-      </p>
+<p>ありません。アプリには解析 SDK も、クラッシュ報告サービスも、第三者による追跡の類も入っていません。このサイトは Cookie を置かず、訪問を数えず、サーバー側のコードを持ちません。外に出る通信は二つだけです。一つは Google Fonts から取得するウェブフォント二種で、フォント配信元がそうであるように、先方にはあなたの IP アドレスが渡ります。もう一つは検証ツールを使ったときの technocore.chat への直接の読み取りで、これはあなたのブラウザから出て、こちらを通ることはありません。サイト自体は静的ファイルで、配信もリクエストの処理も Cloudflare が行います。私たちは自分のコードを動かしておらず、ログも保持していません。</p>
 <h3 style="margin-top:32px">権限</h3>
 <ul class="plain">
 <li><strong>インターネット</strong> — 公開や署名を行うときに technocore.chat へ接続するため。</li>
 <li><strong>バイブレーション</strong> — 手順が検証できたときの短い合図のため。</li>
 <li><strong>生体認証</strong> — 秘密鍵を表示する画面を守るため。</li>
+<li><strong>通知</strong> — 毎日のリマインダー、終えていないステップの知らせ、そしてノートが消える前の警告。</li>
+<li><strong>起動時の実行</strong> — 端末を再起動したあとに、上のリマインダーを設定し直すためだけのものです。起動時にそれ以外のことはしません。</li>
 </ul>
 <p>ストレージ権限は要求しません。ファイルの保存はシステムの選択画面を使います。</p>
 <h3 style="margin-top:32px">データの削除</h3>
@@ -83,9 +83,7 @@
 <p style="margin:0 0 12px">
 <strong>端末上で。</strong>設定 → 危険な操作 → Passport を削除、またはアプリをアンインストールします。どちらでも、暗号化された鍵、あなたの身元、設定が端末から完全に消えます。他のどこにも複製はなく、当方が代わりに削除するものもありません。
         </p>
-<p style="margin:0">
-<strong>公開済みのものについて。</strong>あなたが Technocore 上に公開すると決めたものは公開されており、当方の管理外です。ホストもしていませんし、取り除くこともできません。公開ルームの記録はルームの整理に伴ってそのサービスが破棄し、ノートは残ります。technocore.chat 上の内容についての要望は、運用者である FLOP Labs へお願いします。
-        </p>
+<p style="margin:0"><strong>公開されたもの。</strong>Technocore に公開すると決めたものはすべて公開であり、私たちの手の届かないところにあります。こちらで保管しておらず、削除もできません。公開ルームの記録はルームが圧縮されるにつれてあのサービスが捨てていき、身元ノートは何も書き込まれないまま七日が過ぎると削除されます。つまり公開したものは、書き直さなければひとりでに消えます。technocore.chat 上の内容についての依頼は、運営元の FLOP Labs へお願いします。</p>
 </div>
 <h3 style="margin-top:32px">子どもについて</h3>
 <p>

@@ -40,6 +40,9 @@ SKIP = {
     "Passport", "FLOP", "$FLOP", "Seeker", "Solana", "Solana Mobile", "Technocore",
     "Seed Vault", "StrongBox", "Alex Kosa", "@AlexKosa1", "@flop_labs", "alexkosa.dev",
     "did:key", "flop.alexkosa.dev", "FLOP Passport", "FLOP Passport for Seeker",
+    # The tip wallet, printed under the button so a desktop reader can copy it. It is an
+    # address: one wrong character sends money nowhere, so no language gets to touch it.
+    "BmJaEmaEURBDpj91GUTvJcpKy2MAu8ZtRFRPaMpEuuax",
 }
 
 
@@ -67,6 +70,13 @@ def leaves(soup: BeautifulSoup):
     file for the English text, so the two can never disagree about what a segment is.
     """
     for node in soup.find_all(True):
+        # `translate="no"` is the standard attribute for text that must survive as written,
+        # and it is honoured here for the same reason a machine translator honours it: a
+        # translated sentence inside quotation marks, attributed to a named account on a
+        # named date, is a quotation nobody made. The one place it is used is FLOP's own
+        # words in the manual, which appear a screen higher with a labelled translation.
+        if node.get("translate") == "no" or node.find_parent(attrs={"translate": "no"}):
+            continue
         if node.name in BLOCKS and not has_block_child(node):
             pass
         elif node.name in LEAVES and not any(isinstance(c, Tag) for c in node.children):
