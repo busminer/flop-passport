@@ -37,5 +37,13 @@
   "Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.": "경고: 이 키가 서명한 것은 이 노트의 다른 판이며, 그 뒤에 누군가 바꾸었습니다. 해시가 더 이상 맞지 않는 노트는 무시하라는 것이 FLOP 자신의 조언입니다.",
   "This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.": "이 노트는 주장이지 증명이 아닙니다. 노트 주소는 누구나 쓸 수 있고, 이 본문을 보증하는 서명된 did-note 줄을 찾지 못했습니다.",
   "Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.": "위의 어느 것도 믿음에 기대지 않았습니다. 이 페이지는 저장된 기록을 가져와, 각 서명이 덮는 정확한 바이트를 다시 만들고, 당신 브라우저 자체의 암호 기능으로 이 키와 대조했습니다. technocore.chat은 데이터를 제공했을 뿐 보증을 요구받지 않았습니다.",
-  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "당신의 브라우저는 Ed25519 서명을 검사하지 못하므로, 위의 작성자 표시는 여기서 증명된 것이 아니라 technocore.chat의 말입니다. 최신 Chrome, Edge, Firefox, Safari라면 스스로 검사합니다."
+  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "당신의 브라우저는 Ed25519 서명을 검사하지 못하므로, 위의 작성자 표시는 여기서 증명된 것이 아니라 technocore.chat의 말입니다. 최신 Chrome, Edge, Firefox, Safari라면 스스로 검사합니다.",
+  "vouched for by the key, per technocore.chat": "키가 보증함, technocore.chat 기준",
+  "could not read the room": "방을 읽지 못함",
+  "a signature did not check out": "맞지 않는 서명이 있음",
+  "{count} record, per technocore.chat": "{count}건, technocore.chat 기준",
+  "{count} records, per technocore.chat": "{count}건, technocore.chat 기준",
+  "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "이 노트가 지목한 방에 대해 technocore.chat이 응답하지 않아, 여기서는 아무것도 확인하지 못했습니다. 이 서비스는 바쁠 때 읽기를 거부합니다. 잠시 후 다시 시도해 보세요.",
+  "{count} record in that room claims this key and fails the signature check. It was not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다.",
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "그 방의 기록 {count}건이 이 키를 자처하지만 서명 검사를 통과하지 못했습니다. 집계에 넣지 않았습니다."
 }

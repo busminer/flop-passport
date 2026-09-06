@@ -227,12 +227,29 @@
    * signature, so the digits are quoted before parsing and never become a number.
    */
   async function readRoom(room) {
+    // `/export` rather than `?limit=200`, which returns the newest 200 and nothing else.
+    // Every user of this app signs into one shared room, so a cap of 200 would quietly
+    // stop finding the did-note of anyone who joined early - the exact people whose
+    // records are worth the most - the moment the room passed two hundred messages.
+    // Export is the whole retained ring, one JSON record per line, byte for byte as
+    // written, which is also the form a signature re-verifies from.
     var response = await fetch(
-      "https://technocore.chat/r/" + encodeURIComponent(room) + "?since=0&limit=200&format=json"
+      "https://technocore.chat/r/" + encodeURIComponent(room) + "/export"
     );
     if (!response.ok) return null;
-    var body = (await response.text()).replace(/"nonce":\s*(\d+)/g, '"nonce":"$1"');
-    return JSON.parse(body).messages || [];
+    var lines = (await response.text()).split("\n");
+    var messages = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      try {
+        messages.push(JSON.parse(line.replace(/"nonce":\s*(\d+)/g, '"nonce":"$1"')));
+      } catch (e) {
+        // A torn last line is documented as possible. Skipping it loses one record;
+        // throwing would lose the room.
+      }
+    }
+    return messages;
   }
 
   var DID_NOTE = /^did-note\s+([0-9a-f]{16})\s+([0-9a-f]{64})$/;
@@ -264,8 +281,18 @@
     // and when the browser cannot check at all we fall back to the service's word and say
     // so on the page instead of pretending the difference does not exist.
     var proved = [];
+    var failed = 0;
     for (var i = 0; i < mine.length; i++) {
-      if (!checked || (await verifyRecord(room, mine[i]))) proved.push(mine[i]);
+      if (!checked) {
+        proved.push(mine[i]);
+      } else if (await verifyRecord(room, mine[i])) {
+        proved.push(mine[i]);
+      } else {
+        // Dropped, and counted. A record that claims this key and does not survive the
+        // check is the most newsworthy thing this page can find; it used to disappear
+        // into the same silence as a key that never published at all.
+        failed += 1;
+      }
     }
 
     var found = null;
@@ -281,6 +308,7 @@
     var base = {
       room: room,
       selfChecked: checked,
+      failed: failed,
       signed: proved.length,
       newest: proved.length ? proved[0].ts : null,
     };
@@ -360,16 +388,33 @@
       // key vouched for is evidence; and a note that no longer matches its own signed hash
       // is a warning worth shouting about.
       var vouch = text ? await checkVouch(did, fp, text) : { state: "missing" };
+      // Green means this browser did the arithmetic. When it could not - an old browser
+      // with no Ed25519 in WebCrypto - the same facts are still worth showing, but as
+      // technocore.chat's word, in grey, with the source named. A green badge over an
+      // unchecked claim would be the one lie this page cannot afford.
       if (vouch.state === "matches") {
-        head.appendChild(el("span", "badge green", T("vouched for by the key")));
+        head.appendChild(el("span", vouch.selfChecked ? "badge green" : "badge grey",
+          vouch.selfChecked
+            ? T("vouched for by the key")
+            : T("vouched for by the key, per technocore.chat")));
       } else if (vouch.state === "changed") {
         head.appendChild(el("span", "badge red", T("note changed since signing")));
+      } else if (vouch.state === "unknown") {
+        head.appendChild(el("span", "badge grey", T("could not read the room")));
+      }
+      if (vouch.failed) {
+        head.appendChild(el("span", "badge red", T("a signature did not check out")));
       }
       if (vouch.signed) {
         head.appendChild(
-          el("span", "badge green", vouch.signed === 1
-            ? T("{count} record checked here", { count: vouch.signed })
-            : T("{count} records checked here", { count: vouch.signed }))
+          el("span", vouch.selfChecked ? "badge green" : "badge grey",
+            vouch.selfChecked
+              ? (vouch.signed === 1
+                  ? T("{count} record checked here", { count: vouch.signed })
+                  : T("{count} records checked here", { count: vouch.signed }))
+              : (vouch.signed === 1
+                  ? T("{count} record, per technocore.chat", { count: vouch.signed })
+                  : T("{count} records, per technocore.chat", { count: vouch.signed })))
         );
       }
       nodes.push(head);
@@ -410,6 +455,10 @@
           ? "Warning: this key signed a line for a different version of this note, so " +
             "somebody has changed it since. FLOP's own advice is to ignore a note whose " +
             "hash no longer matches."
+          : vouch.state === "unknown"
+          ? "technocore.chat did not answer for the room this note names, so nothing here " +
+            "could be checked. That service refuses reads when it is busy; try again in a " +
+            "moment."
           : "This note is a claim, not a proof: note addresses are world-writable, and no " +
             "signed did-note line was found vouching for this text."
       ));
@@ -420,7 +469,19 @@
       // The distinction the whole page turns on, spelled out rather than implied by a
       // badge: a service reporting an author is not the same thing as arithmetic anyone
       // can redo. Before 31 August 2026 only the first was on offer.
-      if (vouch.room) {
+      if (vouch.failed) {
+        var dropped = el("p", null, vouch.failed === 1
+          ? T("{count} record in that room claims this key and fails the signature check. " +
+              "It was not counted.", { count: vouch.failed })
+          : T("{count} records in that room claim this key and fail the signature check. " +
+              "They were not counted.", { count: vouch.failed }));
+        dropped.style.fontSize = "14px";
+        dropped.style.marginTop = "12px";
+        dropped.style.color = "var(--red)";
+        nodes.push(dropped);
+      }
+
+      if (vouch.room && vouch.state !== "unknown") {
         var proof = el("p", null, T(
           vouch.selfChecked
             ? "Nothing above was taken on trust. This page pulled the stored records, " +

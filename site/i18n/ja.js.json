@@ -37,5 +37,13 @@
   "Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.": "警告：この鍵が署名したのはこのノートの別の版であり、その後に誰かが書き換えています。ハッシュが一致しなくなったノートは無視せよ、というのが FLOP 自身の助言です。",
   "This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.": "このノートは主張であって証明ではありません。ノートのアドレスは誰でも書き込め、この本文を保証する署名済みの did-note 行は見つかりませんでした。",
   "Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.": "上記のどれも、信用に基づいてはいません。本ページは保存された記録を取得し、各署名が覆う正確なバイト列を組み直し、あなたのブラウザ自身の暗号機能でこの鍵と突き合わせました。technocore.chat はデータを渡しただけで、保証は求められていません。",
-  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "お使いのブラウザは Ed25519 の署名を検証できないため、上記の作成者はここで証明されたものではなく technocore.chat の言い分です。最近の Chrome、Edge、Firefox、Safari であれば自分で検証します。"
+  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "お使いのブラウザは Ed25519 の署名を検証できないため、上記の作成者はここで証明されたものではなく technocore.chat の言い分です。最近の Chrome、Edge、Firefox、Safari であれば自分で検証します。",
+  "vouched for by the key, per technocore.chat": "鍵が保証、technocore.chat による",
+  "could not read the room": "ルームを読めませんでした",
+  "a signature did not check out": "検証に失敗した署名があります",
+  "{count} record, per technocore.chat": "{count} 件、technocore.chat による",
+  "{count} records, per technocore.chat": "{count} 件、technocore.chat による",
+  "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "このノートが指すルームについて technocore.chat が応答しなかったため、ここでは何も確認できませんでした。混雑時、このサービスは読み取りを断ります。少し待ってからもう一度お試しください。",
+  "{count} record in that room claims this key and fails the signature check. It was not counted.": "そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。",
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "そのルームには、この鍵を名乗りながら署名の検証に通らない記録が {count} 件あります。集計には入れていません。"
 }

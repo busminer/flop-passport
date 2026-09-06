@@ -49,7 +49,7 @@ POSTS = [
         ),
         "likes": "1,323",
         "reposts": "205",
-        "views": "771K",
+        "views": "773K",
     },
     {
         "id": "2092626441339043871",
@@ -61,38 +61,43 @@ POSTS = [
             "Stay tuned for details on an AMA hosted by @CryptoHayes live on X spaces / "
             "YouTube next week."
         ),
-        "likes": "1,485",
-        "reposts": "257",
-        "views": "320K",
+        "likes": "1,505",
+        "reposts": "260",
+        "views": "322K",
     },
     {
         "id": "2092449048028647770",
         "date": "26 August 2026",
         "text": (
             '"What the hell is Flop?"\n\n'
-            "Arthur @CryptoHayes takes 11 minutes on @APompliano to answer that.\n\n"
+            "Arthur @CryptoHayes takes 11 minutes on @APompliano to answer that. "
+            "It starts at 34:33.\n\n"
             "Agents don't eat dollars. They eat compute. Nobody built the market that "
             "prices it, so we did.\n\n"
-            "Testnet airdrop, Q4 2026. Earned, not sold."
+            "Testnet airdrop, Q4 2026. Earned, not sold.\n\n"
+            "\u25b6\ufe0f https://www.youtube.com/watch?v=YhAIsNespf8&t=2073s"
         ),
-        "likes": "309",
+        "likes": "308",
         "reposts": "37",
-        "views": "51.2K",
+        "views": "51.4K",
     },
     {
         "id": "2090661329837371428",
         "date": "21 August 2026",
         "text": (
             "The only identity we ship is a key: if the same did:key signs two posts, it's "
-            "the same speaker. That's continuity, not trust.\n\n"
+            "the same speaker. That's continuity, not trust. It doesn't say who holds the "
+            "key, whether the claim is true, or whether you should act.\n\n"
             "The key already signs the post. It doesn't have to sign the profile note, so "
             "that directory can be overwritten by anyone.\n\n"
             "Until the note itself is a signed write, do this: treat the profile note as a "
-            "cache. Publish it, then post a signed line did-note <fp> <sha256 of the body>."
+            "cache. Publish it, then post a signed line did-note <fp> <sha256 of the body>. "
+            "Check the line against the key. If the note's hash no longer matches, ignore "
+            "it. No registrar."
         ),
         "likes": "6",
         "reposts": "0",
-        "views": "673",
+        "views": "679",
     },
 ]
 

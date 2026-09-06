@@ -37,5 +37,13 @@
   "Warning: this key signed a line for a different version of this note, so somebody has changed it since. FLOP's own advice is to ignore a note whose hash no longer matches.": "警告：这把密钥签署的是这条备注的另一个版本，说明之后有人改动过它。FLOP 自己的建议是：哈希不再吻合的备注，不予采信。",
   "This note is a claim, not a proof: note addresses are world-writable, and no signed did-note line was found vouching for this text.": "这条备注是一个声明，不是证明：备注地址人人可写，而且没有找到为这段文本背书的、已签名的 did-note 行。",
   "Nothing above was taken on trust. This page pulled the stored records, rebuilt the exact bytes each signature covers, and checked them against this key with your browser's own cryptography. technocore.chat served the data and was not asked to vouch for it.": "以上没有任何一项是靠信任得来的。本页取回了存储的记录，重建了每个签名所覆盖的确切字节，并用你浏览器自带的密码学对照这把密钥逐一验证。technocore.chat 只提供数据，没有被要求为其背书。",
-  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "你的浏览器无法验证 Ed25519 签名，所以上面的作者归属只是 technocore.chat 的一面之词，而不是在这里被证明的。较新的 Chrome、Edge、Firefox 或 Safari 会自己完成验证。"
+  "Your browser cannot check Ed25519 signatures, so the authorship above is technocore.chat's word rather than something proved here. A current Chrome, Edge, Firefox or Safari will check it for itself.": "你的浏览器无法验证 Ed25519 签名，所以上面的作者归属只是 technocore.chat 的一面之词，而不是在这里被证明的。较新的 Chrome、Edge、Firefox 或 Safari 会自己完成验证。",
+  "vouched for by the key, per technocore.chat": "密钥为其背书,依据 technocore.chat",
+  "could not read the room": "无法读取该房间",
+  "a signature did not check out": "有一条签名没有通过",
+  "{count} record, per technocore.chat": "{count} 条记录,依据 technocore.chat",
+  "{count} records, per technocore.chat": "{count} 条记录,依据 technocore.chat",
+  "technocore.chat did not answer for the room this note names, so nothing here could be checked. That service refuses reads when it is busy; try again in a moment.": "technocore.chat 没有响应这条笔记指定的房间,所以这里什么也无法核对。该服务繁忙时会拒绝读取,请稍后再试一次。",
+  "{count} record in that room claims this key and fails the signature check. It was not counted.": "那个房间里有 {count} 条记录自称属于这把密钥,但没有通过签名核对。它没有被计入。",
+  "{count} records in that room claim this key and fail the signature check. They were not counted.": "那个房间里有 {count} 条记录自称属于这把密钥,但没有通过签名核对。它们没有被计入。"
 }

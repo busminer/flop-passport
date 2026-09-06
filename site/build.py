@@ -345,6 +345,7 @@ def page(
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
 <link rel="stylesheet" href="{cachebust("styles.css")}" />
+<noscript><style>.reveal{{opacity:1;transform:none}}</style></noscript>
 {extra_head}
 </head>
 <body>
