@@ -20,6 +20,7 @@ that deploys the site can never be the reason a language goes missing.
 from __future__ import annotations
 
 import json
+from html import unescape
 import re
 import hashlib
 
@@ -76,6 +77,12 @@ EN_META = {
         "stores, what leaves your phone, and how to delete everything."
     ),
     "switcher_label": "Language",
+    # Attributes, not sentences, so `extract.py` never saw them and ten translated pages
+    # spoke English to anyone using a screen reader. The field's label and the picture's
+    # description are the only two words on the page a blind reader gets instead of the
+    # thing itself.
+    "verify_input_label": "A did:key identity to verify",
+    "avatar_alt": "Flop Labs profile picture",
 }
 
 
@@ -165,6 +172,24 @@ def switcher(lang: str, page_name: str) -> str:
     )
 
 
+def localize_attributes(body: str, lang: str) -> str:
+    """Translate the text that lives inside attributes rather than between tags.
+
+    The extractor walks text nodes, which is the right thing for prose and blind to an
+    `aria-label`. So the one control on the site that does something - the field you paste
+    a `did:key` into - announced itself in English on all ten translated pages, to exactly
+    the readers who cannot see the translated heading above it.
+    """
+    if lang == "en":
+        return body
+    for key, english in (
+        ("verify_input_label", EN_META["verify_input_label"]),
+        ("avatar_alt", EN_META["avatar_alt"]),
+    ):
+        body = body.replace(f'"{english}"', '"' + meta(lang, key) + '"')
+    return body
+
+
 def localize_links(body: str, lang: str) -> str:
     """Point the site's own links at the same language the reader is already in."""
     if lang == "en":
@@ -220,6 +245,30 @@ def software_jsonld(lang: str) -> str:
     return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 
 
+def faq_block(body: str) -> str | None:
+    """The inside of `<div class="faq">`, found by counting divs rather than by indentation.
+
+    This used to be a regex ending in `\n      </div>`, which is the English partial's
+    exact indentation and nobody else's: the translated partials come out of the apply step
+    with their leading whitespace stripped, so on all ten of them the match failed and the
+    page shipped without its structured FAQ. Silently, because "no match" and "no FAQ here"
+    looked the same from the outside.
+    """
+    start = body.find('<div class="faq">')
+    if start == -1:
+        return None
+    i = body.index(">", start) + 1
+    depth = 1
+    inner = i
+    while depth and i < len(body):
+        m = re.compile(r"</?div\b", re.I).search(body, i)
+        if not m:
+            return None
+        depth += 1 if m.group(0)[1] != "/" else -1
+        i = m.end()
+    return body[inner : i - len(m.group(0))] if depth == 0 else None
+
+
 FAQ_ITEM = re.compile(r'<div class="reveal">\s*<h3>(.*?)</h3>(.*?)(?=<div class="reveal">)', re.S)
 
 
@@ -230,13 +279,20 @@ def faq_jsonld(body: str) -> str | None:
     that no longer matches the visible one is worse than none, and there is no way to keep
     two hand-written copies in step across eleven languages.
     """
-    block = re.search(r'<div class="faq">(.*?)\n      </div>', body, re.S)
-    if not block:
-        return None
+    block = faq_block(body)
+    if block is None:
+        # Not "this page has no FAQ" - every page has one. Something changed the markup
+        # and this function stopped seeing it, which is exactly how ten languages quietly
+        # lost their structured FAQ once already. Fail loudly instead.
+        raise ValueError("the FAQ section exists on the page but could not be parsed")
     items = []
-    for m in FAQ_ITEM.finditer(block.group(1) + '<div class="reveal">'):
-        question = " ".join(re.sub(r"<[^>]+>", "", m.group(1)).split())
-        answer = " ".join(re.sub(r"<[^>]+>", " ", m.group(2)).split())
+    for m in FAQ_ITEM.finditer(block + '<div class="reveal">'):
+        # `html.unescape` because this text is going into a <script>, whose content the
+        # browser hands over raw. A `&ldquo;` that renders as a quotation mark on the page
+        # stays the seven literal characters inside the JSON, and a structured answer that
+        # does not match the visible one is the one thing this function exists to prevent.
+        question = " ".join(unescape(re.sub(r"<[^>]+>", "", m.group(1))).split())
+        answer = " ".join(unescape(re.sub(r"<[^>]+>", " ", m.group(2))).split())
         if not question or len(answer) < 20:
             continue
         items.append({
@@ -330,6 +386,7 @@ def build_index(lang: str) -> Path:
         "<!--SEEKER_PLATE-->",
         svg("seeker_solana_mobile_lockup_white.svg", class_prefix="sp"),
     )
+    body = localize_attributes(body, lang)
     body = localize_links(body, lang)
     # After localize_links, never before it. The switcher's hrefs are already the exact
     # per-language addresses, and localize_links rewrites every `href="/"` on the page into
@@ -360,6 +417,7 @@ def build_privacy(lang: str) -> Path:
         "<svg ", '<svg style="height:20px;width:auto" ', 1
     )
     body = body.replace("<!--LOCKUP_SMALL-->", small)
+    body = localize_attributes(body, lang)
     body = localize_links(body, lang)
     body = body.replace("<!--LANGS-->", switcher(lang, "privacy"))
     out = page(

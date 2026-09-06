@@ -4,69 +4,89 @@
     "index_description": "Создайте личность Technocore did:key из кошелька Solana, опубликуйте её там, где её проверит любой, и храните подтверждения. Открытый код, без аккаунта, без сервера.",
     "privacy_title": "Приватность — FLOP Passport для Seeker",
     "privacy_description": "У FLOP Passport нет аккаунта, аналитики и собственного сервера. Что приложение хранит, что покидает телефон и как всё удалить.",
-    "switcher_label": "Язык"
+    "switcher_label": "Язык",
+    "verify_input_label": "Личность did:key для проверки",
+    "avatar_alt": "Фото профиля Flop Labs"
   },
   "zh": {
     "index_title": "FLOP Passport for Seeker",
     "index_description": "用你的 Solana 钱包创建 Technocore did:key 身份，发布在任何人都能验证的位置，并保留全部凭据。开源，无需账号，没有服务器。",
     "privacy_title": "隐私 — FLOP Passport for Seeker",
     "privacy_description": "FLOP Passport 没有账号、没有分析统计，也没有自己的服务器。应用保存什么、什么会离开你的手机，以及如何删除一切。",
-    "switcher_label": "语言"
+    "switcher_label": "语言",
+    "verify_input_label": "要验证的 did:key 身份",
+    "avatar_alt": "Flop Labs 的头像"
   },
   "es": {
     "index_title": "FLOP Passport para Seeker",
     "index_description": "Crea una identidad Technocore did:key desde tu cartera Solana, publícala donde cualquiera pueda verificarla y guarda los comprobantes. Código abierto, sin cuenta, sin servidor.",
     "privacy_title": "Privacidad — FLOP Passport para Seeker",
     "privacy_description": "FLOP Passport no tiene cuenta, ni analítica, ni servidor propio. Qué guarda la app, qué sale de tu teléfono y cómo borrarlo todo.",
-    "switcher_label": "Idioma"
+    "switcher_label": "Idioma",
+    "verify_input_label": "Una identidad did:key para verificar",
+    "avatar_alt": "Foto de perfil de Flop Labs"
   },
   "pt": {
     "index_title": "FLOP Passport para Seeker",
     "index_description": "Crie uma identidade Technocore did:key a partir da sua carteira Solana, publique onde qualquer um pode verificar e guarde os comprovantes. Código aberto, sem conta, sem servidor.",
     "privacy_title": "Privacidade — FLOP Passport para Seeker",
     "privacy_description": "O FLOP Passport não tem conta, nem analytics, nem servidor próprio. O que o app guarda, o que sai do seu telefone e como apagar tudo.",
-    "switcher_label": "Idioma"
+    "switcher_label": "Idioma",
+    "verify_input_label": "Uma identidade did:key para verificar",
+    "avatar_alt": "Foto de perfil da Flop Labs"
   },
   "de": {
     "index_title": "FLOP Passport für Seeker",
     "index_description": "Erzeuge aus deiner Solana-Wallet eine Technocore-did:key-Identität, veröffentliche sie dort, wo jeder sie prüfen kann, und behalte die Belege. Quelloffen, ohne Konto, ohne Server.",
     "privacy_title": "Datenschutz — FLOP Passport für Seeker",
     "privacy_description": "FLOP Passport hat kein Konto, keine Analytik und keinen eigenen Server. Was die App speichert, was dein Telefon verlässt und wie du alles löschst.",
-    "switcher_label": "Sprache"
+    "switcher_label": "Sprache",
+    "verify_input_label": "Eine did:key-Identität zum Überprüfen",
+    "avatar_alt": "Profilbild von Flop Labs"
   },
   "tr": {
     "index_title": "Seeker için FLOP Passport",
     "index_description": "Solana cüzdanından bir Technocore did:key kimliği oluştur, herkesin doğrulayabileceği bir yerde yayımla ve kanıtları sakla. Açık kaynak, hesap yok, sunucu yok.",
     "privacy_title": "Gizlilik — Seeker için FLOP Passport",
     "privacy_description": "FLOP Passport'un hesabı, analitiği ve kendine ait sunucusu yok. Uygulamanın ne sakladığı, telefonundan ne çıktığı ve her şeyi nasıl sileceğin.",
-    "switcher_label": "Dil"
+    "switcher_label": "Dil",
+    "verify_input_label": "Doğrulanacak bir did:key kimliği",
+    "avatar_alt": "Flop Labs profil fotoğrafı"
   },
   "vi": {
     "index_title": "FLOP Passport cho Seeker",
     "index_description": "Tạo danh tính Technocore did:key từ ví Solana của bạn, công bố ở nơi ai cũng kiểm chứng được, và giữ lại bằng chứng. Mã nguồn mở, không tài khoản, không máy chủ.",
     "privacy_title": "Riêng tư — FLOP Passport cho Seeker",
     "privacy_description": "FLOP Passport không có tài khoản, không đo lường và không máy chủ riêng. Ứng dụng lưu gì, cái gì rời khỏi máy bạn, và cách xóa sạch mọi thứ.",
-    "switcher_label": "Ngôn ngữ"
+    "switcher_label": "Ngôn ngữ",
+    "verify_input_label": "Danh tính did:key cần xác minh",
+    "avatar_alt": "Ảnh đại diện của Flop Labs"
   },
   "id": {
     "index_title": "FLOP Passport untuk Seeker",
     "index_description": "Buat identitas Technocore did:key dari dompet Solana Anda, terbitkan di tempat yang bisa diverifikasi siapa saja, dan simpan buktinya. Sumber terbuka, tanpa akun, tanpa server.",
     "privacy_title": "Privasi — FLOP Passport untuk Seeker",
     "privacy_description": "FLOP Passport tidak punya akun, analitik, maupun server sendiri. Apa yang disimpan aplikasi, apa yang meninggalkan ponsel Anda, dan cara menghapus semuanya.",
-    "switcher_label": "Bahasa"
+    "switcher_label": "Bahasa",
+    "verify_input_label": "Identitas did:key untuk diverifikasi",
+    "avatar_alt": "Foto profil Flop Labs"
   },
   "ko": {
     "index_title": "Seeker를 위한 FLOP Passport",
     "index_description": "Solana 지갑에서 Technocore did:key 신원을 만들고, 누구나 검증할 수 있는 곳에 공개하고, 증거를 보관하세요. 오픈 소스, 계정 없음, 서버 없음.",
     "privacy_title": "개인정보 — Seeker를 위한 FLOP Passport",
     "privacy_description": "FLOP Passport에는 계정도, 분석도, 자체 서버도 없습니다. 앱이 무엇을 저장하는지, 무엇이 휴대폰을 떠나는지, 그리고 전부 지우는 방법.",
-    "switcher_label": "언어"
+    "switcher_label": "언어",
+    "verify_input_label": "확인할 did:key 신원",
+    "avatar_alt": "Flop Labs 프로필 사진"
   },
   "ja": {
     "index_title": "FLOP Passport for Seeker",
     "index_description": "Solana ウォレットから Technocore の did:key identity を作り、誰でも検証できる場所に公開し、証拠を残す。オープンソース、アカウント不要、サーバーなし。",
     "privacy_title": "プライバシー — FLOP Passport for Seeker",
     "privacy_description": "FLOP Passport にはアカウントも解析もサーバーもありません。アプリが何を保存し、何が端末を出ていき、どうすればすべて消せるか。",
-    "switcher_label": "言語"
+    "switcher_label": "言語",
+    "verify_input_label": "検証する did:key 識別子",
+    "avatar_alt": "Flop Labs のプロフィール画像"
   }
 }

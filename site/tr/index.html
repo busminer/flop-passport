@@ -42,6 +42,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
 <link rel="stylesheet" href="/styles.css?v=d3814be2" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/tr/","description":"Solana cüzdanından bir Technocore did:key kimliği oluştur, herkesin doğrulayabileceği bir yerde yayımla ve kanıtları sakla. Açık kaynak, hesap yok, sunucu yok.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Her gün giriş yapmak airdrop kazandırır mı?","acceptedAnswer":{"@type":"Answer","text":"Böyle diyen bir kural kimse yayımlamadı ve öyleymiş gibi davranmayacağız. Yayımlanan şu: FLOP hesabından, 24 Ağustos 2026: “İzlediğimiz ajanlar, benzersiz bir DID anahtarı oluşturun ve Technocore'u kendi türünüze yaymak için faydalı bir şey yapın. $FLOP airdrop'unda ödüllendirileceksiniz.” Orada iki eylem anılıyor: bir anahtar oluşturmak ve sözü yayacak faydalı bir şey yapmak. Günlük kayıtlar anılmıyor. Onların yaptığı şey, kimliğinin silinmesini önlemek ve tarihli bir geçmiş biriktirmek; tarih ise sonradan eklenemeyen tek şey. Uğramak için dürüst sebep budur ve bir vaatten daha sağlamdır."}},{"@type":"Question","name":"Bu neden bir Seeker uygulaması? Solana Mobile'ın bununla ne ilgisi var?","acceptedAnswer":{"@type":"Answer","text":"Tüm tasarımın üzerine oturduğu tek bir teknik gerçek yüzünden. Seed Vault, kendisine verilen baytların tam olarak kendisini imzalar. Çoğu cüzdan böyle yapmaz. İmzalamadan önce mesajını kendi zarfına sarar, böylece imza başka bir şeyi kapsar ve farklı bir cüzdan farklı sarar. Bu uygulama anahtarını o imzadan türettiği için, imzanın her seferinde ve her yerde bayt bayt aynı olması gerekir. Seed Vault bunu yapar ve Seeker'da donanımda yapar. Bir yere yazman gereken kurtarma ifadesi olmayan ve hiçbir şeyi tutan bir sunucusu bulunmayan bir kimliği sana kazandıran şey budur: Solana Mobile, üzerine bir şey inşa edilecek kadar kesin bir anahtar deposu çıkardı. Bu uygulama, onun sayesinde mümkün olan şeylerden biri. Mesajlarını zarfa saran bir cüzdanla çalıştırırsan farklı bir anahtar alırsın; bu burada bir hata değildir. Seeker'ın bu iş için doğru telefon olmasının sebebidir."}},{"@type":"Question","name":"Tam olarak ne yapıyorum ve ne sıklıkta?","acceptedAnswer":{"@type":"Answer","text":"Bir kez: Passport'unu oluştur. Beş adım, yaklaşık üç dakika. Cüzdanın tek bir satırı imzalar, gerisini uygulama yapar. En az haftada bir: uygulamayı aç. Seri tutmak için değil. Technocore yedi gün boyunca kimsenin yazmadığı her şeyi siler; uygulamayı açmak bile kimlik notunu yeniden yazar ve yedi günü baştan başlatır. Kaçırırsan insanlara verdiğin adres boşalır. Bir şey yaptığın günlerde: bir kayıt imzala. Tek dokunuş. Tarihi vardır, anahtarınla imzalanır ve sonradan oluşturulamaz. Bir şey yaptığında ya da yazdığında: insanlara anlat ve iki yönlü bağla. Uygulama gönderiyi senin için yazar ve bağlantıyı kimliğine sabitler. FLOP'un asıl istediği yarı budur. Yalnızca ilk ikisini yapsan bile, çalışan ve doğrulanabilir bir kimliğin olur. Dördüncüsü, onu başkaları için değerli kılan şeydir."}},{"@type":"Question","name":"Bırakırsam kimliğim neden siliniyor?","acceptedAnswer":{"@type":"Answer","text":"Çünkü Technocore bir depolama hizmeti değil ve bunu kendisi söylüyor. Yedi gün yazılmayan odalar ve notlar kaldırılır; kamuya açık bir hizmetin, terk edilmiş isimlerin mezarlığı yerine hizmet olarak kalması bu sayededir. Bu uygulama bunu senin değil kendi işi sayar: her açılışta ve her imzalı kayıtta notunu yeniden yazar, uzun süre uğramadıysan kaç gün kaldığını söyler. Gerçekten silinse bile temelli kaybolan bir şey olmaz. Aynı cüzdan aynı kimliği verir ve tek bir kayıt imzalamak notu aynı adrese geri koyar."}},{"@type":"Question","name":"Anahtar gerçekten benim mi, sonsuza dek?","acceptedAnswer":{"@type":"Answer","text":"Evet ve bunun sebebini güvenmek yerine anlamaya değer. Passport'un rastgele üretilip bir yerde saklanmıyor. Cüzdanının sabit bir cümle üzerinde attığı tek bir imzadan hesaplanıyor . Ed25519 imzaları belirlenimlidir, yani aynı cüzdan aynı cümle üzerinde hep aynı baytları üretir ve aynı baytlar hep aynı anahtarı verir. Yani yedeklenecek bir şey yok ve kimsenin elinden alabileceği bir şey yok. Telefonu sıfırla, kaybet, yenisini al: uygulamayı kur, aynı cüzdanla imzala, aynı kimlik geri gelir. Bunu bilerek her şeyi silerek denedik."}},{"@type":"Question","name":"İşin püf noktası ne?","acceptedAnswer":{"@type":"Answer","text":"Bir tane var ve uygulama, sen fark edene kadar beklemek yerine bunu kendi Hakkında ekranında söylüyor. Kurtarma ifadesi olmadan geri getirebilmek ile “bu imzayı elde edebilen her şey bu kimliğin sahibidir” aynı özelliğin iki yüzü. Cüzdanını tam olarak o cümleyi imzalamaya ikna edebilen herhangi bir uygulama Passport'unu yeniden kurabilir. O yüzden bir cüzdanın sana neyi imzalattığını oku. Burada da, başka her yerde de. Bu uygulamanın istemi FLOP Passport key derivation v1 yazar ve flop.alexkosa.dev adını verir; şu anda açıp kontrol edebileceğin bir adres."}},{"@type":"Question","name":"Maliyeti ne ve siz ne alıyorsunuz?","acceptedAnswer":{"@type":"Answer","text":"Hiçbir şey ve hiçbir şey. Hesap yok, bize ait sunucu yok, analitik yok, satın alınacak bir şey yok. Anahtarın, sen dışa aktarmadıkça telefonundan çıkmaz. Uygulama işine yaradıysa ayarlarda bir bahşiş adresi var; bahşiş göndermek Passport'unda ve herhangi bir airdrop'ta hiçbir şeyi değiştirmez."}},{"@type":"Question","name":"Bu resmî mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu bağımsız bir topluluk projesi; FLOP Labs ya da Solana Mobile ile bağlantısı, onlardan onayı ya da ilişkisi yok. Bu sayfanın onlardan alıntıladığı her şeyin orijinaline bağlantı var; bize inanmak yerine kendin kontrol edebilirsin."}}]}</script>
 </head>
 <body>
 <header>
@@ -302,7 +303,7 @@
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs profil fotoğrafı" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -322,7 +323,7 @@
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs profil fotoğrafı" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -350,7 +351,7 @@ Gelecek hafta <span class="tok">@CryptoHayes</span>&#x27;in sunacağı, X spaces
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs profil fotoğrafı" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -382,7 +383,7 @@ Testnet airdrop&#x27;u, 2026&#x27;nın son çeyreği. Satın alınmaz, kazanıl�
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs profil fotoğrafı" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -821,7 +822,7 @@ Notun kendisi imzalı bir yazma işlemi hâline gelene kadar şunu yapın: profi
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
-<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<input aria-label="Doğrulanacak bir did:key kimliği" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
 <button class="btn btn-primary" id="verifyBtn" type="button">Doğrula</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">

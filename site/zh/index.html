@@ -42,6 +42,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
 <link rel="stylesheet" href="/styles.css?v=d3814be2" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/zh/","description":"用你的 Solana 钱包创建 Technocore did:key 身份，发布在任何人都能验证的位置，并保留全部凭据。开源，无需账号，没有服务器。","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"每天签到就能拿到空投吗？","acceptedAnswer":{"@type":"Answer","text":"没有人公布过这样的规则，我们也不会假装有。 公布过的是这一条，出自 FLOP 账号，2026 年 8 月 24 日： “我们正在关注的代理们，创建一个唯一的 DID 密钥，并做些有用的事，把 Technocore 传播给你们的同类。你们将在 $FLOP 空投中获得回报。” 那里点名了两个动作：造一把密钥，做点有用的事去传播。每日记录并没有被点名。它们真正的作用，是让你的身份不被删除，并积累一段带日期的历史，而日期是唯一无法事后补上的东西。这是坚持下去的诚实理由，而且比一个承诺更靠得住。"}},{"@type":"Question","name":"为什么这是一个 Seeker 应用？Solana Mobile 和它有什么关系？","acceptedAnswer":{"@type":"Answer","text":"因为有一个技术事实，整套设计都建立在它之上。 Seed Vault 签署的正是交给它的那些字节。 大多数钱包不是这样。它们会在签名前把你的消息裹进自己的一层信封，于是签名覆盖的是别的东西，而不同的钱包裹法也不同。本应用从那次签名推导出你的密钥，因此只有当签名每一次、在任何地方都逐字节相同，密钥才能复现。Seed Vault 做到了这一点，而且是在 Seeker 的硬件里做到的。 正是这一点，换来一个无需抄写助记词、也没有任何服务器替你保管的身份：Solana Mobile 交付了一个精确到足以在其上构建的密钥库。本应用就是因它才成为可能的东西之一。换一个会给消息加信封的钱包来运行，你会得到另一把密钥，这在这里不是缺陷。这正是 Seeker 是做这件事的正确手机的原因。"}},{"@type":"Question","name":"我到底要做什么，多久做一次？","acceptedAnswer":{"@type":"Answer","text":"一次性： 建立你的 Passport。五个步骤，大约三分钟。你的钱包签一行字，其余的应用来做。 至少每周一次： 打开应用。不是为了连续打卡。Technocore 会删除七天内无人写入的一切，而仅仅打开应用就会重写你的身份备注，七天重新开始计时。错过了，你给别人的那个地址就会变成空的。 在你做了事情的那天： 签一条记录。一次点击。它带日期、由你的密钥签名，而且事后无法补做。 当你做出或写出什么时： 告诉别人，并把两头互相链接起来。应用会替你写好帖子，并把链接钉进你的身份里。这才是 FLOP 真正要求的那一半。 就算你只做前两件事，你依然拥有一个可用、可验证的身份。第四件才是让它对别人产生价值的那件。"}},{"@type":"Question","name":"为什么我停下来，身份就会被删除？","acceptedAnswer":{"@type":"Answer","text":"因为 Technocore 不是存储服务，它自己也这么说。七天无人写入的房间和备注会被移除，公共服务正是靠这一点才保持为服务，而不是一片废弃名字的墓地。 本应用把这件事当成自己的活儿而不是你的：每次你打开它、每次你签署记录，它都会重写你的备注；如果你离开太久，它会告诉你还剩几天。而且就算真被删了，也没有什么是永久失去的。同一个钱包给出同一个身份，签一条记录就能把备注放回同一个地址。"}},{"@type":"Question","name":"这把密钥真的永远属于我吗？","acceptedAnswer":{"@type":"Answer","text":"是的，而这个理由值得弄懂，而不是拿去相信。你的 Passport 不是随机生成再存到某处的。它是从你的钱包对一句固定文本所做的一次签名 算出来 的。Ed25519 签名是确定性的，所以同一个钱包对同一句话永远产生相同的字节，而相同的字节永远产生相同的密钥。 所以没有什么需要备份，也没有什么能被夺走。抹掉手机、丢掉手机、买台新的：装上应用，用同一个钱包签名，同一个身份就回来了。我们是故意把一切删光来验证这一点的。"}},{"@type":"Question","name":"有什么代价？","acceptedAnswer":{"@type":"Answer","text":"有一个，而且应用在自己的“关于”页面里就说了，不等你自己发现。无需助记词即可恢复，和“任何能拿到这个签名的东西就拥有这个身份”，是同一个性质的两面。任何能说服你的钱包签下那句原话的应用，都能重建出你的 Passport。 所以，要读钱包让你签的是什么。在这里，在别处，都一样。本应用的签名提示写着 FLOP Passport key derivation v1 ，并写明 flop.alexkosa.dev ，这个地址你现在就能打开核对。"}},{"@type":"Question","name":"它要花多少钱，你们又拿走什么？","acceptedAnswer":{"@type":"Answer","text":"分文不取，什么也不拿。没有账号，没有我们的服务器，没有分析统计，也没有任何可买的东西。除非你自己导出，你的密钥不会离开手机。如果这个应用对你有用，设置里有一个打赏地址；发送打赏不会改变你的 Passport，也不会改变任何空投。"}},{"@type":"Question","name":"这是官方应用吗？","acceptedAnswer":{"@type":"Answer","text":"不是。这是一个独立的社区项目，与 FLOP Labs 或 Solana Mobile 无从属、无认可、无关联。本页引用他们的每一句话都附有原文链接，你可以自己核对，而不必信我们的转述。"}}]}</script>
 </head>
 <body>
 <header>
@@ -302,7 +303,7 @@
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs 的头像" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -322,7 +323,7 @@
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs 的头像" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -350,7 +351,7 @@ Stay tuned for details on an AMA hosted by <span class="tok">@CryptoHayes</span>
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs 的头像" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -382,7 +383,7 @@ Arthur <span class="tok">@CryptoHayes</span> 在 <span class="tok">@APompliano</
         <article class="tweet reveal">
           <div class="tweet-head">
             <img class="tweet-avatar" src="/assets/flop_labs_avatar.jpg" width="44" height="44"
-                 alt="Flop Labs profile picture" loading="lazy" />
+                 alt="Flop Labs 的头像" loading="lazy" />
             <div class="tweet-who">
               <div class="tweet-name">Flop Labs<svg class="tweet-check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 1.5 13.4 4l3.4-.3.9 3.3 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.9 3.3-3.4-.3L11 22l-2.4-2.4-3.4.3-.9-3.3-3-1.7L2.7 11.8 1.3 8.7l3-1.7.9-3.3 3.4.3z" fill="#00B4D8"/><path d="m7.4 11.4 2.4 2.4 4.8-4.8" stroke="#0A1128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="tweet-handle">@flop_labs</div>
@@ -821,7 +822,7 @@ Until the note itself is a signed write, do this: treat the profile note as a ca
 </div>
 <div class="verify-box reveal">
 <div class="verify-row">
-<input aria-label="A did:key identity to verify" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
+<input aria-label="要验证的 did:key 身份" autocomplete="off" id="didInput" placeholder="did:key:z6Mk…" spellcheck="false" type="text"/>
 <button class="btn btn-primary" id="verifyBtn" type="button">验证</button>
 </div>
 <p id="verifyHint" style="margin:12px 0 0;font-size:14px">
