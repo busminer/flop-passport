@@ -324,7 +324,6 @@ def build_index(lang: str) -> Path:
     body = body.replace("<!--LOCKUP-->", lockup)
     body = body.replace("<!--SEEKER-->", seeker)
     body = body.replace("<!--TWEETS-->", quotes.render(lang))
-    body = body.replace("<!--LANGS-->", switcher(lang, "index"))
     # A second copy for the platform plate: an SVG cannot be in two places at
     # once, and its classes are scoped again so the two do not share a rule.
     body = body.replace(
@@ -332,6 +331,11 @@ def build_index(lang: str) -> Path:
         svg("seeker_solana_mobile_lockup_white.svg", class_prefix="sp"),
     )
     body = localize_links(body, lang)
+    # After localize_links, never before it. The switcher's hrefs are already the exact
+    # per-language addresses, and localize_links rewrites every `href="/"` on the page into
+    # `href="/<lang>/"` - which turned the switcher's own English entry into a link back to
+    # the page you were already on. Ten languages, and no way out of any of them.
+    body = body.replace("<!--LANGS-->", switcher(lang, "index"))
 
     faq = faq_jsonld(body)
     head = f'<script type="application/ld+json">{software_jsonld(lang)}</script>'
@@ -356,8 +360,8 @@ def build_privacy(lang: str) -> Path:
         "<svg ", '<svg style="height:20px;width:auto" ', 1
     )
     body = body.replace("<!--LOCKUP_SMALL-->", small)
-    body = body.replace("<!--LANGS-->", switcher(lang, "privacy"))
     body = localize_links(body, lang)
+    body = body.replace("<!--LANGS-->", switcher(lang, "privacy"))
     out = page(
         lang=lang, page_name="privacy",
         title=meta(lang, "privacy_title"),
