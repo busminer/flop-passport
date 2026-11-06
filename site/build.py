@@ -68,8 +68,8 @@ META: dict[str, dict[str, str]] = (
 EN_META = {
     "index_title": "FLOP Passport for Seeker",
     "index_description": (
-        "Create a Technocore did:key identity from your Solana wallet, publish it where "
-        "anyone can verify it, and keep the receipts. Open source, no account, no server."
+        "One signature from your Seeker wallet becomes a FLOP identity and account. One "
+        "button a day signs your day in public. Free, open source, no account, no server."
     ),
     "privacy_title": "Privacy — FLOP Passport for Seeker",
     "privacy_description": (

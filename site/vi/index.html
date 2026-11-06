@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FLOP Passport cho Seeker</title>
-<meta name="description" content="Tạo danh tính Technocore did:key từ ví Solana của bạn, công bố ở nơi ai cũng kiểm chứng được, và giữ lại bằng chứng. Mã nguồn mở, không tài khoản, không máy chủ." />
+<meta name="description" content="Một chữ ký từ ví Seeker của bạn trở thành danh tính và tài khoản FLOP. Mỗi ngày một nút ký ngày của bạn công khai. Miễn phí, mã nguồn mở, không tài khoản, không máy chủ." />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#0A1128" />
 <link rel="canonical" href="https://flop.alexkosa.dev/vi/" />
@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="x-default" href="https://flop.alexkosa.dev/" />
 
 <meta property="og:title" content="FLOP Passport cho Seeker" />
-<meta property="og:description" content="Tạo danh tính Technocore did:key từ ví Solana của bạn, công bố ở nơi ai cũng kiểm chứng được, và giữ lại bằng chứng. Mã nguồn mở, không tài khoản, không máy chủ." />
+<meta property="og:description" content="Một chữ ký từ ví Seeker của bạn trở thành danh tính và tài khoản FLOP. Mỗi ngày một nút ký ngày của bạn công khai. Miễn phí, mã nguồn mở, không tài khoản, không máy chủ." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://flop.alexkosa.dev/vi/" />
 <meta property="og:site_name" content="FLOP Passport for Seeker" />
@@ -40,10 +40,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=76077206" />
+<link rel="stylesheet" href="/styles.css?v=604efc62" />
 <noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/vi/","description":"Tạo danh tính Technocore did:key từ ví Solana của bạn, công bố ở nơi ai cũng kiểm chứng được, và giữ lại bằng chứng. Mã nguồn mở, không tài khoản, không máy chủ.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Điểm danh mỗi ngày có được airdrop không?","acceptedAnswer":{"@type":"Answer","text":"Chưa ai công bố quy định nào nói vậy, và chúng tôi sẽ không giả vờ là có. Thứ đã được công bố là câu này, từ tài khoản FLOP ngày 24 tháng 8 năm 2026: “Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.” Ở đó nêu đích danh hai hành động: tạo một khóa, và làm điều gì đó hữu ích giúp lan truyền. Bản ghi hằng ngày không được nêu tên. Thứ chúng thật sự làm là giữ cho danh tính của bạn khỏi bị xóa và dựng nên một lịch sử có ngày tháng, mà ngày tháng là thứ duy nhất không thể thêm vào sau. Đó là lý do trung thực để bạn quay lại, và nó vững hơn một lời hứa."}},{"@type":"Question","name":"Vì sao đây là ứng dụng cho Seeker? Solana Mobile liên quan gì?","acceptedAnswer":{"@type":"Answer","text":"Vì một sự thật kỹ thuật mà toàn bộ thiết kế dựa lên. Seed Vault ký đúng những byte được đưa cho nó. Phần lớn ví không làm vậy. Chúng bọc tin nhắn của bạn trong một lớp vỏ riêng trước khi ký, nên chữ ký phủ lên một thứ khác, và ví khác thì bọc kiểu khác. Ứng dụng này dẫn xuất khóa của bạn từ chữ ký đó, nên nó chỉ tái lập được nếu việc ký giống nhau từng byte, mọi lần, ở mọi nơi. Seed Vault làm đúng như vậy, và làm trong phần cứng trên Seeker. Chính điều đó mang lại cho bạn một danh tính không cần cụm từ khôi phục phải chép ra giấy và không có máy chủ nào giữ gì cả: Solana Mobile đã đưa ra một kho khóa đủ chính xác để xây dựng trên đó. Ứng dụng này là một trong những thứ trở nên khả thi nhờ vậy. Chạy nó với một chiếc ví có bọc tin nhắn thì bạn nhận được một khóa khác, và ở đây đó không phải lỗi. Đó chính là lý do Seeker là chiếc máy đúng cho việc này."}},{"@type":"Question","name":"Tôi phải làm gì, và bao lâu một lần?","acceptedAnswer":{"@type":"Answer","text":"Một lần: tạo Passport của bạn. Sáu bước, khoảng ba phút cho năm bước đầu. Ví ký một dòng, phần còn lại ứng dụng lo. Ít nhất mỗi tuần một lần: mở ứng dụng. Không phải để giữ chuỗi ngày. Technocore xóa mọi thứ không ai ghi vào suốt bảy ngày, và chỉ cần mở ứng dụng là ghi chú danh tính được ghi lại, bảy ngày bắt đầu đếm lại từ đầu. Bỏ lỡ thì địa chỉ bạn đưa cho mọi người sẽ trống trơn. Vào những ngày bạn làm được việc gì đó: ký một bản ghi. Một lần chạm. Nó có ngày tháng, được ký bằng khóa của bạn, và không thể tạo lùi ngày. Khi bạn làm hoặc viết ra thứ gì đó: hãy nói với mọi người, và liên kết hai chiều. Ứng dụng viết bài đăng giúp bạn và ghim liên kết đó vào danh tính của bạn. Đây mới là nửa mà FLOP thật sự yêu cầu. Dù bạn chỉ làm hai việc đầu, bạn vẫn có một danh tính hoạt động được và kiểm chứng được. Việc thứ tư mới là thứ khiến nó có giá trị với người khác."}},{"@type":"Question","name":"Vì sao ngừng lại thì danh tính của tôi bị xóa?","acceptedAnswer":{"@type":"Answer","text":"Vì Technocore không phải nơi lưu trữ, và họ nói thẳng như vậy. Phòng và ghi chú không có lượt ghi nào trong bảy ngày sẽ bị gỡ, và nhờ vậy một dịch vụ công cộng vẫn là dịch vụ chứ không thành nghĩa địa của những cái tên bị bỏ hoang. Ứng dụng này coi đó là việc của mình chứ không phải của bạn: nó ghi lại ghi chú mỗi lần bạn mở và mỗi lần bạn ký một bản ghi, và nếu bạn vắng lâu, nó nói còn mấy ngày. Và nếu ghi chú có bị xóa thật thì cũng không mất gì vĩnh viễn. Cùng một ví cho cùng một danh tính, và ký một bản ghi là ghi chú trở lại đúng địa chỉ cũ."}},{"@type":"Question","name":"Khóa thật sự là của tôi mãi mãi chứ?","acceptedAnswer":{"@type":"Answer","text":"Đúng vậy, và lý do đáng để hiểu chứ không phải để tin. Passport của bạn không được sinh ngẫu nhiên rồi cất ở đâu đó. Nó được tính ra từ một chữ ký mà ví của bạn tạo trên một câu cố định. Chữ ký Ed25519 mang tính tất định, nên cùng một ví trên cùng một câu luôn cho ra cùng những byte, và cùng những byte luôn cho ra cùng một khóa. Vậy nên không có gì để sao lưu và không có gì để ai lấy đi. Xóa sạch máy, mất máy, mua máy mới: cài ứng dụng, ký bằng cùng một ví, và đúng danh tính đó quay lại. Chúng tôi đã cố tình xóa hết để kiểm chứng điều này."}},{"@type":"Question","name":"Cái bẫy ở đâu?","acceptedAnswer":{"@type":"Answer","text":"Có một cái, và ứng dụng nói ra ngay trên màn hình Giới thiệu của mình chứ không đợi bạn tự phát hiện. Khôi phục mà không cần cụm từ khôi phục và “bất cứ thứ gì lấy được chữ ký này thì sở hữu danh tính này” là cùng một tính chất nhìn từ hai phía. Bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport của bạn. Vì vậy hãy đọc những gì ví yêu cầu bạn ký. Ở đây và ở mọi nơi khác. Lời nhắc của ứng dụng này bắt đầu bằng FLOP Passport key derivation v1 và nêu tên ứng dụng dev.alexkosa.floppassport ; ví của bạn cho thấy nó được yêu cầu bởi flop.alexkosa.dev , một địa chỉ bạn có thể mở ra kiểm tra ngay bây giờ."}},{"@type":"Question","name":"Nó tốn bao nhiêu, và các bạn lấy gì?","acceptedAnswer":{"@type":"Answer","text":"Không tốn gì, và không lấy gì. Không tài khoản, không máy chủ nào của chúng tôi, không đo lường, không có gì để mua. Khóa của bạn không rời khỏi máy trừ khi chính bạn xuất nó ra. Trong phần cài đặt có một địa chỉ nhận ủng hộ nếu ứng dụng hữu ích với bạn, và gửi ủng hộ không thay đổi gì về Passport của bạn, cũng không thay đổi gì về bất kỳ đợt airdrop nào."}},{"@type":"Question","name":"Đây có phải ứng dụng chính thức không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là một dự án cộng đồng độc lập, không liên kết, không được chứng thực và không có quan hệ gì với FLOP Labs hay Solana Mobile. Mọi thứ trang này trích của họ đều có liên kết tới bản gốc, để bạn tự kiểm tra thay vì tin lời chúng tôi."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLOP Passport for Seeker","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 14+, Solana Mobile Seeker","inLanguage":["en","ru","zh","es","pt","de","tr","vi","id","ko","ja"],"url":"https://flop.alexkosa.dev/vi/","description":"Một chữ ký từ ví Seeker của bạn trở thành danh tính và tài khoản FLOP. Mỗi ngày một nút ký ngày của bạn công khai. Miễn phí, mã nguồn mở, không tài khoản, không máy chủ.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alex Kosa","url":"https://alexkosa.dev"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Điểm danh mỗi ngày có được airdrop không?","acceptedAnswer":{"@type":"Answer","text":"Chưa ai công bố quy định nào nói vậy, và chúng tôi sẽ không giả vờ là có. Thứ đã được công bố là câu này, từ tài khoản FLOP ngày 24 tháng 8 năm 2026: “Agents we are watching, create a unique DID key, and do something useful to spread the word about Technocore to your species. You will be rewarded during the $FLOP airdrop.” Ở đó nêu đích danh hai hành động: tạo một khóa, và làm điều gì đó hữu ích giúp lan truyền. Bản ghi hằng ngày không được nêu tên. Thứ chúng thật sự làm là giữ cho danh tính của bạn khỏi bị xóa và dựng nên một lịch sử có ngày tháng, mà ngày tháng là thứ duy nhất không thể thêm vào sau. Đó là lý do trung thực để bạn quay lại, và nó vững hơn một lời hứa. Từ đó FLOP đã viết thêm một quy tắc : trên testnet, số FLOP testnet mà một agent chi cho mô hình sẽ trở thành quyền của nó đối với FLOP mainnet. Devnet, tức là bây giờ, không kiếm được gì."}},{"@type":"Question","name":"Vì sao đây là ứng dụng cho Seeker? Solana Mobile liên quan gì?","acceptedAnswer":{"@type":"Answer","text":"Vì một sự thật kỹ thuật mà toàn bộ thiết kế dựa lên. Seed Vault ký đúng những byte được đưa cho nó. Phần lớn ví không làm vậy. Chúng bọc tin nhắn của bạn trong một lớp vỏ riêng trước khi ký, nên chữ ký phủ lên một thứ khác, và ví khác thì bọc kiểu khác. Ứng dụng này dẫn xuất khóa của bạn từ chữ ký đó, nên nó chỉ tái lập được nếu việc ký giống nhau từng byte, mọi lần, ở mọi nơi. Seed Vault làm đúng như vậy, và làm trong phần cứng trên Seeker. Đó là thứ mang lại cho bạn một danh tính không có cụm từ khôi phục mới nào để ghi lại và không có máy chủ nào giữ gì cả: Solana Mobile đã đưa ra một kho khóa đủ chính xác để xây lên trên. Ứng dụng này là một trong những thứ trở nên khả thi nhờ nó. Nếu chạy bằng một ví bọc tin nhắn của nó, bạn sẽ có một khóa khác, và ở đây đó không phải lỗi. Đó là lý do Seeker là chiếc điện thoại phù hợp cho việc này."}},{"@type":"Question","name":"Tôi phải làm gì, và bao lâu một lần?","acceptedAnswer":{"@type":"Answer","text":"Một lần: tạo Passport của bạn. Ví của bạn ký một dòng và ứng dụng làm phần còn lại. Mỗi ngày: bấm Hoàn tất hôm nay. Nó ký ngày, nhận FLOP thử nghiệm của hôm nay và hỏi mô hình một câu. Chỉ vậy thôi, và việc nào đã xong thì được bỏ qua. Ít nhất một lần mỗi tuần: mở ứng dụng, dù bạn không làm gì khác. Technocore xóa bất cứ thứ gì không ai ghi vào trong bảy ngày, và chỉ cần mở ứng dụng là ghi chú danh tính của bạn được ghi lại, bắt đầu lại bảy ngày. Khi bạn xây hoặc viết một thứ gì: hãy nói cho mọi người biết. Đây là nửa mà FLOP thực sự đã đề nghị. Nếu bạn chỉ làm điều thứ nhất và thứ ba, bạn vẫn có một danh tính hoạt động và kiểm chứng được. Điều thứ tư là điều khiến nó có giá trị với người khác."}},{"@type":"Question","name":"FLOP này có phải tiền thật không?","acceptedAnswer":{"@type":"Answer","text":"Không. FLOP devnet là tiền tập, không có giá trị, và FLOP có thể xóa devnet bất cứ lúc nào. Hiện chưa có token FLOP nào cả. Ai đang bán FLOP hôm nay đều là kẻ lừa đảo."}},{"@type":"Question","name":"Vì sao mô hình không trả lời tôi?","acceptedAnswer":{"@type":"Answer","text":"Trước hết nó cần ít nhất 1 FLOP tại địa chỉ Passport của bạn. Trên devnet, mỗi tài khoản cũng chỉ có một lần thử, trong 24 giờ, sau đó nó đóng cho đến testnet. Và cổng thường đầy: bị từ chối không mất gì, nên hãy gõ cửa lại. Tab Hỏi cho biết là trường hợp nào."}},{"@type":"Question","name":"Vì sao chuỗi ngày của tôi về số không?","acceptedAnswer":{"@type":"Answer","text":"Chuỗi ngày đếm các ngày liên tiếp có bản ghi đã ký. Mỗi tuần được tha một ngày bỏ lỡ, và bỏ lỡ hai ngày liên tiếp thì chuỗi kết thúc. Con số được đọc từ phòng công khai, nên một ngày bạn không ký thì không thể thêm vào sau."}},{"@type":"Question","name":"Vì sao ngừng lại thì danh tính của tôi bị xóa?","acceptedAnswer":{"@type":"Answer","text":"Vì Technocore không phải nơi lưu trữ, và họ nói thẳng như vậy. Phòng và ghi chú không có lượt ghi nào trong bảy ngày sẽ bị gỡ, và nhờ vậy một dịch vụ công cộng vẫn là dịch vụ chứ không thành nghĩa địa của những cái tên bị bỏ hoang. Ứng dụng này coi đó là việc của mình chứ không phải của bạn: nó ghi lại ghi chú mỗi lần bạn mở và mỗi lần bạn ký một bản ghi, và nếu bạn vắng lâu, nó nói còn mấy ngày. Và nếu ghi chú có bị xóa thật thì cũng không mất gì vĩnh viễn. Cùng một ví cho cùng một danh tính, và ký một bản ghi là ghi chú trở lại đúng địa chỉ cũ."}},{"@type":"Question","name":"Khóa này có thật sự là của tôi không?","acceptedAnswer":{"@type":"Answer","text":"Đúng vậy, và lý do đáng để hiểu chứ không phải để tin. Passport của bạn không được sinh ngẫu nhiên rồi cất ở đâu đó. Nó được tính ra từ một chữ ký mà ví của bạn tạo trên một câu cố định. Chữ ký Ed25519 mang tính tất định, nên cùng một ví trên cùng một câu luôn cho ra cùng những byte, và cùng những byte luôn cho ra cùng một khóa. Nên không có cụm từ mới nào để ghi lại, và không ai lấy nó khỏi bạn được. Xóa máy, mất máy, mua máy mới: khôi phục cùng một ví, cài ứng dụng, ký một lần, và cùng một danh tính trở lại. Chúng tôi đã thử việc đó bằng cách cố ý xóa ứng dụng. Tất cả điều này dựa trên ví của bạn, nên cụm từ khôi phục của ví vẫn là thứ cần giữ an toàn. Mất điện thoại cùng với cụm từ đó thì Passport mất, trừ khi bạn đã xuất khóa."}},{"@type":"Question","name":"Cái bẫy ở đâu?","acceptedAnswer":{"@type":"Answer","text":"Có một cái giá, và ứng dụng nói điều đó ngay trên màn hình Giới thiệu của nó thay vì chờ bạn tự phát hiện. Khôi phục mà không cần cụm từ khôi phục mới và “bất cứ ai lấy được chữ ký này đều sở hữu danh tính này” là cùng một đặc tính nhìn từ hai phía. Bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport của bạn. Vì vậy hãy đọc những gì ví yêu cầu bạn ký. Ở đây và ở mọi nơi khác. Lời nhắc của ứng dụng này bắt đầu bằng FLOP Passport key derivation v1 và nêu tên ứng dụng dev.alexkosa.floppassport ; ví của bạn cho thấy nó được yêu cầu bởi flop.alexkosa.dev , một địa chỉ bạn có thể mở ra kiểm tra ngay bây giờ."}},{"@type":"Question","name":"Nó tốn bao nhiêu, và các bạn lấy gì?","acceptedAnswer":{"@type":"Answer","text":"Không tốn gì, và không lấy gì. Không tài khoản, không máy chủ nào của chúng tôi, không đo lường, không có gì để mua. Khóa của bạn không rời khỏi máy trừ khi chính bạn xuất nó ra. Trong phần cài đặt có một địa chỉ nhận ủng hộ nếu ứng dụng hữu ích với bạn, và gửi ủng hộ không thay đổi gì về Passport của bạn, cũng không thay đổi gì về bất kỳ đợt airdrop nào."}},{"@type":"Question","name":"Đây có phải ứng dụng chính thức không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là một dự án cộng đồng độc lập, không liên kết, không được chứng thực và không có quan hệ gì với FLOP Labs hay Solana Mobile. Mọi thứ trang này trích của họ đều có liên kết tới bản gốc, để bạn tự kiểm tra thay vì tin lời chúng tôi."}}]}</script>
 </head>
 <body>
 <header>
@@ -113,13 +113,12 @@
 <span class="label">Passport</span>
 </a>
 <nav>
+<a href="#day">Ngày của bạn</a>
 <a href="#official">Chính thức</a>
-<a href="#what">Đây là gì</a>
 <a href="#key">Khóa của bạn</a>
 <a href="#platform">Chiếc máy</a>
 <a href="#steps">Cách hoạt động</a>
 <a href="#faq">Câu hỏi</a>
-<a href="#line">Lằn ranh</a>
 <a href="#verify">Xác minh</a>
 <a href="#get">Tải về</a>
 </nav>
@@ -279,13 +278,85 @@
 </svg></div>
 </div>
 </div>
-<h1>Danh tính của bạn trên Technocore, <br/>sinh ra bên trong chiếc Seeker.</h1>
+<h1>Ngày của bạn trên FLOP, <br/>từ chiếc Seeker.</h1>
 <p class="sub">
-        FLOP Passport tạo một danh tính <code>did:key</code> mà bạn luôn có thể dựng lại, từ một chữ ký duy nhất ví của bạn thực hiện bên trong Seed Vault của Solana Mobile, công bố nó ở nơi ai cũng có thể xác minh, và giữ lại biên nhận. Không tài khoản, không máy chủ của chúng tôi, không cụm từ khôi phục phải ghi lại.
+        Một chữ ký từ ví của bạn trở thành danh tính <code>did:key</code> và một tài khoản FLOP. Sau đó, mỗi ngày một nút sẽ ký ngày của bạn công khai, nhận FLOP thử nghiệm và gửi câu hỏi của bạn tới mô hình AI của FLOP. Không có tài khoản, không có máy chủ của chúng tôi, không có cụm từ khôi phục mới nào để ghi lại.
       </p>
+<p class="hero-live"><span class="label cyan">Phiên bản 2.0 đã có trên Solana dApp Store</span></p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#get">Tải ứng dụng</a>
 <a class="btn btn-secondary" href="#verify">Xác minh một Passport</a>
+</div>
+</div>
+</section>
+<section id="day">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="label cyan">Mới trong 2.0</span>
+<h2>Mỗi ngày một nút</h2>
+<p>
+          FLOP đã <a href="https://docs.flop.network/docs/network-devnet" rel="noopener">mở devnet cho mọi người</a> vào ngày 3 tháng 11 năm 2026. FLOP Passport 2.0 là cách đơn giản để vào từ điện thoại của bạn, và mọi thứ bên dưới là ứng dụng thật.
+        </p>
+</div>
+<div class="film reveal">
+<video aria-label="FLOP Passport 2.0, a 72 second film" controls="" playsinline="" poster="/assets/app/film-poster.jpg" preload="none" src="/assets/app/flop-passport-2.mp4"></video>
+</div>
+<div class="shots reveal">
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/today.jpg" width="540"/><figcaption>Hôm nay</figcaption></figure>
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/window.jpg" width="540"/><figcaption>Cửa sổ trực tiếp</figcaption></figure>
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/knock.jpg" width="540"/><figcaption>Gõ cửa lại</figcaption></figure>
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/passport.jpg" width="540"/><figcaption>Passport của bạn</figcaption></figure>
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/pulse.jpg" width="540"/><figcaption>Nhịp</figcaption></figure>
+<figure><img alt="" height="960" loading="lazy" src="/assets/app/back.jpg" width="540"/><figcaption>Cùng một ví, cùng một Passport</figcaption></figure>
+</div>
+<div class="cards" style="margin-top:24px">
+<div class="card reveal accent">
+<span class="badge cyan">Hôm nay</span>
+<h3 style="margin-top:12px">Hoàn tất hôm nay</h3>
+<p>
+            Một lần bấm sẽ ký ngày của bạn công khai, nhận 25 FLOP thử nghiệm từ faucet của FLOP và gửi câu hỏi của bạn tới mô hình AI của FLOP. Việc nào đã xong thì được bỏ qua.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Luôn có</span>
+<h3 style="margin-top:12px">Một cửa sổ trực tiếp cho mỗi việc</h3>
+<p>
+            Ứng dụng đang làm gì, đã mất bao lâu, đang ở lần thử thứ mấy, và ping. Thu nhỏ cửa sổ thì việc vẫn tiếp tục chạy.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Hỏi</span>
+<h3 style="margin-top:12px">Gõ cửa lại</h3>
+<p>
+            Nhiều người hỏi cùng lúc, nên cổng của FLOP thường đầy. Bị từ chối không mất gì. Ứng dụng tự thử lại, hoặc bạn có thể gõ cửa ngay.
+          </p>
+</div>
+<div class="card reveal good">
+<span class="badge green">Passport</span>
+<h3 style="margin-top:12px">Một chuỗi ngày ai cũng kiểm tra được</h3>
+<p>
+            Mỗi ngày đã ký thì chuỗi tăng thêm một. Mỗi tuần được tha một ngày bỏ lỡ, bỏ lỡ hai ngày liên tiếp thì chuỗi kết thúc. Con số được đọc từ một bản ghi công khai, không phải từ điện thoại của bạn, nên xóa ứng dụng cũng không làm mất nó. Passport của bạn còn hiện ngày bạn đăng ký, chuỗi dài nhất và các ngày đã ký.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge grey">Nhịp</span>
+<h3 style="margin-top:12px">Ai đang ở đây, và cái gì là thật</h3>
+<p>
+            Xem có bao nhiêu người giữ Passport, bao nhiêu người đã ký hôm nay và mạng FLOP đang thế nào. Có ai gửi cho bạn một liên kết, một @tên hay một địa chỉ? Hãy kiểm tra ở đây trước.
+          </p>
+</div>
+<div class="card reveal">
+<span class="badge cyan">Một khóa</span>
+<h3 style="margin-top:12px">Hai mạng</h3>
+<p>
+            Khóa Passport của bạn cũng là một tài khoản FLOP: cùng một khóa, chỉ viết khác đi. Faucet trả vào tài khoản đó, và mô hình được trả từ chính tài khoản đó.
+          </p>
+</div>
+</div>
+<div class="notice reveal" style="margin-top:24px">
+<p style="margin:0">
+<strong>FLOP thử nghiệm, nói thẳng.</strong> Devnet là mạng để tập. FLOP thử nghiệm không có giá, không kiếm được gì, và mạng có thể bị đặt lại bất cứ lúc nào. Testnet chưa có ngày. FLOP nói rằng trên testnet, số FLOP bạn chi cho mô hình sẽ trở thành quyền của bạn đối với FLOP mainnet. Không ai có thể hứa với bạn một phần phân bổ, và ứng dụng này cũng không hứa.
+        </p>
 </div>
 </div>
 </section>
@@ -440,7 +511,7 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <span class="badge cyan">Danh tính</span>
 <h3 style="margin-top:12px">Một khóa, dẫn xuất từ ví của bạn</h3>
 <p>
-            Passport của bạn không phải ngẫu nhiên. Nó sinh ra từ một chữ ký duy nhất mà ví của bạn tạo trên một câu cố định, nên cùng một ví sẽ dựng lại đúng danh tính đó trên bất kỳ thiết bị nào, mãi mãi.
+            Passport của bạn không phải ngẫu nhiên. Nó đến từ một chữ ký duy nhất mà ví của bạn ký lên một câu cố định, nên cùng một ví dựng lại cùng một danh tính trên bất kỳ thiết bị nào. Chính khóa đó là tài khoản FLOP của bạn.
           </p>
 </div>
 <div class="card reveal">
@@ -479,7 +550,7 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <strong>Passport của bạn sinh ra từ đúng một chữ ký như vậy.</strong> Hãy hình dung một con dấu khóa trong két: con dấu không bao giờ ra ngoài, nhưng dấu in nó để lại thì bạn giữ.
           </p>
 <p>
-            Dấu in luôn giống hệt nhau. Cùng con dấu, cùng tờ giấy, cùng vết in, mọi lần. Vì thế mất điện thoại không làm bạn mất gì cả.
+            Dấu in luôn giống hệt nhau. Cùng một con dấu, cùng một loại giấy, cùng một nét, lần nào cũng vậy. Đó là lý do cùng một ví luôn cho ra cùng một Passport.
           </p>
 </div>
 <div class="card reveal">
@@ -496,7 +567,7 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <div class="cards" style="margin-top:16px">
 <div class="card reveal">
 <h3>Mất điện thoại</h3>
-<p>Cài ứng dụng lên máy mới, kết nối cùng một ví, và đúng Passport đó quay lại. Không có gì phải chép ra giấy.</p>
+<p>Khôi phục cùng một ví trên điện thoại mới, cài ứng dụng và ký một lần. Cùng một Passport trở lại, với cùng địa chỉ FLOP và cùng chuỗi ngày. Không có cụm từ mới nào để ghi lại, nhưng cụm từ khôi phục của chính ví bạn vẫn quan trọng: mất điện thoại cùng với cụm từ đó thì Passport mất, trừ khi bạn đã xuất khóa.</p>
 </div>
 <div class="card reveal">
 <h3>Muốn dùng ở nơi khác</h3>
@@ -504,12 +575,12 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 </div>
 <div class="card reveal">
 <h3>Xóa ứng dụng</h3>
-<p>Những gì bạn đã công bố vẫn ở đó cho đến khi quy tắc bảy ngày của chính Technocore xóa nó. Chúng tôi không thể xóa, và bạn cũng không.</p>
+<p>Các ngày đã ký của bạn nằm lại trong bản ghi công khai. Cài lại, ký bằng cùng một ví, và Passport cùng chuỗi ngày của bạn trở lại. Chúng tôi đã thử đúng việc này. Quy tắc bảy ngày của Technocore vẫn áp dụng cho bất cứ thứ gì không ai ghi vào, và cả chúng tôi lẫn bạn đều không thể gỡ những gì đã được đăng.</p>
 </div>
 </div>
 <div class="notice reveal" style="margin-top:24px">
 <p style="margin:0">
-<strong>Khóa được xuất ra không phải khóa ví của bạn.</strong> Khóa ví Solana không bao giờ rời Seed Vault và ứng dụng này chưa từng thấy nó. Thứ bạn xuất được là một khóa riêng, chỉ ký trên Technocore và không điều khiển đồng tiền nào.
+<strong>Khóa xuất ra không phải khóa ví của bạn.</strong> Khóa ví Solana của bạn không bao giờ rời Seed Vault và ứng dụng này chưa từng thấy nó. Thứ bạn xuất được là một khóa riêng: Passport của bạn trên Technocore và tài khoản FLOP của bạn. Nó không thể chạm vào ví Solana của bạn, nhưng ai giữ nó thì có thể ký thay bạn và tiêu FLOP trong tài khoản đó, nên hãy giữ kín.
         </p>
 </div>
 </div>
@@ -640,8 +711,8 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <div class="wrap">
 <div class="section-head reveal">
 <span class="label cyan">Cách hoạt động</span>
-<h2>Sáu bước, mỗi bước đều được xác nhận</h2>
-<p>Ứng dụng cho bạn biết nó đang làm gì, với ai, và đã chứng minh được gì. Mỗi bước đã xong đều mở ra được để xem bằng chứng thô.</p>
+<h2>Năm bước, một lần, mỗi bước đều được xác nhận</h2>
+<p>Việc tạo Passport chỉ diễn ra một lần. Ứng dụng cho bạn biết nó đang làm gì, với ai, và đã chứng minh được gì, và mỗi bước xong đều mở ra để xem bằng chứng gốc. Sau đó, ngày của bạn chỉ là một nút.</p>
 </div>
 <div class="steps reveal">
 <div class="step">
@@ -669,21 +740,14 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <div class="n">04</div>
 <div>
 <h3>Điểm danh</h3>
-<p>Một tin nhắn do Passport của bạn ký, đăng vào một phòng yên tĩnh, rồi được tìm lại bằng chính nonce của nó trước khi bất cứ thứ gì chuyển xanh.</p>
+<p>Một tin nhắn do Passport của bạn ký, đăng lên một phòng công khai, rồi được tìm lại bằng chính nonce của nó trước khi bất cứ thứ gì chuyển sang màu xanh.</p>
 </div>
 </div>
 <div class="step">
 <div class="n">05</div>
 <div>
 <h3>Sẵn sàng</h3>
-<p>Passport của bạn đã hoạt động và là của bạn. Thẻ hoạt động đọc lại máy chủ, nên bạn luôn biết thứ gì vẫn còn chứng minh được.</p>
-</div>
-</div>
-<div class="step">
-<div class="n">06</div>
-<div>
-<h3>Nói cho họ biết</h3>
-<p>Ứng dụng viết bài đăng, còn bạn viết một dòng trong đó. Khi bạn dán đường liên kết trở lại, nó đi vào ghi chú danh tính của bạn — và dấu tích chỉ sáng sau khi ghi chú ấy được đọc lại từ máy chủ.</p>
+<p>Passport của bạn đã hoạt động và là của bạn. Các bản ghi của bạn đọc lại từ máy chủ, nên bạn luôn biết cái gì vẫn còn chứng minh được.</p>
 </div>
 </div>
 </div>
@@ -713,6 +777,9 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <p>
             Ở đó nêu đích danh hai hành động: tạo một khóa, và làm điều gì đó hữu ích giúp lan truyền. Bản ghi hằng ngày không được nêu tên. Thứ chúng thật sự làm là giữ cho danh tính của bạn khỏi bị xóa và dựng nên một lịch sử có ngày tháng, mà ngày tháng là thứ duy nhất không thể thêm vào sau. Đó là lý do trung thực để bạn quay lại, và nó vững hơn một lời hứa.
           </p>
+<p>
+            Từ đó FLOP đã <a href="https://docs.flop.network/docs/airdrop-and-testnet-conversion" rel="noopener">viết thêm một quy tắc</a>: trên testnet, số FLOP testnet mà một agent chi cho mô hình sẽ trở thành quyền của nó đối với FLOP mainnet. Devnet, tức là bây giờ, không kiếm được gì.
+          </p>
 </div>
 <div class="reveal">
 <h3>Vì sao đây là ứng dụng cho Seeker? Solana Mobile liên quan gì?</h3>
@@ -723,19 +790,37 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
             Phần lớn ví không làm vậy. Chúng bọc tin nhắn của bạn trong một lớp vỏ riêng trước khi ký, nên chữ ký phủ lên một thứ khác, và ví khác thì bọc kiểu khác. Ứng dụng này dẫn xuất khóa của bạn từ chữ ký đó, nên nó chỉ tái lập được nếu việc ký giống nhau từng byte, mọi lần, ở mọi nơi. Seed Vault làm đúng như vậy, và làm trong phần cứng trên Seeker.
           </p>
 <p>
-            Chính điều đó mang lại cho bạn một danh tính không cần cụm từ khôi phục phải chép ra giấy và không có máy chủ nào giữ gì cả: Solana Mobile đã đưa ra một kho khóa đủ chính xác để xây dựng trên đó. Ứng dụng này là một trong những thứ trở nên khả thi nhờ vậy. Chạy nó với một chiếc ví có bọc tin nhắn thì bạn nhận được một khóa khác, và ở đây đó không phải lỗi. Đó chính là lý do Seeker là chiếc máy đúng cho việc này.
+            Đó là thứ mang lại cho bạn một danh tính không có cụm từ khôi phục mới nào để ghi lại và không có máy chủ nào giữ gì cả: Solana Mobile đã đưa ra một kho khóa đủ chính xác để xây lên trên. Ứng dụng này là một trong những thứ trở nên khả thi nhờ nó. Nếu chạy bằng một ví bọc tin nhắn của nó, bạn sẽ có một khóa khác, và ở đây đó không phải lỗi. Đó là lý do Seeker là chiếc điện thoại phù hợp cho việc này.
           </p>
 </div>
 <div class="reveal">
 <h3>Tôi phải làm gì, và bao lâu một lần?</h3>
 <ol>
-<li><strong>Một lần:</strong> tạo Passport của bạn. Sáu bước, khoảng ba phút cho năm bước đầu. Ví ký một dòng, phần còn lại ứng dụng lo.</li>
-<li><strong>Ít nhất mỗi tuần một lần:</strong> mở ứng dụng. Không phải để giữ chuỗi ngày. Technocore xóa mọi thứ không ai ghi vào suốt bảy ngày, và chỉ cần mở ứng dụng là ghi chú danh tính được ghi lại, bảy ngày bắt đầu đếm lại từ đầu. Bỏ lỡ thì địa chỉ bạn đưa cho mọi người sẽ trống trơn.</li>
-<li><strong>Vào những ngày bạn làm được việc gì đó:</strong> ký một bản ghi. Một lần chạm. Nó có ngày tháng, được ký bằng khóa của bạn, và không thể tạo lùi ngày.</li>
-<li><strong>Khi bạn làm hoặc viết ra thứ gì đó:</strong> hãy nói với mọi người, và liên kết hai chiều. Ứng dụng viết bài đăng giúp bạn và ghim liên kết đó vào danh tính của bạn. Đây mới là nửa mà FLOP thật sự yêu cầu.</li>
+<li><strong>Một lần:</strong> tạo Passport của bạn. Ví của bạn ký một dòng và ứng dụng làm phần còn lại.</li>
+<li><strong>Mỗi ngày:</strong> bấm Hoàn tất hôm nay. Nó ký ngày, nhận FLOP thử nghiệm của hôm nay và hỏi mô hình một câu. Chỉ vậy thôi, và việc nào đã xong thì được bỏ qua.</li>
+<li><strong>Ít nhất một lần mỗi tuần:</strong> mở ứng dụng, dù bạn không làm gì khác. Technocore xóa bất cứ thứ gì không ai ghi vào trong bảy ngày, và chỉ cần mở ứng dụng là ghi chú danh tính của bạn được ghi lại, bắt đầu lại bảy ngày.</li>
+<li><strong>Khi bạn xây hoặc viết một thứ gì:</strong> hãy nói cho mọi người biết. Đây là nửa mà FLOP thực sự đã đề nghị.</li>
 </ol>
 <p>
-            Dù bạn chỉ làm hai việc đầu, bạn vẫn có một danh tính hoạt động được và kiểm chứng được. Việc thứ tư mới là thứ khiến nó có giá trị với người khác.
+            Nếu bạn chỉ làm điều thứ nhất và thứ ba, bạn vẫn có một danh tính hoạt động và kiểm chứng được. Điều thứ tư là điều khiến nó có giá trị với người khác.
+          </p>
+</div>
+<div class="reveal">
+<h3>FLOP này có phải tiền thật không?</h3>
+<p>
+            Không. FLOP devnet là tiền tập, không có giá trị, và FLOP có thể xóa devnet bất cứ lúc nào. Hiện chưa có token FLOP nào cả. Ai đang bán FLOP hôm nay đều là kẻ lừa đảo.
+          </p>
+</div>
+<div class="reveal">
+<h3>Vì sao mô hình không trả lời tôi?</h3>
+<p>
+            Trước hết nó cần ít nhất 1 FLOP tại địa chỉ Passport của bạn. Trên devnet, mỗi tài khoản cũng chỉ có một lần thử, trong 24 giờ, sau đó nó đóng cho đến testnet. Và cổng thường đầy: bị từ chối không mất gì, nên hãy gõ cửa lại. Tab Hỏi cho biết là trường hợp nào.
+          </p>
+</div>
+<div class="reveal">
+<h3>Vì sao chuỗi ngày của tôi về số không?</h3>
+<p>
+            Chuỗi ngày đếm các ngày liên tiếp có bản ghi đã ký. Mỗi tuần được tha một ngày bỏ lỡ, và bỏ lỡ hai ngày liên tiếp thì chuỗi kết thúc. Con số được đọc từ phòng công khai, nên một ngày bạn không ký thì không thể thêm vào sau.
           </p>
 </div>
 <div class="reveal">
@@ -748,18 +833,21 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
           </p>
 </div>
 <div class="reveal">
-<h3>Khóa thật sự là của tôi mãi mãi chứ?</h3>
+<h3>Khóa này có thật sự là của tôi không?</h3>
 <p>
             Đúng vậy, và lý do đáng để hiểu chứ không phải để tin. Passport của bạn không được sinh ngẫu nhiên rồi cất ở đâu đó. Nó được <em>tính ra</em> từ một chữ ký mà ví của bạn tạo trên một câu cố định. Chữ ký Ed25519 mang tính tất định, nên cùng một ví trên cùng một câu luôn cho ra cùng những byte, và cùng những byte luôn cho ra cùng một khóa.
           </p>
 <p>
-            Vậy nên không có gì để sao lưu và không có gì để ai lấy đi. Xóa sạch máy, mất máy, mua máy mới: cài ứng dụng, ký bằng cùng một ví, và đúng danh tính đó quay lại. Chúng tôi đã cố tình xóa hết để kiểm chứng điều này.
+            Nên không có cụm từ mới nào để ghi lại, và không ai lấy nó khỏi bạn được. Xóa máy, mất máy, mua máy mới: khôi phục cùng một ví, cài ứng dụng, ký một lần, và cùng một danh tính trở lại. Chúng tôi đã thử việc đó bằng cách cố ý xóa ứng dụng.
+          </p>
+<p>
+            Tất cả điều này dựa trên ví của bạn, nên cụm từ khôi phục của ví vẫn là thứ cần giữ an toàn. Mất điện thoại cùng với cụm từ đó thì Passport mất, trừ khi bạn đã xuất khóa.
           </p>
 </div>
 <div class="reveal">
 <h3>Cái bẫy ở đâu?</h3>
 <p>
-            Có một cái, và ứng dụng nói ra ngay trên màn hình Giới thiệu của mình chứ không đợi bạn tự phát hiện. Khôi phục mà không cần cụm từ khôi phục và “bất cứ thứ gì lấy được chữ ký này thì sở hữu danh tính này” là cùng một tính chất nhìn từ hai phía. Bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport của bạn.
+            Có một cái giá, và ứng dụng nói điều đó ngay trên màn hình Giới thiệu của nó thay vì chờ bạn tự phát hiện. Khôi phục mà không cần cụm từ khôi phục mới và “bất cứ ai lấy được chữ ký này đều sở hữu danh tính này” là cùng một đặc tính nhìn từ hai phía. Bất kỳ ứng dụng nào thuyết phục được ví của bạn ký đúng câu đó đều có thể dựng lại Passport của bạn.
           </p>
 <p>
             Vì vậy hãy đọc những gì ví yêu cầu bạn ký. Ở đây và ở mọi nơi khác. Lời nhắc của ứng dụng này bắt đầu bằng <code>FLOP Passport key derivation v1</code> và nêu tên ứng dụng <code>dev.alexkosa.floppassport</code>; ví của bạn cho thấy nó được yêu cầu bởi <code>flop.alexkosa.dev</code>, một địa chỉ bạn có thể mở ra kiểm tra ngay bây giờ.
@@ -864,7 +952,7 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <span class="badge red">Không bao giờ</span>
 <h3 style="margin-top:12px">Không điểm, không xếp hạng</h3>
 <p>
-            Không có hệ thống điểm nào được công bố, và tin nhắn trong các phòng đông người vốn cũng không sống đủ lâu để được đếm. Một điểm số bịa ra ở đây sẽ là một trò chơi khác, do người ta tự nghĩ ra.
+            Không có hệ thống điểm nào được công bố, và tin nhắn trong các phòng đông người cũng không tồn tại đủ lâu để được đếm. Một số điểm bịa ra ở đây sẽ là một trò chơi khác, tự nghĩ ra. Chuỗi ngày chỉ đếm các ngày đã ký và không đếm gì khác.
           </p>
 </div>
 <div class="card reveal">
@@ -884,32 +972,26 @@ Cho tới khi chính ghi chú trở thành một lượt ghi có ký, hãy làm 
 <span class="label cyan">Tải về</span>
 <h2>Mã nguồn mở, và miễn phí</h2>
 <p>
-          Làm cho Solana Seeker. Đọc mã, tự biên dịch, hoặc kiểm Passport của bất kỳ ai mà không cần cài gì cả.
+          Phiên bản 2.0 đã có trên Solana dApp Store. Trên Seeker, chạm nút bên dưới hoặc tìm FLOP Passport trong cửa hàng. Đọc mã, tự build, hoặc kiểm tra Passport của bất kỳ ai mà không cần cài gì.
         </p>
 </div>
 <div class="cta-row" style="justify-content:flex-start">
 <!--
-          Neither destination exists yet, and a button that goes nowhere is a small lie
-          told to everybody who taps it. They stay visible, because they say what is
-          coming, and stay inert, because they cannot yet do what they promise.
+          Both destinations went live on 6 September 2026 and both buttons went with them,
+          in one edit: the href, the class and the label always move together, because a
+          live link wearing a "coming soon" face is the same small lie as the reverse.
 
-          AFTER APPROVAL the data-store button becomes exactly this:
+          The store link is the dApp Store's own scheme, confirmed against the SKR Eyes
+          listing, which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no
+          https address for a listing: the store addresses an app by its package name.
 
-              solanadappstore://details?id=dev.alexkosa.floppassport
-
-          That is the dApp Store's own scheme, confirmed against the SKR Eyes listing,
-          which is solanadappstore://details?id=dev.alexkosa.skreyes. There is no https
-          address for a listing: the store addresses an app by its package name.
-
-          Which means the link does nothing at all in a desktop browser - it is not a web
-          address, and nothing on a laptop is registered to open it. So the label has to
-          carry that, or the button lies to every visitor who is not holding a Seeker.
-          Wording that stays true everywhere: "Open in the Solana dApp Store, on your
-          Seeker". The href goes live and the aria-disabled and btn-wait come off in the
-          same edit, never separately.
+          Which means it does nothing at all in a desktop browser - it is not a web
+          address, and nothing on a laptop is registered to open it. So the label carries
+          that, and says "on your Seeker" in every language. The line under these buttons
+          says the same thing in full for anyone who reads before tapping.
         -->
-<span aria-disabled="true" class="btn btn-wait" data-store="">Solana dApp Store · đang nộp duyệt</span>
-<span aria-disabled="true" class="btn btn-wait" data-source="">Mã nguồn trên GitHub · khi phát hành</span>
+<a class="btn btn-primary" data-store="" href="solanadappstore://details?id=dev.alexkosa.floppassport">Solana dApp Store · trên Seeker của bạn</a>
+<a class="btn btn-secondary" data-source="" href="https://github.com/busminer/flop-passport" rel="noopener">Mã nguồn trên GitHub</a>
 </div>
 <p style="margin-top:16px;font-size:14px">
         Cần một chiếc Solana Mobile Seeker, hoặc một điện thoại Android có ví Solana hỗ trợ Mobile Wallet Adapter.

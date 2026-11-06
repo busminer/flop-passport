@@ -758,3 +758,31 @@ html[lang="zh"] li, html[lang="ja"] li, html[lang="ko"] li {
   line-break: strict;
   overflow-wrap: break-word;
 }
+
+/* The 2.0 section: the film and the real screens */
+.hero-live { text-align: center; margin: var(--md) 0 0; }
+.film { display: flex; justify-content: center; margin-bottom: var(--lg); }
+.film video {
+  width: min(360px, 100%);
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 180, 216, 0.42);
+  background: #05080f;
+  display: block;
+}
+.shots { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--sm); }
+.shots figure { margin: 0; min-width: 0; }
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--surface-light);
+}
+.shots figcaption { margin-top: 8px; font-size: 13px; text-align: center; color: var(--ice); }
+@media (max-width: 900px) {
+  .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

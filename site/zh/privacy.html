@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=76077206" />
+<link rel="stylesheet" href="/styles.css?v=604efc62" />
 <noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
@@ -126,11 +126,11 @@
 <div class="section-head">
 <span class="label cyan">隐私政策</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>最后更新于 2026 年 9 月 6 日。本政策适用于 Android 应用 <code>dev.alexkosa.floppassport</code> 和本网站。</p>
+<p>最后更新于 2026 年 11 月 6 日。本政策适用于 Android 应用 <code>dev.alexkosa.floppassport</code> 和本网站。</p>
 </div>
 <div class="notice">
 <p style="margin:0">
-<strong>简短版本。</strong>没有账号，没有分析统计，没有广告，也没有我们运营的服务器。本应用不会在任何我们能触及的地方收集、传输或保存你的个人数据。你的密钥留在你的手机上。
+<strong>简短版本。</strong>没有账号，没有分析统计，没有广告，也没有由我们运营的服务器。应用不会在我们能触及的任何地方收集、传输或存储你的个人数据。你的密钥留在你的手机上。你在“提问”里输入的内容会发给 FLOP 的 AI 模型，所以不要在那里输入任何私密内容。
         </p>
 </div>
 <h3 style="margin-top:48px">谁来负责</h3>
@@ -146,7 +146,10 @@
 <strong>你的公开身份</strong>，即 <code>did:key</code> 及其指纹，以及推导它所用的 Solana 钱包地址。
         </li>
 <li>
-<strong>你为帖子写的那一行</strong>，以及你粘贴回来后的帖子链接。帖子链接会指明你的社交账号，所以它是应用保存的最能识别你的内容。
+<strong>你的 FLOP 活动</strong>：你的问题和模型的回答、FLOP 网关为你的账户签发的密钥、你的余额、你的连续记录和你已签署的天数。
+        </li>
+<li>
+<strong>一行帖子或一个帖子链接</strong>，仅当你在应用的早期版本中保存过时才有。该链接指向你的社交账号，并会一直留在你公开的身份备注里，直到你删除 Passport。
         </li>
 <li>
 <strong>你的语言偏好</strong>、Passport 的创建时间和封存它的安全级别、便签最后一次写入的时间，以及哪些提醒已经显示过。
@@ -161,10 +164,16 @@
 <strong>发往 technocore.chat</strong>，当你发布身份或签署记录时：你的公开 <code>did:key</code>、你正在签署的文本、一个计数器和签名。这些信息按设计就是公开的，这正是公开身份的意义，之后任何人都能读到。
         </li>
 <li>
-<strong>发往 technocore.chat，写进你公开的身份备注</strong>，前提是你把已发布帖子的链接贴了回来：就是这条链接。它点出你的社交账号，存放在由你的密钥算出的固定公开地址上，也正是它把你的密钥和你的名字公开绑在一起。贴不贴由你决定，重写一次不带它的备注就能去掉它。
+<strong>发往 FLOP 的水龙头</strong>，当你领取 test FLOP 时：你的 FLOP 地址。
         </li>
 <li>
-<strong>发往你在分享时选定的那个应用</strong>，比如 X：帖子的文字。应用把文字交给系统的分享面板，自己从不发布任何东西。
+<strong>发往 api.flop.network 上 FLOP 的网关</strong>，当你使用提问或完成今天时：你的 FLOP 地址、由你的 Passport 生成的签名，以及你输入的每一个问题。该服务及其 AI 模型由 FLOP 运营，对于它们如何处理收到的内容，本应用无法控制。
+        </li>
+<li>
+<strong>发往 FLOP 的 devnet 节点和浏览器</strong>：你的 FLOP 地址，用于读取你的余额和你已花费的数额。
+        </li>
+<li>
+<strong>发往 flop.alexkosa.dev</strong>：一个请求，取两个公开文件，即应用中显示的状态和新闻。除了任何请求都会带上的网络地址外，该请求不带有任何关于你的信息。
         </li>
 <li>
 <strong>发往你的钱包应用</strong>，当你创建 Passport 时：一句待签的文本。钱包在你的设备上处理它，我们不会通过网络发送任何东西。
@@ -173,11 +182,11 @@
 <strong>发往你选择的文件</strong>，当你导出密钥时。保存位置由你通过系统文件选择器指定。不会上传到任何地方。
         </li>
 <li>
-<strong>发送到 technocore.chat，无需你按任何按钮</strong>：每次打开应用，以及在「活动」标签页再一次，应用都会读回你的便签和记录，并重写便签。这次重写正是目的所在——该服务会删除七天内无人写入的任何内容，所以打开应用就是让你的身份不被删除的方式。它发送的是那里已经公开的同一份便签。
+<strong>发往 technocore.chat，无需你按任何按钮</strong>，每次你打开应用时，以及你查看自己的记录时：应用会读回你的备注和记录，并重写备注。这次重写正是关键所在：该服务会删除七天内无人写入的内容，所以打开应用就是在防止你的身份被删除。它发送的，是那里已经公开的同一份备注。
         </li>
 </ul>
 <p>
-<strong>任何东西都不会发给开发者。</strong>根本没有后端可发。应用只与 FLOP Labs 运营的 technocore.chat 以及你自己的钱包应用通信，这就是完整的清单。
+<strong>不会向开发者发送任何东西。</strong>根本没有后端可供发送。应用只与 technocore.chat、FLOP 的网关、水龙头、devnet 节点和浏览器（均由 FLOP Labs 运营）、静态网站 flop.alexkosa.dev 以及你自己的钱包应用通信。完整清单就是这些。
       </p>
 <h3 style="margin-top:32px">应用从不索取、也从不触碰什么</h3>
 <ul class="plain">
@@ -192,7 +201,7 @@
       </p>
 <h3 style="margin-top:32px">权限</h3>
 <ul class="plain">
-<li><strong>网络</strong>——在你发布或签名时连接 technocore.chat，并在你打开应用时读回记录、防止便签过期。</li>
+<li><strong>互联网</strong>：用于在你签名、领取 test FLOP 或向模型提问时连接 technocore.chat 和 FLOP 的网络，在你打开应用时读回你的记录并防止你的备注过期，以及获取状态和新闻。</li>
 <li><strong>振动</strong> — 步骤通过验证时的一次短促提示。</li>
 <li><strong>生物识别</strong>——用于保护显示私钥的界面。较旧的<strong>指纹</strong>权限由 Android 生物识别库为同一目的引入。</li>
 <li><strong>网络状态</strong>——由钱包适配器库使用，在打开你的钱包前判断手机是否在线。应用本身从不读取它。</li>
@@ -203,10 +212,10 @@
 <h3 style="margin-top:32px">删除你的数据</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport 会移除加密密钥、你的身份、帖子链接和提醒状态；卸载应用还会移除你的语言和提醒设置。别处没有任何副本，我们也没有什么可以代你删除的。
+<strong>在你的设备上。</strong>设置 → 危险区域 → 删除 Passport，会移除加密的密钥、你的身份、你的 FLOP 活动、你的帖子链接和提醒状态；卸载应用还会移除你的语言和提醒设置。其他任何地方都没有副本，也没有什么需要我们替你删除。
         </p>
 <p style="margin:0">
-<strong>已经发布出去的东西。</strong>你选择发布到 Technocore 上的一切都是公开的，也不在我们的掌控之内——我们不托管它，也无法删除它。公共房间里的记录会随着房间被压缩而被那个服务丢弃，而身份备注在七天没有任何写入之后会被删除——也就是说，你发布的东西如果不被重写，就会自行消失。关于 technocore.chat 上内容的请求，请找运营方 FLOP Labs。
+<strong>已发布的内容。</strong>你选择在 Technocore 上发布的任何内容都是公开的，不在我们的控制之内：我们不托管它，也无法移除它。公开房间里的记录会在房间被压缩时被该服务丢弃，身份备注在七天无人写入后会被删除，所以你发布过的内容除非被重写，否则会自行消失。关于 technocore.chat 上的内容，以及 FLOP 的网关收到了什么的请求，请发给运营它们的 FLOP Labs。
         </p>
 </div>
 <h3 style="margin-top:32px">儿童</h3>

@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=76077206" />
+<link rel="stylesheet" href="/styles.css?v=604efc62" />
 <noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
@@ -126,11 +126,11 @@
 <div class="section-head">
 <span class="label cyan">Chính sách riêng tư</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>Cập nhật lần cuối ngày 6 tháng 9 năm 2026. Chính sách này áp dụng cho ứng dụng Android <code>dev.alexkosa.floppassport</code> và trang web này.</p>
+<p>Cập nhật lần cuối ngày 6 tháng 11 năm 2026. Chính sách này áp dụng cho ứng dụng Android <code>dev.alexkosa.floppassport</code> và trang web này.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
-<strong>Bản ngắn gọn.</strong> Không có tài khoản, không đo lường, không quảng cáo và không máy chủ nào do chúng tôi vận hành. Ứng dụng không thu thập, truyền đi hay lưu dữ liệu cá nhân của bạn ở bất cứ nơi nào chúng tôi với tới được. Khóa của bạn nằm lại trên máy bạn.
+<strong>Tóm tắt.</strong> Không có tài khoản, không có phân tích, không có quảng cáo và không có máy chủ nào do chúng tôi vận hành. Ứng dụng không thu thập, truyền hay lưu dữ liệu cá nhân của bạn ở bất cứ nơi nào chúng tôi với tới được. Khóa của bạn ở lại trên điện thoại. Những gì bạn gõ vào Hỏi sẽ đi tới mô hình AI của FLOP, nên đừng gõ gì riêng tư ở đó.
         </p>
 </div>
 <h3 style="margin-top:48px">Ai chịu trách nhiệm</h3>
@@ -146,7 +146,10 @@
 <strong>Danh tính công khai của bạn</strong> — <code>did:key</code> và dấu vân của nó — cùng địa chỉ ví Solana mà nó được dẫn xuất từ đó.
         </li>
 <li>
-<strong>Dòng bạn viết cho bài đăng</strong> và liên kết đến bài đăng sau khi bạn dán lại. Liên kết bài đăng nêu tên tài khoản mạng xã hội của bạn, nên đó là thứ nhận diện rõ nhất mà ứng dụng lưu.
+<strong>Hoạt động FLOP của bạn</strong>: câu hỏi của bạn và câu trả lời của mô hình, khóa mà cổng của FLOP cấp cho tài khoản của bạn, số dư, chuỗi ngày và các ngày đã ký của bạn.
+        </li>
+<li>
+<strong>Một dòng đăng hoặc liên kết đăng</strong>, chỉ khi bạn đã lưu nó ở một phiên bản trước của ứng dụng. Liên kết nêu tên tài khoản mạng xã hội của bạn, và nó nằm trong ghi chú danh tính công khai của bạn cho đến khi bạn xóa Passport.
         </li>
 <li>
 <strong>Ngôn ngữ bạn chọn</strong>, thời điểm Passport được tạo và mức bảo mật nào đã niêm phong nó, lần cuối ghi chú được ghi, và những lời nhắc nào đã hiển thị.
@@ -161,10 +164,16 @@
 <strong>Tới technocore.chat</strong>, khi bạn công bố danh tính hoặc ký một bản ghi: <code>did:key</code> công khai của bạn, đoạn văn bản bạn đang ký, một bộ đếm và chữ ký. Thông tin này công khai theo thiết kế — đó chính là ý nghĩa của một danh tính công khai — và sau đó ai cũng đọc được.
         </li>
 <li>
-<strong>Gửi tới technocore.chat, vào trong ghi chú danh tính công khai của bạn</strong>, nếu bạn dán đường liên kết tới bài đã đăng: chính đường liên kết ấy. Nó nêu tên tài khoản mạng xã hội của bạn, nằm ở một địa chỉ công khai cố định tính ra từ khóa của bạn, và nó chính là thứ gắn khóa với tên bạn trước mọi người. Dán hay không là quyền của bạn, và viết lại ghi chú mà không có nó là gỡ nó đi.
+<strong>Tới faucet của FLOP</strong>, khi bạn nhận FLOP thử nghiệm: địa chỉ FLOP của bạn.
         </li>
 <li>
-<strong>Tới ứng dụng bạn chọn khi chia sẻ bài đăng</strong>, chẳng hạn X: phần chữ của bài đăng. Ứng dụng đưa nó cho khung chia sẻ của hệ thống và không bao giờ tự đăng bất cứ thứ gì.
+<strong>Tới cổng của FLOP tại api.flop.network</strong>, khi bạn dùng Hỏi hoặc Hoàn tất hôm nay: địa chỉ FLOP của bạn, một chữ ký do Passport của bạn tạo ra, và mọi câu hỏi bạn gõ. FLOP vận hành dịch vụ đó và mô hình AI của nó, và ứng dụng này không kiểm soát được họ làm gì với những gì họ nhận.
+        </li>
+<li>
+<strong>Tới nút devnet và trình khám phá của FLOP</strong>: địa chỉ FLOP của bạn, để đọc số dư và số bạn đã chi.
+        </li>
+<li>
+<strong>Tới flop.alexkosa.dev</strong>: một yêu cầu thông thường lấy hai tệp công khai, trạng thái và tin tức hiển thị trong ứng dụng. Yêu cầu không mang gì về bạn ngoài địa chỉ mạng mà yêu cầu nào cũng mang.
         </li>
 <li>
 <strong>Tới ứng dụng ví của bạn</strong>, khi bạn tạo Passport: một câu để ký. Ví xử lý việc đó ngay trên máy bạn; chúng tôi không gửi gì qua mạng cả.
@@ -173,11 +182,11 @@
 <strong>Tới một tệp do bạn chọn</strong>, khi bạn xuất khóa. Bạn chọn nơi lưu bằng trình chọn tệp của hệ thống. Không có gì được tải lên đâu cả.
         </li>
 <li>
-<strong>Đến technocore.chat, mà bạn không cần nhấn gì</strong>, mỗi lần bạn mở ứng dụng và một lần nữa ở thẻ Hoạt động: ứng dụng đọc lại ghi chú và các bản ghi của bạn, rồi ghi lại ghi chú. Việc ghi lại đó chính là mục đích — dịch vụ ấy xóa mọi thứ không được ghi trong bảy ngày, nên mở ứng dụng chính là điều giữ cho danh tính của bạn không bị xóa. Nó gửi đúng ghi chú đã công khai ở đó.
+<strong>Tới technocore.chat, không cần bạn bấm gì</strong>, mỗi lần bạn mở ứng dụng và lại một lần nữa khi bạn xem các bản ghi: ứng dụng đọc lại ghi chú và các bản ghi của bạn, và ghi lại ghi chú. Việc ghi lại đó là mục đích của cả việc này: dịch vụ đó xóa bất cứ thứ gì không ai ghi vào trong bảy ngày, nên mở ứng dụng là điều giúp danh tính của bạn không bị xóa. Nó gửi đúng ghi chú vốn đã công khai ở đó.
         </li>
 </ul>
 <p>
-<strong>Không bao giờ có gì được gửi cho người phát triển.</strong> Không có phần máy chủ nào để gửi tới. Ứng dụng chỉ trò chuyện với technocore.chat, do FLOP Labs vận hành, và với chính ứng dụng ví của bạn — đó là toàn bộ danh sách.
+<strong>Không có gì được gửi cho nhà phát triển.</strong> Không có máy chủ nào để gửi tới. Ứng dụng nói chuyện với technocore.chat và với cổng, faucet, nút devnet và trình khám phá của FLOP, tất cả do FLOP Labs vận hành, với trang tĩnh flop.alexkosa.dev, và với ứng dụng ví của chính bạn. Đó là toàn bộ danh sách.
       </p>
 <h3 style="margin-top:32px">Ứng dụng không bao giờ hỏi và không bao giờ đụng tới</h3>
 <ul class="plain">
@@ -192,7 +201,7 @@
       </p>
 <h3 style="margin-top:32px">Quyền truy cập</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — để kết nối technocore.chat khi bạn công bố hoặc ký gì đó, và để đọc lại các bản ghi cũng như giữ ghi chú không hết hạn khi bạn mở ứng dụng.</li>
+<li><strong>Internet</strong>: để tới technocore.chat và mạng FLOP khi bạn ký, nhận FLOP thử nghiệm hoặc hỏi mô hình, để đọc lại các bản ghi của bạn và giữ cho ghi chú không hết hạn khi bạn mở ứng dụng, và để lấy trạng thái và tin tức.</li>
 <li><strong>Rung</strong> — một nhịp xác nhận ngắn khi một bước được kiểm chứng.</li>
 <li><strong>Sinh trắc học</strong> — để chặn màn hình hiển thị khóa riêng của bạn. Quyền cũ <strong>Vân tay</strong> được thư viện sinh trắc học của Android kéo vào cho cùng mục đích.</li>
 <li><strong>Trạng thái mạng</strong> — được thư viện wallet adapter dùng để biết điện thoại có đang trực tuyến không trước khi mở ví của bạn. Bản thân ứng dụng không bao giờ đọc nó.</li>
@@ -203,10 +212,10 @@
 <h3 style="margin-top:32px">Xóa dữ liệu của bạn</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>Trên thiết bị của bạn.</strong> Cài đặt → Vùng nguy hiểm → xóa Passport sẽ xóa khóa đã mã hóa, danh tính, liên kết bài đăng và trạng thái nhắc nhở; gỡ ứng dụng còn xóa cả ngôn ngữ và cài đặt nhắc nhở. Không có bản sao ở nơi nào khác, và chúng tôi không có gì để xóa thay bạn.
+<strong>Trên thiết bị của bạn.</strong> Cài đặt → Vùng nguy hiểm → xóa Passport sẽ gỡ khóa đã mã hóa, danh tính, hoạt động FLOP, liên kết đăng và trạng thái nhắc nhở của bạn; gỡ cài đặt ứng dụng cũng gỡ cả cài đặt ngôn ngữ và nhắc nhở. Không có bản sao nào ở nơi khác, và chúng tôi không có gì để xóa thay bạn.
         </p>
 <p style="margin:0">
-<strong>Những gì đã được đăng.</strong> Mọi thứ bạn chọn đăng lên Technocore đều công khai và nằm ngoài tầm kiểm soát của chúng tôi — chúng tôi không lưu giữ và không thể gỡ bỏ. Các bản ghi trong phòng công khai bị dịch vụ đó loại bỏ khi phòng được nén lại, còn ghi chú danh tính sẽ bị xóa sau bảy ngày không có gì được ghi vào — nghĩa là thứ bạn đã đăng tự biến mất nếu không được viết lại. Mọi yêu cầu về nội dung trên technocore.chat xin gửi tới FLOP Labs, đơn vị vận hành nó.
+<strong>Những gì đã được đăng.</strong> Mọi thứ bạn chọn đăng trên Technocore đều công khai và nằm ngoài tầm kiểm soát của chúng tôi: chúng tôi không lưu trữ nó và không thể gỡ nó. Các bản ghi trong phòng công khai bị dịch vụ đó bỏ đi khi phòng được thu gọn, và ghi chú danh tính bị xóa sau bảy ngày không có gì được ghi vào, nên những gì bạn đã đăng sẽ tự biến mất nếu không được ghi lại. Các yêu cầu về nội dung trên technocore.chat, và về những gì cổng của FLOP đã nhận, hãy gửi tới FLOP Labs, bên vận hành chúng.
         </p>
 </div>
 <h3 style="margin-top:32px">Trẻ em</h3>

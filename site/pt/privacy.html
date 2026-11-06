@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=76077206" />
+<link rel="stylesheet" href="/styles.css?v=604efc62" />
 <noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
@@ -126,11 +126,12 @@
 <div class="section-head">
 <span class="label cyan">Política de privacidade</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>Última atualização: 6 de setembro de 2026. Esta política cobre o aplicativo Android <code>dev.alexkosa.floppassport</code> e este site.</p>
+<p>Última atualização: 6 de novembro de 2026. Esta política cobre o aplicativo Android
+          <code>dev.alexkosa.floppassport</code> e este site.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
-<strong>A versão curta.</strong> Não há conta, não há analytics, não há publicidade e não há servidor operado por nós. O app não coleta, transmite nem armazena seus dados pessoais em nenhum lugar ao qual possamos chegar. Sua chave fica no seu telefone.
+<strong>A versão curta.</strong> Não há conta, nem analytics, nem publicidade, nem servidor operado por nós. O app não coleta, não transmite nem armazena seus dados pessoais em nenhum lugar a que possamos ter acesso. Sua chave fica no seu telefone. O que você digita em Perguntar vai para o modelo de IA da FLOP, então não digite nada privado ali.
         </p>
 </div>
 <h3 style="margin-top:48px">Quem é responsável</h3>
@@ -146,7 +147,10 @@
 <strong>Sua identidade pública</strong>: o <code>did:key</code> e a impressão digital dele, e o endereço da carteira Solana de onde foi derivado.
         </li>
 <li>
-<strong>A linha que você escreveu para a sua publicação</strong> e o link da publicação depois que você o cola. O link nomeia sua conta social, então é a coisa mais identificadora que o app guarda.
+<strong>Sua atividade na FLOP</strong>: suas perguntas e as respostas do modelo, a chave que o gateway da FLOP emitiu para a sua conta, seu saldo, sua sequência e seus dias assinados.
+        </li>
+<li>
+<strong>Uma linha de postagem ou um link de postagem</strong>, só se você salvou um numa versão anterior do app. O link nomeia a sua conta social e fica na sua nota de identidade pública até você excluir o Passport.
         </li>
 <li>
 <strong>Sua preferência de idioma</strong>, quando seu Passport foi criado e qual nível de segurança o selou, quando sua nota foi escrita pela última vez e quais lembretes já foram mostrados.
@@ -161,10 +165,16 @@
 <strong>Para o technocore.chat</strong>, quando você publica sua identidade ou assina um registro: seu <code>did:key</code> público, o texto que você está assinando, um contador e a assinatura. Essa informação é pública por design, que é justamente o sentido de uma identidade pública, e qualquer um pode ler depois.
         </li>
 <li>
-<strong>Para a technocore.chat, dentro da sua nota de identidade pública</strong>, se você colar o link da publicação: esse link. Ele nomeia sua conta social, fica num endereço público permanente derivado da sua chave e é o que amarra sua chave ao seu nome em público. Colar é escolha sua, e reescrever a nota sem ele o remove.
+<strong>Para o faucet da FLOP</strong>, quando você coleta FLOP de teste: seu endereço FLOP.
         </li>
 <li>
-<strong>Para o app que você escolher ao compartilhar sua publicação</strong>, como o X: o texto da publicação. O app entrega o texto à folha de compartilhamento do sistema e nunca publica nada sozinho.
+<strong>Para o gateway da FLOP em api.flop.network</strong>, quando você usa Perguntar ou Completar meu dia: seu endereço FLOP, uma assinatura feita pelo seu Passport e cada pergunta que você digita. A FLOP opera esse serviço e o modelo de IA dele, e este app não controla o que eles fazem com o que recebem.
+        </li>
+<li>
+<strong>Para o nó da devnet e o explorer da FLOP</strong>: seu endereço FLOP, para ler seu saldo e o que você gastou.
+        </li>
+<li>
+<strong>Para flop.alexkosa.dev</strong>: um pedido simples de dois arquivos públicos, o status e as novidades mostradas no app. O pedido não leva nada sobre você além do endereço de rede que qualquer pedido leva.
         </li>
 <li>
 <strong>Para o app da sua carteira</strong>, quando você cria o Passport: uma frase para assinar. A carteira cuida disso no seu aparelho; nada é enviado pela rede por nós.
@@ -173,11 +183,11 @@
 <strong>Para um arquivo que você escolher</strong>, quando você exporta sua chave. Você escolhe o destino pelo seletor de arquivos do sistema. Nada é enviado para lugar nenhum.
         </li>
 <li>
-<strong>Para o technocore.chat, sem você tocar em nada</strong>, toda vez que abre o app e de novo na aba Atividade: o app relê sua nota e seus registros e reescreve a nota. Essa reescrita é todo o propósito — aquele serviço apaga qualquer coisa em que nada foi escrito por sete dias, então abrir o app é o que impede sua identidade de ser apagada. Ele envia a mesma nota que já é pública lá.
+<strong>Para technocore.chat, sem você tocar em nada</strong>, toda vez que você abre o app e de novo quando olha seus registros: o app lê de volta a sua nota e os seus registros, e reescreve a nota. Essa reescrita é o ponto principal: esse serviço apaga tudo em que ninguém escreveu por sete dias, então abrir o app é o que impede que a sua identidade seja apagada. Ele envia a mesma nota que já é pública lá.
         </li>
 </ul>
 <p>
-<strong>Nada é enviado ao desenvolvedor, nunca.</strong> Não existe backend para onde enviar. O app conversa com o technocore.chat, operado pela FLOP Labs, e com o app da sua carteira, e essa é a lista completa.
+<strong>Nada nunca é enviado ao desenvolvedor.</strong> Não há backend para onde enviar. O app fala com o technocore.chat e com o gateway, o faucet, o nó da devnet e o explorer da FLOP, todos operados pela FLOP Labs, com o site estático flop.alexkosa.dev e com o seu próprio app de carteira. Essa é a lista completa.
       </p>
 <h3 style="margin-top:32px">O que o app nunca pede e nunca toca</h3>
 <ul class="plain">
@@ -192,7 +202,7 @@
       </p>
 <h3 style="margin-top:32px">Permissões</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — para alcançar o technocore.chat quando você publica ou assina algo, e para reler seus registros e impedir que sua nota expire quando você abre o app.</li>
+<li><strong>Internet</strong>: para chegar ao technocore.chat e à rede da FLOP quando você assina, coleta FLOP de teste ou pergunta ao modelo, para ler seus registros de volta e impedir que a sua nota expire quando você abre o app, e para buscar o status e as novidades.</li>
 <li><strong>Vibração</strong> — um toque curto de confirmação quando um passo é verificado.</li>
 <li><strong>Biometria</strong> — para proteger a tela que mostra sua chave privada. A permissão mais antiga <strong>Impressão digital</strong> é trazida pela biblioteca biométrica do Android com a mesma finalidade.</li>
 <li><strong>Estado da rede</strong> — usado pela biblioteca do adaptador de carteira para saber se o telefone está on-line antes de abrir sua carteira. O app em si nunca o lê.</li>
@@ -203,10 +213,10 @@
 <h3 style="margin-top:32px">Apagar seus dados</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>No seu dispositivo.</strong> Configurações → Zona de perigo → excluir o Passport remove a chave criptografada, sua identidade, o link da sua publicação e o estado dos lembretes; desinstalar o app remove também seu idioma e as configurações de lembrete. Não há cópia em nenhum outro lugar, e não temos nada para apagar em seu nome.
+<strong>No seu dispositivo.</strong> Configurações → Zona de perigo → excluir o Passport remove a chave criptografada, sua identidade, sua atividade na FLOP, seu link de postagem e o estado dos lembretes; desinstalar o app remove também suas configurações de idioma e de lembretes. Não há cópia em nenhum outro lugar, e não temos nada para excluir em seu nome.
         </p>
 <p style="margin:0">
-<strong>O que já foi publicado.</strong> Tudo o que você escolheu publicar no Technocore é público e está fora do nosso controle — não hospedamos e não podemos remover. Os registros em salas públicas são descartados por aquele serviço conforme as salas são compactadas, e uma nota de identidade é apagada após sete dias sem nada escrito nela — ou seja, o que você publicou desaparece sozinho se não for reescrito. Pedidos sobre conteúdo na technocore.chat vão para a FLOP Labs, que a opera.
+<strong>O que foi publicado.</strong> Tudo o que você escolheu publicar no Technocore é público e está fora do nosso controle: nós não o hospedamos e não podemos removê-lo. Esse serviço descarta os registros das salas públicas à medida que as compacta, e uma nota de identidade é apagada depois de sete dias sem que nada seja escrito nela, então o que você publicou some sozinho se não for reescrito. Pedidos sobre o conteúdo no technocore.chat e sobre o que o gateway da FLOP recebeu vão para a FLOP Labs, que os opera.
         </p>
 </div>
 <h3 style="margin-top:32px">Crianças</h3>

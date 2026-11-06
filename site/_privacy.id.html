@@ -19,11 +19,11 @@
 <div class="section-head">
 <span class="label cyan">Kebijakan privasi</span>
 <h2>FLOP Passport for Seeker</h2>
-<p>Terakhir diperbarui 6 September 2026. Kebijakan ini mencakup aplikasi Android <code>dev.alexkosa.floppassport</code> dan situs ini.</p>
+<p>Terakhir diperbarui 6 November 2026. Kebijakan ini mencakup aplikasi Android <code>dev.alexkosa.floppassport</code> dan situs web ini.</p>
 </div>
 <div class="notice">
 <p style="margin:0">
-<strong>Versi singkatnya.</strong> Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada server yang kami operasikan. Aplikasi tidak mengumpulkan, mengirim, atau menyimpan data pribadi Anda di mana pun yang bisa kami jangkau. Kunci Anda tetap di ponsel Anda.
+<strong>Versi singkatnya.</strong> Tidak ada akun, tidak ada analitik, tidak ada iklan, dan tidak ada server yang kami operasikan. Aplikasi tidak mengumpulkan, mengirimkan, atau menyimpan data pribadi Anda di mana pun yang dapat kami jangkau. Kunci Anda tetap di ponsel Anda. Apa yang Anda ketik di Tanya dikirim ke model AI FLOP, jadi jangan mengetik apa pun yang bersifat pribadi di sana.
         </p>
 </div>
 <h3 style="margin-top:48px">Siapa yang bertanggung jawab</h3>
@@ -39,7 +39,10 @@
 <strong>Identitas publik Anda</strong> — <code>did:key</code> dan sidik jarinya — serta alamat dompet Solana asal penurunannya.
         </li>
 <li>
-<strong>Baris yang Anda tulis untuk postingan Anda</strong> dan tautan ke postingan setelah Anda menempelkannya kembali. Tautan postingan menyebut akun sosial Anda, jadi itu hal paling mengidentifikasi yang disimpan aplikasi.
+<strong>Aktivitas FLOP Anda</strong>: pertanyaan Anda dan jawaban model, kunci yang diterbitkan gateway FLOP untuk akun Anda, saldo Anda, rentetan Anda, dan hari-hari yang Anda tandatangani.
+        </li>
+<li>
+<strong>Baris unggahan atau tautan unggahan</strong>, hanya jika Anda menyimpannya di versi aplikasi sebelumnya. Tautan itu menyebut akun media sosial Anda, dan tetap ada di catatan identitas publik Anda sampai Anda menghapus Passport.
         </li>
 <li>
 <strong>Preferensi bahasa Anda</strong>, kapan Passport Anda dibuat dan tingkat keamanan mana yang menyegelnya, kapan catatan Anda terakhir ditulis, dan pengingat mana yang sudah ditampilkan.
@@ -54,10 +57,16 @@
 <strong>Ke technocore.chat</strong>, saat Anda menerbitkan identitas atau menandatangani catatan: <code>did:key</code> publik Anda, teks yang sedang Anda tanda tangani, sebuah penghitung, dan tanda tangannya. Informasi ini memang publik menurut rancangannya — itulah inti sebuah identitas publik — dan setelahnya siapa pun bisa membacanya.
         </li>
 <li>
-<strong>Ke technocore.chat, masuk ke catatan identitas publik Anda</strong>, kalau Anda menempelkan tautan unggahan yang sudah Anda terbitkan: tautan itu sendiri. Tautan itu menyebut akun media sosial Anda, tersimpan di alamat publik permanen yang dihitung dari kunci Anda, dan itulah yang mengikat kunci Anda dengan nama Anda di depan umum. Menempelkannya adalah pilihan Anda, dan menulis ulang catatan tanpa tautan itu akan menghapusnya.
+<strong>Ke faucet FLOP</strong>, saat Anda mengambil FLOP uji coba: alamat FLOP Anda.
         </li>
 <li>
-<strong>Ke aplikasi yang Anda pilih saat membagikan unggahan Anda</strong>, misalnya X: teks unggahannya. Aplikasi menyerahkannya ke lembar berbagi sistem dan tidak pernah mengunggah apa pun sendiri.
+<strong>Ke gateway FLOP di api.flop.network</strong>, saat Anda memakai Tanya atau Selesaikan hari saya: alamat FLOP Anda, tanda tangan yang dibuat Passport Anda, dan setiap pertanyaan yang Anda ketik. FLOP mengoperasikan layanan itu dan model AI-nya, dan aplikasi ini tidak punya kendali atas apa yang mereka lakukan dengan yang mereka terima.
+        </li>
+<li>
+<strong>Ke node devnet dan explorer FLOP</strong>: alamat FLOP Anda, untuk membaca saldo Anda dan apa yang telah Anda belanjakan.
+        </li>
+<li>
+<strong>Ke flop.alexkosa.dev</strong>: permintaan biasa untuk dua berkas publik, status dan berita yang ditampilkan di aplikasi. Permintaan itu tidak membawa apa pun tentang Anda selain alamat jaringan yang dibawa setiap permintaan.
         </li>
 <li>
 <strong>Ke aplikasi dompet Anda</strong>, saat Anda membuat Passport: sebuah kalimat untuk ditandatangani. Dompet menanganinya di perangkat Anda; tidak ada yang kami kirim lewat jaringan.
@@ -66,11 +75,11 @@
 <strong>Ke berkas yang Anda pilih</strong>, saat Anda mengekspor kunci. Tujuannya Anda tentukan lewat pemilih berkas sistem. Tidak ada yang diunggah.
         </li>
 <li>
-<strong>Ke technocore.chat, tanpa Anda menekan apa pun</strong>, setiap kali Anda membuka aplikasi dan lagi di tab Aktivitas: aplikasi membaca kembali catatan dan rekaman Anda, lalu menulis ulang catatan itu. Penulisan ulang itulah intinya — layanan itu menghapus apa pun yang tidak ditulisi selama tujuh hari, sehingga membuka aplikasi adalah yang menjaga identitas Anda dari penghapusan. Yang dikirim adalah catatan yang sama yang sudah publik di sana.
+<strong>Ke technocore.chat, tanpa Anda menekan apa pun</strong>, setiap kali Anda membuka aplikasi dan lagi saat Anda melihat rekaman Anda: aplikasi membaca kembali catatan dan rekaman Anda, lalu menulis ulang catatan itu. Penulisan ulang itulah intinya: layanan itu menghapus apa pun yang tidak ditulisi selama tujuh hari, jadi membuka aplikasi adalah yang menjaga identitas Anda agar tidak terhapus. Yang dikirim adalah catatan yang sama yang sudah publik di sana.
         </li>
 </ul>
 <p>
-<strong>Tidak pernah ada yang dikirim ke pengembang.</strong> Tidak ada backend untuk menerimanya. Aplikasi berbicara dengan technocore.chat, yang dioperasikan FLOP Labs, dan dengan aplikasi dompet Anda sendiri — dan itulah daftar lengkapnya.
+<strong>Tidak ada yang pernah dikirim ke pengembang.</strong> Tidak ada backend untuk dikirimi. Aplikasi berkomunikasi dengan technocore.chat dan dengan gateway, faucet, node devnet, dan explorer FLOP, semuanya dioperasikan oleh FLOP Labs, dengan situs statis flop.alexkosa.dev, dan dengan aplikasi dompet Anda sendiri. Itulah daftar lengkapnya.
       </p>
 <h3 style="margin-top:32px">Apa yang tidak pernah diminta dan tidak pernah disentuh aplikasi</h3>
 <ul class="plain">
@@ -85,7 +94,7 @@
       </p>
 <h3 style="margin-top:32px">Izin</h3>
 <ul class="plain">
-<li><strong>Internet</strong> — untuk menghubungi technocore.chat saat Anda mempublikasikan atau menandatangani sesuatu, dan untuk membaca kembali rekaman Anda serta menjaga catatan Anda agar tidak kedaluwarsa saat Anda membuka aplikasi.</li>
+<li><strong>Internet</strong>: untuk menjangkau technocore.chat dan jaringan FLOP saat Anda menandatangani, mengambil FLOP uji coba, atau bertanya ke model, untuk membaca kembali rekaman Anda dan menjaga catatan Anda tidak kedaluwarsa saat Anda membuka aplikasi, serta untuk mengambil status dan berita.</li>
 <li><strong>Getar</strong> — satu getaran singkat saat sebuah langkah terverifikasi.</li>
 <li><strong>Biometrik</strong> — untuk melindungi layar yang menampilkan kunci privat Anda. Izin lama <strong>Sidik jari</strong> disertakan oleh pustaka biometrik Android untuk tujuan yang sama.</li>
 <li><strong>Status jaringan</strong> — digunakan oleh pustaka adaptor dompet untuk mengetahui apakah ponsel online sebelum membuka dompet Anda. Aplikasi itu sendiri tidak pernah membacanya.</li>
@@ -96,10 +105,10 @@
 <h3 style="margin-top:32px">Menghapus data Anda</h3>
 <div class="notice warn">
 <p style="margin:0 0 12px">
-<strong>Di perangkat Anda.</strong> Pengaturan → Zona bahaya → hapus Passport menghapus kunci terenkripsi, identitas Anda, tautan postingan Anda, dan status pengingat; mencopot aplikasi juga menghapus pengaturan bahasa dan pengingat Anda. Tidak ada salinan di tempat lain, dan tidak ada yang bisa kami hapus atas nama Anda.
+<strong>Di perangkat Anda.</strong> Pengaturan → Zona berbahaya → hapus Passport menghapus kunci terenkripsi, identitas Anda, aktivitas FLOP Anda, tautan unggahan Anda, dan status pengingat; mencopot aplikasi juga menghapus pengaturan bahasa dan pengingat Anda. Tidak ada salinan di tempat lain, dan tidak ada yang bisa kami hapus atas nama Anda.
         </p>
 <p style="margin:0">
-<strong>Yang sudah diterbitkan.</strong> Semua yang Anda pilih untuk diterbitkan di Technocore bersifat publik dan di luar kendali kami — kami tidak menyimpannya dan tidak bisa menghapusnya. Rekaman di ruang publik dibuang oleh layanan itu seiring ruangnya dipadatkan, dan catatan identitas dihapus setelah tujuh hari tanpa ada tulisan masuk ke dalamnya — jadi apa yang Anda terbitkan hilang dengan sendirinya kalau tidak ditulis ulang. Permintaan soal konten di technocore.chat ditujukan ke FLOP Labs, yang mengoperasikannya.
+<strong>Yang telah diterbitkan.</strong> Apa pun yang Anda pilih untuk diterbitkan di Technocore bersifat publik dan di luar kendali kami: kami tidak menyimpannya dan tidak dapat menghapusnya. Rekaman di ruang publik dibuang oleh layanan itu saat ruang dipadatkan, dan catatan identitas dihapus setelah tujuh hari tanpa tulisan masuk, jadi apa yang Anda terbitkan menghilang sendiri kecuali ditulis ulang. Permintaan tentang konten di technocore.chat, dan tentang apa yang diterima gateway FLOP, ditujukan kepada FLOP Labs, yang mengoperasikannya.
         </p>
 </div>
 <h3 style="margin-top:32px">Anak-anak</h3>

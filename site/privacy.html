@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" />
-<link rel="stylesheet" href="/styles.css?v=76077206" />
+<link rel="stylesheet" href="/styles.css?v=604efc62" />
 <noscript><style>.reveal,.hero-lockup,.hero-for{opacity:1;transform:none}</style></noscript>
 
 </head>
@@ -127,7 +127,7 @@
       <div class="section-head">
         <span class="label cyan">Privacy policy</span>
         <h2>FLOP Passport for Seeker</h2>
-        <p>Last updated 6 September 2026. This policy covers the Android application
+        <p>Last updated 6 November 2026. This policy covers the Android application
           <code>dev.alexkosa.floppassport</code> and this website.</p>
       </div>
 
@@ -135,7 +135,8 @@
         <p style="margin:0">
           <strong>The short version.</strong> There is no account, no analytics, no
           advertising and no server operated by us. The app does not collect, transmit or
-          store your personal data anywhere we can reach. Your key stays on your phone.
+          store your personal data anywhere we can reach. Your key stays on your phone. What
+          you type into Ask goes to FLOP's AI model, so do not type anything private there.
         </p>
       </div>
 
@@ -161,9 +162,13 @@
           fingerprint — and the Solana wallet address it was derived from.
         </li>
         <li>
-          <strong>The line you wrote for your post</strong> and the link to the post once you
-          paste it back. The post link names your social account, so it is the most
-          identifying thing the app keeps.
+          <strong>Your FLOP activity</strong>: your questions and the model's answers, the key
+          FLOP's gateway issued to your account, your balance, your streak and your signed days.
+        </li>
+        <li>
+          <strong>A post line or post link</strong>, only if you saved one in an earlier version
+          of the app. The link names your social account, and it stays in your public identity
+          note until you delete the Passport.
         </li>
         <li>
           <strong>Your language preference</strong>, when your Passport was created and which
@@ -186,16 +191,22 @@
           identity — and anyone can read it afterwards.
         </li>
         <li>
-          <strong>To technocore.chat, into your public identity note</strong>, if you paste
-          the link to the post you published: that link. It names your social account, it
-          sits at a permanent public address derived from your key, and it is what ties your
-          key to your name in public. Pasting it is your choice, and rewriting the note
-          without it removes it.
+          <strong>To FLOP's faucet</strong>, when you collect test FLOP: your FLOP address.
         </li>
         <li>
-          <strong>To the app you pick when you share your post</strong>, such as X: the text
-          of the post. The app hands it to the system share sheet and never posts anything
-          itself.
+          <strong>To FLOP's gateway at api.flop.network</strong>, when you use Ask or Do My Day:
+          your FLOP address, a signature made by your Passport, and every question you type. FLOP
+          operates that service and its AI model, and this app has no control over what they do
+          with what they receive.
+        </li>
+        <li>
+          <strong>To FLOP's devnet node and explorer</strong>: your FLOP address, to read your
+          balance and what you have spent.
+        </li>
+        <li>
+          <strong>To flop.alexkosa.dev</strong>: a plain request for two public files, the status
+          and the news shown in the app. The request carries nothing about you beyond the network
+          address any request carries.
         </li>
         <li>
           <strong>To your wallet app</strong>, when you create the Passport: a statement to
@@ -208,7 +219,7 @@
         </li>
         <li>
           <strong>To technocore.chat, without you pressing anything</strong>, every time you
-          open the app and again on the Activity tab: the app reads your note and your
+          open the app and again when you look at your records: the app reads your note and your
           records back, and rewrites the note. That rewrite is the whole point — that service deletes anything nothing has
           written to for seven days, so opening the app is what keeps your identity from
           being deleted. It sends the same note that is already public there.
@@ -216,8 +227,9 @@
       </ul>
       <p>
         <strong>Nothing is ever sent to the developer.</strong> There is no backend to send
-        it to. The app talks to technocore.chat, operated by FLOP Labs, and to your own
-        wallet app — and that is the complete list.
+        it to. The app talks to technocore.chat and to FLOP's gateway, faucet, devnet node and
+        explorer, all operated by FLOP Labs, to the static site flop.alexkosa.dev, and to your
+        own wallet app. That is the complete list.
       </p>
 
       <h3 style="margin-top:32px">What the app never asks for and never touches</h3>
@@ -241,7 +253,7 @@
 
       <h3 style="margin-top:32px">Permissions</h3>
       <ul class="plain">
-        <li><strong>Internet</strong> — to reach technocore.chat when you publish or sign something, and to read your records back and keep your note from expiring when you open the app.</li>
+        <li><strong>Internet</strong> — to reach technocore.chat and FLOP's network when you sign, collect test FLOP or ask the model, to read your records back and keep your note from expiring when you open the app, and to fetch the status and the news.</li>
         <li><strong>Vibrate</strong> — a short confirmation tick when a step is verified.</li>
         <li><strong>Biometric</strong> — to gate the screen that shows your private key. The older
           <strong>Fingerprint</strong> permission is pulled in by the Android biometric library for
@@ -259,7 +271,7 @@
       <div class="notice warn">
         <p style="margin:0 0 12px">
           <strong>On your device.</strong> Settings → Danger zone → delete the Passport removes
-          the encrypted key, your identity, your post link and the reminder state; uninstalling
+          the encrypted key, your identity, your FLOP activity, your post link and the reminder state; uninstalling
           the app removes your language and reminder settings too. There is no copy anywhere
           else, and nothing for us to delete on your behalf.
         </p>
@@ -269,7 +281,8 @@
           public rooms are dropped by that service as rooms are compacted, and an identity
           note is deleted after seven days with nothing written to it — so what you published
           disappears on its own unless it is rewritten.
-          Requests about content on technocore.chat go to FLOP Labs, who operate it.
+          Requests about content on technocore.chat, and about what FLOP's gateway received,
+          go to FLOP Labs, who operate them.
         </p>
       </div>
 
