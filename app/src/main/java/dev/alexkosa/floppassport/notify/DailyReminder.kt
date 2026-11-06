@@ -51,10 +51,22 @@ object DailyReminder {
     const val EXPIRY_CHANNEL_ID = "note_expiry"
 
     private const val REQUEST_CODE = 4201
+    private const val EVENING_REQUEST_CODE = 4202
     private const val NOTIFICATION_ID = 4201
+    private const val EXTRA_EVENING = "evening"
 
     /** Late morning: past the alarm-clock rush, well before a person stops opening apps. */
     private const val HOUR = 11
+
+    /**
+     * And once more in the evening, only if the day is still unsigned.
+     *
+     * Added in 2.0. In 1.0 the single morning reminder stayed silent for anybody whose note
+     * had been written in the last 24 hours, so a person who signed late yesterday was told
+     * nothing today - measured on 19 October 2026, 163 streaks had ended on exactly one
+     * missed day. The evening one is the last chance, and says so.
+     */
+    private const val EVENING_HOUR = 20
 
     /** The blank line between the headline and the explanation in the expanded view. */
     private const val LINE_BREAK = "\n\n"
@@ -93,14 +105,23 @@ object DailyReminder {
         // alarms ask for a permission this app has no business holding.
         alarms.setInexactRepeating(
             AlarmManager.RTC,
-            nextTrigger(),
+            nextTrigger(HOUR),
             AlarmManager.INTERVAL_DAY,
-            pendingIntent(context),
+            pendingIntent(context, evening = false),
+        )
+        alarms.setInexactRepeating(
+            AlarmManager.RTC,
+            nextTrigger(EVENING_HOUR),
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent(context, evening = true),
         )
     }
 
     fun cancel(context: Context) {
-        context.getSystemService(AlarmManager::class.java)?.cancel(pendingIntent(context))
+        context.getSystemService(AlarmManager::class.java)?.let {
+            it.cancel(pendingIntent(context, evening = false))
+            it.cancel(pendingIntent(context, evening = true))
+        }
         NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
     }
 
@@ -110,10 +131,10 @@ object DailyReminder {
                 context, android.Manifest.permission.POST_NOTIFICATIONS,
             ) == PackageManager.PERMISSION_GRANTED
 
-    private fun nextTrigger(): Long {
+    private fun nextTrigger(hour: Int): Long {
         val now = Calendar.getInstance()
         val at = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, HOUR)
+            set(Calendar.HOUR_OF_DAY, hour)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
             set(Calendar.MILLISECOND, 0)
@@ -122,10 +143,10 @@ object DailyReminder {
         return at.timeInMillis
     }
 
-    private fun pendingIntent(context: Context): PendingIntent = PendingIntent.getBroadcast(
+    private fun pendingIntent(context: Context, evening: Boolean): PendingIntent = PendingIntent.getBroadcast(
         context,
-        REQUEST_CODE,
-        Intent(context, Receiver::class.java),
+        if (evening) EVENING_REQUEST_CODE else REQUEST_CODE,
+        Intent(context, Receiver::class.java).putExtra(EXTRA_EVENING, evening),
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
     )
 
@@ -163,8 +184,24 @@ object DailyReminder {
             // the note behind their back, and the unfinished-setup reminders are the
             // ones that cover this case.
             if (daysSince == NoteLife.UNKNOWN) return
-            val urgency = NoteLife.urgency(daysSince)
+            val evening = intent.getBooleanExtra(EXTRA_EVENING, false)
+            // An inexact daily alarm may be delivered hours late. An evening reminder that
+            // arrives after midnight would speak about a day that is already over.
+            if (evening && Calendar.getInstance().get(Calendar.HOUR_OF_DAY) < EVENING_HOUR - 2) return
+            val noteUrgency = NoteLife.urgency(daysSince)
+            // The day decides, not the note. A note written last night says nothing about
+            // whether today is signed, and treating it as if it did is what silenced the
+            // one reminder that mattered.
+            val signedToday = prefs.lastSignedDay == dev.alexkosa.floppassport.ui.ActivityState.today()
+            val urgency = when {
+                noteUrgency == NoteLife.Urgency.LOST || noteUrgency == NoteLife.Urgency.WARNING -> noteUrgency
+                signedToday -> NoteLife.Urgency.SILENT
+                else -> NoteLife.Urgency.NUDGE
+            }
             if (urgency == NoteLife.Urgency.SILENT) return
+            // The evening run is only for the unsigned day. Note warnings went out this
+            // morning, and saying them twice a day is how a channel gets muted.
+            if (evening && urgency != NoteLife.Urgency.NUDGE) return
 
             ensureChannel(context)
             val tr = Translator(LanguageStore(context).effective)
@@ -203,8 +240,16 @@ object DailyReminder {
                     // The sharpest true thing this app can say, and the only one that
                     // needs no promise behind it. Everything else can be caught up on
                     // later: the key, the note, the post. A date cannot.
-                    title = tr("Today cannot be added later")
-                    text = tr("If you did something today, sign a record for it now.")
+                    // "Ends at midnight" only when it is true. With one missed day a week
+                    // forgiven, most unsigned evenings do not end anything.
+                    val streak = prefs.lastStreak
+                    val atRisk = prefs.atRiskDay == dev.alexkosa.floppassport.ui.ActivityState.today()
+                    title = when {
+                        evening && streak > 0 && atRisk -> tr("Your {n}-day streak ends at midnight").replace("{n}", streak.toString())
+                        evening -> tr("Today is not signed yet")
+                        else -> tr("Today cannot be added later")
+                    }
+                    text = tr("Open the app and press do my day: it signs today, takes today's FLOP and asks the model one question.")
                     detail = tr(
                         "A signed record is dated evidence that you were here. A day " +
                             "without one cannot be added later, and signing also keeps " +
@@ -238,7 +283,14 @@ object DailyReminder {
                 )
                 .build()
 
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            // Refused notifications on Android 13+ are dropped by the system anyway; this says so
+            // in code, and a phone that throws instead cannot take the alarm down with it.
+            if (DailyReminder.canPost(context)) {
+                try {
+                    NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+                } catch (_: SecurityException) {
+                }
+            }
         }
     }
 }
@@ -256,6 +308,25 @@ class ReminderPrefs(context: Context) {
         get() = prefs.getBoolean(KEY, false)
         set(value) = prefs.edit().putBoolean(KEY, value).apply()
 
+    /**
+     * The last day this phone saw signed, and the streak it saw then.
+     *
+     * Written by the app whenever the room shows today's record, so the reminder can know
+     * the day is done without asking the network from a background alarm.
+     */
+    var lastSignedDay: String?
+        get() = prefs.getString(KEY_SIGNED, null)
+        set(value) = prefs.edit().putString(KEY_SIGNED, value).apply()
+
+    var lastStreak: Int
+        get() = prefs.getInt(KEY_STREAK, 0)
+        set(value) = prefs.edit().putInt(KEY_STREAK, value).apply()
+
+    /** The day on which missing the day would end the streak, as the app last saw it. */
+    var atRiskDay: String?
+        get() = prefs.getString(KEY_AT_RISK, null)
+        set(value) = prefs.edit().putString(KEY_AT_RISK, value).apply()
+
     /** So the permission is asked for once, not on every launch. */
     var asked: Boolean
         get() = prefs.getBoolean(KEY_ASKED, false)
@@ -264,5 +335,8 @@ class ReminderPrefs(context: Context) {
     private companion object {
         const val KEY = "daily_reminder"
         const val KEY_ASKED = "daily_reminder_asked"
+        const val KEY_SIGNED = "last_signed_day"
+        const val KEY_STREAK = "last_streak"
+        const val KEY_AT_RISK = "streak_at_risk_day"
     }
 }

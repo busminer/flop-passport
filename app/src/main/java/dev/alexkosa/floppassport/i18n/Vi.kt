@@ -480,4 +480,830 @@ internal val VI_STRINGS: Map<String, String> = mapOf(
         "có tiền tố của ví — Passport này chỉ dựng lại được qua đúng ứng dụng ví này",
     "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
         "Lời nhắc của ứng dụng này bắt đầu bằng FLOP Passport key derivation v1 và nêu tên ứng dụng dev.alexkosa.floppassport; ví của bạn cho thấy nó được yêu cầu bởi flop.alexkosa.dev.",
+
+    // 2.0: FLOP account, my day, guide and questions (2026-11-03).
+    "@flop_labs is FLOP's account on X, YouTube and TikTok." to
+        "@flop_labs là tài khoản của FLOP trên X, YouTube và TikTok.",
+    "A FLOP account with daily FLOP" to
+        "Một tài khoản FLOP với FLOP hằng ngày",
+    "A flop.finance address, but not one FLOP lists publicly. Ask through x.com/flop_labs." to
+        "Một địa chỉ flop.finance, nhưng không phải địa chỉ FLOP công bố công khai. Hãy hỏi qua x.com/flop_labs.",
+    "A flop.finance address. FLOP lists security@flop.finance as its one public contact." to
+        "Một địa chỉ flop.finance. FLOP chỉ công bố một địa chỉ liên hệ công khai là security@flop.finance.",
+    "A model you pay in FLOP, and a streak" to
+        "Một mô hình bạn trả bằng FLOP, và một chuỗi ngày",
+    "A practice network, open to everyone since 3 November 2026. FLOP here has no value, earns nothing and can be wiped in a reset. Use it to learn the day before it counts." to
+        "Một mạng thực hành, mở cho mọi người từ ngày 3 tháng 11 năm 2026. FLOP ở đây không có giá trị, không mang lại gì và có thể bị xóa khi mạng được đặt lại. Hãy dùng nó để làm quen với việc hằng ngày trước khi nó được tính.",
+    "A streak counts days in a row with a signed record. One missed day a week is now forgiven; two missed days in a row end it. The count is read from the public room, so a day you did not sign cannot be added later." to
+        "Chuỗi ngày đếm số ngày liên tiếp có bản ghi đã ký. Giờ đây mỗi tuần được tha một ngày bỏ lỡ; bỏ lỡ hai ngày liên tiếp thì chuỗi kết thúc. Con số được đọc từ phòng công khai, nên một ngày bạn không ký thì không thể thêm vào sau.",
+    "About 90 days. This is where FLOP's agent airdrop is earned: the testnet FLOP you spend on the model is recorded as your claim on mainnet FLOP." to
+        "Khoảng 90 ngày. Đây là nơi airdrop dành cho tác nhân của FLOP được kiếm: số FLOP testnet bạn chi cho mô hình được ghi nhận là quyền nhận FLOP mainnet của bạn.",
+    "Alex Kosa, one developer, for Seeker owners. It is not made by FLOP Labs. It is free and its code is open." to
+        "Alex Kosa, một nhà phát triển, làm cho người dùng Seeker. Ứng dụng không do FLOP Labs làm. Nó miễn phí và mã nguồn mở.",
+    "An identity made by your wallet" to
+        "Một danh tính do ví của bạn tạo ra",
+    "Ask a question, see what it cost, and keep a streak of the days you show up." to
+        "Đặt một câu hỏi, xem nó tốn bao nhiêu, và giữ chuỗi những ngày bạn có mặt.",
+    "Ask anything. The model is small, so short, plain questions work best. Each answer costs a few devnet FLOP, taken from your Passport's allowance." to
+        "Hỏi gì cũng được. Mô hình nhỏ, nên câu hỏi ngắn và đơn giản là tốt nhất. Mỗi câu trả lời tốn vài FLOP devnet, trừ vào hạn mức của Passport.",
+    "Ask the model" to
+        "Hỏi mô hình",
+    "Ask the model one question" to
+        "Hỏi mô hình một câu",
+    "Blocks are being finalised normally." to
+        "Các khối đang được hoàn tất bình thường.",
+    "Could not reach FLOP's gateway. Check your connection and try again." to
+        "Không thể kết nối tới cổng của FLOP. Kiểm tra kết nối rồi thử lại.",
+    "Could not reach technocore.chat." to
+        "Không thể kết nối tới technocore.chat.",
+    "Could not reach the FLOP devnet node. This says nothing about your balance, only about the connection." to
+        "Không thể kết nối tới nút devnet của FLOP. Điều này không phản ánh số dư của bạn, chỉ phản ánh kết nối.",
+    "Could not reach the FLOP explorer." to
+        "Không thể kết nối tới trình khám phá của FLOP.",
+    "Could not reach the FLOP faucet. Check your connection and try again." to
+        "Không thể kết nối tới faucet của FLOP. Kiểm tra kết nối rồi thử lại.",
+    "Devnet FLOP is practice money: it has no value and can be wiped in a reset." to
+        "FLOP devnet là tiền thực hành: không có giá trị và có thể bị xóa khi mạng được đặt lại.",
+    "Devnet explorer" to
+        "Trình khám phá devnet",
+    "Devnet is open" to
+        "Devnet đã mở",
+    "Devnet is open to everyone since 3 November 2026. It has no rewards and may be reset. Testnet has no date yet; FLOP will announce it on x.com/flop_labs. On testnet, the testnet FLOP an agent spends on inference becomes its claim on mainnet FLOP. Creating accounts earns nothing." to
+        "Devnet mở cho mọi người từ ngày 3 tháng 11 năm 2026. Không có phần thưởng và có thể bị đặt lại. Testnet chưa có ngày; FLOP sẽ thông báo trên x.com/flop_labs. Trên testnet, số FLOP testnet mà một tác nhân chi cho suy luận sẽ trở thành quyền nhận FLOP mainnet của nó. Tạo tài khoản không mang lại gì.",
+    "Devnet is practice" to
+        "Devnet là để thực hành",
+    "Devnet is practice: its FLOP has no value. This app promises nothing about any allocation." to
+        "Devnet là để thực hành: FLOP trên đó không có giá trị. Ứng dụng này không hứa hẹn bất kỳ phân bổ nào.",
+    "Do I have to post on X?" to
+        "Tôi có phải đăng lên X không?",
+    "Do I need more than one account?" to
+        "Tôi có cần nhiều hơn một tài khoản không?",
+    "Do my day" to
+        "Hoàn tất hôm nay",
+    "Every step below was read back from the server, not just sent." to
+        "Mỗi bước dưới đây đều đã được đọc lại từ máy chủ, không chỉ được gửi đi.",
+    "Explain the idea of a 'seed phrase' and why it must stay secret." to
+        "Giải thích khái niệm 'cụm từ khôi phục' và vì sao phải giữ bí mật.",
+    "Explain what 'decentralised' means without using jargon." to
+        "Giải thích 'phi tập trung' nghĩa là gì mà không dùng thuật ngữ chuyên môn.",
+    "Explain what a blockchain block is to a ten-year-old, in three sentences." to
+        "Giải thích khối trong blockchain là gì cho một đứa trẻ mười tuổi, trong ba câu.",
+    "Explain what an API is using a restaurant as the example." to
+        "Giải thích API là gì, lấy nhà hàng làm ví dụ.",
+    "Explain what open-source software is in two sentences." to
+        "Giải thích phần mềm mã nguồn mở là gì trong hai câu.",
+    "FLOP Network is a blockchain where AI agents pay for AI work with FLOP. Miners run models on graphics cards, validators check that the work was really done, and agents buy the answers. Asking the model a question here is exactly that: your Passport acts as an agent and pays for one answer." to
+        "FLOP Network là một blockchain nơi các tác nhân AI trả tiền cho công việc AI bằng FLOP. Thợ đào chạy mô hình trên card đồ họa, trình xác thực kiểm tra công việc có thật sự được làm, và các tác nhân mua câu trả lời. Hỏi mô hình một câu ở đây chính là như vậy: Passport của bạn đóng vai một tác nhân và trả tiền cho một câu trả lời.",
+    "FLOP Passport gives your Seeker an identity and an account on FLOP Network, and one place to do your day there. It is free, open source, and made by one developer, Alex Kosa. It is not made by FLOP Labs." to
+        "FLOP Passport cho Seeker của bạn một danh tính và một tài khoản trên FLOP Network, cùng một nơi để hoàn tất việc hằng ngày ở đó. Ứng dụng miễn phí, mã nguồn mở và do một nhà phát triển, Alex Kosa, làm ra. Nó không do FLOP Labs làm.",
+    "FLOP gives each account one devnet allowance: 25 FLOP for 24 hours. When it is over it is over until testnet." to
+        "FLOP cho mỗi tài khoản một hạn mức devnet: 25 FLOP trong 24 giờ. Hết là hết, cho tới khi có testnet.",
+    "FLOP has no Discord, Telegram, Reddit or Medium. There is no FLOP token yet." to
+        "FLOP không có Discord, Telegram, Reddit hay Medium. Hiện chưa có token FLOP nào.",
+    "FLOP has no official Discord, Telegram, Reddit or Medium. An invitation to one never comes from FLOP." to
+        "FLOP không có Discord, Telegram, Reddit hay Medium chính thức. Lời mời vào những nơi đó không bao giờ đến từ FLOP.",
+    "FLOP has not announced the testnet date. When it opens, the testnet FLOP you spend on the model becomes your claim on mainnet FLOP. Holding FLOP or making more accounts earns nothing." to
+        "FLOP chưa công bố ngày testnet. Khi testnet mở, số FLOP testnet bạn chi cho mô hình sẽ trở thành quyền nhận FLOP mainnet của bạn. Giữ FLOP hay tạo thêm tài khoản không mang lại gì.",
+    "FLOP has not given a date. It will be announced on x.com/flop_labs, and this app's status will say so the same day." to
+        "FLOP chưa đưa ra ngày. Ngày sẽ được thông báo trên x.com/flop_labs, và trạng thái trong ứng dụng này sẽ báo ngay trong ngày đó.",
+    "FLOP says Q1 2027" to
+        "FLOP nói quý 1 năm 2027",
+    "FLOP says there is no token, mint, claim, presale or live airdrop yet. Anything offering one is not FLOP." to
+        "FLOP cho biết hiện chưa có token, mint, claim, bán trước hay airdrop nào đang diễn ra. Bất cứ thứ gì chào mời những điều đó đều không phải FLOP.",
+    "FLOP's faucet is down for everyone right now. It is not your phone. Try again later." to
+        "Faucet của FLOP hiện đang ngừng với tất cả mọi người. Không phải do điện thoại của bạn. Hãy thử lại sau.",
+    "FLOP's faucet is refusing every request with “IP classification unavailable”. This is FLOP's bug (network issue #22), not your phone. The app keeps trying when you press do my day." to
+        "Faucet của FLOP đang từ chối mọi yêu cầu với lỗi “IP classification unavailable”. Đây là lỗi của FLOP (lỗi network #22), không phải do điện thoại của bạn. Ứng dụng sẽ tiếp tục thử mỗi khi bạn bấm hoàn tất hôm nay.",
+    "FLOP's faucet sends 25 devnet FLOP to your address, once every 24 hours per address. The request goes from your phone, for your own address, the same as pressing the button on faucet.flop.network. When the faucet is down, the app says so and the rest of your day still counts." to
+        "Faucet của FLOP gửi 25 FLOP devnet tới địa chỉ của bạn, mỗi địa chỉ 24 giờ một lần. Yêu cầu được gửi từ điện thoại của bạn, cho chính địa chỉ của bạn, giống như bấm nút trên faucet.flop.network. Khi faucet ngừng hoạt động, ứng dụng sẽ báo và phần còn lại trong ngày của bạn vẫn được tính.",
+    "FLOP's gateway has handed out all of today's devnet allowances, or is unavailable. Try again later." to
+        "Cổng của FLOP đã phát hết hạn mức devnet hôm nay, hoặc đang không khả dụng. Hãy thử lại sau.",
+    "FLOP's gateway rules (OpenAPI)" to
+        "Quy tắc cổng của FLOP (OpenAPI)",
+    "FLOP's only handle is @flop_labs. Any other account using the name is not theirs." to
+        "Tên tài khoản duy nhất của FLOP là @flop_labs. Mọi tài khoản khác dùng tên này đều không phải của họ.",
+    "FLOP: official links and verification" to
+        "FLOP: liên kết chính thức và cách xác minh",
+    "FLOP: the airdrop and testnet conversion" to
+        "FLOP: airdrop và chuyển đổi từ testnet",
+    "Faucet outage, FLOP issue #22" to
+        "Faucet ngừng hoạt động, lỗi FLOP #22",
+    "Finality is lagging behind. The network may be slow." to
+        "Tính hoàn tất đang bị trễ. Mạng có thể chậm.",
+    "Finish setting up your Passport first." to
+        "Hãy hoàn tất thiết lập Passport trước.",
+    "Free and open source. Made by Alex Kosa, not by FLOP Labs. It promises nothing about any allocation." to
+        "Miễn phí và mã nguồn mở. Do Alex Kosa làm, không phải FLOP Labs. Ứng dụng không hứa hẹn bất kỳ phân bổ nào.",
+    "From FLOP's faucet, once every 24 hours." to
+        "Từ faucet của FLOP, 24 giờ một lần.",
+    "From FLOP's faucet. Next in {time}." to
+        "Từ faucet của FLOP. Lần tới sau {time}.",
+    "From the FLOP Passport team, written into this version." to
+        "Từ nhóm FLOP Passport, được viết sẵn trong phiên bản này.",
+    "From the FLOP Passport team." to
+        "Từ nhóm FLOP Passport.",
+    "Get 25 FLOP" to
+        "Nhận 25 FLOP",
+    "Give me a short motivational sentence for a Monday." to
+        "Cho tôi một câu ngắn tạo động lực cho ngày thứ Hai.",
+    "Give me a simple recipe idea with rice and eggs." to
+        "Gợi ý cho tôi một món đơn giản với cơm và trứng.",
+    "Give me one practical tip for writing clearer emails." to
+        "Cho tôi một mẹo thực tế để viết email rõ ràng hơn.",
+    "Give one good question to ask before buying any crypto token." to
+        "Đưa ra một câu hỏi nên đặt ra trước khi mua bất kỳ token tiền mã hóa nào.",
+    "Give one way to remember a new word in a foreign language." to
+        "Chỉ ra một cách để nhớ một từ mới trong ngoại ngữ.",
+    "Give three tips for keeping a phone's battery healthy." to
+        "Đưa ra ba mẹo giữ pin điện thoại khỏe.",
+    "I changed phones. How do I get my Passport back?" to
+        "Tôi đã đổi điện thoại. Làm sao lấy lại Passport?",
+    "In plain words, what does 'inference' mean for an AI model?" to
+        "Nói đơn giản, 'suy luận' nghĩa là gì đối với một mô hình AI?",
+    "In two sentences, what does a GPU do that a CPU does badly?" to
+        "Trong hai câu: GPU làm tốt việc gì mà CPU làm kém?",
+    "Install the app and connect the same Solana wallet. The same wallet makes the same Passport, with the same FLOP address and the same streak. There are no words to write down." to
+        "Cài ứng dụng và kết nối cùng ví Solana đó. Cùng một ví tạo ra cùng một Passport, với cùng địa chỉ FLOP và cùng chuỗi ngày. Không có từ nào cần ghi lại.",
+    "Is this FLOP money real?" to
+        "Số FLOP này có phải tiền thật không?",
+    "It gets 25 devnet FLOP from FLOP's faucet every 24 hours." to
+        "Nó nhận 25 FLOP devnet từ faucet của FLOP mỗi 24 giờ.",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial: 25 FLOP for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "Trước hết cần có ít nhất 1 FLOP trong địa chỉ Passport của bạn. Trên devnet, mỗi tài khoản cũng chỉ có một lượt thử: 25 FLOP trong 24 giờ. Sau đó mô hình đóng cho tới khi có testnet. Thẻ Hỏi sẽ cho biết là trường hợp nào.",
+    "Its FLOP has no value. What you practise here is what testnet will count." to
+        "FLOP ở đó không có giá trị. Điều bạn luyện tập ở đây chính là điều testnet sẽ tính.",
+    "Name three things to check before signing anything in a crypto wallet." to
+        "Kể ra ba điều cần kiểm tra trước khi ký bất cứ thứ gì trong ví tiền mã hóa.",
+    "Name three uses of AI that run well on small models." to
+        "Kể ra ba ứng dụng AI chạy tốt trên mô hình nhỏ.",
+    "No, and it would not help. FLOP counts spending, not accounts, and says extra accounts earn nothing. One person, one Passport." to
+        "Không, và cũng chẳng giúp gì. FLOP tính mức chi tiêu, không tính số tài khoản, và cho biết tài khoản thêm không mang lại gì. Mỗi người, một Passport.",
+    "No. Devnet FLOP is practice money with no value, and FLOP may wipe the devnet at any time. There is no FLOP token yet at all. Anybody selling FLOP today is a scammer." to
+        "Không. FLOP devnet là tiền thực hành không có giá trị, và FLOP có thể xóa devnet bất cứ lúc nào. Hiện hoàn toàn chưa có token FLOP. Bất kỳ ai bán FLOP hôm nay đều là kẻ lừa đảo.",
+    "No. Linking a post to your Passport is optional. It shows people the Passport is yours, nothing more." to
+        "Không. Liên kết bài đăng với Passport là tùy chọn. Nó cho mọi người thấy Passport là của bạn, chỉ vậy thôi.",
+    "Nobody can promise that, and this app never will. What FLOP says: on testnet, the testnet FLOP an agent spends on the model becomes its claim on mainnet FLOP. The app helps you do exactly that every day. Devnet, which is now, earns nothing." to
+        "Không ai hứa được điều đó, và ứng dụng này sẽ không bao giờ hứa. Điều FLOP nói: trên testnet, số FLOP testnet mà một tác nhân chi cho mô hình sẽ trở thành quyền nhận FLOP mainnet của nó. Ứng dụng giúp bạn làm đúng việc đó mỗi ngày. Devnet, giai đoạn hiện nay, không mang lại gì.",
+    "Nothing new to write down. The same wallet brings it back on any phone." to
+        "Không có gì mới cần ghi lại. Cùng một ví sẽ khôi phục nó trên bất kỳ điện thoại nào.",
+    "On devnet FLOP gives each account one allowance: 25 FLOP to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. When it is over, it stays over until testnet." to
+        "Trên devnet, FLOP cho mỗi tài khoản một hạn mức: 25 FLOP để chi cho mô hình trong 24 giờ, và cần ít nhất 1 FLOP trong tài khoản để bắt đầu. Khi hết, nó sẽ hết cho tới khi có testnet.",
+    "One button signs today, takes today's FLOP and asks the model one question." to
+        "Một nút bấm sẽ ký hôm nay, nhận FLOP hôm nay và hỏi mô hình một câu.",
+    "One press does all three, in order. Whatever is already done is skipped." to
+        "Một lần bấm làm cả ba, theo thứ tự. Việc nào đã xong sẽ được bỏ qua.",
+    "One question, paid in FLOP. Spending on the model is what testnet will count." to
+        "Một câu hỏi, trả bằng FLOP. Điều testnet sẽ tính là số chi cho mô hình.",
+    "One short text to sign. It is not a transaction and moves no money. Your wallet keeps its keys; nothing leaves it but that one signature." to
+        "Một đoạn văn bản ngắn để ký. Đây không phải giao dịch và không chuyển tiền. Ví của bạn giữ khóa của nó; không có gì rời khỏi ví ngoài đúng một chữ ký đó.",
+    "Only text, never a transaction. Once, to create your Passport. After that the Passport signs on its own: your daily record and the model's entry statement. None of it can move money from your wallet." to
+        "Chỉ là văn bản, không bao giờ là giao dịch. Một lần, để tạo Passport. Sau đó Passport tự ký: bản ghi hằng ngày của bạn và tuyên bố để vào mô hình. Không thứ nào trong số đó có thể chuyển tiền khỏi ví của bạn.",
+    "Open the app and press do my day. It signs today, takes today's FLOP from the faucet and asks the model one question. That is all. Whatever is already done is skipped." to
+        "Mở ứng dụng và bấm hoàn tất hôm nay. Nó ký hôm nay, nhận FLOP hôm nay từ faucet và hỏi mô hình một câu. Chỉ vậy thôi. Việc nào đã xong sẽ được bỏ qua.",
+    "Open the app and press do my day: it signs today, takes today's FLOP and asks the model one question." to
+        "Mở ứng dụng và bấm hoàn tất hôm nay: nó ký hôm nay, nhận FLOP hôm nay và hỏi mô hình một câu.",
+    "Paste a FLOP address from SubWallet, Talisman or Polkadot.js. The faucet will send there. The model still uses your Passport's own address, because only your Passport can sign for it." to
+        "Dán một địa chỉ FLOP từ SubWallet, Talisman hoặc Polkadot.js. Faucet sẽ gửi tới đó. Mô hình vẫn dùng địa chỉ riêng của Passport, vì chỉ Passport mới ký được cho địa chỉ đó.",
+    "Paste a full link, a handle like @name, or an address." to
+        "Dán một liên kết đầy đủ, một tên tài khoản như @name, hoặc một địa chỉ.",
+    "Paste a link, an @handle or an address someone sent you." to
+        "Dán một liên kết, một tên @ hoặc một địa chỉ mà ai đó gửi cho bạn.",
+    "Questions people ask" to
+        "Những câu hỏi mọi người hay hỏi",
+    "Reading your days from technocore.chat…" to
+        "Đang đọc các ngày của bạn từ technocore.chat…",
+    "Same Passport, same days. And now one missed day a week is forgiven." to
+        "Cùng Passport, cùng những ngày đó. Và giờ đây mỗi tuần được tha một ngày bỏ lỡ.",
+    "Sign today" to
+        "Ký hôm nay",
+    "Sign today to start your streak." to
+        "Ký hôm nay để bắt đầu chuỗi ngày.",
+    "Sign today's record" to
+        "Ký bản ghi hôm nay",
+    "Sign today, or the streak ends. Yesterday was already forgiven." to
+        "Ký hôm nay, nếu không chuỗi sẽ kết thúc. Hôm qua đã được tha rồi.",
+    "Signing the gateway's statement with your Passport…" to
+        "Đang ký tuyên bố của cổng bằng Passport của bạn…",
+    "Since 3 November FLOP's practice network is open to everyone. Devnet FLOP has no value, earns nothing, and the network may be reset at any time." to
+        "Từ ngày 3 tháng 11, mạng thực hành của FLOP mở cho mọi người. FLOP devnet không có giá trị, không mang lại gì, và mạng có thể bị đặt lại bất cứ lúc nào.",
+    "Staying safe" to
+        "Giữ an toàn",
+    "Suggest a five-minute stretch for someone who sits all day." to
+        "Gợi ý một bài giãn cơ năm phút cho người ngồi cả ngày.",
+    "Summarise what 'proof of work' means in two sentences." to
+        "Tóm tắt 'bằng chứng công việc' (proof of work) nghĩa là gì trong hai câu.",
+    "Take today's FLOP" to
+        "Nhận FLOP hôm nay",
+    "Tell me one interesting fact about the history of computers." to
+        "Kể cho tôi một điều thú vị về lịch sử máy tính.",
+    "Testnet and the airdrop" to
+        "Testnet và airdrop",
+    "Testnet: no date yet" to
+        "Testnet: chưa có ngày",
+    "That is not a FLOP address. It should start with 5 and be 47 or 48 characters; copy it again from your wallet." to
+        "Đây không phải địa chỉ FLOP. Địa chỉ phải bắt đầu bằng 5 và dài 47 hoặc 48 ký tự; hãy sao chép lại từ ví của bạn.",
+    "The faucet" to
+        "Faucet",
+    "The faucet did not answer." to
+        "Faucet không phản hồi.",
+    "The faucet is down for everyone" to
+        "Faucet đang ngừng với mọi người",
+    "The faucet sends to an address you chose instead:" to
+        "Faucet đang gửi tới một địa chỉ khác mà bạn đã chọn:",
+    "The faucet works for you" to
+        "Faucet hoạt động với bạn",
+    "The model did not answer." to
+        "Mô hình không trả lời.",
+    "The model is busy. Try again in a minute; nothing was spent." to
+        "Mô hình đang bận. Thử lại sau một phút; chưa có gì bị chi.",
+    "The model is closed for this account" to
+        "Mô hình đã đóng với tài khoản này",
+    "The model is thinking…" to
+        "Mô hình đang suy nghĩ…",
+    "The model needs at least 1 FLOP on your Passport address first. Get it from the faucet." to
+        "Mô hình cần ít nhất 1 FLOP trong địa chỉ Passport của bạn trước đã. Hãy nhận từ faucet.",
+    "The model: one trial per account" to
+        "Mô hình: mỗi tài khoản một lượt thử",
+    "The real token. There is no FLOP token before this, so anything sold or “claimed” as FLOP today is a scam." to
+        "Token thật. Trước thời điểm này không có token FLOP nào, nên bất cứ thứ gì được bán hay “nhận” như FLOP hôm nay đều là lừa đảo.",
+    "There is no FLOP token yet, so there is no FLOP contract address. Anything offered as one is not FLOP." to
+        "Hiện chưa có token FLOP, nên cũng không có địa chỉ hợp đồng FLOP. Bất cứ thứ gì được giới thiệu như vậy đều không phải FLOP.",
+    "There is no FLOP token yet. Nobody, including this app's author, will ever ask for your private key or your wallet's words. Your wallet only ever signs text here, never a transaction. If somebody sends you a FLOP link, check it on the Network tab first." to
+        "Hiện chưa có token FLOP. Sẽ không có ai, kể cả tác giả ứng dụng này, hỏi bạn khóa riêng hay các từ khôi phục của ví. Ở đây ví của bạn chỉ ký văn bản, không bao giờ ký giao dịch. Nếu ai đó gửi cho bạn một liên kết FLOP, hãy kiểm tra ở thẻ Mạng trước.",
+    "There is no Passport on this phone." to
+        "Không có Passport nào trên điện thoại này.",
+    "This account has used its one devnet allowance. FLOP does not renew it on devnet. The model opens again when testnet starts, and on testnet the FLOP you spend here is what counts." to
+        "Tài khoản này đã dùng hết hạn mức devnet duy nhất. FLOP không cấp lại trên devnet. Mô hình sẽ mở lại khi testnet bắt đầu, và trên testnet, số FLOP bạn chi ở đây mới là thứ được tính.",
+    "This account's devnet allowance is used up." to
+        "Hạn mức devnet của tài khoản này đã hết.",
+    "This address already got its FLOP in the last 24 hours." to
+        "Địa chỉ này đã nhận FLOP trong 24 giờ qua.",
+    "This app's source code" to
+        "Mã nguồn của ứng dụng này",
+    "This is an account on FLOP Network. An address alone says nothing about who holds it." to
+        "Đây là một tài khoản trên FLOP Network. Chỉ riêng một địa chỉ không nói gì về người nắm giữ nó.",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet that is 25 FLOP for 24 hours, once per account, and your account needs at least 1 FLOP to start it. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "Để dùng mô hình, Passport của bạn ký một tuyên bố ngắn từ api.flop.network. Chữ ký đó không chuyển gì cả. Sau đó FLOP mở một hạn mức cho tài khoản của bạn: trên devnet là 25 FLOP trong 24 giờ, mỗi tài khoản một lần, và tài khoản cần ít nhất 1 FLOP để bắt đầu. Một câu trả lời tốn khoảng 0,006 FLOP cho mỗi mảnh từ, thường là một hoặc hai FLOP. Khi hạn mức hết, mô hình sẽ đóng với tài khoản đó cho tới khi có testnet.",
+    "Today is not signed yet" to
+        "Hôm nay chưa được ký",
+    "Today is not signed yet." to
+        "Hôm nay chưa được ký.",
+    "Today is signed. Come back tomorrow." to
+        "Hôm nay đã ký. Mai quay lại nhé.",
+    "Today is signed. See you tomorrow." to
+        "Hôm nay đã ký. Hẹn gặp lại ngày mai.",
+    "Too many tries from this network. Wait a minute and try again." to
+        "Có quá nhiều lần thử từ mạng này. Đợi một phút rồi thử lại.",
+    "Type a question" to
+        "Nhập câu hỏi",
+    "What FLOP is" to
+        "FLOP là gì",
+    "What FLOP says: on testnet, testnet FLOP that an agent actually spends on inference becomes its claim on mainnet FLOP. That claim is locked, and unlocks as it is spent on inference on mainnet: three spent unlock one. Holding FLOP earns nothing. Making more accounts earns nothing. Posting your identity earns nothing." to
+        "Điều FLOP nói: trên testnet, số FLOP testnet mà một tác nhân thực sự chi cho suy luận sẽ trở thành quyền nhận FLOP mainnet của nó. Quyền này bị khóa, và được mở dần khi chi cho suy luận trên mainnet: chi ba thì mở một. Giữ FLOP không mang lại gì. Tạo thêm tài khoản không mang lại gì. Đăng danh tính của bạn không mang lại gì.",
+    "What do I need to do every day?" to
+        "Mỗi ngày tôi cần làm gì?",
+    "What does a miner do in a compute network?" to
+        "Thợ đào làm gì trong một mạng điện toán?",
+    "What exactly does my wallet sign?" to
+        "Chính xác thì ví của tôi ký cái gì?",
+    "What is a hash function? Two sentences." to
+        "Hàm băm là gì? Hai câu.",
+    "What is a token in the context of language models?" to
+        "Token là gì trong ngữ cảnh mô hình ngôn ngữ?",
+    "What is a validator in a blockchain network? Keep it short." to
+        "Trình xác thực trong mạng blockchain là gì? Trả lời ngắn.",
+    "What is an AI agent, in one paragraph?" to
+        "Tác nhân AI là gì, trong một đoạn văn?",
+    "What is latency, and why do people care about it?" to
+        "Độ trễ là gì, và vì sao mọi người quan tâm đến nó?",
+    "What is phishing, and how do you spot it? Three signs." to
+        "Lừa đảo phishing là gì, và làm sao nhận ra? Ba dấu hiệu.",
+    "What is the cloud, really? Two sentences." to
+        "Đám mây thực ra là gì? Hai câu.",
+    "What is the difference between a private key and a public key?" to
+        "Khóa riêng và khóa công khai khác nhau thế nào?",
+    "What makes a password strong? Three short points." to
+        "Điều gì làm nên một mật khẩu mạnh? Ba ý ngắn.",
+    "What this app is" to
+        "Ứng dụng này là gì",
+    "What we say: this app promises nothing about any allocation, and never will. It helps you do, every day, the thing FLOP says it counts. One person, one Passport." to
+        "Điều chúng tôi nói: ứng dụng này không hứa hẹn bất kỳ phân bổ nào và sẽ không bao giờ làm vậy. Nó giúp bạn làm, mỗi ngày, đúng điều mà FLOP nói là được tính. Mỗi người, một Passport.",
+    "When does testnet start?" to
+        "Khi nào testnet bắt đầu?",
+    "Where FLOP is now" to
+        "FLOP hiện đang ở đâu",
+    "Where these facts come from" to
+        "Những thông tin này lấy từ đâu",
+    "Who made this app?" to
+        "Ai làm ứng dụng này?",
+    "Why did my streak go back to zero?" to
+        "Vì sao chuỗi ngày của tôi về số không?",
+    "Why do computers use binary? Two sentences." to
+        "Vì sao máy tính dùng hệ nhị phân? Hai câu.",
+    "Why does the model not answer me?" to
+        "Vì sao mô hình không trả lời tôi?",
+    "Why is my balance 0?" to
+        "Vì sao số dư của tôi là 0?",
+    "Will I get FLOP tokens for this?" to
+        "Tôi có nhận được token FLOP nhờ việc này không?",
+    "Write a haiku about a phone that never sleeps." to
+        "Viết một bài haiku về chiếc điện thoại không bao giờ ngủ.",
+    "You are a small model running on FLOP Network's devnet, answering inside a phone app. Answer briefly and plainly. Answer in the language the user writes in." to
+        "Bạn là một mô hình nhỏ chạy trên devnet của FLOP Network, trả lời bên trong một ứng dụng điện thoại. Hãy trả lời ngắn gọn và dễ hiểu. Trả lời bằng ngôn ngữ mà người dùng viết.",
+    "You never need this to recover: your wallet rebuilds the Passport. It is here for people who want to use their identity away from this phone. Nobody, including this app's author, will ever ask you for it." to
+        "Bạn không bao giờ cần thứ này để khôi phục: ví của bạn sẽ dựng lại Passport. Nó ở đây cho những ai muốn dùng danh tính của mình ở nơi khác ngoài điện thoại này. Sẽ không có ai, kể cả tác giả ứng dụng này, hỏi bạn thứ này.",
+    "Your FLOP address" to
+        "Địa chỉ FLOP của bạn",
+    "Your FLOP comes from FLOP's faucet, and right now the faucet is not giving FLOP to anyone. That is FLOP's problem, not your phone. When it works, press do my day and 25 FLOP arrives within a minute." to
+        "FLOP của bạn đến từ faucet của FLOP, và hiện giờ faucet không cấp FLOP cho ai cả. Đó là vấn đề của FLOP, không phải của điện thoại bạn. Khi nó hoạt động lại, bấm hoàn tất hôm nay và 25 FLOP sẽ đến trong vòng một phút.",
+    "Your Passport is a FLOP account" to
+        "Passport của bạn là một tài khoản FLOP",
+    "Your Passport is also a FLOP address. FLOP's faucet gives it 25 FLOP every 24 hours." to
+        "Passport của bạn cũng là một địa chỉ FLOP. Faucet của FLOP cấp cho nó 25 FLOP mỗi 24 giờ.",
+    "Your Passport key is also an account on FLOP Network. Same key, written the way FLOP writes addresses." to
+        "Khóa Passport của bạn cũng là một tài khoản trên FLOP Network. Cùng một khóa, được viết theo cách FLOP viết địa chỉ.",
+    "Your Passport key is also your FLOP account. It is the same key, written the way FLOP writes addresses, so there is nothing new to back up: your Solana wallet rebuilds both on any phone. If you already have a FLOP address in SubWallet, Talisman or Polkadot.js, you can send the faucet there instead, on the Passport tab. The model works only with the Passport's own address, because only the Passport can sign for it." to
+        "Khóa Passport của bạn cũng chính là tài khoản FLOP của bạn. Đó là cùng một khóa, được viết theo cách FLOP viết địa chỉ, nên không có gì mới cần sao lưu: ví Solana của bạn dựng lại cả hai trên bất kỳ điện thoại nào. Nếu bạn đã có địa chỉ FLOP trong SubWallet, Talisman hoặc Polkadot.js, bạn có thể cho faucet gửi tới đó, ở thẻ Passport. Mô hình chỉ hoạt động với địa chỉ riêng của Passport, vì chỉ Passport mới ký được cho địa chỉ đó.",
+    "Your Passport now lives on FLOP" to
+        "Passport của bạn giờ đã có mặt trên FLOP",
+    "Your Passport signs one line in public. It adds a day to your streak." to
+        "Passport của bạn ký công khai một dòng. Việc đó thêm một ngày vào chuỗi.",
+    "Your Passport signs one short line in a public room on technocore.chat, and the app reads it back to prove it landed. Each signed day adds to your streak. Miss one day and it is forgiven, once a week. Miss two in a row and the streak starts again." to
+        "Passport của bạn ký một dòng ngắn trong một phòng công khai trên technocore.chat, và ứng dụng đọc lại để chứng minh nó đã tới nơi. Mỗi ngày đã ký được cộng vào chuỗi. Bỏ lỡ một ngày thì được tha, mỗi tuần một lần. Bỏ lỡ hai ngày liên tiếp thì chuỗi bắt đầu lại từ đầu.",
+    "Your address got its FLOP from the faucet in the last 24 hours. It can ask again 24 hours after the last grant." to
+        "Địa chỉ của bạn đã nhận FLOP từ faucet trong 24 giờ qua. Nó có thể xin lại sau 24 giờ kể từ lần cấp gần nhất.",
+    "Your day is done." to
+        "Ngày của bạn đã xong.",
+    "Your day on FLOP, from your Seeker." to
+        "Ngày của bạn trên FLOP, từ chiếc Seeker.",
+    "Your day, step by step" to
+        "Một ngày của bạn, từng bước",
+    "Your first question opens it. Your Passport signs a short statement from api.flop.network; nothing else is signed and nothing moves. You need at least 1 FLOP on your Passport's address, which the faucet on Today gives you." to
+        "Câu hỏi đầu tiên sẽ mở nó. Passport của bạn ký một tuyên bố ngắn từ api.flop.network; không có gì khác được ký và không có gì được chuyển đi. Bạn cần ít nhất 1 FLOP trong địa chỉ Passport, thứ mà faucet ở thẻ Hôm nay sẽ cấp cho bạn.",
+    "Your identity note was deleted after seven quiet days. Publish it again to keep signing your days. Your streak is not lost." to
+        "Ghi chú danh tính của bạn đã bị xóa sau bảy ngày im lặng. Hãy công bố lại để tiếp tục ký các ngày của bạn. Chuỗi ngày của bạn không mất.",
+    "Your one devnet trial of the model is over. It opens again on testnet." to
+        "Lượt thử mô hình duy nhất trên devnet của bạn đã hết. Nó sẽ mở lại trên testnet.",
+    "Your streak came with you" to
+        "Chuỗi ngày đã theo bạn sang đây",
+    "Your wallet made this key and rebuilds it on any phone. There are no words to write down." to
+        "Ví của bạn đã tạo khóa này và dựng lại nó trên bất kỳ điện thoại nào. Không có từ nào cần ghi lại.",
+    "Your {n}-day streak ends at midnight" to
+        "Chuỗi {n} ngày của bạn kết thúc lúc nửa đêm",
+    "accounts" to
+        "tài khoản",
+    "active agents" to
+        "tác nhân hoạt động",
+    "all my records" to
+        "mọi bản ghi của tôi",
+    "allowance left" to
+        "hạn mức còn lại",
+    "already asked today" to
+        "hôm nay đã hỏi rồi",
+    "already signed today" to
+        "hôm nay đã ký rồi",
+    "already taken today" to
+        "hôm nay đã nhận rồi",
+    "answered" to
+        "đã trả lời",
+    "ask the model something else" to
+        "hỏi mô hình điều khác",
+    "back" to
+        "quay lại",
+    "balance" to
+        "số dư",
+    "balance {n} FLOP" to
+        "số dư {n} FLOP",
+    "change the address" to
+        "đổi địa chỉ",
+    "closes in" to
+        "đóng sau",
+    "compute market and FRCR index" to
+        "thị trường điện toán và chỉ số FRCR",
+    "copied" to
+        "đã sao chép",
+    "cost {n} FLOP" to
+        "tốn {n} FLOP",
+    "day in a row" to
+        "ngày liên tiếp",
+    "days in a row" to
+        "ngày liên tiếp",
+    "devnet flop" to
+        "flop devnet",
+    "do my day" to
+        "hoàn tất hôm nay",
+    "entering" to
+        "đang vào",
+    "finish your passport first" to
+        "hoàn tất passport trước",
+    "flop gateway" to
+        "cổng flop",
+    "go back to my passport address" to
+        "quay về địa chỉ passport của tôi",
+    "got it" to
+        "đã hiểu",
+    "how it all works" to
+        "mọi thứ hoạt động thế nào",
+    "how it works" to
+        "cách hoạt động",
+    "how it works, questions and answers" to
+        "cách hoạt động, hỏi và đáp",
+    "how the model works here" to
+        "mô hình hoạt động thế nào ở đây",
+    "is this really flop?" to
+        "đây có thật là flop?",
+    "just now" to
+        "vừa xong",
+    "latest block" to
+        "khối mới nhất",
+    "made by wallet" to
+        "do ví tạo",
+    "model" to
+        "mô hình",
+    "my day on flop" to
+        "ngày của tôi trên flop",
+    "needs flop" to
+        "cần flop",
+    "network" to
+        "mạng",
+    "new in 2.0" to
+        "mới trong 2.0",
+    "news" to
+        "tin tức",
+    "no date yet" to
+        "chưa có ngày",
+    "not entered" to
+        "chưa vào",
+    "not flop" to
+        "không phải flop",
+    "not flop's" to
+        "không thuộc flop",
+    "not now" to
+        "để sau",
+    "official" to
+        "chính thức",
+    "official channels" to
+        "kênh chính thức",
+    "open in FLOP's explorer" to
+        "mở trong trình khám phá của FLOP",
+    "private key" to
+        "khóa riêng",
+    "publish again" to
+        "công bố lại",
+    "read it in FLOP's own words" to
+        "đọc bằng lời của chính FLOP",
+    "reading" to
+        "đang đọc",
+    "refresh" to
+        "làm mới",
+    "refused" to
+        "bị từ chối",
+    "save" to
+        "lưu",
+    "scam warning" to
+        "cảnh báo lừa đảo",
+    "send" to
+        "gửi",
+    "settings, language, about" to
+        "cài đặt, ngôn ngữ, giới thiệu",
+    "signed and read back" to
+        "đã ký và đọc lại",
+    "spent on the model, as FLOP's explorer sees it" to
+        "đã chi cho mô hình, theo trình khám phá của FLOP",
+    "start" to
+        "bắt đầu",
+    "the proof" to
+        "bằng chứng",
+    "to do" to
+        "cần làm",
+    "today" to
+        "hôm nay",
+    "today's question: {q}" to
+        "câu hỏi hôm nay: {q}",
+    "trial over" to
+        "hết lượt thử",
+    "use an address I already have" to
+        "dùng địa chỉ tôi đã có",
+    "validators" to
+        "trình xác thực",
+    "what is happening now" to
+        "hiện đang diễn ra gì",
+    "what your wallet will show" to
+        "ví của bạn sẽ hiển thị gì",
+    "where flop stands" to
+        "flop đang ở đâu",
+    "your flop address" to
+        "địa chỉ flop của bạn",
+    "{day} was missed and forgiven: one missed day a week is." to
+        "{day} đã bị bỏ lỡ và được tha: mỗi tuần được tha một ngày bỏ lỡ.",
+    "{h} h {m} min" to
+        "{h} giờ {m} phút",
+    "{m} min" to
+        "{m} phút",
+    "{n} d ago" to
+        "{n} ngày trước",
+    "{n} h ago" to
+        "{n} giờ trước",
+    "{n} min ago" to
+        "{n} phút trước",
+    "Today" to "Hôm nay",
+    "Ask" to "Hỏi",
+    "Network" to "Mạng",
+    "{host} is on FLOP's official list." to "{host} có trong danh sách chính thức của FLOP.",
+    "This is FLOP's own account on {host}." to "Đây là tài khoản của chính FLOP trên {host}.",
+    "This is on {host}, but not FLOP's account there. FLOP's is {account}." to "Đây là {host}, nhưng không phải tài khoản của FLOP ở đó. Tài khoản của FLOP là {account}.",
+    "{host} uses the FLOP name but is not on FLOP's official list. Treat it as an impersonation." to "{host} dùng tên FLOP nhưng không có trong danh sách chính thức của FLOP. Hãy coi đó là giả mạo.",
+    "{host} is not FLOP. That does not make it bad, only not FLOP." to "{host} không phải FLOP. Điều đó không có nghĩa là xấu, chỉ là không phải FLOP.",
+    // The faucet came back (2026-11-03).
+    "The faucet works" to
+        "Vòi đang hoạt động",
+    "FLOP's faucet gives each address 25 FLOP once every 24 hours. It can be slow: an answer may take a minute or two. The app waits for it and checks your balance." to
+        "Vòi của FLOP cho mỗi địa chỉ 25 FLOP mỗi 24 giờ một lần. Vòi có thể chậm: một phản hồi có thể mất một hai phút. Ứng dụng sẽ chờ và kiểm tra số dư của bạn.",
+    "Your FLOP comes from FLOP's faucet: 25 FLOP once every 24 hours. Press do my day and wait, the faucet can take a minute or two. If the balance stays 0, the faucet step says why." to
+        "FLOP của bạn đến từ vòi của FLOP: 25 FLOP mỗi 24 giờ một lần. Nhấn “hoàn tất hôm nay” và chờ, vòi có thể mất một hai phút. Nếu số dư vẫn là 0, bước vòi sẽ ghi lý do.",
+    // Review fixes before the 2.0 release (2026-11-03).
+    "The faucet is limiting requests from your network right now. Nothing arrived; try again later." to
+        "Vòi đang giới hạn yêu cầu từ mạng của bạn. Chưa có gì đến; hãy thử lại sau.",
+    "FLOP's gateway sent a sign-in text this app does not recognise, so it was not signed. Nothing happened." to
+        "Cổng của FLOP gửi một đoạn văn bản đăng nhập mà ứng dụng không nhận ra, nên đã không ký. Không có gì xảy ra.",
+    "The faucet said no: {reason}" to
+        "Vòi đã từ chối: {reason}",
+    "The gateway said no: {reason}" to
+        "Cổng đã từ chối: {reason}",
+    "The model did not answer: {reason}" to
+        "Mô hình không trả lời: {reason}",
+    "Only https links can be FLOP's. Type FLOP's address yourself instead of following this one." to
+        "Chỉ liên kết https mới có thể là của FLOP. Hãy tự gõ địa chỉ của FLOP thay vì mở liên kết này.",
+    "Sign today to keep your streak. This week's one forgiven day is already used." to
+        "Hãy ký hôm nay để giữ chuỗi. Ngày được bỏ qua duy nhất của tuần này đã dùng rồi.",
+    // The model allowance is what the gateway says, not a fixed number (2026-11-03).
+    "On devnet FLOP gives each account one allowance to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. The Ask tab shows how much is left. When it is over, it stays over until testnet." to
+        "Trên devnet, FLOP cho mỗi tài khoản một hạn mức để dùng mô hình trong 24 giờ, và tài khoản cần ít nhất 1 FLOP để bắt đầu. Thẻ Hỏi cho biết còn lại bao nhiêu. Khi hết, mô hình đóng đến testnet.",
+    "FLOP gives each account one devnet allowance for 24 hours. The figure above is what is left of it. When it is over it is over until testnet." to
+        "FLOP cho mỗi tài khoản một hạn mức devnet trong 24 giờ. Con số ở trên là phần còn lại. Khi hết, mô hình đóng đến testnet.",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial, for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "Trước hết địa chỉ Passport của bạn cần ít nhất 1 FLOP. Ngoài ra trên devnet mỗi tài khoản chỉ có một lần dùng thử, trong 24 giờ. Sau đó mô hình đóng đến testnet. Thẻ Hỏi cho biết là trường hợp nào.",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet one, for 24 hours, and your account needs at least 1 FLOP to start it. The Ask tab shows how much of it is left. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "Để dùng mô hình, Passport của bạn ký một tuyên bố ngắn từ api.flop.network. Chữ ký đó không chuyển đi gì cả. Sau đó FLOP mở một hạn mức cho tài khoản của bạn: trên devnet là một, trong 24 giờ, và tài khoản cần ít nhất 1 FLOP để bắt đầu. Thẻ Hỏi cho biết còn lại bao nhiêu. Mỗi mẩu từ tốn khoảng 0,006 FLOP, một câu trả lời thường một hai FLOP. Khi hạn mức kết thúc, mô hình đóng với tài khoản đó đến testnet.",
+    // The faucet's two other refusals, seen 3-4 November 2026.
+    "The faucet has your request in its queue and has not sent the FLOP yet. This can take a while. Press do my day again later." to
+        "Yêu cầu của bạn đang trong hàng đợi của vòi và FLOP chưa được gửi. Việc này có thể mất một lúc. Hãy nhấn “hoàn tất hôm nay” lại sau.",
+    "The faucet has given out all of today's FLOP. Nothing arrived. It opens again within hours, so try later." to
+        "Vòi đã phát hết FLOP của hôm nay. Chưa có gì đến. Vòi sẽ mở lại trong vài giờ, hãy thử sau.",
+    "Signing today's line with your Passport and reading it back from technocore.chat…" to
+        "Đang ký dòng hôm nay bằng Passport của bạn và đọc lại từ technocore.chat…",
+    "Asking FLOP's faucet. It serves about 10 people a minute, so this can take up to 2 minutes." to
+        "Đang hỏi faucet của FLOP. Faucet phục vụ khoảng 10 người mỗi phút nên có thể mất đến 2 phút.",
+    "You are in the faucet's queue. The app watches your balance and asks again by itself." to
+        "Bạn đang trong hàng đợi của faucet. Ứng dụng theo dõi số dư và tự hỏi lại.",
+    "Reading your balance…" to
+        "Đang đọc số dư…",
+    "Sending your question to the model. It has up to 90 seconds to answer." to
+        "Đang gửi câu hỏi tới mô hình. Mô hình có tối đa 90 giây để trả lời.",
+    "FLOP's gateway is full right now: many people are asking at once. Nothing was spent. The app tries again by itself." to
+        "Cổng của FLOP đang đầy: nhiều người hỏi cùng lúc. Chưa tốn gì. Ứng dụng tự thử lại.",
+    "Your FLOP is still settling on the network. The app tries again by itself." to
+        "FLOP của bạn vẫn đang được xác nhận trên mạng. Ứng dụng tự thử lại.",
+    "Reading what the answer cost…" to
+        "Đang đọc chi phí của câu trả lời…",
+    "FLOP's gateway stayed full through every try. Nothing was spent. Try again in a few minutes." to
+        "Cổng của FLOP vẫn đầy trong mọi lần thử. Chưa tốn gì. Hãy thử lại sau vài phút.",
+    "{n} s so far" to
+        "đã qua {n} giây",
+    "try {n} of {m}" to
+        "lần thử {n}/{m}",
+    "next try in {n} s" to
+        "lần thử tiếp sau {n} giây",
+    "gateway ping {n} ms" to
+        "ping cổng {n} ms",
+    "faucet ping {n} ms" to
+        "ping faucet {n} ms",
+    "the gateway does not answer a ping" to
+        "cổng không trả lời ping",
+    "the faucet does not answer a ping" to
+        "faucet không trả lời ping",
+    "step {n} of 3" to
+        "bước {n}/3",
+    "ping" to
+        "ping",
+    "no answer" to
+        "không có phản hồi",
+    "last answer took" to
+        "câu trả lời gần nhất mất",
+    "You can leave this screen: it keeps going." to
+        "Bạn có thể rời màn hình này: việc vẫn tiếp tục.",
+    "Signing today's line" to
+        "Đang ký dòng của hôm nay",
+    "Your Passport signs one short line in the public room and reads it back. That line is your day." to
+        "Passport của bạn ký một dòng ngắn trong phòng công khai rồi đọc lại. Dòng đó chính là ngày của bạn.",
+    "Asking FLOP's faucet" to
+        "Đang hỏi faucet của FLOP",
+    "The faucet pays about 10 people a minute. This can take up to two minutes." to
+        "Faucet trả cho khoảng 10 người mỗi phút. Việc này có thể mất tới hai phút.",
+    "Standing in the faucet's queue" to
+        "Đang xếp hàng ở faucet",
+    "The faucet pays about 10 people a minute. Your request is in. We watch your balance and ask again by ourselves." to
+        "Faucet trả cho khoảng 10 người mỗi phút. Yêu cầu của bạn đã vào hàng. Chúng tôi theo dõi số dư và tự hỏi lại.",
+    "Your FLOP is on its way" to
+        "FLOP của bạn đang trên đường tới",
+    "One moment." to
+        "Chờ một chút.",
+    "Opening the model" to
+        "Đang mở mô hình",
+    "Your Passport signs the gateway's statement. Nothing is spent." to
+        "Passport của bạn ký bản tuyên bố của cổng. Không tốn gì cả.",
+    "Asking the model" to
+        "Đang hỏi mô hình",
+    "Your question is with the model. It has up to 90 seconds." to
+        "Câu hỏi của bạn đang ở chỗ mô hình. Mô hình có tối đa 90 giây.",
+    "The model is full right now" to
+        "Mô hình đang đầy",
+    "Many people are asking at once. Nothing was spent. We try again by ourselves." to
+        "Nhiều người đang hỏi cùng lúc. Không tốn gì cả. Chúng tôi tự thử lại.",
+    "Your FLOP is still settling" to
+        "FLOP của bạn vẫn đang được ghi nhận",
+    "A fresh grant takes a moment to count. We try again by ourselves." to
+        "Khoản mới cần một lát để được tính. Chúng tôi tự thử lại.",
+    "Reading what it cost" to
+        "Đang đọc chi phí",
+    "FLOP's gateway stayed full through all 6 tries. Nothing was spent. This is on FLOP's side, not yours." to
+        "Cổng của FLOP đầy suốt cả 6 lần thử. Không tốn gì cả. Đây là phía FLOP, không phải phía bạn.",
+    "to next try" to
+        "đến lần thử tiếp",
+    "elapsed {t}" to
+        "đã qua {t}",
+    "ask the model" to
+        "hỏi mô hình",
+    "Answered" to
+        "Đã có câu trả lời",
+    "cost {c} FLOP · {s} s" to
+        "chi phí {c} FLOP · {s} giây",
+    "The model did not answer" to
+        "Mô hình không trả lời",
+    "your question" to
+        "câu hỏi của bạn",
+    "waiting" to
+        "đang chờ",
+    "Connect your Passport" to
+        "Kết nối Passport của bạn",
+    "Get the answer" to
+        "Nhận câu trả lời",
+    "minimise · it keeps going" to
+        "thu nhỏ · vẫn tiếp tục chạy",
+    "my day · step {n} of 3" to
+        "hôm nay của tôi · bước {n}/3",
+    "my day" to
+        "hôm nay của tôi",
+    "Your day is closed" to
+        "Ngày của bạn đã đóng",
+    "See you tomorrow." to
+        "Hẹn mai gặp lại.",
+    "Today is signed" to
+        "Hôm nay đã ký",
+    "not today" to
+        "không phải hôm nay",
+    "Could not sign today" to
+        "Không thể ký hôm nay",
+    "Your day is signed. Your streak of {n} is safe whatever happens next." to
+        "Ngày của bạn đã ký. Chuỗi {n} ngày của bạn an toàn dù có chuyện gì.",
+    "Today is not signed yet. One missed day a week is forgiven; two in a row end the streak." to
+        "Hôm nay chưa ký. Mỗi tuần được bỏ qua một ngày; bỏ lỡ hai ngày liên tiếp thì chuỗi kết thúc.",
+    "question of the day: {q}" to
+        "câu hỏi của ngày: {q}",
+    "Part of your day waits" to
+        "Một phần ngày của bạn đang chờ",
+    "passport · {name}" to
+        "passport · {name}",
+    "Days in a row: {n}" to
+        "Số ngày liên tiếp: {n}",
+    "Start your streak today" to
+        "Bắt đầu chuỗi ngày từ hôm nay",
+    "Registered {date} · day {n} with us" to
+        "Đăng ký {date} · ngày thứ {n} cùng chúng tôi",
+    "reading your days" to
+        "đang đọc các ngày của bạn",
+    "today signed" to
+        "hôm nay đã ký",
+    "sign today or the streak ends" to
+        "ký hôm nay, nếu không chuỗi sẽ dừng",
+    "today not signed yet" to
+        "hôm nay chưa ký",
+    "in a row" to
+        "liên tiếp",
+    "{n} of 3" to
+        "{n}/3",
+    "Your Passport signs one public line. That line is your streak." to
+        "Passport của bạn ký một dòng công khai. Dòng đó chính là chuỗi ngày của bạn.",
+    "From FLOP's faucet, once a day. Practice coins, no price." to
+        "Từ faucet của FLOP, mỗi ngày một lần. Xu luyện tập, không có giá.",
+    "One question of the day, paid in FLOP." to
+        "Một câu hỏi mỗi ngày, trả bằng FLOP.",
+    "One press, all three steps in order. What is already done is skipped." to
+        "Một lần bấm, cả ba bước theo thứ tự. Việc đã xong sẽ được bỏ qua.",
+    "devnet · practice network" to
+        "devnet · mạng luyện tập",
+    "one key · two networks" to
+        "một khóa · hai mạng",
+    "Seeker wallet" to
+        "Ví Seeker",
+    "Made the Passport with one signature. Brings it back on any phone." to
+        "Đã tạo Passport bằng một chữ ký. Khôi phục lại trên bất kỳ điện thoại nào.",
+    "FLOP account" to
+        "Tài khoản FLOP",
+    "The same key as a FLOP address. The faucet pays here; the model is paid from here." to
+        "Cùng một khóa, dưới dạng địa chỉ FLOP. Faucet trả vào đây; mô hình được trả từ đây.",
+    "Registered" to
+        "Đã đăng ký",
+    "Days in a row" to
+        "Số ngày liên tiếp",
+    "Best streak" to
+        "Chuỗi dài nhất",
+    "Signed days" to
+        "Số ngày đã ký",
+    "Balance, FLOP" to
+        "Số dư, FLOP",
+    "Spent on the model, FLOP" to
+        "Đã chi cho mô hình, FLOP",
+    "1 skip left this week" to
+        "còn 1 lần bỏ qua tuần này",
+    "this week's skip is used" to
+        "lần bỏ qua tuần này đã dùng",
+    "details and key" to
+        "chi tiết và khóa",
+    "On Seeker · in FLOP Network · an app by Alex Kosa, not FLOP Labs, not Solana Mobile" to
+        "Trên Seeker · trong mạng FLOP · ứng dụng của Alex Kosa, không phải của FLOP Labs hay Solana Mobile",
+    "days signed together" to
+        "số ngày cùng nhau ký",
+    "flop pulse" to
+        "nhịp flop",
+    "Devnet is a practice network, open to everyone since 3 November. Coins have no price, there is no reward." to
+        "Devnet là mạng luyện tập, mở cho mọi người từ ngày 3 tháng 11. Xu không có giá và không có phần thưởng.",
+    "more about the network" to
+        "thêm về mạng",
+    "thanks to both sides" to
+        "cảm ơn cả hai phía",
+    "for Seeker, the wallet and one-tap signing" to
+        "vì Seeker, chiếc ví và việc ký chỉ bằng một chạm",
+    "for the network, the faucet and a model you can pay" to
+        "vì mạng, faucet và một mô hình có thể trả tiền",
+    "An independent app by Alex Kosa. No promises about tokens or rewards." to
+        "Một ứng dụng độc lập của Alex Kosa. Không hứa hẹn gì về token hay phần thưởng.",
+    "check a link, an @name or an address someone sent you" to
+        "kiểm tra một liên kết, một @tên hoặc một địa chỉ ai đó gửi cho bạn",
+    "check" to
+        "kiểm tra",
+    "FLOP model" to
+        "Mô hình FLOP",
+    "The model is small: short, plain questions work best. Everything you pay is practice FLOP." to
+        "Mô hình nhỏ: câu hỏi ngắn, đơn giản cho kết quả tốt nhất. Mọi thứ bạn trả đều là FLOP luyện tập.",
+    "model open" to
+        "mô hình mở",
+    "opening the model" to
+        "đang mở mô hình",
+    "trial over for this account" to
+        "đã hết dùng thử cho tài khoản này",
+    "needs 1 flop" to
+        "cần 1 flop",
+    "model closed for now" to
+        "mô hình tạm đóng",
+    "first question opens it" to
+        "câu hỏi đầu tiên sẽ mở nó",
+    "ping {n} ms" to
+        "ping {n} ms",
+    "Your Passport signs a short statement from FLOP's gateway. Nothing moves. You need at least 1 FLOP; the faucet on Today gives you 25." to
+        "Passport của bạn ký một bản tuyên bố ngắn của cổng FLOP. Không có gì được chuyển đi. Bạn cần ít nhất 1 FLOP; faucet ở mục Hôm nay cho bạn 25.",
+    "more" to
+        "thêm",
+    "That was the last step. Your Passport is live, and your day on FLOP starts now." to
+        "Đó là bước cuối. Passport của bạn đã sẵn sàng, và ngày của bạn trên FLOP bắt đầu từ bây giờ.",
+    "Pulse" to
+        "Nhịp",
+    "Who is here, and how FLOP's network is doing today." to
+        "Ai đang ở đây và mạng FLOP hôm nay thế nào.",
+    "who is here" to
+        "ai đang ở đây",
+    "Passport holders" to
+        "người có Passport",
+    "{n} Passport holders · {m} signed today" to
+        "Người có Passport: {n} · hôm nay đã ký: {m}",
+    "{n} of them signed today" to
+        "trong đó hôm nay đã ký: {n}",
+    "To keep a streak, each holder signs one short public line a day. Counted from that public record, so anyone can repeat it." to
+        "Để giữ chuỗi, mỗi người ký một dòng công khai ngắn mỗi ngày. Đếm từ bản ghi công khai đó, ai cũng có thể kiểm tra lại.",
+    "same key" to
+        "cùng một khóa",
+    "knock now" to
+        "gõ cửa ngay",
+    "A refused knock costs nothing. Knock as often as you like." to
+        "Bị từ chối không mất gì. Gõ bao nhiêu lần tùy bạn.",
+    "FLOP spent on the model, all time" to
+        "FLOP đã chi cho mô hình, tổng cộng",
+    "accounts that paid for the model" to
+        "tài khoản đã trả cho mô hình",
+    "Join FLOP with Alex's link" to
+        "Vào FLOP bằng liên kết của Alex",
+    "This is Alex Kosa's personal referral link from FLOP, and it may count for him. It gives you nothing extra from this app. Prefer not to? Go to flop.finance yourself." to
+        "Đây là liên kết giới thiệu cá nhân của Alex Kosa từ FLOP và có thể được tính cho anh ấy. Ứng dụng này không cho bạn thêm gì. Không muốn dùng? Hãy tự vào flop.finance.",
+    "open {host}" to
+        "mở {host}",
 )

@@ -61,8 +61,22 @@ class Translator(val lang: Lang) {
     /** The language's own casing rules, for labels drawn in capitals. */
     val locale: Locale = if (lang == Lang.EN) Locale.ROOT else Locale.forLanguageTag(lang.code)
 
+    /**
+     * Keys that end in `{reason}`: a sentence the app finishes with a server's own words,
+     * such as "The faucet said no: {reason}". The finished sentence is not a key, so it is
+     * matched on what comes before the hole and the reason is carried over as it came.
+     */
+    private val reasons: List<Pair<String, String>> by lazy {
+        table.keys.filter { it.endsWith("{reason}") }.map { it.removeSuffix("{reason}") to it }
+    }
+
     /** Translate, falling back to the English sentence that was passed in. */
-    operator fun invoke(english: String): String = table[english] ?: english
+    operator fun invoke(english: String): String = table[english] ?: reasoned(english) ?: english
+
+    private fun reasoned(english: String): String? {
+        val (prefix, key) = reasons.firstOrNull { english.startsWith(it.first) } ?: return null
+        return table.getValue(key).replace("{reason}", english.removePrefix(prefix))
+    }
 }
 
 val LocalTranslator = compositionLocalOf { Translator(Lang.EN) }

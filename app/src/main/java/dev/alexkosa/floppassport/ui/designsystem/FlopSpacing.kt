@@ -13,14 +13,15 @@ object FlopSpacing {
 }
 
 /**
- * Radii are deliberately small. The brand is "foundry precision": 4dp is the default card
- * radius, 8dp is reserved for hero surfaces, and full rounding belongs to status pills
- * only. A 24dp card would read as a generic consumer app, not as FLOP.
+ * Alex overrode the old 4dp rule for 3.0: cards 20, buttons 16, wells 14, sheets 30, so that a
+ * surface reads as something you can press. FLOP's own marks stay as FLOP drew them.
  */
 object FlopShapes {
     val none = RoundedCornerShape(0.dp)
-    val sm = RoundedCornerShape(2.dp)
-    val md = RoundedCornerShape(4.dp)
-    val lg = RoundedCornerShape(8.dp)
+    val sm = RoundedCornerShape(8.dp)
+    val md = RoundedCornerShape(14.dp)
+    val button = RoundedCornerShape(16.dp)
+    val lg = RoundedCornerShape(20.dp)
+    val sheet = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp)
     val pill = RoundedCornerShape(percent = 50)
 }

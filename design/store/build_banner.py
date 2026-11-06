@@ -41,11 +41,11 @@ MID = ((SAFE[0] + SAFE[2]) // 2, (SAFE[1] + SAFE[3]) // 2)   # 805, 285
 #
 #   name, centre x, centre y, width, lean, facing, dim, blur
 CROWD = [
-    ("06-languages.png", 88, 302, 166, 0.33, "right", 0.70, 2.0),
-    ("04-activity.png", 268, 298, 196, 0.27, "right", 0.56, 1.2),
-    ("03-done.png", 440, 292, 230, 0.20, "right", 0.40, 0.5),
-    ("05-seedvault.png", 805, 286, 270, 0.00, "right", 0.76, 2.6),
-    ("01-identity.png", 1170, 292, 230, 0.20, "left", 0.38, 0.5),
+    ("05-pulse.png", 88, 302, 166, 0.33, "right", 0.70, 2.0),
+    ("04-passport.png", 268, 298, 196, 0.27, "right", 0.56, 1.2),
+    ("03-knock.png", 440, 292, 230, 0.20, "right", 0.40, 0.5),
+    ("01-today.png", 805, 286, 270, 0.00, "right", 0.76, 2.6),
+    ("02-window.png", 1170, 292, 230, 0.20, "left", 0.38, 0.5),
 ]
 
 
@@ -81,7 +81,7 @@ def build():
     d.rectangle((MID[0] - 58, 336, MID[0] + 58, 338), fill=CYAN)
 
     sub = ImageFont.truetype(MONO_R, 21)
-    tag = "one signature, one identity"
+    tag = "your day on FLOP, from your Seeker"
     d.text((MID[0] - d.textlength(tag, font=sub) / 2, 362), tag, font=sub, fill=(154, 176, 200))
 
     img.convert("RGB").save(os.path.join(OUT, "banner-1200x600.png"))

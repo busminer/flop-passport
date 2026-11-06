@@ -41,41 +41,41 @@ SHOT_WIDTH = 600
 # What each capture is for, in the order they are shown. The head is the claim,
 # the note underneath is the part that stops it being a slogan.
 CAPTIONS = {
-    "01-identity.png": (
-        "SIX STEPS",
-        ["One signature.", "One identity."],
-        "Your wallet signs one fixed sentence. The identity comes from that "
-        "signature, so the same wallet rebuilds it on any phone.",
+    "01-today.png": (
+        "YOUR DAY ON FLOP",
+        ["Sign. Collect. Ask.", "One button a day."],
+        "Your streak, your FLOP and today's question on one screen. Devnet FLOP "
+        "is for practice: it has no price.",
     ),
-    "02-proof.png": (
-        "PROOF, NOT PROMISES",
-        ["Open a step and", "see the receipt."],
-        "The key, its fingerprint, and the wallet that made it. No step turns "
-        "green because a request came back without an error.",
+    "02-window.png": (
+        "ALWAYS LIVE",
+        ["You always see", "what is happening."],
+        "Every job runs in its own window: what the app is doing, which try, the "
+        "ping. Minimise it and it keeps going.",
     ),
-    "03-done.png": (
-        "DONE IN MINUTES",
-        ["Then it is live,", "and it is public."],
-        "A stranger can check your identity and the records under it. Nobody can "
-        "promise you an allocation, and this app never does.",
+    "03-knock.png": (
+        "IS THE MODEL BUSY?",
+        ["Knock yourself.", "Keep trying."],
+        "When FLOP's gateway is full, a refusal costs nothing. Wait for the timer "
+        "or knock again right away.",
     ),
-    "04-activity.png": (
-        "ACTIVITY",
-        ["Read from the service,", "not counted here."],
-        "Your streak and your records come back from Technocore, so they mean "
-        "the same thing to you and to anyone you show them to.",
+    "04-passport.png": (
+        "ONE KEY, TWO NETWORKS",
+        ["Your Seeker wallet.", "Your FLOP account."],
+        "One signature makes your Passport. The same wallet brings it back on "
+        "any phone, with no new seed phrase.",
     ),
-    "05-seedvault.png": (
-        "SOLANA MOBILE SEED VAULT",
-        ["The wallet key never", "leaves the hardware."],
-        "Seed Vault signs the exact bytes it is handed, inside the Seeker's own "
-        "security chip. Without it, none of this would work.",
+    "05-pulse.png": (
+        "PULSE",
+        ["See who is here", "and how FLOP is doing."],
+        "Live numbers anyone can repeat, thanks to both sides, and a check for "
+        "links people send you.",
     ),
-    "06-languages.png": (
-        "ELEVEN LANGUAGES",
-        ["Every language here", "is fully translated."],
-        "Only languages with a real translation are offered, so nobody lands "
-        "on a half-English screen.",
+    "06-back.png": (
+        "IT COMES BACK",
+        ["Delete the app.", "Keep your streak."],
+        "Your history lives on a public record. The same wallet finds it again, "
+        "so there is nothing new to back up.",
     ),
 }
 

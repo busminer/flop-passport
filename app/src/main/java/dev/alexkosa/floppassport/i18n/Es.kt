@@ -481,4 +481,826 @@ internal val ES_STRINGS: Map<String, String> = mapOf(
         "con prefijo del monedero: este Passport solo se reconstruye con esta misma app de monedero",
     "The prompt for this app begins with FLOP Passport key derivation v1 and names the app dev.alexkosa.floppassport; your wallet shows it was requested by flop.alexkosa.dev." to
         "La solicitud de esta app empieza con FLOP Passport key derivation v1 y nombra la app dev.alexkosa.floppassport; tu monedero muestra que la pidió flop.alexkosa.dev.",
+
+    // 2.0: FLOP account, my day, guide and questions (2026-11-03).
+    "@flop_labs is FLOP's account on X, YouTube and TikTok." to
+        "@flop_labs es la cuenta de FLOP en X, YouTube y TikTok.",
+    "A FLOP account with daily FLOP" to
+        "Una cuenta de FLOP con FLOP cada día",
+    "A flop.finance address, but not one FLOP lists publicly. Ask through x.com/flop_labs." to
+        "Una dirección de flop.finance, pero no una que FLOP publique. Pregunta a través de x.com/flop_labs.",
+    "A flop.finance address. FLOP lists security@flop.finance as its one public contact." to
+        "Una dirección de flop.finance. FLOP indica security@flop.finance como su único contacto público.",
+    "A model you pay in FLOP, and a streak" to
+        "Un modelo que pagas en FLOP, y una racha",
+    "A practice network, open to everyone since 3 November 2026. FLOP here has no value, earns nothing and can be wiped in a reset. Use it to learn the day before it counts." to
+        "Una red de práctica, abierta a todos desde el 3 de noviembre de 2026. Aquí el FLOP no tiene valor, no da nada y puede borrarse en un reinicio. Úsala para aprender el día antes de que cuente.",
+    "A streak counts days in a row with a signed record. One missed day a week is now forgiven; two missed days in a row end it. The count is read from the public room, so a day you did not sign cannot be added later." to
+        "Una racha cuenta los días seguidos con un registro firmado. Ahora se perdona un día perdido por semana; dos días perdidos seguidos la terminan. La cuenta se lee de la sala pública, así que un día que no firmaste no se puede añadir después.",
+    "About 90 days. This is where FLOP's agent airdrop is earned: the testnet FLOP you spend on the model is recorded as your claim on mainnet FLOP." to
+        "Unos 90 días. Aquí es donde se gana el airdrop de agentes de FLOP: el FLOP de testnet que gastas en el modelo queda registrado como tu derecho sobre FLOP de mainnet.",
+    "Alex Kosa, one developer, for Seeker owners. It is not made by FLOP Labs. It is free and its code is open." to
+        "Alex Kosa, un único desarrollador, para los dueños de un Seeker. No está hecha por FLOP Labs. Es gratuita y su código es abierto.",
+    "An identity made by your wallet" to
+        "Una identidad creada por tu cartera",
+    "Ask a question, see what it cost, and keep a streak of the days you show up." to
+        "Haz una pregunta, mira cuánto costó y mantén una racha de los días que apareces.",
+    "Ask anything. The model is small, so short, plain questions work best. Each answer costs a few devnet FLOP, taken from your Passport's allowance." to
+        "Pregunta lo que quieras. El modelo es pequeño, así que funcionan mejor las preguntas cortas y sencillas. Cada respuesta cuesta unos pocos FLOP de devnet, que salen del cupo de tu Passport.",
+    "Ask the model" to
+        "Preguntar al modelo",
+    "Ask the model one question" to
+        "Hazle una pregunta al modelo",
+    "Blocks are being finalised normally." to
+        "Los bloques se están finalizando con normalidad.",
+    "Could not reach FLOP's gateway. Check your connection and try again." to
+        "No se pudo acceder a la pasarela de FLOP. Comprueba la conexión e inténtalo de nuevo.",
+    "Could not reach technocore.chat." to
+        "No se pudo acceder a technocore.chat.",
+    "Could not reach the FLOP devnet node. This says nothing about your balance, only about the connection." to
+        "No se pudo acceder al nodo de devnet de FLOP. Esto no dice nada sobre tu saldo, solo sobre la conexión.",
+    "Could not reach the FLOP explorer." to
+        "No se pudo acceder al explorador de FLOP.",
+    "Could not reach the FLOP faucet. Check your connection and try again." to
+        "No se pudo acceder al faucet de FLOP. Comprueba la conexión e inténtalo de nuevo.",
+    "Devnet FLOP is practice money: it has no value and can be wiped in a reset." to
+        "El FLOP de devnet es dinero de práctica: no tiene valor y puede borrarse en un reinicio.",
+    "Devnet explorer" to
+        "Explorador de devnet",
+    "Devnet is open" to
+        "La devnet está abierta",
+    "Devnet is open to everyone since 3 November 2026. It has no rewards and may be reset. Testnet has no date yet; FLOP will announce it on x.com/flop_labs. On testnet, the testnet FLOP an agent spends on inference becomes its claim on mainnet FLOP. Creating accounts earns nothing." to
+        "La devnet está abierta a todos desde el 3 de noviembre de 2026. No tiene recompensas y puede reiniciarse. La testnet aún no tiene fecha; FLOP la anunciará en x.com/flop_labs. En la testnet, el FLOP de testnet que un agente gasta en inferencia se convierte en su derecho sobre FLOP de mainnet. Crear cuentas no da nada.",
+    "Devnet is practice" to
+        "La devnet es práctica",
+    "Devnet is practice: its FLOP has no value. This app promises nothing about any allocation." to
+        "La devnet es práctica: su FLOP no tiene valor. Esta app no promete ninguna asignación.",
+    "Do I have to post on X?" to
+        "¿Tengo que publicar en X?",
+    "Do I need more than one account?" to
+        "¿Necesito más de una cuenta?",
+    "Do my day" to
+        "Completar mi día",
+    "Every step below was read back from the server, not just sent." to
+        "Cada paso de abajo se volvió a leer desde el servidor, no solo se envió.",
+    "Explain the idea of a 'seed phrase' and why it must stay secret." to
+        "Explica la idea de una 'frase semilla' y por qué debe mantenerse en secreto.",
+    "Explain what 'decentralised' means without using jargon." to
+        "Explica qué significa 'descentralizado' sin usar jerga.",
+    "Explain what a blockchain block is to a ten-year-old, in three sentences." to
+        "Explica qué es un bloque de una blockchain a un niño de diez años, en tres frases.",
+    "Explain what an API is using a restaurant as the example." to
+        "Explica qué es una API usando un restaurante como ejemplo.",
+    "Explain what open-source software is in two sentences." to
+        "Explica qué es el software de código abierto en dos frases.",
+    "FLOP Network is a blockchain where AI agents pay for AI work with FLOP. Miners run models on graphics cards, validators check that the work was really done, and agents buy the answers. Asking the model a question here is exactly that: your Passport acts as an agent and pays for one answer." to
+        "FLOP Network es una blockchain donde los agentes de IA pagan con FLOP por trabajo de IA. Los mineros ejecutan modelos en tarjetas gráficas, los validadores comprueban que el trabajo se hizo de verdad y los agentes compran las respuestas. Hacerle una pregunta al modelo aquí es exactamente eso: tu Passport actúa como agente y paga por una respuesta.",
+    "FLOP Passport gives your Seeker an identity and an account on FLOP Network, and one place to do your day there. It is free, open source, and made by one developer, Alex Kosa. It is not made by FLOP Labs." to
+        "FLOP Passport le da a tu Seeker una identidad y una cuenta en FLOP Network, y un solo lugar donde completar tu día allí. Es gratuita, de código abierto y está hecha por un único desarrollador, Alex Kosa. No está hecha por FLOP Labs.",
+    "FLOP gives each account one devnet allowance: 25 FLOP for 24 hours. When it is over it is over until testnet." to
+        "FLOP da a cada cuenta un único cupo de devnet: 25 FLOP durante 24 horas. Cuando se acaba, se acaba hasta la testnet.",
+    "FLOP has no Discord, Telegram, Reddit or Medium. There is no FLOP token yet." to
+        "FLOP no tiene Discord, Telegram, Reddit ni Medium. Todavía no existe ningún token FLOP.",
+    "FLOP has no official Discord, Telegram, Reddit or Medium. An invitation to one never comes from FLOP." to
+        "FLOP no tiene Discord, Telegram, Reddit ni Medium oficiales. Una invitación a uno de ellos nunca viene de FLOP.",
+    "FLOP has not announced the testnet date. When it opens, the testnet FLOP you spend on the model becomes your claim on mainnet FLOP. Holding FLOP or making more accounts earns nothing." to
+        "FLOP no ha anunciado la fecha de la testnet. Cuando abra, el FLOP de testnet que gastes en el modelo se convertirá en tu derecho sobre FLOP de mainnet. Tener FLOP o crear más cuentas no da nada.",
+    "FLOP has not given a date. It will be announced on x.com/flop_labs, and this app's status will say so the same day." to
+        "FLOP no ha dado una fecha. Se anunciará en x.com/flop_labs, y el estado de esta app lo dirá el mismo día.",
+    "FLOP says Q1 2027" to
+        "Según FLOP, T1 de 2027",
+    "FLOP says there is no token, mint, claim, presale or live airdrop yet. Anything offering one is not FLOP." to
+        "FLOP dice que todavía no hay token, mint, claim, preventa ni airdrop activo. Cualquier cosa que ofrezca uno no es FLOP.",
+    "FLOP's faucet is down for everyone right now. It is not your phone. Try again later." to
+        "El faucet de FLOP no funciona ahora mismo para nadie. No es tu teléfono. Inténtalo más tarde.",
+    "FLOP's faucet is refusing every request with “IP classification unavailable”. This is FLOP's bug (network issue #22), not your phone. The app keeps trying when you press do my day." to
+        "El faucet de FLOP rechaza todas las solicitudes con “IP classification unavailable”. Es un fallo de FLOP (incidencia #22 de la red), no de tu teléfono. La app sigue intentándolo cuando pulsas completar mi día.",
+    "FLOP's faucet sends 25 devnet FLOP to your address, once every 24 hours per address. The request goes from your phone, for your own address, the same as pressing the button on faucet.flop.network. When the faucet is down, the app says so and the rest of your day still counts." to
+        "El faucet de FLOP envía 25 FLOP de devnet a tu dirección, una vez cada 24 horas por dirección. La solicitud sale de tu teléfono, para tu propia dirección, igual que pulsar el botón en faucet.flop.network. Cuando el faucet no funciona, la app lo dice y el resto de tu día sigue contando.",
+    "FLOP's gateway has handed out all of today's devnet allowances, or is unavailable. Try again later." to
+        "La pasarela de FLOP ya ha repartido todos los cupos de devnet de hoy, o no está disponible. Inténtalo más tarde.",
+    "FLOP's gateway rules (OpenAPI)" to
+        "Reglas de la pasarela de FLOP (OpenAPI)",
+    "FLOP's only handle is @flop_labs. Any other account using the name is not theirs." to
+        "La única cuenta de FLOP es @flop_labs. Cualquier otra cuenta que use el nombre no es suya.",
+    "FLOP: official links and verification" to
+        "FLOP: enlaces oficiales y verificación",
+    "FLOP: the airdrop and testnet conversion" to
+        "FLOP: el airdrop y la conversión de testnet",
+    "Faucet outage, FLOP issue #22" to
+        "Caída del faucet, incidencia #22 de FLOP",
+    "Finality is lagging behind. The network may be slow." to
+        "La finalidad va con retraso. La red puede estar lenta.",
+    "Finish setting up your Passport first." to
+        "Termina primero de configurar tu Passport.",
+    "Free and open source. Made by Alex Kosa, not by FLOP Labs. It promises nothing about any allocation." to
+        "Gratuita y de código abierto. Hecha por Alex Kosa, no por FLOP Labs. No promete ninguna asignación.",
+    "From FLOP's faucet, once every 24 hours." to
+        "Del faucet de FLOP, una vez cada 24 horas.",
+    "From FLOP's faucet. Next in {time}." to
+        "Del faucet de FLOP. El siguiente, en {time}.",
+    "From the FLOP Passport team, written into this version." to
+        "Del equipo de FLOP Passport, escrito en esta versión.",
+    "From the FLOP Passport team." to
+        "Del equipo de FLOP Passport.",
+    "Get 25 FLOP" to
+        "Recibir 25 FLOP",
+    "Give me a short motivational sentence for a Monday." to
+        "Dame una frase motivadora corta para un lunes.",
+    "Give me a simple recipe idea with rice and eggs." to
+        "Dame una idea de receta sencilla con arroz y huevos.",
+    "Give me one practical tip for writing clearer emails." to
+        "Dame un consejo práctico para escribir correos más claros.",
+    "Give one good question to ask before buying any crypto token." to
+        "Dime una buena pregunta que hacerse antes de comprar cualquier token cripto.",
+    "Give one way to remember a new word in a foreign language." to
+        "Dime una forma de recordar una palabra nueva en un idioma extranjero.",
+    "Give three tips for keeping a phone's battery healthy." to
+        "Dame tres consejos para mantener sana la batería de un teléfono.",
+    "I changed phones. How do I get my Passport back?" to
+        "Cambié de teléfono. ¿Cómo recupero mi Passport?",
+    "In plain words, what does 'inference' mean for an AI model?" to
+        "En pocas palabras, ¿qué significa 'inferencia' para un modelo de IA?",
+    "In two sentences, what does a GPU do that a CPU does badly?" to
+        "En dos frases, ¿qué hace una GPU que una CPU hace mal?",
+    "Install the app and connect the same Solana wallet. The same wallet makes the same Passport, with the same FLOP address and the same streak. There are no words to write down." to
+        "Instala la app y conecta la misma cartera Solana. La misma cartera crea el mismo Passport, con la misma dirección FLOP y la misma racha. No hay palabras que apuntar.",
+    "Is this FLOP money real?" to
+        "¿Este dinero FLOP es real?",
+    "It gets 25 devnet FLOP from FLOP's faucet every 24 hours." to
+        "Recibe 25 FLOP de devnet del faucet de FLOP cada 24 horas.",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial: 25 FLOP for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "Primero necesita al menos 1 FLOP en la dirección de tu Passport. En devnet, además, cada cuenta tiene una sola prueba: 25 FLOP durante 24 horas. Después queda cerrado hasta la testnet. La pestaña Preguntar indica cuál de los dos casos es.",
+    "Its FLOP has no value. What you practise here is what testnet will count." to
+        "Su FLOP no tiene valor. Lo que practicas aquí es lo que contará la testnet.",
+    "Name three things to check before signing anything in a crypto wallet." to
+        "Nombra tres cosas que comprobar antes de firmar algo en una cartera cripto.",
+    "Name three uses of AI that run well on small models." to
+        "Nombra tres usos de la IA que funcionan bien en modelos pequeños.",
+    "No, and it would not help. FLOP counts spending, not accounts, and says extra accounts earn nothing. One person, one Passport." to
+        "No, y no serviría. FLOP cuenta el gasto, no las cuentas, y dice que las cuentas extra no dan nada. Una persona, un Passport.",
+    "No. Devnet FLOP is practice money with no value, and FLOP may wipe the devnet at any time. There is no FLOP token yet at all. Anybody selling FLOP today is a scammer." to
+        "No. El FLOP de devnet es dinero de práctica sin valor, y FLOP puede borrar la devnet en cualquier momento. Todavía no existe ningún token FLOP. Quien venda FLOP hoy es un estafador.",
+    "No. Linking a post to your Passport is optional. It shows people the Passport is yours, nothing more." to
+        "No. Vincular una publicación a tu Passport es opcional. Muestra a la gente que el Passport es tuyo, nada más.",
+    "Nobody can promise that, and this app never will. What FLOP says: on testnet, the testnet FLOP an agent spends on the model becomes its claim on mainnet FLOP. The app helps you do exactly that every day. Devnet, which is now, earns nothing." to
+        "Nadie puede prometer eso, y esta app nunca lo hará. Lo que dice FLOP: en la testnet, el FLOP de testnet que un agente gasta en el modelo se convierte en su derecho sobre FLOP de mainnet. La app te ayuda a hacer exactamente eso cada día. La devnet, que es lo que hay ahora, no da nada.",
+    "Nothing new to write down. The same wallet brings it back on any phone." to
+        "Nada nuevo que apuntar. La misma cartera lo recupera en cualquier teléfono.",
+    "On devnet FLOP gives each account one allowance: 25 FLOP to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. When it is over, it stays over until testnet." to
+        "En devnet, FLOP da a cada cuenta un cupo: 25 FLOP para gastar en el modelo en 24 horas, y hace falta al menos 1 FLOP en la cuenta para empezarlo. Cuando se acaba, sigue acabado hasta la testnet.",
+    "One button signs today, takes today's FLOP and asks the model one question." to
+        "Un botón firma el día de hoy, toma el FLOP de hoy y le hace una pregunta al modelo.",
+    "One press does all three, in order. Whatever is already done is skipped." to
+        "Una pulsación hace las tres cosas, en orden. Lo que ya esté hecho se salta.",
+    "One question, paid in FLOP. Spending on the model is what testnet will count." to
+        "Una pregunta, pagada en FLOP. Gastar en el modelo es lo que contará la testnet.",
+    "One short text to sign. It is not a transaction and moves no money. Your wallet keeps its keys; nothing leaves it but that one signature." to
+        "Un texto corto para firmar. No es una transacción y no mueve dinero. Tu cartera conserva sus claves; de ella no sale nada más que esa firma.",
+    "Only text, never a transaction. Once, to create your Passport. After that the Passport signs on its own: your daily record and the model's entry statement. None of it can move money from your wallet." to
+        "Solo texto, nunca una transacción. Una vez, para crear tu Passport. Después, el Passport firma por sí mismo: tu registro diario y la declaración de entrada del modelo. Nada de eso puede mover dinero de tu cartera.",
+    "Open the app and press do my day. It signs today, takes today's FLOP from the faucet and asks the model one question. That is all. Whatever is already done is skipped." to
+        "Abre la app y pulsa completar mi día. Firma el día de hoy, toma el FLOP de hoy del faucet y le hace una pregunta al modelo. Eso es todo. Lo que ya esté hecho se salta.",
+    "Open the app and press do my day: it signs today, takes today's FLOP and asks the model one question." to
+        "Abre la app y pulsa completar mi día: firma el día de hoy, toma el FLOP de hoy y le hace una pregunta al modelo.",
+    "Paste a FLOP address from SubWallet, Talisman or Polkadot.js. The faucet will send there. The model still uses your Passport's own address, because only your Passport can sign for it." to
+        "Pega una dirección FLOP de SubWallet, Talisman o Polkadot.js. El faucet enviará ahí. El modelo sigue usando la dirección propia de tu Passport, porque solo tu Passport puede firmar por ella.",
+    "Paste a full link, a handle like @name, or an address." to
+        "Pega un enlace completo, un usuario como @name o una dirección.",
+    "Paste a link, an @handle or an address someone sent you." to
+        "Pega un enlace, un @usuario o una dirección que alguien te haya enviado.",
+    "Questions people ask" to
+        "Preguntas que hace la gente",
+    "Reading your days from technocore.chat…" to
+        "Leyendo tus días de technocore.chat…",
+    "Same Passport, same days. And now one missed day a week is forgiven." to
+        "Mismo Passport, mismos días. Y ahora se perdona un día perdido por semana.",
+    "Sign today" to
+        "Firmar hoy",
+    "Sign today to start your streak." to
+        "Firma hoy para empezar tu racha.",
+    "Sign today's record" to
+        "Firma el registro de hoy",
+    "Sign today, or the streak ends. Yesterday was already forgiven." to
+        "Firma hoy o la racha termina. Ayer ya se perdonó.",
+    "Signing the gateway's statement with your Passport…" to
+        "Firmando la declaración de la pasarela con tu Passport…",
+    "Since 3 November FLOP's practice network is open to everyone. Devnet FLOP has no value, earns nothing, and the network may be reset at any time." to
+        "Desde el 3 de noviembre la red de práctica de FLOP está abierta a todos. El FLOP de devnet no tiene valor, no da nada y la red puede reiniciarse en cualquier momento.",
+    "Staying safe" to
+        "Cómo protegerte",
+    "Suggest a five-minute stretch for someone who sits all day." to
+        "Sugiere un estiramiento de cinco minutos para alguien que pasa todo el día sentado.",
+    "Summarise what 'proof of work' means in two sentences." to
+        "Resume qué significa 'prueba de trabajo' en dos frases.",
+    "Take today's FLOP" to
+        "Toma el FLOP de hoy",
+    "Tell me one interesting fact about the history of computers." to
+        "Cuéntame un dato curioso sobre la historia de la informática.",
+    "Testnet and the airdrop" to
+        "La testnet y el airdrop",
+    "Testnet: no date yet" to
+        "Testnet: aún sin fecha",
+    "That is not a FLOP address. It should start with 5 and be 47 or 48 characters; copy it again from your wallet." to
+        "Eso no es una dirección FLOP. Debe empezar por 5 y tener 47 o 48 caracteres; cópiala otra vez desde tu cartera.",
+    "The faucet" to
+        "El faucet",
+    "The faucet did not answer." to
+        "El faucet no respondió.",
+    "The faucet is down for everyone" to
+        "El faucet no funciona para nadie",
+    "The faucet sends to an address you chose instead:" to
+        "En su lugar, el faucet envía a una dirección que elegiste:",
+    "The faucet works for you" to
+        "El faucet funciona para ti",
+    "The model did not answer." to
+        "El modelo no respondió.",
+    "The model is busy. Try again in a minute; nothing was spent." to
+        "El modelo está ocupado. Inténtalo de nuevo en un minuto; no se gastó nada.",
+    "The model is closed for this account" to
+        "El modelo está cerrado para esta cuenta",
+    "The model is thinking…" to
+        "El modelo está pensando…",
+    "The model needs at least 1 FLOP on your Passport address first. Get it from the faucet." to
+        "El modelo necesita primero al menos 1 FLOP en la dirección de tu Passport. Consíguelo en el faucet.",
+    "The model: one trial per account" to
+        "El modelo: una prueba por cuenta",
+    "The real token. There is no FLOP token before this, so anything sold or “claimed” as FLOP today is a scam." to
+        "El token real. No hay ningún token FLOP antes de esto, así que todo lo que hoy se venda o se “reclame” como FLOP es una estafa.",
+    "There is no FLOP token yet, so there is no FLOP contract address. Anything offered as one is not FLOP." to
+        "Todavía no existe ningún token FLOP, así que no hay dirección de contrato de FLOP. Cualquier cosa que se ofrezca como tal no es FLOP.",
+    "There is no FLOP token yet. Nobody, including this app's author, will ever ask for your private key or your wallet's words. Your wallet only ever signs text here, never a transaction. If somebody sends you a FLOP link, check it on the Network tab first." to
+        "Todavía no existe ningún token FLOP. Nadie, ni siquiera el autor de esta app, te pedirá nunca tu clave privada ni las palabras de tu cartera. Aquí tu cartera solo firma texto, nunca una transacción. Si alguien te envía un enlace de FLOP, compruébalo primero en la pestaña Red.",
+    "There is no Passport on this phone." to
+        "No hay ningún Passport en este teléfono.",
+    "This account has used its one devnet allowance. FLOP does not renew it on devnet. The model opens again when testnet starts, and on testnet the FLOP you spend here is what counts." to
+        "Esta cuenta ya usó su único cupo de devnet. FLOP no lo renueva en devnet. El modelo vuelve a abrirse cuando empiece la testnet, y en la testnet lo que cuenta es el FLOP que gastes aquí.",
+    "This account's devnet allowance is used up." to
+        "El cupo de devnet de esta cuenta se ha agotado.",
+    "This address already got its FLOP in the last 24 hours." to
+        "Esta dirección ya recibió su FLOP en las últimas 24 horas.",
+    "This app's source code" to
+        "Código fuente de esta app",
+    "This is an account on FLOP Network. An address alone says nothing about who holds it." to
+        "Esta es una cuenta en FLOP Network. Una dirección por sí sola no dice nada de quién la tiene.",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet that is 25 FLOP for 24 hours, once per account, and your account needs at least 1 FLOP to start it. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "Para usar el modelo, tu Passport firma una breve declaración de api.flop.network. Esa firma no mueve nada. Luego FLOP abre un cupo para tu cuenta: en devnet son 25 FLOP durante 24 horas, una vez por cuenta, y tu cuenta necesita al menos 1 FLOP para empezarlo. Una respuesta cuesta unos 0,006 FLOP por fragmento de palabra, normalmente uno o dos FLOP. Cuando el cupo se acaba, el modelo queda cerrado para esa cuenta hasta la testnet.",
+    "Today is not signed yet" to
+        "Hoy aún no está firmado",
+    "Today is not signed yet." to
+        "Hoy aún no está firmado.",
+    "Today is signed. Come back tomorrow." to
+        "Hoy ya está firmado. Vuelve mañana.",
+    "Today is signed. See you tomorrow." to
+        "Hoy ya está firmado. Hasta mañana.",
+    "Too many tries from this network. Wait a minute and try again." to
+        "Demasiados intentos desde esta red. Espera un minuto e inténtalo de nuevo.",
+    "Type a question" to
+        "Escribe una pregunta",
+    "What FLOP is" to
+        "Qué es FLOP",
+    "What FLOP says: on testnet, testnet FLOP that an agent actually spends on inference becomes its claim on mainnet FLOP. That claim is locked, and unlocks as it is spent on inference on mainnet: three spent unlock one. Holding FLOP earns nothing. Making more accounts earns nothing. Posting your identity earns nothing." to
+        "Lo que dice FLOP: en la testnet, el FLOP de testnet que un agente gasta de verdad en inferencia se convierte en su derecho sobre FLOP de mainnet. Ese derecho está bloqueado y se desbloquea a medida que se gasta en inferencia en mainnet: tres gastados desbloquean uno. Tener FLOP no da nada. Crear más cuentas no da nada. Publicar tu identidad no da nada.",
+    "What do I need to do every day?" to
+        "¿Qué tengo que hacer cada día?",
+    "What does a miner do in a compute network?" to
+        "¿Qué hace un minero en una red de cómputo?",
+    "What exactly does my wallet sign?" to
+        "¿Qué firma exactamente mi cartera?",
+    "What is a hash function? Two sentences." to
+        "¿Qué es una función hash? En dos frases.",
+    "What is a token in the context of language models?" to
+        "¿Qué es un token en el contexto de los modelos de lenguaje?",
+    "What is a validator in a blockchain network? Keep it short." to
+        "¿Qué es un validador en una red blockchain? Sé breve.",
+    "What is an AI agent, in one paragraph?" to
+        "¿Qué es un agente de IA, en un párrafo?",
+    "What is latency, and why do people care about it?" to
+        "¿Qué es la latencia y por qué le importa a la gente?",
+    "What is phishing, and how do you spot it? Three signs." to
+        "¿Qué es el phishing y cómo se detecta? Tres señales.",
+    "What is the cloud, really? Two sentences." to
+        "¿Qué es la nube, de verdad? En dos frases.",
+    "What is the difference between a private key and a public key?" to
+        "¿Cuál es la diferencia entre una clave privada y una clave pública?",
+    "What makes a password strong? Three short points." to
+        "¿Qué hace que una contraseña sea segura? Tres puntos breves.",
+    "What this app is" to
+        "Qué es esta app",
+    "What we say: this app promises nothing about any allocation, and never will. It helps you do, every day, the thing FLOP says it counts. One person, one Passport." to
+        "Lo que decimos nosotros: esta app no promete ninguna asignación, ni lo hará nunca. Te ayuda a hacer, cada día, lo que FLOP dice que cuenta. Una persona, un Passport.",
+    "When does testnet start?" to
+        "¿Cuándo empieza la testnet?",
+    "Where FLOP is now" to
+        "Dónde está FLOP ahora",
+    "Where these facts come from" to
+        "De dónde salen estos datos",
+    "Who made this app?" to
+        "¿Quién hizo esta app?",
+    "Why did my streak go back to zero?" to
+        "¿Por qué mi racha volvió a cero?",
+    "Why do computers use binary? Two sentences." to
+        "¿Por qué los ordenadores usan binario? En dos frases.",
+    "Why does the model not answer me?" to
+        "¿Por qué el modelo no me responde?",
+    "Why is my balance 0?" to
+        "¿Por qué mi saldo es 0?",
+    "Will I get FLOP tokens for this?" to
+        "¿Recibiré tokens FLOP por esto?",
+    "Write a haiku about a phone that never sleeps." to
+        "Escribe un haiku sobre un teléfono que nunca duerme.",
+    "You are a small model running on FLOP Network's devnet, answering inside a phone app. Answer briefly and plainly. Answer in the language the user writes in." to
+        "Eres un modelo pequeño que funciona en la devnet de FLOP Network y respondes dentro de una app de teléfono. Responde de forma breve y sencilla. Responde en el idioma en que escribe el usuario.",
+    "You never need this to recover: your wallet rebuilds the Passport. It is here for people who want to use their identity away from this phone. Nobody, including this app's author, will ever ask you for it." to
+        "Nunca necesitas esto para recuperarlo: tu cartera reconstruye el Passport. Está aquí para quien quiera usar su identidad fuera de este teléfono. Nadie, ni siquiera el autor de esta app, te lo pedirá nunca.",
+    "Your FLOP address" to
+        "Tu dirección FLOP",
+    "Your FLOP comes from FLOP's faucet, and right now the faucet is not giving FLOP to anyone. That is FLOP's problem, not your phone. When it works, press do my day and 25 FLOP arrives within a minute." to
+        "Tu FLOP viene del faucet de FLOP, y ahora mismo el faucet no da FLOP a nadie. Es un problema de FLOP, no de tu teléfono. Cuando funcione, pulsa completar mi día y llegarán 25 FLOP en menos de un minuto.",
+    "Your Passport is a FLOP account" to
+        "Tu Passport es una cuenta de FLOP",
+    "Your Passport is also a FLOP address. FLOP's faucet gives it 25 FLOP every 24 hours." to
+        "Tu Passport también es una dirección FLOP. El faucet de FLOP le da 25 FLOP cada 24 horas.",
+    "Your Passport key is also an account on FLOP Network. Same key, written the way FLOP writes addresses." to
+        "La clave de tu Passport también es una cuenta en FLOP Network. La misma clave, escrita como FLOP escribe las direcciones.",
+    "Your Passport key is also your FLOP account. It is the same key, written the way FLOP writes addresses, so there is nothing new to back up: your Solana wallet rebuilds both on any phone. If you already have a FLOP address in SubWallet, Talisman or Polkadot.js, you can send the faucet there instead, on the Passport tab. The model works only with the Passport's own address, because only the Passport can sign for it." to
+        "La clave de tu Passport también es tu cuenta de FLOP. Es la misma clave, escrita como FLOP escribe las direcciones, así que no hay nada nuevo que respaldar: tu cartera Solana reconstruye ambas en cualquier teléfono. Si ya tienes una dirección FLOP en SubWallet, Talisman o Polkadot.js, puedes hacer que el faucet envíe allí, en la pestaña Passport. El modelo solo funciona con la dirección propia del Passport, porque solo el Passport puede firmar por ella.",
+    "Your Passport now lives on FLOP" to
+        "Tu Passport ahora vive en FLOP",
+    "Your Passport signs one line in public. It adds a day to your streak." to
+        "Tu Passport firma una línea en público. Suma un día a tu racha.",
+    "Your Passport signs one short line in a public room on technocore.chat, and the app reads it back to prove it landed. Each signed day adds to your streak. Miss one day and it is forgiven, once a week. Miss two in a row and the streak starts again." to
+        "Tu Passport firma una línea corta en una sala pública de technocore.chat, y la app la vuelve a leer para probar que llegó. Cada día firmado suma a tu racha. Si fallas un día, se perdona, una vez por semana. Si fallas dos seguidos, la racha empieza de nuevo.",
+    "Your address got its FLOP from the faucet in the last 24 hours. It can ask again 24 hours after the last grant." to
+        "Tu dirección recibió su FLOP del faucet en las últimas 24 horas. Puede volver a pedirlo 24 horas después de la última entrega.",
+    "Your day is done." to
+        "Tu día está completo.",
+    "Your day on FLOP, from your Seeker." to
+        "Tu día en FLOP, desde tu Seeker.",
+    "Your day, step by step" to
+        "Tu día, paso a paso",
+    "Your first question opens it. Your Passport signs a short statement from api.flop.network; nothing else is signed and nothing moves. You need at least 1 FLOP on your Passport's address, which the faucet on Today gives you." to
+        "Tu primera pregunta abre el cupo. Tu Passport firma una breve declaración de api.flop.network; no se firma nada más y no se mueve nada. Necesitas al menos 1 FLOP en la dirección de tu Passport, que te da el faucet en Hoy.",
+    "Your identity note was deleted after seven quiet days. Publish it again to keep signing your days. Your streak is not lost." to
+        "Tu nota de identidad se eliminó tras siete días sin actividad. Publícala de nuevo para seguir firmando tus días. No has perdido tu racha.",
+    "Your one devnet trial of the model is over. It opens again on testnet." to
+        "Tu única prueba del modelo en devnet ha terminado. Vuelve a abrirse en la testnet.",
+    "Your streak came with you" to
+        "Tu racha vino contigo",
+    "Your wallet made this key and rebuilds it on any phone. There are no words to write down." to
+        "Tu cartera creó esta clave y la reconstruye en cualquier teléfono. No hay palabras que apuntar.",
+    "Your {n}-day streak ends at midnight" to
+        "Tu racha de {n} días termina a medianoche",
+    "accounts" to
+        "cuentas",
+    "active agents" to
+        "agentes activos",
+    "all my records" to
+        "todos mis registros",
+    "allowance left" to
+        "cupo restante",
+    "already asked today" to
+        "ya preguntado hoy",
+    "already signed today" to
+        "ya firmado hoy",
+    "already taken today" to
+        "ya recibido hoy",
+    "answered" to
+        "respondido",
+    "ask the model something else" to
+        "preguntar otra cosa al modelo",
+    "back" to
+        "atrás",
+    "balance" to
+        "saldo",
+    "balance {n} FLOP" to
+        "saldo {n} FLOP",
+    "change the address" to
+        "cambiar la dirección",
+    "closes in" to
+        "cierra en",
+    "compute market and FRCR index" to
+        "mercado de cómputo e índice FRCR",
+    "copied" to
+        "copiado",
+    "cost {n} FLOP" to
+        "costó {n} FLOP",
+    "day in a row" to
+        "día seguido",
+    "days in a row" to
+        "días seguidos",
+    "devnet flop" to
+        "flop de devnet",
+    "do my day" to
+        "completar mi día",
+    "entering" to
+        "entrando",
+    "finish your passport first" to
+        "termina primero tu passport",
+    "flop gateway" to
+        "pasarela flop",
+    "go back to my passport address" to
+        "volver a la dirección de mi passport",
+    "got it" to
+        "entendido",
+    "how it all works" to
+        "cómo funciona todo",
+    "how it works" to
+        "cómo funciona",
+    "how it works, questions and answers" to
+        "cómo funciona, preguntas y respuestas",
+    "how the model works here" to
+        "cómo funciona aquí el modelo",
+    "is this really flop?" to
+        "¿es de verdad flop?",
+    "just now" to
+        "ahora mismo",
+    "latest block" to
+        "último bloque",
+    "made by wallet" to
+        "creada por la cartera",
+    "model" to
+        "modelo",
+    "my day on flop" to
+        "mi día en flop",
+    "needs flop" to
+        "necesita flop",
+    "network" to
+        "red",
+    "new in 2.0" to
+        "novedades de 2.0",
+    "news" to
+        "noticias",
+    "no date yet" to
+        "aún sin fecha",
+    "not entered" to
+        "sin entrar",
+    "not flop" to
+        "no es flop",
+    "not flop's" to
+        "no es de flop",
+    "not now" to
+        "ahora no",
+    "official" to
+        "oficial",
+    "official channels" to
+        "canales oficiales",
+    "open in FLOP's explorer" to
+        "abrir en el explorador de FLOP",
+    "private key" to
+        "clave privada",
+    "publish again" to
+        "publicar de nuevo",
+    "read it in FLOP's own words" to
+        "léelo en palabras de FLOP",
+    "reading" to
+        "leyendo",
+    "refresh" to
+        "actualizar",
+    "refused" to
+        "rechazado",
+    "save" to
+        "guardar",
+    "scam warning" to
+        "aviso de estafa",
+    "send" to
+        "enviar",
+    "settings, language, about" to
+        "ajustes, idioma, acerca de",
+    "signed and read back" to
+        "firmado y leído de nuevo",
+    "spent on the model, as FLOP's explorer sees it" to
+        "gastado en el modelo, según el explorador de FLOP",
+    "start" to
+        "empezar",
+    "the proof" to
+        "la prueba",
+    "to do" to
+        "pendiente",
+    "today" to
+        "hoy",
+    "today's question: {q}" to
+        "pregunta de hoy: {q}",
+    "trial over" to
+        "prueba terminada",
+    "use an address I already have" to
+        "usar una dirección que ya tengo",
+    "validators" to
+        "validadores",
+    "what is happening now" to
+        "qué pasa ahora",
+    "what your wallet will show" to
+        "lo que mostrará tu cartera",
+    "where flop stands" to
+        "en qué punto está flop",
+    "your flop address" to
+        "tu dirección flop",
+    "{day} was missed and forgiven: one missed day a week is." to
+        "{day} se perdió y se perdonó: se perdona un día perdido por semana.",
+    "{n} d ago" to
+        "hace {n} d",
+    "{n} h ago" to
+        "hace {n} h",
+    "{n} min ago" to
+        "hace {n} min",
+    "Today" to "Hoy",
+    "Ask" to "Preguntar",
+    "Network" to "Red",
+    "{host} is on FLOP's official list." to "{host} está en la lista oficial de FLOP.",
+    "This is FLOP's own account on {host}." to "Esta es la cuenta propia de FLOP en {host}.",
+    "This is on {host}, but not FLOP's account there. FLOP's is {account}." to "Esto es {host}, pero no la cuenta de FLOP allí. La de FLOP es {account}.",
+    "{host} uses the FLOP name but is not on FLOP's official list. Treat it as an impersonation." to "{host} usa el nombre FLOP pero no está en la lista oficial de FLOP. Trátalo como una suplantación.",
+    "{host} is not FLOP. That does not make it bad, only not FLOP." to "{host} no es FLOP. Eso no lo hace malo, solo que no es FLOP.",
+    // The faucet came back (2026-11-03).
+    "The faucet works" to
+        "El faucet funciona",
+    "FLOP's faucet gives each address 25 FLOP once every 24 hours. It can be slow: an answer may take a minute or two. The app waits for it and checks your balance." to
+        "El faucet de FLOP da a cada dirección 25 FLOP una vez cada 24 horas. Puede ser lento: una respuesta puede tardar uno o dos minutos. La app la espera y revisa tu saldo.",
+    "Your FLOP comes from FLOP's faucet: 25 FLOP once every 24 hours. Press do my day and wait, the faucet can take a minute or two. If the balance stays 0, the faucet step says why." to
+        "Tus FLOP vienen del faucet de FLOP: 25 FLOP una vez cada 24 horas. Pulsa «completar mi día» y espera, el faucet puede tardar uno o dos minutos. Si el saldo sigue en 0, el paso del faucet dice por qué.",
+    // Review fixes before the 2.0 release (2026-11-03).
+    "The faucet is limiting requests from your network right now. Nothing arrived; try again later." to
+        "El faucet está limitando las solicitudes desde tu red ahora mismo. No llegó nada; inténtalo más tarde.",
+    "FLOP's gateway sent a sign-in text this app does not recognise, so it was not signed. Nothing happened." to
+        "La pasarela de FLOP envió un texto de acceso que esta app no reconoce, así que no se firmó. No pasó nada.",
+    "The faucet said no: {reason}" to
+        "El faucet dijo que no: {reason}",
+    "The gateway said no: {reason}" to
+        "La pasarela dijo que no: {reason}",
+    "The model did not answer: {reason}" to
+        "El modelo no respondió: {reason}",
+    "Only https links can be FLOP's. Type FLOP's address yourself instead of following this one." to
+        "Solo los enlaces https pueden ser de FLOP. Escribe tú mismo la dirección de FLOP en vez de seguir este enlace.",
+    "Sign today to keep your streak. This week's one forgiven day is already used." to
+        "Firma hoy para mantener tu racha. El único día perdonado de esta semana ya se usó.",
+    // The model allowance is what the gateway says, not a fixed number (2026-11-03).
+    "On devnet FLOP gives each account one allowance to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. The Ask tab shows how much is left. When it is over, it stays over until testnet." to
+        "En devnet FLOP da a cada cuenta una asignación para gastar en el modelo durante 24 horas, y la cuenta necesita al menos 1 FLOP para empezar. La pestaña Preguntar muestra cuánto queda. Cuando se acaba, sigue así hasta testnet.",
+    "FLOP gives each account one devnet allowance for 24 hours. The figure above is what is left of it. When it is over it is over until testnet." to
+        "FLOP da a cada cuenta una asignación de devnet durante 24 horas. La cifra de arriba es lo que queda. Cuando se acaba, sigue así hasta testnet.",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial, for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "Primero tu dirección de Passport necesita al menos 1 FLOP. Además, en devnet cada cuenta tiene solo una prueba, durante 24 horas. Después queda cerrado hasta testnet. La pestaña Preguntar dice cuál de las dos es.",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet one, for 24 hours, and your account needs at least 1 FLOP to start it. The Ask tab shows how much of it is left. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "Para usar el modelo, tu Passport firma una breve declaración de api.flop.network. Esa firma no mueve nada. Luego FLOP abre una asignación para tu cuenta: en devnet una, durante 24 horas, y tu cuenta necesita al menos 1 FLOP para empezar. La pestaña Preguntar muestra cuánto queda. Una respuesta cuesta unos 0,006 FLOP por fragmento de palabra, normalmente uno o dos FLOP. Cuando la asignación termina, el modelo queda cerrado para esa cuenta hasta testnet.",
+    // The faucet's two other refusals, seen 3-4 November 2026.
+    "The faucet has your request in its queue and has not sent the FLOP yet. This can take a while. Press do my day again later." to
+        "Tu solicitud está en la cola del faucet y aún no ha enviado los FLOP. Puede tardar. Pulsa «completar mi día» otra vez más tarde.",
+    "The faucet has given out all of today's FLOP. Nothing arrived. It opens again within hours, so try later." to
+        "El faucet ya repartió todos los FLOP de hoy. No llegó nada. Vuelve a abrir en unas horas, inténtalo más tarde.",
+    "Signing today's line with your Passport and reading it back from technocore.chat…" to
+        "Firmando la línea de hoy con tu Passport y leyéndola de vuelta en technocore.chat…",
+    "Asking FLOP's faucet. It serves about 10 people a minute, so this can take up to 2 minutes." to
+        "Pidiendo al faucet de FLOP. Atiende a unas 10 personas por minuto, así que puede tardar hasta 2 minutos.",
+    "You are in the faucet's queue. The app watches your balance and asks again by itself." to
+        "Estás en la cola del faucet. La app vigila tu saldo y vuelve a pedir por sí sola.",
+    "Reading your balance…" to
+        "Leyendo tu saldo…",
+    "Sending your question to the model. It has up to 90 seconds to answer." to
+        "Enviando tu pregunta al modelo. Tiene hasta 90 segundos para responder.",
+    "FLOP's gateway is full right now: many people are asking at once. Nothing was spent. The app tries again by itself." to
+        "La pasarela de FLOP está llena ahora: muchas personas preguntan a la vez. No se ha gastado nada. La app lo reintenta por sí sola.",
+    "Your FLOP is still settling on the network. The app tries again by itself." to
+        "Tus FLOP aún se están confirmando en la red. La app lo reintenta por sí sola.",
+    "Reading what the answer cost…" to
+        "Leyendo cuánto costó la respuesta…",
+    "FLOP's gateway stayed full through every try. Nothing was spent. Try again in a few minutes." to
+        "La pasarela de FLOP siguió llena en todos los intentos. No se ha gastado nada. Inténtalo en unos minutos.",
+    "{n} s so far" to
+        "{n} s transcurridos",
+    "try {n} of {m}" to
+        "intento {n} de {m}",
+    "next try in {n} s" to
+        "próximo intento en {n} s",
+    "gateway ping {n} ms" to
+        "ping de la pasarela {n} ms",
+    "faucet ping {n} ms" to
+        "ping del faucet {n} ms",
+    "the gateway does not answer a ping" to
+        "la pasarela no responde al ping",
+    "the faucet does not answer a ping" to
+        "el faucet no responde al ping",
+    "step {n} of 3" to
+        "paso {n} de 3",
+    "ping" to
+        "ping",
+    "no answer" to
+        "sin respuesta",
+    "last answer took" to
+        "la última respuesta tardó",
+    "You can leave this screen: it keeps going." to
+        "Puedes salir de esta pantalla: seguirá en marcha.",
+    "Signing today's line" to
+        "Firmando la línea de hoy",
+    "Your Passport signs one short line in the public room and reads it back. That line is your day." to
+        "Tu Passport firma una línea corta en la sala pública y la vuelve a leer. Esa línea es tu día.",
+    "Asking FLOP's faucet" to
+        "Pidiendo al faucet de FLOP",
+    "The faucet pays about 10 people a minute. This can take up to two minutes." to
+        "El faucet atiende a unas 10 personas por minuto. Puede tardar hasta dos minutos.",
+    "Standing in the faucet's queue" to
+        "En la cola del faucet",
+    "The faucet pays about 10 people a minute. Your request is in. We watch your balance and ask again by ourselves." to
+        "El faucet atiende a unas 10 personas por minuto. Tu solicitud ya está dentro. Vigilamos tu saldo y volvemos a pedir por nuestra cuenta.",
+    "Your FLOP is on its way" to
+        "Tu FLOP está en camino",
+    "One moment." to
+        "Un momento.",
+    "Opening the model" to
+        "Abriendo el modelo",
+    "Your Passport signs the gateway's statement. Nothing is spent." to
+        "Tu Passport firma la declaración de la pasarela. No se gasta nada.",
+    "Asking the model" to
+        "Preguntando al modelo",
+    "Your question is with the model. It has up to 90 seconds." to
+        "Tu pregunta está con el modelo. Tiene hasta 90 segundos.",
+    "The model is full right now" to
+        "El modelo está lleno ahora",
+    "Many people are asking at once. Nothing was spent. We try again by ourselves." to
+        "Mucha gente pregunta a la vez. No se gastó nada. Lo intentamos de nuevo por nuestra cuenta.",
+    "Your FLOP is still settling" to
+        "Tu FLOP aún se está asentando",
+    "A fresh grant takes a moment to count. We try again by ourselves." to
+        "Un ingreso reciente tarda un momento en contarse. Lo intentamos de nuevo por nuestra cuenta.",
+    "Reading what it cost" to
+        "Leyendo lo que costó",
+    "FLOP's gateway stayed full through all 6 tries. Nothing was spent. This is on FLOP's side, not yours." to
+        "La pasarela de FLOP estuvo llena en los 6 intentos. No se gastó nada. Es cosa de FLOP, no tuya.",
+    "to next try" to
+        "al próximo intento",
+    "elapsed {t}" to
+        "transcurrido {t}",
+    "ask the model" to
+        "preguntar al modelo",
+    "Answered" to
+        "Respondido",
+    "cost {c} FLOP · {s} s" to
+        "costó {c} FLOP · {s} s",
+    "The model did not answer" to
+        "El modelo no respondió",
+    "your question" to
+        "tu pregunta",
+    "waiting" to
+        "esperando",
+    "Connect your Passport" to
+        "Conecta tu Passport",
+    "Get the answer" to
+        "Obtener la respuesta",
+    "minimise · it keeps going" to
+        "minimizar · sigue en marcha",
+    "my day · step {n} of 3" to
+        "mi día · paso {n} de 3",
+    "my day" to
+        "mi día",
+    "Your day is closed" to
+        "Tu día está cerrado",
+    "See you tomorrow." to
+        "Hasta mañana.",
+    "Today is signed" to
+        "Hoy está firmado",
+    "not today" to
+        "hoy no",
+    "Could not sign today" to
+        "No se pudo firmar hoy",
+    "Your day is signed. Your streak of {n} is safe whatever happens next." to
+        "Tu día está firmado. Tu racha de {n} está a salvo pase lo que pase.",
+    "Today is not signed yet. One missed day a week is forgiven; two in a row end the streak." to
+        "Hoy aún no está firmado. Se perdona un día perdido por semana; dos seguidos acaban con la racha.",
+    "question of the day: {q}" to
+        "pregunta del día: {q}",
+    "Part of your day waits" to
+        "Una parte de tu día espera",
+    "passport · {name}" to
+        "passport · {name}",
+    "Days in a row: {n}" to
+        "Días seguidos: {n}",
+    "Start your streak today" to
+        "Empieza tu racha hoy",
+    "Registered {date} · day {n} with us" to
+        "Registrado {date} · día {n} con nosotros",
+    "reading your days" to
+        "leyendo tus días",
+    "today signed" to
+        "hoy firmado",
+    "sign today or the streak ends" to
+        "firma hoy o la racha termina",
+    "today not signed yet" to
+        "hoy aún sin firmar",
+    "in a row" to
+        "seguidos",
+    "{n} of 3" to
+        "{n} de 3",
+    "Your Passport signs one public line. That line is your streak." to
+        "Tu Passport firma una línea pública. Esa línea es tu racha.",
+    "From FLOP's faucet, once a day. Practice coins, no price." to
+        "Del faucet de FLOP, una vez al día. Monedas de práctica, sin precio.",
+    "One question of the day, paid in FLOP." to
+        "Una pregunta del día, pagada en FLOP.",
+    "One press, all three steps in order. What is already done is skipped." to
+        "Una pulsación, los tres pasos en orden. Lo que ya está hecho se omite.",
+    "devnet · practice network" to
+        "devnet · red de práctica",
+    "one key · two networks" to
+        "una clave · dos redes",
+    "Seeker wallet" to
+        "Wallet Seeker",
+    "Made the Passport with one signature. Brings it back on any phone." to
+        "Creó el Passport con una firma. Lo recupera en cualquier teléfono.",
+    "FLOP account" to
+        "Cuenta FLOP",
+    "The same key as a FLOP address. The faucet pays here; the model is paid from here." to
+        "La misma clave como dirección FLOP. El faucet paga aquí; el modelo se paga desde aquí.",
+    "Registered" to
+        "Registrado",
+    "Days in a row" to
+        "Días seguidos",
+    "Best streak" to
+        "Mejor racha",
+    "Signed days" to
+        "Días firmados",
+    "Balance, FLOP" to
+        "Saldo, FLOP",
+    "Spent on the model, FLOP" to
+        "Gastado en el modelo, FLOP",
+    "1 skip left this week" to
+        "queda 1 perdón esta semana",
+    "this week's skip is used" to
+        "el perdón de esta semana está usado",
+    "details and key" to
+        "detalles y clave",
+    "On Seeker · in FLOP Network · an app by Alex Kosa, not FLOP Labs, not Solana Mobile" to
+        "En Seeker · en la red FLOP · una app de Alex Kosa, no de FLOP Labs ni de Solana Mobile",
+    "days signed together" to
+        "días firmados juntos",
+    "flop pulse" to
+        "pulso flop",
+    "Devnet is a practice network, open to everyone since 3 November. Coins have no price, there is no reward." to
+        "Devnet es una red de práctica, abierta a todos desde el 3 de noviembre. Las monedas no tienen precio y no hay recompensa.",
+    "more about the network" to
+        "más sobre la red",
+    "thanks to both sides" to
+        "gracias a ambas partes",
+    "for Seeker, the wallet and one-tap signing" to
+        "por Seeker, la wallet y la firma con un toque",
+    "for the network, the faucet and a model you can pay" to
+        "por la red, el faucet y un modelo al que se puede pagar",
+    "An independent app by Alex Kosa. No promises about tokens or rewards." to
+        "Una app independiente de Alex Kosa. Sin promesas sobre tokens ni recompensas.",
+    "check a link, an @name or an address someone sent you" to
+        "comprueba un enlace, un @nombre o una dirección que te enviaron",
+    "check" to
+        "comprobar",
+    "FLOP model" to
+        "Modelo FLOP",
+    "The model is small: short, plain questions work best. Everything you pay is practice FLOP." to
+        "El modelo es pequeño: las preguntas cortas y sencillas funcionan mejor. Todo lo que pagas es FLOP de práctica.",
+    "model open" to
+        "modelo abierto",
+    "opening the model" to
+        "abriendo el modelo",
+    "trial over for this account" to
+        "prueba terminada en esta cuenta",
+    "needs 1 flop" to
+        "necesita 1 flop",
+    "model closed for now" to
+        "modelo cerrado por ahora",
+    "first question opens it" to
+        "la primera pregunta lo abre",
+    "ping {n} ms" to
+        "ping {n} ms",
+    "Your Passport signs a short statement from FLOP's gateway. Nothing moves. You need at least 1 FLOP; the faucet on Today gives you 25." to
+        "Tu Passport firma una breve declaración de la pasarela de FLOP. No se mueve nada. Necesitas al menos 1 FLOP; el faucet en Hoy te da 25.",
+    "more" to
+        "más",
+    "That was the last step. Your Passport is live, and your day on FLOP starts now." to
+        "Ese fue el último paso. Tu Passport está activo y tu día en FLOP empieza ahora.",
+    "Pulse" to
+        "Pulso",
+    "Who is here, and how FLOP's network is doing today." to
+        "Quién está aquí y cómo va hoy la red de FLOP.",
+    "who is here" to
+        "quién está aquí",
+    "Passport holders" to
+        "titulares de Passport",
+    "{n} Passport holders · {m} signed today" to
+        "Titulares de Passport: {n} · firmaron hoy: {m}",
+    "{n} of them signed today" to
+        "de ellos firmaron hoy: {n}",
+    "To keep a streak, each holder signs one short public line a day. Counted from that public record, so anyone can repeat it." to
+        "Para mantener la racha, cada titular firma una línea pública corta al día. Contado desde ese registro público, cualquiera puede repetirlo.",
+    "same key" to
+        "misma clave",
+    "knock now" to
+        "llamar ahora",
+    "A refused knock costs nothing. Knock as often as you like." to
+        "Un rechazo no cuesta nada. Llama las veces que quieras.",
+    "FLOP spent on the model, all time" to
+        "FLOP gastado en el modelo, en total",
+    "accounts that paid for the model" to
+        "cuentas que pagaron el modelo",
+    "Join FLOP with Alex's link" to
+        "Entra en FLOP con el enlace de Alex",
+    "This is Alex Kosa's personal referral link from FLOP, and it may count for him. It gives you nothing extra from this app. Prefer not to? Go to flop.finance yourself." to
+        "Este es el enlace de referido personal de Alex Kosa de FLOP, y puede contar para él. Esta app no te da nada extra por usarlo. ¿Prefieres que no? Ve tú mismo a flop.finance.",
+    "open {host}" to
+        "abrir {host}",
 )

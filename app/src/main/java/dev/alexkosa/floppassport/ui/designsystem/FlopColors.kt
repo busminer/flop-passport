@@ -26,6 +26,19 @@ object FlopColors {
     val CyanHover = Color(0xFF3DC5E0)
     val TextSecondary = Color(0xFFA1A7AE)
 
+    // Depth, added for 3.0: mixes of the swatches above, no new hue. Alex asked for raised,
+    // convex surfaces on 4 November 2026, over the old flat rule.
+    val SurfaceRaised = Color(0xFF1B2440)
+    val Ink = Color(0xFF050812)
+    val CyanDeep = Color(0xFF0092B4)
+    val CyanPlinth = Color(0xFF007A99)
+    val GreenTop = Color(0xFF5BE26F)
+    val GreenDeep = Color(0xFF22A838)
+    val GreenPlinth = Color(0xFF178A2B)
+    val SecondaryTop = Color(0xFF2A3350)
+    val SecondaryBottom = Color(0xFF1A2238)
+    val SecondaryPlinth = Color(0xFF0F1528)
+
     /**
      * Semantic aliases. The design system is strict about which swatches are text-safe on
      * Base: Ice White 17.4:1, Green 9.8:1, TextSecondary 7.7:1 and Cyan 7.6:1 pass;

@@ -28,8 +28,8 @@ android {
         applicationId = "dev.alexkosa.floppassport"
         minSdk = 31
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -108,6 +108,8 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.bouncycastle:bcprov-jdk18on:1.81")
+    // android.jar's org.json is a stub on the JVM; the status and news parsers need the real one.
+    testImplementation("org.json:json:20180813")
     androidTestImplementation("androidx.test:runner:1.7.0")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     debugImplementation("androidx.compose.ui:ui-tooling")

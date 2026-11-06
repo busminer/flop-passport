@@ -63,6 +63,7 @@ import androidx.compose.runtime.setValue
 import androidx.fragment.app.FragmentActivity
 import dev.alexkosa.floppassport.util.Biometrics
 import dev.alexkosa.floppassport.util.confirmHaptic
+import dev.alexkosa.floppassport.ui.ActivityState
 
 /**
  * The whole setup, as five steps the user can watch.
@@ -110,13 +111,6 @@ fun PassportScreen(
                 if (!written) gateMessage = "The file could not be written. Try another location."
             }
         }
-    }
-
-    // The reminders about the unfinished last step follow the same two facts the screen
-    // shows. Recomputed when either moves, so a person who finishes is never nagged and a
-    // person who stops is reminded three times and then left alone.
-    LaunchedEffect(flow.complete, vm.nameLinked) {
-        vm.syncFinishNudge(context)
     }
 
     // One tick each time a step actually settles, not on every recomposition.
@@ -274,48 +268,6 @@ fun PassportScreen(
         }
 
         FlopStepLadder(flow, pulse = pulse)
-        // Drawn under the ladder rather than inside it: the five are the Passport and the
-        // app can prove every one of them, this one is what the Passport is for and only
-        // half of it can be proved. Same sequence, different promise, so it is shown as a
-        // continuation and never counted into the five.
-        if (flow.complete) {
-            Spacer(Modifier.height(FlopSpacing.sm))
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .background(FlopColors.Surface, FlopShapes.md)
-                    .border(
-                        1.dp,
-                        if (vm.nameLinked) FlopColors.Green.copy(alpha = 0.5f)
-                        else FlopColors.Cyan.copy(alpha = 0.35f),
-                        FlopShapes.md,
-                    )
-                    .padding(FlopSpacing.md),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Column(Modifier.weight(1f)) {
-                    FlopLabel("06  tell them")
-                    Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(
-                        t(
-                            if (vm.nameLinked) {
-                                "Your post is in your identity note, at your key's own address."
-                            } else {
-                                "Not done. Your Passport is not attached to any public name " +
-                                    "yet, and this is the one step nobody can do for you."
-                            },
-                        ),
-                        style = FlopType.bodySm,
-                        color = FlopColors.TextMuted,
-                    )
-                }
-                Spacer(Modifier.width(FlopSpacing.sm))
-                FlopBadge(
-                    if (vm.nameLinked) "linked" else "open",
-                    if (vm.nameLinked) FlopState.Verified else FlopState.Neutral,
-                )
-            }
-        }
         Spacer(Modifier.height(FlopSpacing.lg))
 
         // The launch-time question to the server failed. Said here, beside the next button,
@@ -343,102 +295,8 @@ fun PassportScreen(
         }
 
         when {
-            flow.complete && vm.nameLinked -> Box(
-                Modifier
-                    .fillMaxWidth()
-                    .background(FlopColors.Green.copy(alpha = 0.12f), FlopShapes.md)
-                    .border(2.dp, FlopColors.Green, FlopShapes.md)
-                    .padding(FlopSpacing.lg),
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Box(
-                        Modifier.size(44.dp).background(FlopColors.Green, FlopShapes.md),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text("\u2713", style = FlopType.h2, color = FlopColors.Base)
-                    }
-                    Spacer(Modifier.height(FlopSpacing.sm))
-                    Text(
-                        t("All six done"),
-                        style = FlopType.h2,
-                        color = FlopColors.Green,
-                        textAlign = TextAlign.Center,
-                    )
-                    Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(
-                        t("Your Passport is live, it is yours, and your post link is on it."),
-                        style = FlopType.bodyMd,
-                        color = FlopColors.IceWhite,
-                        textAlign = TextAlign.Center,
-                    )
-                    Spacer(Modifier.height(FlopSpacing.md))
-                    Text(
-                        t(
-                            "You made a key only your wallet can rebuild, sealed it in this " +
-                                "phone, published it where a stranger can find it, signed a " +
-                                "record and proved it landed, and put your post beside your " +
-                                "key. There is nothing left to set up.",
-                        ),
-                        style = FlopType.bodySm,
-                        color = FlopColors.IceWhite,
-                        textAlign = TextAlign.Center,
-                    )
-                    Spacer(Modifier.height(FlopSpacing.md))
-                    Text(
-                        t(
-                            "From now on: open the app at least once a week, so your " +
-                                "identity note is not deleted. On the days you do " +
-                                "something, open Activity and sign that day's record - " +
-                                "a day cannot be added later.",
-                        ),
-                        style = FlopType.bodyMd,
-                        color = FlopColors.Cyan,
-                        textAlign = TextAlign.Center,
-                    )
-                    Spacer(Modifier.height(FlopSpacing.md))
-                    FlopButton("open Activity", onOpenActivity)
-                    Spacer(Modifier.height(FlopSpacing.sm))
-                    Text(
-                        t(
-                            "Anyone can check it at the address in step 03. This app promises " +
-                                "nothing about any allocation, and never will.",
-                        ),
-                        style = FlopType.bodySm,
-                        color = FlopColors.TextMuted,
-                        textAlign = TextAlign.Center,
-                    )
-                }
-            }
-
-            flow.complete -> Box(
-                Modifier
-                    .fillMaxWidth()
-                    .background(FlopColors.Surface, FlopShapes.md)
-                    .border(2.dp, FlopColors.Cyan, FlopShapes.md)
-                    .padding(FlopSpacing.lg),
-            ) {
-                Column {
-                    FlopLabel(t("5 of 6"))
-                    Spacer(Modifier.height(FlopSpacing.sm))
-                    Text(
-                        t("Your Passport is live. One step left."),
-                        style = FlopType.h3,
-                        color = FlopColors.IceWhite,
-                    )
-                    Spacer(Modifier.height(FlopSpacing.xs))
-                    Text(
-                        t(
-                            "The five steps built your identity. Nobody outside this phone " +
-                                "knows it is yours yet. Step 06 below: write one line, post " +
-                                "it, then come back and paste the link. That last part is " +
-                                "what puts your name beside your key, and it is where " +
-                                "people stop.",
-                        ),
-                        style = FlopType.bodySm,
-                        color = FlopColors.TextMuted,
-                    )
-                }
-            }
+            // The moment the five are done the app moves on to the tabs.
+            flow.complete -> Unit
 
             flow.next == Step.Create -> ActionBlock(
                 title = "Create your Passport",
@@ -485,47 +343,11 @@ fun PassportScreen(
             )
         }
 
-        // Only after the ladder is finished, and this condition is the whole point.
-        //
-        // Gated on `did != null` it appeared the moment a key existed, which is one tap
-        // in: a person who had not published anything, checked in anywhere or posted a
-        // word was shown a field asking for the link to their post. Caught on a clean
-        // install on a second phone. The five steps are a guided sequence that explains
-        // itself, and a box from step six sitting under step one undoes that guidance for
-        // everybody who is not already sure what the app is.
-        if (flow[Step.Ready] is StepState.Verified && !vm.nameLinked) {
-            Spacer(Modifier.height(FlopSpacing.lg))
-            TellThemCard(vm)
-        }
-
-        if (vm.did != null) {
-            Spacer(Modifier.height(FlopSpacing.lg))
-            FlopButtonSecondary("show my private key", {
-                val activity = context as? FragmentActivity
-                if (activity == null) {
-                    gateMessage = "Could not open the security prompt on this screen."
-                } else {
-                    Biometrics.authenticate(
-                        activity = activity,
-                        title = "Show your private key",
-                        subtitle = "Anyone holding it can sign as you",
-                        onSuccess = {
-                            vm.revealSeed()
-                            if (vm.revealedSeedHex == null) {
-                                gateMessage = "Could not read the key from secure storage. " +
-                                    "Restart the phone and try again."
-                            }
-                        },
-                        onFailure = { gateMessage = it },
-                    )
-                }
-            })
-            gateMessage?.let {
-                Spacer(Modifier.height(FlopSpacing.sm))
-                Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
-            }
-
-
+        // The private key is on the Passport tab now, behind a fingerprint, once setup is
+        // done. On this screen it read as the app asking to see somebody's key.
+        gateMessage?.let {
+            Spacer(Modifier.height(FlopSpacing.sm))
+            Text(t(it), style = FlopType.bodySm, color = FlopColors.ErrorRed)
         }
         Spacer(Modifier.height(FlopSpacing.xl))
     }
@@ -543,11 +365,7 @@ private fun nextHint(next: Step?): String = when (next) {
     Step.CheckIn -> "Next: make your first signed check-in."
     // The ladder ends, the app does not. Saying so here is what stops the last dialog
     // from feeling like a door closing on somebody who still has the useful half to do.
-    Step.Ready, null ->
-        "That was the last of the five. Your Passport is live. One thing left, and it " +
-        "is the " +
-            "part FLOP actually asked for: tell people what you did. The app writes the " +
-            "post for you at the bottom of this screen."
+    Step.Ready, null -> "That was the last step. Your Passport is live, and your day on FLOP starts now."
 }
 
 @Composable

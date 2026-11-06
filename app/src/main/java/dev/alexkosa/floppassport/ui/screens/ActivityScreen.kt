@@ -61,7 +61,7 @@ fun ActivityScreen(vm: PassportViewModel) {
     val pulse by vm.pulse.collectAsState()
     val context = LocalContext.current
     val activity = vm.activity
-    val today = ActivityState.todayUtc()
+    val today = ActivityState.today()
     // A failed first read: nothing below is known, and zeros drawn in grey still read as
     // "no activity" to a person whose Wi-Fi is off.
     val nothingKnown = activity.error != null && activity.lastChecked == null
@@ -269,7 +269,7 @@ fun ActivityScreen(vm: PassportViewModel) {
                 "sign today's record",
                 // Today is read at the tap, not when the screen was drawn: a screen left
                 // open across midnight UTC would otherwise sign yesterday's date.
-                { vm.checkInAgain(dailyText(ActivityState.todayUtc())) },
+                { vm.checkInAgain(dailyText(ActivityState.today(), vm.did)) },
                 enabled = !activity.checking,
             )
             Spacer(Modifier.height(FlopSpacing.sm))
@@ -377,8 +377,13 @@ fun ActivityScreen(vm: PassportViewModel) {
  * what the public rooms are drowning in, and the server refuses copies inside its window
  * anyway.
  */
-private fun dailyText(today: String): String =
-    "FLOP Passport for Seeker. Signed record for $today."
+internal fun dailyText(today: String, did: String? = null): String =
+    "FLOP Passport for Seeker. Signed record for $today." +
+        // The key's fingerprint makes the line this person's own. Every user signs the
+        // same sentence on the same day into one shared room, which is exactly what the
+        // service's duplicate filter (five copies in two minutes, then 422) exists to
+        // refuse; the 2026-10-19 review of the live room found the risk, this removes it.
+        (did?.let { " " + dev.alexkosa.floppassport.crypto.DidKey.fingerprint(it) } ?: "")
 
 @Composable
 private fun Stat(

@@ -25,11 +25,11 @@ S = 1200
 
 #   name, centre x, centre y, width, lean, facing, dim, blur
 CROWD = [
-    ("06-languages.png", 118, 990, 250, 0.30, "right", 0.70, 2.2),
-    ("04-activity.png", 366, 968, 310, 0.22, "right", 0.50, 1.1),
-    ("01-identity.png", 600, 950, 372, 0.00, "right", 0.26, 0.0),
-    ("03-done.png", 834, 968, 310, 0.22, "left", 0.50, 1.1),
-    ("05-seedvault.png", 1082, 990, 250, 0.30, "left", 0.70, 2.2),
+    ("05-pulse.png", 118, 990, 250, 0.30, "right", 0.70, 2.2),
+    ("04-passport.png", 366, 968, 310, 0.22, "right", 0.50, 1.1),
+    ("02-window.png", 600, 950, 372, 0.00, "right", 0.26, 0.0),
+    ("03-knock.png", 834, 968, 310, 0.22, "left", 0.50, 1.1),
+    ("01-today.png", 1082, 990, 250, 0.30, "left", 0.70, 2.2),
 ]
 
 
@@ -64,7 +64,7 @@ def build():
     d.rectangle((600 - 70, 452, 600 + 70, 456), fill=CYAN)
 
     sub = ImageFont.truetype(MONO_R, 30)
-    tag = "one signature, one identity"
+    tag = "your day on FLOP, from your Seeker"
     d.text((600 - d.textlength(tag, font=sub) / 2, 486), tag, font=sub, fill=(160, 182, 206))
 
     img.convert("RGB").save(os.path.join(OUT, "feature-1200x1200.png"))

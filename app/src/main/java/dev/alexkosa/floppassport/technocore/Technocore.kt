@@ -463,6 +463,12 @@ class Technocore(private val baseUrl: String = "https://technocore.chat") {
      * ever written. The activity screen is built on this precisely so it cannot claim a
      * past the service has already forgotten.
      */
+    /** Who wrote what when in a room, as (signer, timestamp), leaving out what [ignore] matches. */
+    suspend fun roomLines(room: String, ignore: (String) -> Boolean): List<Pair<String, String>> =
+        readRoom(room)
+            .filterNot { ignore(it.optString("text")) }
+            .map { it.optString("from") to it.optString("ts") }
+
     suspend fun findAllMessages(room: String, did: String): List<Proof> {
         // Throws rather than returning nothing. An unreachable server and an identity with
         // no records are opposite facts, and returning the same empty list for both told

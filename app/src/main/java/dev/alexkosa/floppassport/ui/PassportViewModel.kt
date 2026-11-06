@@ -17,6 +17,7 @@ import dev.alexkosa.floppassport.technocore.Technocore
 import dev.alexkosa.floppassport.notify.NoteLife
 import dev.alexkosa.floppassport.vault.PassportVault
 import dev.alexkosa.floppassport.wallet.WalletLink
+import dev.alexkosa.floppassport.ui.screens.dailyText
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -152,7 +153,7 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
      * finished, never where something is still owed.
      */
     private fun offerSupportInvite() {
-        if (!flow.complete || !nameLinked) return
+        if (!flow.complete) return
         if (!vault.supportInviteShown) showSupportInvite = true
     }
 
@@ -330,49 +331,66 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
             return
         }
         activity = activity.copy(checking = true, error = null)
-        viewModelScope.launch(work) {
-            var outcome: String? = null
-            runCatching {
-                // Read before writing, the way the first check-in does. Without it a write
-                // the server took but could not confirm left the button live and the
-                // screen saying nothing was signed today - and the next tap minted a new
-                // nonce and posted the same sentence a second time, in public, for good.
-                if (technocore.findAllMessages(CHECK_IN_ROOM, identity)
-                        .any { it.signedText == text }
-                ) {
-                    return@runCatching
-                }
-                val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
-                val result = technocore.saySigned(
-                    did = identity,
-                    room = CHECK_IN_ROOM,
-                    text = text,
-                    nonce = nonce,
-                    sign = { vault.sign(it) },
-                )
-                if (did != identity) return@runCatching
-                // The result used to be thrown away, so a refusal was indistinguishable
-                // from a success that had not appeared yet.
-                when (result) {
-                    is Technocore.Result.Verified -> keepNoteAlive(identity, activity.noteValue)
-                    is Technocore.Result.Unconfirmed -> outcome =
-                        "The service took your record but has not shown it back " +
-                            "yet. Press re-check in a moment; nothing needs signing again."
-                    is Technocore.Result.Refused -> outcome =
-                        "technocore.chat refused the record. It refuses writes " +
-                            "when it is busy - try again in a moment."
-                }
-            }.onFailure {
-                if (it is CancellationException) return@onFailure
-                outcome = "Could not reach technocore.chat. Check your connection and " +
-                    "try again; nothing was lost."
-            }
-            if (did != identity) return@launch
-            // The refresh carries the outcome across, so the sentence survives long enough
-            // to be read. Setting it and then refreshing used to erase it in the same
-            // frame.
-            refreshActivity(force = true, carryError = outcome)
+        viewModelScope.launch(work) { signRecord(identity, text) }
+    }
+
+    /**
+     * Today's record, for the one-press day on the Today tab. Null when it is signed and
+     * read back; otherwise the sentence explaining why not.
+     */
+    suspend fun signToday(): String? {
+        val identity = did ?: return "There is no Passport on this phone."
+        if (flow[Step.Publish] !is StepState.Verified || flow[Step.CheckIn] !is StepState.Verified) {
+            return "Finish setting up your Passport first."
         }
+        if (activity.checkedInToday) return null
+        activity = activity.copy(checking = true, error = null)
+        return signRecord(identity, dailyText(ActivityState.today(), identity))
+    }
+
+    private suspend fun signRecord(identity: String, text: String): String? {
+        var outcome: String? = null
+        runCatching {
+            // Read before writing, the way the first check-in does. Without it a write
+            // the server took but could not confirm left the button live and the
+            // screen saying nothing was signed today - and the next tap minted a new
+            // nonce and posted the same sentence a second time, in public, for good.
+            if (technocore.findAllMessages(CHECK_IN_ROOM, identity)
+                    .any { it.signedText == text }
+            ) {
+                return@runCatching
+            }
+            val nonce = technocore.nextNonce(CHECK_IN_ROOM, identity)
+            val result = technocore.saySigned(
+                did = identity,
+                room = CHECK_IN_ROOM,
+                text = text,
+                nonce = nonce,
+                sign = { vault.sign(it) },
+            )
+            if (did != identity) return@runCatching
+            // The result used to be thrown away, so a refusal was indistinguishable
+            // from a success that had not appeared yet.
+            when (result) {
+                is Technocore.Result.Verified -> keepNoteAlive(identity, activity.noteValue)
+                is Technocore.Result.Unconfirmed -> outcome =
+                    "The service took your record but has not shown it back " +
+                        "yet. Press re-check in a moment; nothing needs signing again."
+                is Technocore.Result.Refused -> outcome =
+                    "technocore.chat refused the record. It refuses writes " +
+                        "when it is busy - try again in a moment."
+            }
+        }.onFailure {
+            if (it is CancellationException) return@onFailure
+            outcome = "Could not reach technocore.chat. Check your connection and " +
+                "try again; nothing was lost."
+        }
+        if (did != identity) return outcome
+        // The refresh carries the outcome across, so the sentence survives long enough
+        // to be read. Setting it and then refreshing used to erase it in the same
+        // frame.
+        refreshActivity(force = true, carryError = outcome)
+        return outcome
     }
 
     /**
@@ -818,27 +836,12 @@ class PassportViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     /**
-     * Keep the unfinished-step reminders in step with reality.
-     *
-     * One place decides, and it decides on the same fact the screen shows: five steps done
-     * and no link in the note. Called wherever either of those can change, so a person who
-     * finishes never hears from it again, and one who stops halfway hears from it three
-     * times and then not at all.
+     * The post on X stopped being a step in November 2026, so the reminders about it stop too.
+     * Run on every launch, so a person updating with one still scheduled never hears it.
      */
     fun syncFinishNudge(context: android.content.Context) {
-        val unfinished = flow.complete && !nameLinked
-        NudgePrefs(context).pending = unfinished
-        when {
-            unfinished -> FinishNudge.start(context)
-            // Finished: stop, and forget how many were sent, so a Passport made again later
-            // gets the same help.
-            nameLinked -> FinishNudge.cancel(context, resetCount = true)
-            // Not finished, not linked - the ladder is still being restored from the
-            // server. Stop the alarm but keep the count: resetting it here, on every
-            // slow launch, gave a person who had heard all three reminders all three
-            // again.
-            else -> FinishNudge.cancel(context, resetCount = false)
-        }
+        NudgePrefs(context).pending = false
+        FinishNudge.cancel(context, resetCount = true)
     }
 
     val nameLinked: Boolean

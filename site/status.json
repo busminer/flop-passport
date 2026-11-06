@@ -1,0 +1,125 @@
+{
+ "updated": "2026-11-03",
+ "lines": [
+  {
+   "topic": "network",
+   "level": "Info",
+   "title": {
+    "en": "Devnet is open",
+    "ru": "Девнет открыт",
+    "de": "Devnet ist offen",
+    "zh": "Devnet 已开放",
+    "ja": "Devnet公開中",
+    "es": "La devnet está abierta",
+    "pt": "A devnet está aberta",
+    "tr": "Devnet açık",
+    "vi": "Devnet đã mở",
+    "id": "Devnet sudah dibuka",
+    "ko": "devnet이 열렸습니다"
+   },
+   "text": {
+    "en": "Since 3 November FLOP's practice network is open to everyone. Devnet FLOP has no value, earns nothing, and the network may be reset at any time.",
+    "ru": "С 3 ноября тренировочная сеть FLOP открыта для всех. Devnet FLOP ничего не стоят, ничего не приносят, а сеть могут сбросить в любой момент.",
+    "de": "Seit dem 3. November ist das Übungsnetz von FLOP für alle offen. Devnet-FLOP hat keinen Wert und bringt nichts ein, und das Netz kann jederzeit zurückgesetzt werden.",
+    "zh": "自 11 月 3 日起，FLOP 的练习网络向所有人开放。Devnet FLOP 没有价值，什么也赚不到，网络随时可能被重置。",
+    "ja": "11月3日から、FLOPの練習用ネットワークが誰でも使えるようになりました。Devnet FLOPに価値はなく、何も得られず、ネットワークはいつでもリセットされることがあります。",
+    "es": "Desde el 3 de noviembre la red de práctica de FLOP está abierta a todos. El FLOP de devnet no tiene valor, no da nada y la red puede reiniciarse en cualquier momento.",
+    "pt": "Desde 3 de novembro a rede de treino da FLOP está aberta a todos. O FLOP da devnet não tem valor, não rende nada, e a rede pode ser reiniciada a qualquer momento.",
+    "tr": "3 Kasım'dan beri FLOP'un deneme ağı herkese açık. Devnet FLOP'unun değeri yok, hiçbir şey kazandırmaz ve ağ her an sıfırlanabilir.",
+    "vi": "Từ ngày 3 tháng 11, mạng thực hành của FLOP mở cho mọi người. FLOP devnet không có giá trị, không mang lại gì, và mạng có thể bị đặt lại bất cứ lúc nào.",
+    "id": "Sejak 3 November, jaringan latihan FLOP terbuka untuk semua orang. FLOP devnet tidak bernilai, tidak menghasilkan apa pun, dan jaringannya bisa di-reset kapan saja.",
+    "ko": "11월 3일부터 FLOP의 연습용 네트워크가 누구에게나 열려 있습니다. devnet FLOP은 가치가 없고, 아무것도 벌어 주지 않으며, 네트워크는 언제든 초기화될 수 있습니다."
+   }
+  },
+  {
+   "topic": "faucet",
+   "level": "Good",
+   "title": {
+    "en": "The faucet works",
+    "ru": "Кран работает",
+    "de": "Der Faucet funktioniert",
+    "zh": "水龙头正常工作",
+    "ja": "フォーセットは動いています",
+    "es": "El faucet funciona",
+    "pt": "O faucet funciona",
+    "tr": "Musluk çalışıyor",
+    "vi": "Vòi đang hoạt động",
+    "id": "Faucet berfungsi",
+    "ko": "포싯이 작동합니다"
+   },
+   "text": {
+    "en": "FLOP's faucet gives each address 25 FLOP once every 24 hours. It can be slow: an answer may take a minute or two. The app waits for it and checks your balance.",
+    "ru": "Кран FLOP даёт каждому адресу 25 FLOP раз в 24 часа. Он бывает медленным: ответ может идти минуту или две. Приложение ждёт его и само проверяет баланс.",
+    "de": "FLOPs Faucet gibt jeder Adresse einmal alle 24 Stunden 25 FLOP. Er kann langsam sein: Eine Antwort kann ein bis zwei Minuten dauern. Die App wartet darauf und prüft dein Guthaben.",
+    "zh": "FLOP 的水龙头每 24 小时给每个地址 25 FLOP。它可能比较慢：一次回应可能要一两分钟。应用会等待并检查你的余额。",
+    "ja": "FLOP のフォーセットは各アドレスに 24 時間ごとに 25 FLOP を配ります。遅いことがあり、応答に 1〜2 分かかる場合があります。アプリは応答を待ち、残高を確認します。",
+    "es": "El faucet de FLOP da a cada dirección 25 FLOP una vez cada 24 horas. Puede ser lento: una respuesta puede tardar uno o dos minutos. La app la espera y revisa tu saldo.",
+    "pt": "O faucet da FLOP dá a cada endereço 25 FLOP uma vez a cada 24 horas. Pode ser lento: uma resposta pode levar um ou dois minutos. O app espera por ela e confere seu saldo.",
+    "tr": "FLOP'un musluğu her adrese 24 saatte bir 25 FLOP verir. Yavaş olabilir: bir yanıt bir iki dakika sürebilir. Uygulama bekler ve bakiyeni kontrol eder.",
+    "vi": "Vòi của FLOP cho mỗi địa chỉ 25 FLOP mỗi 24 giờ một lần. Vòi có thể chậm: một phản hồi có thể mất một hai phút. Ứng dụng sẽ chờ và kiểm tra số dư của bạn.",
+    "id": "Faucet FLOP memberi setiap alamat 25 FLOP sekali setiap 24 jam. Faucet bisa lambat: jawabannya bisa butuh satu atau dua menit. Aplikasi menunggunya dan memeriksa saldo Anda.",
+    "ko": "FLOP 포싯은 각 주소에 24시간마다 25 FLOP을 줍니다. 느릴 수 있어서 응답에 1~2분이 걸릴 수 있습니다. 앱이 응답을 기다리고 잔액을 확인합니다."
+   }
+  },
+  {
+   "topic": "model",
+   "level": "Warning",
+   "title": {
+    "en": "The model: one trial per account",
+    "ru": "Модель: одна проба на счёт",
+    "de": "Das Modell: ein Testlauf pro Konto",
+    "zh": "模型：每个账户一次试用",
+    "ja": "モデル：アカウントごとに試用は一度",
+    "es": "El modelo: una prueba por cuenta",
+    "pt": "O modelo: um teste por conta",
+    "tr": "Model: hesap başına bir deneme",
+    "vi": "Mô hình: mỗi tài khoản một lượt thử",
+    "id": "Model: satu uji coba per akun",
+    "ko": "모델: 계정당 체험 한 번"
+   },
+   "text": {
+    "en": "On devnet FLOP gives each account one allowance to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. The Ask tab shows how much is left. When it is over, it stays over until testnet.",
+    "ru": "В девнете FLOP даёт каждому счёту один лимит на модель на 24 часа, и для старта на счёте нужен хотя бы 1 FLOP. Сколько осталось, видно на вкладке «Спросить». Когда лимит кончится, модель закрыта до тестнета.",
+    "de": "Im Devnet gibt FLOP jedem Konto ein Kontingent für das Modell, gültig 24 Stunden, und zum Start braucht das Konto mindestens 1 FLOP. Wie viel übrig ist, zeigt der Tab Fragen. Ist es aufgebraucht, bleibt es das bis zum Testnet.",
+    "zh": "在开发网上，FLOP 给每个账户一份 24 小时内可用于模型的额度，账户里至少要有 1 FLOP 才能开始。剩余多少，在“提问”页可以看到。额度用完后，直到测试网都不会再开放。",
+    "ja": "devnet では FLOP が各アカウントに 24 時間使えるモデル用の枠を 1 つ与え、開始にはアカウントに 1 FLOP 以上が必要です。残りは「質問」タブに表示されます。使い切ると testnet まで閉じたままです。",
+    "es": "En devnet FLOP da a cada cuenta una asignación para gastar en el modelo durante 24 horas, y la cuenta necesita al menos 1 FLOP para empezar. La pestaña Preguntar muestra cuánto queda. Cuando se acaba, sigue así hasta testnet.",
+    "pt": "Na devnet a FLOP dá a cada conta uma cota para gastar no modelo durante 24 horas, e a conta precisa de pelo menos 1 FLOP para começar. A aba Perguntar mostra quanto resta. Quando acaba, fica assim até a testnet.",
+    "tr": "Devnet'te FLOP her hesaba 24 saat içinde modelde harcanacak bir kota verir ve başlamak için hesapta en az 1 FLOP gerekir. Ne kadar kaldığını Sor sekmesi gösterir. Bittiğinde testnet'e kadar kapalı kalır.",
+    "vi": "Trên devnet, FLOP cho mỗi tài khoản một hạn mức để dùng mô hình trong 24 giờ, và tài khoản cần ít nhất 1 FLOP để bắt đầu. Thẻ Hỏi cho biết còn lại bao nhiêu. Khi hết, mô hình đóng đến testnet.",
+    "id": "Di devnet FLOP memberi setiap akun satu jatah untuk dipakai pada model dalam 24 jam, dan akun perlu minimal 1 FLOP untuk memulainya. Tab Tanya menunjukkan sisanya. Setelah habis, tetap tertutup sampai testnet.",
+    "ko": "데브넷에서 FLOP은 각 계정에 24시간 동안 모델에 쓸 수 있는 한도를 하나 주며, 시작하려면 계정에 최소 1 FLOP이 있어야 합니다. 남은 양은 질문 탭에 나옵니다. 다 쓰면 테스트넷까지 닫혀 있습니다."
+   }
+  },
+  {
+   "topic": "testnet",
+   "level": "Info",
+   "title": {
+    "en": "Testnet: no date yet",
+    "ru": "Тестнет: даты пока нет",
+    "de": "Testnet: noch kein Datum",
+    "zh": "Testnet：尚无日期",
+    "ja": "Testnet：日程未定",
+    "es": "Testnet: aún sin fecha",
+    "pt": "Testnet: ainda sem data",
+    "tr": "Testnet: henüz tarih yok",
+    "vi": "Testnet: chưa có ngày",
+    "id": "Testnet: belum ada tanggal",
+    "ko": "testnet: 아직 날짜 없음"
+   },
+   "text": {
+    "en": "FLOP has not announced the testnet date. When it opens, the testnet FLOP you spend on the model becomes your claim on mainnet FLOP. Holding FLOP or making more accounts earns nothing.",
+    "ru": "FLOP ещё не объявили дату тестнета. Когда он откроется, потраченные на модель testnet FLOP станут вашим правом на mainnet FLOP. Держать FLOP или заводить больше счетов ничего не даёт.",
+    "de": "FLOP hat das Datum des Testnets noch nicht angekündigt. Wenn es startet, wird das Testnet-FLOP, das du für das Modell ausgibst, zu deinem Anspruch auf Mainnet-FLOP. FLOP zu halten oder mehr Konten anzulegen bringt nichts ein.",
+    "zh": "FLOP 尚未公布 testnet 日期。开放后，你在模型上花掉的 testnet FLOP 会成为你对 mainnet FLOP 的领取权。持有 FLOP 或创建更多账户都不会带来任何收益。",
+    "ja": "FLOPはtestnetの開始日をまだ発表していません。始まれば、モデルに使ったtestnet FLOPが、mainnet FLOPを受け取る権利になります。FLOPを保有しても、アカウントを増やしても、何も得られません。",
+    "es": "FLOP no ha anunciado la fecha de la testnet. Cuando abra, el FLOP de testnet que gastes en el modelo se convertirá en tu derecho sobre FLOP de mainnet. Tener FLOP o crear más cuentas no da nada.",
+    "pt": "A FLOP não anunciou a data da testnet. Quando ela abrir, o FLOP da testnet que você gastar no modelo vira seu direito a FLOP da mainnet. Ter FLOP ou criar mais contas não rende nada.",
+    "tr": "FLOP testnet tarihini açıklamadı. Açıldığında, modele harcadığın testnet FLOP'u mainnet FLOP'u üzerindeki hakkın olur. FLOP tutmak ya da daha fazla hesap açmak hiçbir şey kazandırmaz.",
+    "vi": "FLOP chưa công bố ngày testnet. Khi testnet mở, số FLOP testnet bạn chi cho mô hình sẽ trở thành quyền nhận FLOP mainnet của bạn. Giữ FLOP hay tạo thêm tài khoản không mang lại gì.",
+    "id": "FLOP belum mengumumkan tanggal testnet. Saat dibuka, FLOP testnet yang Anda belanjakan untuk model menjadi klaim Anda atas FLOP mainnet. Memegang FLOP atau membuat lebih banyak akun tidak menghasilkan apa pun.",
+    "ko": "FLOP은 아직 testnet 날짜를 발표하지 않았습니다. testnet이 열리면 모델에 쓴 testnet FLOP이 mainnet FLOP에 대한 청구권이 됩니다. FLOP을 보유하거나 계정을 더 만드는 것으로는 아무것도 얻지 못합니다."
+   }
+  }
+ ]
+}

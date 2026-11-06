@@ -53,7 +53,12 @@ class MainActivity : FragmentActivity() {
         // Hand the system splash over to our own theme before the first frame, so the
         // Chip the system was showing gives way to the launch scene without a flash.
         setTheme(R.style.Theme_FlopPassport)
-        enableEdgeToEdge()
+        // Always light icons: the app is dark whatever the phone's own theme is, and on a
+        // phone in light mode the default drew dark icons on the dark screen.
+        enableEdgeToEdge(
+            statusBarStyle = androidx.activity.SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            navigationBarStyle = androidx.activity.SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+        )
         super.onCreate(savedInstanceState)
         askForNotificationsOnce()
         setContent { PassportApp() }
@@ -73,12 +78,21 @@ class MainActivity : FragmentActivity() {
         // permission. That is not consent to be notified: switching reminders on for
         // somebody who was never asked is exactly the behaviour the prompt exists to stop.
         // They stay off, and the switch in Settings is where a person turns them on.
+        val prefs = ReminderPrefs(this)
         if (android.os.Build.VERSION.SDK_INT < 33) {
-            ReminderPrefs(this).asked = true
+            prefs.asked = true
+            // Re-armed here too: an update from 1.0 leaves only the morning alarm, and
+            // Android 12 phones never reach the re-arm below.
+            if (prefs.enabled) DailyReminder.schedule(this)
             return
         }
-        val prefs = ReminderPrefs(this)
-        if (prefs.asked) return
+        // Re-armed on every launch, not only at boot. An update, a force-stop or a battery
+        // saver can all drop an inexact alarm without telling anyone, and in 1.0 nothing
+        // put it back until the phone restarted.
+        if (prefs.asked) {
+            if (prefs.enabled && DailyReminder.canPost(this)) DailyReminder.schedule(this)
+            return
+        }
 
         val launcher = registerForActivityResult(
             androidx.activity.result.contract.ActivityResultContracts.RequestPermission(),

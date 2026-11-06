@@ -1,0 +1,55 @@
+{
+ "items": [
+  {
+   "date": "2026-11-03",
+   "title": {
+    "en": "FLOP devnet is open to everyone",
+    "ru": "Девнет FLOP открыт для всех",
+    "de": "FLOPs Devnet ist für alle offen",
+    "zh": "FLOP 开发网已向所有人开放",
+    "ja": "FLOP の devnet が誰でも使えるようになりました",
+    "es": "La devnet de FLOP está abierta a todos",
+    "pt": "A devnet da FLOP está aberta a todos",
+    "tr": "FLOP devnet herkese açık",
+    "vi": "Devnet của FLOP đã mở cho mọi người",
+    "id": "Devnet FLOP terbuka untuk semua",
+    "ko": "FLOP 데브넷이 모두에게 열렸습니다"
+   },
+   "url": "https://docs.flop.network/docs/network-devnet"
+  },
+  {
+   "date": "2026-11-03",
+   "title": {
+    "en": "The faucet works again: 25 FLOP every 24 hours",
+    "ru": "Кран снова работает: 25 FLOP раз в 24 часа",
+    "de": "Der Faucet funktioniert wieder: 25 FLOP alle 24 Stunden",
+    "zh": "水龙头恢复正常：每 24 小时 25 FLOP",
+    "ja": "フォーセットが復旧：24 時間ごとに 25 FLOP",
+    "es": "El faucet vuelve a funcionar: 25 FLOP cada 24 horas",
+    "pt": "O faucet voltou a funcionar: 25 FLOP a cada 24 horas",
+    "tr": "Musluk yeniden çalışıyor: 24 saatte bir 25 FLOP",
+    "vi": "Vòi hoạt động trở lại: 25 FLOP mỗi 24 giờ",
+    "id": "Faucet berfungsi lagi: 25 FLOP setiap 24 jam",
+    "ko": "포싯이 다시 작동합니다: 24시간마다 25 FLOP"
+   },
+   "url": "https://faucet.flop.network"
+  },
+  {
+   "date": "2026-11-02",
+   "title": {
+    "en": "How the agent airdrop works, in FLOP's words",
+    "ru": "Как устроен аэрдроп агентов, словами FLOP",
+    "de": "Wie der Agenten-Airdrop funktioniert, in FLOPs Worten",
+    "zh": "用 FLOP 自己的话说明代理空投如何运作",
+    "ja": "エージェント向けエアドロップの仕組み（FLOP 自身の説明）",
+    "es": "Cómo funciona el airdrop de agentes, en palabras de FLOP",
+    "pt": "Como funciona o airdrop de agentes, nas palavras da FLOP",
+    "tr": "Ajan airdrop'u nasıl işler, FLOP'un kendi sözleriyle",
+    "vi": "Airdrop cho agent hoạt động thế nào, theo lời của FLOP",
+    "id": "Cara kerja airdrop agen, menurut FLOP sendiri",
+    "ko": "에이전트 에어드롭이 작동하는 방식, FLOP의 설명"
+   },
+   "url": "https://docs.flop.network/docs/airdrop-and-testnet-conversion"
+  }
+ ]
+}

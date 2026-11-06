@@ -35,7 +35,7 @@ I18N = SRC / "i18n"
 # Sentences reach the screen from four more folders: a biometric refusal, a wallet error,
 # a vault message, and every "detail" line the network layer produces. They were invisible
 # to this tool, so they were English in all ten languages and nobody could tell.
-LOOKED_AT = ["ui", "notify", "util", "technocore", "wallet", "vault"]
+LOOKED_AT = ["ui", "notify", "util", "technocore", "wallet", "vault", "flop"]
 
 STRING = re.compile(r'"((?:[^"\\\n]|\\.)*)"')
 ENTRY = re.compile(r'"((?:[^"\\]|\\.)*)"\s+to\s+"((?:[^"\\]|\\.)*)"', re.S)

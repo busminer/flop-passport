@@ -1,21 +1,42 @@
 # FLOP Passport for Seeker
 
-A native Android client for [Technocore](https://technocore.chat), built for the Solana
-Mobile Seeker. It creates a `did:key` identity from one wallet signature, publishes it,
-keeps it alive, and leaves evidence a stranger can check.
+A native Android client for [Technocore](https://technocore.chat) and the FLOP network,
+built for the Solana Mobile Seeker. One wallet signature creates a `did:key` identity and a
+FLOP account. One button a day signs the day in public, collects test FLOP from the faucet
+and sends a question to FLOP's AI model, and the record is one a stranger can check.
 
-**One signature, one identity.** No seed phrase to write down, no account, no server of
-ours, no analytics.
+**One signature, one identity.** No new seed phrase to write down, no account, no analytics.
+
+Version 2.0 is live on the Solana dApp Store. The store has no web addresses, so open it on
+a Seeker and search for FLOP Passport.
 
 <p align="center">
-  <img src="design/store/screenshot-1.png" width="19%" alt="The ladder">
-  <img src="design/store/screenshot-2.png" width="19%" alt="Creating the identity">
-  <img src="design/store/screenshot-3.png" width="19%" alt="A published note">
-  <img src="design/store/screenshot-4.png" width="19%" alt="Proof capsule">
-  <img src="design/store/screenshot-5.png" width="19%" alt="About">
+  <img src="design/store/screenshot-1.png" width="16%" alt="Today">
+  <img src="design/store/screenshot-2.png" width="16%" alt="The live window">
+  <img src="design/store/screenshot-3.png" width="16%" alt="Knock again">
+  <img src="design/store/screenshot-4.png" width="16%" alt="The Passport">
+  <img src="design/store/screenshot-5.png" width="16%" alt="Pulse">
+  <img src="design/store/screenshot-6.png" width="16%" alt="Coming back with the same wallet">
 </p>
 
 ---
+
+## What 2.0 adds
+
+FLOP opened its devnet to everyone on 3 November 2026, and the app grew from one identity
+into a daily routine on four tabs: Today, Ask, Pulse and Passport.
+
+- **Do My Day.** One press signs the day in public, collects 25 test FLOP from the faucet
+  and sends a question to FLOP's AI model, paid in test FLOP. Whatever is already done is
+  skipped.
+- **A live window for every job.** What the app is doing, how long it has taken, which try
+  it is on, and the ping.
+- **Knock again.** FLOP's gateway is often full. A refusal costs nothing, the app retries by
+  itself, and a person can knock right away instead of waiting for a timer.
+- **The Passport shows more.** When you registered, your best streak and your signed days.
+- **Pulse.** How many people hold a Passport, how many signed today, and how FLOP's network
+  is doing. Somebody sent you a link, an @name or an address? Check it there first.
+- **One key, two networks.** The Passport key is also a FLOP account, see below.
 
 ## Why it exists
 
@@ -47,6 +68,10 @@ wallet signing the same statement produces the same 64 bytes forever, on any dev
 bytes go through HKDF-SHA256 with a domain-separated `info` string to become the 32-byte
 Ed25519 Passport seed.
 
+An Ed25519 account id on FLOP is simply the public key, so the same key is a FLOP account as
+it stands: same bytes, a different spelling. See
+[`Ss58.kt`](app/src/main/java/dev/alexkosa/floppassport/crypto/Ss58.kt).
+
 What that buys: the Passport is recoverable from the wallet alone with nothing to write
 down, and the link between Passport and wallet is provable by construction rather than
 asserted.
@@ -69,7 +94,7 @@ matched**. A service can accept a write and still not have it, and a green tick 
 was our confirmation of it, so the safe action is to re-read rather than to press the
 button again and post twice in public.
 
-Five steps, each of which leaves evidence the person can open:
+Setting up a Passport is five steps, each of which leaves evidence the person can open:
 
 | | | |
 |---|---|---|
@@ -77,7 +102,7 @@ Five steps, each of which leaves evidence the person can open:
 | `02` | **Protect** | the key is stored, and can be exported |
 | `03` | **Publish** | the identity note goes to `/kv/did-<shard>/<key>` and is read back |
 | `04` | **Check in** | a signed record in a quiet room, verified by read-back |
-| `05` | **Ready** | the Proof Capsule, and a post the person can share |
+| `05` | **Ready** | the Proof Capsule |
 
 ## The seven-day rule, which most clients get wrong
 
@@ -94,6 +119,27 @@ rather than repeating a warning.
 There is no endpoint exposing a note's last-write time, so the countdown is derived from
 *this phone's* own last confirmed write. A note kept alive from a second device therefore
 reads as unknown, which is the honest answer rather than a wrong number.
+
+## Where the streak lives
+
+A signed day is a line in the public `flop-passport` room on Technocore, and the streak is
+read from that record rather than counted on the phone. Delete the app, sign with the same
+wallet, and it comes back.
+
+The limits are real. The seven-day rule above applies to Technocore records in general,
+devnet may be reset at any time, and the app cannot restore a lost wallet.
+
+## What the app talks to
+
+- `technocore.chat`, for the identity note and the public record.
+- FLOP's gateway, faucet, devnet RPC and explorer. Every address is one FLOP lists on its
+  own official-links page, and all of it is devnet: test FLOP has no price and earns nothing.
+- `flop.alexkosa.dev/status.json` and `news.json`, two static files that carry plain text.
+  The one exception is an optional referral link, which
+  [`FlopStatus.kt`](app/src/main/java/dev/alexkosa/floppassport/flop/FlopStatus.kt) refuses
+  unless it is https on FLOP's own domains.
+
+No server of ours sits between the app and either network.
 
 ## Check somebody's Passport yourself
 

@@ -177,7 +177,14 @@ object FinishNudge {
                 .setAutoCancel(true)
                 .build()
 
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            // Refused notifications on Android 13+ are dropped by the system anyway; this says so
+            // in code, and a phone that throws instead cannot take the alarm down with it.
+            if (DailyReminder.canPost(context)) {
+                try {
+                    NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+                } catch (_: SecurityException) {
+                }
+            }
             prefs.attempt = attempt + 1
             schedule(context, attempt + 1)
         }

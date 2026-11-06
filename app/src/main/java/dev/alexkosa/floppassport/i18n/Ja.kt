@@ -439,4 +439,832 @@ internal val JA_STRINGS: Map<String, String> = mapOf(
         "今日が最後の日です。アプリを開かなければ、24時間以内に削除されます。",
     "If you did something today, sign a record for it now." to
         "今日何かをしたなら、いまその記録に署名してください。",
+
+    // 2.0: FLOP account, my day, guide and questions (2026-11-03).
+    "@flop_labs is FLOP's account on X, YouTube and TikTok." to
+        "@flop_labsは、X、YouTube、TikTokでのFLOPのアカウントです。",
+    "A FLOP account with daily FLOP" to
+        "毎日FLOPが届くFLOPアカウント",
+    "A flop.finance address, but not one FLOP lists publicly. Ask through x.com/flop_labs." to
+        "flop.financeのアドレスですが、FLOPが公開しているものではありません。x.com/flop_labsで問い合わせてください。",
+    "A flop.finance address. FLOP lists security@flop.finance as its one public contact." to
+        "flop.financeのアドレスです。FLOPが公開している唯一の連絡先はsecurity@flop.financeです。",
+    "A model you pay in FLOP, and a streak" to
+        "FLOPで支払うモデルと、連続日数",
+    "A practice network, open to everyone since 3 November 2026. FLOP here has no value, earns nothing and can be wiped in a reset. Use it to learn the day before it counts." to
+        "2026年11月3日から誰でも使える練習用ネットワークです。ここのFLOPには価値がなく、何も得られず、リセットで消えることがあります。本番で数えられる前に、一日の流れを覚えるために使ってください。",
+    "A streak counts days in a row with a signed record. One missed day a week is now forgiven; two missed days in a row end it. The count is read from the public room, so a day you did not sign cannot be added later." to
+        "連続日数は、署名済み記録のある日が何日続いたかを数えます。週に一日の抜けは見逃されるようになりました。二日続けて抜けると途切れます。日数は公開ルームから読み取るので、署名しなかった日はあとから足せません。",
+    "About 90 days. This is where FLOP's agent airdrop is earned: the testnet FLOP you spend on the model is recorded as your claim on mainnet FLOP." to
+        "約90日間。FLOPのエージェント向けエアドロップはここで得られます。モデルに使ったtestnet FLOPが、mainnet FLOPを受け取る権利として記録されます。",
+    "Alex Kosa, one developer, for Seeker owners. It is not made by FLOP Labs. It is free and its code is open." to
+        "Alex Kosaという一人の開発者が、Seekerの持ち主のために作りました。FLOP Labsが作ったものではありません。無料で、コードは公開されています。",
+    "An identity made by your wallet" to
+        "ウォレットから作られるID",
+    "Ask a question, see what it cost, and keep a streak of the days you show up." to
+        "質問して、いくらかかったかを確かめ、顔を出した日を連続日数として残しましょう。",
+    "Ask anything. The model is small, so short, plain questions work best. Each answer costs a few devnet FLOP, taken from your Passport's allowance." to
+        "何でも聞いてください。モデルは小さいので、短く平易な質問がいちばん向いています。回答ごとに数devnet FLOPかかり、Passportの利用枠から差し引かれます。",
+    "Ask the model" to
+        "モデルに質問する",
+    "Ask the model one question" to
+        "モデルに質問を一つする",
+    "Blocks are being finalised normally." to
+        "ブロックは通常どおりファイナライズされています。",
+    "Could not reach FLOP's gateway. Check your connection and try again." to
+        "FLOPのゲートウェイに接続できませんでした。接続を確認して、もう一度お試しください。",
+    "Could not reach technocore.chat." to
+        "technocore.chatに接続できませんでした。",
+    "Could not reach the FLOP devnet node. This says nothing about your balance, only about the connection." to
+        "FLOP devnetノードに接続できませんでした。これは接続に関する状態であり、残高の状態を示すものではありません。",
+    "Could not reach the FLOP explorer." to
+        "FLOPのエクスプローラーに接続できませんでした。",
+    "Could not reach the FLOP faucet. Check your connection and try again." to
+        "FLOPのフォーセットに接続できませんでした。接続を確認して、もう一度お試しください。",
+    "Devnet FLOP is practice money: it has no value and can be wiped in a reset." to
+        "Devnet FLOPは練習用のお金です。価値はなく、リセットで消えることがあります。",
+    "Devnet explorer" to
+        "Devnetエクスプローラー",
+    "Devnet is open" to
+        "Devnet公開中",
+    "Devnet is open to everyone since 3 November 2026. It has no rewards and may be reset. Testnet has no date yet; FLOP will announce it on x.com/flop_labs. On testnet, the testnet FLOP an agent spends on inference becomes its claim on mainnet FLOP. Creating accounts earns nothing." to
+        "Devnetは2026年11月3日から誰でも使えます。報酬はなく、リセットされることがあります。Testnetの日程はまだありません。FLOPがx.com/flop_labsで発表します。Testnetでは、エージェントが推論に使ったtestnet FLOPが、mainnet FLOPを受け取る権利になります。アカウントを作っても何も得られません。",
+    "Devnet is practice" to
+        "Devnetは練習です",
+    "Devnet is practice: its FLOP has no value. This app promises nothing about any allocation." to
+        "Devnetは練習です。そのFLOPに価値はありません。このアプリは、いかなる割り当ても約束しません。",
+    "Do I have to post on X?" to
+        "Xに投稿しないといけませんか？",
+    "Do I need more than one account?" to
+        "アカウントは複数必要ですか？",
+    "Do my day" to
+        "今日の分をやる",
+    "Every step below was read back from the server, not just sent." to
+        "以下の各手順は、送信しただけでなく、サーバーから読み戻して確認しています。",
+    "Explain the idea of a 'seed phrase' and why it must stay secret." to
+        "「シードフレーズ」とは何か、なぜ秘密にしなければならないのかを説明してください。",
+    "Explain what 'decentralised' means without using jargon." to
+        "「分散型」とはどういう意味か、専門用語を使わずに説明してください。",
+    "Explain what a blockchain block is to a ten-year-old, in three sentences." to
+        "ブロックチェーンのブロックとは何かを、10歳の子どもに三文で説明してください。",
+    "Explain what an API is using a restaurant as the example." to
+        "APIとは何かを、レストランを例にして説明してください。",
+    "Explain what open-source software is in two sentences." to
+        "オープンソースソフトウェアとは何かを二文で説明してください。",
+    "FLOP Network is a blockchain where AI agents pay for AI work with FLOP. Miners run models on graphics cards, validators check that the work was really done, and agents buy the answers. Asking the model a question here is exactly that: your Passport acts as an agent and pays for one answer." to
+        "FLOP Networkは、AIエージェントがFLOPでAIの仕事に支払うブロックチェーンです。マイナーはグラフィックカードでモデルを動かし、バリデーターは仕事が本当に行われたかを確かめ、エージェントは答えを買います。ここでモデルに質問するのはまさにそれです。あなたのPassportがエージェントとして、一つの答えに支払います。",
+    "FLOP Passport gives your Seeker an identity and an account on FLOP Network, and one place to do your day there. It is free, open source, and made by one developer, Alex Kosa. It is not made by FLOP Labs." to
+        "FLOP Passportは、あなたのSeekerにFLOP Network上のIDとアカウントを与え、そこでの一日を一か所で済ませられるようにします。無料のオープンソースで、一人の開発者Alex Kosaが作っています。FLOP Labsが作ったものではありません。",
+    "FLOP gives each account one devnet allowance: 25 FLOP for 24 hours. When it is over it is over until testnet." to
+        "FLOPは各アカウントにdevnetの利用枠を一度だけ与えます。24時間で25 FLOPです。使い切ったら、testnetまでそれで終わりです。",
+    "FLOP has no Discord, Telegram, Reddit or Medium. There is no FLOP token yet." to
+        "FLOPにDiscord、Telegram、Reddit、Mediumはありません。FLOPトークンもまだありません。",
+    "FLOP has no official Discord, Telegram, Reddit or Medium. An invitation to one never comes from FLOP." to
+        "FLOPには公式のDiscord、Telegram、Reddit、Mediumはありません。そうした場への招待がFLOPから来ることはありません。",
+    "FLOP has not announced the testnet date. When it opens, the testnet FLOP you spend on the model becomes your claim on mainnet FLOP. Holding FLOP or making more accounts earns nothing." to
+        "FLOPはtestnetの開始日をまだ発表していません。始まれば、モデルに使ったtestnet FLOPが、mainnet FLOPを受け取る権利になります。FLOPを保有しても、アカウントを増やしても、何も得られません。",
+    "FLOP has not given a date. It will be announced on x.com/flop_labs, and this app's status will say so the same day." to
+        "FLOPはまだ日付を出していません。x.com/flop_labsで発表され、このアプリの状況表示も同じ日にそう伝えます。",
+    "FLOP says Q1 2027" to
+        "FLOPによると2027年第1四半期",
+    "FLOP says there is no token, mint, claim, presale or live airdrop yet. Anything offering one is not FLOP." to
+        "FLOPによると、トークン、ミント、クレーム、プレセール、実施中のエアドロップはまだ一つもありません。それらを持ちかけるものはFLOPではありません。",
+    "FLOP's faucet is down for everyone right now. It is not your phone. Try again later." to
+        "FLOPのフォーセットは現在、全員に対して止まっています。あなたの端末の問題ではありません。あとでもう一度お試しください。",
+    "FLOP's faucet is refusing every request with “IP classification unavailable”. This is FLOP's bug (network issue #22), not your phone. The app keeps trying when you press do my day." to
+        "FLOPのフォーセットが、すべてのリクエストを「IP classification unavailable」で拒否しています。これはFLOP側の不具合（network issue #22）で、あなたの端末の問題ではありません。「今日の分をやる」を押すたびに、アプリは再試行します。",
+    "FLOP's faucet sends 25 devnet FLOP to your address, once every 24 hours per address. The request goes from your phone, for your own address, the same as pressing the button on faucet.flop.network. When the faucet is down, the app says so and the rest of your day still counts." to
+        "FLOPのフォーセットは、アドレスごとに24時間に一度、25 devnet FLOPを送ります。リクエストはあなたの端末から、あなた自身のアドレス宛てに送られ、faucet.flop.networkでボタンを押すのと同じです。フォーセットが止まっているときはアプリがそう伝え、その日のほかの部分はそのまま数えられます。",
+    "FLOP's gateway has handed out all of today's devnet allowances, or is unavailable. Try again later." to
+        "FLOPのゲートウェイが今日のdevnet利用枠をすべて配り終えたか、利用できない状態です。あとでもう一度お試しください。",
+    "FLOP's gateway rules (OpenAPI)" to
+        "FLOPゲートウェイの仕様（OpenAPI）",
+    "FLOP's only handle is @flop_labs. Any other account using the name is not theirs." to
+        "FLOPのアカウントは@flop_labsだけです。その名前を使うほかのアカウントはFLOPのものではありません。",
+    "FLOP: official links and verification" to
+        "FLOP：公式リンクと確認方法",
+    "FLOP: the airdrop and testnet conversion" to
+        "FLOP：エアドロップとtestnetからの移行",
+    "Faucet outage, FLOP issue #22" to
+        "フォーセット障害、FLOP issue #22",
+    "Finality is lagging behind. The network may be slow." to
+        "ファイナリティが遅れています。ネットワークが遅くなっている可能性があります。",
+    "Finish setting up your Passport first." to
+        "先にPassportの設定を終えてください。",
+    "Free and open source. Made by Alex Kosa, not by FLOP Labs. It promises nothing about any allocation." to
+        "無料のオープンソース。FLOP LabsではなくAlex Kosaが作りました。いかなる割り当ても約束しません。",
+    "From FLOP's faucet, once every 24 hours." to
+        "FLOPのフォーセットから、24時間に一度。",
+    "From FLOP's faucet. Next in {time}." to
+        "FLOPのフォーセットから。次は{time}後。",
+    "From the FLOP Passport team, written into this version." to
+        "FLOP Passportチームより。このバージョンに収録。",
+    "From the FLOP Passport team." to
+        "FLOP Passportチームより。",
+    "Get 25 FLOP" to
+        "25 FLOPを受け取る",
+    "Give me a short motivational sentence for a Monday." to
+        "月曜日向けの、短い励ましの一文をください。",
+    "Give me a simple recipe idea with rice and eggs." to
+        "ご飯と卵で作れる簡単なレシピのアイデアをください。",
+    "Give me one practical tip for writing clearer emails." to
+        "メールをわかりやすく書くための実用的なコツを一つ教えてください。",
+    "Give one good question to ask before buying any crypto token." to
+        "暗号資産のトークンを買う前に確認すべき、良い質問を一つ挙げてください。",
+    "Give one way to remember a new word in a foreign language." to
+        "外国語の新しい単語を覚える方法を一つ挙げてください。",
+    "Give three tips for keeping a phone's battery healthy." to
+        "スマホのバッテリーを長持ちさせるコツを三つ挙げてください。",
+    "I changed phones. How do I get my Passport back?" to
+        "端末を替えました。Passportを取り戻すにはどうすればいいですか？",
+    "In plain words, what does 'inference' mean for an AI model?" to
+        "AIモデルにとっての「推論」とは何か、やさしい言葉で教えてください。",
+    "In two sentences, what does a GPU do that a CPU does badly?" to
+        "GPUが得意でCPUが苦手なことは何か、二文で答えてください。",
+    "Install the app and connect the same Solana wallet. The same wallet makes the same Passport, with the same FLOP address and the same streak. There are no words to write down." to
+        "アプリをインストールし、同じSolanaウォレットを接続してください。同じウォレットからは同じPassportが作られ、FLOPアドレスも連続日数も同じです。書き留める単語はありません。",
+    "Is this FLOP money real?" to
+        "このFLOPは本物のお金ですか？",
+    "It gets 25 devnet FLOP from FLOP's faucet every 24 hours." to
+        "FLOPのフォーセットから、24時間ごとに25 devnet FLOPを受け取ります。",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial: 25 FLOP for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "まず、Passportのアドレスに少なくとも1 FLOPが必要です。また、devnetでは各アカウントの試用は一度だけで、24時間で25 FLOPです。そのあとはtestnetまで閉じたままです。どちらが理由かは「質問」タブに表示されます。",
+    "Its FLOP has no value. What you practise here is what testnet will count." to
+        "そのFLOPに価値はありません。ここで練習することが、testnetで数えられることです。",
+    "Name three things to check before signing anything in a crypto wallet." to
+        "暗号資産ウォレットで何かに署名する前に確認すべきことを三つ挙げてください。",
+    "Name three uses of AI that run well on small models." to
+        "小さなモデルでもうまく動くAIの使い道を三つ挙げてください。",
+    "No, and it would not help. FLOP counts spending, not accounts, and says extra accounts earn nothing. One person, one Passport." to
+        "いいえ。増やしても意味はありません。FLOPが数えるのはアカウント数ではなく使った量で、余分なアカウントでは何も得られないとしています。一人につきPassportは一つです。",
+    "No. Devnet FLOP is practice money with no value, and FLOP may wipe the devnet at any time. There is no FLOP token yet at all. Anybody selling FLOP today is a scammer." to
+        "いいえ。Devnet FLOPは価値のない練習用のお金で、FLOPはいつでもdevnetをリセットすることがあります。FLOPトークンそのものがまだ存在しません。今FLOPを売っている人は詐欺師です。",
+    "No. Linking a post to your Passport is optional. It shows people the Passport is yours, nothing more." to
+        "いいえ。投稿をPassportに結び付けるのは任意です。そのPassportがあなたのものだと人に示すだけで、それ以上の意味はありません。",
+    "Nobody can promise that, and this app never will. What FLOP says: on testnet, the testnet FLOP an agent spends on the model becomes its claim on mainnet FLOP. The app helps you do exactly that every day. Devnet, which is now, earns nothing." to
+        "それは誰にも約束できませんし、このアプリが約束することもありません。FLOPの説明では、testnetでエージェントがモデルに使ったtestnet FLOPが、mainnet FLOPを受け取る権利になります。このアプリは、まさにそれを毎日行う手助けをします。今のdevnetでは何も得られません。",
+    "Nothing new to write down. The same wallet brings it back on any phone." to
+        "新しく書き留めるものはありません。同じウォレットがあれば、どの端末でも元に戻せます。",
+    "On devnet FLOP gives each account one allowance: 25 FLOP to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. When it is over, it stays over until testnet." to
+        "devnetでは、FLOPは各アカウントに利用枠を一度だけ与えます。24時間以内にモデルで使える25 FLOPで、始めるにはアカウントに少なくとも1 FLOPが必要です。使い切ると、testnetまで閉じたままです。",
+    "One button signs today, takes today's FLOP and asks the model one question." to
+        "ボタン一つで、今日に署名し、今日のFLOPを受け取り、モデルに質問を一つします。",
+    "One press does all three, in order. Whatever is already done is skipped." to
+        "一度押すと、三つを順番に行います。済んでいるものは飛ばします。",
+    "One question, paid in FLOP. Spending on the model is what testnet will count." to
+        "質問を一つ、FLOPで支払います。モデルに使った分こそ、testnetで数えられるものです。",
+    "One short text to sign. It is not a transaction and moves no money. Your wallet keeps its keys; nothing leaves it but that one signature." to
+        "署名するのは短いテキスト一つだけです。トランザクションではなく、お金は動きません。鍵はウォレットが持ったままで、外に出るのはその署名一つだけです。",
+    "Only text, never a transaction. Once, to create your Passport. After that the Passport signs on its own: your daily record and the model's entry statement. None of it can move money from your wallet." to
+        "テキストだけで、トランザクションには決して署名しません。Passportを作るときに一度だけです。そのあとはPassportが自分で署名します。毎日の記録と、モデル利用時の声明です。どれもウォレットからお金を動かすことはできません。",
+    "Open the app and press do my day. It signs today, takes today's FLOP from the faucet and asks the model one question. That is all. Whatever is already done is skipped." to
+        "アプリを開いて「今日の分をやる」を押してください。今日に署名し、フォーセットから今日のFLOPを受け取り、モデルに質問を一つします。それだけです。済んでいるものは飛ばします。",
+    "Open the app and press do my day: it signs today, takes today's FLOP and asks the model one question." to
+        "アプリを開いて「今日の分をやる」を押してください。今日に署名し、今日のFLOPを受け取り、モデルに質問を一つします。",
+    "Paste a FLOP address from SubWallet, Talisman or Polkadot.js. The faucet will send there. The model still uses your Passport's own address, because only your Passport can sign for it." to
+        "SubWallet、Talisman、Polkadot.jsのFLOPアドレスを貼り付けてください。フォーセットはそこに送ります。モデルは引き続きPassport自身のアドレスを使います。そのアドレスに署名できるのはPassportだけだからです。",
+    "Paste a full link, a handle like @name, or an address." to
+        "完全なリンク、@nameのようなハンドル、またはアドレスを貼り付けてください。",
+    "Paste a link, an @handle or an address someone sent you." to
+        "送られてきたリンク、@ハンドル、アドレスを貼り付けてください。",
+    "Questions people ask" to
+        "よくある質問",
+    "Reading your days from technocore.chat…" to
+        "technocore.chatから日々の記録を読み込み中…",
+    "Same Passport, same days. And now one missed day a week is forgiven." to
+        "Passportも日数もそのまま。さらに、週に一日の抜けは見逃されるようになりました。",
+    "Sign today" to
+        "今日に署名",
+    "Sign today to start your streak." to
+        "今日に署名して、連続日数を始めましょう。",
+    "Sign today's record" to
+        "今日の記録に署名",
+    "Sign today, or the streak ends. Yesterday was already forgiven." to
+        "今日署名しないと、連続日数が途切れます。昨日はすでに見逃し済みです。",
+    "Signing the gateway's statement with your Passport…" to
+        "ゲートウェイの声明にPassportで署名しています…",
+    "Since 3 November FLOP's practice network is open to everyone. Devnet FLOP has no value, earns nothing, and the network may be reset at any time." to
+        "11月3日から、FLOPの練習用ネットワークが誰でも使えるようになりました。Devnet FLOPに価値はなく、何も得られず、ネットワークはいつでもリセットされることがあります。",
+    "Staying safe" to
+        "安全のために",
+    "Suggest a five-minute stretch for someone who sits all day." to
+        "一日中座っている人向けの、5分間のストレッチを提案してください。",
+    "Summarise what 'proof of work' means in two sentences." to
+        "「プルーフ・オブ・ワーク」とは何かを二文でまとめてください。",
+    "Take today's FLOP" to
+        "今日のFLOPを受け取る",
+    "Tell me one interesting fact about the history of computers." to
+        "コンピューターの歴史にまつわる面白い事実を一つ教えてください。",
+    "Testnet and the airdrop" to
+        "Testnetとエアドロップ",
+    "Testnet: no date yet" to
+        "Testnet：日程未定",
+    "That is not a FLOP address. It should start with 5 and be 47 or 48 characters; copy it again from your wallet." to
+        "FLOPアドレスではありません。5で始まり、47文字か48文字のはずです。ウォレットからもう一度コピーしてください。",
+    "The faucet" to
+        "フォーセット",
+    "The faucet did not answer." to
+        "フォーセットから応答がありませんでした。",
+    "The faucet is down for everyone" to
+        "フォーセットが全員に対して停止中",
+    "The faucet sends to an address you chose instead:" to
+        "フォーセットは、あなたが選んだ別のアドレスに送ります：",
+    "The faucet works for you" to
+        "フォーセットは利用できます",
+    "The model did not answer." to
+        "モデルから応答がありませんでした。",
+    "The model is busy. Try again in a minute; nothing was spent." to
+        "モデルが混み合っています。1分ほどしてからもう一度お試しください。何も使われていません。",
+    "The model is closed for this account" to
+        "このアカウントではモデルが閉じています",
+    "The model is thinking…" to
+        "モデルが考えています…",
+    "The model needs at least 1 FLOP on your Passport address first. Get it from the faucet." to
+        "モデルを使うには、まずPassportのアドレスに少なくとも1 FLOPが必要です。フォーセットで受け取ってください。",
+    "The model: one trial per account" to
+        "モデル：アカウントごとに試用は一度",
+    "The real token. There is no FLOP token before this, so anything sold or “claimed” as FLOP today is a scam." to
+        "本物のトークンです。それより前にFLOPトークンは存在しないので、今日FLOPとして売られたり「クレーム」できるとされたりするものは詐欺です。",
+    "There is no FLOP token yet, so there is no FLOP contract address. Anything offered as one is not FLOP." to
+        "FLOPトークンはまだないので、FLOPのコントラクトアドレスもありません。それとして提示されるものはFLOPではありません。",
+    "There is no FLOP token yet. Nobody, including this app's author, will ever ask for your private key or your wallet's words. Your wallet only ever signs text here, never a transaction. If somebody sends you a FLOP link, check it on the Network tab first." to
+        "FLOPトークンはまだありません。このアプリの作者を含め、誰も秘密鍵やウォレットの単語を求めることはありません。ここでウォレットが署名するのはテキストだけで、トランザクションには決して署名しません。FLOPのリンクが送られてきたら、まず「ネットワーク」タブで確認してください。",
+    "There is no Passport on this phone." to
+        "この端末にPassportはありません。",
+    "This account has used its one devnet allowance. FLOP does not renew it on devnet. The model opens again when testnet starts, and on testnet the FLOP you spend here is what counts." to
+        "このアカウントは一度きりのdevnet利用枠を使い切りました。FLOPはdevnetで利用枠を更新しません。testnetが始まるとモデルは再び開き、testnetではここで使ったFLOPが数えられます。",
+    "This account's devnet allowance is used up." to
+        "このアカウントのdevnet利用枠は使い切りました。",
+    "This address already got its FLOP in the last 24 hours." to
+        "このアドレスは過去24時間以内にすでにFLOPを受け取っています。",
+    "This app's source code" to
+        "このアプリのソースコード",
+    "This is an account on FLOP Network. An address alone says nothing about who holds it." to
+        "これはFLOP Network上のアカウントです。アドレスだけでは、誰が持っているかはわかりません。",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet that is 25 FLOP for 24 hours, once per account, and your account needs at least 1 FLOP to start it. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "モデルを使うために、Passportはapi.flop.networkからの短い声明に署名します。その署名で動くものは何もありません。そのあとFLOPがアカウントに利用枠を開きます。devnetでは24時間で25 FLOP、アカウントごとに一度で、始めるにはアカウントに少なくとも1 FLOPが必要です。回答の費用はトークン1つあたり約0.006 FLOPで、たいてい1〜2 FLOPです。利用枠が終わると、そのアカウントのモデルはtestnetまで閉じたままです。",
+    "Today is not signed yet" to
+        "今日はまだ署名していません",
+    "Today is not signed yet." to
+        "今日はまだ署名していません。",
+    "Today is signed. Come back tomorrow." to
+        "今日は署名済みです。また明日来てください。",
+    "Today is signed. See you tomorrow." to
+        "今日は署名済みです。また明日。",
+    "Too many tries from this network. Wait a minute and try again." to
+        "このネットワークからの試行が多すぎます。1分待ってからもう一度お試しください。",
+    "Type a question" to
+        "質問を入力",
+    "What FLOP is" to
+        "FLOPとは",
+    "What FLOP says: on testnet, testnet FLOP that an agent actually spends on inference becomes its claim on mainnet FLOP. That claim is locked, and unlocks as it is spent on inference on mainnet: three spent unlock one. Holding FLOP earns nothing. Making more accounts earns nothing. Posting your identity earns nothing." to
+        "FLOPの説明：testnetでエージェントが実際に推論に使ったtestnet FLOPが、mainnet FLOPを受け取る権利になります。その権利はロックされていて、mainnetで推論に使うにつれて解除されます。三つ使うと一つ解除されます。FLOPを保有しても何も得られません。アカウントを増やしても何も得られません。IDを投稿しても何も得られません。",
+    "What do I need to do every day?" to
+        "毎日何をすればいいですか？",
+    "What does a miner do in a compute network?" to
+        "計算資源ネットワークで、マイナーは何をしていますか？",
+    "What exactly does my wallet sign?" to
+        "ウォレットは具体的に何に署名するのですか？",
+    "What is a hash function? Two sentences." to
+        "ハッシュ関数とは何ですか？二文で。",
+    "What is a token in the context of language models?" to
+        "言語モデルでいう「トークン」とは何ですか？",
+    "What is a validator in a blockchain network? Keep it short." to
+        "ブロックチェーンネットワークのバリデーターとは何ですか？手短に。",
+    "What is an AI agent, in one paragraph?" to
+        "AIエージェントとは何か、一段落で説明してください。",
+    "What is latency, and why do people care about it?" to
+        "レイテンシとは何で、なぜ気にされるのですか？",
+    "What is phishing, and how do you spot it? Three signs." to
+        "フィッシングとは何で、どう見分けますか？サインを三つ。",
+    "What is the cloud, really? Two sentences." to
+        "クラウドとは、結局のところ何ですか？二文で。",
+    "What is the difference between a private key and a public key?" to
+        "秘密鍵と公開鍵の違いは何ですか？",
+    "What makes a password strong? Three short points." to
+        "強いパスワードの条件は？短く三つ。",
+    "What this app is" to
+        "このアプリについて",
+    "What we say: this app promises nothing about any allocation, and never will. It helps you do, every day, the thing FLOP says it counts. One person, one Passport." to
+        "私たちの立場：このアプリは、いかなる割り当ても約束せず、今後も約束しません。FLOPが数えるとしていることを、毎日行う手助けをするだけです。一人につきPassportは一つです。",
+    "When does testnet start?" to
+        "Testnetはいつ始まりますか？",
+    "Where FLOP is now" to
+        "FLOPの現在地",
+    "Where these facts come from" to
+        "これらの情報の出どころ",
+    "Who made this app?" to
+        "このアプリは誰が作ったのですか？",
+    "Why did my streak go back to zero?" to
+        "連続日数がゼロに戻ったのはなぜですか？",
+    "Why do computers use binary? Two sentences." to
+        "コンピューターはなぜ2進数を使うのですか？二文で。",
+    "Why does the model not answer me?" to
+        "モデルが答えてくれないのはなぜですか？",
+    "Why is my balance 0?" to
+        "残高が0なのはなぜですか？",
+    "Will I get FLOP tokens for this?" to
+        "これでFLOPトークンがもらえますか？",
+    "Write a haiku about a phone that never sleeps." to
+        "眠らないスマホについての俳句を詠んでください。",
+    "You are a small model running on FLOP Network's devnet, answering inside a phone app. Answer briefly and plainly. Answer in the language the user writes in." to
+        "あなたはFLOP Networkのdevnet上で動く小さなモデルで、スマホアプリの中で答えています。短く、平易に答えてください。ユーザーが書いた言語で答えてください。",
+    "You never need this to recover: your wallet rebuilds the Passport. It is here for people who want to use their identity away from this phone. Nobody, including this app's author, will ever ask you for it." to
+        "復元にこれが必要になることはありません。ウォレットがPassportを再構築します。これは、この端末以外でIDを使いたい人のためのものです。このアプリの作者を含め、誰もこれを求めることはありません。",
+    "Your FLOP address" to
+        "あなたのFLOPアドレス",
+    "Your FLOP comes from FLOP's faucet, and right now the faucet is not giving FLOP to anyone. That is FLOP's problem, not your phone. When it works, press do my day and 25 FLOP arrives within a minute." to
+        "FLOPはFLOPのフォーセットから届きますが、今はフォーセットが誰にもFLOPを配っていません。FLOP側の問題で、あなたの端末の問題ではありません。復旧したら「今日の分をやる」を押せば、1分以内に25 FLOPが届きます。",
+    "Your Passport is a FLOP account" to
+        "PassportはFLOPアカウントです",
+    "Your Passport is also a FLOP address. FLOP's faucet gives it 25 FLOP every 24 hours." to
+        "PassportはFLOPアドレスでもあります。FLOPのフォーセットが24時間ごとに25 FLOPを送ります。",
+    "Your Passport key is also an account on FLOP Network. Same key, written the way FLOP writes addresses." to
+        "Passportの鍵は、FLOP Network上のアカウントでもあります。同じ鍵を、FLOPのアドレス形式で書いたものです。",
+    "Your Passport key is also your FLOP account. It is the same key, written the way FLOP writes addresses, so there is nothing new to back up: your Solana wallet rebuilds both on any phone. If you already have a FLOP address in SubWallet, Talisman or Polkadot.js, you can send the faucet there instead, on the Passport tab. The model works only with the Passport's own address, because only the Passport can sign for it." to
+        "Passportの鍵は、あなたのFLOPアカウントでもあります。同じ鍵をFLOPのアドレス形式で書いたものなので、新たにバックアップするものはありません。Solanaウォレットがあれば、どの端末でも両方を再構築できます。SubWallet、Talisman、Polkadot.jsにFLOPアドレスをすでに持っているなら、Passportタブでフォーセットの送り先をそちらに変えられます。モデルはPassport自身のアドレスでしか使えません。そのアドレスに署名できるのはPassportだけだからです。",
+    "Your Passport now lives on FLOP" to
+        "PassportはFLOPの上で動くようになりました",
+    "Your Passport signs one line in public. It adds a day to your streak." to
+        "Passportが公開の場で一行に署名します。連続日数に一日加わります。",
+    "Your Passport signs one short line in a public room on technocore.chat, and the app reads it back to prove it landed. Each signed day adds to your streak. Miss one day and it is forgiven, once a week. Miss two in a row and the streak starts again." to
+        "Passportはtechnocore.chatの公開ルームで短い一行に署名し、アプリがそれを読み戻して届いたことを確かめます。署名した日ごとに連続日数が増えます。一日抜けても、週に一度までは見逃されます。二日続けて抜けると、連続日数は最初からになります。",
+    "Your address got its FLOP from the faucet in the last 24 hours. It can ask again 24 hours after the last grant." to
+        "このアドレスは過去24時間以内にフォーセットからFLOPを受け取っています。前回の受け取りから24時間たつと、もう一度申請できます。",
+    "Your day is done." to
+        "今日の分は終わりました。",
+    "Your day on FLOP, from your Seeker." to
+        "FLOPでの一日を、あなたのSeekerから。",
+    "Your day, step by step" to
+        "一日の流れ、手順ごとに",
+    "Your first question opens it. Your Passport signs a short statement from api.flop.network; nothing else is signed and nothing moves. You need at least 1 FLOP on your Passport's address, which the faucet on Today gives you." to
+        "最初の質問で開きます。Passportがapi.flop.networkからの短い声明に署名します。ほかには何も署名せず、何も動きません。Passportのアドレスに少なくとも1 FLOPが必要で、「今日」タブのフォーセットで受け取れます。",
+    "Your identity note was deleted after seven quiet days. Publish it again to keep signing your days. Your streak is not lost." to
+        "IDノートは、七日間書き込みがなかったため削除されました。日々の署名を続けるには、もう一度公開してください。連続日数は失われていません。",
+    "Your one devnet trial of the model is over. It opens again on testnet." to
+        "devnetでの一度きりのモデル試用は終わりました。testnetで再び開きます。",
+    "Your streak came with you" to
+        "連続日数も引き継がれました",
+    "Your wallet made this key and rebuilds it on any phone. There are no words to write down." to
+        "この鍵はウォレットが作り、どの端末でも再構築します。書き留める単語はありません。",
+    "Your {n}-day streak ends at midnight" to
+        "{n}日の連続記録が深夜0時に途切れます",
+    "accounts" to
+        "アカウント",
+    "active agents" to
+        "アクティブなエージェント",
+    "all my records" to
+        "自分の記録をすべて見る",
+    "allowance left" to
+        "残りの利用枠",
+    "already asked today" to
+        "今日は質問済み",
+    "already signed today" to
+        "今日は署名済み",
+    "already taken today" to
+        "今日は受け取り済み",
+    "answered" to
+        "回答済み",
+    "ask the model something else" to
+        "モデルに別のことを聞く",
+    "back" to
+        "戻る",
+    "balance" to
+        "残高",
+    "balance {n} FLOP" to
+        "残高 {n} FLOP",
+    "change the address" to
+        "アドレスを変更",
+    "closes in" to
+        "終了まで",
+    "compute market and FRCR index" to
+        "計算資源市場とFRCR指数",
+    "copied" to
+        "コピーしました",
+    "cost {n} FLOP" to
+        "費用 {n} FLOP",
+    "day in a row" to
+        "日連続",
+    "days in a row" to
+        "日連続",
+    "devnet flop" to
+        "devnet FLOP",
+    "do my day" to
+        "今日の分をやる",
+    "entering" to
+        "開始中",
+    "finish your passport first" to
+        "先にPassportを完成させる",
+    "flop gateway" to
+        "FLOPゲートウェイ",
+    "go back to my passport address" to
+        "Passportのアドレスに戻す",
+    "got it" to
+        "了解",
+    "how it all works" to
+        "全体の仕組み",
+    "how it works" to
+        "仕組み",
+    "how it works, questions and answers" to
+        "仕組みとQ&A",
+    "how the model works here" to
+        "ここでのモデルの仕組み",
+    "is this really flop?" to
+        "これは本当にFLOP？",
+    "just now" to
+        "たった今",
+    "latest block" to
+        "最新ブロック",
+    "made by wallet" to
+        "作成元ウォレット",
+    "model" to
+        "モデル",
+    "my day on flop" to
+        "FLOPでの私の一日",
+    "needs flop" to
+        "FLOPが必要",
+    "network" to
+        "ネットワーク",
+    "new in 2.0" to
+        "2.0の新機能",
+    "news" to
+        "ニュース",
+    "no date yet" to
+        "日程未定",
+    "not entered" to
+        "未開始",
+    "not flop" to
+        "FLOPではない",
+    "not flop's" to
+        "FLOPのものではない",
+    "not now" to
+        "あとで",
+    "official" to
+        "公式",
+    "official channels" to
+        "公式チャンネル",
+    "open in FLOP's explorer" to
+        "FLOPのエクスプローラーで開く",
+    "passport" to
+        "Passport",
+    "private key" to
+        "秘密鍵",
+    "publish again" to
+        "もう一度公開",
+    "read it in FLOP's own words" to
+        "FLOP自身の言葉で読む",
+    "reading" to
+        "読み込み中",
+    "refresh" to
+        "更新",
+    "refused" to
+        "拒否",
+    "save" to
+        "保存",
+    "scam warning" to
+        "詐欺に注意",
+    "send" to
+        "送信",
+    "settings, language, about" to
+        "設定、言語、概要",
+    "signed and read back" to
+        "署名して読み戻し済み",
+    "spent on the model, as FLOP's explorer sees it" to
+        "モデルに使った額（FLOPのエクスプローラー上）",
+    "start" to
+        "始める",
+    "the proof" to
+        "証拠",
+    "to do" to
+        "やること",
+    "today" to
+        "今日",
+    "today's question: {q}" to
+        "今日の質問：{q}",
+    "trial over" to
+        "試用終了",
+    "use an address I already have" to
+        "手持ちのアドレスを使う",
+    "validators" to
+        "バリデーター",
+    "what is happening now" to
+        "いま起きていること",
+    "what your wallet will show" to
+        "ウォレットに表示される内容",
+    "where flop stands" to
+        "FLOPの現状",
+    "your flop address" to
+        "あなたのFLOPアドレス",
+    "{day} was missed and forgiven: one missed day a week is." to
+        "{day}は抜けましたが見逃されました。週に一日までは見逃されます。",
+    "{h} h {m} min" to
+        "{h}時間{m}分",
+    "{m} min" to
+        "{m}分",
+    "{n} d ago" to
+        "{n}日前",
+    "{n} h ago" to
+        "{n}時間前",
+    "{n} min ago" to
+        "{n}分前",
+    "Today" to "今日",
+    "Ask" to "質問",
+    "Network" to "ネットワーク",
+    "{host} is on FLOP's official list." to "{host} は FLOP の公式リストにあります。",
+    "This is FLOP's own account on {host}." to "これは {host} 上の FLOP 自身のアカウントです。",
+    "This is on {host}, but not FLOP's account there. FLOP's is {account}." to "これは {host} 上ですが、FLOP のアカウントではありません。FLOP のアカウントは {account} です。",
+    "{host} uses the FLOP name but is not on FLOP's official list. Treat it as an impersonation." to "{host} は FLOP の名前を使っていますが、FLOP の公式リストにはありません。なりすましとして扱ってください。",
+    "{host} is not FLOP. That does not make it bad, only not FLOP." to "{host} は FLOP ではありません。悪いという意味ではなく、FLOP ではないというだけです。",
+    // The faucet came back (2026-11-03).
+    "The faucet works" to
+        "フォーセットは動いています",
+    "FLOP's faucet gives each address 25 FLOP once every 24 hours. It can be slow: an answer may take a minute or two. The app waits for it and checks your balance." to
+        "FLOP のフォーセットは各アドレスに 24 時間ごとに 25 FLOP を配ります。遅いことがあり、応答に 1〜2 分かかる場合があります。アプリは応答を待ち、残高を確認します。",
+    "Your FLOP comes from FLOP's faucet: 25 FLOP once every 24 hours. Press do my day and wait, the faucet can take a minute or two. If the balance stays 0, the faucet step says why." to
+        "FLOP は FLOP のフォーセットから届きます。24 時間ごとに 25 FLOP です。「今日の分をやる」を押して待ってください。フォーセットは 1〜2 分かかることがあります。残高が 0 のままなら、フォーセットの手順に理由が表示されます。",
+    // Review fixes before the 2.0 release (2026-11-03).
+    "The faucet is limiting requests from your network right now. Nothing arrived; try again later." to
+        "フォーセットは今、あなたのネットワークからのリクエストを制限しています。何も届いていません。後でもう一度お試しください。",
+    "FLOP's gateway sent a sign-in text this app does not recognise, so it was not signed. Nothing happened." to
+        "FLOP のゲートウェイがこのアプリの知らないサインイン文を送ってきたため、署名しませんでした。何も起きていません。",
+    "The faucet said no: {reason}" to
+        "フォーセットが拒否しました：{reason}",
+    "The gateway said no: {reason}" to
+        "ゲートウェイが拒否しました：{reason}",
+    "The model did not answer: {reason}" to
+        "モデルが答えませんでした：{reason}",
+    "Only https links can be FLOP's. Type FLOP's address yourself instead of following this one." to
+        "FLOP のリンクは https だけです。このリンクを開かず、FLOP のアドレスを自分で入力してください。",
+    "Sign today to keep your streak. This week's one forgiven day is already used." to
+        "連続記録を守るには今日署名してください。今週の許される 1 日はもう使いました。",
+    // The model allowance is what the gateway says, not a fixed number (2026-11-03).
+    "On devnet FLOP gives each account one allowance to spend on the model within 24 hours, and needs at least 1 FLOP on the account to start it. The Ask tab shows how much is left. When it is over, it stays over until testnet." to
+        "devnet では FLOP が各アカウントに 24 時間使えるモデル用の枠を 1 つ与え、開始にはアカウントに 1 FLOP 以上が必要です。残りは「質問」タブに表示されます。使い切ると testnet まで閉じたままです。",
+    "FLOP gives each account one devnet allowance for 24 hours. The figure above is what is left of it. When it is over it is over until testnet." to
+        "FLOP は各アカウントに 24 時間の devnet 枠を 1 つ与えます。上の数字がその残りです。使い切ると testnet まで閉じたままです。",
+    "It needs at least 1 FLOP on your Passport address first. On devnet each account also gets only one trial, for 24 hours. After that it stays closed until testnet. The Ask tab says which one it is." to
+        "まず、Passport のアドレスに 1 FLOP 以上が必要です。さらに devnet では各アカウントに試用が 1 回だけ、24 時間です。その後は testnet まで閉じたままです。どちらに当たるかは「質問」タブに表示されます。",
+    "To use the model, your Passport signs a short statement from api.flop.network. That signature moves nothing. FLOP then opens an allowance for your account: on devnet one, for 24 hours, and your account needs at least 1 FLOP to start it. The Ask tab shows how much of it is left. An answer costs about 0.006 FLOP per word-piece, usually one or two FLOP. When the allowance ends, the model stays closed for that account until testnet." to
+        "モデルを使うには、Passport が api.flop.network からの短い文に署名します。この署名は何も動かしません。次に FLOP があなたのアカウントに枠を開きます。devnet では 1 つ、24 時間で、開始にはアカウントに 1 FLOP 以上が必要です。残りは「質問」タブに表示されます。回答は単語片 1 つあたり約 0.006 FLOP、たいてい 1〜2 FLOP です。枠が終わると、そのアカウントのモデルは testnet まで閉じたままです。",
+    // The faucet's two other refusals, seen 3-4 November 2026.
+    "The faucet has your request in its queue and has not sent the FLOP yet. This can take a while. Press do my day again later." to
+        "リクエストはフォーセットの順番待ちで、FLOP はまだ送られていません。時間がかかることがあります。後でもう一度「今日の分をやる」を押してください。",
+    "The faucet has given out all of today's FLOP. Nothing arrived. It opens again within hours, so try later." to
+        "フォーセットは今日の FLOP を配り終えました。何も届いていません。数時間以内に再開するので、後でお試しください。",
+    "Signing today's line with your Passport and reading it back from technocore.chat…" to
+        "今日の記録をPassportで署名し、technocore.chatから読み戻しています…",
+    "Asking FLOP's faucet. It serves about 10 people a minute, so this can take up to 2 minutes." to
+        "FLOPのフォーセットに依頼しています。1分に約10人を処理するため、最大2分かかることがあります。",
+    "You are in the faucet's queue. The app watches your balance and asks again by itself." to
+        "フォーセットの順番待ちです。アプリが残高を確認し、自動でもう一度依頼します。",
+    "Reading your balance…" to
+        "残高を読み取っています…",
+    "Sending your question to the model. It has up to 90 seconds to answer." to
+        "質問をモデルに送っています。回答までの時間は最大90秒です。",
+    "FLOP's gateway is full right now: many people are asking at once. Nothing was spent. The app tries again by itself." to
+        "FLOPのゲートウェイは現在満杯です。多くの人が同時に質問しています。費用はかかっていません。アプリが自動で再試行します。",
+    "Your FLOP is still settling on the network. The app tries again by itself." to
+        "FLOPはまだネットワークで確定中です。アプリが自動で再試行します。",
+    "Reading what the answer cost…" to
+        "回答の費用を読み取っています…",
+    "FLOP's gateway stayed full through every try. Nothing was spent. Try again in a few minutes." to
+        "すべての試行でFLOPのゲートウェイは満杯でした。費用はかかっていません。数分後にもう一度お試しください。",
+    "{n} s so far" to
+        "{n}秒経過",
+    "try {n} of {m}" to
+        "試行 {n}/{m}",
+    "next try in {n} s" to
+        "{n}秒後に再試行",
+    "gateway ping {n} ms" to
+        "ゲートウェイのping {n} ms",
+    "faucet ping {n} ms" to
+        "フォーセットのping {n} ms",
+    "the gateway does not answer a ping" to
+        "ゲートウェイがpingに応答しません",
+    "the faucet does not answer a ping" to
+        "フォーセットがpingに応答しません",
+    "step {n} of 3" to
+        "ステップ {n}/3",
+    "ping" to
+        "ping",
+    "no answer" to
+        "応答なし",
+    "last answer took" to
+        "前回の回答にかかった時間",
+    "You can leave this screen: it keeps going." to
+        "この画面を離れても処理は続きます。",
+    "Signing today's line" to
+        "今日の一行に署名中",
+    "Your Passport signs one short line in the public room and reads it back. That line is your day." to
+        "Passportが公開ルームに短い一行を署名し、読み戻します。その一行があなたの一日です。",
+    "Asking FLOP's faucet" to
+        "FLOPのフォーセットにお願い中",
+    "The faucet pays about 10 people a minute. This can take up to two minutes." to
+        "フォーセットは1分に約10人へ配布します。最大2分ほどかかることがあります。",
+    "Standing in the faucet's queue" to
+        "フォーセットの順番待ち中",
+    "The faucet pays about 10 people a minute. Your request is in. We watch your balance and ask again by ourselves." to
+        "フォーセットは1分に約10人へ配布します。リクエストは受け付け済みです。残高を見守り、こちらで自動的にもう一度お願いします。",
+    "Your FLOP is on its way" to
+        "FLOPが届く途中です",
+    "One moment." to
+        "少々お待ちください。",
+    "Opening the model" to
+        "モデルを開いています",
+    "Your Passport signs the gateway's statement. Nothing is spent." to
+        "Passportがゲートウェイの声明に署名します。何も使われません。",
+    "Asking the model" to
+        "モデルに質問中",
+    "Your question is with the model. It has up to 90 seconds." to
+        "質問はモデルに届いています。最長90秒かかります。",
+    "The model is full right now" to
+        "今はモデルが満員です",
+    "Many people are asking at once. Nothing was spent. We try again by ourselves." to
+        "多くの人が同時に質問しています。何も使われていません。こちらで自動的に再試行します。",
+    "Your FLOP is still settling" to
+        "FLOPがまだ反映中です",
+    "A fresh grant takes a moment to count. We try again by ourselves." to
+        "新しく受け取った分が数えられるまで少しかかります。こちらで自動的に再試行します。",
+    "Reading what it cost" to
+        "費用を確認中",
+    "FLOP's gateway stayed full through all 6 tries. Nothing was spent. This is on FLOP's side, not yours." to
+        "FLOPのゲートウェイは6回とも満員でした。何も使われていません。原因はFLOP側で、あなたのせいではありません。",
+    "to next try" to
+        "次の試行まで",
+    "elapsed {t}" to
+        "経過 {t}",
+    "ask the model" to
+        "モデルに質問",
+    "Answered" to
+        "回答済み",
+    "cost {c} FLOP · {s} s" to
+        "費用 {c} FLOP · {s}秒",
+    "The model did not answer" to
+        "モデルから回答がありませんでした",
+    "your question" to
+        "あなたの質問",
+    "waiting" to
+        "待機中",
+    "Connect your Passport" to
+        "Passportを接続",
+    "Get the answer" to
+        "回答を受け取る",
+    "minimise · it keeps going" to
+        "最小化 · 動作は続きます",
+    "my day · step {n} of 3" to
+        "今日の分 · ステップ {n}/3",
+    "my day" to
+        "今日の分",
+    "Your day is closed" to
+        "今日は完了です",
+    "See you tomorrow." to
+        "また明日。",
+    "Today is signed" to
+        "今日は署名済み",
+    "not today" to
+        "今日はなし",
+    "Could not sign today" to
+        "今日は署名できませんでした",
+    "Your day is signed. Your streak of {n} is safe whatever happens next." to
+        "今日の署名は完了です。{n}日の連続記録は何があっても安全です。",
+    "Today is not signed yet. One missed day a week is forgiven; two in a row end the streak." to
+        "今日はまだ署名していません。週に1日の休みは許されますが、2日続けて休むと連続記録は終わります。",
+    "question of the day: {q}" to
+        "今日の質問: {q}",
+    "Part of your day waits" to
+        "今日の一部が待っています",
+    "passport · {name}" to
+        "passport · {name}",
+    "Days in a row: {n}" to
+        "連続日数: {n}",
+    "Start your streak today" to
+        "今日から連続記録を始めましょう",
+    "Registered {date} · day {n} with us" to
+        "登録日 {date} · 一緒に過ごして{n}日目",
+    "reading your days" to
+        "日々を読み込み中",
+    "today signed" to
+        "今日は署名済み",
+    "sign today or the streak ends" to
+        "今日署名しないと連続記録が途切れます",
+    "today not signed yet" to
+        "今日はまだ署名していません",
+    "in a row" to
+        "連続",
+    "{n} of 3" to
+        "{n}/3",
+    "Your Passport signs one public line. That line is your streak." to
+        "Passportが公開の一行に署名します。その一行があなたの連続記録です。",
+    "From FLOP's faucet, once a day. Practice coins, no price." to
+        "FLOPのフォーセットから1日1回。練習用のコインで、価格はありません。",
+    "One question of the day, paid in FLOP." to
+        "毎日ひとつの質問、支払いはFLOPで。",
+    "One press, all three steps in order. What is already done is skipped." to
+        "ワンタップで3つのステップを順番に。済んでいるものは飛ばします。",
+    "devnet · practice network" to
+        "devnet · 練習用ネットワーク",
+    "one key · two networks" to
+        "ひとつの鍵 · ふたつのネットワーク",
+    "Seeker wallet" to
+        "Seekerウォレット",
+    "Made the Passport with one signature. Brings it back on any phone." to
+        "署名ひとつでPassportを作成しました。どの端末でも復元できます。",
+    "FLOP account" to
+        "FLOPアカウント",
+    "The same key as a FLOP address. The faucet pays here; the model is paid from here." to
+        "FLOPアドレスとして表した同じ鍵です。フォーセットはここへ配布し、モデルの支払いもここから行います。",
+    "Registered" to
+        "登録日",
+    "Days in a row" to
+        "連続日数",
+    "Best streak" to
+        "最長記録",
+    "Signed days" to
+        "署名した日数",
+    "Balance, FLOP" to
+        "残高、FLOP",
+    "Spent on the model, FLOP" to
+        "モデルに使った分、FLOP",
+    "1 skip left this week" to
+        "今週あと1日お休みOK",
+    "this week's skip is used" to
+        "今週のお休みは使用済み",
+    "details and key" to
+        "詳細と鍵",
+    "On Seeker · in FLOP Network · an app by Alex Kosa, not FLOP Labs, not Solana Mobile" to
+        "Seeker上 · FLOPネットワーク内 · Alex Kosaのアプリです。FLOP LabsやSolana Mobileのものではありません",
+    "days signed together" to
+        "みんなで署名した日数",
+    "flop pulse" to
+        "flopパルス",
+    "Devnet is a practice network, open to everyone since 3 November. Coins have no price, there is no reward." to
+        "Devnetは練習用ネットワークで、11月3日から誰でも使えます。コインに価格はなく、報酬もありません。",
+    "more about the network" to
+        "ネットワークについてもっと",
+    "thanks to both sides" to
+        "両方に感謝",
+    "for Seeker, the wallet and one-tap signing" to
+        "Seeker、ウォレット、ワンタップ署名に",
+    "for the network, the faucet and a model you can pay" to
+        "ネットワーク、フォーセット、支払えるモデルに",
+    "An independent app by Alex Kosa. No promises about tokens or rewards." to
+        "Alex Kosaによる独立したアプリです。トークンや報酬の約束はありません。",
+    "check a link, an @name or an address someone sent you" to
+        "届いたリンク、@名前、アドレスを確認",
+    "check" to
+        "確認",
+    "FLOP model" to
+        "FLOPモデル",
+    "The model is small: short, plain questions work best. Everything you pay is practice FLOP." to
+        "モデルは小さめです。短くて簡単な質問が一番うまくいきます。支払うのはすべて練習用のFLOPです。",
+    "model open" to
+        "モデル利用可",
+    "opening the model" to
+        "モデルを開いています",
+    "trial over for this account" to
+        "このアカウントのお試しは終了",
+    "needs 1 flop" to
+        "1 flop 必要",
+    "model closed for now" to
+        "モデルは今は閉じています",
+    "first question opens it" to
+        "最初の質問で開きます",
+    "ping {n} ms" to
+        "ping {n} ms",
+    "Your Passport signs a short statement from FLOP's gateway. Nothing moves. You need at least 1 FLOP; the faucet on Today gives you 25." to
+        "PassportがFLOPゲートウェイの短い声明に署名します。何も動きません。1 FLOP以上が必要です。今日タブのフォーセットで25もらえます。",
+    "more" to
+        "もっと見る",
+    "That was the last step. Your Passport is live, and your day on FLOP starts now." to
+        "これで最後のステップです。Passportの準備ができ、FLOPでのあなたの一日が始まります。",
+    "Pulse" to
+        "いま",
+    "Who is here, and how FLOP's network is doing today." to
+        "誰がいて、FLOPネットワークが今日どんな様子かを示します。",
+    "who is here" to
+        "ここにいる人",
+    "Passport holders" to
+        "Passport保有者",
+    "{n} Passport holders · {m} signed today" to
+        "Passport保有者 {n}人 · 今日の署名 {m}人",
+    "{n} of them signed today" to
+        "うち今日の署名: {n}人",
+    "To keep a streak, each holder signs one short public line a day. Counted from that public record, so anyone can repeat it." to
+        "連続記録を続けるため、保有者は毎日短い公開の一行に署名します。この公開記録から数えているので、誰でも確かめられます。",
+    "same key" to
+        "同じ鍵",
+    "knock now" to
+        "今すぐノック",
+    "A refused knock costs nothing. Knock as often as you like." to
+        "断られても費用はかかりません。何度でもノックできます。",
+    "FLOP spent on the model, all time" to
+        "モデルに使われたFLOP、累計",
+    "accounts that paid for the model" to
+        "モデルに支払ったアカウント",
+    "Join FLOP with Alex's link" to
+        "Alexのリンクで FLOP へ",
+    "This is Alex Kosa's personal referral link from FLOP, and it may count for him. It gives you nothing extra from this app. Prefer not to? Go to flop.finance yourself." to
+        "これはFLOPが発行したAlex Kosaの個人紹介リンクで、彼の実績として数えられることがあります。このアプリから追加で得られるものはありません。使いたくなければ、flop.finance へ直接どうぞ。",
+    "open {host}" to
+        "{host} を開く",
 )
